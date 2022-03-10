@@ -8,3 +8,6 @@
 
 ## 2022-02-26 토
 - 페이지별 기능 정리 계속(yasulmukja.exerd)
+
+## 2022-02-28 월
+- 모델링 리뷰 및 수정(yasulmakjadb(eom).exerd)
