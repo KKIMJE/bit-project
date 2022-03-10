@@ -10,4 +10,11 @@
 - 페이지별 기능 정리 계속(yasulmukja.exerd)
 
 ## 2022-02-28 월
-- 모델링 리뷰 및 수정(yasulmakjadb(eom).exerd)
+- DB모델링 리뷰 및 수정(yasulmakjadb(eom).exerd)
+- 강사님께 질문한 내용 정리(강사님 질문 정리.txt)
+
+## 2022-03-06 일
+- DB모델링 작업(yasulmakjadb(kkb).exerd)
+
+## 2022-03-07 월
+- DB모델링 작업(yasulmukja(22-03-07).exerd)
