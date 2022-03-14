@@ -315,7 +315,40 @@ values(
 
 -- sns
 
+insert into SNS(
+sns_no
+)
+values(
+1
+);
 
+insert into SNS(
+sns_no
+)
+values(
+2
+);
+
+insert into SNS(
+sns_no
+)
+values(
+3
+);
+
+insert into SNS(
+sns_no
+)
+values(
+4
+);
+
+insert into SNS(
+sns_no
+)
+values(
+5
+);
 
 -- 주점찜
 
