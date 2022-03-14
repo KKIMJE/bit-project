@@ -177,10 +177,21 @@ party_fee,
 meeting_date,
 max_member,
 alcohol_type,
-alcohol_limit
+alcohol_limit,
+view_count
 ) values(
 1,
-'기타'
+1,
+3,
+'외롭다...ㅠㅠ같이 술 드실분?',
+'오늘밤 11시에 신논현 역에서...',
+20000,
+'2022-02-21',
+6,
+'소주',
+5,
+3
 );
+
 
 
