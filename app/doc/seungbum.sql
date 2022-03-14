@@ -182,7 +182,7 @@ view_count
 ) values(
 1,
 1,
-3,
+1,
 '외롭다...ㅠㅠ같이 술 드실분?',
 '오늘밤 11시에 신논현 역에서...',
 20000,
@@ -193,5 +193,29 @@ view_count
 3
 );
 
-
+insert into party(
+party_no,
+mno,
+store_no,
+title,
+contents,
+party_fee,
+meeting_date,
+max_member,
+alcohol_type,
+alcohol_limit,
+view_count
+) values(
+1,
+1,
+1,
+'외롭다...ㅠㅠ같이 술 드실분?',
+'오늘밤 11시에 신논현 역에서...',
+20000,
+'2022-02-21',
+6,
+'소주',
+5,
+3
+);
 
