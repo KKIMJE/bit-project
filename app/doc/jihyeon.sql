@@ -1,3 +1,6 @@
+-- 공지사항
+
+
 insert into notice(
     member_type,
     title,
@@ -65,6 +68,11 @@ values(
 
 
 
+
+
+--주점유형
+
+
 insert into store_type (
 type_name
  )
@@ -130,6 +138,9 @@ values (
 
 
 
+
+--참석자
+
 insert into party_participant (
 party_no,
 mno,
@@ -185,6 +196,10 @@ values(
 '참'
 );
 
+
+
+
+-- 모임회원평가 
 
 
 insert into party_member_evaluation (
@@ -254,6 +269,8 @@ values (
 
 
 
+
+-- 주점소속유형
 
 insert into store_section_type(
   store_type_no,

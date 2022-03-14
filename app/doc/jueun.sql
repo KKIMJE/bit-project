@@ -213,7 +213,7 @@ insert into alcohol_sales(
 )
 values(
   4,
-  6,
+  4,
   8000
 );
 
@@ -292,7 +292,7 @@ insert into board_comment (
   comment_contents
 )
 values (
-  2,
+  6,
   1,
   '저도 가봤는데 정말괜찮습니다~'
 );
