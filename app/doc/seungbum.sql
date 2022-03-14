@@ -302,8 +302,39 @@ insert into comment_like(
 mno,
 board_commnet_no 
 ) values(
-6,
-'술게임'
+1,
+1
 );
 
+insert into comment_like(
+mno,
+board_comment_no 
+) values(
+2,
+2
+);
+
+insert into comment_like(
+mno,
+board_comment_no 
+) values(
+3,
+3
+);
+
+insert into comment_like(
+mno,
+board_comment_no 
+) values(
+4,
+4
+);
+
+insert into comment_like(
+mno,
+board_comment_no
+) values(
+5,
+5
+);
 
