@@ -154,7 +154,7 @@ values(
    'g'
    );
    
-   -- 주점태그
+ -- 주점태그
 insert into store_tag(
   tag_no,
   store_no
@@ -214,12 +214,12 @@ values(
   1,
   1,
   '화장실 더러워요',
-   0.5,
-   '청소할게요',
-   '2022-03-14'
+  0.5,
+  '청소할게요',
+  '2022-03-14'
    );
    
-   insert into review(
+insert into review(
   reservation_no,
   store_no,
   contents,
@@ -229,7 +229,7 @@ values(
   2,
   2,
   '우웩',
-   2
+  2
    );
    
 insert into review(
@@ -242,7 +242,7 @@ values(
   3,
   3,
   '구웃',
-   4
+  4
    );
    
 insert into review(
@@ -257,9 +257,9 @@ values(
   4,
   4,
   '사장님 서비스 감사합니다~',
-   5,
-   '앗 고객님 감사합니다',
-   '2022-03-16'
+  5,
+  '앗 고객님 감사합니다',
+  '2022-03-16'
    );
    
 insert into review(
@@ -274,9 +274,9 @@ values(
   5,
   5,
   '회식하기 짱짱',
-   4.5,
-   '다음에도 꼭 와주세요. 잘해드리겠습니다~',
-   '2022-03-15'
+  4.5,
+  '다음에도 꼭 와주세요. 잘해드리겠습니다~',
+  '2022-03-15'
    );
    
 -- SNS계정
@@ -307,7 +307,7 @@ values(
   3
    );
    
-   insert into sns_account(
+insert into sns_account(
   mno,
   sns_no
 )
@@ -335,7 +335,7 @@ values(
   1
    );
    
-   insert into board_select(
+insert into board_select(
   mno,
   board_no
 )
@@ -344,7 +344,7 @@ values(
   2
    );
    
-   insert into board_select(
+insert into board_select(
   mno,
   board_no
 )
@@ -353,7 +353,7 @@ values(
   3
    );
    
-   insert into board_select(
+insert into board_select(
   mno,
   board_no
 )
@@ -362,7 +362,7 @@ values(
   4
    );
    
-   insert into board_select(
+insert into board_select(
   mno,
   board_no
 )
@@ -386,7 +386,7 @@ values(
    '사장님'
    );
    
-   insert into owner_member(
+insert into owner_member(
   mno,
   store_no,
   img,
@@ -399,7 +399,7 @@ values(
    '사장님'
    );
    
-   insert into owner_member(
+insert into owner_member(
   mno,
   store_no,
   img,
@@ -412,7 +412,7 @@ values(
    '사장님'
    );
    
-   insert into owner_member(
+insert into owner_member(
   mno,
   store_no,
   img,
@@ -425,7 +425,7 @@ values(
    '사장님'
    );
    
-   insert into owner_member(
+insert into owner_member(
   mno,
   store_no,
   img,
