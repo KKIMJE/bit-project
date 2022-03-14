@@ -168,7 +168,7 @@ price,
 main_accept
 ) 
 values(
-32,
+1,
 '국밥',
 7000,
 true
@@ -181,7 +181,7 @@ price,
 main_accept
 ) 
 values(
-42,
+2,
 '감자탕',
 20000,
 true
@@ -194,7 +194,7 @@ price,
 main_accept
 ) 
 values(
-52,
+3,
 '화덕피자',
 12000,
 false
@@ -207,7 +207,7 @@ price,
 main_accept
 ) 
 values(
-62,
+4,
 '大방어회',
 45000,
 true
@@ -220,7 +220,7 @@ price,
 main_accept
 ) 
 values(
-72,
+5,
 '허니콤보',
 20000,
 true
@@ -236,8 +236,8 @@ contents,
 view_count
 ) 
 values(
-111,
-51,
+1,
+1,
 '음주롤할사람',
 451
 );
@@ -250,8 +250,8 @@ contents,
 view_count
 ) 
 values(
-112,
-52,
+2,
+2,
 '벚꽃보러 어디로갈까',
 999
 );
@@ -264,8 +264,8 @@ contents,
 view_count
 ) 
 values(
-113,
-53,
+3,
+3,
 '양꼬치와 칭따오',
 111
 );
@@ -278,8 +278,8 @@ contents,
 view_count
 ) 
 values(
-114,
-54,
+4,
+4,
 '여름에는 제주도지',
 777
 );
@@ -292,8 +292,8 @@ contents,
 view_count
 ) 
 values(
-115,
-55,
+5,
+5,
 '멕시코에서 왔슴니다',
 8
 );
@@ -309,8 +309,8 @@ store_no,
 mno
 ) 
 values(
-151,
-401
+1,
+1
 );
 
 insert into store_select( 
@@ -318,8 +318,8 @@ store_no,
 mno
 ) 
 values(
-152,
-402
+2,
+2
 );
 
 insert into store_select( 
@@ -327,8 +327,8 @@ store_no,
 mno
 ) 
 values(
-153,
-403
+3,
+3
 );
 
 insert into store_select( 
@@ -336,8 +336,8 @@ store_no,
 mno
 ) 
 values(
-154,
-404
+4,
+4
 );
 
 insert into store_select( 
@@ -345,63 +345,53 @@ store_no,
 mno
 ) 
 values(
-155,
-405
+5,
+5
 );
 
 -- 리뷰사진
 
 insert into review_img( 
-review_img_no,
 reservation_no,
 img
 ) 
 values(
-801,
-1101,
+1,
 'o0o0o0o0o0o'
 );
 
 insert into review_img( 
-review_img_no,
 reservation_no,
 img
 ) 
 values(
-802,
-1102,
+2,
 'hihihihi'
 );
 
 insert into review_img( 
-review_img_no,
 reservation_no,
 img
 ) 
 values(
-803,
-1103,
+3,
 'nmnmnmnmmmnmnmn'
 );
 
 insert into review_img( 
-review_img_no,
 reservation_no,
 img
 ) 
 values(
-804,
-1104,
+4,
 'nonononono'
 );
 
 insert into review_img( 
-review_img_no,
 reservation_no,
 img
 ) 
 values(
-802,
-1102,
+2,
 'cococococoocococo'
 );
