@@ -206,16 +206,67 @@ alcohol_type,
 alcohol_limit,
 view_count
 ) values(
+2,
 1,
-1,
-1,
-'외롭다...ㅠㅠ같이 술 드실분?',
-'오늘밤 11시에 신논현 역에서...',
+2,
+'친목모임하실분',
+'친목모임하실분',
 20000,
-'2022-02-21',
+'2022-03-22',
 6,
-'소주',
-5,
+'맥주',
+11,
 3
 );
 
+insert into party(
+party_no,
+mno,
+store_no,
+title,
+contents,
+party_fee,
+meeting_date,
+max_member,
+alcohol_type,
+alcohol_limit,
+view_count
+) values(
+3,
+1,
+3,
+'친목',
+'와인마실분',
+20000,
+'2022-03-22',
+6,
+'와인',
+11,
+3
+);
+
+insert into party(
+party_no,
+mno,
+store_no,
+title,
+contents,
+party_fee,
+meeting_date,
+max_member,
+alcohol_type,
+alcohol_limit,
+view_count
+) values(
+4,
+1,
+4,
+'산할아버지',
+'구름모자썼네',
+30000,
+'2022-03-22',
+6,
+'막걸리',
+11,
+3
+);
