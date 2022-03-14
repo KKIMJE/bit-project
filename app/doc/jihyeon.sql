@@ -1,119 +1,101 @@
 insert into notice(
-    notice_no,
     member_type,
     title,
-    reg_date,
-    update_date,
     contents,
     view_count
 )
 values(
-    1,
     '참',
     '중요공지입니다',
-    2022-03-02,
-    2022-03-03,
     '서로 매너를 지킵시다',
     122
 );
 values(
-    2,
     '참',
     '건전한 야술먹자 회원이됩시다',
-    2022-03-04,
-    2022-03-05,
     '수상한 사람 발견시 즉시 연락바랍니다',
     223
 );
 values(
-    3,
     '참',
     '더치트 사이트 안내',
-    2022-03-04,
-    2022-03-05,
     '사기범죄를 막을려고 사이트 링크를 걸어뒀습니다',
     4342
 );
 values(
-    4,
     '참',
     '알려드립니다',
-    2022-03-05,
-    2022-03-06,
     '당사에서는 회원들간의 분쟁, 논란에 대해서는 책임지지 않습니다',
     2213
 );
 values(
-    5,
     '참',
     '지나친 주류는 독입니다',
-    2022-03-06,
-    2022-03-07,
     '회원 스스로 조절하시기 바랍니다',
     4454
 );
 
 
 
-insert into store_type ( 
-type_name 
- ) 
- values ( 
-  '포차' 
-);
-
-insert into store_type ( 
-type_name 
- ) 
- values ( 
-  '펍' 
+insert into store_type (
+type_name
+ )
+ values (
+  '포차'
 );
 
 insert into store_type (
-type_name 
-) 
-values ( 
-  '바'
- ); 
-
-insert into store_type ( 
 type_name
- ) 
+ )
+ values (
+  '펍'
+);
+
+insert into store_type (
+type_name
+)
+values (
+  '바'
+ );
+
+insert into store_type (
+type_name
+ )
 values (
   '이자카야'
  );
 
- insert into store_type ( 
-type_name 
-) 
-values ( 
-  '주막'
- ); 
-
-insert into store_type ( 
+ insert into store_type (
 type_name
- ) 
-values ( 
-  '감성주점' 
+)
+values (
+  '주막'
+ );
+
+insert into store_type (
+type_name
+ )
+values (
+  '감성주점'
 );
 
  insert into store_type (
  type_name
  )
  values (
-  '루프탑' 
-); 
+  '루프탑'
+);
 
 insert into store_type (
- type_name 
-) 
+ type_name
+)
 values (
   '가라오케'
 );
 
 insert into store_type(
 type_name
-) 
+)
 values (
   '기타'
 );
@@ -121,7 +103,7 @@ values (
 
 
 insert into party_participant (
-party_no, 
+party_no,
 mno,
 participant_status
 )
@@ -132,10 +114,10 @@ values(
 );
 
 insert into party_participant (
-party_no, 
+party_no,
 mno,
 participant_status
-) 
+)
 values(
 2,
 2,
@@ -143,7 +125,7 @@ values(
 );
 
 insert into party_participant (
-party_no, 
+party_no,
 mno,
 participant_status
 )
@@ -154,7 +136,7 @@ values(
 );
 
 insert into party_participant (
-party_no, 
+party_no,
 mno,
 participant_status
 )
@@ -165,7 +147,7 @@ values(
 );
 
 insert into party_participant (
-party_no, 
+party_no,
 mno,
 participant_status
 )
