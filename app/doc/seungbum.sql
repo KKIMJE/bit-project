@@ -167,5 +167,20 @@ title
 );
 
 /* 모임 */
+insert into party(
+party_no,
+mno,
+store_no,
+title,
+contents,
+party_fee,
+meeting_date,
+max_member,
+alcohol_type,
+alcohol_limit
+) values(
+1,
+'기타'
+);
 
 
