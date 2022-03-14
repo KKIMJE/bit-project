@@ -23,7 +23,7 @@ contents,
 attach_file, 
 answer
 ) values(
-1,
+2,
 1,
 '문의글을 다시 올립니다.',
 '궁금합니다!!!.', 
@@ -39,7 +39,7 @@ contents,
 attach_file, 
 answer
 ) values(
-1,
+3,
 2,
 '문의글 문의글 문의글',
 '궁금합니다!!!????????', 
@@ -55,7 +55,7 @@ contents,
 attach_file, 
 answer
 ) values(
-1,
+4,
 2,
 '문의글 문의글 문의글',
 '궁금합니다!!!????????', 
@@ -71,7 +71,7 @@ contents,
 attach_file, 
 answer
 ) values(
-1,
+5,
 2,
 '문의글 문의글 문의글',
 '궁금합니다!!!????????', 
