@@ -251,3 +251,51 @@ values (
 5,
 5.0
 );
+
+
+
+
+insert into store_section_type(
+  store_type_no,
+  store_no
+)
+values(
+  1,
+  1
+   );
+   
+insert into store_section_type(
+  store_type_no,
+  store_no
+)
+values(
+  2,
+  2
+   );
+   
+insert into store_section_type(
+  store_type_no,
+  store_no
+)
+values(
+  3,
+  3
+   );
+   
+insert into store_section_type(
+  store_type_no,
+  store_no
+)
+values(
+  4,
+  4
+   );
+   
+insert into store_section_type(
+  store_type_no,
+  store_no
+)
+values(
+  5,
+  5
+   );
