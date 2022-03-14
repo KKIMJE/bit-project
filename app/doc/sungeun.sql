@@ -14,7 +14,7 @@ values(5,4,'48bottles', '막걸리', 'high');
 insert into alcohol_detail(alcohol_type_no,name,degree,brand,origin,volume,characteristic,img)
 values(1,'참이슬',16.9,'HiteJinro','Korea',360,'한국 대표 술','sjdfhaslkfhd,dsajfklh');
 insert into alcohol_detail(alcohol_type_no,name,degree,brand,origin,volume,characteristic,img)
-values(2,'테라',4.6,'HiteJinro','Korea',500,'테라브랜드','safdfaf/sfdasa/sfada');
+values(2,'맥주',4.6,'HiteJinro','Korea',500,'테라브랜드','safdfaf/sfdasa/sfada');
 insert into alcohol_detail(alcohol_type_no,name,degree,brand,origin,volume,characteristic,img)
 values(4,'느린마을막걸리',6.0,'느린마을','Korea',360,'ㅎㅎㅎㅎㅎ','sjdfhaslkfhd,dsajfklh');
 insert into alcohol_detail(alcohol_type_no,name,degree,brand,origin,volume,characteristic,img)
@@ -36,7 +36,7 @@ values(5,1,'회','ㅈㅂㅈㅂㅈㅂㅈㅂ',true);
 
 --태그
 insert into tag(name)
-values('#dd단골손님많아요');
+values('#단골손님많아요');
 insert into tag(name)
 values('#소주맥주막걸리 모두 다가능');
 insert into tag(name)
@@ -52,10 +52,10 @@ values('#분위기좋은');
 insert into menu_img(store_menu_no,img)
 values(1,'sdfsas');
 insert into menu_img(store_menu_no,img)
-values,2,'sdfsas');
+values,2,'ddddd');
 insert into menu_img(store_menu_no,img)
-values(3,'sdfsas');
+values(3,'jl/jk');
 insert into menu_img(store_menu_no,img)
-values(4,'sdfsas');
+values(4,'oipiuo');
 insert into menu_img(store_menu_no,img)
-values(5,'sdfsas');
+values(5,'zxzvxzc');
