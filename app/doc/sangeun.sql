@@ -371,5 +371,69 @@ values(
   5
    );
    
-
 -- 사장님회원
+
+insert into owner_member(
+  mno,
+  store_no,
+  img,
+  nickname
+)
+values(
+   1,
+   2,
+   'yasulmukja/store/ceo.img',
+   '사장님'
+   );
+   
+   insert into owner_member(
+  mno,
+  store_no,
+  img,
+  nickname
+)
+values(
+   2,
+   1,
+   'yasulmukja/store/ceo.img',
+   '사장님'
+   );
+   
+   insert into owner_member(
+  mno,
+  store_no,
+  img,
+  nickname
+)
+values(
+   3,
+   5,
+   'yasulmukja/store/ceo.img',
+   '사장님'
+   );
+   
+   insert into owner_member(
+  mno,
+  store_no,
+  img,
+  nickname
+)
+values(
+   4,
+   3,
+   'yasulmukja/store/ceo.img',
+   '사장님'
+   );
+   
+   insert into owner_member(
+  mno,
+  store_no,
+  img,
+  nickname
+)
+values(
+   5,
+   4,
+   'yasulmukja/store/ceo.img',
+   '사장님'
+   );
