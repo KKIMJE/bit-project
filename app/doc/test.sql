@@ -68,7 +68,7 @@ DROP TABLE IF EXISTS alcohol_sales RESTRICT;
 DROP TABLE IF EXISTS store_section_type RESTRICT;
 
 -- 댓글좋아요
-DROP TABLE IF EXISTS like RESTRICT;
+DROP TABLE IF EXISTS comment_like RESTRICT;
 
 -- 게시글찜
 DROP TABLE IF EXISTS board_select RESTRICT;
@@ -99,6 +99,12 @@ DROP TABLE IF EXISTS menu_img RESTRICT;
 
 -- 주점사진
 DROP TABLE IF EXISTS store_img RESTRICT;
+
+-- 모임댓글
+DROP TABLE IF EXISTS party_comment RESTRICT;
+
+-- 모임댓글좋아요
+DROP TABLE IF EXISTS party_comment_like RESTRICT;
 
 -- 회원
 CREATE TABLE member (
@@ -628,14 +634,14 @@ ALTER TABLE store_section_type
     );
 
 -- 댓글좋아요
-CREATE TABLE like (
+CREATE TABLE comment_like (
   mno              INTEGER NOT NULL, -- 회원번호
   board_commnet_no INTEGER NOT NULL  -- 게시글댓글번호
 );
 
 -- 댓글좋아요
-ALTER TABLE like
-  ADD CONSTRAINT PK_like -- 댓글좋아요 기본키
+ALTER TABLE comment_like
+  ADD CONSTRAINT PK_comment_like -- 댓글좋아요 기본키
     PRIMARY KEY (
       mno,              -- 회원번호
       board_commnet_no  -- 게시글댓글번호
@@ -687,6 +693,7 @@ ALTER TABLE party_board_select
 CREATE TABLE board_comment (
   board_commnet_no INTEGER   NOT NULL, -- 게시글댓글번호
   mno              INTEGER   NOT NULL, -- 회원번호
+  board_no         INTEGER   NOT NULL, -- 게시글번호
   comment_contents TEXT      NOT NULL, -- 내용
   comment_date     TIMESTAMP NOT NULL, -- 작성일
   update_date      TIMESTAMP NOT NULL  -- 수정일
@@ -813,6 +820,37 @@ ALTER TABLE store_img
 
 ALTER TABLE store_img
   AUTO_INCREMENT = 1;
+
+-- 모임댓글
+CREATE TABLE party_comment (
+  party_comment_no       INTEGER   NOT NULL, -- 모임댓글번호
+  mno                    INTEGER   NOT NULL, -- 회원번호
+  party_no               INTEGER   NOT NULL, -- 모임번호
+  party_comment_contents TEXT      NOT NULL, -- 내용
+  comment_date           TIMESTAMP NOT NULL, -- 작성일
+  update_date            TIMESTAMP NOT NULL  -- 수정일
+);
+
+-- 모임댓글
+ALTER TABLE party_comment
+  ADD CONSTRAINT PK_party_comment -- 모임댓글 기본키
+    PRIMARY KEY (
+      party_comment_no -- 모임댓글번호
+    );
+
+-- 모임댓글좋아요
+CREATE TABLE party_comment_like (
+  party_comment_no INTEGER NOT NULL, -- 모임댓글번호
+  mno              INTEGER NOT NULL  -- 회원번호
+);
+
+-- 모임댓글좋아요
+ALTER TABLE party_comment_like
+  ADD CONSTRAINT PK_party_comment_like -- 모임댓글좋아요 기본키
+    PRIMARY KEY (
+      party_comment_no, -- 모임댓글번호
+      mno               -- 회원번호
+    );
 
 -- 음주내역
 ALTER TABLE alcohol_management
@@ -1047,8 +1085,8 @@ ALTER TABLE store_section_type
     );
 
 -- 댓글좋아요
-ALTER TABLE like
-  ADD CONSTRAINT FK_member_TO_like -- 회원 -> 댓글좋아요
+ALTER TABLE comment_like
+  ADD CONSTRAINT FK_member_TO_comment_like -- 회원 -> 댓글좋아요
     FOREIGN KEY (
       mno -- 회원번호
     )
@@ -1057,8 +1095,8 @@ ALTER TABLE like
     );
 
 -- 댓글좋아요
-ALTER TABLE like
-  ADD CONSTRAINT FK_board_comment_TO_like -- 게시글댓글 -> 댓글좋아요
+ALTER TABLE comment_like
+  ADD CONSTRAINT FK_board_comment_TO_comment_like -- 게시글댓글 -> 댓글좋아요
     FOREIGN KEY (
       board_commnet_no -- 게시글댓글번호
     )
@@ -1134,6 +1172,16 @@ ALTER TABLE board_comment
     )
     REFERENCES member ( -- 회원
       mno -- 회원번호
+    );
+
+-- 게시글댓글
+ALTER TABLE board_comment
+  ADD CONSTRAINT FK_board_TO_board_comment -- 게시글 -> 게시글댓글
+    FOREIGN KEY (
+      board_no -- 게시글번호
+    )
+    REFERENCES board ( -- 게시글
+      board_no -- 게시글번호
     );
 
 -- 모임회원평가
@@ -1220,4 +1268,44 @@ ALTER TABLE store_img
     )
     REFERENCES store ( -- 주점
       store_no -- 주점번호
+    );
+
+-- 모임댓글
+ALTER TABLE party_comment
+  ADD CONSTRAINT FK_member_TO_party_comment -- 회원 -> 모임댓글
+    FOREIGN KEY (
+      mno -- 회원번호
+    )
+    REFERENCES member ( -- 회원
+      mno -- 회원번호
+    );
+
+-- 모임댓글
+ALTER TABLE party_comment
+  ADD CONSTRAINT FK_party_TO_party_comment -- 모임 -> 모임댓글
+    FOREIGN KEY (
+      party_no -- 모임번호
+    )
+    REFERENCES party ( -- 모임
+      party_no -- 모임번호
+    );
+
+-- 모임댓글좋아요
+ALTER TABLE party_comment_like
+  ADD CONSTRAINT FK_party_comment_TO_party_comment_like -- 모임댓글 -> 모임댓글좋아요
+    FOREIGN KEY (
+      party_comment_no -- 모임댓글번호
+    )
+    REFERENCES party_comment ( -- 모임댓글
+      party_comment_no -- 모임댓글번호
+    );
+
+-- 모임댓글좋아요
+ALTER TABLE party_comment_like
+  ADD CONSTRAINT FK_member_TO_party_comment_like -- 회원 -> 모임댓글좋아요
+    FOREIGN KEY (
+      mno -- 회원번호
+    )
+    REFERENCES member ( -- 회원
+      mno -- 회원번호
     );

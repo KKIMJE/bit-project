@@ -420,3 +420,59 @@ values (
   '저는 잘 못마셔요..ㅎㅎ',
   true
 );
+
+-- 모임댓글
+insert into party_comment (
+  mno,
+  party_no,
+  party_comment_contents
+)
+values (
+  1,
+  1,
+  '저도한잔 하고싶습니다'
+);
+
+insert into party_comment (
+  mno,
+  party_no,
+  party_comment_contents
+)
+values (
+  2,
+  1,
+  '저도 들어가고 싶어요~'
+);
+
+insert into party_comment (
+  mno,
+  party_no,
+  party_comment_contents
+)
+values (
+  3,
+  2,
+  '저 술 잘마십니다~'
+);
+
+insert into party_comment (
+  mno,
+  party_no,
+  party_comment_contents
+)
+values (
+  4,
+  2,
+  '여기 방장 매너 좋아요~'
+);
+
+insert into party_comment (
+  mno,
+  party_no,
+  party_comment_contents
+)
+values (
+  5,
+  2,
+  '난 별로던데 ..???'
+);
