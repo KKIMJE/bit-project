@@ -334,7 +334,7 @@ mno
 )
 values(
 2,
-2
+1
 );
 
 insert into store_select(
@@ -343,7 +343,7 @@ mno
 )
 values(
 3,
-3
+1
 );
 
 insert into store_select(
@@ -352,7 +352,7 @@ mno
 )
 values(
 4,
-4
+1
 );
 
 insert into store_select(
@@ -361,7 +361,7 @@ mno
 )
 values(
 5,
-5
+1
 );
 
 -- 리뷰사진
@@ -407,6 +407,6 @@ reservation_no,
 img
 )
 values(
-2,
+5,
 'cococococoocococo'
 );

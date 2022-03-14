@@ -9,24 +9,52 @@ values(
     '중요공지입니다',
     '서로 매너를 지킵시다',
     122
+);
+
+insert into notice(
+    member_type,
+    title,
+    contents,
+    view_count
 )
 values(
     '일',
     '건전한 야술먹자 회원이됩시다',
     '수상한 사람 발견시 즉시 연락바랍니다',
     223
+);
+
+insert into notice(
+    member_type,
+    title,
+    contents,
+    view_count
 )
 values(
     '사',
     '더치트 사이트 안내',
     '사기범죄를 막을려고 사이트 링크를 걸어뒀습니다',
     4342
+);
+
+insert into notice(
+    member_type,
+    title,
+    contents,
+    view_count
 )
 values(
     '일',
     '알려드립니다',
     '당사에서는 회원들간의 분쟁, 논란에 대해서는 책임지지 않습니다',
     2213
+);
+
+insert into notice(
+    member_type,
+    title,
+    contents,
+    view_count
 )
 values(
     '일',
