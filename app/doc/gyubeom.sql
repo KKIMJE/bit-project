@@ -1,27 +1,29 @@
 -- 주점
 
-insert into store( 
-business_registration_no, 
-business_registration, 
-name, 
-address, 
+insert into store(
+business_registration_no,
+business_registration,
+name,
+address,
 tel,
+hour,
 introduction,
-evaluation_score, 
-reservation_accept, 
-max_member, 
-lat, 
+evaluation_score,
+reservation_accept,
+max_member,
+lat,
 lng,
 place_id,
 oper,
 status
-) 
+)
 values(
 1,
 'dfgdsdddssas',
 'Ella',
 '652, Gangnam-daero, Gangnam-gu, Seoul, Republic of Korea',
 '02-260-0817',
+'23:00:00',
 '우아하고 섬세한 주점입니다.',
 4.5,
 true,
@@ -33,27 +35,29 @@ true,
 true
 );
 
-insert into store( 
-business_registration_no, 
-business_registration, 
-name, 
-address, 
+insert into store(
+business_registration_no,
+business_registration,
+name,
+address,
 tel,
-evaluation_score, 
-reservation_accept, 
-max_member, 
-lat, 
+hour,
+evaluation_score,
+reservation_accept,
+max_member,
+lat,
 lng,
 place_id,
 oper,
 status
-) 
+)
 values(
 2,
 'asqweeeed',
 'what-neng-ga',
 '752, Suwon-daero, yungtong-gu, Suwon, Republic of Korea',
 '031-260-0817',
+'23:00:00',
 4.0,
 true,
 50,
@@ -64,27 +68,29 @@ true,
 true
 );
 
-insert into store( 
-business_registration_no, 
-business_registration, 
-name, 
-address, 
+insert into store(
+business_registration_no,
+business_registration,
+name,
+address,
 tel,
+hour,
 introduction,
-reservation_accept, 
-max_member, 
-lat, 
+reservation_accept,
+max_member,
+lat,
 lng,
 place_id,
 oper,
 status
-) 
+)
 values(
 3,
 'qwerqwerqwer',
 'Mozilla',
 '852, Gang-gang-daero, Gangnam-gu, Seoul, Republic of Korea',
 '02-261-0817',
+'23:00:00',
 '삐까뻔쩍 화려한 주점입니다.',
 true,
 20,
@@ -95,27 +101,29 @@ true,
 true
 );
 
-insert into store( 
-business_registration_no, 
-business_registration, 
-name, 
-address, 
+insert into store(
+business_registration_no,
+business_registration,
+name,
+address,
 tel,
+hour,
 introduction,
-evaluation_score, 
-reservation_accept, 
-lat, 
+evaluation_score,
+reservation_accept,
+lat,
 lng,
 place_id,
 oper,
 status
-) 
+)
 values(
 4,
 'mnmnmnnnnmnm',
 'GangOfFour',
 '952, Sapung-daero, Seocho-gu, Seoul, Republic of Korea',
 '02-260-0817',
+'23:00:00',
 '어둡고 위험한 주점입니다.',
 2.5,
 false,
@@ -126,28 +134,30 @@ true,
 true
 );
 
-insert into store( 
-business_registration_no, 
-business_registration, 
-name, 
-address, 
+insert into store(
+business_registration_no,
+business_registration,
+name,
+address,
 tel,
+hour,
 introduction,
-evaluation_score, 
-reservation_accept, 
-max_member, 
-lat, 
+evaluation_score,
+reservation_accept,
+max_member,
+lat,
 lng,
 place_id,
 oper,
 status
-) 
+)
 values(
 5,
 'ilillliililililili',
 'ho',
 '1502, Gangnam-daero, Gangnam-gu, Seoul, Republic of Korea',
 '02-260-0817',
+'23:00:00',
 '호호하하 주점입니다.',
 5.0,
 true,
@@ -161,12 +171,12 @@ true
 
 -- 메뉴
 
-insert into store_menu( 
-store_no, 
-name, 
-price, 
+insert into store_menu(
+store_no,
+name,
+price,
 main_accept
-) 
+)
 values(
 1,
 '국밥',
@@ -174,12 +184,12 @@ values(
 true
 );
 
-insert into store_menu( 
-store_no, 
-name, 
-price, 
+insert into store_menu(
+store_no,
+name,
+price,
 main_accept
-) 
+)
 values(
 2,
 '감자탕',
@@ -187,12 +197,12 @@ values(
 true
 );
 
-insert into store_menu( 
-store_no, 
-name, 
-price, 
+insert into store_menu(
+store_no,
+name,
+price,
 main_accept
-) 
+)
 values(
 3,
 '화덕피자',
@@ -200,12 +210,12 @@ values(
 false
 );
 
-insert into store_menu( 
-store_no, 
-name, 
-price, 
+insert into store_menu(
+store_no,
+name,
+price,
 main_accept
-) 
+)
 values(
 4,
 '大방어회',
@@ -213,12 +223,12 @@ values(
 true
 );
 
-insert into store_menu( 
-store_no, 
-name, 
-price, 
+insert into store_menu(
+store_no,
+name,
+price,
 main_accept
-) 
+)
 values(
 5,
 '허니콤보',
@@ -228,13 +238,13 @@ true
 
 -- 게시판
 
-insert into board( 
-mno, 
-community_no, 
-title, 
+insert into board(
+mno,
+community_no,
+title,
 contents,
 view_count
-) 
+)
 values(
 1,
 1,
@@ -242,13 +252,13 @@ values(
 451
 );
 
-insert into board( 
-mno, 
-community_no, 
-title, 
+insert into board(
+mno,
+community_no,
+title,
 contents,
 view_count
-) 
+)
 values(
 2,
 2,
@@ -256,13 +266,13 @@ values(
 999
 );
 
-insert into board( 
-mno, 
-community_no, 
-title, 
+insert into board(
+mno,
+community_no,
+title,
 contents,
 view_count
-) 
+)
 values(
 3,
 3,
@@ -270,13 +280,13 @@ values(
 111
 );
 
-insert into board( 
-mno, 
-community_no, 
-title, 
+insert into board(
+mno,
+community_no,
+title,
 contents,
 view_count
-) 
+)
 values(
 4,
 4,
@@ -284,13 +294,13 @@ values(
 777
 );
 
-insert into board( 
-mno, 
-community_no, 
-title, 
+insert into board(
+mno,
+community_no,
+title,
 contents,
 view_count
-) 
+)
 values(
 5,
 5,
@@ -304,46 +314,46 @@ values(
 
 -- 주점찜
 
-insert into store_select( 
+insert into store_select(
 store_no,
 mno
-) 
+)
 values(
 1,
 1
 );
 
-insert into store_select( 
+insert into store_select(
 store_no,
 mno
-) 
+)
 values(
 2,
 2
 );
 
-insert into store_select( 
+insert into store_select(
 store_no,
 mno
-) 
+)
 values(
 3,
 3
 );
 
-insert into store_select( 
+insert into store_select(
 store_no,
 mno
-) 
+)
 values(
 4,
 4
 );
 
-insert into store_select( 
+insert into store_select(
 store_no,
 mno
-) 
+)
 values(
 5,
 5
@@ -351,46 +361,46 @@ values(
 
 -- 리뷰사진
 
-insert into review_img( 
+insert into review_img(
 reservation_no,
 img
-) 
+)
 values(
 1,
 'o0o0o0o0o0o'
 );
 
-insert into review_img( 
+insert into review_img(
 reservation_no,
 img
-) 
+)
 values(
 2,
 'hihihihi'
 );
 
-insert into review_img( 
+insert into review_img(
 reservation_no,
 img
-) 
+)
 values(
 3,
 'nmnmnmnmmmnmnmn'
 );
 
-insert into review_img( 
+insert into review_img(
 reservation_no,
 img
-) 
+)
 values(
 4,
 'nonononono'
 );
 
-insert into review_img( 
+insert into review_img(
 reservation_no,
 img
-) 
+)
 values(
 2,
 'cococococoocococo'

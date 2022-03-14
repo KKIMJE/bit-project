@@ -12,7 +12,7 @@ values(5,4,'48bottles', '막걸리', 'high');
 
 --술
 insert into alcohol_detail(alcohol_type_no,name,degree,brand,origin,volume,characteristic,img)
-values(2,'참이슬',16.9,'HiteJinro','Korea',360,'한국 대표 술','sjdfhaslkfhd,dsajfklh');
+values(1,'참이슬',16.9,'HiteJinro','Korea',360,'한국 대표 술','sjdfhaslkfhd,dsajfklh');
 insert into alcohol_detail(alcohol_type_no,name,degree,brand,origin,volume,characteristic,img)
 values(2,'테라',4.6,'HiteJinro','Korea',500,'테라브랜드','safdfaf/sfdasa/sfada');
 insert into alcohol_detail(alcohol_type_no,name,degree,brand,origin,volume,characteristic,img)
@@ -35,14 +35,16 @@ insert into report(repo_no,mno,target_no,type,contents,status)
 values(5,1,'회','ㅈㅂㅈㅂㅈㅂㅈㅂ',true);
 
 --태그
-insert into tag(tag_no,name)
-values(2,'#단골손님많아요');
-insert into tag(tag_no,name)
-values(3,'#소주맥주막걸리 모두 다가능');
-insert into tag(tag_no,name)
-values(4,'#지하철역이랑 5분거리');
-insert into tag(tag_no,name)
-values(5,'#술과 안주 모두 맛있음 보장');
+insert into tag(name)
+values('#dd단골손님많아요');
+insert into tag(name)
+values('#소주맥주막걸리 모두 다가능');
+insert into tag(name)
+values('#지하철역이랑 5분거리');
+insert into tag(name)
+values('#술과 안주 모두 맛있음 보장');
+insert into tag(name)
+values('#분위기좋은');
 
 --모임찜은 관계테이블인거 같아서 뺌
 
