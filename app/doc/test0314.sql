@@ -1,0 +1,1 @@
+insert into member(mno, email, pwd, name, tel, social_accept, gender, birth, self_introduction, m_img, nickname, score, block_accept, member_status) values(1, 'gacomonkey123@gmail.com', 'rnrnrkrk', '한상은', '010-1111-1111', 1, 1,   );
