@@ -1,1 +1,98 @@
-insert into member(mno, email, pwd, name, tel, social_accept, gender, birth, self_introduction, m_img, nickname, score, block_accept, member_status) values(1, 'gacomonkey123@gmail.com', 'rnrnrkrk', '한상은', '010-1111-1111', 1, 1,   );
+insert into member(
+mno, 
+email, 
+pwd, 
+name, 
+tel, 
+social_accept, 
+gender, 
+birth, 
+self_introduction, 
+m_img, 
+nickname, 
+score, 
+block_accept, 
+member_status
+) 
+values(
+1, 
+'gacomonkey123@gmail.com', 
+'rnrnrkrk', 
+'한상은', 
+'010-1111-1111', 
+1, 
+1,
+19961202,
+'lalala',
+'dlalwldlalwldlalwl/diwhde/wdqd/dfadsfasdg',
+'개코',
+3.5,
+1,
+'t'
+);
+
+insert into member(
+  mno,
+  email,
+  pwd,
+  name,
+  tel,
+  social_accept,
+  gender,
+  birth,
+  self_introduction,
+  m_img,
+  nickname,
+  score,
+  block_accept,
+  member_status
+)
+values(
+  222,
+  'test@test2.com',
+  'asdasd',
+  '홍길동',
+   '010-2222-2322',
+   false,
+   true,
+   910521,
+   'hello hello',
+   'dlalwldlalwldlalwl/diwhde/wdqd/',
+   'hongk2il',
+   3.55,
+   false,
+   'a'
+   );
+
+   insert into member(
+     mno,
+     email,
+     pwd,
+     name,
+     tel,
+     social_accept,
+     gender,
+     birth,
+     self_introduction,
+     m_img,
+     nickname,
+     score,
+     block_accept,
+     member_status
+   )
+   values(
+     99,
+     'gugu2@gugugugu.com',
+     'asdasd',
+     '구구단',
+      '010-2489-1822',
+      false,
+      true,
+      910521,
+      'hello hello',
+      'dlalwldlalwldlalwl/diwhde/wdqd/',
+      '구구다다단',
+      3.55,
+      false,
+      'a'
+      );
