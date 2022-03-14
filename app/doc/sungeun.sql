@@ -46,7 +46,7 @@ values('#술과 안주 모두 맛있음 보장');
 insert into tag(name)
 values('#분위기좋은');
 
---모임찜
+--모임찜 
 insert into party_board_select(mno,party_board_no)
 values(1,1);
 insert into party_board_select(mno,party_board_no)
@@ -59,7 +59,7 @@ insert into party_board_select(mno,party_board_no)
 values(2,2);
    
 
---메뉴 사진 (fk라서 안먹힘 )
+--메뉴 사진 
 insert into menu_img(store_menu_no,img)
 values(1,'sdfsas');
 insert into menu_img(store_menu_no,img)
