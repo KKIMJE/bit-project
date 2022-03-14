@@ -1,118 +1,118 @@
 /* 문의 */
 insert into inquiry(
 mno,
-type, 
-title, 
-contents, 
-attach_file, 
+type,
+title,
+contents,
+attach_file,
 answer
 ) values(
 1,
 1,
 '문의글 올립니다.',
-'궁금합니다.', 
-'askheufhiasehihaskuehfkuashefukshkushefk12412', 
+'궁금합니다.',
+'askheufhiasehihaskuehfkuashefukshkushefk12412',
 '대답입니다.'
 );
 
 insert into inquiry(
 mno,
-type, 
-title, 
-contents, 
-attach_file, 
+type,
+title,
+contents,
+attach_file,
 answer
 ) values(
-2,
+6,
 1,
 '문의글을 다시 올립니다.',
-'궁금합니다!!!.', 
-'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412', 
+'궁금합니다!!!.',
+'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412',
 '대답입니다. 대답입니다.'
 );
 
 insert into inquiry(
 mno,
-type, 
-title, 
-contents, 
-attach_file, 
+type,
+title,
+contents,
+attach_file,
 answer
 ) values(
 3,
 2,
 '문의글 문의글 문의글',
-'궁금합니다!!!????????', 
-'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412', 
+'궁금합니다!!!????????',
+'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412',
 '대답입니다. 대답입니다. 대답입니다.'
 );
 
 insert into inquiry(
 mno,
-type, 
-title, 
-contents, 
-attach_file, 
+type,
+title,
+contents,
+attach_file,
 answer
 ) values(
 4,
 2,
 '문의글 문의글 문의글',
-'궁금합니다!!!????????', 
-'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412', 
+'궁금합니다!!!????????',
+'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412',
 '대답입니다. 대답입니다. 대답입니다.'
 );
 
 insert into inquiry(
 mno,
-type, 
-title, 
-contents, 
-attach_file, 
+type,
+title,
+contents,
+attach_file,
 answer
 ) values(
 5,
 2,
 '문의글 문의글 문의글',
-'궁금합니다!!!????????', 
-'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412', 
+'궁금합니다!!!????????',
+'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412',
 '대답입니다. 대답입니다. 대답입니다.'
 );
 
 insert into inquiry(
 mno,
-type, 
-title, 
-contents, 
-attach_file, 
+type,
+title,
+contents,
+attach_file,
 answer
 ) values(
 1,
 2,
 '이용방법 설명 부탁드립니다.',
-'이용방법이 궁금해요 알려주세요.', 
-'askheufhiasehihasasefaseserfseff11kuehfkuashefukshkushefk12412', 
+'이용방법이 궁금해요 알려주세요.',
+'askheufhiasehihasasefaseserfseff11kuehfkuashefukshkushefk12412',
 '이용방법이 어렵지 않습니다. 한번 이용해보세요'
 );
 
 insert into inquiry(
 mno,
-type, 
-title, 
-contents, 
+type,
+title,
+contents,
 attach_file
 ) values(
 1,
 2,
 '문의글 문의글 문의글 문의글',
-'궁금합니다!!!????????@@@@', 
+'궁금합니다!!!????????@@@@',
 'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412'
 );
 
 /* 커뮤니티 */
 insert into community(
 community_no,
-title 
+title
 ) values(
 1,
 '우리지금만나'
@@ -120,7 +120,7 @@ title
 
 insert into community(
 community_no,
-title 
+title
 ) values(
 2,
 '술집추천'
@@ -128,7 +128,7 @@ title
 
 insert into community(
 community_no,
-title 
+title
 ) values(
 3,
 '분실실종센터'
@@ -136,7 +136,7 @@ title
 
 insert into community(
 community_no,
-title 
+title
 ) values(
 4,
 '일상'
@@ -144,7 +144,7 @@ title
 
 insert into community(
 community_no,
-title 
+title
 ) values(
 5,
 '사건사고'
@@ -152,7 +152,7 @@ title
 
 insert into community(
 community_no,
-title 
+title
 ) values(
 6,
 '술게임'
@@ -160,7 +160,7 @@ title
 
 insert into community(
 community_no,
-title 
+title
 ) values(
 7,
 '기타'
@@ -182,5 +182,3 @@ alcohol_limit
 1,
 '기타'
 );
-
-

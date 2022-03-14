@@ -213,7 +213,7 @@ insert into alcohol_sales(
 )
 values(
   4,
-  6,
+  4,
   8000
 );
 

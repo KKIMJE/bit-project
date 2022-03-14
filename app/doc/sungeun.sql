@@ -2,9 +2,9 @@
 insert into alcohol_management(drink_no,mno,amount,type,level)
 values(1,1,'5bottles','와인','low');
 insert into alcohol_management(drink_no,mno,amount,type,level)
-values(2,1,'30bottles','소주','high');
+values(6,1,'30bottles','소주','high');
 insert into alcohol_management(drink_no,mno,amount,type,level)
-values(3,2,'24bottles', '맥주','moderate');
+values(3,6,'24bottles', '맥주','moderate');
 insert into alcohol_management(drink_no,mno,amount,type,level)
 values(4,3,'7bottles', '사케', 'high');
 insert into alcohol_management(drink_no,mno,amount,type,level)
@@ -24,15 +24,15 @@ values(7,'처음처럼',16.5,'lotte','Korea',360,'ㅇㅇㅇㅇㅇㅇ','sjdfhaslk
 
 --신고하기
 insert into report(mno,target_no,type,contents,status)
-values(1,1,'회','신고해요 여기',true);
-insert into report(repo_no,mno,target_no,type,contents,status)
-values(2,3,'게','신고합니당',true);
-insert into report(repo_no,mno,target_no,type,contents,status)
-values(3,2,'주','여기좀읽어주세요',false);
-insert into report(repo_no,mno,target_no,type,contents,status)
-values(4,1,'회','확인부탁드립니다',false);
-insert into report(repo_no,mno,target_no,type,contents,status)
-values(5,1,'회','ㅈㅂㅈㅂㅈㅂㅈㅂ',true);
+values(1,'우','회','신고해요 여기',true);
+insert into report(mno,target_no,type,contents,status)
+values(6,'우','게','신고합니당',true);
+insert into report(mno,target_no,type,contents,status)
+values(3,'우','주','여기좀읽어주세요',false);
+insert into report(mno,target_no,type,contents,status)
+values(4,'우','회','확인부탁드립니다',false);
+insert into report(mno,target_no,type,contents,status)
+values(5,'우','회','후후후후후',true);
 
 --태그
 insert into tag(name)
@@ -46,7 +46,7 @@ values('#술과 안주 모두 맛있음 보장');
 insert into tag(name)
 values('#분위기좋은');
 
---모임찜 
+--모임찜
 insert into party_board_select(mno,party_board_no)
 values(1,1);
 insert into party_board_select(mno,party_board_no)
@@ -57,9 +57,9 @@ insert into party_board_select(mno,party_board_no)
 values(2,1);
 insert into party_board_select(mno,party_board_no)
 values(2,2);
-   
 
---메뉴 사진 
+
+--메뉴 사진
 insert into menu_img(store_menu_no,img)
 values(1,'sdfsas');
 insert into menu_img(store_menu_no,img)
