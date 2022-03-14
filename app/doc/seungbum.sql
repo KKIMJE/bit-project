@@ -109,3 +109,63 @@ attach_file
 'askheufhiasehihasasefasef11kuehfkuashefukshkushefk12412'
 );
 
+/* 커뮤니티 */
+insert into community(
+community_no,
+title 
+) values(
+1,
+'우리지금만나'
+);
+
+insert into community(
+community_no,
+title 
+) values(
+2,
+'술집추천'
+);
+
+insert into community(
+community_no,
+title 
+) values(
+3,
+'분실실종센터'
+);
+
+insert into community(
+community_no,
+title 
+) values(
+4,
+'일상'
+);
+
+insert into community(
+community_no,
+title 
+) values(
+5,
+'사건사고'
+);
+
+insert into community(
+community_no,
+title 
+) values(
+6,
+'술게임'
+);
+
+insert into community(
+community_no,
+title 
+) values(
+7,
+'기타'
+);
+
+/* 모임 */
+
+
