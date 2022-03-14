@@ -270,3 +270,40 @@ view_count
 11,
 3
 );
+
+insert into party(
+party_no,
+mno,
+store_no,
+title,
+contents,
+party_fee,
+meeting_date,
+max_member,
+alcohol_type,
+alcohol_limit,
+view_count
+) values(
+5,
+1,
+5,
+'안주는 껍데기',
+'껍데기랑 소주먹을분',
+30000,
+'2022-03-23',
+6,
+'소주',
+11,
+3
+);
+
+/* 댓글 좋아요 */
+insert into comment_like(
+mno,
+board_commnet_no 
+) values(
+6,
+'술게임'
+);
+
+
