@@ -355,7 +355,7 @@ insert into party_board (
 )
 values (
   1,
-  2,
+  6,
   '안녕하세요~ 잘부탁드려요~',
   true
 );
@@ -383,7 +383,7 @@ insert into party_board (
 )
 values (
   1,
-  2,
+  6,
   '다들 술 잘마시나요~?',
   true
 );
@@ -434,7 +434,7 @@ insert into party_comment (
   party_comment_contents
 )
 values (
-  2,
+  3,
   1,
   '저도 들어가고 싶어요~'
 );
@@ -446,7 +446,7 @@ insert into party_comment (
 )
 values (
   3,
-  2,
+  6,
   '저 술 잘마십니다~'
 );
 
@@ -457,7 +457,7 @@ insert into party_comment (
 )
 values (
   4,
-  2,
+  6,
   '여기 방장 매너 좋아요~'
 );
 
@@ -468,6 +468,6 @@ insert into party_comment (
 )
 values (
   5,
-  2,
+  6,
   '난 별로던데 ..???'
 );
