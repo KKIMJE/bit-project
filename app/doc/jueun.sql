@@ -448,7 +448,7 @@ insert into party_comment (
 values (
   3,
   3,
-  6,
+  5,
   '저 술 잘마십니다~'
 );
 
@@ -461,7 +461,7 @@ insert into party_comment (
 values (
   4,
   4,
-  6,
+  5,
   '여기 방장 매너 좋아요~'
 );
 
@@ -474,6 +474,6 @@ insert into party_comment (
 values (
   5,
   5,
-  6,
+  5,
   '난 별로던데 ..???'
 );
