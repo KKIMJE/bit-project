@@ -298,34 +298,34 @@ board_commnet_no
 
 insert into comment_like(
 mno,
-board_comment_no
+board_commnet_no
 ) values(
-2,
-2
+6,
+6
 );
 
 insert into comment_like(
 mno,
-board_comment_no
+board_commnet_no
 ) values(
 3,
-3
+7
 );
 
 insert into comment_like(
 mno,
-board_comment_no
+board_commnet_no
 ) values(
 4,
-4
+8
 );
 
 insert into comment_like(
 mno,
-board_comment_no
+board_commnet_no
 ) values(
 5,
-5
+9
 );
 
 /* 모임 주점 평가
@@ -427,7 +427,7 @@ mno
 );
 
 
-/* 참석자 임시 
+/* 참석자 임시
 >>>>>>> 2bfa8bc0143a86e205dccd0e14bb02abef1700ed
 insert into party_participant(
 party_no,

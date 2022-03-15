@@ -414,55 +414,65 @@ values (
 
 -- 모임댓글
 insert into party_comment (
+  party_comment_no,
   mno,
   party_no,
   party_comment_contents
 )
 values (
+  1,
   1,
   1,
   '저도한잔 하고싶습니다'
 );
 
 insert into party_comment (
+  party_comment_no,
   mno,
   party_no,
   party_comment_contents
 )
 values (
+  2,
   3,
   1,
   '저도 들어가고 싶어요~'
 );
 
 insert into party_comment (
+  party_comment_no,
   mno,
   party_no,
   party_comment_contents
 )
 values (
   3,
+  3,
   6,
   '저 술 잘마십니다~'
 );
 
 insert into party_comment (
+  party_comment_no,
   mno,
   party_no,
   party_comment_contents
 )
 values (
   4,
+  4,
   6,
   '여기 방장 매너 좋아요~'
 );
 
 insert into party_comment (
+  party_comment_no,
   mno,
   party_no,
   party_comment_contents
 )
 values (
+  5,
   5,
   6,
   '난 별로던데 ..???'
