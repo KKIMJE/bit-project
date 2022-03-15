@@ -2,9 +2,9 @@
 insert into alcohol_management(drink_no,mno,amount,type,level)
 values(1,1,'5bottles','와인','low');
 insert into alcohol_management(drink_no,mno,amount,type,level)
-values(6,1,'30bottles','소주','high');
+values(2,1,'30bottles','소주','high');
 insert into alcohol_management(drink_no,mno,amount,type,level)
-values(3,6,'24bottles', '맥주','moderate');
+values(3,5,'24bottles', '맥주','moderate');
 insert into alcohol_management(drink_no,mno,amount,type,level)
 values(4,3,'7bottles', '사케', 'high');
 insert into alcohol_management(drink_no,mno,amount,type,level)
@@ -26,7 +26,7 @@ values(7,'처음처럼',16.5,'lotte','Korea',360,'ㅇㅇㅇㅇㅇㅇ','sjdfhaslk
 insert into report(mno,target_no,type,contents,status)
 values(1,'우','회','신고해요 여기',true);
 insert into report(mno,target_no,type,contents,status)
-values(6,'우','게','신고합니당',true);
+values(2,'우','게','신고합니당',true);
 insert into report(mno,target_no,type,contents,status)
 values(3,'우','주','여기좀읽어주세요',false);
 insert into report(mno,target_no,type,contents,status)
@@ -63,7 +63,7 @@ values(4,2);
 insert into menu_img(store_menu_no,img)
 values(1,'sdfsas');
 insert into menu_img(store_menu_no,img)
-values,2,'ddddd');
+values(2,'ddddd');
 insert into menu_img(store_menu_no,img)
 values(3,'jl/jk');
 insert into menu_img(store_menu_no,img)

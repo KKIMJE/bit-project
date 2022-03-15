@@ -292,7 +292,7 @@ insert into board_comment (
   comment_contents
 )
 values (
-  6,
+  2,
   1,
   '저도 가봤는데 정말괜찮습니다~'
 );
@@ -353,7 +353,7 @@ insert into party_board (
 )
 values (
   1,
-  6,
+  2,
   '안녕하세요~ 잘부탁드려요~',
   true
 );
@@ -379,7 +379,7 @@ insert into party_board (
 )
 values (
   1,
-  6,
+  5,
   '다들 술 잘마시나요~?',
   true
 );

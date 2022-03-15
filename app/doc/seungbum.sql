@@ -23,7 +23,7 @@ contents,
 attach_file,
 answer
 ) values(
-6,
+2,
 1,
 '문의글을 다시 올립니다.',
 '궁금합니다!!!.',
@@ -275,7 +275,7 @@ alcohol_type,
 alcohol_limit,
 view_count
 ) values(
-6,
+2,
 5,
 '안주는 껍데기',
 '껍데기랑 소주먹을분',
@@ -290,7 +290,7 @@ view_count
 /* 댓글 좋아요 */
 insert into comment_like(
 mno,
-board_commnet_no
+board_comment_no
 ) values(
 1,
 1
@@ -298,34 +298,34 @@ board_commnet_no
 
 insert into comment_like(
 mno,
-board_commnet_no
-) values(
-6,
-6
-);
-
-insert into comment_like(
-mno,
-board_commnet_no
-) values(
-3,
-7
-);
-
-insert into comment_like(
-mno,
-board_commnet_no
-) values(
-4,
-8
-);
-
-insert into comment_like(
-mno,
-board_commnet_no
+board_comment_no
 ) values(
 5,
-9
+5
+);
+
+insert into comment_like(
+mno,
+board_comment_no
+) values(
+3,
+4
+);
+
+insert into comment_like(
+mno,
+board_comment_no
+) values(
+4,
+1
+);
+
+insert into comment_like(
+mno,
+board_comment_no
+) values(
+5,
+2
 );
 
 /* 모임 주점 평가
