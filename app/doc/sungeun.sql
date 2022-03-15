@@ -54,9 +54,9 @@ values(1,2);
 insert into party_board_select(mno,party_board_no)
 values(1,3);
 insert into party_board_select(mno,party_board_no)
-values(2,1);
+values(3,1);
 insert into party_board_select(mno,party_board_no)
-values(2,2);
+values(4,2);
 
 
 --메뉴 사진

@@ -382,7 +382,53 @@ score
 5
 );
 
+<<<<<<< HEAD
 /* 참석자 임시
+=======
+/* 모임 댓글 좋아요 */
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+1,
+1
+);
+
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+2,
+2
+);
+
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+3,
+3
+);
+
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+4,
+4
+);
+
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+5,
+5
+);
+
+
+/* 참석자 임시 
+>>>>>>> 2bfa8bc0143a86e205dccd0e14bb02abef1700ed
 insert into party_participant(
 party_no,
 mno,
