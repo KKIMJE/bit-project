@@ -168,7 +168,6 @@ title
 
 /* 모임 */
 insert into party(
-party_no,
 mno,
 store_no,
 title,
@@ -180,7 +179,6 @@ alcohol_type,
 alcohol_limit,
 view_count
 ) values(
-1,
 1,
 1,
 '외롭다...ㅠㅠ같이 술 드실분?',
@@ -194,7 +192,6 @@ view_count
 );
 
 insert into party(
-party_no,
 mno,
 store_no,
 title,
@@ -206,8 +203,7 @@ alcohol_type,
 alcohol_limit,
 view_count
 ) values(
-2,
-1,
+3,
 2,
 '친목모임하실분',
 '친목모임하실분',
@@ -216,11 +212,10 @@ view_count
 6,
 '맥주',
 11,
-3
+4
 );
 
 insert into party(
-party_no,
 mno,
 store_no,
 title,
@@ -232,8 +227,7 @@ alcohol_type,
 alcohol_limit,
 view_count
 ) values(
-3,
-1,
+4,
 3,
 '친목',
 '와인마실분',
@@ -242,11 +236,10 @@ view_count
 6,
 '와인',
 11,
-3
+68
 );
 
 insert into party(
-party_no,
 mno,
 store_no,
 title,
@@ -258,8 +251,7 @@ alcohol_type,
 alcohol_limit,
 view_count
 ) values(
-4,
-1,
+5,
 4,
 '산할아버지',
 '구름모자썼네',
@@ -268,11 +260,10 @@ view_count
 6,
 '막걸리',
 11,
-3
+45
 );
 
 insert into party(
-party_no,
 mno,
 store_no,
 title,
@@ -284,8 +275,7 @@ alcohol_type,
 alcohol_limit,
 view_count
 ) values(
-5,
-1,
+6,
 5,
 '안주는 껍데기',
 '껍데기랑 소주먹을분',
@@ -294,13 +284,13 @@ view_count
 6,
 '소주',
 11,
-3
+34
 );
 
 /* 댓글 좋아요 */
 insert into comment_like(
 mno,
-board_commnet_no 
+board_commnet_no
 ) values(
 1,
 1
@@ -308,7 +298,7 @@ board_commnet_no
 
 insert into comment_like(
 mno,
-board_comment_no 
+board_comment_no
 ) values(
 2,
 2
@@ -316,7 +306,7 @@ board_comment_no
 
 insert into comment_like(
 mno,
-board_comment_no 
+board_comment_no
 ) values(
 3,
 3
@@ -324,7 +314,7 @@ board_comment_no
 
 insert into comment_like(
 mno,
-board_comment_no 
+board_comment_no
 ) values(
 4,
 4
@@ -338,8 +328,8 @@ board_comment_no
 5
 );
 
-/* 모임 주점 평가 
- * 참석자와 모임이 있어야 평가를 할 수 있다 
+/* 모임 주점 평가
+ * 참석자와 모임이 있어야 평가를 할 수 있다
  * 참석자는 회원정보가 있어야한다.
  * */
 insert into party_store_evaluation(
@@ -392,7 +382,7 @@ score
 5
 );
 
-/* 참석자 임시 
+/* 참석자 임시
 insert into party_participant(
 party_no,
 mno,

@@ -335,7 +335,6 @@ values (
 insert into party_board (
   party_no,
   mno,
-  board_reg_date,
   message,
   message_status
 )
@@ -349,7 +348,6 @@ values (
 insert into party_board (
   party_no,
   mno,
-  board_reg_date,
   message,
   message_status
 )
@@ -363,7 +361,6 @@ values (
 insert into party_board (
   party_no,
   mno,
-  board_reg_date,
   message,
   message_status
 )
@@ -377,7 +374,6 @@ values (
 insert into party_board (
   party_no,
   mno,
-  board_reg_date,
   message,
   message_status
 )
@@ -391,7 +387,6 @@ values (
 insert into party_board (
   party_no,
   mno,
-  board_reg_date,
   message,
   message_status
 )
@@ -405,7 +400,6 @@ values (
 insert into party_board (
   party_no,
   mno,
-  board_reg_date,
   message,
   message_status
 )
@@ -415,6 +409,8 @@ values (
   '저는 잘 못마셔요..ㅎㅎ',
   true
 );
+
+
 
 -- 모임댓글
 insert into party_comment (
