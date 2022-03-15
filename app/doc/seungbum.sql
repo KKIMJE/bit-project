@@ -392,6 +392,48 @@ score
 5
 );
 
+/* 모임 댓글 좋아요 */
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+1,
+1
+);
+
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+2,
+2
+);
+
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+3,
+3
+);
+
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+4,
+4
+);
+
+insert into party_comment_like(
+party_comment_no,
+mno
+) values(
+5,
+5
+);
+
+
 /* 참석자 임시 
 insert into party_participant(
 party_no,
