@@ -158,7 +158,119 @@ mno,
 participant_status
 )
 values(
+1,
 2,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+1,
+3,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+1,
+4,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+1,
+5,
+'참'
+);
+
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+2,
+1,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+2,
+2,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+2,
+3,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+2,
+4,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+2,
+5,
+'참'
+);
+
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+3,
+1,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+3,
 2,
 '참'
 );
@@ -180,10 +292,122 @@ mno,
 participant_status
 )
 values(
+3,
+4,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+3,
+5,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+4,
+1,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+4,
+2,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+4,
+3,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
 4,
 4,
 '참'
 );
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+4,
+5,
+'참'
+);
+
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+5,
+1,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+5,
+2,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+5,
+3,
+'참'
+);
+
+insert into party_participant (
+party_no,
+mno,
+participant_status
+)
+values(
+5,
+4,
+'참'
+);
+
 
 insert into party_participant (
 party_no,
@@ -199,7 +423,7 @@ values(
 
 
 
--- 모임회원평가 
+-- 모임회원평가
 
 
 insert into party_member_evaluation (
@@ -211,7 +435,7 @@ score
 values (
 1,
 1,
-2,
+3,
 1.5
 );
 
@@ -223,7 +447,7 @@ score
 )
 values (
 2,
-2,
+3,
 1,
 2.5
 );
@@ -236,7 +460,7 @@ score
 )
 values (
 3,
-3,
+4,
 1,
 3.0
 );
@@ -280,7 +504,7 @@ values(
   1,
   1
    );
-   
+
 insert into store_section_type(
   store_type_no,
   store_no
@@ -289,7 +513,7 @@ values(
   2,
   2
    );
-   
+
 insert into store_section_type(
   store_type_no,
   store_no
@@ -298,7 +522,7 @@ values(
   3,
   3
    );
-   
+
 insert into store_section_type(
   store_type_no,
   store_no
@@ -307,7 +531,7 @@ values(
   4,
   4
    );
-   
+
 insert into store_section_type(
   store_type_no,
   store_no
