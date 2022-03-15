@@ -1,4 +1,4 @@
-/* 문의 */
+/*  문의  */
 insert into inquiry(
 mno,
 type, 
