@@ -8,7 +8,6 @@ insert into reservation (
   pay_no,
   pay_company,
   pay_price,
-  pay_date,
   status
 )
 values(
@@ -17,7 +16,7 @@ values(
   '김주은',
   '010-1111-2222',
   '4명이서 갑니다~ 넓은 자리로 부탁드려요',
-  '1293018203491',
+  '1293018201',
   '국민카드',
   20000,
   '완'
@@ -32,7 +31,6 @@ insert into reservation (
   pay_no,
   pay_company,
   pay_price,
-  pay_date,
   status
 )
 values(
@@ -41,7 +39,7 @@ values(
   '고길동',
   '010-3333-4444',
   '누룽지탕 미리 주문할게요~',
-  '3965729384721',
+  '39657241',
   '신한카드',
   30000,
   '완'
@@ -56,7 +54,6 @@ insert into reservation (
   pay_no,
   pay_company,
   pay_price,
-  pay_date,
   status
 )
 values(
@@ -65,7 +62,7 @@ values(
   '홍길동',
   '010-1084-1028',
   '조용한 자리로 예약 부탁합니다.',
-  '0693729383740219',
+  '0693729219',
   '신한카드',
   20000,
   '완'
@@ -80,7 +77,6 @@ insert into reservation (
   pay_no,
   pay_company,
   pay_price,
-  pay_date,
   status
 )
 values(
@@ -89,7 +85,7 @@ values(
   '둘리',
   '010-8907-3542',
   '내용없음',
-  '239804892347',
+  '239804347',
   '국민카드',
   15000,
   '완'
@@ -104,7 +100,6 @@ insert into reservation (
   pay_no,
   pay_company,
   pay_price,
-  pay_date,
   status
 )
 values(
@@ -113,7 +108,7 @@ values(
   '지코',
   '010-3948-2243',
   '안녕하세요 지코입니다~ kozkoz~',
-  '1293018203491',
+  '129303491',
   '신한카드',
   5000,
   '완'
@@ -218,7 +213,7 @@ insert into alcohol_sales(
 )
 values(
   4,
-  6,
+  4,
   8000
 );
 
@@ -297,7 +292,7 @@ insert into board_comment (
   comment_contents
 )
 values (
-  2,
+  6,
   1,
   '저도 가봤는데 정말괜찮습니다~'
 );
@@ -360,7 +355,7 @@ insert into party_board (
 )
 values (
   1,
-  2,
+  6,
   '안녕하세요~ 잘부탁드려요~',
   true
 );
@@ -388,7 +383,7 @@ insert into party_board (
 )
 values (
   1,
-  2,
+  6,
   '다들 술 잘마시나요~?',
   true
 );
@@ -439,7 +434,7 @@ insert into party_comment (
   party_comment_contents
 )
 values (
-  2,
+  3,
   1,
   '저도 들어가고 싶어요~'
 );
@@ -451,7 +446,7 @@ insert into party_comment (
 )
 values (
   3,
-  2,
+  6,
   '저 술 잘마십니다~'
 );
 
@@ -462,7 +457,7 @@ insert into party_comment (
 )
 values (
   4,
-  2,
+  6,
   '여기 방장 매너 좋아요~'
 );
 
@@ -473,6 +468,6 @@ insert into party_comment (
 )
 values (
   5,
-  2,
+  6,
   '난 별로던데 ..???'
 );
