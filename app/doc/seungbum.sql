@@ -338,3 +338,35 @@ board_comment_no
 5
 );
 
+/* 모임 주점 평가 */
+insert into party_store_evaluation(
+party_no,
+mno,
+score
+) values(
+1,
+1,
+1.5
+);
+
+insert into party_store_evaluation(
+party_no,
+mno,
+score
+) values(
+1,
+2,
+2.5
+);
+
+/* 참석자 임시 
+insert into party_participant(
+party_no,
+mno,
+participant_status
+) values(
+1,
+1,
+'참'
+);
+*/
