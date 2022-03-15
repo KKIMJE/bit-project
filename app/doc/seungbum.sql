@@ -338,7 +338,10 @@ board_comment_no
 5
 );
 
-/* 모임 주점 평가 */
+/* 모임 주점 평가 
+ * 참석자와 모임이 있어야 평가를 할 수 있다 
+ * 참석자는 회원정보가 있어야한다.
+ * */
 insert into party_store_evaluation(
 party_no,
 mno,
@@ -359,6 +362,36 @@ score
 2.5
 );
 
+insert into party_store_evaluation(
+party_no,
+mno,
+score
+) values(
+1,
+3,
+2.5
+);
+
+insert into party_store_evaluation(
+party_no,
+mno,
+score
+) values(
+1,
+4,
+2.5
+);
+
+insert into party_store_evaluation(
+party_no,
+mno,
+score
+) values(
+1,
+5,
+5
+);
+
 /* 참석자 임시 
 insert into party_participant(
 party_no,
@@ -367,6 +400,16 @@ participant_status
 ) values(
 1,
 1,
+'참'
+);
+
+insert into party_participant(
+party_no,
+mno,
+participant_status
+) values(
+1,
+4,
 '참'
 );
 */
