@@ -477,3 +477,49 @@ values (
   5,
   '난 별로던데 ..???'
 );
+
+-- 모임댓글좋아요
+insert into party_comment_like (
+  party_comment_no,
+  mno
+)
+values (
+  1,
+  1
+);
+
+insert into party_comment_like (
+  party_comment_no,
+  mno
+)
+values (
+  2,
+  2
+);
+
+insert into party_comment_like (
+  party_comment_no,
+  mno
+)
+values (
+  3,
+  3
+);
+
+insert into party_comment_like (
+  party_comment_no,
+  mno
+)
+values (
+  4,
+  4
+);
+
+insert into party_comment_like (
+  party_comment_no,
+  mno
+)
+values (
+  5,
+  5
+);
