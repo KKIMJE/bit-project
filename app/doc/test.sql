@@ -108,23 +108,24 @@ DROP TABLE IF EXISTS party_comment_like RESTRICT;
 
 -- 회원
 CREATE TABLE member (
-  mno               INTEGER      NOT NULL, -- 회원번호
-  email             VARCHAR(40)  NOT NULL, -- 이메일
-  pwd               VARCHAR(13)  NOT NULL, -- 비밀번호
-  name              VARCHAR(50)  NOT NULL, -- 이름
-  tel               VARCHAR(30)  NOT NULL, -- 휴대폰번호
-  join_date         TIMESTAMP    NOT NULL, -- 가입일시
-  social_accept     BOOLEAN      NOT NULL, -- 소셜회원여부
-  gender            BOOLEAN      NOT NULL, -- 성별
-  birth             INTEGER      NOT NULL, -- 생년월일
-  self_introduction TEXT         NULL,     -- 자기소개
-  m_img             VARCHAR(500) NOT NULL, -- 회원프로필사진
-  nickname          VARCHAR(50)  NOT NULL, -- 닉네임
-  score             FLOAT        NOT NULL, -- 회원별점
-  block_date        TIMESTAMP    NULL,     -- 제재일
-  block_accept      BOOLEAN      NOT NULL, -- 제재여부
-  member_status     VARCHAR(1)   NOT NULL  -- 상태
-);
+  mno               INTEGER      NOT NULL COMMENT '회원번호', -- 회원번호
+  email             VARCHAR(40)  NOT NULL COMMENT '이메일', -- 이메일
+  pwd               VARCHAR(13)  NOT NULL COMMENT '비밀번호', -- 비밀번호
+  name              VARCHAR(50)  NOT NULL COMMENT '이름', -- 이름
+  tel               VARCHAR(30)  NOT NULL COMMENT '휴대폰번호', -- 휴대폰번호
+  join_date         TIMESTAMP    NOT NULL COMMENT '가입일시', -- 가입일시
+  social_accept     BOOLEAN      NOT NULL COMMENT '소셜회원여부', -- 소셜회원여부
+  gender            BOOLEAN      NOT NULL COMMENT '성별', -- 성별
+  birth             INTEGER      NOT NULL COMMENT '생년월일', -- 생년월일
+  self_introduction TEXT         NULL     COMMENT '자기소개', -- 자기소개
+  m_img             VARCHAR(500) NOT NULL COMMENT '회원프로필사진', -- 회원프로필사진
+  nickname          VARCHAR(50)  NOT NULL COMMENT '닉네임', -- 닉네임
+  score             FLOAT        NOT NULL COMMENT '회원별점', -- 회원별점
+  block_date        TIMESTAMP    NULL     COMMENT '제재일', -- 제재일
+  block_accept      BOOLEAN      NOT NULL COMMENT '제재여부', -- 제재여부
+  member_status     VARCHAR(1)   NOT NULL COMMENT '상태' -- 상태
+)
+COMMENT '회원';
 
 -- 회원
 ALTER TABLE member
@@ -152,30 +153,31 @@ CREATE UNIQUE INDEX UIX_member3
   );
 
 ALTER TABLE member
-  MODIFY COLUMN mno INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN mno INTEGER NOT NULL AUTO_INCREMENT COMMENT '회원번호';
 
 ALTER TABLE member
   AUTO_INCREMENT = 1;
 
 -- 주점
 CREATE TABLE store (
-  store_no                 INTEGER      NOT NULL, -- 주점번호
-  business_registration_no INTEGER      NOT NULL, -- 사업자등록증번호
-  business_registration    VARCHAR(500) NOT NULL, -- 사업자등록증
-  name                     VARCHAR(50)  NOT NULL, -- 가게명
-  address                  VARCHAR(255) NOT NULL, -- 주점주소
-  tel                      VARCHAR(30)  NOT NULL, -- 주점전화번호
-  hour                     TIME         NOT NULL, -- 영업시간
-  introduction             TEXT         NULL,     -- 가게소개
-  evaluation_score         FLOAT        NULL,     -- 주점별점
-  reservation_accept       BOOLEAN      NOT NULL, -- 예약가능여부
-  max_member               INTEGER      NULL,     -- 최대인원
-  lat                      FLOAT        NOT NULL, -- 위도
-  lng                      FLOAT        NOT NULL, -- 경도
-  place_id                 VARCHAR(255) NOT NULL, -- 장소아이디
-  oper                     BOOLEAN      NOT NULL, -- 영업여부
-  status                   BOOLEAN      NOT NULL  -- 상태
-);
+  store_no                 INTEGER      NOT NULL COMMENT '주점번호', -- 주점번호
+  business_registration_no INTEGER      NOT NULL COMMENT '사업자등록증번호', -- 사업자등록증번호
+  business_registration    VARCHAR(500) NOT NULL COMMENT '사업자등록증', -- 사업자등록증
+  name                     VARCHAR(50)  NOT NULL COMMENT '가게명', -- 가게명
+  address                  VARCHAR(255) NOT NULL COMMENT '주점주소', -- 주점주소
+  tel                      VARCHAR(30)  NOT NULL COMMENT '주점전화번호', -- 주점전화번호
+  hour                     TIME         NOT NULL COMMENT '영업시간', -- 영업시간
+  introduction             TEXT         NULL     COMMENT '가게소개', -- 가게소개
+  evaluation_score         FLOAT        NULL     COMMENT '주점별점', -- 주점별점
+  reservation_accept       BOOLEAN      NOT NULL COMMENT '예약가능여부', -- 예약가능여부
+  max_member               INTEGER      NULL     COMMENT '최대인원', -- 최대인원
+  lat                      FLOAT        NOT NULL COMMENT '위도', -- 위도
+  lng                      FLOAT        NOT NULL COMMENT '경도', -- 경도
+  place_id                 VARCHAR(255) NOT NULL COMMENT '장소아이디', -- 장소아이디
+  oper                     BOOLEAN      NOT NULL COMMENT '영업여부', -- 영업여부
+  status                   BOOLEAN      NOT NULL COMMENT '상태' -- 상태
+)
+COMMENT '주점';
 
 -- 주점
 ALTER TABLE store
@@ -185,20 +187,21 @@ ALTER TABLE store
     );
 
 ALTER TABLE store
-  MODIFY COLUMN store_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN store_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '주점번호';
 
 ALTER TABLE store
   AUTO_INCREMENT = 1;
 
 -- 음주내역
 CREATE TABLE alcohol_management (
-  drink_no INTEGER     NOT NULL, -- 음주번호
-  mno      INTEGER     NOT NULL, -- 회원번호
-  date     TIMESTAMP   NULL,     -- 음주일시
-  amount   VARCHAR(50) NULL,     -- 음주량
-  type     VARCHAR(50) NULL,     -- 주종
-  level    VARCHAR(50) NULL      -- 취한상태
-);
+  drink_no INTEGER     NOT NULL COMMENT '음주번호', -- 음주번호
+  mno      INTEGER     NOT NULL COMMENT '회원번호', -- 회원번호
+  date     TIMESTAMP   NULL     COMMENT '음주일시', -- 음주일시
+  amount   VARCHAR(50) NULL     COMMENT '음주량', -- 음주량
+  type     VARCHAR(50) NULL     COMMENT '주종', -- 주종
+  level    VARCHAR(50) NULL     COMMENT '취한상태' -- 취한상태
+)
+COMMENT '음주내역';
 
 -- 음주내역
 ALTER TABLE alcohol_management
@@ -208,26 +211,27 @@ ALTER TABLE alcohol_management
     );
 
 ALTER TABLE alcohol_management
-  MODIFY COLUMN drink_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN drink_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '음주번호';
 
 ALTER TABLE alcohol_management
   AUTO_INCREMENT = 1;
 
 -- 예약
 CREATE TABLE reservation (
-  reservation_no INTEGER      NOT NULL, -- 예약번호
-  store_no       INTEGER      NOT NULL, -- 주점번호
-  date           TIMESTAMP    NOT NULL, -- 예약일시
-  people         INTEGER      NOT NULL, -- 인원
-  name           VARCHAR(50)  NOT NULL, -- 예약자
-  tel            VARCHAR(30)  NOT NULL, -- 예약자번호
-  request        VARCHAR(255) NULL,     -- 요청사항
-  pay_no         INTEGER      NOT NULL, -- 결제승인번호
-  pay_company    VARCHAR(50)  NOT NULL, -- 결제카드회사
-  pay_price      INTEGER      NOT NULL, -- 결제금액
-  pay_date       TIMESTAMP    NOT NULL, -- 결제일
-  status         VARCHAR(1)   NOT NULL  -- 예약상태
-);
+  reservation_no INTEGER      NOT NULL COMMENT '예약번호', -- 예약번호
+  store_no       INTEGER      NOT NULL COMMENT '주점번호', -- 주점번호
+  date           TIMESTAMP    NOT NULL COMMENT '예약일시', -- 예약일시
+  people         INTEGER      NOT NULL COMMENT '인원', -- 인원
+  name           VARCHAR(50)  NOT NULL COMMENT '예약자', -- 예약자
+  tel            VARCHAR(30)  NOT NULL COMMENT '예약자번호', -- 예약자번호
+  request        VARCHAR(255) NULL     COMMENT '요청사항', -- 요청사항
+  pay_no         INTEGER      NOT NULL COMMENT '결제승인번호', -- 결제승인번호
+  pay_company    VARCHAR(50)  NOT NULL COMMENT '결제카드회사', -- 결제카드회사
+  pay_price      INTEGER      NOT NULL COMMENT '결제금액', -- 결제금액
+  pay_date       TIMESTAMP    NOT NULL COMMENT '결제일', -- 결제일
+  status         VARCHAR(1)   NOT NULL COMMENT '예약상태' -- 예약상태
+)
+COMMENT '예약';
 
 -- 예약
 ALTER TABLE reservation
@@ -237,23 +241,24 @@ ALTER TABLE reservation
     );
 
 ALTER TABLE reservation
-  MODIFY COLUMN reservation_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN reservation_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '예약번호';
 
 ALTER TABLE reservation
   AUTO_INCREMENT = 1;
 
 -- 문의
 CREATE TABLE inquiry (
-  inq_no      INTEGER      NOT NULL, -- 문의번호
-  mno         INTEGER      NOT NULL, -- 회원번호
-  date        TIMESTAMP    NOT NULL, -- 문의일자
-  type        INTEGER      NOT NULL, -- 문의유형
-  title       VARCHAR(50)  NOT NULL, -- 제목
-  contents    TEXT         NOT NULL, -- 내용
-  attach_file VARCHAR(500) NULL,     -- 첨부파일
-  answer      TEXT         NULL,     -- 답변
-  answer_date TIMESTAMP    NULL      -- 답변일시
-);
+  inq_no      INTEGER      NOT NULL COMMENT '문의번호', -- 문의번호
+  mno         INTEGER      NOT NULL COMMENT '회원번호', -- 회원번호
+  date        TIMESTAMP    NOT NULL COMMENT '문의일자', -- 문의일자
+  type        INTEGER      NOT NULL COMMENT '문의유형', -- 문의유형
+  title       VARCHAR(50)  NOT NULL COMMENT '제목', -- 제목
+  contents    TEXT         NOT NULL COMMENT '내용', -- 내용
+  attach_file VARCHAR(500) NULL     COMMENT '첨부파일', -- 첨부파일
+  answer      TEXT         NULL     COMMENT '답변', -- 답변
+  answer_date TIMESTAMP    NULL     COMMENT '답변일시' -- 답변일시
+)
+COMMENT '문의';
 
 -- 문의
 ALTER TABLE inquiry
@@ -263,21 +268,22 @@ ALTER TABLE inquiry
     );
 
 ALTER TABLE inquiry
-  MODIFY COLUMN inq_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN inq_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '문의번호';
 
 ALTER TABLE inquiry
   AUTO_INCREMENT = 1;
 
 -- 공지사항
 CREATE TABLE notice (
-  notice_no   INTEGER      NOT NULL, -- 공지사항번호
-  member_type VARCHAR(1)   NOT NULL, -- 타입
-  title       VARCHAR(255) NOT NULL, -- 제목
-  reg_date    TIMESTAMP    NOT NULL, -- 작성일시
-  update_date TIMESTAMP    NOT NULL, -- 수정일시
-  contents    TEXT         NOT NULL, -- 내용
-  view_count  INTEGER      NOT NULL  -- 조회수
-);
+  notice_no   INTEGER      NOT NULL COMMENT '공지사항번호', -- 공지사항번호
+  member_type VARCHAR(1)   NOT NULL COMMENT '타입', -- 타입
+  title       VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
+  reg_date    TIMESTAMP    NOT NULL COMMENT '작성일시', -- 작성일시
+  update_date TIMESTAMP    NOT NULL COMMENT '수정일시', -- 수정일시
+  contents    TEXT         NOT NULL COMMENT '내용', -- 내용
+  view_count  INTEGER      NOT NULL COMMENT '조회수' -- 조회수
+)
+COMMENT '공지사항';
 
 -- 공지사항
 ALTER TABLE notice
@@ -287,16 +293,17 @@ ALTER TABLE notice
     );
 
 ALTER TABLE notice
-  MODIFY COLUMN notice_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN notice_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '공지사항번호';
 
 ALTER TABLE notice
   AUTO_INCREMENT = 1;
 
 -- 주점태그
 CREATE TABLE store_tag (
-  tag_no   INTEGER NOT NULL, -- 태그번호
-  store_no INTEGER NOT NULL  -- 주점번호
-);
+  tag_no   INTEGER NOT NULL COMMENT '태그번호', -- 태그번호
+  store_no INTEGER NOT NULL COMMENT '주점번호' -- 주점번호
+)
+COMMENT '주점태그';
 
 -- 주점태그
 ALTER TABLE store_tag
@@ -308,12 +315,13 @@ ALTER TABLE store_tag
 
 -- 메뉴
 CREATE TABLE store_menu (
-  store_menu_no INTEGER     NOT NULL, -- 메뉴번호
-  store_no      INTEGER     NOT NULL, -- 주점번호
-  name          VARCHAR(50) NOT NULL, -- 메뉴명
-  price         INTEGER     NOT NULL, -- 메뉴가격
-  main_accept   BOOLEAN     NOT NULL  -- 대표메뉴여부
-);
+  store_menu_no INTEGER     NOT NULL COMMENT '메뉴번호', -- 메뉴번호
+  store_no      INTEGER     NOT NULL COMMENT '주점번호', -- 주점번호
+  name          VARCHAR(50) NOT NULL COMMENT '메뉴명', -- 메뉴명
+  price         INTEGER     NOT NULL COMMENT '메뉴가격', -- 메뉴가격
+  main_accept   BOOLEAN     NOT NULL COMMENT '대표메뉴여부' -- 대표메뉴여부
+)
+COMMENT '메뉴';
 
 -- 메뉴
 ALTER TABLE store_menu
@@ -323,23 +331,24 @@ ALTER TABLE store_menu
     );
 
 ALTER TABLE store_menu
-  MODIFY COLUMN store_menu_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN store_menu_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '메뉴번호';
 
 ALTER TABLE store_menu
   AUTO_INCREMENT = 1;
 
 -- 술
 CREATE TABLE alcohol_detail (
-  alcohol_detail_no INTEGER      NOT NULL, -- 술번호
-  alcohol_type_no   INTEGER      NOT NULL, -- 주종번호
-  name              VARCHAR(50)  NOT NULL, -- 상품명
-  degree            FLOAT        NOT NULL, -- 도수
-  brand             VARCHAR(50)  NULL,     -- 브랜드명
-  origin            VARCHAR(50)  NULL,     -- 원산지
-  volume            INTEGER      NULL,     -- 용량
-  characteristic    TEXT         NULL,     -- 특징
-  img               VARCHAR(500) NULL      -- 사진
-);
+  alcohol_detail_no INTEGER      NOT NULL COMMENT '술번호', -- 술번호
+  alcohol_type_no   INTEGER      NOT NULL COMMENT '주종번호', -- 주종번호
+  name              VARCHAR(50)  NOT NULL COMMENT '상품명', -- 상품명
+  degree            FLOAT        NOT NULL COMMENT '도수', -- 도수
+  brand             VARCHAR(50)  NULL     COMMENT '브랜드명', -- 브랜드명
+  origin            VARCHAR(50)  NULL     COMMENT '원산지', -- 원산지
+  volume            INTEGER      NULL     COMMENT '용량', -- 용량
+  characteristic    TEXT         NULL     COMMENT '특징', -- 특징
+  img               VARCHAR(500) NULL     COMMENT '사진' -- 사진
+)
+COMMENT '술';
 
 -- 술
 ALTER TABLE alcohol_detail
@@ -349,16 +358,17 @@ ALTER TABLE alcohol_detail
     );
 
 ALTER TABLE alcohol_detail
-  MODIFY COLUMN alcohol_detail_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN alcohol_detail_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '술번호';
 
 ALTER TABLE alcohol_detail
   AUTO_INCREMENT = 1;
 
 -- 주종
 CREATE TABLE alcohol_type (
-  alcohol_type_no INTEGER     NOT NULL, -- 주종번호
-  type_name       VARCHAR(50) NOT NULL  -- 주종명
-);
+  alcohol_type_no INTEGER     NOT NULL COMMENT '주종번호', -- 주종번호
+  type_name       VARCHAR(50) NOT NULL COMMENT '주종명' -- 주종명
+)
+COMMENT '주종';
 
 -- 주종
 ALTER TABLE alcohol_type
@@ -368,16 +378,17 @@ ALTER TABLE alcohol_type
     );
 
 ALTER TABLE alcohol_type
-  MODIFY COLUMN alcohol_type_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN alcohol_type_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '주종번호';
 
 ALTER TABLE alcohol_type
   AUTO_INCREMENT = 1;
 
 -- 주점유형
 CREATE TABLE store_type (
-  store_type_no INTEGER     NOT NULL, -- 주점유형번호
-  type_name     VARCHAR(50) NOT NULL  -- 주점유형명
-);
+  store_type_no INTEGER     NOT NULL COMMENT '주점유형번호', -- 주점유형번호
+  type_name     VARCHAR(50) NOT NULL COMMENT '주점유형명' -- 주점유형명
+)
+COMMENT '주점유형';
 
 -- 주점유형
 ALTER TABLE store_type
@@ -387,16 +398,17 @@ ALTER TABLE store_type
     );
 
 ALTER TABLE store_type
-  MODIFY COLUMN store_type_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN store_type_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '주점유형번호';
 
 ALTER TABLE store_type
   AUTO_INCREMENT = 1;
 
 -- 커뮤니티
 CREATE TABLE community (
-  community_no INTEGER     NOT NULL, -- 커뮤니티번호
-  title        VARCHAR(50) NOT NULL  -- 커뮤니티명
-);
+  community_no INTEGER     NOT NULL COMMENT '커뮤니티번호', -- 커뮤니티번호
+  title        VARCHAR(50) NOT NULL COMMENT '커뮤니티명' -- 커뮤니티명
+)
+COMMENT '커뮤니티';
 
 -- 커뮤니티
 ALTER TABLE community
@@ -406,21 +418,22 @@ ALTER TABLE community
     );
 
 ALTER TABLE community
-  MODIFY COLUMN community_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN community_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '커뮤니티번호';
 
 ALTER TABLE community
   AUTO_INCREMENT = 1;
 
 -- 리뷰
 CREATE TABLE review (
-  reservation_no   INTEGER   NOT NULL, -- 예약번호
-  store_no         INTEGER   NOT NULL, -- 주점번호
-  contents         TEXT      NOT NULL, -- 내용
-  reg_date         TIMESTAMP NOT NULL, -- 게시일
-  score            FLOAT     NOT NULL, -- 별점
-  comment_contents TEXT      NULL,     -- 답변
-  comment_reg_date TIMESTAMP NULL      -- 답변일
-);
+  reservation_no   INTEGER   NOT NULL COMMENT '예약번호', -- 예약번호
+  store_no         INTEGER   NOT NULL COMMENT '주점번호', -- 주점번호
+  contents         TEXT      NOT NULL COMMENT '내용', -- 내용
+  reg_date         TIMESTAMP NOT NULL COMMENT '게시일', -- 게시일
+  score            FLOAT     NOT NULL COMMENT '별점', -- 별점
+  comment_contents TEXT      NULL     COMMENT '답변', -- 답변
+  comment_reg_date TIMESTAMP NULL     COMMENT '답변일' -- 답변일
+)
+COMMENT '리뷰';
 
 -- 리뷰
 ALTER TABLE review
@@ -431,15 +444,16 @@ ALTER TABLE review
 
 -- 게시글
 CREATE TABLE board (
-  board_no     INTEGER     NOT NULL, -- 게시글번호
-  mno          INTEGER     NOT NULL, -- 회원번호
-  community_no INTEGER     NOT NULL, -- 커뮤니티번호
-  title        VARCHAR(50) NOT NULL, -- 제목
-  contents     LONGTEXT    NOT NULL, -- 내용
-  reg_date     TIMESTAMP   NOT NULL, -- 게시일
-  update_date  TIMESTAMP   NOT NULL, -- 수정일
-  view_count   INTEGER     NOT NULL  -- 조회수
-);
+  board_no     INTEGER     NOT NULL COMMENT '게시글번호', -- 게시글번호
+  mno          INTEGER     NOT NULL COMMENT '회원번호', -- 회원번호
+  community_no INTEGER     NOT NULL COMMENT '커뮤니티번호', -- 커뮤니티번호
+  title        VARCHAR(50) NOT NULL COMMENT '제목', -- 제목
+  contents     LONGTEXT    NOT NULL COMMENT '내용', -- 내용
+  reg_date     TIMESTAMP   NOT NULL COMMENT '게시일', -- 게시일
+  update_date  TIMESTAMP   NOT NULL COMMENT '수정일', -- 수정일
+  view_count   INTEGER     NOT NULL COMMENT '조회수' -- 조회수
+)
+COMMENT '게시글';
 
 -- 게시글
 ALTER TABLE board
@@ -449,21 +463,22 @@ ALTER TABLE board
     );
 
 ALTER TABLE board
-  MODIFY COLUMN board_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN board_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '게시글번호';
 
 ALTER TABLE board
   AUTO_INCREMENT = 1;
 
 -- 신고하기
 CREATE TABLE report (
-  repo_no   INTEGER    NOT NULL, -- 신고하기번호
-  mno       INTEGER    NOT NULL, -- 신고자번호
-  target_no VARCHAR(1) NOT NULL, -- 피신고대상번호
-  type      VARCHAR(1) NOT NULL, -- 신고유형
-  date      TIMESTAMP  NOT NULL, -- 신고일자
-  contents  TEXT       NULL,     -- 신고내용
-  status    BOOLEAN    NOT NULL  -- 처리상태
-);
+  repo_no   INTEGER    NOT NULL COMMENT '신고하기번호', -- 신고하기번호
+  mno       INTEGER    NOT NULL COMMENT '신고자번호', -- 신고자번호
+  target_no VARCHAR(1) NOT NULL COMMENT '피신고대상번호', -- 피신고대상번호
+  type      VARCHAR(1) NOT NULL COMMENT '신고유형', -- 신고유형
+  date      TIMESTAMP  NOT NULL COMMENT '신고일자', -- 신고일자
+  contents  TEXT       NULL     COMMENT '신고내용', -- 신고내용
+  status    BOOLEAN    NOT NULL COMMENT '처리상태' -- 처리상태
+)
+COMMENT '신고하기';
 
 -- 신고하기
 ALTER TABLE report
@@ -473,21 +488,22 @@ ALTER TABLE report
     );
 
 ALTER TABLE report
-  MODIFY COLUMN repo_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN repo_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '신고하기번호';
 
 ALTER TABLE report
   AUTO_INCREMENT = 1;
 
 -- 모임게시판
 CREATE TABLE party_board (
-  party_board_no INTEGER   NOT NULL, -- 모임게시판번호
-  party_no       INTEGER   NOT NULL, -- 모임번호
-  mno            INTEGER   NOT NULL, -- 회원번호
-  board_reg_date TIMESTAMP NOT NULL, -- 게시판등록일
-  message        TEXT      NULL,     -- 메시지
-  message_time   TIMESTAMP NULL,     -- 메시지시간
-  message_status BOOLEAN   NOT NULL  -- 상태
-);
+  party_board_no INTEGER   NOT NULL COMMENT '모임게시판번호', -- 모임게시판번호
+  party_no       INTEGER   NOT NULL COMMENT '모임번호', -- 모임번호
+  mno            INTEGER   NOT NULL COMMENT '회원번호', -- 회원번호
+  board_reg_date TIMESTAMP NOT NULL COMMENT '게시판등록일', -- 게시판등록일
+  message        TEXT      NULL     COMMENT '메시지', -- 메시지
+  message_time   TIMESTAMP NULL     COMMENT '메시지시간', -- 메시지시간
+  message_status BOOLEAN   NOT NULL COMMENT '상태' -- 상태
+)
+COMMENT '모임게시판';
 
 -- 모임게시판
 ALTER TABLE party_board
@@ -497,17 +513,18 @@ ALTER TABLE party_board
     );
 
 ALTER TABLE party_board
-  MODIFY COLUMN party_board_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN party_board_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '모임게시판번호';
 
 ALTER TABLE party_board
   AUTO_INCREMENT = 1;
 
 -- 참석자
 CREATE TABLE party_participant (
-  party_no           INTEGER    NOT NULL, -- 모임번호
-  mno                INTEGER    NOT NULL, -- 회원번호
-  participant_status VARCHAR(1) NOT NULL  -- 상태
-);
+  party_no           INTEGER    NOT NULL COMMENT '모임번호', -- 모임번호
+  mno                INTEGER    NOT NULL COMMENT '회원번호', -- 회원번호
+  participant_status VARCHAR(1) NOT NULL COMMENT '상태' -- 상태
+)
+COMMENT '참석자';
 
 -- 참석자
 ALTER TABLE party_participant
@@ -519,20 +536,21 @@ ALTER TABLE party_participant
 
 -- 모임
 CREATE TABLE party (
-  party_no      INTEGER     NOT NULL, -- 모임번호
-  mno           INTEGER     NOT NULL, -- 주최자번호
-  store_no      INTEGER     NULL,     -- 주점번호
-  title         VARCHAR(50) NOT NULL, -- 제목
-  contents      LONGTEXT    NOT NULL, -- 내용
-  party_fee     INTEGER     NOT NULL, -- 회비
-  meeting_date  TIMESTAMP   NOT NULL, -- 모임일시
-  max_member    INTEGER     NOT NULL, -- 최대인원
-  alcohol_type  VARCHAR(50) NOT NULL, -- 주종
-  alcohol_limit INTEGER     NOT NULL, -- 주량
-  view_count    TIMESTAMP   NOT NULL, -- 조회수
-  reg_date      TIMESTAMP   NOT NULL, -- 등록일
-  update_date   TIMESTAMP   NOT NULL  -- 수정일
-);
+  party_no      INTEGER     NOT NULL COMMENT '모임번호', -- 모임번호
+  mno           INTEGER     NOT NULL COMMENT '주최자번호', -- 주최자번호
+  store_no      INTEGER     NULL     COMMENT '주점번호', -- 주점번호
+  title         VARCHAR(50) NOT NULL COMMENT '제목', -- 제목
+  contents      LONGTEXT    NOT NULL COMMENT '내용', -- 내용
+  party_fee     INTEGER     NOT NULL COMMENT '회비', -- 회비
+  meeting_date  DATETIME    NOT NULL COMMENT '모임일시', -- 모임일시
+  max_member    INTEGER     NOT NULL COMMENT '최대인원', -- 최대인원
+  alcohol_type  VARCHAR(50) NOT NULL COMMENT '주종', -- 주종
+  alcohol_limit INTEGER     NOT NULL COMMENT '주량', -- 주량
+  view_count    INTEGER     NOT NULL COMMENT '조회수', -- 조회수
+  reg_date      TIMESTAMP   NOT NULL COMMENT '등록일', -- 등록일
+  update_date   TIMESTAMP   NOT NULL COMMENT '수정일' -- 수정일
+)
+COMMENT '모임';
 
 -- 모임
 ALTER TABLE party
@@ -542,17 +560,18 @@ ALTER TABLE party
     );
 
 ALTER TABLE party
-  MODIFY COLUMN party_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN party_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '모임번호';
 
 ALTER TABLE party
   AUTO_INCREMENT = 1;
 
 -- SNS계정
 CREATE TABLE sns_account (
-  mno    INTEGER     NOT NULL, -- 회원번호
-  sns_no INTEGER     NOT NULL, -- SNS번호
-  email  VARCHAR(40) NULL      -- 이메일
-);
+  mno    INTEGER     NOT NULL COMMENT '회원번호', -- 회원번호
+  sns_no INTEGER     NOT NULL COMMENT 'SNS번호', -- SNS번호
+  email  VARCHAR(40) NULL     COMMENT '이메일' -- 이메일
+)
+COMMENT 'SNS계정';
 
 -- SNS계정
 ALTER TABLE sns_account
@@ -569,8 +588,9 @@ CREATE UNIQUE INDEX UIX_sns_account
 
 -- SNS
 CREATE TABLE sns (
-  sns_no INTEGER NOT NULL -- SNS번호
-);
+  sns_no INTEGER NOT NULL COMMENT 'SNS번호' -- SNS번호
+)
+COMMENT 'SNS';
 
 -- SNS
 ALTER TABLE sns
@@ -580,16 +600,17 @@ ALTER TABLE sns
     );
 
 ALTER TABLE sns
-  MODIFY COLUMN sns_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN sns_no INTEGER NOT NULL AUTO_INCREMENT COMMENT 'SNS번호';
 
 ALTER TABLE sns
   AUTO_INCREMENT = 1;
 
 -- 태그
 CREATE TABLE tag (
-  tag_no INTEGER     NOT NULL, -- 태그번호
-  name   VARCHAR(50) NOT NULL  -- 태그명
-);
+  tag_no INTEGER     NOT NULL COMMENT '태그번호', -- 태그번호
+  name   VARCHAR(50) NOT NULL COMMENT '태그명' -- 태그명
+)
+COMMENT '태그';
 
 -- 태그
 ALTER TABLE tag
@@ -599,17 +620,18 @@ ALTER TABLE tag
     );
 
 ALTER TABLE tag
-  MODIFY COLUMN tag_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN tag_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '태그번호';
 
 ALTER TABLE tag
   AUTO_INCREMENT = 1;
 
 -- 주점판매술
 CREATE TABLE alcohol_sales (
-  store_no          INTEGER NOT NULL, -- 주점번호
-  alcohol_detail_no INTEGER NOT NULL, -- 술번호
-  price             INTEGER NOT NULL  -- 가격
-);
+  store_no          INTEGER NOT NULL COMMENT '주점번호', -- 주점번호
+  alcohol_detail_no INTEGER NOT NULL COMMENT '술번호', -- 술번호
+  price             INTEGER NOT NULL COMMENT '가격' -- 가격
+)
+COMMENT '주점판매술';
 
 -- 주점판매술
 ALTER TABLE alcohol_sales
@@ -621,9 +643,10 @@ ALTER TABLE alcohol_sales
 
 -- 주점소속유형
 CREATE TABLE store_section_type (
-  store_type_no INTEGER NOT NULL, -- 주점유형번호
-  store_no      INTEGER NOT NULL  -- 주점번호
-);
+  store_type_no INTEGER NOT NULL COMMENT '주점유형번호', -- 주점유형번호
+  store_no      INTEGER NOT NULL COMMENT '주점번호' -- 주점번호
+)
+COMMENT '주점소속유형';
 
 -- 주점소속유형
 ALTER TABLE store_section_type
@@ -635,23 +658,25 @@ ALTER TABLE store_section_type
 
 -- 댓글좋아요
 CREATE TABLE comment_like (
-  mno              INTEGER NOT NULL, -- 회원번호
-  board_commnet_no INTEGER NOT NULL  -- 게시글댓글번호
-);
+  mno              INTEGER NOT NULL COMMENT '회원번호', -- 회원번호
+  board_comment_no INTEGER NOT NULL COMMENT '게시글댓글번호' -- 게시글댓글번호
+)
+COMMENT '댓글좋아요';
 
 -- 댓글좋아요
 ALTER TABLE comment_like
   ADD CONSTRAINT PK_comment_like -- 댓글좋아요 기본키
     PRIMARY KEY (
       mno,              -- 회원번호
-      board_commnet_no  -- 게시글댓글번호
+      board_comment_no  -- 게시글댓글번호
     );
 
 -- 게시글찜
 CREATE TABLE board_select (
-  mno      INTEGER NOT NULL, -- 회원번호
-  board_no INTEGER NOT NULL  -- 게시글번호
-);
+  mno      INTEGER NOT NULL COMMENT '회원번호', -- 회원번호
+  board_no INTEGER NOT NULL COMMENT '게시글번호' -- 게시글번호
+)
+COMMENT '게시글찜';
 
 -- 게시글찜
 ALTER TABLE board_select
@@ -663,9 +688,10 @@ ALTER TABLE board_select
 
 -- 주점찜
 CREATE TABLE store_select (
-  store_no INTEGER NOT NULL, -- 주점번호
-  mno      INTEGER NOT NULL  -- 회원번호
-);
+  store_no INTEGER NOT NULL COMMENT '주점번호', -- 주점번호
+  mno      INTEGER NOT NULL COMMENT '회원번호' -- 회원번호
+)
+COMMENT '주점찜';
 
 -- 주점찜
 ALTER TABLE store_select
@@ -677,9 +703,10 @@ ALTER TABLE store_select
 
 -- 모임찜
 CREATE TABLE party_board_select (
-  mno            INTEGER NOT NULL, -- 회원번호
-  party_board_no INTEGER NOT NULL  -- 모임게시판번호
-);
+  mno            INTEGER NOT NULL COMMENT '회원번호', -- 회원번호
+  party_board_no INTEGER NOT NULL COMMENT '모임게시판번호' -- 모임게시판번호
+)
+COMMENT '모임찜';
 
 -- 모임찜
 ALTER TABLE party_board_select
@@ -691,34 +718,36 @@ ALTER TABLE party_board_select
 
 -- 게시글댓글
 CREATE TABLE board_comment (
-  board_commnet_no INTEGER   NOT NULL, -- 게시글댓글번호
-  mno              INTEGER   NOT NULL, -- 회원번호
-  board_no         INTEGER   NOT NULL, -- 게시글번호
-  comment_contents TEXT      NOT NULL, -- 내용
-  comment_date     TIMESTAMP NOT NULL, -- 작성일
-  update_date      TIMESTAMP NOT NULL  -- 수정일
-);
+  board_comment_no INTEGER   NOT NULL COMMENT '게시글댓글번호', -- 게시글댓글번호
+  mno              INTEGER   NOT NULL COMMENT '회원번호', -- 회원번호
+  board_no         INTEGER   NOT NULL COMMENT '게시글번호', -- 게시글번호
+  comment_contents TEXT      NOT NULL COMMENT '내용', -- 내용
+  comment_date     TIMESTAMP NOT NULL COMMENT '작성일', -- 작성일
+  update_date      TIMESTAMP NOT NULL COMMENT '수정일' -- 수정일
+)
+COMMENT '게시글댓글';
 
 -- 게시글댓글
 ALTER TABLE board_comment
   ADD CONSTRAINT PK_board_comment -- 게시글댓글 기본키
     PRIMARY KEY (
-      board_commnet_no -- 게시글댓글번호
+      board_comment_no -- 게시글댓글번호
     );
 
 ALTER TABLE board_comment
-  MODIFY COLUMN board_commnet_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN board_comment_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '게시글댓글번호';
 
 ALTER TABLE board_comment
   AUTO_INCREMENT = 1;
 
 -- 모임회원평가
 CREATE TABLE party_member_evaluation (
-  party_no INTEGER NOT NULL, -- 모임번호
-  mno      INTEGER NOT NULL, -- 평가자번호
-  mno2     INTEGER NOT NULL, -- 피평가번호
-  score    FLOAT   NOT NULL  -- 별점
-);
+  party_no INTEGER NOT NULL COMMENT '모임번호', -- 모임번호
+  mno      INTEGER NOT NULL COMMENT '평가자번호', -- 평가자번호
+  mno2     INTEGER NOT NULL COMMENT '피평가번호', -- 피평가번호
+  score    FLOAT   NOT NULL COMMENT '별점' -- 별점
+)
+COMMENT '모임회원평가';
 
 -- 모임회원평가
 ALTER TABLE party_member_evaluation
@@ -731,10 +760,11 @@ ALTER TABLE party_member_evaluation
 
 -- 모임주점평가
 CREATE TABLE party_store_evaluation (
-  party_no INTEGER NOT NULL, -- 모임번호
-  mno      INTEGER NOT NULL, -- 회원번호
-  score    FLOAT   NOT NULL  -- 별점
-);
+  party_no INTEGER NOT NULL COMMENT '모임번호', -- 모임번호
+  mno      INTEGER NOT NULL COMMENT '회원번호', -- 회원번호
+  score    FLOAT   NOT NULL COMMENT '별점' -- 별점
+)
+COMMENT '모임주점평가';
 
 -- 모임주점평가
 ALTER TABLE party_store_evaluation
@@ -746,13 +776,14 @@ ALTER TABLE party_store_evaluation
 
 -- 사장님회원
 CREATE TABLE owner_member (
-  mno         INTEGER      NOT NULL, -- 회원번호
-  store_no    INTEGER      NOT NULL, -- 주점번호
-  img         VARCHAR(500) NOT NULL, -- 프로필사진
-  nickname    VARCHAR(50)  NOT NULL, -- 사장님닉네임
-  reg_date    TIMESTAMP    NOT NULL, -- 등록일
-  update_date TIMESTAMP    NOT NULL  -- 수정일
-);
+  mno         INTEGER      NOT NULL COMMENT '회원번호', -- 회원번호
+  store_no    INTEGER      NOT NULL COMMENT '주점번호', -- 주점번호
+  img         VARCHAR(500) NOT NULL COMMENT '프로필사진', -- 프로필사진
+  nickname    VARCHAR(50)  NOT NULL COMMENT '사장님닉네임', -- 사장님닉네임
+  reg_date    TIMESTAMP    NOT NULL COMMENT '등록일', -- 등록일
+  update_date TIMESTAMP    NOT NULL COMMENT '수정일' -- 수정일
+)
+COMMENT '사장님회원';
 
 -- 사장님회원
 ALTER TABLE owner_member
@@ -763,10 +794,11 @@ ALTER TABLE owner_member
 
 -- 리뷰사진
 CREATE TABLE review_img (
-  review_img_no  INTEGER      NOT NULL, -- 사진번호
-  reservation_no INTEGER      NOT NULL, -- 예약번호
-  img            VARCHAR(500) NOT NULL  -- 사진
-);
+  review_img_no  INTEGER      NOT NULL COMMENT '사진번호', -- 사진번호
+  reservation_no INTEGER      NOT NULL COMMENT '예약번호', -- 예약번호
+  img            VARCHAR(500) NOT NULL COMMENT '사진' -- 사진
+)
+COMMENT '리뷰사진';
 
 -- 리뷰사진
 ALTER TABLE review_img
@@ -776,17 +808,18 @@ ALTER TABLE review_img
     );
 
 ALTER TABLE review_img
-  MODIFY COLUMN review_img_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN review_img_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '사진번호';
 
 ALTER TABLE review_img
   AUTO_INCREMENT = 1;
 
 -- 메뉴사진
 CREATE TABLE menu_img (
-  menu_img_no   INTEGER      NOT NULL, -- 사진번호
-  store_menu_no INTEGER      NOT NULL, -- 메뉴번호
-  img           VARCHAR(500) NOT NULL  -- 사진
-);
+  menu_img_no   INTEGER      NOT NULL COMMENT '사진번호', -- 사진번호
+  store_menu_no INTEGER      NOT NULL COMMENT '메뉴번호', -- 메뉴번호
+  img           VARCHAR(500) NOT NULL COMMENT '사진' -- 사진
+)
+COMMENT '메뉴사진';
 
 -- 메뉴사진
 ALTER TABLE menu_img
@@ -796,17 +829,18 @@ ALTER TABLE menu_img
     );
 
 ALTER TABLE menu_img
-  MODIFY COLUMN menu_img_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN menu_img_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '사진번호';
 
 ALTER TABLE menu_img
   AUTO_INCREMENT = 1;
 
 -- 주점사진
 CREATE TABLE store_img (
-  store_img_no INTEGER      NOT NULL, -- 사진번호
-  store_no     INTEGER      NOT NULL, -- 주점번호
-  img          VARCHAR(500) NOT NULL  -- 사진
-);
+  store_img_no INTEGER      NOT NULL COMMENT '사진번호', -- 사진번호
+  store_no     INTEGER      NOT NULL COMMENT '주점번호', -- 주점번호
+  img          VARCHAR(500) NOT NULL COMMENT '사진' -- 사진
+)
+COMMENT '주점사진';
 
 -- 주점사진
 ALTER TABLE store_img
@@ -816,20 +850,21 @@ ALTER TABLE store_img
     );
 
 ALTER TABLE store_img
-  MODIFY COLUMN store_img_no INTEGER NOT NULL AUTO_INCREMENT;
+  MODIFY COLUMN store_img_no INTEGER NOT NULL AUTO_INCREMENT COMMENT '사진번호';
 
 ALTER TABLE store_img
   AUTO_INCREMENT = 1;
 
 -- 모임댓글
 CREATE TABLE party_comment (
-  party_comment_no       INTEGER   NOT NULL, -- 모임댓글번호
-  mno                    INTEGER   NOT NULL, -- 회원번호
-  party_no               INTEGER   NOT NULL, -- 모임번호
-  party_comment_contents TEXT      NOT NULL, -- 내용
-  comment_date           TIMESTAMP NOT NULL, -- 작성일
-  update_date            TIMESTAMP NOT NULL  -- 수정일
-);
+  party_comment_no       INTEGER   NOT NULL COMMENT '모임댓글번호', -- 모임댓글번호
+  mno                    INTEGER   NOT NULL COMMENT '회원번호', -- 회원번호
+  party_no               INTEGER   NOT NULL COMMENT '모임번호', -- 모임번호
+  party_comment_contents TEXT      NOT NULL COMMENT '내용', -- 내용
+  comment_date           TIMESTAMP NOT NULL COMMENT '작성일', -- 작성일
+  update_date            TIMESTAMP NOT NULL COMMENT '수정일' -- 수정일
+)
+COMMENT '모임댓글';
 
 -- 모임댓글
 ALTER TABLE party_comment
@@ -840,9 +875,10 @@ ALTER TABLE party_comment
 
 -- 모임댓글좋아요
 CREATE TABLE party_comment_like (
-  party_comment_no INTEGER NOT NULL, -- 모임댓글번호
-  mno              INTEGER NOT NULL  -- 회원번호
-);
+  party_comment_no INTEGER NOT NULL COMMENT '모임댓글번호', -- 모임댓글번호
+  mno              INTEGER NOT NULL COMMENT '회원번호' -- 회원번호
+)
+COMMENT '모임댓글좋아요';
 
 -- 모임댓글좋아요
 ALTER TABLE party_comment_like
@@ -1098,10 +1134,10 @@ ALTER TABLE comment_like
 ALTER TABLE comment_like
   ADD CONSTRAINT FK_board_comment_TO_comment_like -- 게시글댓글 -> 댓글좋아요
     FOREIGN KEY (
-      board_commnet_no -- 게시글댓글번호
+      board_comment_no -- 게시글댓글번호
     )
     REFERENCES board_comment ( -- 게시글댓글
-      board_commnet_no -- 게시글댓글번호
+      board_comment_no -- 게시글댓글번호
     );
 
 -- 게시글찜
