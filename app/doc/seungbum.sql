@@ -192,7 +192,6 @@ view_count
 5,
 3
 );
-<<<<<<< HEAD
 
 insert into party(
 party_no,
@@ -414,5 +413,3 @@ participant_status
 '참'
 );
 */
-=======
->>>>>>> refs/remotes/origin/main
