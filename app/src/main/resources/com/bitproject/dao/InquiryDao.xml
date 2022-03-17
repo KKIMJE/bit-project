@@ -75,13 +75,6 @@
   </delete>
 
 
-<!--  
-  <update id="increaseViewCount" parameterType="int">
-    update inquiry set 
-      view_count=view_count + 1 
-    where board_no=#{no}
-  </update>
--->
 </mapper>
 
 
