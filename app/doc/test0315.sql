@@ -882,7 +882,7 @@ contents,
 attach_file,
 answer
 ) values(
-1,
+6,
 2,
 '이용방법 설명 부탁드립니다.',
 '이용방법이 궁금해요 알려주세요.',
@@ -897,7 +897,7 @@ title,
 contents,
 attach_file
 ) values(
-1,
+7,
 2,
 '문의글 문의글 문의글 문의글',
 '궁금합니다!!!????????@@@@',
