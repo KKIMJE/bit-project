@@ -2,7 +2,7 @@ package com.bitproject.dao;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-import com.bitproject.domain.Board;
+import com.bitproject.domain.StoreTag;
 
 @Mapper  
 // => Mybatis에서 DAO 구현체를 자동으로 생성한다.
@@ -11,30 +11,16 @@ import com.bitproject.domain.Board;
 // => 인터페이스의 메서드가 호출될 때 사용할 SQL ID는 메서드 이름과 일치해야 한다.
 //    예) <select id="countAll">...</select>
 //
-public interface BoardDao {
+public interface StoreTagDao {
 
-  int countAll();
+  List<StoreTag> findAll();
 
-  List<Board> findAll();
+  int insert(StoreTag storeTag);
 
-  int insert(Board board);
+  StoreTag findByNo(int no);
 
-  Board findByNo(int no);
-
-  int update(Board board);
+  int update(StoreTag storeTag);
 
   int delete(int no);
 
-  int increaseViewCount(int no);
 }
-
-
-
-
-
-
-
-
-
-
-
