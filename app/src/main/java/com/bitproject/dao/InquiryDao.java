@@ -23,5 +23,4 @@ public interface InquiryDao {
 
   int delete(int no);
 
-  int increaseViewCount(int no);
 }
