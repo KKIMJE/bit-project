@@ -27,7 +27,7 @@ values(
    '개코',
    5,
    0,
-   'g'
+   0
    );
    
 insert into member(
@@ -58,7 +58,7 @@ values(
    '고교처세왕',
    4.5,
    0,
-   'g'
+   0
    );
    
 insert into member(
@@ -89,7 +89,7 @@ values(
    '쏘니',
    4,
    1,
-   'g'
+   0
    );
    
 insert into member(
@@ -120,7 +120,7 @@ values(
    '엄블리',
    5,
    0,
-   'g'
+   0
    );
    
 insert into member(
@@ -151,7 +151,7 @@ values(
    '호랑나비',
    1,
    1,
-   'g'
+   0
    );
    
    -- 주점

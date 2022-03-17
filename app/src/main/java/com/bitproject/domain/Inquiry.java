@@ -2,74 +2,113 @@ package com.bitproject.domain;
 
 public class Inquiry {
 
-  int boardNo;
+  int inqNo;
   int mNo;
-  int communityNo;
+  String type;
   String title;
   String contents;
-  java.sql.Timestamp regDate;
-  java.sql.Timestamp updateDate;
-  int viewCount;
+  String attachFile;
+  String answer;
+  java.sql.Timestamp answerDate;
+  java.sql.Timestamp date;
 
 
   @Override
   public String toString() {
-    return "Board [boardNo=" + boardNo + ", mNo=" + mNo + ", communityNo=" + communityNo
-        + ", title=" + title + ", contents=" + contents + ", regDate=" + regDate + ", updateDate="
-        + updateDate + ", viewCount=" + viewCount + "]";
+    return "Inquiry [inqNo=" + inqNo + ", mNo=" + mNo + ", type=" + type + ", title=" + title
+        + ", contents=" + contents + ", attachFile=" + attachFile + ", answer=" + answer
+        + ", answerDate=" + answerDate + ", date=" + date + "]";
   }
 
-  public int getBoardNo() {
-    return boardNo;
+
+  public int getInqNo() {
+    return inqNo;
   }
-  public void setBoardNo(int boardNo) {
-    this.boardNo = boardNo;
+
+
+  public void setInqNo(int inqNo) {
+    this.inqNo = inqNo;
   }
+
+
   public int getmNo() {
     return mNo;
   }
+
+
   public void setmNo(int mNo) {
     this.mNo = mNo;
   }
-  public int getCommunityNo() {
-    return communityNo;
+
+
+  public String getType() {
+    return type;
   }
-  public void setCommunityNo(int communityNo) {
-    this.communityNo = communityNo;
+
+
+  public void setType(String type) {
+    this.type = type;
   }
+
+
   public String getTitle() {
     return title;
   }
+
+
   public void setTitle(String title) {
     this.title = title;
   }
+
+
   public String getContents() {
     return contents;
   }
+
+
   public void setContents(String contents) {
     this.contents = contents;
   }
-  public java.sql.Timestamp getRegDate() {
-    return regDate;
-  }
-  public void setRegDate(java.sql.Timestamp regDate) {
-    this.regDate = regDate;
-  }
-  public java.sql.Timestamp getUpdateDate() {
-    return updateDate;
-  }
-  public void setUpdateDate(java.sql.Timestamp updateDate) {
-    this.updateDate = updateDate;
-  }
-  public int getViewCount() {
-    return viewCount;
-  }
-  public void setViewCount(int viewCount) {
-    this.viewCount = viewCount;
+
+
+  public String getAttachFile() {
+    return attachFile;
   }
 
 
+  public void setAttachFile(String attachFile) {
+    this.attachFile = attachFile;
+  }
 
+
+  public String getAnswer() {
+    return answer;
+  }
+
+
+  public void setAnswer(String answer) {
+    this.answer = answer;
+  }
+
+
+  public java.sql.Timestamp getAnswerDate() {
+    return answerDate;
+  }
+
+
+  public void setAnswerDate(java.sql.Timestamp answerDate) {
+    this.answerDate = answerDate;
+  }
+
+
+  public java.sql.Timestamp getDate() {
+    return date;
+  }
+
+
+  public void setDate(java.sql.Timestamp date) {
+    this.date = date;
+  }
 
 
 

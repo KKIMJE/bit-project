@@ -2,7 +2,7 @@ package com.bitproject.dao;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-import com.bitproject.domain.Board;
+import com.bitproject.domain.Inquiry;
 
 @Mapper  
 // => Mybatis에서 DAO 구현체를 자동으로 생성한다.
@@ -13,13 +13,13 @@ import com.bitproject.domain.Board;
 //
 public interface InquiryDao {
 
-  List<Board> findAll();
+  List<Inquiry> findAll();
 
-  int insert(Board board);
+  int insert(Inquiry inquiry);
 
-  Board findByNo(int no);
+  Inquiry findByNo(int no);
 
-  int update(Board board);
+  int update(Inquiry inquiry);
 
   int delete(int no);
 

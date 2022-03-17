@@ -3,47 +3,47 @@ package com.bitproject.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.bitproject.dao.BoardDao;
-import com.bitproject.domain.Board;
+import com.bitproject.dao.InquiryDao;
+import com.bitproject.domain.Inquiry;
 
 @RestController 
 public class InquiryController {
 
   // @Autowired
   // - 필드 선언부에 이 애노테이션을 붙여서 표시해 두면, 
-  //   Spring Boot가 BoardController 객체를 만들 때 BoardDao 구현체를 찾아 자동으로 주입한다. 
+  //   Spring Boot가 InquiryController 객체를 만들 때 InquiryDao 구현체를 찾아 자동으로 주입한다. 
   //
   @Autowired
-  BoardDao boardDao;
+  InquiryDao inquiryDao;
 
-  @RequestMapping("/board/list")
+  @RequestMapping("/inquiry/list")
   public Object list() {
-    return boardDao.findAll();
+    return inquiryDao.findAll();
   }
 
-  @RequestMapping("/board/add")
-  public Object add(Board board) {
-    return boardDao.insert(board);
+  @RequestMapping("/inquiry/add")
+  public Object add(Inquiry inquiry) {
+    return inquiryDao.insert(inquiry);
   }
 
 
-  @RequestMapping("/board/get")
+  @RequestMapping("/inquiry/get")
   public Object get(int no) {
-    Board board = boardDao.findByNo(no);
-    if (board == null) {
+    Inquiry inquiry = inquiryDao.findByNo(no);
+    if (inquiry == null) {
       return "";
     }
-    boardDao.increaseViewCount(no);
-    return board;
+    inquiryDao.increaseViewCount(no);
+    return inquiry;
   }
 
-  @RequestMapping("/board/update")
-  public Object update(Board board) {
-    return boardDao.update(board);
+  @RequestMapping("/inquiry/update")
+  public Object update(Inquiry inquiry) {
+    return inquiryDao.update(inquiry);
   }
 
-  @RequestMapping("/board/delete")
+  @RequestMapping("/inquiry/delete")
   public Object delete(int no) {
-    return boardDao.delete(no);
+    return inquiryDao.delete(no);
   }
 }
