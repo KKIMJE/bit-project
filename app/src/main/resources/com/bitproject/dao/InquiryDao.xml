@@ -9,7 +9,7 @@
 <mapper namespace="com.bitproject.dao.InquiryDao">
 
   <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
-  <resultMap type="inquiry" id="boardMap">
+  <resultMap type="inquiry" id="inquiryMap">
     <id column="inq_no" property="inqNo"/>
     <result column="mno" property="mNo"/>
     <result column="type" property="type"/>
@@ -23,7 +23,7 @@
   <!-- 
     id => 인터페이스의 메서드 이름과 일치해야 한다.
    -->
-  <select id="findAll" resultMap="boardMap">
+  <select id="findAll" resultMap="inquiryMap">
     select 
       inq_no,
       mno,
@@ -32,54 +32,56 @@
       contents,
       attach_file,
       answer,
-      answer_date
+      answer_date,
+      date
     from 
       inquiry 
     order by 
       inq_no desc
   </select>
 
- 
-  <insert id="insert" parameterType="Board">
-    insert into board(mno,community_no,title,contents,view_count) 
-    values(#{mNo},#{communityNo},#{title},#{contents},#{viewCount})
+  <insert id="insert" parameterType="Inquiry">
+    insert into Inquiry(mno,type,title,contents,attach_file,answer) 
+    values(#{mNo},#{type},#{title},#{contents},#{attachFile},#{answer})
   </insert>
 
-
-	<select id="findByNo" resultMap="boardMap" parameterType="int">
-    select 
-      mno,
-      community_no,
+	<select id="findByNo" resultMap="inquiryMap" parameterType="int">
+    select
+    	inq_no,
       title,
       contents,
-      view_count,
-      reg_date
-      view_count
+      attach_file,
+      answer,
+      answer_date,
+      date
     from 
-      board
+      inquiry
     where 
-      board_no=#{no}
+      inq_no=#{no}
   </select>
 
-  <update id="update" parameterType="Board">
-    update board set
+  <update id="update" parameterType="Inquiry">
+    update inquiry set
+    	type=#{type},
       title=#{title}, 
       contents=#{contents}
     where 
-      board_no=#{boardNo}
+      inq_no=#{inqNo}
   </update>
 
   <delete id="delete" parameterType="int">
-    delete from board 
-    where board_no=#{no}
+    delete from inquiry 
+    where inq_no=#{no}
   </delete>
 
+
+<!--  
   <update id="increaseViewCount" parameterType="int">
-    update board set 
+    update inquiry set 
       view_count=view_count + 1 
     where board_no=#{no}
   </update>
-
+-->
 </mapper>
 
 

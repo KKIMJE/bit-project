@@ -33,7 +33,7 @@ public class InquiryController {
     if (inquiry == null) {
       return "";
     }
-    inquiryDao.increaseViewCount(no);
+    //    inquiryDao.increaseViewCount(no);
     return inquiry;
   }
 
