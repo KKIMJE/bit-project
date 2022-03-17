@@ -13,8 +13,6 @@ import com.bitproject.domain.Board;
 //
 public interface BoardDao {
 
-  int countAll();
-
   List<Board> findAll();
 
   int insert(Board board);

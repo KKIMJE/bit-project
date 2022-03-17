@@ -39,10 +39,6 @@
     order by 
       board_no desc
   </select>
-  
-  <!-- 
-    parameterType => 메서드의 파라미터 타입 및 개수와 일치해야 한다.
-   -->
 
   <insert id="insert" parameterType="Board">
     insert into board(mno,community_no,title,contents,view_count) 
@@ -50,35 +46,32 @@
   </insert>
 
 
-<!--  
-
 	<select id="findByNo" resultMap="boardMap" parameterType="int">
     select 
-      board_no,
+      mno,
+      community_no,
       title,
-      content,
-      created_date,
+      contents,
+      view_count,
+      reg_date
       view_count
     from 
-      ml_board 
+      board
     where 
       board_no=#{no}
   </select>
 
   <update id="update" parameterType="Board">
-    update ml_board set 
+    update board set
       title=#{title}, 
-      content=#{content} 
+      contents=#{contents},
+      community_no=#{communityNo}
     where 
-      board_no=#{no}
+      board_no=#{boardNo}
   </update>
-  
-  <select id="countAll" resultType="int">
-    select count(*) from ml_board
-  </select>
 
   <delete id="delete" parameterType="int">
-    delete from ml_board 
+    delete from board 
     where board_no=#{no}
   </delete>
 
@@ -87,7 +80,6 @@
       view_count=view_count + 1 
     where board_no=#{no}
   </update>
--->
 
 </mapper>
 
