@@ -29,7 +29,7 @@ values(
    0,
    0
    );
-   
+
 insert into member(
   email,
   pwd,
@@ -60,7 +60,7 @@ values(
    0,
    0
    );
-   
+
 insert into member(
   email,
   pwd,
@@ -91,7 +91,7 @@ values(
    1,
    0
    );
-   
+
 insert into member(
   email,
   pwd,
@@ -122,7 +122,7 @@ values(
    0,
    0
    );
-   
+
 insert into member(
   email,
   pwd,
@@ -153,7 +153,7 @@ values(
    1,
    0
    );
-   
+
    -- 주점
 
 insert into store(
@@ -198,10 +198,10 @@ name,
 address,
 tel,
 hour,
-evaluation_score, 
-reservation_accept, 
-max_member, 
-lat, 
+evaluation_score,
+reservation_accept,
+max_member,
+lat,
 lng,
 place_id,
 oper,
@@ -339,7 +339,7 @@ values(
    'yasulmukja/store/ceo.img',
    '사장님'
    );
-   
+
 insert into owner_member(
   mno,
   store_no,
@@ -352,7 +352,7 @@ values(
    'yasulmukja/store/ceo.img',
    '사장님'
    );
-   
+
 insert into owner_member(
   mno,
   store_no,
@@ -365,7 +365,7 @@ values(
    'yasulmukja/store/ceo.img',
    '사장님'
    );
-   
+
 insert into owner_member(
   mno,
   store_no,
@@ -378,7 +378,7 @@ values(
    'yasulmukja/store/ceo.img',
    '사장님'
    );
-   
+
 insert into owner_member(
   mno,
   store_no,
@@ -391,7 +391,7 @@ values(
    'yasulmukja/store/ceo.img',
    '사장님'
    );
-   
+
    -- 주종
 
 insert into alcohol_type (
@@ -610,7 +610,7 @@ values(
   1,
   1
    );
-   
+
 insert into sns_account(
   mno,
   sns_no
@@ -619,7 +619,7 @@ values(
   2,
   2
    );
-   
+
 insert into sns_account(
   mno,
   sns_no
@@ -628,7 +628,7 @@ values(
   3,
   3
    );
-   
+
 insert into sns_account(
   mno,
   sns_no
@@ -637,7 +637,7 @@ values(
   4,
   4
    );
-   
+
 insert into sns_account(
   mno,
   sns_no
@@ -646,7 +646,7 @@ values(
   5,
   5
    );
-   
+
    /* 커뮤니티 */
 insert into community(
 community_no,
@@ -1353,7 +1353,7 @@ values(
   '청소할게요',
   '2022-03-14'
    );
-   
+
 insert into review(
   reservation_no,
   store_no,
@@ -1366,7 +1366,7 @@ values(
   '우웩',
   2
    );
-   
+
 insert into review(
   reservation_no,
   store_no,
@@ -1379,7 +1379,7 @@ values(
   '구웃',
   4
    );
-   
+
 insert into review(
   reservation_no,
   store_no,
@@ -1396,7 +1396,7 @@ values(
   '앗 고객님 감사합니다',
   '2022-03-16'
    );
-   
+
 insert into review(
   reservation_no,
   store_no,
@@ -1413,7 +1413,7 @@ values(
   '다음에도 꼭 와주세요. 잘해드리겠습니다~',
   '2022-03-15'
    );
-   
+
    -- 리뷰사진
 
 insert into review_img(
@@ -1606,7 +1606,7 @@ values(
   1,
   1
    );
-   
+
 insert into board_select(
   mno,
   board_no
@@ -1615,7 +1615,7 @@ values(
   2,
   2
    );
-   
+
 insert into board_select(
   mno,
   board_no
@@ -1624,7 +1624,7 @@ values(
   3,
   3
    );
-   
+
 insert into board_select(
   mno,
   board_no
@@ -1633,7 +1633,7 @@ values(
   4,
   4
    );
-   
+
 insert into board_select(
   mno,
   board_no
@@ -1642,8 +1642,8 @@ values(
   5,
   5
    );
-   
-   
+
+
 --참석자
 
 insert into party_participant (
@@ -2274,7 +2274,7 @@ values(
   1,
   1
    );
-   
+
 insert into store_tag(
   tag_no,
   store_no
@@ -2283,7 +2283,7 @@ values(
   2,
   2
    );
-   
+
 insert into store_tag(
   tag_no,
   store_no
@@ -2292,7 +2292,7 @@ values(
   3,
   3
    );
-   
+
 insert into store_tag(
   tag_no,
   store_no
@@ -2301,7 +2301,7 @@ values(
   4,
   4
    );
-   
+
 insert into store_tag(
   tag_no,
   store_no
@@ -2310,7 +2310,7 @@ values(
   5,
   5
    );
-   
+
 /* 댓글 좋아요 */
 insert into comment_like(
 mno,
@@ -2351,30 +2351,3 @@ board_comment_no
 5,
 2
 );
-
-
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   

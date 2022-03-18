@@ -9,7 +9,7 @@
 <mapper namespace="com.bitproject.dao.StoreTagDao">
 
   <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
-  <resultMap type="store_tag" id="storeMap">
+  <resultMap type="storetag" id="storeMap">
     <id column="tag_no" property="tagNo"/>
     <result column="store_no" property="storeNo"/>
   </resultMap>

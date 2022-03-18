@@ -4,7 +4,7 @@ CREATE TABLE `alcohol_type` (
   `alcohol_type_no` int(11) NOT NULL AUTO_INCREMENT COMMENT '주종번호',
   `type_name` varchar(50) NOT NULL COMMENT '주종명',
   PRIMARY KEY (`alcohol_type_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3 COMMENT='주종';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='주종';
 
 
 -- sojudb.community definition
@@ -13,7 +13,7 @@ CREATE TABLE `community` (
   `community_no` int(11) NOT NULL AUTO_INCREMENT COMMENT '커뮤니티번호',
   `title` varchar(50) NOT NULL COMMENT '커뮤니티명',
   PRIMARY KEY (`community_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COMMENT='커뮤니티';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='커뮤니티';
 
 
 -- sojudb.`member` definition
@@ -39,7 +39,7 @@ CREATE TABLE `member` (
   UNIQUE KEY `UIX_member` (`email`),
   UNIQUE KEY `UIX_member2` (`tel`),
   UNIQUE KEY `UIX_member3` (`nickname`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='회원';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='회원';
 
 
 -- sojudb.notice definition
@@ -53,7 +53,7 @@ CREATE TABLE `notice` (
   `contents` text NOT NULL COMMENT '내용',
   `view_count` int(11) NOT NULL DEFAULT 0 COMMENT '조회수',
   PRIMARY KEY (`notice_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='공지사항';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='공지사항';
 
 
 -- sojudb.sns definition
@@ -62,7 +62,7 @@ CREATE TABLE `sns` (
   `sns_no` int(11) NOT NULL AUTO_INCREMENT COMMENT 'SNS번호',
   `sns_name` varchar(30) NOT NULL COMMENT 'SNS명',
   PRIMARY KEY (`sns_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='SNS';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='SNS';
 
 
 -- sojudb.store definition
@@ -85,7 +85,7 @@ CREATE TABLE `store` (
   `oper` tinyint(1) NOT NULL DEFAULT 0 COMMENT '영업여부',
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '상태',
   PRIMARY KEY (`store_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='주점';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='주점';
 
 
 -- sojudb.store_type definition
@@ -94,7 +94,7 @@ CREATE TABLE `store_type` (
   `store_type_no` int(11) NOT NULL AUTO_INCREMENT COMMENT '주점유형번호',
   `type_name` varchar(50) NOT NULL COMMENT '주점유형명',
   PRIMARY KEY (`store_type_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COMMENT='주점유형';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='주점유형';
 
 
 -- sojudb.tag definition
@@ -103,7 +103,7 @@ CREATE TABLE `tag` (
   `tag_no` int(11) NOT NULL AUTO_INCREMENT COMMENT '태그번호',
   `name` varchar(50) NOT NULL COMMENT '태그명',
   PRIMARY KEY (`tag_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='태그';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='태그';
 
 
 -- sojudb.alcohol_detail definition
@@ -121,7 +121,7 @@ CREATE TABLE `alcohol_detail` (
   PRIMARY KEY (`alcohol_detail_no`),
   KEY `FK_alcohol_type_TO_alcohol_detail` (`alcohol_type_no`),
   CONSTRAINT `FK_alcohol_type_TO_alcohol_detail` FOREIGN KEY (`alcohol_type_no`) REFERENCES `alcohol_type` (`alcohol_type_no`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='술';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='술';
 
 
 -- sojudb.alcohol_management definition
@@ -136,7 +136,7 @@ CREATE TABLE `alcohol_management` (
   PRIMARY KEY (`drink_no`),
   KEY `FK_member_TO_alcohol_management` (`mno`),
   CONSTRAINT `FK_member_TO_alcohol_management` FOREIGN KEY (`mno`) REFERENCES `member` (`mno`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='음주내역';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='음주내역';
 
 
 -- sojudb.alcohol_sales definition
@@ -168,7 +168,7 @@ CREATE TABLE `board` (
   KEY `FK_member_TO_board` (`mno`),
   CONSTRAINT `FK_community_TO_board` FOREIGN KEY (`community_no`) REFERENCES `community` (`community_no`) ON DELETE CASCADE,
   CONSTRAINT `FK_member_TO_board` FOREIGN KEY (`mno`) REFERENCES `member` (`mno`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='게시글';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='게시글';
 
 
 -- sojudb.board_comment definition
@@ -185,7 +185,7 @@ CREATE TABLE `board_comment` (
   KEY `FK_member_TO_board_comment` (`mno`),
   CONSTRAINT `FK_board_TO_board_comment` FOREIGN KEY (`board_no`) REFERENCES `board` (`board_no`) ON DELETE CASCADE,
   CONSTRAINT `FK_member_TO_board_comment` FOREIGN KEY (`mno`) REFERENCES `member` (`mno`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='게시글댓글';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='게시글댓글';
 
 
 -- sojudb.board_select definition
@@ -227,7 +227,7 @@ CREATE TABLE `inquiry` (
   PRIMARY KEY (`inq_no`),
   KEY `FK_member_TO_inquiry` (`mno`),
   CONSTRAINT `FK_member_TO_inquiry` FOREIGN KEY (`mno`) REFERENCES `member` (`mno`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COMMENT='문의';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='문의';
 
 
 -- sojudb.owner_member definition
@@ -267,7 +267,7 @@ CREATE TABLE `party` (
   KEY `FK_store_TO_party` (`store_no`),
   CONSTRAINT `FK_member_TO_party` FOREIGN KEY (`mno`) REFERENCES `member` (`mno`) ON DELETE CASCADE,
   CONSTRAINT `FK_store_TO_party` FOREIGN KEY (`store_no`) REFERENCES `store` (`store_no`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='모임';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='모임';
 
 
 -- sojudb.party_comment definition
@@ -336,7 +336,7 @@ CREATE TABLE `report` (
   PRIMARY KEY (`repo_no`),
   KEY `FK_member_TO_report` (`mno`),
   CONSTRAINT `FK_member_TO_report` FOREIGN KEY (`mno`) REFERENCES `member` (`mno`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='신고하기';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='신고하기';
 
 
 -- sojudb.reservation definition
@@ -357,7 +357,7 @@ CREATE TABLE `reservation` (
   PRIMARY KEY (`reservation_no`),
   KEY `FK_store_TO_reservation` (`store_no`),
   CONSTRAINT `FK_store_TO_reservation` FOREIGN KEY (`store_no`) REFERENCES `store` (`store_no`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='예약';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='예약';
 
 
 -- sojudb.review definition
@@ -386,7 +386,7 @@ CREATE TABLE `review_img` (
   PRIMARY KEY (`review_img_no`),
   KEY `FK_review_TO_review_img` (`reservation_no`),
   CONSTRAINT `FK_review_TO_review_img` FOREIGN KEY (`reservation_no`) REFERENCES `review` (`reservation_no`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='리뷰사진';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='리뷰사진';
 
 
 -- sojudb.sns_account definition
@@ -412,7 +412,7 @@ CREATE TABLE `store_img` (
   PRIMARY KEY (`store_img_no`),
   KEY `FK_store_TO_store_img` (`store_no`),
   CONSTRAINT `FK_store_TO_store_img` FOREIGN KEY (`store_no`) REFERENCES `store` (`store_no`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='주점사진';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='주점사진';
 
 
 -- sojudb.store_menu definition
@@ -426,7 +426,7 @@ CREATE TABLE `store_menu` (
   PRIMARY KEY (`store_menu_no`),
   KEY `FK_store_TO_store_menu` (`store_no`),
   CONSTRAINT `FK_store_TO_store_menu` FOREIGN KEY (`store_no`) REFERENCES `store` (`store_no`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='메뉴';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='메뉴';
 
 
 -- sojudb.store_section_type definition
@@ -474,7 +474,7 @@ CREATE TABLE `menu_img` (
   PRIMARY KEY (`menu_img_no`),
   KEY `FK_store_menu_TO_menu_img` (`store_menu_no`),
   CONSTRAINT `FK_store_menu_TO_menu_img` FOREIGN KEY (`store_menu_no`) REFERENCES `store_menu` (`store_menu_no`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='메뉴사진';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='메뉴사진';
 
 
 -- sojudb.party_board definition
@@ -490,7 +490,7 @@ CREATE TABLE `party_board` (
   PRIMARY KEY (`party_board_no`),
   KEY `FK_party_participant_TO_party_board` (`party_no`,`mno`),
   CONSTRAINT `FK_party_participant_TO_party_board` FOREIGN KEY (`party_no`, `mno`) REFERENCES `party_participant` (`party_no`, `mno`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='모임게시판';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 COMMENT='모임게시판';
 
 
 -- sojudb.party_board_select definition
