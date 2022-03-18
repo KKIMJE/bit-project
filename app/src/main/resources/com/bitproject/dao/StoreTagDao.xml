@@ -55,9 +55,10 @@
 
   <delete id="delete" parameterType="int">
     delete from store_tag 
-    where store_no=#{no}
+    where store_no=#{no} and tag_no=#{no}
   </delete>
-
+  
+  
 </mapper>
 
 
