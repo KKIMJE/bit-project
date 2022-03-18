@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.bitproject.dao.AlcmgmtDao;
-import com.bitproject.domain.Alcohol_management;
+import com.bitproject.domain.AlcoholManagement;
 
 @RestController
 public class AlcmgmtController {
@@ -18,19 +18,19 @@ public class AlcmgmtController {
   }
 
   @RequestMapping("/alcmgmt/add")
-  public Object add(Alcohol_management alcmgmt)  {
+  public Object add(AlcoholManagement alcmgmt)  {
     return alcmgmtDao.insert(alcmgmt);
   }
 
 
   @RequestMapping("/alcmgmt/get")
   public Object get(int no)  {
-    Alcohol_management alcmgmt= alcmgmtDao.findByNo(no);
+    AlcoholManagement alcmgmt= alcmgmtDao.findByNo(no);
     return alcmgmt != null ? alcmgmt : "";
   }
 
   @RequestMapping("/alcmgmt/update")
-  public Object update (Alcohol_management alcmgmt)  {
+  public Object update (AlcoholManagement alcmgmt)  {
     return alcmgmtDao.update(alcmgmt);
   }
 

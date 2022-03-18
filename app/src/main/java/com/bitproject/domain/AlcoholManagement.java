@@ -1,6 +1,6 @@
 package com.bitproject.domain;
 
-public class Alcohol_management {
+public class AlcoholManagement {
   int drinkNo;
   int mNo;
   java.sql.Date date;
