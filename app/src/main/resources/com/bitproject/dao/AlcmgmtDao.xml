@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 
+  namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
+ -->
+<mapper namespace="com.bitproject.dao.AlcmgmtDao">
+
+  <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
+  <resultMap type="alcohol_management" id="alcmgmtMap">
+    <id column="drink_no" property="drinkNo"/>
+    <result column="mno" property="mNo"/>
+    <result column="date" property="date"/>
+    <result column="amount" property="amount"/>
+    <result column="type" property="type"/>
+    <result column="level" property="level"/>
+  </resultMap>
+
+  <!-- 
+    id => 인터페이스의 메서드 이름과 일치해야 한다.
+   -->
+  <select id="findAll" resultMap="alcmgmtMap">
+    select 
+      drink_no,
+      mno,
+      date,
+      amount,
+      type,
+      level
+    from 
+      alcohol_management
+    order by 
+      drink_no desc
+  </select>
+  
+  <!-- 
+    parameterType => 메서드의 파라미터 타입 및 개수와 일치해야 한다.
+   -->
+   <!-- <select id="countAll" resultType="int">
+    select count(*) from alcohol_management
+  </select> -->
+  
+  <select id="findByNo" resultMap="alcmgmtMap" parameterType="int">
+    select 
+      mno,
+      date,
+      amount,
+      type,
+      level
+    from 
+      alcohol_management
+    where 
+      drink_no=#{no}
+  </select>
+
+  <insert id="insert" parameterType="Alcohol_management">
+    insert into alcohol_management(mno,date,amount,type,level) 
+    values(#{mNo},#{date},#{amount},#{type},${level})
+  </insert>
+
+  <update id="update" parameterType="Alcohol_management">
+    update alcohol_management set 
+      date=#{date},
+      amount=#{amount},
+      type=#{type}, 
+      level=#{level} 
+    where 
+      drink_no=#{no}
+  </update>
+  
+  <delete id="delete" parameterType="Alcohol_management">
+    delete from alcohol_management
+    where drink_no=#{no}
+  </delete>
+
+ <!--  <update id="increaseAmount" parameterType="int">
+    update alcohol_management set 
+      amount=amount + 1 
+    where amount=#{amount}
+  </update> -->
+
+</mapper>
+
+
+
+
