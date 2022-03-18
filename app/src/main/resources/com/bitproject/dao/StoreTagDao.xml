@@ -3,23 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<!-- 
-  namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
- -->
+
 <mapper namespace="com.bitproject.dao.StoreTagDao">
 
-  <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
   <resultMap type="storetag" id="storeMap">
     <id column="tag_no" property="tagNo"/>
     <result column="store_no" property="storeNo"/>
   </resultMap>
 
-  <!-- 
-    id => 인터페이스의 메서드 이름과 일치해야 한다.
-   -->
   <select id="findAll" resultMap="storeMap">
     select 
-      tag_no
+      tag_no,
       store_no
     from 
       store_tag
@@ -27,37 +21,15 @@
       store_no desc
   </select>
 
- 
   <insert id="insert" parameterType="int">
     insert into store_tag(tag_no,store_no) 
     values(#{tagNo},#{storeNo})
   </insert>
 
-<!--
-	<select id="findByNo" resultMap="storeMap" parameterType="int">
-    select 
-      tag_no,
-      store_no
-    from 
-      store_tag
-    where 
-      store_no=#{no}
-  </select>
-
-  <update id="update" parameterType="int">
-    update store_tag set
-      tag_no=#{tagNo}, 
-      store_no=#{storeNo}
-    where 
-      store_no=#{storeNo}
-  </update>
-  -->
-
   <delete id="delete" parameterType="int">
     delete from store_tag 
     where store_no=#{no} and tag_no=#{no}
   </delete>
-  
   
 </mapper>
 

@@ -26,21 +26,6 @@ public class StoreTagController {
     return storeTagDao.insert(storeTag);
   }
 
-
-  @RequestMapping("/storeTag/get")
-  public Object get(int no) {
-    StoreTag storetag = storeTagDao.findByNo(no);
-    if (storetag == null) {
-      return "";
-    }
-    return storetag;
-  }
-
-  @RequestMapping("/storeTag/update")
-  public Object update(StoreTag storetag) {
-    return storeTagDao.update(storetag);
-  }
-
   @RequestMapping("/storeTag/delete")
   public Object delete(int no) {
     return storeTagDao.delete(no);
