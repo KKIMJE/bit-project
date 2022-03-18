@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 
+  namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
+ -->
+<mapper namespace="com.bitproject.dao.MemberDao">
+
+  <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
+  <resultMap type="member" id="memberMap">
+    <id column="mno" property="mno"/>
+    <result column="email" property="email"/>
+    <result column="pwd" property="pwd"/>
+    <result column="name" property="name"/>
+    <result column="tel" property="tel"/>
+    <result column="join_date" property="joinDate"/>
+    <result column="social_accept" property="socialAccept"/>
+    <result column="gender" property="gender"/>
+    <result column="birth" property="birth"/>
+    <result column="self_introduction" property="selfIntroduction"/>
+    <result column="m_img" property="mImg"/>
+    <result column="nickname" property="nickName"/>
+    <result column="score" property="score"/>
+    <result column="block_date" property="blockDate"/>
+    <result column="block_accept" property="blockAccept"/>
+    <result column="member_status" property="memberStatus"/>
+  </resultMap>
+
+  <!-- 
+    id => 인터페이스의 메서드 이름과 일치해야 한다.
+   -->
+  <select id="findAll" resultMap="memberMap">
+    select 
+      mno,
+      email,
+      pwd,
+      name,
+      tel,
+      join_date,
+      social_accept,
+      gender,
+      birth,
+      self_introduction,
+      m_img,
+      nickname,
+      score,
+      block_date,
+      block_accept,
+      member_status
+    from 
+      member 
+    order by 
+      mno desc
+  </select>
+
+   <insert id="insert" parameterType="member">
+    insert into member(
+    email,
+    pwd,
+    name,
+    tel,
+    gender,
+    birth,
+    self_introduction,
+    nickname
+    ) 
+    values(
+    #{email},
+    #{pwd},
+    #{name},
+    #{tel},
+    #{gender},
+    #{birth},
+    #{selfIntroduction},
+    #{nickName}
+    )
+  </insert>
+
+
+	<select id="findByNo" resultMap="memberMap" parameterType="int">
+    select
+      mno, 
+      email,
+      pwd,
+      name,
+      tel,
+      join_date,
+      social_accept,
+      gender,
+      birth,
+      self_introduction,
+      m_img,
+      nickname,
+      score,
+      block_date,
+      block_accept,
+      member_status
+    from 
+      member
+    where 
+      mno=#{no}
+  </select>
+  
+
+
+  <update id="update" parameterType="member">
+    update member set
+      pwd=#{pwd}, 
+      name=#{name},
+      tel=#{tel},
+      gender=#{gender},
+      birth=#{birth},
+      self_introduction=#{selfIntroduction},
+      m_img=#{mImg},
+      nickname=#{nickName}
+    where 
+      mno=#{mno}
+  </update>
+  
+
+  <delete id="delete" parameterType="int">
+    delete from member 
+    where mno=#{no}
+  </delete>
+
+
+</mapper>
+
+
+
+
+
+
+
+
