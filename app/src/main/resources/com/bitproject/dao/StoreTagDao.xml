@@ -22,7 +22,7 @@
       tag_no
       store_no
     from 
-      store_no
+      store_tag
     order by 
       store_no desc
   </select>
@@ -30,10 +30,10 @@
  
   <insert id="insert" parameterType="int">
     insert into store_tag(tag_no,store_no) 
-    values(#{tag_no},#{store_no})
+    values(#{tagNo},#{storeNo})
   </insert>
 
-
+<!--
 	<select id="findByNo" resultMap="storeMap" parameterType="int">
     select 
       tag_no,
@@ -46,15 +46,16 @@
 
   <update id="update" parameterType="int">
     update store_tag set
-      tag_no=#{tag_no}, 
-      store_no=#{store_no}
+      tag_no=#{tagNo}, 
+      store_no=#{storeNo}
     where 
       store_no=#{storeNo}
   </update>
+  -->
 
   <delete id="delete" parameterType="int">
     delete from store_tag 
-    where store_tag_no=#{no}
+    where store_no=#{no}
   </delete>
 
 </mapper>
