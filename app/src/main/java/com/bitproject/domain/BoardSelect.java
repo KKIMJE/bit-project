@@ -1,13 +1,14 @@
 package com.bitproject.domain;
 
-public class boardSelect{
+public class BoardSelect{
 
   int mNo;
   int boardNo;
 
+
   @Override
   public String toString() {
-    return "boardSelect [mNo=" + mNo + ", boardNo=" + boardNo + "]";
+    return "BoardSelect [mNo=" + mNo + ", boardNo=" + boardNo + "]";
   }
 
 
@@ -23,6 +24,7 @@ public class boardSelect{
   public void setBoardNo(int boardNo) {
     this.boardNo = boardNo;
   }
+
 
 
 }
