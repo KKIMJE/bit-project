@@ -6,7 +6,7 @@
 
 <mapper namespace="com.bitproject.dao.StoreTagDao">
 
-  <resultMap type="storetag" id="storeMap">
+  <resultMap type="storetag" id="storetagMap">
     <id column="tag_no" property="tagNo"/>
     <result column="store_no" property="storeNo"/>
   </resultMap>
