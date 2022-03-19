@@ -31,8 +31,8 @@
   </select>
 
   <insert id="insert" parameterType="Review">
-    insert into Inquiry(reservation_no,store_no,contents,score,reg_date,comment_contents,comment_reg_date) 
-    values(#{reservationNo},#{storeNo},#{contents},#{score},#{regDate},#{commentContents},#{commentRegDate})
+    insert into Review(store_no,contents,score,comment_contents) 
+    values(#{storeNo},#{contents},#{score},#{commentContents})
   </insert>
 
 	<select id="findByNo" resultMap="reviewMap" parameterType="int">
