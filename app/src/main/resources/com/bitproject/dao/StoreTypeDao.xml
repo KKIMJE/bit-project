@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="com.bitproject.dao.StoreTagDao">
+
+  <resultMap type="storetag" id="storeMap">
+    <id column="tag_no" property="tagNo"/>
+    <result column="store_no" property="storeNo"/>
+  </resultMap>
+
+  <select id="findAll" resultMap="storeMap">
+    select 
+      tag_no,
+      store_no
+    from 
+      store_tag
+    order by 
+      store_no desc
+  </select>
+
+  <insert id="insert" parameterType="int">
+    insert into store_tag(tag_no,store_no) 
+    values(#{tagNo},#{storeNo})
+  </insert>
+
+  <delete id="delete" parameterType="int">
+    delete from store_tag 
+    where store_no=#{no} and tag_no=#{no}
+  </delete>
+  
+</mapper>
+
+
+
+
+
+
+
