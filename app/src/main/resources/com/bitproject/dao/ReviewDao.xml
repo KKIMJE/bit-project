@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.ReviewDao">
+
+  <resultMap type="review" id="reviewMap">
+    <id column="reservation_no" property="reservationNo"/>
+    <result column="store_no" property="storeNo"/>
+    <result column="contents" property="contents"/>
+    <result column="score" property="score"/>
+    <result column="comment_contents" property="commentContents"/>
+    <result column="reg_date" property="regDate"/>
+    <result column="comment_reg_date" property="commentRegDate"/>
+  </resultMap>
+
+  <!-- 
+    id => 인터페이스의 메서드 이름과 일치해야 한다.
+   -->
+  <select id="findAll" resultMap="reviewMap">
+    select 
+      inq_no,
+      mno,
+      type,
+      title,
+      contents,
+      attach_file,
+      answer,
+      answer_date,
+      date
+    from 
+      inquiry 
+    order by 
+      inq_no desc
+  </select>
+
+  <insert id="insert" parameterType="Review">
+    insert into Inquiry(mno,type,title,contents,attach_file,answer) 
+    values(#{mNo},#{type},#{title},#{contents},#{attachFile},#{answer})
+  </insert>
+
+	<select id="findByNo" resultMap="reviewMap" parameterType="int">
+    select
+    	inq_no,
+      title,
+      contents,
+      attach_file,
+      answer,
+      answer_date,
+      date
+    from 
+      inquiry
+    where 
+      inq_no=#{no}
+  </select>
+
+  <update id="update" parameterType="Review">
+    update inquiry set
+    	type=#{type},
+      title=#{title}, 
+      contents=#{contents}
+    where 
+      inq_no=#{inqNo}
+  </update>
+
+  <delete id="delete" parameterType="int">
+    delete from inquiry 
+    where inq_no=#{no}
+  </delete>
+
+
+</mapper>
+
+
+
+
+
+
+
+

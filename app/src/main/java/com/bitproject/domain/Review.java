@@ -6,17 +6,16 @@ public class Review {
   int storeNo;
   String contents;
   float score;
-  String contentsContents;
+  String commentContents;
   java.sql.Timestamp regDate;
   java.sql.Timestamp commentRegDate;
 
   @Override
   public String toString() {
     return "Review [reservationNo=" + reservationNo + ", storeNo=" + storeNo + ", contents="
-        + contents + ", score=" + score + ", contentsContents=" + contentsContents + ", regDate="
+        + contents + ", score=" + score + ", commentContents=" + commentContents + ", regDate="
         + regDate + ", commentRegDate=" + commentRegDate + "]";
   }
-
 
   public int getReservationNo() {
     return reservationNo;
@@ -42,11 +41,11 @@ public class Review {
   public void setScore(float score) {
     this.score = score;
   }
-  public String getContentsContents() {
-    return contentsContents;
+  public String getCommentContents() {
+    return commentContents;
   }
-  public void setContentsContents(String contentsContents) {
-    this.contentsContents = contentsContents;
+  public void setCommentContents(String commentContents) {
+    this.commentContents = commentContents;
   }
   public java.sql.Timestamp getRegDate() {
     return regDate;
@@ -60,9 +59,5 @@ public class Review {
   public void setCommentRegDate(java.sql.Timestamp commentRegDate) {
     this.commentRegDate = commentRegDate;
   }
-
-
-
-
 
 }
