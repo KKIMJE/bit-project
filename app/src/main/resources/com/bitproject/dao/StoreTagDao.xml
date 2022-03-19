@@ -6,12 +6,12 @@
 
 <mapper namespace="com.bitproject.dao.StoreTagDao">
 
-  <resultMap type="storetag" id="storeMap">
+  <resultMap type="storetag" id="storetagMap">
     <id column="tag_no" property="tagNo"/>
     <result column="store_no" property="storeNo"/>
   </resultMap>
 
-  <select id="findAll" resultMap="storeMap">
+  <select id="findAll" resultMap="storetagMap">
     select 
       tag_no,
       store_no
