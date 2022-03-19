@@ -1,6 +1,6 @@
 package com.bitproject.domain;
 
-public class SNS{
+public class Sns{
 
   int snsNo;
 
