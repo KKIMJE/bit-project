@@ -10,63 +10,47 @@
     <result column="store_no" property="storeNo"/>
     <result column="contents" property="contents"/>
     <result column="score" property="score"/>
-    <result column="comment_contents" property="commentContents"/>
     <result column="reg_date" property="regDate"/>
+    <result column="comment_contents" property="commentContents"/>
     <result column="comment_reg_date" property="commentRegDate"/>
   </resultMap>
 
-  <!-- 
-    id => 인터페이스의 메서드 이름과 일치해야 한다.
-   -->
   <select id="findAll" resultMap="reviewMap">
     select 
-      inq_no,
-      mno,
-      type,
-      title,
+      reservation_no,
+      store_no,
       contents,
-      attach_file,
-      answer,
-      answer_date,
-      date
+      score,
+      reg_date,
+      comment_contents,
+      comment_reg_date
     from 
-      inquiry 
+      review 
     order by 
-      inq_no desc
+      reservation_no desc
   </select>
 
   <insert id="insert" parameterType="Review">
-    insert into Inquiry(mno,type,title,contents,attach_file,answer) 
-    values(#{mNo},#{type},#{title},#{contents},#{attachFile},#{answer})
+    insert into Inquiry(reservation_no,store_no,contents,score,reg_date,comment_contents,comment_reg_date) 
+    values(#{reservationNo},#{storeNo},#{contents},#{score},#{regDate},#{commentContents},#{commentRegDate})
   </insert>
 
 	<select id="findByNo" resultMap="reviewMap" parameterType="int">
     select
-    	inq_no,
-      title,
+      reservation_no,
+      store_no,
       contents,
-      attach_file,
-      answer,
-      answer_date,
-      date
+      score,
+      reg_date
     from 
-      inquiry
+      review
     where 
-      inq_no=#{no}
+      reservation_no=#{no}
   </select>
 
-  <update id="update" parameterType="Review">
-    update inquiry set
-    	type=#{type},
-      title=#{title}, 
-      contents=#{contents}
-    where 
-      inq_no=#{inqNo}
-  </update>
-
   <delete id="delete" parameterType="int">
-    delete from inquiry 
-    where inq_no=#{no}
+    delete from review 
+    where reservation_no=#{no}
   </delete>
 
 
