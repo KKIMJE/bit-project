@@ -11,7 +11,7 @@
     <result column="store_no" property="storeNo"/>
   </resultMap>
 
-  <select id="findAll" resultMap="storeMap">
+  <select id="findAll" resultMap="storetagMap">
     select 
       tag_no,
       store_no
