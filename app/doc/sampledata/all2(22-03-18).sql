@@ -293,36 +293,97 @@ INSERT INTO board (board_no,mno,community_no,title,contents,reg_date,update_date
 INSERT INTO board (board_no,mno,community_no,title,contents,reg_date,update_date,view_count) VALUES (30,30,2,'제목30','내용30','2022-03-18 17:49:44.0','2022-03-18 17:49:44.0',8);
 
 -- 신고하기
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (1,1,'우','회','2022-03-18 17:49:44.0','신고내용1',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (2,2,'우','게','2022-03-18 17:49:44.0','신고내용2',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (3,3,'우','주','2022-03-18 17:49:44.0','신고내용3',0);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (4,4,'우','회','2022-03-18 17:49:44.0','신고내용4',0);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (5,5,'우','회','2022-03-18 17:49:44.0','신고내용5',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (6,6,'우','회','2022-03-18 17:49:44.0','신고내용6',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (7,7,'우','회','2022-03-18 17:49:44.0','신고내용7',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (8,5,'우','회','2022-03-18 17:49:44.0','신고내용8',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (9,9,'우','회','2022-03-18 17:49:44.0','신고내용9',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (10,10,'우','회','2022-03-18 17:49:44.0','신고내용10',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (11,11,'우','회','2022-03-18 17:49:44.0','신고내용11',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (12,12,'우','회','2022-03-18 17:49:44.0','신고내용12',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (13,13,'우','회','2022-03-18 17:49:44.0','신고내용13',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (14,14,'우','회','2022-03-18 17:49:44.0','신고내용14',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (15,15,'우','회','2022-03-18 17:49:44.0','신고내용15',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (16,16,'우','회','2022-03-18 17:49:44.0','신고내용16',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (17,17,'우','회','2022-03-18 17:49:44.0','신고내용17',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (18,18,'우','회','2022-03-18 17:49:44.0','신고내용18',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (19,19,'우','회','2022-03-18 17:49:44.0','신고내용19',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (20,20,'우','회','2022-03-18 17:49:44.0','신고내용20',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (21,21,'우','회','2022-03-18 17:49:44.0','신고내용21',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (22,22,'우','회','2022-03-18 17:49:44.0','신고내용22',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (23,23,'우','회','2022-03-18 17:49:44.0','신고내용23',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (24,24,'우','회','2022-03-18 17:49:44.0','신고내용24',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (25,25,'우','회','2022-03-18 17:49:44.0','신고내용25',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (26,26,'우','회','2022-03-18 17:49:44.0','신고내용26',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (27,27,'우','회','2022-03-18 17:49:44.0','신고내용27',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (28,28,'우','회','2022-03-18 17:49:44.0','신고내용28',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (29,29,'우','회','2022-03-18 17:49:44.0','신고내용29',1);
-INSERT INTO report (repo_no,mno,target_no,`type`,`date`,contents,status) VALUES (30,30,'우','회','2022-03-18 17:49:44.0','신고내용30',1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(1, 1, 1, '회', '2022-03-18 17:49:44.000', '신고내용1', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(2, 2, 2, '게', '2022-03-18 17:49:44.000', '신고내용2', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(3, 3, 3, '주', '2022-03-18 17:49:44.000', '신고내용3', 0);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(4, 4, 4, '회', '2022-03-18 17:49:44.000', '신고내용4', 0);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(5, 5, 5, '회', '2022-03-18 17:49:44.000', '신고내용5', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(6, 6, 6, '회', '2022-03-18 17:49:44.000', '신고내용6', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(7, 7, 7, '회', '2022-03-18 17:49:44.000', '신고내용7', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(8, 5, 8, '회', '2022-03-18 17:49:44.000', '신고내용8', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(9, 9, 9, '회', '2022-03-18 17:49:44.000', '신고내용9', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(10, 10, 1, '회', '2022-03-18 17:49:44.000', '신고내용10', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(11, 11, 2, '회', '2022-03-18 17:49:44.000', '신고내용11', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(12, 12, 3, '회', '2022-03-18 17:49:44.000', '신고내용12', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(13, 13, 4, '회', '2022-03-18 17:49:44.000', '신고내용13', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(14, 14, 5, '회', '2022-03-18 17:49:44.000', '신고내용14', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(15, 15, 6, '회', '2022-03-18 17:49:44.000', '신고내용15', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(16, 16, 7, '회', '2022-03-18 17:49:44.000', '신고내용16', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(17, 17, 8, '회', '2022-03-18 17:49:44.000', '신고내용17', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(18, 18, 9, '회', '2022-03-18 17:49:44.000', '신고내용18', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(19, 19, 2, '회', '2022-03-18 17:49:44.000', '신고내용19', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(20, 20, 3, '회', '2022-03-18 17:49:44.000', '신고내용20', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(21, 21, 4, '회', '2022-03-18 17:49:44.000', '신고내용21', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(22, 22, 5, '회', '2022-03-18 17:49:44.000', '신고내용22', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(23, 23, 6, '회', '2022-03-18 17:49:44.000', '신고내용23', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(24, 24, 7, '회', '2022-03-18 17:49:44.000', '신고내용24', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(25, 25, 8, '회', '2022-03-18 17:49:44.000', '신고내용25', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(26, 26, 9, '회', '2022-03-18 17:49:44.000', '신고내용26', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(27, 27, 1, '회', '2022-03-18 17:49:44.000', '신고내용27', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(28, 28, 2, '회', '2022-03-18 17:49:44.000', '신고내용28', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(29, 29, 3, '회', '2022-03-18 17:49:44.000', '신고내용29', 1);
+INSERT INTO report
+(repo_no, mno, target_no, `type`, `date`, contents, status)
+VALUES(30, 30, 4, '회', '2022-03-18 17:49:44.000', '신고내용30', 1);
+
 
 -- 음주내역
 INSERT INTO alcohol_management (drink_no,mno,`date`,amount,`type`,`level`) VALUES (1,1,NULL,'amount1','와인','low');
