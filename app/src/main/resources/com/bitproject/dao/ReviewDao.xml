@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.ReviewDao">
+
+  <resultMap type="review" id="reviewMap">
+    <id column="reservation_no" property="reservationNo"/>
+    <result column="store_no" property="storeNo"/>
+    <result column="contents" property="contents"/>
+    <result column="score" property="score"/>
+    <result column="reg_date" property="regDate"/>
+    <result column="comment_contents" property="commentContents"/>
+    <result column="comment_reg_date" property="commentRegDate"/>
+  </resultMap>
+
+  <select id="findAll" resultMap="reviewMap">
+    select 
+      reservation_no,
+      store_no,
+      contents,
+      score,
+      reg_date,
+      comment_contents,
+      comment_reg_date
+    from 
+      review 
+    order by 
+      reservation_no desc
+  </select>
+
+  <insert id="insert" parameterType="Review">
+    insert into Review(store_no,contents,score,comment_contents) 
+    values(#{storeNo},#{contents},#{score},#{commentContents})
+  </insert>
+
+	<select id="findByNo" resultMap="reviewMap" parameterType="int">
+    select
+      reservation_no,
+      store_no,
+      contents,
+      score,
+      reg_date
+    from 
+      review
+    where 
+      reservation_no=#{no}
+  </select>
+
+  <delete id="delete" parameterType="int">
+    delete from review 
+    where reservation_no=#{no}
+  </delete>
+
+
+</mapper>
+
+
+
+
+
+
+
+

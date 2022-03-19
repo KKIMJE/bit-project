@@ -17,9 +17,9 @@ public interface AlcmgmtDao {
   int update(AlcoholManagement alcmgmt);
 
   int delete(int no);
-  
- // int increaseAmount(int no); 
 
-  
+  // int increaseAmount(int no); 
+
+
 }
 

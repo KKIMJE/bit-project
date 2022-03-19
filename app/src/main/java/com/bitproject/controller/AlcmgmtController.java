@@ -11,7 +11,7 @@ public class AlcmgmtController {
 
   @Autowired 
   AlcmgmtDao alcmgmtDao;
-  
+
   @RequestMapping("/alcmgmt/list")
   public Object list()  {
     return alcmgmtDao.findAll(); 
@@ -39,5 +39,5 @@ public class AlcmgmtController {
     return alcmgmtDao.delete(no);
   }
 }
-  
+
 

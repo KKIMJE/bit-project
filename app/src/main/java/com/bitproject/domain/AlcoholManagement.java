@@ -7,14 +7,14 @@ public class AlcoholManagement {
   String amount; //'7병' 
   String type;
   String level; // '매우 취함' '적당히 취함' 
-  
-  
+
+
   @Override
   public String toString() {
     return "Alcmgmt [drinkNo=" + drinkNo + ", mNo=" + mNo + ", date=" + date + ", amount=" + amount
         + ", type=" + type + ", level=" + level + "]";
   }
-  
+
   public int getDrinkNo() {
     return drinkNo;
   }

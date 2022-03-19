@@ -567,84 +567,104 @@ values(
 -- sns
 
 insert into SNS(
-sns_no
+sns_no,
+sns_name
 )
 values(
-1
+1,
+'카카오'
 );
 
 insert into SNS(
-sns_no
+sns_no,
+sns_name
 )
 values(
-2
+2,
+'네이버'
 );
 
 insert into SNS(
-sns_no
+sns_no,
+sns_name
 )
 values(
-3
+3,
+'구글'
 );
 
 insert into SNS(
-sns_no
+sns_no,
+sns_name
 )
 values(
-4
+4,
+'페이스북'
 );
 
 insert into SNS(
-sns_no
+sns_no,
+sns_name
 )
 values(
-5
+5,
+'애플'
 );
 
 -- SNS계정
 insert into sns_account(
   mno,
-  sns_no
+  sns_no,
+  email
 )
 values(
   1,
-  1
+  1,
+  'test1@test.com'
    );
 
 insert into sns_account(
   mno,
-  sns_no
+  sns_no,
+  email
 )
 values(
   2,
-  2
+  2,
+  'test2@test.com'
    );
 
 insert into sns_account(
   mno,
-  sns_no
+  sns_no,
+  email
 )
 values(
   3,
-  3
+  3,
+  'test3@test.com'
    );
 
 insert into sns_account(
   mno,
-  sns_no
+  sns_no,
+  email
 )
 values(
   4,
-  4
+  4,
+  'test4@test.com'
    );
 
 insert into sns_account(
   mno,
-  sns_no
+  sns_no,
+  email
 )
 values(
   5,
-  5
+  5,
+  'test5@test.com'
    );
 
    /* 커뮤니티 */
@@ -1222,6 +1242,7 @@ values (
 -- 예약하기
 insert into reservation (
   store_no,
+  date,
   people,
   name,
   tel,
@@ -1233,6 +1254,7 @@ insert into reservation (
 )
 values(
   1,
+  '1991-05-21 21:00:00',
   4,
   '김주은',
   '010-1111-2222',
@@ -1245,6 +1267,7 @@ values(
 
 insert into reservation (
   store_no,
+  date,
   people,
   name,
   tel,
@@ -1256,6 +1279,7 @@ insert into reservation (
 )
 values(
   2,
+  '1991-05-21 21:00:00',
   6,
   '고길동',
   '010-3333-4444',
@@ -1268,6 +1292,7 @@ values(
 
 insert into reservation (
   store_no,
+  date,
   people,
   name,
   tel,
@@ -1279,6 +1304,7 @@ insert into reservation (
 )
 values(
   3,
+  '1991-05-21 21:00:00',
   1,
   '홍길동',
   '010-1084-1028',
@@ -1291,6 +1317,7 @@ values(
 
 insert into reservation (
   store_no,
+  date,
   people,
   name,
   tel,
@@ -1302,6 +1329,7 @@ insert into reservation (
 )
 values(
   4,
+  '1991-05-21 21:00:00',
   3,
   '둘리',
   '010-8907-3542',
@@ -1314,6 +1342,7 @@ values(
 
 insert into reservation (
   store_no,
+  date,
   people,
   name,
   tel,
@@ -1325,6 +1354,7 @@ insert into reservation (
 )
 values(
   5,
+  '1991-05-21 21:00:00',
   1,
   '지코',
   '010-3948-2243',
@@ -2016,6 +2046,20 @@ values(3,1);
 insert into party_board_select(mno,party_board_no)
 values(4,2);
 
+
+-- 주점찜
+insert into store_select(store_no,mno)
+  values(1,1);
+insert into store_select(store_no,mno)
+  values(2,2);
+insert into store_select(store_no,mno)
+  values(3,3);
+insert into store_select(store_no,mno)
+  values(4,4);
+insert into store_select(store_no,mno)
+  values(5,5);
+
+
 /* 모임 주점 평가
  * 참석자와 모임이 있어야 평가를 할 수 있다
  * 참석자는 회원정보가 있어야한다.
@@ -2272,15 +2316,6 @@ insert into store_tag(
 )
 values(
   1,
-  1
-   );
-
-insert into store_tag(
-  tag_no,
-  store_no
-)
-values(
-  2,
   2
    );
 
@@ -2289,7 +2324,7 @@ insert into store_tag(
   store_no
 )
 values(
-  3,
+  2,
   3
    );
 
@@ -2298,7 +2333,7 @@ insert into store_tag(
   store_no
 )
 values(
-  4,
+  3,
   4
    );
 
@@ -2307,8 +2342,17 @@ insert into store_tag(
   store_no
 )
 values(
-  5,
+  4,
   5
+   );
+
+insert into store_tag(
+  tag_no,
+  store_no
+)
+values(
+  5,
+  2
    );
 
 /* 댓글 좋아요 */

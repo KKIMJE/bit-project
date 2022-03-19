@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="com.bitproject.dao.StoreTypeDao">
+
+  <resultMap type="storetype" id="storeTypeMap">
+    <id column="store_type_no" property="storeTypeNo"/>
+    <result column="type_name" property="typeName"/>
+  </resultMap>
+
+  <select id="findAll" resultMap="storeTypeMap">
+    select 
+      store_type_no,
+      type_name
+    from 
+      store_type
+    order by 
+      type_name desc
+  </select>
+
+  <insert id="insert" parameterType="int">
+    insert into store_type(store_type_no,type_name) 
+    values(#{storeTypeNo},#{typeName})
+  </insert>
+
+  <delete id="delete" parameterType="int">
+    delete from store_type
+    where type_name=#{name} and store_type_no=#{no}
+  </delete>
+  
+</mapper>
+
+
+
+
+
+
+
