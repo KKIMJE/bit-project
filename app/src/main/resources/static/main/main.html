@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/nav.css">
-    <link rel="stylesheet" href="CSS/common.css">
-    <link rel="stylesheet" href="CSS/content.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="content.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
     
     <title>야술먹자</title>
@@ -20,7 +20,7 @@
         <div><!-- 공간, 삭제하지 마세요 --></div>
 
         <div class="navbar__logo">
-            <a href="index.html"><img src="img/logo.png" alt=""></a>
+            <a href="index.html"><img src="../img/logo.png" alt=""></a>
         </div>
 
         <ul class="navbar__menu">
@@ -30,23 +30,20 @@
         </ul>
 
         <ul class="navbar__login">
-
-            <div class="btn-group"> <!-- 알림 -->
+            <!-- 알림 -->
+            <div class="btn-group"> 
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                         <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-lg-end">
-                      <li><button class="dropdown-item" type="button">Action</button></li>
-                      <li><button class="dropdown-item" type="button">Another action</button></li>
-                      <li><button class="dropdown-item" type="button">알림이 도착하였습니다.</button></li>
-                    </ul>
                 </div>
             </div>
 
-            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a> <!-- 마이페이지 -->
+            <!-- 마이페이지 -->
+            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a> 
 
-            <div class="btn-group"> <!-- 검색 -->
+            <!-- 검색 -->
+            <div class="btn-group"> 
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                         <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
@@ -59,9 +56,10 @@
                     </li>
                     </ul>
                 </div>
-            </div>
+            </div> 
 
-            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a> <!-- 지도 -->
+            <!-- 지도 -->
+            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a> 
         </ul>
     </nav>
 
