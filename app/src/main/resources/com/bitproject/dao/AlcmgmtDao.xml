@@ -9,7 +9,7 @@
 <mapper namespace="com.bitproject.dao.AlcmgmtDao">
 
   <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
-  <resultMap type="alcoholmanagement" id="alcmgmtMap">
+  <resultMap type="alcoholManagement" id="alcmgmtMap">
     <id column="drink_no" property="drinkNo"/>
     <result column="mno" property="mNo"/>
     <result column="date" property="date"/>
@@ -57,7 +57,7 @@
 
   <insert id="insert" parameterType="AlcoholManagement">
     insert into alcohol_management(mno,date,amount,type,level) 
-    values(#{mNo},#{date},#{amount},#{type},${level})
+    values(#{mNo},#{date},#{amount},#{type},#{level})
   </insert>
 
   <update id="update" parameterType="AlcoholManagement">
@@ -67,10 +67,10 @@
       type=#{type}, 
       level=#{level} 
     where 
-      drink_no=#{no}
+      drink_no=#{drinkNo}
   </update>
   
-  <delete id="delete" parameterType="AlcoholManagement">
+  <delete id="delete" parameterType="int">
     delete from alcohol_management
     where drink_no=#{no}
   </delete>
