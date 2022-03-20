@@ -15,85 +15,53 @@
 
   <title>야술먹자</title>
   <style>
-    * {
-      font-family: NanumSquareRound;
-    }
 
-    div.left {
-      /* padding: 0 100px 0 0; */
-      width: 50%;
-      float: left;
-      box-sizing: border-box;
-      border-right: 1px solid #000;
-    }
+  * {
+    font-family: NanumSquareRound;
+  }
 
-    div.left div{
-      margin-bottom: 15px;
-    }
+  content {
+    width: 920
+  }
 
-    div.right {
-      padding: 0 20px;
-      width: 50%;
-      float: right;
-      box-sizing: border-box;
-    }
+  div.left {
+    /* padding: 0 100px 0 0; */
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    border-right: 1px solid #000;
+  }
 
-    div.right div{
-      margin-bottom: 15px;
-    }
+  div.right {
+    padding: 0 20px;
+    width: 100%;
+    float: right;
+    box-sizing: border-box;
+  }
+  .x-btn {
+    text-align: center;
+    width: 50%;
+    height: 300px;
+    margin-top: 70px;
+  }
 
-    .x-join {
-      text-align: center;
-      width: 100%;
-      height: 300px;
-      margin-top: 70px;
-    }
+h1 {
+  text-align: center;
+  margin-bottom: 70px;
+}
 
-    .x-attach {
-      text-align: center;
-      width: 100%;
+.x-pwd-span {
+  font-size: 10pt;
+  font-weight: lighter;
+  color: #848484;
+}
 
-    }
+.btn-primary {
+  background-color: #29C05E;
+  width: 90px;
+}
 
-    #x-attach-btn {
-      width: 200px;
-      margin: 3px;
-    }
 
-    #x-attach-store-btn {
-      width: 200px;
-      margin: 3px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 70px;
-    }
-
-    .x-pwd-span {
-      font-size: 10pt;
-      font-weight: lighter;
-      color: #848484;
-    }
-
-    .btn-primary {
-      background-color: #29C05E;
-      width: 90px;
-    }
-
-    input {
-      margin: 3px;
-    }
-
-    #x-addr-btn {
-      width: 65px;
-      height: 30px;
-      font-size: 2px;
-    }
-
-    #x-addr1 {
-      width: 70px;
-    }
   </style>
 </head>
 
@@ -163,57 +131,37 @@
 
 <content>
   <div>
-    <h1>야!술먹자 주점 등록</h1>
+    <h1>야!술먹자 주점 메뉴 등록</h1>
     <form>
       <div class="left">
-        <div>
-          가게명<br>
-          <input id="x-store-name" type="text"><br>
-        </div>
-        <div>
-          주소<br>
-          <input id="x-addr1" type="text"><button id="x-addr-btn" class="btn btn-primary" type="button">우편번호</button><br>
-          <input id="x-addr2" type="text"><br>
-          <input id="x-addr3" type="text"><br>
-        </div>
-        <div>
-          전화번호<br>
-          <input id="x-tel" type="text"><br>
-        </div>
-        <div>
-          영업시간<br>
-          <textarea id="x-store-time" type="text"></textarea><br>
-        </div>
+        주류등록 <br>
+        * 최대 6개까지만 대표를 설정할 수 있습니다.<br>
+        주류명<br>
+        <select>
+          <option>소주</option>
+          <option>맥주</option>
+          <option>와인</option>
+          <option>막걸리</option>
+          <option>양주</option>
+          <option>사케</option>
+          <option>전통주</option>
+          <option>기타</option>
+        </select> <br>
+        가격
+        <input type="text">
+
       </div>
-
-
       <div class="right">
-        <div>
-          가게소개<br>
-          <textarea id="x-store-intro" type="text"></textarea><br>
-        </div>
-        <div>
-          태그선택<br>
-          <input id="x-nickname" type="text"><br>
-        </div>
-        <div>
-          예약 가능 여부 <br>
-          가능<input type="checkbox"> 불가능<input type="checkbox"> <br>
-        </div>
-      </div>
 
-      <div class="x-attach">
-        <button id="x-attach-btn" class="btn btn-primary" type="button">사업자등록증 첨부하기</button>
-        <button id="x-attach-store-btn" class="btn btn-primary" type="button">주점 사진 첨부하기</button>
+
       </div>
     </form>
   </div>
-  <div class="x-join">
-    <button id="x-join-btn" class="btn btn-primary" type="button">다음</button>
+  <div class="x-btn btn">
+    <button id="x-add-btn" class="btn btn-primary" type="button">등록</button>
     <button id="x-cancel-btn" class="btn btn-primary" type="button">나가기</button>
   </div>
 </content>
-
 
 </html>
 <!-- icons -->
