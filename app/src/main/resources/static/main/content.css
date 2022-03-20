@@ -76,6 +76,7 @@ footer__ {
 .footer-contents {
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 
 .footer-content {
