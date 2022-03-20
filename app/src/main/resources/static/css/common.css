@@ -9,11 +9,15 @@ div.container {
 }
 */
 
-html {
+* {
   font-family: NanumSquareRound;
 }
 
 body {
+  width: 1280;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 68px; /* footer 높이 */
   margin: 0;
   padding: 0;
 }
