@@ -1,18 +1,22 @@
 @charset "UTF-8";
+<<<<<<< HEAD
+=======
+@import 'reset.css';
+>>>>>>> branch 'main' of https://github.com/KKIMJE/project-yasulmukja.git
 
 * {
   font-family: NanumSquareRound;
 }
 
 body {
+<<<<<<< HEAD
   width: 1280px;
+=======
+  align-items: center;
+>>>>>>> branch 'main' of https://github.com/KKIMJE/project-yasulmukja.git
   height: auto;
   min-height: 100%;
   padding-bottom: 68px; /* footer 높이 */
   margin: 0;
   padding: 0;
-}
-
-a {
-  text-decoration: none;
 }
