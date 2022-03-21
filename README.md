@@ -2,7 +2,7 @@
 
 - 비트캠프 프로젝트 B조 5팀
   - 양성은 양승범 한상은 김주은 김규범 김지현
-  - https://www.notion.so/4d12a1e3be49474590007ede758b7106
+  - https://www.notion.so/Debugger-5574baffadcb4b0ba47de81f5470267a
     - 세부 내용 노션 정리
 
 ## 프로젝트-주제선정 및 발표
