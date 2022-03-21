@@ -1,28 +1,61 @@
 .store-category {
   font-family: NanumSquareRound;
   display: flex;
+  align-items: baseline;
   justify-content: space-around;
   margin-top: 100px;
+  margin-left: -25%;
+  margin-right: -25%;
   font-weight: 700;
 }
 
 .store-category-sort {
   display: flex;
+  align-items: baseline;
+}
+
+.store-category-font {
+  margin: 0px 15px;
+  font-weight: 700;
+  background-color: white;
+  border-style: solid;
+  border-color: white;
+}
+
+.store-category-font-h {
+  margin: 0px 15px;
+  padding: 4px 6px;
+  font-weight: 700;
+  background-color: #29c05e;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
 }
 
 .store-filter {
   display: flex;
+  align-items: baseline;
+  margin-right: 80px;
+}
+
+.store-filter-font {
+  margin: 0px 15px;
+  background-color: white;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 16px;
+  border-color: rgb(160, 160, 160);
 }
 
 footer__store {
-  left: 0;
-  right: 0;
-  bottom: 0;
   font-weight: 700;
 }
 
 .footer-contents {
-  margin-top: 694px;
+  margin-top: 710px;
+  margin-left: -25%;
+  margin-right: -25%;
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;
   display: flex;
@@ -47,4 +80,20 @@ footer__store {
 
 .footer-content-info {
   margin-right: 40px;
+}
+
+/* 테블릿 세로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 768px) {
+}
+
+/* 테블릿 가로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 1024px) {
+}
+
+/* 스마트폰 가로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 480px) {
+}
+
+/* 스마트폰 세로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 320px) {
 }
