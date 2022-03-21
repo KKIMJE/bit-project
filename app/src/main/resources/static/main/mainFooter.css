@@ -1,4 +1,7 @@
 footer__ {
+  border: 1px solid #29c05e;
+  border-width: 3px 0px 0px 0px;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
@@ -6,8 +9,6 @@ footer__ {
 }
 
 .footer-contents {
-  border: 1px solid #29c05e;
-  border-width: 3px 0px 0px 0px;
   display: flex;
   justify-content: center;
   background-color: white;

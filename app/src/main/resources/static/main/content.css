@@ -7,10 +7,6 @@ content {
   align-items: center;
   margin-right: 28px;
   padding-top: 300px;
-<<<<<<< HEAD
-  width: 1280px;
-=======
->>>>>>> branch 'main' of https://github.com/KKIMJE/project-yasulmukja.git
 }
 
 .search-bar {
@@ -33,7 +29,7 @@ content {
 }
 
 .main-icons {
-  margin-left: 40px;
+  margin-left: 35px;
   margin-top: 35px;
   display: flex;
   justify-content: space-evenly;
