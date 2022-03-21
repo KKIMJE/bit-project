@@ -1,6 +1,17 @@
 .store-category {
+  font-family: NanumSquareRound;
   display: flex;
+  justify-content: space-around;
   margin-top: 100px;
+  font-weight: 700;
+}
+
+.store-category-sort {
+  display: flex;
+}
+
+.store-filter {
+  display: flex;
 }
 
 footer__store {
@@ -11,7 +22,7 @@ footer__store {
 }
 
 .footer-contents {
-  margin-top: 693px;
+  margin-top: 694px;
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;
   display: flex;
