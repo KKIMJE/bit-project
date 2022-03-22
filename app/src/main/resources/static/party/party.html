@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
+    
+    <title>야술먹자</title>
+</head>
+<body>
+
+    <nav class="navbar__">
+        <div><!-- 공간, 삭제하지 마세요 --></div>
+
+        <div class="navbar__logo">
+            <a href="main.html"><img src="../img/logo.png" alt=""></a>
+        </div>
+
+        <ul class="navbar__menu">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
+        </ul>
+
+        <ul class="navbar__login">
+            <!-- 알림 -->
+            <div class="btn-group"> 
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 마이페이지 -->
+            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a> 
+
+            <!-- 검색 -->
+            <div class="btn-group"> 
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                      <li>
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div> 
+
+            <!-- 지도 -->
+            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a> 
+        </ul>
+    </nav>
+
+    <content>
+    
+        <div class="input-group mb-3 search-bar">
+            <button class="btn btn-outline-secondary dropdown-toggle search-bar-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">키워드</button>
+            <ul class="dropdown-menu">
+            <li class="li-non">인기키워드</li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="li-non">최근검색</li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            
+            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        </div>
+
+        <div class="main-icons">
+            <div class="main-icon">
+                <a href=""><i class="fa-solid fa-wine-bottle"></i></a>
+                <div class="main-icons-font">주종</div>
+            </div>
+            <div class="main-icon">
+                <a href=""><i class="fa-solid fa-store"></i></a>
+                <div class="main-icons-font">주점</div>
+            </div>
+            <div class="main-icon">
+                <a href=""><i class="fa-solid fa-comments"></i></a>
+                <div class="main-icons-font">커뮤니티</div>
+            </div>
+            <div class="main-icon">
+                <a href=""><i class="fa-solid fa-people-group"></i></a>
+                <div class="main-icons-font">우리지금만나</div>
+            </div>
+        </div>
+            
+        <footer__>
+            <div class="footer-contents">
+                <div class="footer-contents-1">전화번호  :  1566-8877</div>
+                <div class="footer-content">
+                    <div>
+                        <a class="footer-logo" href="main.html"><img src="../img/logo.png" alt=""></a>
+                    </div>
+                    <div>
+                        @ Copyright Yasulmukja All Rights Reserved<br>
+                        Designed by Tissue94
+                    </div>
+                </div>
+                <div class="footer-content-3">
+                    <div class="footer-content-info">공지사항</div>
+                    <div>고객센터</div>
+                </div>
+            </div>
+
+        </footer__>
+
+    </content>
+</body>
+</html>
+<!-- icons -->
+<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script> 
+<!-- Bootstrap CSS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

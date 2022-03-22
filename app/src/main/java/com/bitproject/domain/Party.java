@@ -19,7 +19,6 @@ public class Party {
   Timestamp updateDate;
 
 
-
   @Override
   public String toString() {
     return "Party [partyNo=" + partyNo + ", mno=" + mno + ", storeNo=" + storeNo + ", title="
@@ -108,7 +107,43 @@ public class Party {
   public void setUpdateDate(Timestamp updateDate) {
     this.updateDate = updateDate;
   }
-
-
-
 }
+
+
+/*   
+    <result column="mno" property="mNo"/>
+    <result column="store_no" property="storeNo"/>
+    <result column="title" property="title"/>
+    <result column="contents" property="contents"/>
+    <result column="party_fee" property="party_fee"/>
+    <result column="meeting_date" property="meeting_date"/>
+    <result column="max_member" property="max_member"/>
+    <result column="alcohol_type" property="alcohol_type"/>
+    <result column="alcohol_limit" property="communityNo"/>
+    <result column="view_count" property="viewCount"/>
+    <result column="reg_date" property="regDate"/>
+    <result column="update_date" property="updateDate"/>
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
