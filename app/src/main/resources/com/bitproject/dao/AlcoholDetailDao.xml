@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 
+  namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
+ -->
+<mapper namespace="com.bitproject.dao.AlcoholDetailDao">
+
+  <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
+  <resultMap type="alcoholDetail" id="alcoholDetailMap">
+    <id column="alcohol_detail_no" property="no"/>
+    <result column="alcohol_type_no" property="alcoholTypeNo"/>
+    <result column="name" property="name"/>
+    <result column="degree" property="degree"/>
+    <result column="brand" property="brand"/>
+    <result column="origin" property="origin"/>
+    <result column="volume" property="volume"/>
+    <result column="characteristic" property="characteristic"/>
+    <result column="img" property="img"/>
+  </resultMap>
+
+  <!-- 
+    id => 인터페이스의 메서드 이름과 일치해야 한다.
+   -->
+  <select id="findAll" resultMap="alcoholDetailMap">
+    select 
+      alcohol_detail_no,
+      alcohol_type_no,
+      name,
+      degree,
+      brand,
+      origin,
+      volume,
+      characteristic,
+      img
+    from 
+      alcohol_detail 
+    order by 
+      alcohol_type_no asc
+  </select>
+
+  <insert id="insert" parameterType="alcoholDetail">
+    insert into alcohol_detail(
+      alcohol_type_no,
+      name,
+      degree,
+      brand,
+      origin,
+      volume,
+      characteristic,
+      img
+    ) 
+    values(
+    #{alcoholTypeNo},
+    #{name},
+    #{degree},
+    #{brand},
+    #{origin},
+    #{volume},
+    #{characteristic},
+    #{img}
+    )
+  </insert>
+
+
+	<select id="findByNo" resultMap="alcoholDetailMap" parameterType="int">
+    select
+      alcohol_detail_no,
+      alcohol_type_no,
+      name,
+      degree,
+      brand,
+      origin,
+      volume,
+      characteristic,
+      img
+    from 
+      alcohol_detail
+    where 
+      alcohol_detail_no=#{no}
+  </select>
+  
+
+
+  <update id="update" parameterType="alcoholDetail">
+    update alcohol_detail set
+    alcohol_type_no=#{alcoholTypeNo},
+    name=#{name},
+    degree=#{degree},
+    brand=#{brand},
+    origin=#{origin},
+    volume=#{volume},
+    characteristic=#{characteristic},
+    img=#{img}
+    where 
+      alcohol_detail_no=#{no}
+  </update>
+  
+
+  <delete id="delete" parameterType="int">
+    delete from alcohol_detail 
+    where alcohol_detail_no=#{no}
+  </delete>
+
+
+</mapper>
+
+
+
+
+
+
+
+
