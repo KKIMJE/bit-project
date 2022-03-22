@@ -10,14 +10,6 @@
 
   <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
   <resultMap type="inquiry" id="inquiryMap">
-    <id column="inq_no" property="inqNo"/>
-    <result column="mno" property="mNo"/>
-    <result column="type" property="type"/>
-    <result column="title" property="title"/>
-    <result column="contents" property="contents"/>
-    <result column="attach_file" property="attachFile"/>
-    <result column="answer" property="answer"/>
-    <result column="answer_date" property="answerDate"/>
   </resultMap>
 
   <!-- 
