@@ -21,14 +21,14 @@
       type_name desc
   </select>
 
-  <insert id="insert" parameterType="int">
-    insert into store_type(store_type_no,type_name) 
-    values(#{storeTypeNo},#{typeName})
+  <insert id="insert" parameterType="storeType">
+    insert into store_type(type_name) 
+    values(#{typeName})
   </insert>
 
   <delete id="delete" parameterType="int">
     delete from store_type
-    where type_name=#{name} and store_type_no=#{no}
+    where store_type_no=#{no}
   </delete>
   
 </mapper>
