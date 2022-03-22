@@ -12,18 +12,18 @@ public class AlcoholDetailController {
   @Autowired
   AlcoholDetailDao alcoholDetailDao;
 
-  @RequestMapping("/alcdetail/list")
+  @RequestMapping("/alcohol/list")
   public Object list() {
     return alcoholDetailDao.findAll();
   }
 
-  @RequestMapping("/alcdetail/add")
+  @RequestMapping("/alcohol/add")
   public Object add(AlcoholDetail alcoholDetail) {
     return alcoholDetailDao.insert(alcoholDetail);
   }
 
 
-  @RequestMapping("/alcdetail/get")
+  @RequestMapping("/alcohol/get")
   public Object get(int no) {
     AlcoholDetail alcoholDetail = alcoholDetailDao.findByNo(no);
     if (alcoholDetail == null) {
@@ -33,12 +33,12 @@ public class AlcoholDetailController {
   }
 
 
-  @RequestMapping("/alcdetail/update")
+  @RequestMapping("/alcohol/update")
   public Object update(AlcoholDetail alcoholDetail) {
     return alcoholDetailDao.update(alcoholDetail);
   }
 
-  @RequestMapping("/alcdetail/delete")
+  @RequestMapping("/alcohol/delete")
   public Object delete(int no) {
     return alcoholDetailDao.delete(no);
   }
