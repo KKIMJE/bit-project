@@ -11,6 +11,7 @@ footer__ {
   display: flex;
   justify-content: center;
   background-color: white;
+  max-width: 198vh;
 }
 
 .footer-content {
