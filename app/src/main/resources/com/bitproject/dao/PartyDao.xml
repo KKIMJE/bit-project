@@ -11,11 +11,15 @@
 
   <select id="findAll" resultMap="partyMap">
     select 
+      partyNo,
       mno,
+      storeNo,
       title,
-      contents,
-      contents,
       party_fee,
+      meeting_date,
+      maxMember,
+      alcoholType,
+      meeting_date,
       meeting_date,
       reg_date,
       update_date,

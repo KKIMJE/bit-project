@@ -1,0 +1,36 @@
+.button-join {
+  font-family: NanumSquareRound;
+  display: flex;
+  margin-top: 100px;
+  margin-left: -25%;
+  margin-right: -25%;
+  font-weight: 900;
+  padding: 10px 15px;
+  background-color: #90d483;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  font-size: 30px;
+}
+
+.button-join i {
+  font-size: 28px;
+}
+
+.btn-common {
+  font-family: NanumSquareRound;
+  display: flex;
+  align-items: baseline;
+  margin-top: 100px;
+  margin-left: -25%;
+  margin-right: -25%;
+  font-weight: 400;
+}
+
+.button-font {
+  padding: 10px 15px;
+  background-color: #29c05e;
+  color: white;
+  border: 0;
+  border-radius: 30px;
+}
