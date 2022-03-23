@@ -82,27 +82,82 @@
 
 
 
-  <!-- 밑의 div, br 태그를 지운뒤 작업해주세요-->
-  <div class="container">
-    <div class="alc-detail-div">
+  <div class="detail-div">
 
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="img/alcohol5.png" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h1>dd</h1>
-              <h5 class="card-title">좋은 데이</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="detail-img-div detail">
+      <!-- 이미지 고정 크기 정하고 위치 다시 조정 -->
+      <img class="alc-img" src="alcoholimg/alcohol5.png">
+    </div>
 
+    <div class="detail-intro-div detail">
+      <span class="intro-name-span">좋은데이<br><br></span>
+      <span style="font-size:30px">PRODUCT INFORMATION <br></span>
+      <hr>
+      <span class="content">제조사&nbsp;&nbsp;&nbsp;</span>
+      <span class="intro-brand-span content">좋은데이회사</span>
+
+      <span class="content">소재지&nbsp;&nbsp;&nbsp;</span>
+      <span class="intro-origin-span content">성동구</span>
+      <hr>
+
+      <span class="content">용량&nbsp;&nbsp;&nbsp;</span>
+      <span class="intro-vol-span content">360ml</span>
+      <hr>
+
+      <span class="content">특징&nbsp;&nbsp;&nbsp;</span><br><br>
+      <div class="intro-char-span content">좋은데이회사에서 만든 좋은데이 소주.하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하</div>
     </div>
   </div>
+
+
+  <div class="storelist-title-div">
+    dd
+  </div>
+
+  <div class="sell-storelist-div">
+    <div class="storelist-div">
+      <div class="store-div">
+        <img src="storeimg/store1.png" alt="">
+      </div>
+      <div class="sell-alclist-div">
+        <img src="storeimg/store2.png" alt="">
+      </div>
+      <div class="sell-alclist-div">
+        <img src="storeimg/store3.png" alt="">
+      </div>
+      <div class="sell-alclist-div">
+        <img src="storeimg/store4.png" alt="">
+      </div>
+    </div>
+
+    <div class="storelist-div">
+      <div class="store-div">
+        <img src="storeimg/store5.png" alt="">
+      </div>
+      <div class="sell-alclist-div">
+        <img src="storeimg/store6.png" alt="">
+      </div>
+      <div class="sell-alclist-div">
+        <img src="storeimg/store7.png" alt="">
+      </div>
+      <div class="sell-alclist-div">
+        <img src="storeimg/store8.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div id="map" style="width:100%;height:350px;"></div>
+  <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+      mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+      };
+    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+  </script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/082c7a181af2f4cbfbafa2de1508a9f6"></script>
+
 
 
 
@@ -130,6 +185,7 @@
 </body>
 
 </html>
+
 <!-- icons -->
 <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
 <!-- Bootstrap CSS -->

@@ -84,23 +84,21 @@
   <div class="alclist-div container">
     <div class="alclist-category-div">
       <div class="category-sort-div">
-        <button type="button" class="btn btn-outline-success btn-sm">전체</button>
-        <button type="button" class="btn btn-outline-success btn-sm">소주</button>
-        <button type="button" class="btn btn-outline-success btn-sm">맥주</button>
-        <button type="button" class="btn btn-outline-success btn-sm">막걸리</button>
-        <button type="button" class="btn btn-outline-success btn-sm">양주</button>
-        <button type="button" class="btn btn-outline-success btn-sm">와인</button>
-        <button type="button" class="btn btn-outline-success btn-sm">사케</button>
-        <button type="button" class="btn btn-outline-success btn-sm">전통주</button>
-        <button type="button" class="btn btn-outline-success btn-sm">기타</button>
-        <button type="button" class="btn dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
-          필터링
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">도수별</a></li>
-          <li><a class="dropdown-item" href="#">가나다순</a></li>
-        </ul>
+        <button type="button" class="category-font act"><i class="fa-solid fa-border-all"></i>전체</button>
+        <button type="button" class="category-font">소주</button>
+        <button type="button" class="category-font">맥주</button>
+        <button type="button" class="category-font">막걸리</button>
+        <button type="button" class="category-font">양주</button>
+        <button type="button" class="category-font">와인</button>
+        <button type="button" class="category-font">사케</button>
+        <button type="button" class="category-font">전통주</button>
+        <button type="button" class="category-font">기타</button>
       </div>
+
+        <div class="filter">
+          <button type="button" class="btn btn-outline-secondary filter-font btn-sm">거리순 <i class="fa-solid fa-chevron-down"></i></button>
+          <button type="button" class="btn btn-outline-secondary filter-font btn-sm">필터 <i class="fa-solid fa-filter"></i></button>
+        </div>
     </div>
 
 
@@ -264,36 +262,10 @@
 
 </body>
 
-<script>
-var alcoholitem = document.querySelector(".alclist-item-div")
-fetch("/alcohol/list")
-.then(function(response) {
-  console.log(response);
-  return response.json();
-})
-.then(function(alcohols) {
-  console.log(alcohols);
-  for(var item of alcohols) {
-    alcoholitem.innerHTML = `<a href="alcoholdetail.html">
-      <div class="card border border-white">
-        <img src="img/alcohol5.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-          <ul>
-            <li>좋은데이</li>
-            <li>16.9도</li>
-          </ul>
-          </p>
-        </div>
-      </div>
-    </a>`
-  }
-})
-
-</script>
 
 </html>
 <!-- icons -->
 <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
 <!-- Bootstrap CSS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="alcohollist.js"></script>

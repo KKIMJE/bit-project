@@ -44,25 +44,52 @@
 @media screen and (min-width: 320px) {
 }
 
-.container {
-  display: grid;
+.alclist-category-div {
   font-family: NanumSquareRound;
-}
-
-.alclist-div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
   margin-top: 100px;
-}
-
-.btn:hover {
-  background-color: #29C05E;
-}
-
-.btn-sm {
-  margin: 2vh;
+  margin-left: -25%;
+  margin-right: -25%;
+  font-weight: 700;
 }
 
 .category-sort-div {
-  text-align: center;
+  display: flex;
+  align-items: baseline;
+}
+
+.category-font {
+  margin: 0px 15px;
+  font-weight: 700;
+  background-color: white;
+  border-style: solid;
+  border-color: white;
+}
+
+.act {
+  padding: 4px 6px;
+  background-color: #29c05e;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+}
+
+.filter {
+  display: flex;
+  align-items: baseline;
+  margin-right: 80px;
+}
+
+.filter-font {
+  margin: 0px 15px;
+  background-color: white;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 16px;
+  border-color: rgb(160, 160, 160);
 }
 
 .alclist-item-div {
