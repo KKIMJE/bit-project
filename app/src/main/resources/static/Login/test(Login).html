@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/password.css">
+    <link rel="stylesheet" href="../css/Login.css">
     
     <title>야술먹자</title>
 </head>
@@ -67,39 +67,30 @@
 
 
     <!-- 밑의 div, br 태그를 지운뒤 작업해주세요-->
-    <h1>비밀번호 찾기</h1>
+    <h1>로그인</h1>
     <div class="login-form">
         <div>
-            <a class = notice>다음 정보를 입력하여 임시번호를 이메일로 받으세요</a>
-            </div>
             <div>
                 <a class="form_item_name">이메일</a>
             </div>
             <input type="text" name="email" class="form_input">
-            <div class="form_text_alert_padding"></div>
+            <div class="form_text_alert_padding">
                 <div id="alert_email" class="form_text_alert"></div>
+            </div>
             <div>
-                <a class="form_item_name">이름</a>
+                <a class="form_item_name">패스워드</a>
             </div>
             <input type="text" name="password" class="form_input">
-            <div class="form_text_alert_padding"></div>
+            <div class="form_text_alert_padding">
                 <div id="alert_email" class="form_text_alert"></div>
-            <div>
-                <a class="form_item_name">휴대번호</a>
+                <label>
+                    <a href="#" p class="link">패스워드 찾기</a>
+                </label>
             </div>
-            <input type="text" name="cellphone" class=cell_input size="3" maxlength="3"> 
-            <input type="text" name="cellphone" class=cell_input size="3" maxlength="4">
-            <input type="text" name="cellphone" class=cell_input size="3" maxlength="4">
-            <input type="submit" value="인증번호" class="number-btn" size="3" maxlength="4">
-            <div>
-                <a class="form_item_num">인증번호</a>
-            </div>
-                <input type="text" name="password" class="form_input">
-                <div class="form_text_alert_padding"></div>
-            <label>
-                <a class="form_number">인증번호를 입력해주세요</a>
-            </label>
-            <input type="submit" value="임시비밀번호 받기" class="submit-btn">
+            <input type="submit" value="로그인" class="submit-btn">
+            <lavel>
+                <p class="links">SNS계정으로 간편하게 로그인하세요</p>
+            </lavel>
         </form>
         </div>
     </div>
@@ -121,6 +112,7 @@
                 <div>고객센터</div>
             </div>
         </div>
+
     </footer__>
 
 </body>
