@@ -1,3 +1,11 @@
+/* nav-bar 일부수정 */
+body > nav > ul.navbar__login > div:nth-child(3) > div > button > a > login-i {
+  padding-right: 15px;
+}
+body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
+  padding-right: 15px;
+}
+
 /* 주점 카테고리 분류 버튼 */
 .store-category {
   font-family: NanumSquareRound;
@@ -17,6 +25,7 @@
 
 .store-category-font {
   margin: 0px 15px;
+  padding: 4px 6px;
   font-weight: 700;
   background-color: white;
   border-style: solid;
@@ -24,12 +33,29 @@
 }
 
 .act {
+  margin: 0px 15px;
   padding: 4px 6px;
   background-color: #29c05e;
   color: white;
   border-style: solid;
   border-color: white;
   border-radius: 16px;
+}
+
+body > div > div > div.store-category-sort > button.store-category-font.act > i {
+  padding: 0;
+  margin: 0;
+}
+
+body > div > div > div.store-category-sort > button:nth-child(1) {
+  margin: 0;
+  border-width: 0;
+}
+
+body > div > div > div.store-category-sort > button:nth-child(1) > i {
+  margin: 0;
+  padding: 4px 6px; 
+  border-width: 0;
 }
 
 .store-filter {
@@ -138,9 +164,6 @@ footer__store {
   margin-left: 15px;
   font-weight: 800;
   color: #4d4f50;
-  /* border-radius: 16px;
-  background-color: #29c05e;
-  color: #fff; */
 }
 
 .dropdown-xItem:hover {
