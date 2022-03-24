@@ -1,9 +1,22 @@
-.button-join {
-  font-family: NanumSquareRound;
-  display: flex;
+.wrap {
   margin-top: 100px;
   margin-left: -25%;
   margin-right: -25%;
+  font-family: NanumSquareRound;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.profile-img {
+  border-radius: 70%;
+}
+
+.button-join {
+  font-family: NanumSquareRound;
+  display: flex;
   font-weight: 900;
   padding: 10px 15px;
   background-color: #90d483;
@@ -21,9 +34,6 @@
   font-family: NanumSquareRound;
   display: flex;
   align-items: baseline;
-  margin-top: 100px;
-  margin-left: -25%;
-  margin-right: -25%;
   font-weight: 400;
 }
 
