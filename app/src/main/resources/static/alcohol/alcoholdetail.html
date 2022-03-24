@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="alcoholdetail.css">
 
+
   <title>야술먹자</title>
 
 </head>
@@ -90,22 +91,22 @@
     </div>
 
     <div class="detail-intro-div detail">
-      <span class="intro-name-span">좋은데이<br><br></span>
+      <span class="intro-name-span"></span><br><br>
       <span style="font-size:30px">PRODUCT INFORMATION <br></span>
       <hr>
-      <span class="content">제조사&nbsp;&nbsp;&nbsp;</span>
-      <span class="intro-brand-span content">좋은데이회사</span>
+      <span class="title">제조사</span>
+      <span class="intro-brand-span content"></span>
 
-      <span class="content">소재지&nbsp;&nbsp;&nbsp;</span>
-      <span class="intro-origin-span content">성동구</span>
+      <span class="title">소재지</span>
+      <span class="intro-origin-span content"></span>
       <hr>
 
-      <span class="content">용량&nbsp;&nbsp;&nbsp;</span>
-      <span class="intro-vol-span content">360ml</span>
+      <span class="title">용량(ml)</span>
+      <span class="intro-vol-span content"></span>
       <hr>
 
-      <span class="content">특징&nbsp;&nbsp;&nbsp;</span><br><br>
-      <div class="intro-char-span content">좋은데이회사에서 만든 좋은데이 소주.하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하하</div>
+      <span class="title">특징</span><br><br>
+      <div class="intro-char-span content"></div>
     </div>
   </div>
 
@@ -146,21 +147,17 @@
     </div>
   </div>
 
-  <div id="map" style="width:100%;height:350px;"></div>
-  <script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-      mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-      };
-    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-    var map = new kakao.maps.Map(mapContainer, mapOption);
-  </script>
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/082c7a181af2f4cbfbafa2de1508a9f6"></script>
+  <div id="map" style="width:100%;height:400px;margin-top:100px;"></div>
+  	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=082c7a181af2f4cbfbafa2de1508a9f6"></script>
+  	<script>
+  		var container = document.getElementById('map');
+  		var options = {
+  			center: new kakao.maps.LatLng(33.450701, 126.570667),
+  			level: 3
+  		};
 
-
-
-
+  		var map = new kakao.maps.Map(container, options);
+  	</script>
 
   <footer__>
     <div class="footer-contents">
@@ -186,7 +183,9 @@
 
 </html>
 
+
 <!-- icons -->
 <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
 <!-- Bootstrap CSS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="alcoholdetail.js"></script>
