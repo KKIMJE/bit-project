@@ -47,6 +47,7 @@
   border-color: rgb(160, 160, 160);
 }
 
+/* footer 수정 */
 footer__store {
   font-weight: 700;
 }
@@ -80,6 +81,85 @@ footer__store {
 .footer-content-info {
   margin-right: 40px;
 }
+
+/* 필터 메뉴 */
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #a1a1a1;
+  border-radius: 1.25rem;
+}
+
+.drop-button-c {
+  display: flex;
+  align-items: baseline;
+  margin: 0px 0px;
+  width: 70vw;
+}
+
+.drop-button-c > dropdown-item {
+  margin: 0px;
+  padding: 0px;
+}
+
+.drop-button-c > div {
+  padding: 10px 10px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+}
+
+.dropdown-xItem-all {
+  display: flex;
+}
+
+.dropdown-xItem {
+  margin: 0px 5px;
+  padding: 3px 4px;
+  border: 0;
+  outline: 0;
+  background-color: white;
+}
+
+#drop-button-title {
+  margin-left: 15px;
+  font-weight: 800;
+  color: #4d4f50;
+  /* border-radius: 16px;
+  background-color: #29c05e;
+  color: #fff; */
+}
+
+.dropdown-xItem:hover {
+  margin: 0px 5px;
+  background-color: #ffffff;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+}
+
+body > div > div > div.store-filter > div > ul {
+  box-shadow: 1px 1px 1px 1px #a1a1a1;
+}
+
+.form-check-input:checked {
+  background-color: #29c05e;
+  border-color: #29c05e;
+}
+
 
 /* 테블릿 세로 사이즈 넘어가면 적용 */
 @media screen and (min-width: 768px) {
