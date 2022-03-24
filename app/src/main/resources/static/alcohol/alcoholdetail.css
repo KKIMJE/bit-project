@@ -1,7 +1,8 @@
+/* footer 수정 */
 .footer-contents {
-  margin-top: 10rem;
-  /* margin-left: -25%; */
-  /* margin-right: -25%; */
+  margin-top: 72vh;
+  margin-left: -24%;
+  margin-right: -24%;
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;
   display: flex;
@@ -94,6 +95,7 @@ padding: 0 150px 0 30px;
 
 #map {
   display: flex;
+
 }
 
 

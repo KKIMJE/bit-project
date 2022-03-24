@@ -1,7 +1,8 @@
+
 .footer-contents {
-  margin-top: 10rem;
-  /* margin-left: -25%; */
-  /* margin-right: -25%; */
+  margin-top: 72vh;
+  margin-left: -24%;
+  margin-right: -24%;
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;
   display: flex;
@@ -92,7 +93,7 @@
   border-color: rgb(160, 160, 160);
 }
 
-.alclist-item-div {
+.d-flex {
   text-align: center;
   display: flex;
   justify-content: space-between;
