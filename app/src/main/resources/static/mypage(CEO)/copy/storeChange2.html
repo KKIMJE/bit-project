@@ -84,48 +84,46 @@
 <content>
     <center style="margin-top:100px">
         <div style="line-height:60px; vertical-align:middle !important;">
-           <img id='ig'  src="../mypage(CEO)/img/ceo-icon.jpg">
-    <span id="store-title" style="font-size:40px; text-align:center;">야!술먹자 주점 수정</span>
+           <img id="ig" src="../mypage(CEO)/img/ceo-icon.jpg">
+    <span id="store-title" style="font-size:40px; text-align:center;">야!술먹자 주점등록</span>
     </div>
     </center>
 
-  <div class="left" style = "margin-top:30px; padding-left:100px;">
+  <div class="left" style = "padding-left:400px;">
     <div>
       가게명<br>
-      <input id="x-store-name" type="text" style="width:450px;" value="오자네왔능가"><br>
+      <input id="x-store-name" type="text" value="오자네왔능가"><br>
     <br><br>
       주소<br>
-      <input id="x-addr1" type="text" style="width:250px;" value = "06130"><input type='button' class='btn'  value= '우편번호'><br>
-      <input id="x-addr2" type="text" style="width:450px;" value = "수원시 인계동"><br>
-      <input id="x-addr3" type="text" style="width:450px;" value="1층 오자네왔능가"><br>
+      <input id="x-addr1" type="text" value = "06130"><button id="x-addr-btn" class="btn btn-primary" type="button">우편번호</button><br>
+      <input id="x-addr2" type="text" value = "수원시 인계동"><br>
+      <input id="x-addr3" type="text" value="1층 오자네왔능가"><br>
     <br><br>
       전화번호<br>
-      <input id="x-tel" type="text" style="width:450px;" value = "02-6052-8831"><br>
+      <input id="x-tel" type="text" value = "02-6052-8831"><br>
    <br><br>
       영업시간<br>
-      <textarea id="x-store-time" style="width:450px;" type="text">월요일은 문 닫습니다.</textarea><br>
+      <textarea id="x-store-time" type="text">월요일은 문 닫습니다.</textarea><br>
     </div>
   </div>
 
 
-  <div class="right" style = "margin-top:30px; padding-left:100px;">
+  <div class="right">
     <div>
       가게소개<br>
-      <textarea id="x-store-intro" type="text" style="width:450px;">오자네왔능가</textarea><br>
+      <textarea id="x-store-intro" type="text">오자네왔능가</textarea><br>
     </div>
     <div>
-      태그선택   <input type='button' class='btn'  value= '추가'>
-      <textarea id="x-nickname" style="width:450px; height:150px" type="text">#조용한 #혼술하기좋은 #hot한 #로맨틱한 #술맛집 #커플추천   
-#분위기 좋은 </textarea><br>
+      태그선택<button id="x-tag-btn" class="btn btn-primary" type="button" >추가</button><br>
+      <textarea id="x-nickname" style="width:450px; height:150px" type="text">"#조용한 #혼술하기좋은 #hot한 #로맨틱한 #술맛집 #분위기좋은 #커플추천"</textarea><br>
     </div>
     <div>
       예약 가능 여부 <br>
-      가능<input type="checkbox"  checked> 불가능<input type="checkbox">
+      가능<input type="checkbox"  checked> 불가능<input type="checkbox"> <br>
       최대인원 <input type="text" value="10명"> </div>
-      <input type='button' class='btn'  value= '미리보기'>
-       <input type='button' class='btn'  value= '다음'>
-        <input type='button' class='btn'  value= '나가기'>
-   
+     <button id="x-join-btn" class="btn btn-primary" type="button">미리보기</button>
+    <button id="x-next-btn" class="btn btn-primary" type="button">다음</button>
+    <button id="x-cancel-btn" class="btn btn-primary" type="button">나가기</button>
      
   </div>
   <br><br><br><br><br><br><br><br><br><br><br><br>
