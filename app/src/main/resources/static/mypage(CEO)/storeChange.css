@@ -49,11 +49,11 @@
       margin: 3px;
     }
 
-    h1 {
+    #store-title {
       text-align: center;
       margin-bottom: 70px;
-       font-weight:1000;
-       font-size:50px;
+       font-weight:400;
+       font-size:30px;
     }
 
     .x-pwd-span {
@@ -99,7 +99,7 @@
       width: 70px;
     }
   
-   footer__ {
+   footer {
   left: 0;
   right: 0;
   bottom: 0;

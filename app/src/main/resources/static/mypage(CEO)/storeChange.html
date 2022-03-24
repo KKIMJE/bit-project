@@ -88,36 +88,38 @@
  <center style="margin-top:100px">
    <div style="line-height:60px; vertical-align:middle !important;">
       <img id="ig" src="./img/ceo-icon.jpg">
-     <span style="font-size:50px;">야!술먹자 주점 수정 </span>
+     <span id="store-title" style="font-size:50px;">야!술먹자 주점 수정 </span>
         </div>
   </center>
-      <div class="left" style = "padding-left:400px;">
+      <div class="left" style = "padding-left:100px;">
         <div>
           가게명<br>
-          <input id="x-store-name" type="text" value="오자네왔능가"><br>
+          <input id="x-store-name" type="text"  style="width:450px;" value="오자네왔능가"><br>
         <br><br>
           주소<br>
-          <input id="x-addr1" type="text" value = "06130"><button id="x-addr-btn" class="btn btn-primary" type="button">우편번호</button><br>
-          <input id="x-addr2" type="text" value = "수원시 인계동"><br>
-          <input id="x-addr3" type="text" value="1층 오자네왔능가"><br>
+          <input id="x-addr1" type="text" style="width:250px;" value = "06130"><button id="x-addr-btn" class="btn btn-primary" type="button">우편번호</button><br>
+          <input id="x-addr2" type="text" style="width:450px;" value = "수원시 인계동"><br>
+          <input id="x-addr3" type="text" style="width:450px;"value="1층 오자네왔능가"><br>
         <br><br>
           전화번호<br>
-          <input id="x-tel" type="text" value = "02-6052-8831"><br>
+          <input id="x-tel" type="text" style="width:450px;" value = "02-6052-8831"><br>
        <br><br>
           영업시간<br>
-          <textarea id="x-store-time" type="text">월요일은 문 닫습니다.</textarea><br>
+          <textarea id="x-store-time" style="width:450px;" type="text">월요일은 문 닫습니다.</textarea><br>
         </div>
-      </div>
 
 
-      <div class="right">
+      <div class="right" style = "padding-left:50px;">
         <div>
           가게소개<br>
-          <textarea id="x-store-intro" type="text">오자네왔능가</textarea><br>
+          <textarea id="x-store-intro" type="text" style="width:450px;">오자네왔능가</textarea><br>
         </div>
         <div>
           태그선택<button id="x-tag-btn" class="btn btn-primary" type="button" >추가</button><br>
-          <input id="x-nickname" type="text" value= "#조용한 #혼술하기좋은 #hot한 #로맨틱한 #술맛집 #분위기좋은 #커플추천"><br>
+<textarea  id='x-nickname' style="width:450px; height:150px;"> #조용한 #혼술하기좋은 #hot한 #로맨틱한 #술맛집 #커플추천
+#분위기 좋은           
+</textarea>
+ <br>
         </div>
         <div>
           예약 가능 여부 <br>
@@ -159,7 +161,7 @@
 <script src="https://kit.fontawesome.com/22437c0385.js"
   crossorigin="anonymous"></script>
 <!-- Bootstrap CSS -->
-<script
+<script>
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
