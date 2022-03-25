@@ -9,6 +9,11 @@ lightBtn.addEventListener("click", function(e) {
   }
 });
 
+lightBtn.addEventListener("click", function(e) {
+  var alcType = e.target.value
+
+})
+
 
 
 var itemDiv = document.querySelector(".alclist-item-div")
@@ -22,10 +27,7 @@ fetch("/alcohol/list")
   .then(function(alcohols) {
     console.log(alcohols);
 
-console.log(alcohols.no);
-
     for (var i = 0; i < alcohols.length; i++) {
-
       if (i % 5 == 0) {
         var no = 1
         var itemDiv = document.createElement("div")
@@ -55,4 +57,5 @@ console.log(alcohols.no);
       itemDiv.appendChild(div)
 
     }
+
   })
