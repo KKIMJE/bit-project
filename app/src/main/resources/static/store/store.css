@@ -6,6 +6,13 @@ body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
   padding-right: 15px;
 }
 
+/* 주점 콘텐츠 대분류 */
+.store-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* 주점 카테고리 분류 버튼 */
 .store-category {
   font-family: NanumSquareRound;
@@ -30,11 +37,13 @@ body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
   background-color: white;
   border-style: solid;
   border-color: white;
+  border-radius: 16px;
 }
 
 .act {
   margin: 0px 15px;
   padding: 4px 6px;
+  font-weight: 700;
   background-color: #29c05e;
   color: white;
   border-style: solid;
@@ -71,6 +80,10 @@ body > div > div > div.store-category-sort > button:nth-child(1) > i {
   border-style: solid;
   border-radius: 16px;
   border-color: rgb(160, 160, 160);
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: default;
 }
 
 /* footer 수정 */
@@ -134,7 +147,7 @@ footer__store {
   display: flex;
   align-items: baseline;
   margin: 0px 0px;
-  width: 70vw;
+  width: 65vw;
 }
 
 .drop-button-c > dropdown-item {
