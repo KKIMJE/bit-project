@@ -1,3 +1,10 @@
+.fa-solid fa-border-allx {
+  pointer-events : none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 /* nav-bar 일부수정 */
 body > nav > ul.navbar__login > div:nth-child(3) > div > button > a > login-i {
   padding-right: 15px;
@@ -49,22 +56,6 @@ body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
   border-style: solid;
   border-color: white;
   border-radius: 16px;
-}
-
-body > div > div > div.store-category-sort > button.store-category-font.act > i {
-  padding: 0;
-  margin: 0;
-}
-
-body > div > div > div.store-category-sort > button:nth-child(1) {
-  margin: 0;
-  border-width: 0;
-}
-
-body > div > div > div.store-category-sort > button:nth-child(1) > i {
-  margin: 0;
-  padding: 4px 6px; 
-  border-width: 0;
 }
 
 .store-filter {
@@ -187,8 +178,8 @@ footer__store {
   border-radius: 16px;
 }
 
-body > div > div > div.store-filter > div > ul {
-  box-shadow: 1px 1px 1px 1px #a1a1a1;
+body > div > div.store-contents > div > div.store-filter > div > ul {
+  box-shadow: 1px 1px 0px 1.5px #a1a1a1;
 }
 
 .form-check-input:checked {
