@@ -33,12 +33,12 @@ fetch("/alcohol/list")
       div.classList.add("border-white")
       div.innerHTML = `
           <a href="alcoholdetail.html?no=${alcohols[i].no}">
-            <img src="${alcohols[i].img}" class="card-img-top" alt="...">
+            <img src="${alcohols[i].img}" class="card-img-top">
             <div class="card-body">
               <p class="card-text">
               <ul>
                 <li>${alcohols[i].name}</li>
-                <li>${alcohols[i].degree}</li>
+                <li>${alcohols[i].degree}%</li>
               </ul>
               </p>
             </div>

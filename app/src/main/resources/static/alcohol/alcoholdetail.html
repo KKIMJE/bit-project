@@ -85,9 +85,9 @@
 
   <div class="detail-div">
 
-    <div class="detail-img-div detail">
+    <div class="detail-img-div">
       <!-- 이미지 고정 크기 정하고 위치 다시 조정 -->
-      <img class="alc-img" src="alcoholimg/alcohol5.png">
+      <img id="alc-img" src="">
     </div>
 
     <div class="detail-intro-div detail">
@@ -95,14 +95,18 @@
       <span style="font-size:30px">PRODUCT INFORMATION <br></span>
       <hr>
       <span class="title">제조사</span>
-      <span class="intro-brand-span content"></span>
+      <span class="intro-brand-span content"></span><hr>
+
 
       <span class="title">소재지</span>
       <span class="intro-origin-span content"></span>
       <hr>
 
       <span class="title">용량(ml)</span>
-      <span class="intro-vol-span content"></span>
+      <span class="intro-vol-span content"></span><hr>
+
+      <span class="title">도수(%)</span>
+      <span class="intro-degree-span content"></span>
       <hr>
 
       <span class="title">특징</span><br><br>
@@ -155,7 +159,6 @@
   			center: new kakao.maps.LatLng(33.450701, 126.570667),
   			level: 3
   		};
-
   		var map = new kakao.maps.Map(container, options);
   	</script>
 

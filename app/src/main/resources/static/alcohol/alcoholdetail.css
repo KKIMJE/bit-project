@@ -56,12 +56,9 @@
   padding: 0 50px 0 50px;
 }
 
-.alc-img {
-  width: 100px;
-}
 
 .detail-img-div {
-padding: 0 150px 0 30px;
+  margin-top: 160px;
 }
 
 .intro-name-span {
@@ -80,14 +77,28 @@ padding: 0 150px 0 30px;
 }
 
 .intro-brand-span {
-  padding-right: 200px;
+  margin-left: 16px;
 }
+
+.intro-origin-span {
+  margin-left: 16px;
+}
+
+.intro-degree-span {
+  margin-left: 5px;
+}
+
 
 .intro-char-span {
   padding-bottom: 100px;
   width: 540px;
 
 }
+
+
+
+
+
 .storelist-title-div {
 
   margin-bottom: 20px;
