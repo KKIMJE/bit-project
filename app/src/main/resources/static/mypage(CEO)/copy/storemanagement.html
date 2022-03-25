@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,9 +16,9 @@
 <!-- font -->
 <link rel="stylesheet" href="../css/nav.css">
 <link rel="stylesheet" href="../css/common.css">
-<link rel="stylesheet" href="storeChange.css">
+<link rel="stylesheet" href="storemanagement.css">
 
-<title>야술먹자 - 주점수정</title>
+<title>야술먹자 - 주점관리</title>
 </head>
 <body>
 
@@ -80,53 +80,87 @@
       <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
     </ul>
   </nav>
-  
-<content>
-    <center style="margin-top:100px">
-        <div style="line-height:60px; vertical-align:middle !important;">
-           <img id="ig" src="../mypage(CEO)/img/ceo-icon.jpg">
-    <span id="store-title" style="font-size:40px; text-align:center;">야!술먹자 주점등록</span>
-    </div>
-    </center>
 
-  <div class="left" style = "padding-left:400px;">
-    <div>
-      가게명<br>
-      <input id="x-store-name" type="text" value="오자네왔능가"><br>
-    <br><br>
-      주소<br>
-      <input id="x-addr1" type="text" value = "06130"><button id="x-addr-btn" class="btn btn-primary" type="button">우편번호</button><br>
-      <input id="x-addr2" type="text" value = "수원시 인계동"><br>
-      <input id="x-addr3" type="text" value="1층 오자네왔능가"><br>
-    <br><br>
-      전화번호<br>
-      <input id="x-tel" type="text" value = "02-6052-8831"><br>
-   <br><br>
-      영업시간<br>
-      <textarea id="x-store-time" type="text">월요일은 문 닫습니다.</textarea><br>
+
+  <content>
+  <center style="margin-top:200px">
+  <div style="line-height:60px; vertical-align:middle !important;">
+    <img id="ig" src="./img/ceo-icon.jpg">
+    <span style="font-size:50px;">주점관리</span>
+    </div>
+  </center>
+
+  <div class>
+    <input type="button" class="x-add-btn-1" value="추가">
+    <div style="border: 0; border-top: 3px solid #d0d0d0; padding: 10px; margin-top: 15px;">
+      <table>
+        <colgroup>
+          <col width="5%" />
+          <col width="10%" />
+          <col />
+          <col width="20%" />
+          <col width="20%" />
+          <col width="15%" />
+          <col width="0%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>주점명</th>
+            <th>주소</th>
+            <th>등록일</th>
+            <th>영업</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>엘라</td>
+            <td>서울 강남구 테헤란로 5길 36 1층 엘라</td>
+            <td>2022-03-02</td>
+            <td><label class =" container"><input type="checkbox" id="cb1" checked> 영업중<span class="checkmark"></span></label> 
+            <inputtype="checkbox">종료</td>
+            <td><input type='button' class='x-update-btn'
+              value='수정'> <input type='button'
+              class='x-delete-btn' value='삭제'></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>엘라</td>
+            <td>서울 강남구 테헤란로 5길 36 1층 엘라</td>
+            <td>2022-03-02</td>
+            <td><input type="checkbox">영업중 <input
+              type="checkbox">종료</td>
+            <td><input type='button' class='x-update-btn'
+              value='수정'> <input type='button'
+              class='x-delete-btn' value='삭제'></td>
+            <td></td>
+          </tr>
+
+
+          <tr>
+            <td>3</td>
+            <td>엘라</td>
+            <td>서울 강남구 테헤란로 5길 36 1층 엘라</td>
+            <td>2022-03-02</td>
+            <td><input type="checkbox">영업중 <input
+              type="checkbox">종료</td>
+            <td><input type='button' class='x-update-btn'
+              value='수정'> <input type='button'
+              class='x-delete-btn' value='삭제'></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-
-  <div class="right">
-    <div>
-      가게소개<br>
-      <textarea id="x-store-intro" type="text">오자네왔능가</textarea><br>
-    </div>
-    <div>
-      태그선택<button id="x-tag-btn" class="btn btn-primary" type="button" >추가</button><br>
-      <textarea id="x-nickname" style="width:450px; height:150px" type="text">"#조용한 #혼술하기좋은 #hot한 #로맨틱한 #술맛집 #분위기좋은 #커플추천"</textarea><br>
-    </div>
-    <div>
-      예약 가능 여부 <br>
-      가능<input type="checkbox"  checked> 불가능<input type="checkbox"> <br>
-      최대인원 <input type="text" value="10명"> </div>
-     <button id="x-join-btn" class="btn btn-primary" type="button">미리보기</button>
-    <button id="x-next-btn" class="btn btn-primary" type="button">다음</button>
-    <button id="x-cancel-btn" class="btn btn-primary" type="button">나가기</button>
-     
-  </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
   <footer>
     <div class="footer-contents">
       <div class="footer-contents-1">전화번호 : 1566-8877</div>
