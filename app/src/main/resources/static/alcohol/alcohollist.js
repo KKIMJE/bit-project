@@ -11,8 +11,9 @@ lightBtn.addEventListener("click", function(e) {
 
 
 
-var alcoholitem = document.querySelector(".alclist-item-div1")
-var alcoholitem2 = document.querySelector(".alclist-item-div2")
+var itemDiv = document.querySelector(".alclist-item-div")
+var listDiv = document.querySelector(".alcohol-list-div")
+
 fetch("/alcohol/list")
   .then(function(response) {
     console.log(response);
@@ -20,14 +21,21 @@ fetch("/alcohol/list")
   })
   .then(function(alcohols) {
     console.log(alcohols);
+
+console.log(alcohols.no);
+
     for (var i = 0; i < alcohols.length; i++) {
-      if (i > 5) {
-        alcoholitem2.appendChild(div)
+
+      if (i % 5 == 0) {
+        var no = 1
+        var itemDiv = document.createElement("div")
+        itemDiv.classList.add(`"alclist-item-div${no}"`)
+        itemDiv.classList.add("d-flex")
+        itemDiv.classList.add("flex-row")
+        no++
+        listDiv.appendChild(itemDiv)
       }
-      if (i > 9) {
-        return
-      }
-      // console.log(item.name);
+
       var div = document.createElement("div")
       div.classList.add("card")
       div.classList.add("border-white")
@@ -44,7 +52,7 @@ fetch("/alcohol/list")
             </div>
           </a>
         `
-      alcoholitem.appendChild(div)
+      itemDiv.appendChild(div)
 
     }
   })
