@@ -23,9 +23,9 @@ table tbody td  { border-collapse: separate;
                   margin-right:auto; margin-left:auto;
                   font-size:20px;
                   padding-top: 10px;
-							    padding-bottom: 20px;
-							    padding-left: 30px;
-							    padding-right: 40ox;}
+                  padding-bottom: 20px;
+                  padding-left: 30px;
+                  padding-right: 40ox;}
 
  thead{
  text-align:center !important;
@@ -52,8 +52,8 @@ table tbody td  { border-collapse: separate;
 
   
   .x-add-btn-1 {
-     position: relative;
-    left: 1150px;
+     /*position: relative;
+    left: 1150px;*/
      background-color:#C4C4C4;
      color:#000000;
      font-size:30px;
@@ -75,84 +75,19 @@ table tbody td  { border-collapse: separate;
      font-size:30px;
      font-weight:bold;
    }
-   
-   .container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 18px;
- 
-}
- 
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
- 
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
- 
- 
-/* When the checkbox is checked, add a "red" background */
-.container input:checked ~ .checkmark {
-  background-color: #90D483;
-  ;
-}
- 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
- 
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
- 
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  /* -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg); */
-} 
-
   #ig{ width:60px; height:60px; vertical-align:middle !important;
        margin-top:-16px;}
   
-   footer__ {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  font-weight: 700;
-}
-
+   /* footer 수정 */
 .footer-contents {
+  margin-top: 72vh;
+  margin-left: -24%;
+  margin-right: -24%;
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;
   display: flex;
   justify-content: center;
   background-color: white;
-  max-width: 198vh;
 }
 
 .footer-content {
@@ -173,6 +108,7 @@ table tbody td  { border-collapse: separate;
 .footer-content-info {
   margin-right: 40px;
 }
+
    
 /* 
 /* 테블릿 세로 사이즈 넘어가면 적용 */

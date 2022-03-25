@@ -52,8 +52,8 @@ table tbody td  { border-collapse: separate;
 
   
   .x-add-btn-1 {
-     position: relative;
-    left: 1150px;
+    /* position: relative;
+    left: 1150px;*/
      background-color:#C4C4C4;
      color:#000000;
      font-size:30px;
