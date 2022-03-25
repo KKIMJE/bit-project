@@ -45,6 +45,11 @@
 @media screen and (min-width: 320px) {
 }
 
+.alcohol-list-div {
+  display: block;
+}
+
+
 .alclist-category-div {
   font-family: NanumSquareRound;
   display: flex;
@@ -53,6 +58,7 @@
   margin-top: 100px;
   margin-left: -25%;
   margin-right: -25%;
+  margin-bottom: 50px;
   font-weight: 700;
 }
 
@@ -100,11 +106,11 @@
 }
 
 .card {
-  width: 10rem;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   margin-bottom: 20px;
   position: static;
 }
-img {
+/* img {
   padding: 0 40px 0 40px;
-}
+} */
