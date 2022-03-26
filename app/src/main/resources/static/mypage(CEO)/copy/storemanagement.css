@@ -23,9 +23,9 @@ table tbody td  { border-collapse: separate;
                   margin-right:auto; margin-left:auto;
                   font-size:20px;
                   padding-top: 10px;
-							    padding-bottom: 20px;
-							    padding-left: 30px;
-							    padding-right: 40ox;}
+                  padding-bottom: 20px;
+                  padding-left: 30px;
+                  padding-right: 40ox;}
 
  thead{
  text-align:center !important;
@@ -52,7 +52,7 @@ table tbody td  { border-collapse: separate;
 
   
   .x-add-btn-1 {
-    /* position: relative;
+     /*position: relative;
     left: 1150px;*/
      background-color:#C4C4C4;
      color:#000000;
