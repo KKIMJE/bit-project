@@ -24,12 +24,10 @@ body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
   margin-right: -25%;
   font-weight: 700;
 }
-
 .store-category-sort {
   display: flex;
   align-items: baseline;
 }
-
 .store-category-font {
   margin: 0px 15px;
   padding: 4px 6px;
@@ -39,7 +37,6 @@ body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
   border-color: white;
   border-radius: 16px;
 }
-
 .act {
   margin: 0px 15px;
   padding: 4px 6px;
@@ -50,29 +47,10 @@ body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
   border-color: white;
   border-radius: 16px;
 }
-
-body > div > div > div.store-category-sort > button.store-category-font.act > i {
-  padding: 0;
-  margin: 0;
-}
-
-body > div > div > div.store-category-sort > button:nth-child(1) {
-  margin: 0;
-  border-width: 0;
-}
-
-body > div > div > div.store-category-sort > button:nth-child(1) > i {
-  margin: 0;
-  padding: 4px 6px; 
-  border-width: 0;
-}
-
 .store-filter {
   display: flex;
   align-items: baseline;
-  margin-right: 80px;
 }
-
 .store-filter-font {
   margin: 0px 15px;
   background-color: white;
@@ -82,6 +60,7 @@ body > div > div > div.store-category-sort > button:nth-child(1) > i {
   border-color: rgb(160, 160, 160);
 }
 
+/* 버튼기본 효과 지우기 */
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
   cursor: default;
 }
@@ -90,7 +69,6 @@ body > div > div > div.store-category-sort > button:nth-child(1) > i {
 footer__store {
   font-weight: 700;
 }
-
 .footer-contents {
   margin-top: 710px;
   margin-left: -25%;
@@ -101,22 +79,18 @@ footer__store {
   justify-content: center;
   background-color: white;
 }
-
 .footer-content {
   text-align: center;
   margin: 7px 60px;
   font-size: x-small;
 }
-
 .footer-contents-1 {
   margin-top: 40px;
 }
-
 .footer-content-3 {
   margin-top: 40px;
   display: flex;
 }
-
 .footer-content-info {
   margin-right: 40px;
 }
@@ -125,7 +99,6 @@ footer__store {
 .dropdown-toggle::after {
   display: none;
 }
-
 .dropdown-menu {
   position: absolute;
   z-index: 1000;
@@ -142,29 +115,24 @@ footer__store {
   border: 1px solid #a1a1a1;
   border-radius: 1.25rem;
 }
-
 .drop-button-c {
   display: flex;
   align-items: baseline;
   margin: 0px 0px;
   width: 65vw;
 }
-
 .drop-button-c > dropdown-item {
   margin: 0px;
   padding: 0px;
 }
-
 .drop-button-c > div {
   padding: 10px 10px;
   border-style: solid;
   border-color: rgb(0, 0, 0);
 }
-
 .dropdown-xItem-all {
   display: flex;
 }
-
 .dropdown-xItem {
   margin: 0px 5px;
   padding: 3px 4px;
@@ -172,13 +140,11 @@ footer__store {
   outline: 0;
   background-color: white;
 }
-
 #drop-button-title {
   margin-left: 15px;
   font-weight: 800;
   color: #4d4f50;
 }
-
 .dropdown-xItem:hover {
   margin: 0px 5px;
   background-color: #ffffff;
@@ -186,29 +152,70 @@ footer__store {
   border-color: white;
   border-radius: 16px;
 }
-
-body > div > div > div.store-filter > div > ul {
-  box-shadow: 1px 1px 1px 1px #a1a1a1;
+body > div > div.store-contents > div > div.store-filter > div > ul {
+  box-shadow: 1px 1px 0px 1.5px #a1a1a1;
 }
-
 .form-check-input:checked {
   background-color: #29c05e;
   border-color: #29c05e;
 }
 
-
-/* 테블릿 세로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 768px) {
+/* imgcard */
+.store-contents-imgCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* 테블릿 가로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 1024px) {
+.store-contents-imgCard-1, .store-contents-imgCard-2 {
+  margin-top: 35px;
+  display: flex;
 }
 
-/* 스마트폰 가로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 480px) {
+.store-contents-imgCard-2 {
+  margin-top: 20px;
 }
 
-/* 스마트폰 세로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 320px) {
+.img-xbox {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 15px;
+}
+
+.xImg-ori {
+  width: 230px;
+  height: 230px;
+  border-radius: 9px;
+}
+
+.xImg-contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.xImg-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.xImg-content-t {
+  font-size: medium;
+  font-weight: 700;
+  margin-top: 7px;
+}
+
+.xImg-d, .storeOpen {
+  font-size: smaller;
+}
+
+.storeOpen {
+  margin-top: 7px;
+}
+
+.xImg-d {
+  margin-top: 4px;
+}
+
+.xImg-star {
+  margin: 5px 0px;
 }
