@@ -1,22 +1,7 @@
 
   * {font-family: NanumSquareRound;}
   
-  h1 {
-  left:100px;
-  font-weight:1000;
-  font-size:50px;
-  margin-top: 300px;
-}
-
-  h2 {
-  font-size:30px;
-  left:100px;
-  font-weight:1000;
-  }
-  
-  .store-card-body{
-  font-size:20px;
-  }
+ 
 
   div.left {
     /* padding: 0 100px 0 0; */
@@ -32,87 +17,135 @@
     float: right;
     box-sizing: border-box;
   }
-
-.x-pwd-span {
-  font-size: 10pt;
-  font-weight: lighter;
-  color: #848484;
+  
+  /* 찜목록 css*/ 
+  
+  h1 {
+  left:100px;
+  font-weight:1000;
+  font-size:50px;
+  margin-top: 300px;
+  margin-top:200px; 
+  padding-left:80px;
 }
 
-.btn-primary {
-  background-color: #29C05E;
-  width: 90px;
-}
+  h2 {
+  font-size:30px;
+  left:100px;
+  font-weight:1000;
+  margin-top: 30px;
+  padding-left:80px;
+  }
+  
+  /* 주점 */
+  .store-card-1{
+   float:right!important;
+   padding-top:6%; 
+   max-width:100%; 
+   width:500px; 
+    /*margin-right:5%;*/
+  }
+   
+   .store-card {
+     margin-top:30px;
+     padding-left:80px; 
+     width:50%;
+   }
+   
+	  .store-card-body{
+	  font-size:20px;
+	  padding-left: 3%;
+	  }
 
-#card-box {
-            position:absolute;
-            
-            top:400px;
-            right:1000px;
-            justify-content: space-between;
-            margin: auto;
-            margin-top: 65px;
-            flex-wrap: wrap;
-            
-            float: right;
-        }
+		.store-img-top{ 
+		width: 600px;
+		height:270px;
+		}
 
-.store-img-top{ height :300px;}
+  /*커뮤니티*/
+ 
 
-
- .card-body-ul{
-            position:absolute;
-            top:50px;
-            left:300px;
-            
-            width:330px;
-            height:40px;
-         
-            }
+     
+     .community1-col-4{
+             float:right !important;
+              margin-left:6%;
+              max-width:100%; 
+              width:600px; 
+             /* border: 1px solid #BCBCBC; 
+              box-sizing: border-box; 
+              border-radius: 20px; */
+              width: 500px; 
+              height: 235px;
+              white-space:nowrap;
+              }
+     
+     .community-col-4{
+               margin-left: 80px; 
+               margin-top:10px;
+               margin-right:50px; 
+               width:50%; 
+              /* border: 1px solid #BCBCBC; 
+               box-sizing: border-box; 
+               border-radius: 24px; */
+               width: 500px;
+               height: 235px;
+               white-space:nowrap;
+              }
+     
+		 .community-card-body-ul{
+		             padding-left: 40px;
+		           /* position:absolute;*/
+		           /* height:40px;*/
+		            top:50px;
+		            left:300px;
+		            width:330px;
+		            }
+  
     
-    .card{
-           position:relative;
+     .community-card-1{
+           float:left;
+           display: flex;
+          align-items: center;
+           
+           /* position:relative;*/
+           width: 17rem; 
+           margin-top: 15px; 
+           margin-bottom:15px; 
+           margin-left: 10px; 
+           }  
+   
+      .community-img-top{
+           width:250px;
+           height:200px;
+       }
+                   
+     .community-card{
+           float:left;
+            display: flex;
+          align-items: center;
+          
+          /* position:relative;*/
            width: 17rem; 
            margin-top: 15px; 
            margin-bottom:15px; 
            margin-left: 10px; 
            }        
+           
+	/* .btn{
+            float: right;/*border-radius:10px; color:E2E2E2; background-color:white;} */
+     
     
-  .card img {
-              position: absolute;
-              border-radius:20px;
-              top: 0;
-              bottom:10px;
-              left: 0;
-              width: 100%;
-              height: 200px;
-              object-fit: cover;
-              /*
-                        border-bottom: 0px solid #eee; 
-                        height:200px;
-                        */
-            }
- 
- .card-community-box{
-                      position:absolute;
-                     top: 1400px;
-                      /*left:2000px;*/
-                      right:1000px;
-                      justify-content: space-between;
-                      margin: auto;
-                      margin-top: 65px;
-                      flex-wrap: wrap;
-                      float: right;
- 
-                      }
+                      
 /* 
 /* 테블릿 세로 사이즈 넘어가면 적용 */
 @media screen and (min-width: 768px) {
+	       
 }
 
 /* 테블릿 가로 사이즈 넘어가면 적용 */
 @media screen and (min-width: 1024px) {
-}
+	
+} 
 
 /* 스마트폰 가로 사이즈 넘어가면 적용 */
 @media screen and (min-width: 480px) {
