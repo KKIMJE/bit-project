@@ -70,7 +70,7 @@ footer__store {
   font-weight: 700;
 }
 .footer-contents {
-  margin-top: 710px;
+  margin-top: 125px;
   margin-left: -25%;
   margin-right: -25%;
   border: 1px solid #29c05e;
@@ -161,11 +161,36 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
 }
 
 /* imgcard */
+.imgCardAll {
+  /* display: none; */
+  display: flex;
+  counter-reset: section;
+}
+
 .store-contents-imgCard {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.next-store, .pre-store {
+  position: relative;
+  margin-top: 278px;
+  padding: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: #29c05e;
+  cursor: pointer;
+}
+
+.next-store {
+  margin-left: 4px;
+}
+
+.pre-store {
+  margin-right: 8px;
+}
+
 .store-contents-imgCard-1, .store-contents-imgCard-2 {
   margin-top: 35px;
   display: flex;
@@ -212,6 +237,7 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
 /* storeMap */
 #staticMap {
   margin-top: 40px;
+  margin-left: 3px;
   width:1300px;
   height:500px;
 }
