@@ -166,56 +166,52 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
   flex-direction: column;
   align-items: center;
 }
-
 .store-contents-imgCard-1, .store-contents-imgCard-2 {
   margin-top: 35px;
   display: flex;
 }
-
 .store-contents-imgCard-2 {
   margin-top: 20px;
 }
-
 .img-xbox {
   display: flex;
   flex-direction: column;
   margin: 0px 15px;
 }
-
 .xImg-ori {
   width: 230px;
   height: 230px;
   border-radius: 9px;
 }
-
 .xImg-contents {
   display: flex;
   justify-content: space-between;
 }
-
 .xImg-content {
   display: flex;
   flex-direction: column;
 }
-
 .xImg-content-t {
   font-size: medium;
   font-weight: 700;
   margin-top: 7px;
 }
-
 .xImg-d, .storeOpen {
   font-size: smaller;
 }
-
 .storeOpen {
   margin-top: 7px;
 }
-
 .xImg-d {
   margin-top: 4px;
 }
-
 .xImg-star {
   margin: 5px 0px;
+}
+
+/* storeMap */
+#staticMap {
+  margin-top: 40px;
+  width:1300px;
+  height:500px;
 }
