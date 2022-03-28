@@ -1,0 +1,149 @@
+* {
+  font-family: NanumSquareRound;
+}
+
+div.left {
+  /* padding: 0 100px 0 0; */
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  border-right: 1px solid #000;
+}
+
+div.left div {
+  margin-bottom: 15px;
+}
+
+div.right {
+  padding: 0 20px;
+  width: 50%;
+  float: right;
+  box-sizing: border-box;
+}
+
+div.right div {
+  margin-bottom: 15px;
+}
+
+/* 공통 */
+
+h1{
+	font-size:15px;
+  border-bottom:solid 1px black;
+  padding-left:5%;
+  width:25%;
+  word-spacing:5px;
+}
+
+.horizontal-line{
+  border-bottom:solid 1px black; 
+  margin-right:10%; 
+  margin-top:2.5%; 
+  width:90%;
+}
+
+
+/* 주류등록*/
+
+h2{
+  padding-left: 20px; 
+  word-spacing:180px;
+}
+
+select{
+	border-radius:5px; 
+	width:35%;
+}
+
+.left{
+	margin-top:30px;padding-left:150px; width:50%"
+	
+}
+
+.price-textarea{
+	border-radius:5px; 
+	margin-left:10%;  
+	width:35%;
+}
+
+.x-add-btn{
+	border-radius:5px;
+	background-color:#FFFFFF;
+}
+
+#ig {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle !important;
+  margin-top: -16px;
+}
+
+#store-title {
+  text-align: center;
+  margin-bottom: 70px;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+/* 메뉴 등록*/
+
+.right{
+	margin-top:15px;  
+	width:50%
+}
+
+.menu-textarea{
+	border-radius:5px;  
+	width:30%;
+}
+
+.price-textarea-1{
+  border-radius:5px; 
+  width:30%;
+}
+
+
+.btn {
+	border-radius:20px;
+  background-color: #29c05e;
+  color: #ffffff;
+  width: 90px;
+}
+ 
+input {
+  margin: 3px;
+}
+
+
+
+/* footer 수정 */
+.footer-contents {
+  margin-top: 72vh;
+  margin-left: -24%;
+  margin-right: -24%;
+  border: 1px solid #29c05e;
+  border-width: 3px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.footer-content {
+  text-align: center;
+  margin: 7px 60px;
+  font-size: x-small;
+}
+
+.footer-contents-1 {
+  margin-top: 40px;
+}
+
+.footer-content-3 {
+  margin-top: 40px;
+  display: flex;
+}
+
+.footer-content-info {
+  margin-right: 40px;
+}
+
