@@ -11,27 +11,92 @@ lightBtn.addEventListener("click",function(e){
 
 // next, pre button
 const next = document.querySelector('.next-store');
+const pre = document.querySelector('.pre-store');
 
 let storeAll = document.querySelectorAll('.store-contents-imgCard');
 let cursor = 1;
-let endPage = storeAll.length;
+const endPage = storeAll.length;
 
 for (let i=1; i < storeAll.length; i++) {
   storeAll[i].style.display = "none";
 }
 
 next.addEventListener("click", () => {
-  if (storeAll[cursor].style.display == "none") {
-    storeAll[cursor].style.display = "flex"
+
+  if (cursor == endPage) {
+    console.log("range out");
+  } else if (cursor == 0) {
+      cursor += 1;
+      if (storeAll[cursor].style.display == "none") {
+        storeAll[cursor].style.display = "flex"
+      }
+      for (let i=cursor+1; i < endPage; i++) {
+        storeAll[i].style.display = "none";
+      }
+      for (let i=cursor-1; i < cursor; i--) {
+        if (i == -1) {
+          break;
+        };
+        storeAll[i].style.display = "none";
+      }
+      cursor += 1;
+      console.log("cursor : " + `${cursor-1}`);
+    } else {
+      if (storeAll[cursor].style.display == "none") {
+        storeAll[cursor].style.display = "flex"
+      }
+      for (let i=cursor+1; i < endPage; i++) {
+        storeAll[i].style.display = "none";
+      }
+      for (let i=cursor-1; i < cursor; i--) {
+        if (i == -1) {
+          break;
+        };
+        storeAll[i].style.display = "none";
+      }
+      cursor += 1;
+      console.log("cursor : " + `${cursor-1}`);
+    }
+});
+
+pre.addEventListener("click", () => {
+  if (cursor == endPage) {
+    cursor -= 2;
+    if (-1 < cursor) {
+      if (storeAll[cursor].style.display == "none") {
+        storeAll[cursor].style.display = "flex"
+      }
+      for (let i=cursor+1; i < endPage; i++) {
+        storeAll[i].style.display = "none";
+      }
+      for (let i=cursor-1; i < cursor; i--) {
+        if (i == -1) {
+          break;
+        };
+        storeAll[i].style.display = "none";
+      }
+      console.log("cursor : " + `${cursor}`);
+    } else {
+      console.log("range out")
+    }
+  } else {
+    if (0 < cursor) {
+      cursor -= 1;
+      if (storeAll[cursor].style.display == "none") {
+        storeAll[cursor].style.display = "flex"
+      }
+      for (let i=cursor+1; i < endPage; i++) {
+        storeAll[i].style.display = "none";
+      }
+      for (let i=cursor-1; i < cursor; i--) {
+        if (i == -1) {
+          break;
+        };
+        storeAll[i].style.display = "none";
+      }
+      console.log("cursor : " + `${cursor}`);
+    } else {
+      console.log("range out")
+    }
   }
-  for (let i=cursor+1; i < endPage; i++) {
-    storeAll[i].style.display = "none";
-  }
-  for (let i=cursor-1; i < cursor; i--) {
-    if (i == -1) {
-      break;
-    };
-    storeAll[i].style.display = "none";
-  }
-  cursor += 1;
 });

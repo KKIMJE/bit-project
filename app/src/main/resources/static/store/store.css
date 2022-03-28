@@ -36,6 +36,7 @@ body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
   border-style: solid;
   border-color: white;
   border-radius: 16px;
+  cursor: pointer;
 }
 .act {
   margin: 0px 15px;
@@ -58,11 +59,6 @@ body > nav > ul.navbar__login > div:nth-child(1) > div > button > a > login-i {
   border-style: solid;
   border-radius: 16px;
   border-color: rgb(160, 160, 160);
-}
-
-/* 버튼기본 효과 지우기 */
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
-  cursor: default;
 }
 
 /* footer 수정 */
@@ -184,7 +180,7 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
 }
 
 .next-store {
-  margin-left: 4px;
+  margin-left: 0px;
 }
 
 .pre-store {
