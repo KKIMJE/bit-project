@@ -22,7 +22,8 @@
   }
 
   div.right div{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    padding-left: 20px;
   }
 
   .x-join {
@@ -65,10 +66,12 @@
     background-color: #29C05E;
     width: 70px;
     margin-top: 20px;
+    margin-left: 20px;
   }
 
   .btn-outline-dark {
    border-radius: 5px;
+   margin-left: 20px;
   }
 
   input {

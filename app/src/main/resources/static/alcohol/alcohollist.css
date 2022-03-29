@@ -111,6 +111,7 @@
   margin-bottom: 20px;
   position: static;
 }
-/* img {
-  padding: 0 40px 0 40px;
-} */
+.card-img-top {
+  width: 250px;
+  height: 250px;
+}

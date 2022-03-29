@@ -67,17 +67,23 @@
         <h1>외롭다...ㅠㅠ 같이 술 드실분..?</h1>
         <div class="party-board">
             <div class="leader-profile">
-                <img class= "profile-img" src="img/profile-suzy.jpg" alt="방장 프로필">
+                <img class= "profile-img leader" src="img/profile_suzy.jpg" alt="방장 프로필">
                 <p>수지곤쥬♡</p>
                 <button type="button" class="button-join"><i class="fa-solid fa-champagne-glasses"></i>&nbsp참여하기</button>
             </div>
             <div class="party-board-group">
                 <div class="party-board-detail">
-                    <span><i class="fa-solid fa-bottle-droplet"></i>소주</span>
-                    <span><i class="fa-solid fa-calendar-days"></i>3월 3일(목) 23:00</span>
-                    <span><i class="fa-solid fa-user"></i>5명</span><br>            
-                    <span><i class="fa-solid fa-whiskey-glass"></i>3병 이상</span>
-                    <span><i class="fa-solid fa-won-sign"></i>50,000원</span>
+                    <div class="first-column">
+                        <span><i class="fa-solid fa-bottle-droplet"></i>소주</span>
+                        <span><i class="fa-solid fa-whiskey-glass"></i>3병 이상</span>
+                    </div>
+                    <div class="second-column">
+                        <span><i class="fa-solid fa-calendar-days"></i>3월 3일(목) 23:00</span>
+                        <span><i class="fa-solid fa-won-sign"></i>50,000원</span>
+                    </div>
+                    <div class="third-column">
+                        <span><i class="fa-solid fa-user"></i>5명</span><br>
+                    </div>     
                 </div>
                 <div class="party-board-content">
                     오늘 밤 11시에 신논현역 인생주막에서 술 드실분 있나요..?<br>
@@ -100,21 +106,61 @@
 
     <div class="party-comment">
         <div class="party-comment-fst">
-
+            <div>
+                <img class="profile-img people" src="img/profile_sumi.jpg">
+            </div>
+            <div>
+            <div class="comment-text">
+                <p id="people-name">젠틀맨이다</p>
+                <div class="comment-content">오우 강남에 미인이 나타나셨다. 라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+                </div>
+            </div>
+            <div class="comment-footer">
+                <p id="comment-datetime">2022-01-01 22:13:10</p>
+                <div class="comment-option">
+                    <button type="button" id="party-like"><i class="fa-solid fa-thumbs-up"></i>52</button>
+                    <button type="button" id="party-report"><i class="fa-solid fa-triangle-exclamation"></i>신고</button>
+                    <button type="button" id="party-share"><i class="fa-solid fa-pencil"></i>답글달기</button>               
+                </div>
+            </div>
+            </div>
         </div>
-        <div class="party-comment-scd">
+        <div class="party-comment-snd">
+            <div>
+                <img class="profile-img people" src="img/profile_bobby.jpg">
+            </div>
+            <div>
+            <div class="comment-text">
+                <p id="people-name">BOBBY</p>
+                <div class="comment-content-snd">ganjanggejang masissuyo~
+                </div>
+            </div>
+            <div class="comment-footer">
+                <p id="comment-datetime">2022-01-01 22:13:10</p>
+                <div class="comment-option">
+                    <button type="button" id="party-like"><i class="fa-solid fa-thumbs-up"></i>52</button>
+                    <button type="button" id="party-report"><i class="fa-solid fa-triangle-exclamation"></i>신고</button>
+                    <button type="button" id="party-share"><i class="fa-solid fa-pencil"></i>답글달기</button>               
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
 
+        <div class="comment-pages">
+            <button type="button" id="comment-page">1 2 3</button>
         </div>
     </div>
 
+    <div class="comment-write">
+        <p><span>수지곤쥬♡</span>님의 글에 댓글 남기기</p>
+        <textarea></textarea>
+        <div class="btn-common btn-common-board">
+            <button type="button" class="button-font">작성완료</button>
+        </div>
+    </div>
 
-<div class="btn-common"></div>
-<button type="button" class="button-font">작성완료</button>
 </div>
-</div>
-
-
-
 
 
 </body>

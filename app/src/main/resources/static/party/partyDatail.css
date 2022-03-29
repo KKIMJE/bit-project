@@ -19,6 +19,12 @@ h1 {
 
 .profile-img {
   border-radius: 70%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+
+.leader {
   width: 220px;
   height: 220px;
   margin-top: 40px;
@@ -34,7 +40,7 @@ h1 {
   text-align: center;
   margin-top: 10px;
   font-size: 21px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .button-join {
@@ -70,11 +76,57 @@ h1 {
   box-sizing: border-box;
   border-bottom: 1px solid #c7c7c7;
   padding: 0 0 30px 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.first-column,
+.second-column,
+.third-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.second-column {
+  position: relative;
+  left: 150px;
+}
+
+.third-column {
+  position: relative;
+  left: 300px;
 }
 
 .party-board-detail i {
-  font-size: 40px;
   color: #737373;
+  padding-right: 10px;
+}
+
+div.first-column > span:nth-child(1) > i {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+div.second-column > span:nth-child(1) > i {
+  font-size: 33px;
+  padding-bottom: 20px;
+}
+
+div.third-column > span > i {
+  font-size: 32px;
+  padding-bottom: 20px;
+}
+
+div.first-column > span:nth-child(2) > i {
+  font-size: 29px;
+}
+
+div.second-column > span:nth-child(2) > i {
+  font-size: 29px;
+}
+
+.party-board-detail span {
+  font-size: 20px;
 }
 
 .party-board-content {
@@ -101,6 +153,8 @@ h1 {
 .btn-common-board {
   justify-content: flex-end;
   align-items: baseline;
+  padding-top: 15px;
+  padding-bottom: 40px;
 }
 
 .button-font {
@@ -114,4 +168,85 @@ h1 {
 .party-comment {
   box-sizing: border-box;
   border-top: 1px solid #c7c7c7;
+}
+
+.party-comment-fst {
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 1px solid #c7c7c7;
+  padding: 10px 50px;
+}
+
+.people {
+  width: 90px;
+  height: 90px;
+  margin-right: 30px;
+}
+
+.comment-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#people-name {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-content {
+  font-size: 19px;
+  width: 1050px;
+}
+
+.comment-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.comment-option button {
+  all: unset;
+}
+
+.party-comment-snd {
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 1px solid #c7c7c7;
+  padding: 10px 50px 10px 150px;
+}
+
+.comment-content-snd {
+  font-size: 19px;
+  width: 950px;
+}
+
+.comment-pages {
+  display: block;
+  margin: auto;
+  width: 100px;
+  padding-top: 40px;
+}
+
+#comment-page {
+  all: unset;
+  font-size: 23px;
+}
+
+.comment-write {
+  margin-top: 70px;
+}
+
+.comment-write p {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.comment-write textarea {
+  margin-top: 10px;
+  width: 1270px;
+  height: 130px;
+  resize: none;
+  border: 1px solid #c7c7c7;
 }
