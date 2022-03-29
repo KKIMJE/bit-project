@@ -24,9 +24,8 @@
   left:100px;
   font-weight:1000;
   font-size:50px;
-  margin-top: 300px;
-  margin-top:200px; 
-  padding-left:80px;
+  margin-top: 150px;
+  padding-left:130px;
 }
 
   h2 {
@@ -34,10 +33,14 @@
   left:100px;
   font-weight:1000;
   margin-top: 30px;
-  padding-left:80px;
+  padding-left:130px;
   }
   
   /* 주점 */
+  .store-group{
+  margin-right:-100px;
+  }
+  
   .store-card-1{
    float:right!important;
    padding-top:6%; 
@@ -48,26 +51,29 @@
    
    .store-card {
      margin-top:30px;
-     padding-left:80px; 
+     padding-left:130px; 
      width:50%;
    }
    
 	  .store-card-body{
 	  font-size:20px;
-	  padding-left: 3%;
+	  padding-left: 5%;
 	  }
 
 		.store-img-top{ 
-		width: 600px;
-		height:270px;
+		width: 500px;
+		height:235px;
 		}
-
+		
+		
   /*커뮤니티*/
- 
-
+     .community-title{
+      padding-left:130px;
+     }
      
      .community1-col-4{
              float:right !important;
+             padding-left: 7%;
               margin-left:6%;
               max-width:100%; 
               width:600px; 
@@ -80,6 +86,7 @@
               }
      
      .community-col-4{
+               padding-left: 3%;
                margin-left: 80px; 
                margin-top:10px;
                margin-right:50px; 

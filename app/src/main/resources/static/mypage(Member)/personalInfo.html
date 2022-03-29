@@ -68,15 +68,16 @@
     </nav>
 
 <content>
-<h1>개인정보</h1>
-<center><img id= "ig" src="./img/profile-photo.jpg" width="150" height="150"><br></center>
+<h1 >개인정보</h1><br><br>
+<center><img id= "ig" src="./img/profile-photo(1).jpg"><br>
  <div class="profile-group">
-<center><b>김흥국</b></center>
-<center><button onclick="toggleImg()" style= "background-color:#FFFFFF; border-radius:10px;">프로필 변경</button></div></center>
+<center style="margin-left: 20%;"><b>김흥국</b></center>
+<center><button onclick="toggleImg()" style= "margin-left: 20%; background-color:#FFFFFF; border-radius:10px;">프로필 변경</button></div></center>
 <!--<center><input type = "file" name="photo" multiple></center> 고려사항-->
 <br><br><br>
 
 <form id="x-complete-form"> 
+<div class="x-info-div-container"> 
 <p>실명 <br><br><br>
 <input id="x-name" type="text" value="홍길동" ></p><br><br>
 
@@ -87,25 +88,24 @@
 <input id="x-birth" type="text" name="birthdate" value="2000.02.02"><p><br><br>
 
 <p>이메일 주소<br><br><br>
-<input id="x-e-address" type="text" name="e-mail address" value="aaa@test.com"><p><br><br>
+<input id="x-e-address" type="email" name="email" value="aaa@test.com"><p><br><br>
 
-<div id="x-info-div-container">
-<div class="x-info-div">
+
 비밀번호
-<input type='button' class='btn'  value='수정' style="float: right;"><p><br><br>
+<input type='button' class='btn'  value='수정'><p><br><br>
 <input id="x-pwd" type="password" name="pwd" value="0000"><p><br><br>
 
 전화번호
-<input type='button' class='btn'  value='수정' style="float: right;"><p><br><br>
+<input type='button' class='btn'  value='수정'><p><br><br>
 <input id="x-phonenumber" type="text" value="010-1111-1111"><p><br><br>
 
 SNS계정<br><br><br>
-<img id ="ig" src="./img/kakao-talk.png" width="50" height="50"> 홍길동 
+<img id ="img" src="./img/kakao-talk.png"> 홍길동 
  <button id="x-connect-btn"  type="button">연결해제</button><p><br><br>
 
 자기소개
-<input type='button' class='btn'  value='수정' style="float: right;"><p><br><br>
-<textarea onkeydown = 'counter();' id='x-self-intro' style="border-radius:10px">
+<input type='button' class='btn'  value='수정' ><p><br><br>
+<textarea onkeydown = 'counter();' id='x-self-intro'>
 서울 종로 낙원상가에서 하루하루 벌어먹는 무일푼 밴드로 음악가 인생을 시작했습니다. 
 
 당시 밴드 이름은 '오대장성'으로 김흥국은 밴드의 드러머였었습니다.
@@ -119,9 +119,9 @@ SNS계정<br><br><br>
   이후 이야기가 궁금하시다면 저랑 소주 한 잔 하시지요^^   
                       
 </textarea><br><!-- <span id="count">0/300자</span><br><br>-->
-</div>
-</div>
-<input type='button' class='x-leave-btn'  value='탈퇴하기' style='float:right;'>
+    
+</div> 
+<input type='button' class='x-leave-btn'  value='탈퇴하기' >
 </form>
 
 </content>
