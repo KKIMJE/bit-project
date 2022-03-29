@@ -99,7 +99,7 @@ footer__store {
   position: absolute;
   z-index: 1000;
   display: none;
-  min-width: 10rem;
+  min-width: 70rem;
   padding: 0.5rem 0;
   margin: 0;
   font-size: 1rem;
@@ -255,8 +255,8 @@ i.fa-regular.fa-heart.box.b {
 
 /* storeMap */
 #staticMap {
-  margin-top: 40px;
-  margin-left: 3px;
+  margin-top: 35px;
+  margin-left: 7px;
   width:1300px;
   height:500px;
 }
