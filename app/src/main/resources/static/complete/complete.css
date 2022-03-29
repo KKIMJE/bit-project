@@ -19,9 +19,9 @@
     height: 400px;
     background-color: white;
     border-radius: 10px;   
-    top: calc(67vh - 400px); 
-    left: calc(62vw - 400px);
-  }
+    top: calc(75vh - 400px); 
+    left: calc(65vw - 400px);
+    }
   
   .header {
       border: 1px solid gray;
@@ -96,14 +96,17 @@
     position: static;
    }
 
-
-
-.footer-contents {
-    margin-top: 72vh;
-    margin-left: -24%;
-    margin-right: -24%;
+   footer__ {
     border: 1px solid #29c05e;
     border-width: 3px 0px 0px 0px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-weight: 700;
+  }
+  
+  .footer-contents {
     display: flex;
     justify-content: center;
     background-color: white;
@@ -127,4 +130,5 @@
   .footer-content-info {
     margin-right: 40px;
   }
+  
   
