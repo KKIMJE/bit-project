@@ -48,10 +48,13 @@ table tbody td  { border-collapse: separate;
   text-align: center;
  }
   
-  
+  .table{
+   margin-left:10%;
+  }
 
   
   .x-add-btn-1 {
+    margin-left:100%;
     /* position: relative;
     left: 1150px;*/
      background-color:#C4C4C4;
