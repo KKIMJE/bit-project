@@ -95,7 +95,8 @@
       <span style="font-size:30px">PRODUCT INFORMATION (병기준)<br></span>
       <hr>
       <span class="title">제조사</span>
-      <span class="intro-brand-span content"></span><hr>
+      <span class="intro-brand-span content"></span>
+      <hr>
 
 
       <span class="title">소재지</span>
@@ -103,7 +104,8 @@
       <hr>
 
       <span class="title">용량(ml)</span>
-      <span class="intro-vol-span content"></span><hr>
+      <span class="intro-vol-span content"></span>
+      <hr>
 
       <span class="title">도수(%)</span>
       <span class="intro-degree-span content"></span>
@@ -112,55 +114,59 @@
       <span class="title">특징</span><br><br>
       <div class="intro-char-span content"></div>
     </div>
+
   </div>
 
-
   <div class="storelist-title-div">
-    dd
+    <span class="storelist-title-span"></span>
+    <span style="font-size:20px">를 판매하는 주점</span>
   </div>
 
   <div class="sell-storelist-div">
     <div class="storelist-div">
       <div class="store-div">
-        <img src="storeimg/store1.png" alt="">
+        <img class="store-img" src="storeimg/store1.png" alt="">
       </div>
       <div class="sell-alclist-div">
-        <img src="storeimg/store2.png" alt="">
+        <img class="store-img" src="storeimg/store2.png" alt="">
       </div>
       <div class="sell-alclist-div">
-        <img src="storeimg/store3.png" alt="">
+        <img class="store-img" src="storeimg/store3.png" alt="">
       </div>
       <div class="sell-alclist-div">
-        <img src="storeimg/store4.png" alt="">
+        <img class="store-img" src="storeimg/store4.png" alt="">
       </div>
     </div>
 
     <div class="storelist-div">
       <div class="store-div">
-        <img src="storeimg/store5.png" alt="">
+        <img class="store-img" src="storeimg/store5.png" alt="">
       </div>
       <div class="sell-alclist-div">
-        <img src="storeimg/store6.png" alt="">
+        <img class="store-img" src="storeimg/store6.png" alt="">
       </div>
       <div class="sell-alclist-div">
-        <img src="storeimg/store7.png" alt="">
+        <img class="store-img" src="storeimg/store7.png" alt="">
       </div>
       <div class="sell-alclist-div">
-        <img src="storeimg/store8.png" alt="">
+        <img class="store-img" src="storeimg/store8.png" alt="">
       </div>
     </div>
   </div>
+  <div class="map-title-div">
+    <span style="font-size:30px;font-weight:bold;">지도</span>
+  </div>
 
-  <div id="map" style="width:100%;height:400px;margin-top:100px;"></div>
-  	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=082c7a181af2f4cbfbafa2de1508a9f6"></script>
-  	<script>
-  		var container = document.getElementById('map');
-  		var options = {
-  			center: new kakao.maps.LatLng(33.450701, 126.570667),
-  			level: 3
-  		};
-  		var map = new kakao.maps.Map(container, options);
-  	</script>
+  <div id="map" style="width:100%;height:400px;margin-top:20px;"></div>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=082c7a181af2f4cbfbafa2de1508a9f6"></script>
+  <script>
+    var container = document.getElementById('map');
+    var options = {
+      center: new kakao.maps.LatLng(33.450701, 126.570667),
+      level: 3
+    };
+    var map = new kakao.maps.Map(container, options);
+  </script>
 
   <footer__>
     <div class="footer-contents">
