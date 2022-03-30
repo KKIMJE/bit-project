@@ -19,7 +19,19 @@
     <result column="volume" property="volume"/>
     <result column="characteristic" property="characteristic"/>
     <result column="img" property="img"/>
+  
+  
+<!--     <collection property="alcohols" ofType="AlcoholSales">
+    <result column="store_no" property="storeno"/>
+    <result column="alcohol_detail_no" property="alcoholdetailno"/>
+    <result column="price" property="price"/>
+  </collection>
+  -->
+  
   </resultMap>
+  
+  
+  
 
   <!-- 
     id => 인터페이스의 메서드 이름과 일치해야 한다.

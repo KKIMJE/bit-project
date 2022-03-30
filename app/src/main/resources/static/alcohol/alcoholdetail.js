@@ -21,6 +21,8 @@ var introOrigin = document.querySelector(".intro-origin-span")
 var introVol = document.querySelector(".intro-vol-span")
 var introDegree = document.querySelector(".intro-degree-span")
 var introChar = document.querySelector(".intro-char-span")
+var storeList = document.querySelector(".storelist-title-span")
+
 
 fetch(`/alcohol/get?no=${no}`)
     .then(function(response) {
@@ -35,6 +37,24 @@ fetch(`/alcohol/get?no=${no}`)
       introVol.innerHTML = alcohol.volume
       introDegree.innerHTML = alcohol.degree
       introChar.innerHTML = alcohol.characteristic
-
-
+      storeList.innerHTML = alcohol.name
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //
