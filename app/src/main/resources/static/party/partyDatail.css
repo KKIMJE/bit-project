@@ -9,6 +9,10 @@ h1 {
   font-weight: 700;
 }
 
+button {
+  all: unset;
+}
+
 .party-board {
   display: flex;
   margin-top: 40px;
@@ -143,10 +147,6 @@ div.second-column > span:nth-child(2) > i {
   justify-content: flex-end;
 }
 
-.party-board-option button {
-  all: unset;
-}
-
 .btn-common {
   font-family: NanumSquareRound;
   display: flex;
@@ -209,10 +209,6 @@ div.second-column > span:nth-child(2) > i {
   margin-top: 10px;
 }
 
-.comment-option button {
-  all: unset;
-}
-
 .party-comment-snd {
   display: flex;
   box-sizing: border-box;
@@ -232,8 +228,7 @@ div.second-column > span:nth-child(2) > i {
   padding-top: 40px;
 }
 
-#comment-page {
-  all: unset;
+.comment-page {
   font-size: 23px;
 }
 
