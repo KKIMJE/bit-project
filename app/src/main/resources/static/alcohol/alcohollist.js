@@ -3,7 +3,6 @@ var listDiv = document.querySelector(".alcohol-list-div")
 var itemDiv = document.querySelector(".alclist-item-div")
 
 function makeItemDiv() {
-  if (i % 5 == 0) {
     var no = 1
     var itemDiv = document.createElement("div")
     itemDiv.classList.add(`"alclist-item-div${no}"`)
@@ -11,7 +10,6 @@ function makeItemDiv() {
     itemDiv.classList.add("flex-row")
     no++
     listDiv.appendChild(itemDiv)
-  }
 }
 
 
@@ -64,7 +62,6 @@ function targetList(targetNo) {
       var count = 0
       for (var i = 0; i < alcohols.length; i++) {
         if (targetNo == alcohols[i].alcoholTypeNo) {
-
 
           if (count % 5 == 0) {
             var no = 1

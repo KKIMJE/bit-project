@@ -30,20 +30,16 @@
 }
 
 /* 테블릿 세로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 768px) {
-}
+@media screen and (min-width: 768px) {}
 
 /* 테블릿 가로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 1024px) {
-}
+@media screen and (min-width: 1024px) {}
 
 /* 스마트폰 가로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 480px) {
-}
+@media screen and (min-width: 480px) {}
 
 /* 스마트폰 세로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 320px) {
-}
+@media screen and (min-width: 320px) {}
 
 .detail-div {
   display: flex;
@@ -56,7 +52,6 @@
   padding: 0 50px 0 50px;
 }
 
-
 .detail-img-div {
   margin-top: 160px;
 }
@@ -64,7 +59,6 @@
 .intro-name-span {
   font-size: 40px;
   font-weight: bold;
-
 }
 
 .title {
@@ -88,19 +82,13 @@
   margin-left: 5px;
 }
 
-
 .intro-char-span {
   padding-bottom: 100px;
   width: 540px;
-
 }
 
-
-
-
-
 .storelist-title-div {
-
+  font-family: NanumSquareRound;
   margin-bottom: 20px;
 }
 
@@ -109,31 +97,30 @@
   justify-content: space-around;
 }
 
+.store-img {
+  width: 200px;
+  height: 200px;
+}
 
+#map-store-title {
+  font-size: 30px;
+  font-weight: bold;
+}
 
+.storelist-title-span {
+  font-size: 30px;
+  font-weight: bold;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.map-title-div {
+  margin-top: 50px;
+}
 
 /* .alc-detail-div {
   margin-top: 100px;
   display: flex;
   justify-content: center;
 } */
-
 /* .card-title {
   text-decoration: underline;
 }
@@ -146,25 +133,4 @@
 h5 {
   border: solid black;
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*  */
