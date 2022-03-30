@@ -5,7 +5,7 @@
 
 h1 {
   margin-top: 130px;
-  font-size: 40px;
+  font-size: 23px;
   font-weight: 700;
 }
 
@@ -15,11 +15,10 @@ button {
 
 .party-board {
   display: flex;
-  margin-top: 40px;
-  padding-left: 50px;
+  margin-top: 10px;
   box-sizing: border-box;
   border-bottom: 1px solid #c7c7c7;
-  height: 500px;
+  height: 300px;
 }
 
 .profile-img {
@@ -30,57 +29,57 @@ button {
 }
 
 .leader {
-  width: 220px;
-  height: 220px;
-  margin-top: 40px;
+  width: 140px;
+  height: 140px;
+  margin-top: 20px;
+  margin-left: 3px;
 }
 
 .leader-profile {
   display: flex;
   flex-direction: column;
-  margin-right: 60px;
+  margin-right: 10px;
 }
 
-.leader-profile p {
+.leader-profile span {
   text-align: center;
-  margin-top: 10px;
-  font-size: 21px;
+  margin-top: 7px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .button-join {
-  font-family: NanumSquareRound;
   display: flex;
-  font-weight: 900;
-  padding: 10px 15px;
+  font-weight: 600;
+  padding: 10px 4px;
   background-color: #90d483;
   color: white;
   border: 0;
   border-radius: 8px;
-  font-size: 30px;
-  margin-top: 100px;
-  margin-left: 16px;
-  width: 185px;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-left: 15px;
+  width: 103px;
 }
 
 .button-join i {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .party-board-group {
   display: flex;
   flex-direction: column;
-  padding: 40px 0 0 0;
-  margin: 0;
+  padding-top: 15px;
   box-sizing: border-box;
   border-left: 1px solid #c7c7c7;
   width: 100%;
+  position: relative;
 }
 
 .party-board-detail {
   box-sizing: border-box;
   border-bottom: 1px solid #c7c7c7;
-  padding: 0 0 30px 50px;
+  padding: 0 0 15px 40px;
   display: flex;
   flex-direction: row;
 }
@@ -93,15 +92,15 @@ button {
 }
 
 .second-column {
-  position: relative;
-  left: 150px;
-  top: 7px;
+  position: absolute;
+  left: 320px;
+  top: 20px;
 }
 
 .third-column {
-  position: relative;
-  left: 300px;
-  top: 8px;
+  position: absolute;
+  left: 620px;
+  top: 19px;
 }
 
 .party-board-detail i {
@@ -110,41 +109,65 @@ button {
 }
 
 div.first-column > span:nth-child(1) > i {
-  font-size: 40px;
+  font-size: 30px;
   padding-bottom: 20px;
 }
 
 div.second-column > span:nth-child(1) > i {
-  font-size: 33px;
+  font-size: 25px;
   padding-bottom: 20px;
 }
 
 div.third-column > span > i {
-  font-size: 32px;
+  font-size: 25px;
   padding-bottom: 20px;
 }
 
 div.first-column > span:nth-child(2) > i {
-  font-size: 29px;
+  font-size: 22px;
 }
 
 div.second-column > span:nth-child(2) > i {
-  font-size: 29px;
+  font-size: 22px;
 }
 
 .party-board-detail span {
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .party-board-content {
-  padding: 50px 0 0 30px;
-  font-size: 25px;
+  padding: 20px 10px 5px 20px;
+  font-size: 18px;
 }
 
 .party-board-option {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  position: relative;
+  bottom: -16px;
+}
+
+#party-like {
+  position: relative;
+}
+
+.like-click {
+  position: absolute;
+  right: 33px;
+  color: rgba(204, 9, 9, 0.883);
+  font-size: larger;
+}
+
+#party-like > i.fa-solid.fa-heart.party-like.like-click {
+  /* display: none; */
+  cursor: pointer;
+}
+
+#party-like > i.fa-regular.fa-heart.party-like.like-click {
+  display: none;
+  cursor: pointer;
 }
 
 .btn-common {
