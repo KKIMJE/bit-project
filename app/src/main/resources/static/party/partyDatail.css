@@ -1,5 +1,5 @@
 .wrap {
-  margin-top: 100px;
+  margin: 100px;
   font-family: NanumSquareRound;
 }
 
@@ -248,9 +248,18 @@ div.second-column > span:nth-child(2) > i {
 
 .comment-write textarea {
   margin-top: 10px;
+  padding: 10px;
   resize: none;
   border: 1px solid #c7c7c7;
+  width: 100%;
+  height: 130px;
+}
+
+.btn-position {
+  position: relative;
 }
 
 .btn-complete {
+  position: absolute;
+  right: 5px;
 }
