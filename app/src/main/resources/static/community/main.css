@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+
+.category {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  width: 1017px;
+  height: 63px;
+  left: 130px;
+  top: 260px;
+}
+
+.category-font{
+  margin: 0px 30px;
+  padding: 4px 6px;
+  font-weight: 700;
+  background-color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.act {
+  margin: 0px 15px;
+  padding: 4px 6px;
+  font-weight: 700;
+  background-color: #29c05e;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+}
+
+.top_Containner {
+  display: flex;
+}
+
+.location__ {
+  position: absolute;
+  width: 165px;
+  height: 25px;
+  left: 115px;
+  top: 190px;
+  font-size: 32px;
+}
+
+.serch_box {
+  text-align: left;
+  position: absolute;
+  width: 185px;
+  height: 25px;
+  left: 1159px;
+  top: 190px;
+  border-radius: 7px;
+  border-width: 1px;
+  font-size: 12px;
+}
+
+.serch_btn {
+  position: absolute;
+  width: 55px;
+  height: 25px;
+  left: 1349px;
+  top: 190px;
+  background-color: #29c05e;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
+}
+
+.recent_like {
+  display: flex;
+  position: absolute;
+  width: 517px;
+  height: 23px;
+  left: 119px;
+  top: 330px;
+
+}
+
+.recent_like > button {
+  margin-right: 20px;
+  border: 0;
+  outline: 0;
+  background-color: white;
+}
+
+
+.writing__ {
+  display: flex;
+  position: absolute;
+  width: 85px;
+  height: 25px;
+  left: 1319px;
+  top: 330px;
+}
+
+.card {
+  border : none;
+  width: 1257px;
+  height: 263px;
+  left: 10px;
+  top: 390px;
+}
+
+.card-body {
+  background-color: #c4c4c4;
+  height: 263px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.card-category {
+  float: left;
+  border: solid;
+  border-top-width: thin;
+  border-bottom-width: thin;
+  border-left-width: thin;
+  border-right-width: thin;
+  width: 100px;
+  text-align: center;
+  border-radius: 16px;
+  background-color: white;
+  height: 20px;
+  line-height: 20px;
+  top: 5px;
+  left: -260px;
+}
+
+.community_img {
+  float: right;
+  width: 357px;
+  height: 235px;
+  left: 1070px;
+  top: 1px;
+}
+
+.community_time {
+  position: relative;
+  width: 55px;
+  height: 20px;
+  left: 710px;
+  top: -20px;
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.community_writer {
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  width: 45px;
+  height: 20px;
+  left: 760px;
+  top: -23px;
+}
+
+.contents {
+  padding-top: 10px;
+  margin-top: 10px;
+  top: 10px;
+  padding-left: 5px;
+}
+
+.card-contents-name {
+  font-size: 18px;
+  width: 130px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: left;
+  top: 80px;
+}
+
+#card-contents {
+  float: left;
+  background-color: #c4c4c4;
+  width: 800px;
+  height: 130px;
+}
+
+.card-like {
+  float: left;
+  border: solid;
+  border-top-width: thin;
+  border-bottom-width: thin;
+  border-left-width: thin;
+  border-right-width: thin;
+  text-align: center;
+  border-radius: 16px;
+  background-color: white;
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.card-comment {
+  float: left;
+  margin-left: 10px;
+  border: solid;
+  border-top-width: thin;
+  border-bottom-width: thin;
+  border-left-width: thin;
+  border-right-width: thin;
+  text-align: center;
+  border-radius: 16px;
+  background-color: white;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+}
