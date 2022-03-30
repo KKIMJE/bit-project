@@ -100,18 +100,23 @@
 }
 
 .d-flex {
-  text-align: center;
   display: flex;
-  justify-content: space-between;
+  text-align: center;
 }
 
 .card {
   width: 400px;
-  height: 400px;
+  height: 250px;
   margin-bottom: 20px;
   position: static;
+  border: none;
 }
+
+.card-body {
+  font-size: 20px;
+}
+
 .card-img-top {
-  width: 250px;
-  height: 250px;
+  width: 100px;
+  height: 100px;
 }

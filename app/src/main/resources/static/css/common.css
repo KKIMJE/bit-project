@@ -10,7 +10,7 @@ body {
   min-height: 100%;
   padding-bottom: 68px; /* footer 높이 */
   max-width: 1280px;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 5px;
+  margin-right: 5px;
   padding: 0;
 }

@@ -1,5 +1,5 @@
 .wrap {
-  margin-top: 100px;
+  margin: 100px;
   font-family: NanumSquareRound;
 }
 
@@ -15,6 +15,7 @@ h1 {
   padding-left: 50px;
   box-sizing: border-box;
   border-bottom: 1px solid #c7c7c7;
+  height: 500px;
 }
 
 .profile-img {
@@ -90,11 +91,13 @@ h1 {
 .second-column {
   position: relative;
   left: 150px;
+  top: 7px;
 }
 
 .third-column {
   position: relative;
   left: 300px;
+  top: 8px;
 }
 
 .party-board-detail i {
@@ -196,7 +199,7 @@ div.second-column > span:nth-child(2) > i {
 
 .comment-content {
   font-size: 19px;
-  width: 1050px;
+  width: 930px;
 }
 
 .comment-footer {
@@ -219,7 +222,7 @@ div.second-column > span:nth-child(2) > i {
 
 .comment-content-snd {
   font-size: 19px;
-  width: 950px;
+  width: 830px;
 }
 
 .comment-pages {
@@ -245,8 +248,18 @@ div.second-column > span:nth-child(2) > i {
 
 .comment-write textarea {
   margin-top: 10px;
-  width: 1270px;
-  height: 130px;
+  padding: 10px;
   resize: none;
   border: 1px solid #c7c7c7;
+  width: 100%;
+  height: 130px;
+}
+
+.btn-position {
+  position: relative;
+}
+
+.btn-complete {
+  position: absolute;
+  right: 5px;
 }
