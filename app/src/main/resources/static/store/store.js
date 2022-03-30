@@ -40,7 +40,7 @@ next.addEventListener("click", () => {
         storeAll[i].style.display = "none";
       }
       cursor += 1;
-      console.log("cursor : " + `${cursor-1}`);
+      console.log("cursor : " + `${cursor}`);
     } else {
       if (storeAll[cursor].style.display == "none") {
         storeAll[cursor].style.display = "flex"
@@ -55,7 +55,7 @@ next.addEventListener("click", () => {
         storeAll[i].style.display = "none";
       }
       cursor += 1;
-      console.log("cursor : " + `${cursor-1}`);
+      console.log("cursor : " + `${cursor}`);
     }
 });
 
@@ -82,6 +82,13 @@ pre.addEventListener("click", () => {
   } else {
     if (0 < cursor) {
       cursor -= 1;
+      console.log(cursor + "oo")
+      if (cursor == 1) {
+        storeAll[cursor].style.display = "none"
+        storeAll[cursor-1].style.display = "flex"
+        return;
+      }
+
       if (storeAll[cursor].style.display == "none") {
         storeAll[cursor].style.display = "flex"
       }
