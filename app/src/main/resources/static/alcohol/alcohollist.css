@@ -122,6 +122,9 @@
 }
 
 .card-img-top {
+  /* object-fit: cover;
+  object-position: center;
+  overflow: hidden; */
   width: 150px;
   height: 150px;
 }

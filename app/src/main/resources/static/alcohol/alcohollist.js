@@ -2,15 +2,15 @@ const lightBtn = document.querySelector('.category-sort-div');
 var listDiv = document.querySelector(".alcohol-list-div")
 var itemDiv = document.querySelector(".alclist-item-div")
 
-function makeItemDiv() {
-    var no = 1
-    var itemDiv = document.createElement("div")
-    itemDiv.classList.add(`"alclist-item-div${no}"`)
-    itemDiv.classList.add("d-flex")
-    itemDiv.classList.add("flex-row")
-    no++
-    listDiv.appendChild(itemDiv)
-}
+// function makeItemDiv() {
+//     var no = 1
+//     var itemDiv = document.createElement("div")
+//     itemDiv.classList.add(`"alclist-item-div${no}"`)
+//     itemDiv.classList.add("d-flex")
+//     itemDiv.classList.add("flex-row")
+//     no++
+//     listDiv.appendChild(itemDiv)
+// }
 
 
 function allList() {
