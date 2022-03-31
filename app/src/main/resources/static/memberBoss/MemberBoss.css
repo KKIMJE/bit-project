@@ -161,4 +161,5 @@ footer__storeChange {
 
 .x-btn-outline-group {
   display: flex;
+  padding: 10px;
 }
