@@ -43,7 +43,8 @@
   
   .store-card-1{
    float:right!important;
-   padding-top:6%; 
+   margin-right:13%;
+   padding-top:5.5%; 
    max-width:100%; 
    width:500px; 
     /*margin-right:5%;*/
@@ -72,11 +73,9 @@
      }
      
      .community1-col-4{
+            margin-right:5%;
              float:right !important;
-             padding-left: 7%;
-              margin-left:6%;
               max-width:100%; 
-              width:600px; 
              /* border: 1px solid #BCBCBC; 
               box-sizing: border-box; 
               border-radius: 20px; */
