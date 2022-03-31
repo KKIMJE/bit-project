@@ -8,10 +8,12 @@
     float: left;
     box-sizing: border-box;
     border-right: 1px solid #000;
+    margin-top: 80px;
   }
 
   div.left div{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    margin-left: -20px;
   }
 
   div.right {
@@ -19,11 +21,12 @@
     width: 50%;
     float: right;
     box-sizing: border-box;
+    margin-top: 80px;
   }
 
   div.right div{
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
   .x-join {
@@ -51,9 +54,10 @@
 
   #store-title {
     text-align: center;
-    margin-bottom: 70px;
      font-weight:400;
      font-size:30px;
+     display : inline-block;
+     margin-top: 50px;
   }
 
   .x-pwd-span {
@@ -66,12 +70,12 @@
     background-color: #29C05E;
     width: 70px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 30px;
   }
 
   .btn-outline-dark {
    border-radius: 5px;
-   margin-left: 20px;
+   margin-left: 30px;
   }
 
   input {
@@ -111,6 +115,10 @@
 
   #x-addr1 {
     width: 70px;
+  }
+  
+  .x-add-photo {
+    float:left;
   }
 
   footer__storeChange {
