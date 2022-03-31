@@ -21,11 +21,11 @@ function allList() {
     .then(function(alcohols) {
       for (var i = 0; i < alcohols.length; i++) {
         if (i % 5 == 0) {
-          var no = 1
-          var itemDiv = document.createElement("div")
-          itemDiv.classList.add(`"alclist-item-div${no}"`)
-          itemDiv.classList.add("d-flex")
-          itemDiv.classList.add("flex-row")
+          var no = 1;
+          var itemDiv = document.createElement("div");
+          itemDiv.classList.add(`"alclist-item-div${no}"`);
+          itemDiv.classList.add("d-flex");
+          itemDiv.classList.add("flex-row");
           no++
           listDiv.appendChild(itemDiv)
         }

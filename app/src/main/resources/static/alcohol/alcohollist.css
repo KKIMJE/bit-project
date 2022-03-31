@@ -69,14 +69,19 @@
 
 .category-font {
   margin: 0px 15px;
+  padding: 4px 6px;
   font-weight: 700;
   background-color: white;
   border-style: solid;
   border-color: white;
+  border-radius: 16px;
+  cursor: pointer;
 }
 
 .act {
+  margin: 0px 15px;
   padding: 4px 6px;
+  font-weight: 700;
   background-color: #29c05e;
   color: white;
   border-style: solid;
@@ -117,6 +122,6 @@
 }
 
 .card-img-top {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
