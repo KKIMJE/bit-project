@@ -42,7 +42,7 @@ public class StoreController {
   }
 
   @RequestMapping("/store/delete")
-  public Object delete(int no) {
+  public Object delete(Store no) {
     return storeDao.delete(no);
   }
 }

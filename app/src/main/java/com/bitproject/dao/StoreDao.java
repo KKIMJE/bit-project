@@ -21,6 +21,6 @@ public interface StoreDao {
 
   int update(Store store);
 
-  int delete(int no);
+  int delete(Store store);
 
 }
