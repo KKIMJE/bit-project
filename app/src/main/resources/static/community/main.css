@@ -7,7 +7,7 @@
   align-items: baseline;
   width: 1017px;
   height: 63px;
-  left: 70px;
+  left: 100px;
   top: 260px;
 }
 
@@ -42,7 +42,7 @@
   position: absolute;
   width: 165px;
   height: 25px;
-  left: 60px;
+  left: 100px;
   top: 190px;
   font-size: 25px;
 }
@@ -52,7 +52,7 @@
   position: absolute;
   width: 185px;
   height: 25px;
-  left: 930px;
+  left: 1130px;
   top: 190px;
   border-radius: 7px;
   border-width: 1px;
@@ -63,7 +63,7 @@
   position: absolute;
   width: 55px;
   height: 25px;
-  left: 1120px;
+  left: 1320px;
   top: 190px;
   background-color: #29c05e;
   color: white;
@@ -77,7 +77,7 @@
   position: absolute;
   width: 517px;
   height: 23px;
-  left: 79px;
+  left: 119px;
   top: 330px;
 
 }
@@ -95,7 +95,7 @@
   position: absolute;
   width: 85px;
   height: 25px;
-  left: 1090px;
+  left: 1285px;
   top: 330px;
 }
 
@@ -103,7 +103,7 @@
   border : none;
   width: 1107px;
   height: 263px;
-  left: 70px;
+  left: 0px;
   top: 390px;
 }
 
