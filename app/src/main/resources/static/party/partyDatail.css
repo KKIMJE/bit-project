@@ -1,4 +1,4 @@
-.wrap {
+.party-detail-wrap {
   margin: 100px;
   font-family: NanumSquareRound;
 }
@@ -149,7 +149,7 @@ div.second-column > span:nth-child(2) > i {
   bottom: -16px;
 }
 
-#party-like {
+.party-like {
   position: relative;
 }
 
@@ -160,12 +160,12 @@ div.second-column > span:nth-child(2) > i {
   font-size: larger;
 }
 
-#party-like > i.fa-solid.fa-heart.party-like.like-click {
+.party-like > i.fa-solid.fa-heart.party-like.like-click {
   /* display: none; */
   cursor: pointer;
 }
 
-#party-like > i.fa-regular.fa-heart.party-like.like-click {
+.party-like > i.fa-regular.fa-heart.party-like.like-click {
   display: none;
   cursor: pointer;
 }
@@ -214,7 +214,7 @@ div.second-column > span:nth-child(2) > i {
   flex-direction: column;
 }
 
-#people-name {
+.people-name {
   font-size: 19px;
   font-weight: bold;
   margin-bottom: 5px;
