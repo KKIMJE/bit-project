@@ -123,3 +123,9 @@ body > nav {
 .navbar__login > div:nth-child(3) > div > ul > li {
   padding-right: 0;
 }
+
+body > nav > ul.navbar__login > div:nth-child(3) > div > ul {
+  max-width: 70rem;
+  min-width: 20rem;
+  bottom: 0px;
+}
