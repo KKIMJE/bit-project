@@ -69,58 +69,62 @@
     </nav>
 
 <content>
-<h1 >개인정보</h1><br><br>
+<h1 >개인정보</h1><br>
 <center><img id= "ig" src="./img/profile-photo(1).jpg"><br>
  <div class="profile-group">
 <center style="margin-left: 5%;"><b>김흥국</b></center>
 <center><button onclick="toggleImg()" style= "margin-left: 5%; background-color:#FFFFFF; border-radius:10px;">프로필 변경</button></div></center>
 <!--<center><input type = "file" name="photo" multiple></center> 고려사항-->
-<br><br><br>
+<br><br>
 
 <form id="x-complete-form"> 
 <div class="x-info-div-container"> 
-<p>실명 <br><br><br>
+<div class ="personal-info-setting" style= "margin-top:-10px;">
+<p>실명 <br><br>
 <input id="x-name" type="text" value="홍길동" ></p><br><br>
+</div>
 
-<p>성별<br><br><br>
+<div class ="personal-info-setting" style= "margin-top:-10px;">
+<p>성별<br><br>
 <input id="x-sex" type="text" value="남"> </p><br><br>
+</div>
 
-<p>생년월일<br><br><br>
+<div class ="personal-info-setting" style= "margin-top:-10px;">
+<p>생년월일<br><br>
 <input id="x-birth" type="text" name="birthdate" value="2000.02.02"><p><br><br>
+</div>
 
-<p>이메일 주소<br><br><br>
+<div class ="personal-info-setting" style= "margin-top:-10px;">
+<p>이메일 주소<br><br>
 <input id="x-e-address" type="email" name="email" value="aaa@test.com"><p><br><br>
+</div>
 
-
+<div class ="personal-info-setting" style= "margin-top:-10px;">
 비밀번호
-<input type='button' class='btn'  value='수정'><p><br><br>
-<input id="x-pwd" type="password" name="pwd" value="0000"><p><br><br>
+<input type='button' class='btn'  value='수정'><p><br>
+<input id="x-pwd" type="password" name="pwd" value="0000"><br><br>
+</div>
 
+<div class ="personal-info-setting" style= "margin-top:-10px;">
 전화번호
-<input type='button' class='btn'  value='수정'><p><br><br>
-<input id="x-phonenumber" type="text" value="010-1111-1111"><p><br><br>
+<input type='button' class='btn'  value='수정'><p><br>
+<input id="x-phonenumber" type="text" value="010-1111-1111"><br><br>
+</div>
 
-SNS계정<br><br><br>
+<div class ="personal-info-setting" style= "margin-top:-10px;">
+SNS계정<br><br>
 <img id ="img" src="./img/kakao-talk.png"> 홍길동 
- <button id="x-connect-btn"  type="button">연결해제</button><p><br><br>
+ <button id="x-connect-btn"  type="button">연결해제</button><br><br>
+</div>
 
-자기소개
+<div class ="personal-info-setting" style= "margin-top:-10px;">
+자기소개 
 <input type='button' class='btn'  value='수정' ><p><br><br>
 <textarea onkeydown = 'counter();' id='x-self-intro'>
-서울 종로 낙원상가에서 하루하루 벌어먹는 무일푼 밴드로 음악가 인생을 시작했습니다. 
-
-당시 밴드 이름은 '오대장성'으로 김흥국은 밴드의 드러머였었습니다.
-
-라디오스타에서 한 회고에 따르면 어머니가 말하길 갓난아기 때부터 젓가락으로 식탁을 리듬감 있게 내리쳤다고... 
-
- 예능이나 라디오에서 이 드러머 시절 이야기로 가끔 개그를 치곤 합니다. 
- 
- 1985년에 서라벌레코드사에서 1집을 내고 본격적으로 데뷔했습니다.
- 
-  이후 이야기가 궁금하시다면 저랑 소주 한 잔 하시지요^^   
-                      
+안녕하세요!      
+           
 </textarea><br><!-- <span id="count">0/300자</span><br><br>-->
-    
+ </div>   
 </div> 
 <input type='button' class='x-leave-btn'  value='탈퇴하기' >
 </form>

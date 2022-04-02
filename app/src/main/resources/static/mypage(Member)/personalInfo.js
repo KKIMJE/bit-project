@@ -12,6 +12,8 @@ document.getElementById('x-self-intro').innerHTML = content + "\n" + content.len
  //document.getElementById('x-self-intro').style.textAlign = "right";
   
 }
+
+document.getElementById("x-self-intro").style.fontSize = '15px';
 counter();
 function toggleImg() {
     document.getElementById("ig").src = "../img/logo.png";
