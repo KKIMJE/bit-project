@@ -1,6 +1,7 @@
 .party-detail-wrap {
   margin: 100px;
   font-family: NanumSquareRound;
+
 }
 
 h1 {
@@ -143,31 +144,47 @@ div.second-column > span:nth-child(2) > i {
 
 .party-board-option {
   display: flex;
-  align-items: flex-end;
   justify-content: flex-end;
-  position: relative;
-  bottom: -16px;
+  position: absolute;
+  top: 270px;
+  right: 10px;
 }
 
 .party-like {
   position: relative;
+  display: flex;
 }
 
 .like-click {
-  position: absolute;
-  right: 33px;
   color: rgba(204, 9, 9, 0.883);
   font-size: larger;
+  position: absolute;
+  right: 35px;
+  bottom: 1px;
 }
 
-.party-like > i.fa-solid.fa-heart.party-like.like-click {
+div.party-board-content > div > div.party-like > i.fa-regular.fa-heart.like-click {
   /* display: none; */
   cursor: pointer;
 }
 
-.party-like > i.fa-regular.fa-heart.party-like.like-click {
+div.party-board-content > div > div > i.fa-solid.fa-heart.like-click {
   display: none;
   cursor: pointer;
+}
+
+div.party-board-option span {
+  font-size: 15px;
+}
+
+
+div.party-board-content > div > div:nth-child(2) {
+margin-left: 15px;
+margin-right: 15px;
+}
+
+div.party-board-option button i {
+  color: rgba(50, 50, 50, 1);
 }
 
 .btn-common {
@@ -191,6 +208,10 @@ div.second-column > span:nth-child(2) > i {
   border-radius: 30px;
 }
 
+.btn-option {
+  margin-left: 10px;
+}
+
 .party-comment {
   box-sizing: border-box;
   border-top: 1px solid #c7c7c7;
@@ -200,13 +221,15 @@ div.second-column > span:nth-child(2) > i {
   display: flex;
   box-sizing: border-box;
   border-bottom: 1px solid #c7c7c7;
-  padding: 10px 50px;
+  padding: 10px 20px;
+  position: relative;
 }
 
 .people {
-  width: 90px;
-  height: 90px;
-  margin-right: 30px;
+  width: 65px;
+  height: 65px;
+  margin-right: 20px;
+  margin-left: 13px;
 }
 
 .comment-text {
@@ -215,13 +238,13 @@ div.second-column > span:nth-child(2) > i {
 }
 
 .people-name {
-  font-size: 19px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 700;
   margin-bottom: 5px;
 }
 
 .comment-content {
-  font-size: 19px;
+  font-size: 15px;
   width: 930px;
 }
 
@@ -232,16 +255,40 @@ div.second-column > span:nth-child(2) > i {
   margin-top: 10px;
 }
 
+.comment-datetime {
+  font-size: 13px;
+  position: absolute;
+  bottom: 5px;
+}
+
+.comment-option {
+  position: absolute;
+  right: 26px;
+  bottom: 5px;
+}
+
+.comment-option i {
+  color: rgba(50, 50, 50, 1);
+  font-size: 14px;
+}
+
+.comment-option span {
+  font-size: 13px;
+  margin-right: 6px;
+}
+
 .party-comment-snd {
   display: flex;
   box-sizing: border-box;
   border-bottom: 1px solid #c7c7c7;
-  padding: 10px 50px 10px 150px;
+  padding: 10px 20px 10px 90px;
+  position: relative;
+  height: 100px;
 }
 
 .comment-content-snd {
-  font-size: 19px;
-  width: 830px;
+  font-size: 15px;
+  width: 850px;
 }
 
 .comment-pages {
@@ -249,18 +296,19 @@ div.second-column > span:nth-child(2) > i {
   margin: auto;
   width: 100px;
   padding-top: 40px;
-}
-
-.comment-page {
-  font-size: 23px;
+  font-size: 17px;
 }
 
 .comment-write {
   margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .comment-write p {
-  font-size: 19px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -269,7 +317,7 @@ div.second-column > span:nth-child(2) > i {
   padding: 10px;
   resize: none;
   border: 1px solid #c7c7c7;
-  width: 100%;
+  width: 1100px;
   height: 130px;
 }
 
@@ -279,5 +327,6 @@ div.second-column > span:nth-child(2) > i {
 
 .btn-complete {
   position: absolute;
-  right: 5px;
+  right: -550px;
+  top: 3px;
 }
