@@ -15,26 +15,28 @@
   }
 
  .top{
+ margin-top:-5px;
   padding-left: 10%; 
   vertical-align:middle !important;
  }
 
  .bottom{
+  margin-top:-55px;
   padding-left: 10%; 
   vertical-align:middle !important;
  }
 
  .btn{
  background-color: #ffffff;
-   font-size:30px;
-   font-weight:bolder;
+   font-size:20px;
+   font-weight:500;
    }
  
  .x-evaluate-btn{
   background-color: #90D483;
   color: #ffffff;
-  width:130px;
-  height:60px;
+  width:80px;
+  height:35px;
  }
  
   .profile-img{
