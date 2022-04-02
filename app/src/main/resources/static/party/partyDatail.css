@@ -132,6 +132,10 @@ div.second-column > span:nth-child(2) > i {
   font-size: 22px;
 }
 
+div.third-column > span:nth-child(2) > i {
+  font-size: 24px;
+}
+
 .party-board-detail span {
   font-size: 16px;
   font-weight: 600;
@@ -300,7 +304,6 @@ div.party-board-option button i {
 }
 
 .comment-write {
-  margin-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
