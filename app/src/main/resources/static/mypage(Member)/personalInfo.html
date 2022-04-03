@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="personalInfo.css">
 
-  <title>야술먹자-개인정보</title>
+  <title>야술먹자 개인정보</title>
   
 
 </head>
@@ -79,7 +79,7 @@
 
 <form id="x-complete-form"> 
 <div class="x-info-div-container"> 
-<div class ="personal-info-setting" style= "margin-top:-10px;">
+<div class ="personal-info-setting" style= "margin-top:-20px;">
 <p>실명 <br><br>
 <input id="x-name" type="text" value="홍길동" ></p><br><br>
 </div>
@@ -101,13 +101,22 @@
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
 비밀번호
-<input type='button' class='btn'  value='수정'><p><br>
+
+<div class="middle">
+  <div style="margin-right:20px; margin-top:-20px;">
+   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    </div>
 <input id="x-pwd" type="password" name="pwd" value="0000"><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
 전화번호
-<input type='button' class='btn'  value='수정'><p><br>
+
+<div class="middle">
+  <div style="margin-right:20px; margin-top:-20px;">
+   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    </div>
+    
 <input id="x-phonenumber" type="text" value="010-1111-1111"><br><br>
 </div>
 
@@ -118,15 +127,20 @@ SNS계정<br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
-자기소개 
-<input type='button' class='btn'  value='수정' ><p><br><br>
+자기소개
+ 
+<div class="middle">
+  <div style="margin-right:20px; margin-top:-20px;">
+   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    </div>
+    
 <textarea onkeydown = 'counter();' id='x-self-intro'>
 안녕하세요!      
            
 </textarea><br><!-- <span id="count">0/300자</span><br><br>-->
  </div>   
 </div> 
-<input type='button' class='x-leave-btn'  value='탈퇴하기' >
+<button id="x-leave-btn" type="button">탈퇴하기</button>
 </form>
 
 </content>

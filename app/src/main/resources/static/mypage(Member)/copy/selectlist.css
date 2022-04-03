@@ -1,22 +1,7 @@
 
   * {font-family: NanumSquareRound;}
   
-  h1 {
-  left:100px;
-  font-weight:1000;
-  font-size:50px;
-  margin-top: 300px;
-}
-
-  h2 {
-  font-size:30px;
-  left:100px;
-  font-weight:1000;
-  }
-  
-  .store-card-body{
-  font-size:20px;
-  }
+ 
 
   div.left {
     /* padding: 0 100px 0 0; */
@@ -32,87 +17,268 @@
     float: right;
     box-sizing: border-box;
   }
-
-.x-pwd-span {
-  font-size: 10pt;
-  font-weight: lighter;
-  color: #848484;
+  
+  body {
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-.btn-primary {
-  background-color: #29C05E;
-  width: 90px;
+/* 주점 콘텐츠 대분류 */
+.store-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#card-box {
-            position:absolute;
-            
-            top:400px;
-            right:1000px;
-            justify-content: space-between;
-            margin: auto;
-            margin-top: 65px;
-            flex-wrap: wrap;
-            
-            float: right;
-        }
 
-.store-img-top{ height :300px;}
+/* imgcard */
+.imgCardAll {
+  /* display: none; */
+  display: flex;
+  counter-reset: section;
+}
 
+.store-contents-imgCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
 
- .card-body-ul{
-            position:absolute;
-            top:50px;
-            left:300px;
-            
-            width:330px;
-            height:40px;
-         
-            }
+.next-store, .pre-store {
+  position: relative;
+  margin-top: 278px;
+  padding: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: #29c05e;
+  cursor: pointer;
+}
+
+.next-store {
+  margin-left: 0px;
+}
+
+.pre-store {
+  margin-right: 8px;
+}
+
+.store-contents-imgCard-1, .store-contents-imgCard-2 {
+  margin-top: 13px;
+  display: flex;
+}
+.store-contents-imgCard-2 {
+  margin-top: 20px;
+}
+.img-xbox {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 15px;
+}
+.xImg-ori {
+  width: 200px;
+  height: 200px;
+  border-radius: 9px;
+}
+.xImg-contents {
+  display: flex;
+  justify-content: space-between;
+}
+.xImg-content {
+  display: flex;
+  flex-direction: column;
+}
+.xImg-content-t {
+  font-size: medium;
+  font-weight: 700;
+  margin-top: 7px;
+}
+.xImg-d, .storeOpen {
+  font-size: smaller;
+}
+.storeOpen {
+  margin-top: 7px;
+}
+.xImg-d {
+  margin-top: 4px;
+}
+.xImg-star {
+  margin: 5px 0px;
+}
+
+.box {
+  position: relative;
+}
+
+.b {
+  color: red;
+  font-size: larger;
+  left: 169px;
+  top: 35px;
+}
+
+i.fa-solid.fa-heart.box.b {
+  /* display: none; */
+  cursor: pointer;
+}
+
+i.fa-regular.fa-heart.box.b {
+  display: none;
+  cursor: pointer;
+}
+  
+  
+  /* 찜목록 css */
+  
+  h1 {
+  left:100px;
+  font-weight:500;
+  font-size:30px;
+  margin-top: 100px;
+  padding-left:130px;
+}
+
+  h2 {
+  font-size:20px;
+  font-weight:500;
+  margin-top: -30px;
+  padding-left:130px;
+  }
+  
+  h3{
+   font-size:15px;
+   left:100px;
+   font-weight:500;
+
+  } 
+  
+  /* 주점 
+  .store-group{
+  margin-right:-100px;
+  }
+  
+  .store-card-1{
+  margin-top: -90px;
+   float:right!important;
+   margin-right:9%;
+   padding-top:5.5%; 
+   max-width:100%; 
+   width:500px; 
+    /*margin-right:5%;*/
+  /*}
+   
+   .store-card {
+   margin-top: -70px;
+     padding-left:130px; 
+     width:50%;
+   }
+   
+    .store-card-body{
+    font-size:20px;
+    padding-left: 5%;
+    }
+
+    .store-img-top{ 
+    width: 300px;
+    height:150px;
+    }
     
-    .card{
-           position:relative;
-           width: 17rem; 
+    .btn{
+    margin-top: -10px;
+    }*/
+    
+  /*커뮤니티*/
+   /*  .community-title{
+     font-size:20px;
+  font-weight:500;
+     margin-top: -40px;
+      padding-left:130px;
+     }
+     
+     .community1-col-4{
+           margin-top:-50px;
+            margin-right:25%;
+             float:right !important;
+              max-width:100%; 
+             /* border: 1px solid #BCBCBC; 
+              box-sizing: border-box; 
+              border-radius: 20px; */
+              /*width: 300px; 
+              height: 150px;
+              white-space:nowrap;
+              }
+     
+     .community-col-4{
+               padding-left: 3%;
+               margin-left: 70px; 
+               margin-top:10px;
+               margin-right:70px; 
+               width:50%; 
+              /* border: 1px solid #BCBCBC; 
+               box-sizing: border-box; 
+               border-radius: 24px; */
+             /*  width: 300px;
+               height: 150px;
+               white-space:nowrap;
+              }
+     
+     .community-card-body-ul{
+                 margin-top:20px;
+                 padding-left: 40px;
+               /* position:absolute;*/
+               /* height:40px;*/
+              /*  top:50px;
+                left:300px;
+                width:330px;
+                }
+  
+    
+     .community-card-1{
+           float:left;
+           display: flex;
+          align-items: center;
+           
+           /* position:relative;*/
+         /*  width: 17rem; 
            margin-top: 15px; 
            margin-bottom:15px; 
            margin-left: 10px; 
-           }        
+           }  
+   
+      .community-img-top{
+           width:250px;
+           height:200px;
+       }
+                   
+     .community-card{
+      margin-top: -30px;
+           float:left;
+            display: flex;
+          align-items: center;
+          
+          /* position:relative;*/
+          /* width: 17rem; 
+          
+           margin-bottom:15px; 
+           margin-left: 10px; 
+           }    */    
+           
+  /* .btn{
+            float: right;/*border-radius:10px; color:E2E2E2; background-color:white;} */
+     
     
-  .card img {
-              position: absolute;
-              border-radius:20px;
-              top: 0;
-              bottom:10px;
-              left: 0;
-              width: 100%;
-              height: 200px;
-              object-fit: cover;
-              /*
-                        border-bottom: 0px solid #eee; 
-                        height:200px;
-                        */
-            }
- 
- .card-community-box{
-                      position:absolute;
-                     top: 1400px;
-                      /*left:2000px;*/
-                      right:1000px;
-                      justify-content: space-between;
-                      margin: auto;
-                      margin-top: 65px;
-                      flex-wrap: wrap;
-                      float: right;
- 
-                      }
+                      
 /* 
 /* 테블릿 세로 사이즈 넘어가면 적용 */
 @media screen and (min-width: 768px) {
+         
 }
 
 /* 테블릿 가로 사이즈 넘어가면 적용 */
 @media screen and (min-width: 1024px) {
-}
+  
+} 
 
 /* 스마트폰 가로 사이즈 넘어가면 적용 */
 @media screen and (min-width: 480px) {

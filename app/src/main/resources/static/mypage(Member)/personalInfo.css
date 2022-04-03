@@ -27,33 +27,44 @@
   .x-info-div-container{
     padding-left: 5%;
   }
-  
- 
-  
-  .x-leave-btn {
+   
+  #x-leave-btn {
      margin-left:90%;
      background-color:#FFFFFF;
-     color:#E2E2E2;
+     color:#d0d0d0;
      border-radius:10px;
+     width:80px;
    }
    
-  .btn{ 
-    margin-top:-10px;
+  #x-update-btn{ 
+     /* margin-left:85%;
      background-color:#FFFFFF;
      color:#000000;
-     font-size:17px;
+     border:none;
+     font-size:10px;
      text-decoration:underline;
-     float: right;}
+     float: right;*/
+     
+      margin-left:100%;
+      width:40px;
+    /* position: relative;
+    left: 1150px;*/
+     background-color:#FFFFFF;
+     color:#000000;
+        border:none;
+     font-size:10px;
+      text-decoration:underline;
+    margin-bottom: 0.25rem!important;}
   
   
   
-  #x-complete-form {font-size:18px;}
+  #x-complete-form {font-size:15px;}
   
   #ig{margin-left: 5%; margin-top: -25px; width:100px; height:100px; }
   
    #img{margin-top:-15px; width:50px; height:50px; }
   
-  #x-self-intro{ margin-top:-30px; border-radius:10px; background-color: #E2E2E2; width:600px; height:50px; font-weight: 400; font-size: 25px;line-height: 19px;}
+  #x-self-intro{resize:none; margin-top:-30px; border-radius:10px; background-color: #E2E2E2; width:600px; height:100px; font-weight: 400; font-size: 25px;line-height: 19px;}
 
    #x-connect-btn {margin-top:-15px;background-color:#FFFFFF; border-radius:10px;}
    
