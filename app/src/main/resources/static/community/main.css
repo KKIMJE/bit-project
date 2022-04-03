@@ -2,13 +2,13 @@
 
 
 .category {
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: baseline;
   width: 1017px;
   height: 63px;
-  left: 100px;
-  top: 260px;
+  left: 10px;
+  top: 190px;
 }
 
 .category-font{
@@ -34,37 +34,36 @@
 }
 
 .top_Containner {
+  position: relative;
   display: flex;
+  top: 140px;
+  left: 0px;
 }
 
 .location__ {
   /* background: linear-gradient(to right, #ffa3a1, #a62efd); */
-  position: absolute;
   width: 165px;
   height: 25px;
-  left: 100px;
-  top: 190px;
   font-size: 25px;
+}
+
+.serch {
+  position: relative;
+  left: 705px;
 }
 
 .serch_box {
   text-align: left;
-  position: absolute;
   width: 185px;
   height: 25px;
-  left: 1130px;
-  top: 190px;
   border-radius: 7px;
   border-width: 1px;
   font-size: 12px;
 }
 
 .serch_btn {
-  position: absolute;
   width: 55px;
   height: 25px;
-  left: 1320px;
-  top: 190px;
   background-color: #29c05e;
   color: white;
   border-style: solid;
@@ -74,11 +73,11 @@
 
 .recent_like {
   display: flex;
-  position: absolute;
+  position: relative;
   width: 517px;
   height: 23px;
-  left: 119px;
-  top: 330px;
+  left: 20px;
+  top: 200px;
 
 }
 
@@ -92,11 +91,11 @@
 
 .writing__ {
   display: flex;
-  position: absolute;
+  position: relative;
   width: 85px;
   height: 25px;
-  left: 1285px;
-  top: 330px;
+  left: 1020px;
+  top: 170px;
 }
 
 .card {
@@ -104,7 +103,7 @@
   width: 1107px;
   height: 263px;
   left: 0px;
-  top: 390px;
+  top: 220px;
 }
 
 .card-body {
