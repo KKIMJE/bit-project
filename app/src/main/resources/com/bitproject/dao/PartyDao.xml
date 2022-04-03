@@ -6,68 +6,69 @@
 <mapper namespace="com.bitproject.dao.PartyDao">
 
   <resultMap type="party" id="partyMap">
-    <id column="party_no" property="partyNo"/>
+    <association property="writer" javaType="member">
+      <id column="mno" property="mno"/>
+    </association>
   </resultMap>
 
   <select id="findAll" resultMap="partyMap">
     select 
-      partyNo,
-      mno,
-      storeNo,
-      title,
-      party_fee,
-      meeting_date,
-      maxMember,
-      alcoholType,
-      meeting_date,
-      meeting_date,
-      reg_date,
-      update_date,
-      view_count
+      p.title,
+      p.party_fee,
+      p.meeting_date,
+      p.max_member,
+      p.alcohol_type,
+      p.alcohol_limit,
+      p.reg_date,
+      m.mno,
+      m.name,
+      s.store_no,
+      s.name
     from 
-      party 
+      party p
+      inner join member m on (p.writer = m.mno)
+      inner join store s on (p.store = s.storeNo) 
     order by 
-      party_no desc
+      p.party_no desc
   </select>
-
-  <insert id="insert" parameterType="Party">
-    insert into party(mno,community_no,title,contents,view_count) 
-    values(#{mNo},#{communityNo},#{title},#{contents},#{viewCount})
-  </insert>
 
 	<select id="findByNo" resultMap="partyMap" parameterType="int">
     select 
-      mno,
-      community_no,
-      title,
-      contents,
-      view_count,
-      reg_date
-      view_count
+      p.title,
+      p.party_fee,
+      p.meeting_date,
+      p.max_member,
+      p.alcohol_type,
+      p.alcohol_limit,
+      m.mno,
+      m.name,
+      s.store_no,
+      s.name
     from 
-      party
+      party p
+      inner join member m on (p.writer = m.mno)
+      inner join store s on (p.store = s.storeNo) 
     where 
-      party_no=#{no}
+      p.party_no=#{no}
   </select>
+  
+    <insert id="insert" parameterType="Party">
+    insert into party(title,contents,partyFee,meetingDate,maxMember,alcoholType,alcoholLimit,store,writer) 
+    values(#{title},#{contents},#{party_fee},#{meeting_date},#{max_member},#{alcohol_type},#{alcohol_limit},#{store.storeNo},#{write.mno})
+  </insert>
 
   <update id="update" parameterType="Party">
     update party set
       title=#{title}, 
       contents=#{contents}
     where 
-      party_no=#{boardNo}
+      party_no=#{partyNo} and writer=#{writer.mno}
   </update>
 
-  <delete id="delete" parameterType="int">
+  <delete id="delete" parameterType="party">
     delete from party 
-    where party_no=#{no}
+    where party_no=#{partyNo}
   </delete>
-
-  <update id="increaseViewCount" parameterType="int">
-    update party set 
-      view_count=view_count + 1 
-    where party_no=#{no}
-  </update>
 
 </mapper>
 

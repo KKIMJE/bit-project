@@ -7,8 +7,6 @@ import com.bitproject.domain.Party;
 @Mapper  
 public interface PartyDao {
 
-  int countAll();
-
   List<Party> findAll();
 
   int insert(Party party);
@@ -17,7 +15,7 @@ public interface PartyDao {
 
   int update(Party party);
 
-  int delete(int no);
+  int delete(Party party);
 
   int increaseViewCount(int no);
 }
