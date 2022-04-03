@@ -8,10 +8,12 @@ if(content.length >300) {
 //content += "<br>" + content.length + "/300자" ;
 // 요기서 textarea 안에 글자 count를 넣어준다. 그런데 textarea안에서 html tag가 동작 안하는 듯...
 document.getElementById('x-self-intro').innerHTML = content + "\n" + content.length+"/300자";
- // document.getElementById('count').innerHTML = content.length +'/300자';
- document.getElementById('x-self-intro').style.textAlign = "right";
+  document.getElementById('count').innerHTML = content.length +'/300자';
+ //document.getElementById('x-self-intro').style.textAlign = "right";
   
 }
+
+document.getElementById("x-self-intro").style.fontSize = '15px';
 counter();
 function toggleImg() {
     document.getElementById("ig").src = "../img/logo.png";

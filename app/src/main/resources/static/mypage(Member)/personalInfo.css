@@ -2,11 +2,11 @@
   * {font-family: NanumSquareRound;}
   
   h1 {
-  margin-top: 150px;
+  margin-top: 120px;
   margin-left: 5%;
   left:100px;
- font-weight:1000;
-  font-size:50px;
+ font-weight:500;
+  font-size:30px;
 }
 
   div.left {
@@ -28,68 +28,50 @@
     padding-left: 5%;
   }
   
-  .x-btn {
-    text-align: left;
-    width: 100%;
-    height: 300px;
-    margin-top: 70px;
-  }
+ 
   
   .x-leave-btn {
-     margin-left:88%;
+     margin-left:90%;
      background-color:#FFFFFF;
      color:#E2E2E2;
      border-radius:10px;
    }
    
-  .btn{margin-left:30px; float: right;}
+  .btn{ 
+    margin-top:-10px;
+     background-color:#FFFFFF;
+     color:#000000;
+     font-size:17px;
+     text-decoration:underline;
+     float: right;}
   
   
   
-  #x-complete-form {font-size:30px;}
+  #x-complete-form {font-size:18px;}
   
-  #ig{margin-left: 5%; width:150px; height:150px; }
+  #ig{margin-left: 5%; margin-top: -25px; width:100px; height:100px; }
   
-   #img{width:50px; height:50px; }
+   #img{margin-top:-15px; width:50px; height:50px; }
   
-  #x-self-intro{border-radius:10px; background-color: #E2E2E2; width:800px; height:150px; font-weight: 400; font-size: 24px;line-height: 19px;}
+  #x-self-intro{ margin-top:-30px; border-radius:10px; background-color: #E2E2E2; width:600px; height:50px; font-weight: 400; font-size: 25px;line-height: 19px;}
 
-   #x-connect-btn {background-color:#FFFFFF; border-radius:10px;}
+   #x-connect-btn {margin-top:-15px;background-color:#FFFFFF; border-radius:10px;}
    
-   #x-name {border: 0px; border-bottom: solid 2px; outline: none; width:800px; position: absolute;}
+   #x-name {margin-top:-10px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
-   #x-sex {border: 0px; border-bottom: solid 2px; outline: none; width:800px; position: absolute;}
+   #x-sex {margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
-   #x-birth{border: 0px; border-bottom: solid 2px; outline: none; width:800px; position: absolute;}
+   #x-birth{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
-   #x-e-address{border: 0px; border-bottom: solid 2px; outline: none; width:800px; position: absolute;}
+   #x-e-address{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
-   #x-pwd{border: 0px; border-bottom: solid 2px; outline: none; width:800px; position: absolute;}
+   #x-pwd{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
-   #x-phonenumber{border: 0px; border-bottom: solid 2px; outline: none; width:800px;position: absolute;}
-   
-   x-sns-account{border: 0px; border-bottom: solid 2px; outline: none; width:830px; position: absolute;}
+   #x-phonenumber{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px;position: absolute;}
    
    #count { float: right ; }
    
-
-
-.x-pwd-span {
-  font-size: 10pt;
-  font-weight: lighter;
-  color: #848484;
-}
-
-
- 
-   
-   .btn {
-     background-color:#FFFFFF;
-     color:#000000;
-     font-size:20px;
-     text-decoration:underline
-   }
-
+  
 /* 테블릿 세로 사이즈 넘어가면 적용 */
 @media screen and (min-width: 768px) {
 }

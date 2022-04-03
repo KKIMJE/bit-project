@@ -18,128 +18,95 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="MemberBoss.css">
 
-<title>야술먹자 - 주점관리</title>
+    <title>야술먹자 주점등록</title>
 </head>
 <body>
 
-  <nav class="navbar__">
-    <div>
-      <!-- 공간, 삭제하지 마세요 -->
-    </div>
+    <nav class="navbar__">
+        <div><!-- 공간, 삭제하지 마세요 --></div>
 
-    <div class="navbar__logo">
-      <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
-    </div>
+        <div class="navbar__logo">
+            <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+        </div>
 
-    <ul class="navbar__menu">
-      <li><a href="">로그인</a></li>
-      <li><a href="">회원가입</a></li>
-      <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a>
-      </li>
-    </ul>
+        <ul class="navbar__menu">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
+        </ul>
 
-    <ul class="navbar__login">
-      <!-- 알림 -->
-      <div class="btn-group">
-        <div class="btn-group">
-          <button type="button"
-            class="btn btn-secondary dropdown-toggle"
-            data-bs-toggle="dropdown" data-bs-display="static"
-            aria-expanded="false">
-            <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
-          </button>
+        <ul class="navbar__login">
+            <!-- 알림 -->
+            <div class="btn-group">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 마이페이지 -->
+            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
+
+            <!-- 검색 -->
+            <div class="btn-group">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                      <li>
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 지도 -->
+            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
+        </ul>
+    </nav>
+
+    <h1>주점등록</h1>
+    <form name="login__form">
+      <div class="login__box">
+        <div class="content">
+          <p class="form_store">가게명</p><br>
+          <input name="email" type="email" class="form_input_email">
+
+          <div class="address">
+            <p class="form_address">주소</p><br>
+            <div>
+              <input name="address" type="text" class="form_input_address">
+              <button class="submit-address-btn">우편번호</button>
+              <input name="address" type="text" class="form_input_address_detail">
+              <input name="address" type="text" class="form_input_address_detail">
+            </div>
+          </div>
+
+          <div class="tel">
+            <p class="form_tel">전화번호</p><br>
+            <input name="tel" type="tel" class="form_input_tel">
+          </div>
+
+
+
+
+
+
         </div>
       </div>
+    </form>
 
-      <!-- 마이페이지 -->
-      <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
-
-      <!-- 검색 -->
-      <div class="btn-group">
-        <div class="btn-group">
-          <button type="button"
-            class="btn btn-secondary dropdown-toggle"
-            data-bs-toggle="dropdown" data-bs-display="static"
-            aria-expanded="false">
-            <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i>
-              </login-i></a>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-lg-end">
-            <li>
-              <div class="input-group mb-3">
-                <input type="text" class="form-control"
-                  placeholder="Search Input" aria-label="Username"
-                  aria-describedby="basic-addon1">
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 지도 -->
-      <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
-    </ul>
-  </nav>
-
-
-
-  <content>
-    <center style="margin-top:100px">
-        <div style="line-height:60px; vertical-align:middle !important;">
-           <img id="ig" src="../mypage(CEO)/img/ceo-icon.jpg">
-    <span id="store-title" style="font-size:40px; text-align:center;">야!술먹자 주점등록</span>
-    </div>
-    </center>
-
-  <div class="left" style="padding-left:100px;">
-    <div>
-      가게명<br>
-      <input id="x-store-name" type="text" value="오자네왔능가"><br>
-    <br><br>
-      주소<br>
-      <input id="x-addr1" type="text" value = "06130"><button id="x-addr-btn" class="btn btn-primary" type="button">우편번호</button><br>
-      <input id="x-addr2" type="text" value = "수원시 인계동"><br>
-      <input id="x-addr3" type="text" value="1층 오자네왔능가"><br>
-    <br><br>
-      전화번호<br>
-      <input id="x-tel" type="text" value = "02-6052-8831"><br>
-   <br><br>
-      영업시간<br>
-      <textarea id="x-store-time" type="text">월요일은 문 닫습니다.</textarea><br>
-    </div>
-  </div>
-
-
-  <div class="right">
-    <div>
-      가게소개<br>
-      <textarea id="x-store-intro" type="text">오자네왔능가</textarea><br>
-    </div>
-    <div>
-      태그선택<button id="x-tag-btn" class="btn btn-primary" type="button">추가</button><br>
-      <textarea id="x-nickname" style="width:400px; height:150px" type="text">"#조용한 #혼술하기좋은 #hot한 #로맨틱한 #술맛집 #분위기좋은 #커플추천"</textarea><br>
-    </div>
-    <div>
-      예약 가능 여부 <br>
-      가능<input type="checkbox"  checked> 불가능<input type="checkbox"> <br>
-      최대인원 <input type="text" value="10명"> </div>
-    <div class="x-btn-outline-group">
-      <button class="btn-outline-dark"  type="button">사업자등록증 첨부하기</button>
-      <button class="btn-outline-dark"  type="button">주점 사진 첨부하기</button><br>
-    </div>
-      <button id="x-next-btn" class="btn btn-primary" type="button">다음</button>
-    <button id="x-cancel-btn" class="btn btn-primary" type="button">나가기</button></div>
-   </content>
-    </div>
-    </body>
-
-    <!-- <footer__storeChange>
+    <!-- <footer__>
         <div class="footer-contents">
           <div class="footer-contents-1">전화번호 : 1566-8877</div>
           <div class="footer-content">
             <div>
-              <a class="footer-logo" href="../main/main.html"><img
-                src="../img/logo.png" alt=""></a>
+              <a class="footer-logo" href="../main/main.html">
+                <img src="../img/logo.png" alt=""></a>
             </div>
             <div>
               @ Copyright Yasulmukja All Rights Reserved<br> Designed
@@ -151,14 +118,17 @@
             <div>고객센터</div>
           </div>
         </div>
-      </footer__storeChange> -->
-      </html>
-      <!-- icons -->
-      <script src="https://kit.fontawesome.com/22437c0385.js"
-        crossorigin="anonymous"></script>
-      <!-- Bootstrap CSS -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-      <script src="store.js"></script>
+
+    </footer__> -->
+
+</body>
+</html>
+<!-- icons -->
+<script src="https://kit.fontawesome.com/22437c0385.js"
+  crossorigin="anonymous"></script>
+<!-- Bootstrap CSS -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous">
+</script>

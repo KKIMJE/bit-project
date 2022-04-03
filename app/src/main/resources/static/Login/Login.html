@@ -16,9 +16,9 @@
   href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
   <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="login.css">
         
-    <title>야술먹자</title>
+    <title>야술먹자 로그인</title>
 </head>
 <body>
 
@@ -69,28 +69,27 @@
         </ul>
     </nav>
 
-
-    
-    <h1>로그인</h1>
-    <div class="login__box">
+    <form name="login__form">
+      <div class="login__box">
         <div class="content">
           <p class="form_email">이메일</p><br>
-          <input type="text" class="form_input_email"><br>
-          <p class="form_password">패스워드</p><br>  
-          <input type="text" class="form_input_password"><br>
-          <label><a href="#" p class="form_find">패스워드 찾기</a></label><br>   
-          <input type="submit" value="로그인" class="submit-btn"><br>
+          <input name="email" type="email" class="form_input_email">
+          <p class="form_password">비밀번호</p><br>
+          <input name="password" type="password" class="form_input_password">
+          <div class="login__box__contents">
+            <a href="#" class="form_find">비밀번호 찾기</a>
+            <div class="form_email_save"><input name="saveEmail" type="checkbox"><span>이메일 저장</span></div>
+          </div>
+          <button class="submit-btn">로그인</button>
           <p class="links">SNS계정으로 간편하게 로그인하세요</p>
+          <div class="login__sns__contents">
+            <!-- SNS로그인 후작업 필요 -->
+            <button class="submit-btn-sns">facebook</button>
+            <button class="submit-btn-sns">kakao</button>
+          </div>
         </div>
-    </div>
-    
-    
-    <!--
-                <p class="links">SNS계정으로 간편하게 로그인하세요</p>
-        
-   !-->
-
-
+      </div>
+    </form>
 
     <footer__>
         <div class="footer-contents">
@@ -112,14 +111,15 @@
         </div>
       
       </footer__>
-      </body>
-      </html>
-      <!-- icons -->
-      <script src="https://kit.fontawesome.com/22437c0385.js"
-        crossorigin="anonymous"></script>
-      <!-- Bootstrap CSS -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-      <script src="store.js"></script>
+      
+</body>
+</html>
+<!-- icons -->
+<script src="https://kit.fontawesome.com/22437c0385.js"
+  crossorigin="anonymous"></script>
+<!-- Bootstrap CSS -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous">
+</script>

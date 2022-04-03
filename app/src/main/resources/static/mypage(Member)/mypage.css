@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+* {
+  font-family: NanumSquareRound;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mypage-main {
+  font-family: NanumSquareRound;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 80px;
+}
+
+h1 {
+  margin-top: 120px;
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(32, 32, 32);
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 68px; /* footer 높이 */
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.mypage__box{
+  width: 500px;
+  height: 150px;
+  padding: 40px;
+  display: flex;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.my-profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 9px;
+}
+
+.profile-detail {
+display: flex;
+flex-direction: column;
+margin-top: 40px;
+}
+
+.profile-detail p {
+  margin-left: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mypage-settings {
+  width: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mypage-setting {
+  width: 450px;
+  border-bottom: 1px solid #c7c7c7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  padding-bottom: 10px;
+}
+
+.mypage-setting a {
+  position: relative;
+}
+
+.mypage-setting span {
+  font-size: 17px;
+}
+
+.mypage-setting button {
+  margin-top: 4px;
+  font-size: 25px;
+}
+
+body > div > div > div.mypage-settings > div > a > span:nth-child(2) {
+  margin-left: 300px;
+  font-size: 25px;
+  position: absolute;
+  left: 125px;
+}
+
+.store-manage-btn {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: white;
+  width: 80px;
+  height: 35px;
+  position: absolute;
+  right: 131px;
+  bottom: -17px;
+}
+
+.ceo-account-btn {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: white;
+  width: 160px;
+  height: 35px;
+  position: absolute;
+  right: 131px;
+  bottom: -17px;
+}
+
+
+footer__ {
+  border: 1px solid #29c05e;
+  border-width: 3px 0px 0px 0px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 700;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.footer-content {
+  text-align: center;
+  margin: 7px 60px;
+  font-size: x-small;
+}
+
+.footer-contents-1 {
+  margin-top: 40px;
+}
+
+.footer-content-3 {
+  margin-top: 40px;
+  display: flex;
+}
+
+.footer-content-info {
+  margin-right: 40px;
+}

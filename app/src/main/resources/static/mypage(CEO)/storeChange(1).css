@@ -33,13 +33,49 @@ div.right div {
   width: 90px;
 }
 
+.x-view-btn {
+	 border-radius:15px;
+  background-color: #29c05e;
+  color: #ffffff;
+  width: 90px;
+  height:30px;
+}
+
+.x-next-btn {
+   border-radius:15px;
+  background-color: #29c05e;
+  color: #ffffff;
+  width: 90px;
+   height:30px;
+}
+
+
+.x-exit-btn {
+  border-radius:15px;
+  background-color: #29c05e;
+  color: #ffffff;
+  width: 90px;
+  height:30px;
+}
+
+.btn-outline-dark {
+  border-radius: 5px;
+  margin-right: -20px;
+}
+
+.btn1-outline-dark {
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-right: -20px;
+}
+
 input {
   margin: 3px;
 }
 
 
 #ig {
-  width: 60px;
+	 width: 60px;
   height: 60px;
   vertical-align: middle !important;
   margin-top: -16px;
@@ -53,13 +89,17 @@ input {
 }
 
 
-/* footer 수정 */
-.footer-contents {
-  margin-top: 72vh;
-  margin-left: -24%;
-  margin-right: -24%;
+footer__storeChange {
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 700;
+}
+
+.footer-contents {
   display: flex;
   justify-content: center;
   background-color: white;
@@ -83,3 +123,16 @@ input {
 .footer-content-info {
   margin-right: 40px;
 }
+
+
+/* 테블릿 세로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 768px) {}
+
+/* 테블릿 가로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 1024px) {}
+
+/* 스마트폰 가로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 480px) {}
+
+/* 스마트폰 세로 사이즈 넘어가면 적용 */
+@media screen and (min-width: 320px) {}
