@@ -1,23 +1,132 @@
-  var tbody = document.querySelector("#x-book-table tbody")
+function printOper(oper) {
+  let status = " ";
+  if (oper == 1) {
+    status = "영업중"
+  } else {
+    status = "휴일"
+  }
+  return status;
+}
+function printStar(score) {
+  // console.log("score: " + score)
+  let star = "⭐⭐⭐⭐⭐";
+  if (1 == score) {
+    star = "⭐"
+  } else if(2 == score) {
+    star = "⭐⭐"
+  } else if(3 == score) {
+    star = "⭐⭐⭐"
+  } else if(4 == score) {
+    star = "⭐⭐⭐⭐"
+  } else if(5 == score) {
+    star = "⭐⭐⭐⭐⭐"
+  } else {
+    star = "😥"
+  }
+  return star;
+}
 
-  fetch("/book/list")
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(books) {
-      for (var book of books) {
-        if (book.photo == null) {
-        	book.photo = "default.jpg";
-        }
-        var tr = document.createElement("tr");
-        tr.innerHTML = `<td>${book.no}</td>
-        <td><a href="view.html?no=${book.no}">
-          <div class="x-photo-box"><img src="photo?filename=50x50_${book.photo}"></div>
-          ${book.title}
-        </a></td>
-        <td>${book.author}</td>
-        <td>${book.press}</td>
-        <td>${book.page}</td>`;
-        tbody.appendChild(tr);
+let listAll = document.querySelector(".imgContainer");
+// let listDiv = document.querySelector(".store-contents-imgCard");
+// let itemDiv = document.querySelector(".store-contents-1");
+
+let count = 0
+let card = true
+function storeList(stores) {
+  
+  for (let i = 0; i < stores.length; i++) {
+    
+    if (count == 0) {
+      var listDiv = document.createElement("div")
+      listDiv.classList.add("storeContents-imgCard")
+      listAll.appendChild(listDiv)
+
+      var itemDiv2 = document.createElement("div")
+      itemDiv2.classList.add("store-contents-2")
+      listDiv.appendChild(itemDiv2)
+
+      var itemDiv = document.createElement("div")
+      itemDiv.classList.add("store-contents-1")
+      listDiv.appendChild(itemDiv)
+
+    } else if (count % 10 == 0) {
+      var listDiv = document.createElement("div")
+      listDiv.classList.add("storeContents-imgCard")
+      listAll.appendChild(listDiv)
+
+      var itemDiv2 = document.createElement("div")
+      itemDiv2.classList.add("store-contents-2")
+      listDiv.appendChild(itemDiv2)
+
+      var itemDiv = document.createElement("div")
+      itemDiv.classList.add("store-contents-1")
+      listDiv.appendChild(itemDiv)
+    }
+
+    let stars = printStar(stores[i].evaluationScore)
+
+    if (count % 5 == 0) {
+      if (card == true) {
+        card = false
+      } else {
+        card = true
       }
-    });
+    }
+
+    if (card == true) {
+      itemDiv2.innerHTML += 
+      `<div class="img-xbox">
+        <div class="xImg box">
+          <i class="fa-regular fa-heart b"></i>
+          <i class="fa-solid fa-heart b"></i>
+          <a><img src="./img/store_2.jpg" class="xImg-ori"></a>
+        </div>
+        <div class="xImg-contents">
+          <div class="xImg-content">
+            <div class="xImg-content-t">${stores[i].name}</div>
+            <div class="xImg-star">${stars}</div>
+            <div class="xImg-d">30m 이내</div>
+          </div>
+          <div class="storeOpen">${printOper(stores[i].oper)}</div>
+        </div>
+      </div>`
+    } else {
+      itemDiv.innerHTML += 
+      `<div class="img-xbox">
+        <div class="xImg box">
+          <i class="fa-regular fa-heart b"></i>
+          <i class="fa-solid fa-heart b"></i>
+          <a><img src="./img/store_2.jpg" class="xImg-ori"></a>
+        </div>
+        <div class="xImg-contents">
+          <div class="xImg-content">
+            <div class="xImg-content-t">${stores[i].name}</div>
+            <div class="xImg-star">${stars}</div>
+            <div class="xImg-d">30m 이내</div>
+          </div>
+          <div class="storeOpen">${printOper(stores[i].oper)}</div>
+        </div>
+      </div>`
+    }
+    count++
+    
+
+  }
+  listDiv.appendChild(itemDiv)
+  listDiv.appendChild(itemDiv2)
+};
+
+
+
+
+fetch("/store/list")
+  .then(function(response) {
+    return response.json()})
+      .then(function(stores) {
+
+
+        storeList(stores)
+        
+
+      })
+

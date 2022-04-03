@@ -1,8 +1,3 @@
-body {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
 /* nav-bar 일부수정 */
 body > nav > ul.navbar__login > div:nth-child(3) > div > button > a > login-i {
   padding-right: 15px;
@@ -169,7 +164,7 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
   counter-reset: section;
 }
 
-.store-contents-imgCard {
+.storeContents-imgCard {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,11 +190,11 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
   margin-right: 8px;
 }
 
-.store-contents-imgCard-1, .store-contents-imgCard-2 {
+.store-contents-1, .store-contents-2 {
   margin-top: 13px;
   display: flex;
 }
-.store-contents-imgCard-2 {
+.store-contents-2 {
   margin-top: 20px;
 }
 .img-xbox {
@@ -219,6 +214,7 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
 .xImg-content {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .xImg-content-t {
   font-size: medium;
@@ -243,26 +239,28 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
 }
 
 .b {
+  position: absolute;
+  top: 13px;
+  left: 167px;
+
   color: red;
   font-size: larger;
-  left: 169px;
-  top: 35px;
 }
 
-i.fa-solid.fa-heart.box.b {
+i.fa-solid.fa-heart.b {
   /* display: none; */
   cursor: pointer;
 }
 
-i.fa-regular.fa-heart.box.b {
+i.fa-regular.fa-heart.b {
   display: none;
   cursor: pointer;
 }
 
 /* storeMap */
 #staticMap {
-  margin-top: 35px;
+  margin-top: 50px;
   margin-left: 7px;
   width:1200px;
-  height:500px;
+  height:600px;
 }
