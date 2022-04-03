@@ -28,9 +28,6 @@ public class DefaultPartyService  implements PartyService {
   @Override
   public Party get(int no) {
     Party party = partyDao.findByNo(no);
-    if (party != null) {
-      partyDao.increaseViewCount(no);
-    }
     return party;
   }
 

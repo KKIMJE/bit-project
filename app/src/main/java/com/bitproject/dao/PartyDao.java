@@ -16,8 +16,6 @@ public interface PartyDao {
   int update(Party party);
 
   int delete(Party party);
-
-  int increaseViewCount(int no);
 }
 
 
