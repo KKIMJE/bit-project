@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+#party-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: NanumSquareRound;
+  justify-content: center;
+  width: 1107px;
+}
+
+button {
+  all: unset;
+}
+
+.location__ {
+  margin-top: 120px;
+  font-size: 22px;
+}
+
+#party-content-wrap {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 1px black;
+}
+
+
+
+
+.recent_like {
+  display: flex;
+  width: 517px;
+  height: 23px;
+}
+
+.recent_like > button {
+  margin-right: 20px;
+  border: 0;
+  outline: 0;
+  background-color: white;
+}
+
+
+.party-open {
+  display: flex;
+  position: absolute;
+  right: 3px;
+  width: 152px;
+  height: 42px;
+  background: #90D483;
+}
+
+.party-open span {
+padding: 6px;
+font-weight: 600;
+font-size: 23px;
+color: #FFFFFF;
+}
+
+.card {
+  border : none;
+  width: 1107px;
+  height: 263px;
+  left: 0px;
+  top: 220px;
+}
+
+.card-body {
+  background-color: #c4c4c4;
+  height: 263px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card-category {
+  float: left;
+  border: solid;
+  border-top-width: thin;
+  border-bottom-width: thin;
+  border-left-width: thin;
+  border-right-width: thin;
+  width: 100px;
+  text-align: center;
+  border-radius: 16px;
+  background-color: white;
+  height: 20px;
+  line-height: 20px;
+  top: 5px;
+  left: -260px;
+}
+
+.community_img {
+  float: right;
+  width: 357px;
+  height: 235px;
+  left: 1070px;
+  top: 1px;
+}
+
+.community_time {
+  position: relative;
+  width: 55px;
+  height: 20px;
+  left: 600px;
+  top: -20px;
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.community_writer {
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  width: 45px;
+  height: 20px;
+  left: 650px;
+  top: -23px;
+}
+
+.contents {
+  padding-top: 10px;
+  margin-top: 10px;
+  top: 10px;
+  padding-left: 5px;
+}
+
+.card-contents-name {
+  font-size: 18px;
+  width: 130px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: left;
+  top: 80px;
+}
+
+#card-contents {
+  float: left;
+  background-color: #c4c4c4;
+  width: 700px;
+  height: 130px;
+}
+
+.card-like {
+  float: left;
+  border: solid;
+  border-top-width: thin;
+  border-bottom-width: thin;
+  border-left-width: thin;
+  border-right-width: thin;
+  text-align: center;
+  border-radius: 16px;
+  background-color: white;
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.card-comment {
+  float: left;
+  margin-left: 10px;
+  border: solid;
+  border-top-width: thin;
+  border-bottom-width: thin;
+  border-left-width: thin;
+  border-right-width: thin;
+  text-align: center;
+  border-radius: 16px;
+  background-color: white;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.see_more {
+  background-color: #c4c4c4;
+  border: 0;
+  outline: 0;
+}

@@ -1,0 +1,197 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous">
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+        <!-- font -->
+        <link rel="stylesheet" href="../css/nav.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="partyList.css">
+
+        <title>야술먹자 우리지금만나</title>
+    </head>
+    <body>
+
+        <nav class="navbar__">
+            <div>
+                <!-- 공간, 삭제하지 마세요 -->
+            </div>
+
+            <div class="navbar__logo">
+                <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+            </div>
+
+            <ul class="navbar__menu">
+                <li>
+                    <a href="">로그인</a>
+                </li>
+                <li>
+                    <a href="">회원가입</a>
+                </li>
+                <a href="">
+                    <menu-i class="fa-solid fa-map-location-dot"></menu-i>
+                </a>
+            </ul>
+
+            <ul class="navbar__login">
+                <!-- 알림 -->
+                <div class="btn-group">
+                    <div class="btn-group">
+                        <button
+                            type="button"
+                            class="btn btn-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            data-bs-display="static"
+                            aria-expanded="false">
+                            <a href="">
+                                <login-i class="fa-solid fa-bell"></login-i>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 마이페이지 -->
+                <a href="">
+                    <login-i class="fa-solid fa-user-large"></login-i>
+                </a>
+
+                <!-- 검색 -->
+                <div class="btn-group">
+                    <div class="btn-group">
+                        <button
+                            type="button"
+                            class="btn btn-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            data-bs-display="static"
+                            aria-expanded="false">
+                            <a href="">
+                                <login-i class="fa-solid fa-magnifying-glass"></login-i>
+                            </a>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-lg-end">
+                            <li>
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Search Input"
+                                        aria-label="Username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 지도 -->
+                <a href="">
+                    <login-i class="fa-solid fa-map-location-dot"></login-i>
+                </a>
+        </ul>
+    </nav>
+
+    <div id="party-wrap">
+
+        <!-- 현위치 지도검색 -->
+        <div class="location__">
+            <button type="button">
+                <i class="fa-solid fa-map"></i>&nbsp;<span>테헤란로 13길</span></button>
+        </div>
+
+        <!-- 모임 리스트 전체 -->
+        <div id="party-content-wrap">
+
+            <!-- 최신순 공감순 글쓰기 -->
+            <div class="recent_like">
+                <button type="button" class="party-new">최신순</button>
+                <button type="button" class="party-distance">거리순</button>
+            </div>
+
+            <button class="party-open" type="button">
+                <span><i class="fa-solid fa-pen"></i>모임 만들기</span>
+            </button>
+
+            <div class="card">
+                <div class="card-body">
+                    <img class="community_img" src="">
+                    <div class="card-category">카테고리</div><br>
+                    <div class="contents">
+                        <div class="card-contents-name">제목</div>
+                        <div id="card-contents">더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기<button class="see_more">. . .</button>
+                        </div><br>
+                    </div>
+                    <br>
+                    <div class="card-like"><img src="" alt="">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        11556</div>
+                    <div class="card-comment"><img src="" alt="">
+                        <i class="fa-regular fa-comment"></i>
+                        댓글 18</div>
+                    <div class="community_time">0분 전</div>
+                    <div class="community_writer">글쓴이</div>
+                </div>
+                <div class="card-body">
+                    <img class="community_img" src="">
+                    <div class="card-category">카테고리</div><br>
+                    <div class="contents">
+                        <div class="card-contents-name">제목</div>
+                        <div id="card-contents">더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기<button class="see_more">. . .</button>
+                        </div><br>
+                    </div>
+                    <br>
+                    <div class="card-like"><img src="" alt="">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        556</div>
+                    <div class="card-comment"><img src="" alt="">
+                        <i class="fa-regular fa-comment"></i>
+                        댓글 18</div>
+                    <div class="community_time">0분 전</div>
+                    <div class="community_writer">글쓴이</div>
+                </div>
+                <div class="card-body">
+                    <img class="community_img" src="">
+                    <div class="card-category">카테고리</div><br>
+                    <div class="contents">
+                        <div class="card-contents-name">제목</div>
+                        <div id="card-contents">더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기<button class="see_more">. . .</button>
+                        </div><br>
+                    </div>
+                    <br>
+                    <div class="card-like"><img src="" alt="">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        556</div>
+                    <div class="card-comment"><img src="" alt="">
+                        <i class="fa-regular fa-comment"></i>
+                        댓글 18</div>
+                    <div class="community_time">0분 전</div>
+                    <div class="community_writer">글쓴이</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>
+<!-- icons -->
+<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
+<!-- kakaoMap -->
+<script
+    type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87"></script>
+<script src="storeMap.js"></script>
+<!-- Bootstrap CSS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="store.js"></script>
