@@ -39,7 +39,13 @@
     <result column="oper" property="oper"/>
     <result column="status" property="status"/>
   </collection>
-
+  
+  <!-- <collection property="imgs" ofType="storeImg">
+  <id column="store_img_no" property="StoreImgNo"/>
+  <result column="store_no" property="storeNo"/>
+  <result column="img" property="img"/>
+  </collection>
+-->
   </resultMap>
   
   
@@ -90,27 +96,28 @@
 
 
 	<select id="findByNo" resultMap="alcoholDetailMap" parameterType="int">
-select
-d.alcohol_detail_no,
-d.alcohol_type_no,
-  d.name,
-  d.degree,
-  d.brand,
-  d.origin,
-  d.volume,
-  d.img,
-  s.store_no,
-  st.name,
-  st.evaluation_score,
-  st.lat,
-  st.lng,
-  st.status
-from
-  alcohol_detail d
-  inner join alcohol_sales s on d.alcohol_detail_no=s.alcohol_detail_no
-  inner join store st on s.store_no=st.store_no
-where
-d.alcohol_detail_no=#{no}
+    select
+      d.alcohol_detail_no,
+      d.alcohol_type_no,
+      d.name,
+      d.degree,
+      d.brand,
+      d.origin,
+      d.volume,
+      d.img,
+      d.characteristic,
+      s.store_no,
+      st.name,
+      st.evaluation_score,
+      st.lat,
+      st.lng,
+      st.status
+    from
+      alcohol_detail d
+      left outer join alcohol_sales s on d.alcohol_detail_no=s.alcohol_detail_no
+      left outer join store st on s.store_no=st.store_no
+    where
+      d.alcohol_detail_no=#{no} 
   </select>
   
 

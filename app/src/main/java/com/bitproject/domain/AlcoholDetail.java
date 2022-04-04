@@ -15,5 +15,6 @@ public class AlcoholDetail {
   String characteristic;
   String img;
   List<Store> stores;
+  List<StoreImg> imgs;
 
 }
