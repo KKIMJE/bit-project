@@ -27,9 +27,6 @@ function printStar(score) {
 }
 
 let listAll = document.querySelector(".imgContainer");
-// let listDiv = document.querySelector(".store-contents-imgCard");
-// let itemDiv = document.querySelector(".store-contents-1");
-
 let count = 0
 let card = true
 function storeList(stores) {
@@ -54,17 +51,16 @@ function storeList(stores) {
       listDiv.classList.add("storeContents-imgCard")
       listAll.appendChild(listDiv)
 
-      var itemDiv2 = document.createElement("div")
-      itemDiv2.classList.add("store-contents-2")
-      listDiv.appendChild(itemDiv2)
-
       var itemDiv = document.createElement("div")
       itemDiv.classList.add("store-contents-1")
       listDiv.appendChild(itemDiv)
+
+      var itemDiv2 = document.createElement("div")
+      itemDiv2.classList.add("store-contents-2")
+      listDiv.appendChild(itemDiv2)
     }
 
     let stars = printStar(stores[i].evaluationScore)
-
     if (count % 5 == 0) {
       if (card == true) {
         card = false
@@ -109,24 +105,15 @@ function storeList(stores) {
       </div>`
     }
     count++
-    
-
   }
   listDiv.appendChild(itemDiv)
   listDiv.appendChild(itemDiv2)
 };
 
-
-
-
 fetch("/store/list")
   .then(function(response) {
     return response.json()})
       .then(function(stores) {
-
-
         storeList(stores)
-        
-
       })
 

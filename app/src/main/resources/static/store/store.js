@@ -9,8 +9,7 @@ lightBtn.addEventListener("click",function(e){
   }
 });
 
-
-
+ // next, pre button
 window.onload = function () {
   let storeAll = document.querySelectorAll('.storeContents-imgCard');
   console.log("end : " + storeAll.length)
