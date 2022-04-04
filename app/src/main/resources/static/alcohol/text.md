@@ -1,22 +1,41 @@
 ## text
-
 select
-  s.store_no,
-  s.alcohol_detail_no,
-  d.alcohol_type_no,
+  alcohol_detail_no,
+  alcohol_type_no,
+  name,
+  degree,
+  brand,
+  origin,
+  volume,
+  characteristic,
+  img
+from
+  alcohol_detail
+where
+  alcohol_detail_no=#{no}
+
+<!-- 주류 디테일 -->
+select
+d.alcohol_detail_no,
+d.alcohol_type_no,
   d.name,
   d.degree,
   d.brand,
   d.origin,
   d.volume,
   d.img,
-  store.name
+  s.store_no,
+  st.name,
+  st.evaluation_score,
+  st.lat,
+  st.lng,
+  st.status
 from
   alcohol_detail d
   inner join alcohol_sales s on d.alcohol_detail_no=s.alcohol_detail_no
-  inner join store on s.store_no=store.store_no
-order by
-  s.store_no asc;
+  inner join store st on s.store_no=st.store_no
+where
+d.alcohol_detail_no=#{no}
 
 
 
