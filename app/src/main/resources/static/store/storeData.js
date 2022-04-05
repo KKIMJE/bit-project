@@ -1,31 +1,18 @@
-function printOper(oper) {
-  let status = " ";
-  if (oper == 1) {
-    status = "영업중"
-  } else {
-    status = "휴일"
-  }
-  return status;
-}
-function printStar(score) {
-  // console.log("score: " + score)
-  let star = "⭐⭐⭐⭐⭐";
-  if (1 == score) {
-    star = "⭐"
-  } else if(2 == score) {
-    star = "⭐⭐"
-  } else if(3 == score) {
-    star = "⭐⭐⭐"
-  } else if(4 == score) {
-    star = "⭐⭐⭐⭐"
-  } else if(5 == score) {
-    star = "⭐⭐⭐⭐⭐"
-  } else {
-    star = "😥"
-  }
-  return star;
-}
+// 공유되는 store 전체 리스트
+let allStoreDataList
 
+// 서버 데이터 요청
+fetch("/store/list")
+  .then(function(response) {
+    return response.json()})
+      .then(function(stores) {
+        storeList(stores)
+        allStoreDataList = stores
+      })
+
+// storeAll list
+//  => imgCard insert
+//
 let listAll = document.querySelector(".imgContainer");
 let count = 0
 let card = true
@@ -110,10 +97,32 @@ function storeList(stores) {
   listDiv.appendChild(itemDiv2)
 };
 
-fetch("/store/list")
-  .then(function(response) {
-    return response.json()})
-      .then(function(stores) {
-        storeList(stores)
-      })
-
+// 영업여부
+function printOper(oper) {
+  let status = " ";
+  if (oper == 1) {
+    status = "영업중"
+  } else {
+    status = "휴일"
+  }
+  return status;
+}
+// 별점
+function printStar(score) {
+  // console.log("score: " + score)
+  let star = "⭐⭐⭐⭐⭐";
+  if (1 == score) {
+    star = "⭐"
+  } else if(2 == score) {
+    star = "⭐⭐"
+  } else if(3 == score) {
+    star = "⭐⭐⭐"
+  } else if(4 == score) {
+    star = "⭐⭐⭐⭐"
+  } else if(5 == score) {
+    star = "⭐⭐⭐⭐⭐"
+  } else {
+    star = "😥"
+  }
+  return star;
+}

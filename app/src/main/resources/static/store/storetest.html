@@ -6,16 +6,11 @@
         #mapInfo {
             color: #29C05E;
             background: #FFFFFF;
-            border: 1px solid #29C05E;
+            border: 3px solid #29C05E;
             border-radius: 28.5px;
             text-align:center;
             padding:6px 10px;
             font-weight: 700;
-        }
-
-        .fa-solid fa-wine-bottle {
-            color: #29C05E;;
-            margin-right: 5px;
         }
     </style>
     <!-- icons -->
@@ -31,12 +26,17 @@
         </a>
     </em>
 </p>
+
+
+<!-- map -->
 <div id="map" style="width:100%;height:350px;"></div>
+
+
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87&libraries=services"></script>
 <script>
 
-
+// json data
 var positions = [
     {   
         name: '카카오', 
@@ -88,7 +88,7 @@ for (var i = 0; i < positions.length; i ++) {
             // 커스텀 오버레이를 생성합니다
             var customOverlay = new kakao.maps.CustomOverlay({
                 position: coords,
-                content: `<div id="mapInfo"><i class="fa-solid fa-wine-bottle"></i><span>${name}</span></div>`   
+                content: `<div id="mapInfo"><span>${name}</span></div>`   
             });
 
             // 커스텀 오버레이를 지도에 표시합니다

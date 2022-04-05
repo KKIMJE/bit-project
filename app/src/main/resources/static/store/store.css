@@ -66,7 +66,7 @@ footer__store {
   font-weight: 700;
 }
 .footer-contents {
-  margin-top: 125px;
+  margin-top: 80px;
   margin-left: -25%;
   margin-right: -25%;
   border: 1px solid #29c05e;
@@ -270,14 +270,10 @@ i.fa-regular.fa-heart.b {
 #mapInfo {
   color: #29C05E;
   background: #FFFFFF;
-  border: 1px solid #29C05E;
+  border: 3px solid #29C05E;
   border-radius: 28.5px;
   text-align:center;
   padding:6px 10px;
   font-weight: 700;
 }
 
-.fa-solid fa-wine-bottle {
-  color: #29C05E;;
-  margin-right: 5px;
-}
