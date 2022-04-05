@@ -92,9 +92,17 @@
   margin-bottom: 20px;
 }
 
+.sell-storelist-div {
+  display: flex;
+  justify-content:
+
+  width: 900px;
+}
+
 .storelist-div {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .store-img {
@@ -115,22 +123,3 @@
 .map-title-div {
   margin-top: 50px;
 }
-
-/* .alc-detail-div {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-} */
-/* .card-title {
-  text-decoration: underline;
-}
-
-.col-md-4 {
-  display: flex;
-  justify-content: center;
-}
-
-h5 {
-  border: solid black;
-} */
-/*  */
