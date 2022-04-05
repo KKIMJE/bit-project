@@ -27,7 +27,6 @@ select
   d.characteristic,
   s.store_no,
   st.name,
-  st.
   st.evaluation_score,
   st.lat,
   st.lng,
