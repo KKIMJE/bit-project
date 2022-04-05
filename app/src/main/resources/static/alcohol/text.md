@@ -25,7 +25,7 @@ select
   d.volume,
   d.img,
   d.characteristic,
-  s.store_no,
+  alcs.store_no,
   st.name,
   st.evaluation_score,
   st.lat,
@@ -34,9 +34,9 @@ select
   simg.img
 from
   alcohol_detail d
-  left outer join alcohol_sales s on d.alcohol_detail_no=s.alcohol_detail_no
-  left outer join store st on s.store_no=st.store_no
-  left outer join store_img simg on s.store_no=simg.store_no
+  left outer join alcohol_sales alcs on d.alcohol_detail_no=alcs.alcohol_detail_no
+  left outer join store st on alcs.store_no=st.store_no
+  left outer join store_img simg on alcs.store_no=simg.store_no
 where
   d.alcohol_detail_no=#{no}
 

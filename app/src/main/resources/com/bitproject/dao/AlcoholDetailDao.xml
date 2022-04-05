@@ -40,12 +40,12 @@
     <result column="status" property="status"/>
   </collection>
   
-  <!-- <collection property="imgs" ofType="storeImg">
-  <id column="store_img_no" property="StoreImgNo"/>
-  <result column="store_no" property="storeNo"/>
-  <result column="img" property="img"/>
+  <collection property="imgs" ofType="storeImg">
+    <id column="store_img_no" property="StoreImgNo"/>
+    <result column="store_no" property="storeNo"/>
+    <result column="img" property="img"/>
   </collection>
--->
+  
   </resultMap>
   
   
@@ -106,18 +106,20 @@
       d.volume,
       d.img,
       d.characteristic,
-      s.store_no,
+      alcs.store_no,
       st.name,
       st.evaluation_score,
       st.lat,
       st.lng,
-      st.status
+      st.status,
+      simg.img
     from
       alcohol_detail d
-      left outer join alcohol_sales s on d.alcohol_detail_no=s.alcohol_detail_no
-      left outer join store st on s.store_no=st.store_no
+      left outer join alcohol_sales alcs on d.alcohol_detail_no=alcs.alcohol_detail_no
+      left outer join store st on alcs.store_no=st.store_no
+      left outer join store_img simg on alcs.store_no=simg.store_no
     where
-      d.alcohol_detail_no=#{no} 
+      d.alcohol_detail_no=#{no}
   </select>
   
 
