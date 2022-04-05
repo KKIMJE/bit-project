@@ -21,13 +21,31 @@
     <result column="img" property="img"/>
   
   
-<!--     <collection property="alcohols" ofType="AlcoholSales">
-    <result column="store_no" property="storeno"/>
-    <result column="alcohol_detail_no" property="alcoholdetailno"/>
-    <result column="price" property="price"/>
+<collection property="stores" ofType="Store">
+  <id column="store_no" property="storeNo"/>
+    <result column="business_registration_no" property="businessRegistrationNo"/>
+    <result column="business_registration" property="businessRegistration"/>
+    <result column="name" property="name"/>
+    <result column="address" property="address"/>
+    <result column="tel" property="tel"/>
+    <result column="hour" property="hour"/>
+    <result column="introduction" property="introduction"/>
+    <result column="evaluation_score" property="evaluationScore"/>
+    <result column="reservation_accept" property="reservationAccept"/>
+    <result column="max_member" property="maxMember"/>
+    <result column="lat" property="lat"/>
+    <result column="lng" property="lng"/>
+    <result column="place_id" property="placeId"/>
+    <result column="oper" property="oper"/>
+    <result column="status" property="status"/>
   </collection>
-  -->
   
+  <!-- <collection property="imgs" ofType="storeImg">
+  <id column="store_img_no" property="StoreImgNo"/>
+  <result column="store_no" property="storeNo"/>
+  <result column="img" property="img"/>
+  </collection>
+-->
   </resultMap>
   
   
@@ -79,19 +97,27 @@
 
 	<select id="findByNo" resultMap="alcoholDetailMap" parameterType="int">
     select
-      alcohol_detail_no,
-      alcohol_type_no,
-      name,
-      degree,
-      brand,
-      origin,
-      volume,
-      characteristic,
-      img
-    from 
-      alcohol_detail
-    where 
-      alcohol_detail_no=#{no}
+      d.alcohol_detail_no,
+      d.alcohol_type_no,
+      d.name,
+      d.degree,
+      d.brand,
+      d.origin,
+      d.volume,
+      d.img,
+      d.characteristic,
+      s.store_no,
+      st.name,
+      st.evaluation_score,
+      st.lat,
+      st.lng,
+      st.status
+    from
+      alcohol_detail d
+      left outer join alcohol_sales s on d.alcohol_detail_no=s.alcohol_detail_no
+      left outer join store st on s.store_no=st.store_no
+    where
+      d.alcohol_detail_no=#{no} 
   </select>
   
 

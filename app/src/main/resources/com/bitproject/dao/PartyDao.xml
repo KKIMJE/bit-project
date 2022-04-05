@@ -24,11 +24,14 @@
       p.alcohol_type,
       p.alcohol_limit,
       p.reg_date,
+      s.store_no,
+      s.name,
       m.mno,
       m.name
     from 
       party p
-      inner join member m on (p.writer = m.mno) 
+      inner join member m on (p.writer = m.mno)
+      inner join store s on (p.store = s.storeNo) 
     order by 
       p.party_no desc
   </select>

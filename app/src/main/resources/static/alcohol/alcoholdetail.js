@@ -26,7 +26,8 @@ var storeList = document.querySelector(".storelist-title-span")
 
 fetch(`/alcohol/get?no=${no}`)
     .then(function(response) {
-      return response.json();
+        return response.json();
+
     })
     .then(function(alcohol) {
       console.log(alcohol);
@@ -38,6 +39,7 @@ fetch(`/alcohol/get?no=${no}`)
       introDegree.innerHTML = alcohol.degree
       introChar.innerHTML = alcohol.characteristic
       storeList.innerHTML = alcohol.name
+
     });
 
 
