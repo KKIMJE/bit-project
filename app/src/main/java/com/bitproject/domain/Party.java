@@ -3,8 +3,10 @@ package com.bitproject.domain;
 import java.sql.Date;
 import java.sql.Timestamp;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 @Data
+@Accessors(chain = true)
 public class Party {
   int partyNo;
   Member writer;

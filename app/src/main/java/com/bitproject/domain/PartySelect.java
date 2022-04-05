@@ -1,6 +1,6 @@
 package com.bitproject.domain;
 
-public class PartyBoardSelect{
+public class PartySelect{
 
   int PartyBoardNo;
   int mNo;

@@ -6,17 +6,74 @@
 <mapper namespace="com.bitproject.dao.PartyDao">
 
   <resultMap type="party" id="partyMap">
+    <association property="writer" javaType="member">
+      <id column="mno" property="mno"/>
+      <result column="m.name" property="name"/>
+   </association>
+  
   </resultMap>
   
-   <!--   <association property="writer" javaType="member">
-      <id column="mno" property="mno"/>
-    </association>
-  <association property="store" javaType="member">
-      <id column="store_no" property="storeNo"/>
-    </association> -->
+   <!--      
+   <association property="store" javaType="store">
+     <id column="store_no" property="storeNo"/>
+     <result column="s.name" property="name"/>
+   </association> -->
 
   <select id="findAll" resultMap="partyMap">
-    select 
+  select
+    p.party_no,
+    p.title,
+    p.party_fee,
+    p.meeting_date,
+    p.max_member,
+    p.alcohol_type,
+    p.alcohol_limit,
+    m.mno,
+    m.name
+  from party p
+    inner join member m on p.mno=m.mno
+  order by p.party_no desc;
+  </select>
+  
+  <!--   select
+    p.party_no,
+    p.title,
+    p.party_fee,
+    p.meeting_date,
+    p.max_member,
+    p.alcohol_type,
+    p.alcohol_limit,
+    s.store_no,
+    s.name,
+    m.mno,
+    m.name
+  from party p
+    join member m on p.mno=m.mno
+    join store s on p.store_no=s.store_no
+  order by p.party_no desc;
+       -->
+
+	<select id="findByNo" resultMap="partyMap" parameterType="int">
+  select
+    p.party_no,
+    p.title,
+		p.party_fee,
+		p.meeting_date,
+		p.max_member,
+		p.alcohol_type,
+		p.alcohol_limit,
+		s.store_no,
+		s.name,
+		m.mno,
+		m.name
+	from party p
+		join member m on p.mno=m.mno
+		join store s on p.store_no=s.store_no
+	where 
+      party_no=#{no}
+  </select>
+  
+  <!--     select 
       p.title,
       p.party_fee,
       p.meeting_date,
@@ -29,32 +86,9 @@
       m.mno,
       m.name
     from 
-      party p
-      inner join member m on (p.writer = m.mno)
-      inner join store s on (p.store = s.storeNo) 
-    order by 
-      p.party_no desc
-  </select>
-  
-  <!-- s.store_no,
-      s.name 
-      inner join store s on (p.store = s.storeNo)
-       -->
-
-	<select id="findByNo" resultMap="partyMap" parameterType="int">
-    select 
-      title,
-      contents,
-      party_fee,
-      meeting_date,
-      max_member,
-      alcohol_type,
-      alcohol_limit
-    from 
       party
     where 
-      party_no=#{no}
-  </select>
+      party_no=#{no} -->
   <!-- s.store_no,
       s.name 
       inner join store s on (p.store = s.storeNo) 

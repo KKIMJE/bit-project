@@ -1,7 +1,11 @@
 package com.bitproject.domain;
 
 import java.sql.Timestamp;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
+@Data
+@Accessors(chain = true)
 public class Member {
   int mno;
   String email;
