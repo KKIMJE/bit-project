@@ -16,6 +16,8 @@ button {
 .location__ {
   margin-top: 120px;
   font-size: 22px;
+  margin-left: 13px;
+  color: rgba(75, 75, 75, 1);
 }
 
 #party-content-wrap {
@@ -23,78 +25,58 @@ button {
   position: relative;
   flex-direction: column;
   justify-content: center;
-  border: solid 1px black;
 }
 
-
-
-
-.recent_like {
+.party-sort {
   display: flex;
   width: 517px;
   height: 23px;
+  position: absolute;
+  margin-left: 10px;
+  top: 42px;
 }
 
-.recent_like > button {
-  margin-right: 20px;
-  border: 0;
-  outline: 0;
-  background-color: white;
+
+.party-new {
+  font-weight: 900;
 }
 
+.party-distance {
+  font-weight: 500;
+  margin-left: 10px;
+}
 
 .party-open {
-  display: flex;
   position: absolute;
   right: 3px;
+  top: 22px;
   width: 152px;
   height: 42px;
   background: #90D483;
+  font-weight: 600;
+  font-size: 21px;
+  color: #FFFFFF;
+  border-radius: 10px;
 }
 
-.party-open span {
-padding: 6px;
-font-weight: 600;
-font-size: 23px;
-color: #FFFFFF;
-}
-
-.card {
+#party-list {
   border : none;
+  margin-top: 50px;
   width: 1107px;
   height: 263px;
-  left: 0px;
-  top: 220px;
 }
 
 .card-body {
-  background-color: #c4c4c4;
+  background-color: rgba(245, 245, 245, 1);
   height: 263px;
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.card-category {
-  float: left;
-  border: solid;
-  border-top-width: thin;
-  border-bottom-width: thin;
-  border-left-width: thin;
-  border-right-width: thin;
-  width: 100px;
-  text-align: center;
-  border-radius: 16px;
-  background-color: white;
-  height: 20px;
-  line-height: 20px;
-  top: 5px;
-  left: -260px;
-}
-
 .community_img {
   float: right;
-  width: 357px;
+  width: 300px;
   height: 235px;
   left: 1070px;
   top: 1px;
@@ -133,14 +115,13 @@ color: #FFFFFF;
   width: 130px;
   font-weight: 700;
   margin-bottom: 10px;
-  margin-top: 10px;
   text-align: left;
   top: 80px;
 }
 
 #card-contents {
   float: left;
-  background-color: #c4c4c4;
+  background-color: rgba(245, 245, 245, 1);
   width: 700px;
   height: 130px;
 }
@@ -174,10 +155,4 @@ color: #FFFFFF;
   width: 100px;
   height: 20px;
   line-height: 20px;
-}
-
-.see_more {
-  background-color: #c4c4c4;
-  border: 0;
-  outline: 0;
 }
