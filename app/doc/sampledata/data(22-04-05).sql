@@ -797,39 +797,8 @@ INSERT INTO party_comment (party_comment_no,mno,party_no,party_comment_contents,
 INSERT INTO party_comment (party_comment_no,mno,party_no,party_comment_contents,comment_date,update_date) VALUES (29,29,29,'모임댓글내용29','2022-03-18 17:49:44.0','0000-00-00 00:00:00');
 INSERT INTO party_comment (party_comment_no,mno,party_no,party_comment_contents,comment_date,update_date) VALUES (30,30,30,'모임댓글내용30','2022-03-18 17:49:44.0','0000-00-00 00:00:00');
 
--- 모임댓글좋아요
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (1,1);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (2,2);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (3,3);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (4,4);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (5,5);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (6,6);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (7,7);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (8,8);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (9,9);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (10,10);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (11,11);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (12,12);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (13,13);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (14,14);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (15,15);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (16,16);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (17,17);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (18,18);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (19,19);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (20,20);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (21,21);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (22,22);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (23,23);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (24,24);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (25,25);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (26,26);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (27,27);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (28,28);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (29,29);
-INSERT INTO party_comment_like (party_comment_no,mno) VALUES (30,30);
 
--- 얘약하기
+-- 예약하기
 INSERT INTO reservation (reservation_no,store_no,`date`,people,name,tel,request,pay_no,pay_company,pay_price,pay_date,status) VALUES (1,1,'1991-05-21 21:00:00.0',4,'예약자이름1','010-1111-2222','예약요청사항1',1293018201,'국민카드',20000,'2022-03-18 20:07:07.0','완');
 INSERT INTO reservation (reservation_no,store_no,`date`,people,name,tel,request,pay_no,pay_company,pay_price,pay_date,status) VALUES (2,2,'1991-05-21 21:00:00.0',5,'예약자이름2','010-3333-4444','예약요청사항2',39657241,'신한카드',30000,'2022-03-18 20:08:07.0','완');
 INSERT INTO reservation (reservation_no,store_no,`date`,people,name,tel,request,pay_no,pay_company,pay_price,pay_date,status) VALUES (3,3,'1991-05-21 21:00:00.0',6,'예약자이름3','010-1084-1028','예약요청사항3',693729219,'신한카드',20000,'2022-03-18 20:08:07.0','완');
@@ -1217,36 +1186,36 @@ INSERT INTO party_board (party_board_no,party_no,mno,board_reg_date,message,mess
 INSERT INTO party_board (party_board_no,party_no,mno,board_reg_date,message,message_time,message_status) VALUES (30,5,5,'2022-03-18 17:49:45.0','모임게시판내용30',NULL,1);
 
 --모임찜
-INSERT INTO party_board_select (mno,party_board_no) VALUES (1,1);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (2,2);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (3,3);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (4,4);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (5,5);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (6,6);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (7,7);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (8,8);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (9,9);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (10,10);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (11,11);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (12,12);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (13,13);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (14,14);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (15,15);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (16,16);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (17,17);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (18,18);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (19,19);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (20,20);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (21,21);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (22,22);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (23,23);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (24,24);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (25,25);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (26,26);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (27,27);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (28,28);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (29,29);
-INSERT INTO party_board_select (mno,party_board_no) VALUES (30,30);
+INSERT INTO party_select (mno,party_no) VALUES (1,1);
+INSERT INTO party_select (mno,party_no) VALUES (2,2);
+INSERT INTO party_select (mno,party_no) VALUES (3,3);
+INSERT INTO party_select (mno,party_no) VALUES (4,4);
+INSERT INTO party_select (mno,party_no) VALUES (5,5);
+INSERT INTO party_select (mno,party_no) VALUES (6,6);
+INSERT INTO party_select (mno,party_no) VALUES (7,7);
+INSERT INTO party_select (mno,party_no) VALUES (8,8);
+INSERT INTO party_select (mno,party_no) VALUES (9,9);
+INSERT INTO party_select (mno,party_no) VALUES (10,10);
+INSERT INTO party_select (mno,party_no) VALUES (11,11);
+INSERT INTO party_select (mno,party_no) VALUES (12,12);
+INSERT INTO party_select (mno,party_no) VALUES (13,13);
+INSERT INTO party_select (mno,party_no) VALUES (14,14);
+INSERT INTO party_select (mno,party_no) VALUES (15,15);
+INSERT INTO party_select (mno,party_no) VALUES (16,16);
+INSERT INTO party_select (mno,party_no) VALUES (17,17);
+INSERT INTO party_select (mno,party_no) VALUES (18,18);
+INSERT INTO party_select (mno,party_no) VALUES (19,19);
+INSERT INTO party_select (mno,party_no) VALUES (20,20);
+INSERT INTO party_select (mno,party_no) VALUES (21,21);
+INSERT INTO party_select (mno,party_no) VALUES (22,22);
+INSERT INTO party_select (mno,party_no) VALUES (23,23);
+INSERT INTO party_select (mno,party_no) VALUES (24,24);
+INSERT INTO party_select (mno,party_no) VALUES (25,25);
+INSERT INTO party_select (mno,party_no) VALUES (26,26);
+INSERT INTO party_select (mno,party_no) VALUES (27,27);
+INSERT INTO party_select (mno,party_no) VALUES (28,28);
+INSERT INTO party_select (mno,party_no) VALUES (29,29);
+INSERT INTO party_select (mno,party_no) VALUES (30,30);
 
 -- 주점찜
 INSERT INTO store_select (store_no,mno) VALUES (1,1);
