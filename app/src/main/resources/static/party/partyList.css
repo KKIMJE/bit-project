@@ -67,91 +67,66 @@ button {
 
 .party-body {
   background-color: rgba(245, 245, 245, 1);
-  height: 263px;
+  border: 1px solid rgba(75, 75, 75, 1);
+  height: 230px;
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.community_img {
-  float: right;
-  width: 300px;
-  height: 235px;
-  left: 1070px;
-  top: 1px;
-}
-
-.community_time {
-  position: relative;
-  width: 55px;
-  height: 20px;
-  left: 600px;
-  top: -20px;
-  font-weight: 200;
-  font-size: 13px;
-}
-
-.community_writer {
-  position: relative;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  width: 45px;
-  height: 20px;
-  left: 650px;
-  top: -23px;
-}
-
-.contents {
-  padding-top: 10px;
-  margin-top: 10px;
-  top: 10px;
+.party-body-top {
   padding-left: 5px;
+  display: flex;
+  height: 15%;
+  align-items: center;
 }
 
-.card-contents-name {
-  font-size: 18px;
-  width: 130px;
+.party-title {
+  font-size: 21px;
+  width: 1037px;
   font-weight: 700;
-  margin-bottom: 10px;
-  text-align: left;
-  top: 80px;
+  padding-left: 12px;
 }
 
-#card-contents {
-  float: left;
-  background-color: rgba(245, 245, 245, 1);
-  width: 700px;
-  height: 130px;
+.party-regdate {
+  font-size: 17px;
+  width: 70px;
+  padding-right: 13px;
 }
 
-.card-like {
-  float: left;
+.party-body-content {
+  padding-left: 5px;
+  display: flex;
+  height: 70%;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(75, 75, 75, 1);
+  border-bottom: 1px solid rgba(75, 75, 75, 1);
+}
+
+.party-body-footer {
+  padding-right: 15px;
+  display: flex;
+  height: 15%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.party-like, .party-member-count {
   border: solid;
-  border-top-width: thin;
-  border-bottom-width: thin;
-  border-left-width: thin;
-  border-right-width: thin;
+  border-width: thin;
   text-align: center;
   border-radius: 16px;
   background-color: white;
+  height: 26px;
+  line-height: 26px;
+}
+
+.party-like {
   width: 80px;
-  height: 20px;
-  line-height: 20px;
 }
 
-.card-comment {
-  float: left;
-  margin-left: 10px;
-  border: solid;
-  border-top-width: thin;
-  border-bottom-width: thin;
-  border-left-width: thin;
-  border-right-width: thin;
-  text-align: center;
-  border-radius: 16px;
-  background-color: white;
+
+.party-member-count {
   width: 100px;
-  height: 20px;
-  line-height: 20px;
+  margin-left: 7px;
 }
