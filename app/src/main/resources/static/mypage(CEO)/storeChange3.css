@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
   font-family: NanumSquareRound;
 }
@@ -11,30 +13,6 @@ h1{
  
 }
 
-.horizontal-line{
-  border-bottom:solid 1px black; 
-  margin-right:10%; 
-  margin-top:2.5%; 
-  width:95%;
-}
-
-.x-add-btn ,.x-delete-btn{
-	border-radius:5px;
-  background-color:#FFFFFF;
-}
-
-
-#ig {
-  width: 60px;
-  height: 60px;
-  vertical-align: middle !important;
-  margin-top: -16px;
-  margin-left:-15px;
-}
-
-
-
-/* 메뉴 등록*/
 
 .menu-section1{
   margin-top:20px;  
@@ -43,6 +21,11 @@ h1{
 
 .menu-section2 ,.menu-section3,.menu-section4{ 
   margin-left:100px;
+}
+
+.menu-content1, .menu-content2,.menu-content3,.menu-conntent4{
+	padding-left:20px; 
+	word-spacing:150px
 }
 
 .menu-textarea{
@@ -55,6 +38,22 @@ h1{
   width:30%;
 }
 
+.x-add-btn ,.x-delete-btn{
+  border-radius:5px;
+  background-color:#FFFFFF;
+}
+
+.horizontal-line{
+  border-bottom:solid 1px black; 
+  margin-right:10%; 
+  margin-top:2.5%; 
+  width:95%;
+}
+
+
+.btn{
+	margin-left:80px;
+}
 
 .submit-btn,.exit-btn{
   border-radius:20px;
@@ -67,7 +66,17 @@ input {
   margin: 3px;
 }
 
+#ig {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle !important;
+  margin-top: -16px;
+  margin-left:-15px;
+}
 
+#store-title{
+	font-size:30px;
+}
 
 /* footer 수정 */
 footer__ {
