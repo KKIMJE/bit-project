@@ -37,7 +37,7 @@ h1{
 /* 메뉴 등록*/
 
 .menu-section1{
-  margin-top:50px;  
+  margin-top:20px;  
   margin-left:100px;
 }
 
@@ -70,12 +70,17 @@ input {
 
 
 /* footer 수정 */
-.footer-contents {
-  margin-top: 72vh;
-  margin-left: -24%;
-  margin-right: -24%;
+footer__ {
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 700;
+}
+
+.footer-contents {
   display: flex;
   justify-content: center;
   background-color: white;
