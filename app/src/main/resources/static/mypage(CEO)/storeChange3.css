@@ -1,0 +1,101 @@
+* {
+  font-family: NanumSquareRound;
+}
+
+h1{
+  font-size:15px;
+  border-bottom:solid 1px black;
+  padding-left:5%;
+  width:25%;
+  word-spacing:5px;
+ 
+}
+
+.horizontal-line{
+  border-bottom:solid 1px black; 
+  margin-right:10%; 
+  margin-top:2.5%; 
+  width:95%;
+}
+
+.x-add-btn ,.x-delete-btn{
+	border-radius:5px;
+  background-color:#FFFFFF;
+}
+
+
+#ig {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle !important;
+  margin-top: -16px;
+  margin-left:-15px;
+}
+
+
+
+/* 메뉴 등록*/
+
+.menu-section1{
+  margin-top:50px;  
+  margin-left:100px;
+}
+
+.menu-section2 ,.menu-section3,.menu-section4{ 
+  margin-left:100px;
+}
+
+.menu-textarea{
+  border-radius:5px;  
+  width:30%;
+}
+
+.price-textarea{
+  border-radius:5px; 
+  width:30%;
+}
+
+
+.submit-btn,.exit-btn{
+  border-radius:20px;
+  background-color: #29c05e;
+  color: #ffffff;
+  width: 90px;
+}
+
+input {
+  margin: 3px;
+}
+
+
+
+/* footer 수정 */
+.footer-contents {
+  margin-top: 72vh;
+  margin-left: -24%;
+  margin-right: -24%;
+  border: 1px solid #29c05e;
+  border-width: 3px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.footer-content {
+  text-align: center;
+  margin: 7px 60px;
+  font-size: x-small;
+}
+
+.footer-contents-1 {
+  margin-top: 40px;
+}
+
+.footer-content-3 {
+  margin-top: 40px;
+  display: flex;
+}
+
+.footer-content-info {
+  margin-right: 40px;
+}
