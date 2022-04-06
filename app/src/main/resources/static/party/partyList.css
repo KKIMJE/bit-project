@@ -36,7 +36,6 @@ button {
   top: 42px;
 }
 
-
 .party-new {
   font-weight: 900;
 }
@@ -66,7 +65,7 @@ button {
   height: 263px;
 }
 
-.card-body {
+.party-body {
   background-color: rgba(245, 245, 245, 1);
   height: 263px;
   border-radius: 10px;
