@@ -1,6 +1,4 @@
-console.log(allStoreDataList)
-
-// category-tab
+// == category-tab ==
 const lightBtn = document.querySelector('.store-category-sort');
 lightBtn.addEventListener("click",function(e){
   if (e.target == e.currentTarget) {
@@ -11,22 +9,36 @@ lightBtn.addEventListener("click",function(e){
   }
 });
 
-// next, pre button
+
+
+let storeNum = []
+let numStart = 0
+let numEnd = 10
+let mapCursor
+for (var j = 0; j < allStoreDataList.length; j ++) {
+  storeNum.push(j)
+}
+// 총 페이지 수
+let limitCursor = Math.floor((storeNum.length + 10) * 0.1)
+console.log("총페이수 : " + limitCursor)
+
+
+// == next, pre button ==
 const next = document.querySelector('.next-store');
 const pre = document.querySelector('.pre-store');
 
 window.onload = function () {
   let storeAll = document.querySelectorAll('.storeContents-imgCard');
-  console.log("end : " + storeAll.length)
 
   // 주점 리스트 초기화
   for (let i=1; i < storeAll.length; i++) {
     storeAll[i].style.display = "none";
   }
 
-  let cursor = 1;
+  let cursor = 0;
   let endPage = storeAll.length;
 
+  // cursor를 기준으로 앞뒤로 모두 none으로 변경
   const moveAl = function (cursor) {
     if (storeAll[cursor].style.display == "none") {
       storeAll[cursor].style.display = "flex"
@@ -43,56 +55,33 @@ window.onload = function () {
   }
   
   next.addEventListener("click", () => {
-    if (cursor == endPage) {
-      console.log("range out");
-    } else if (cursor == 0) {
-        cursor += 1;
-        moveAl(cursor);
-        cursor += 1;
-        console.log("cursor : " + `${cursor}`);
-      } else {
-        moveAl(cursor);
-        cursor += 1;
-        console.log("cursor : " + `${cursor}`);
-      }
+    if (cursor+1 == endPage) {
+      console.log("next: Over page")
+    } else {
+      cursor += 1;
+      console.log("cursor : " + `${cursor}`);
+      moveAl(cursor);
+    } 
   });
 
   pre.addEventListener("click", () => {
-    if (cursor == endPage) {
-      cursor -= 2;
-      if (-1 < cursor) {
-        moveAl(cursor);
-        console.log("cursor : " + `${cursor}`);
-      } else {
-        console.log("range out")
-      }
+    if (cursor == 0) {
+      console.log("pre: Over page")
     } else {
-      if (0 < cursor) {
-        cursor -= 1;
-        if (cursor == 1) {
-          storeAll[cursor].style.display = "none"
-          storeAll[cursor-1].style.display = "flex"
-          return;
-        }
-        moveAl(cursor);
-        console.log("cursor : " + `${cursor}`);
-      } else {
-        console.log("range out")
-      }
+      cursor -= 1;
+      moveAl(cursor);
+      console.log("cursor : " + `${cursor}`);
     }
   });
 } // onload END
 
 
-for (let i = 0; i < allStoreDataList.length; i++) {
-  console.log(allStoreDataList[i]) 
-}
-
+// == Map Controller ==
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-  mapOption = {
-      center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-      level: 3 // 지도의 확대 레벨
-  };
+mapOption = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 3 // 지도의 확대 레벨
+};
 
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
@@ -100,55 +89,81 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
 
+next.addEventListener("click", function(){
+  if (limitCursor == mapCursor) {
+    console.log(limitCursor)
+    console.log("next: Over page")
+  } else {
+    numStart += 10
+    numEnd += 10
+    console.log(storeNum.slice(numStart, numEnd))
 
-for (var i = 0; i < positions.length; i ++) {
+    let loopNum = storeNum.slice(numStart, numEnd)
+    markerMaker(allStoreDataList, loopNum)
 
-  let address = positions[i].address
-  let name = positions[i].name
+    mapCursor = numEnd/10
+    console.log("Map : " + mapCursor)
+  }
+});
 
-  // 주소로 좌표를 검색합니다
-  geocoder.addressSearch(address, function(result, status) {
+pre.addEventListener("click", function(){
+  if (numStart == 0) {
+    console.log("pre: Over page")
+  } else {
+    numStart -= 10
+    numEnd -= 10
+    console.log(storeNum.slice(numStart, numEnd))
+
+    let loopNum = storeNum.slice(numStart, numEnd)
+    markerMaker(allStoreDataList, loopNum)
+
+    mapCursor = numEnd/10
+    console.log("Map : " + mapCursor)
+  }
+});
+
+
+let markerList = []
+function markerMaker(store, numList) {
+
+  for (let j = 0; j < markerList.length; j++) {
+    markerList[j].setMap(null)
+  }
   
-      // 정상적으로 검색이 완료됐으면 
-      if (status === kakao.maps.services.Status.OK) {
-          var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+  for (let i = 0; i < numList.length; i ++) {
 
-          // 커스텀 오버레이를 생성합니다
-          var customOverlay = new kakao.maps.CustomOverlay({
-              position: coords,
-              content: `<div id="mapInfo"><span>${name}</span></div>`   
-          });
+    let address = store[numList[i]].address
+    let name = store[numList[i]].name
+  
+    // 주소로 좌표를 검색합니다
+    geocoder.addressSearch(address, function(result, status) {
+    
+        // 정상적으로 검색이 완료됐으면 
+        if (status === kakao.maps.services.Status.OK) {
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+  
+            // 커스텀 오버레이를 생성합니다
+            var customOverlay = new kakao.maps.CustomOverlay({
+                position: coords,
+                content: `<div id="mapInfo"><span>${name}</span></div>`   
+            });
 
-          // 커스텀 오버레이를 지도에 표시합니다
-          customOverlay.setMap(map);
+            markerList.push(customOverlay)
 
-          map.setCenter(coords);
-      } else {
-          alert('검색실패')
-      }
-  });
+            // 커스텀 오버레이를 지도에 표시합니다
+            customOverlay.setMap(map);
+  
+            map.setCenter(coords);
+        } else {
+            console.log(`${name}, ${address} 주소검색 실패`)
+        }
+    });
+  }
+
 }
 
 
-// test map list
-var positions = [
-  {   
-      name: '카카오', 
-      address: '제주특별자치도 제주시 첨단로 242'
-  },
-  {   
-      name: '광교호수공원',
-      address: '경기 수원시 영통구 하동 1020'
-  },
-  {   
-      name: '매탄공원',
-      address: '경기 수원시 영통구 매탄동 1279-3'
-  },
-  {   
-      name: '공원',
-      address: '경기 수원시 영통구 매탄로 185'
-  }
-];
+
 
 
 
