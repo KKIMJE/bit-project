@@ -10,7 +10,6 @@ lightBtn.addEventListener("click",function(e){
 });
 
 
-
 let storeNum = []
 let numStart = 0
 let numEnd = 10
@@ -122,14 +121,15 @@ pre.addEventListener("click", function(){
   }
 });
 
-
+// 마커구성
 let markerList = []
 function markerMaker(store, numList) {
-
+  
+  // 기존마커 삭제
   for (let j = 0; j < markerList.length; j++) {
     markerList[j].setMap(null)
   }
-  
+  // 마커 생성
   for (let i = 0; i < numList.length; i ++) {
 
     let address = store[numList[i]].address
@@ -159,9 +159,11 @@ function markerMaker(store, numList) {
         }
     });
   }
-
 }
 
+// 맵 초기화면 세팅
+let initialNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+markerMaker(allStoreDataList, initialNum)
 
 
 

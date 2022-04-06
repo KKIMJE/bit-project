@@ -7,15 +7,24 @@ fetch("/store/list")
     return response.json()})
       .then(function(stores) {
         storeList(stores)
+
+        // store 갯수 체크
+        for (let j = 0; j < stores.length; j++) {
+          if (stores[j] != null) {
+            imgNum.push(j)
+          }
+        }
         allStoreDataList = stores
       })
 
 // storeAll list
-//  => imgCard insert
+//  => ImgCard Insert
 //
 let listAll = document.querySelector(".imgContainer");
 let count = 0
 let card = true
+let imgNum = []
+
 function storeList(stores) {
   
   for (let i = 0; i < stores.length; i++) {
@@ -56,40 +65,26 @@ function storeList(stores) {
       }
     }
 
+    let tagStr = `<div class="img-xbox">
+    <div class="xImg box">
+      <i class="fa-regular fa-heart b"></i>
+      <i class="fa-solid fa-heart b"></i>
+      <a><img src="./img/storelist${i}.jpg" class="xImg-ori"></a>
+    </div>
+    <div class="xImg-contents">
+      <div class="xImg-content">
+        <div class="xImg-content-t">${stores[i].name}</div>
+        <div class="xImg-star">${stars}</div>
+        <div class="xImg-d">30m 이내</div>
+      </div>
+      <div class="storeOpen">${printOper(stores[i].oper)}</div>
+    </div>
+  </div>`
+
     if (card == true) {
-      itemDiv2.innerHTML += 
-      `<div class="img-xbox">
-        <div class="xImg box">
-          <i class="fa-regular fa-heart b"></i>
-          <i class="fa-solid fa-heart b"></i>
-          <a><img src="./img/store_2.jpg" class="xImg-ori"></a>
-        </div>
-        <div class="xImg-contents">
-          <div class="xImg-content">
-            <div class="xImg-content-t">${stores[i].name}</div>
-            <div class="xImg-star">${stars}</div>
-            <div class="xImg-d">30m 이내</div>
-          </div>
-          <div class="storeOpen">${printOper(stores[i].oper)}</div>
-        </div>
-      </div>`
+      itemDiv2.innerHTML += tagStr
     } else {
-      itemDiv.innerHTML += 
-      `<div class="img-xbox">
-        <div class="xImg box">
-          <i class="fa-regular fa-heart b"></i>
-          <i class="fa-solid fa-heart b"></i>
-          <a><img src="./img/store_2.jpg" class="xImg-ori"></a>
-        </div>
-        <div class="xImg-contents">
-          <div class="xImg-content">
-            <div class="xImg-content-t">${stores[i].name}</div>
-            <div class="xImg-star">${stars}</div>
-            <div class="xImg-d">30m 이내</div>
-          </div>
-          <div class="storeOpen">${printOper(stores[i].oper)}</div>
-        </div>
-      </div>`
+      itemDiv.innerHTML += tagStr
     }
     count++
   }
