@@ -70,7 +70,7 @@ button {
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgb(230, 230, 230);
+  /* background-color: rgb(230, 230, 230); */
 }
 
 .party-body-top {
@@ -78,6 +78,9 @@ button {
   display: flex;
   height: 15%;
   align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #dbdbdb;
 }
 
 .party-title {
@@ -101,7 +104,7 @@ button {
   border-top: 1px solid rgb(214, 214, 214);
   border-bottom: 1px solid rgb(214, 214, 214);
   position: relative;
-  background-color: rgba(245, 245, 245, 1);
+  /* background-color: rgba(245, 245, 245, 1); */
 }
 
 .leader-profile {
