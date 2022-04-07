@@ -211,8 +211,8 @@ div:nth-child(3) > span > i {
   text-align: center;
   border-radius: 16px;
   background-color: white;
-  height: 22px;
-  line-height: 22px;
+  height: 23px;
+  line-height: 23px;
 }
 
 .party-like {
