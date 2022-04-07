@@ -61,7 +61,7 @@ h1 {
 
 .login__box {
   width: 450px;
-  height: 730px;
+  height: 750px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;
@@ -191,7 +191,16 @@ body > form > div > div > div > div > span {
   margin-left: 10px;
   margin-top: 40px;
 }*/
+#ig {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle !important;
+  margin-top: -16px;
+}
 
+input {
+  margin: 3px;
+}
 footer__ {
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;

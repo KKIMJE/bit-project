@@ -74,9 +74,9 @@
       <div class="login__box">
         <div class="content">
           <p class="form_store">가게명</p><br>
-          <input name="email" type="email" class="form_input_email">
+          <input name="name" type="text" class="form_input_name">
 
-          <div class="address">
+        <div class="address">
             <p class="form_address">주소</p><br>
             <div>
               <input name="address" type="text" class="form_input_address">
@@ -90,12 +90,41 @@
             <p class="form_tel">전화번호</p><br>
             <input name="tel" type="tel" class="form_input_tel">
           </div>
+          
+          <div class="hr">
+            <p class="form_hr">영업시간</p><br>
+            <textarea id = "hr" style="resize:none;" class="form_input_hr"></textarea>
+          </div>
 
+           <div class="intro">
+            <p class="form_intro">가게소개</p><br>
+            <textarea id="intro"  style="resize:none;" class="form_input_intro"></textarea>
+          </div>
+          
+           <div class="tag">
+            <p class="form_tag">태그선택
+            <button class="submit-add-btn">추가</button>
+            <!-- 사각형 -->
+          </div>
 
-
-
-
-
+           <div>
+            <p class="form_check">예약 가능 여부 <br>
+            <center>가능<input type="checkbox"  class="form_input_check" checked> 불가능<input type="checkbox" class="form_input_check">
+            최대인원 <input name="max-num" type="text"  class="form_input_box" > 
+            <!-- 사각형 -->
+          </div> </center>
+           
+           <center><div class="x-btn-outline-group">
+      <button class="btn-outline-dark"  type="button">사업자등록증 첨부하기</button>
+      <button class="btn1-outline-dark"  type="button">주점 사진 첨부하기</button>
+    </div> </center>
+          
+          <center><div class="btn">
+         <button class="submit-next-btn">다음</button>
+         <button class="submit-exit-btn">나가기</button>
+         </div>
+         </center>
+         </div>
         </div>
       </div>
     </form>

@@ -13,35 +13,29 @@ h1{
  
 }
 
-#ig {
-  width: 60px;
-  height: 60px;
-  vertical-align: middle !important;
-  margin-top: -16px;
-  margin-left:-15px;
-}
 
-#store-title{
-  font-size:30px;
-}
-
-.alcohol-section1{
+.menu-section1{
   margin-top:20px;  
   margin-left:100px;
 }
 
-.alcohol-section2 ,.alcohol-section3,.alcohol-section4{ 
+.menu-section2 ,.menu-section3,.menu-section4{ 
   margin-left:100px;
 }
 
-.alcohol-content1,.alcohol-content2,.alcohol-content3,.alcohol-content4{
+.menu-content1, .menu-content2,.menu-content3,.menu-conntent4{
 	padding-left:20px; 
- word-spacing:70px;
+	word-spacing:150px
+}
+
+.menu-textarea{
+  border-radius:5px;  
+  width:30%;
 }
 
 .price-textarea{
   border-radius:5px; 
-  width:100px;
+  width:30%;
 }
 
 .x-add-btn ,.x-delete-btn{
@@ -53,15 +47,12 @@ h1{
   border-bottom:solid 1px black; 
   margin-right:10%; 
   margin-top:2.5%; 
-  width:100%;
+  width:95%;
 }
 
-.type-option,.name-option{
-	width:100px;
-}
 
 .btn{
-	margin-left:100px
+	margin-left:80px;
 }
 
 .submit-btn,.exit-btn{
@@ -73,6 +64,18 @@ h1{
 
 input {
   margin: 3px;
+}
+
+#ig {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle !important;
+  margin-top: -16px;
+  margin-left:-15px;
+}
+
+#store-title{
+	font-size:30px;
 }
 
 /* footer 수정 */

@@ -250,12 +250,6 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
 }
 
 i.fa-solid.fa-heart.b {
-  /* display: none; */
-  cursor: pointer;
-}
-
-i.fa-regular.fa-heart.b {
-  display: none;
   cursor: pointer;
 }
 

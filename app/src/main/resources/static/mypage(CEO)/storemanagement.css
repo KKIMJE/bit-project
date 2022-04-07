@@ -1,22 +1,24 @@
 
 
 * {
-  font-family: NanumSquareRound;
+                  font-family: NanumSquareRound;
 }
 
+h1   {
+								  display: flex;
+								  flex-direction: column;
+								  justify-content: center;
+								  font-weight:1000;
+								  font-size:50px;
+								  margin-top: 300px;
+      }
 
-
-  h1{
- display: flex;
-flex-direction: column;
-  justify-content: center;
-  font-weight:1000;
-  font-size:50px;
+table { 
+									border-collapse: collapse; 
+								  border-spacing: 0px; 
+								  margin:auto;
+        }
   
-  margin-top: 300px;
-}
-
-table { border-collapse: collapse; border-spacing: 0px; margin:auto;}
 table tbody td  { border-collapse: separate;  
                   border-spacing: 200px; 
                   text-align:center; 
@@ -27,30 +29,36 @@ table tbody td  { border-collapse: separate;
 							    padding-left: 30px;
 							    padding-right: 40ox;}
 
- thead{
- text-align:center !important;
-  font-weight: bold;
-  font-size:25px;
-  border-collapse: separate;  
- border-spacing: 200px; 
-  border-style:solid 2px;
-  height:40px;
-  background-color:#C4C4C4;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 40ox;
+ thead          {
+								 text-align:center !important;
+								  font-weight: bold;
+								  font-size:25px;
+								  border-collapse: separate;  
+								 border-spacing: 200px; 
+								  border-style:solid 2px;
+								  height:40px;
+								  background-color:#C4C4C4;
+							    padding-top: 10px;
+							    padding-bottom: 20px;
+							    padding-left: 30px;
+							    padding-right: 40ox;
  
- }
+                  }
  
- thead th {
-  vertical-align: middle;
-  text-align: center;
- }
-  
-  .table{
-   margin-left:10%;
+ thead th        {
+								  vertical-align: middle;
+								  text-align: center;
+                  }
+                  
+  .store-table{
+                 width:100%; 
+                 margin-top: -15px;
+                 margin-left:10px;
   }
+  
+  .table  {
+                    margin-left:10%;
+                   }
 
   
   .x-add-btn-1 {
@@ -59,7 +67,7 @@ table tbody td  { border-collapse: separate;
     left: 1150px;*/
      background-color:#C4C4C4;
      color:#000000;
-     font-size:30px;
+     font-size:20px;
      font-weight:bold;
     margin-bottom: 0.25rem!important;
    }
@@ -68,26 +76,35 @@ table tbody td  { border-collapse: separate;
     .x-update-btn {
      background-color:#C4C4C4;
      color:#000000;
-     font-size:30px;
+     font-size:20px;
      font-weight:bold;
    }
    
      .x-delete-btn{
      background-color:#C4C4C4;
      color:#000000;
-     font-size:30px;
+     font-size:20px;
      font-weight:bold;
    }
-  #ig{ margin-left: 200px; width:60px; height:60px; vertical-align:middle !important;
-       margin-top:-16px;}
+   
+  #ig{ margin-left: 280px; 
+         width:60px; 
+         height:60px; 
+         vertical-align:middle !important;
+          margin-top:-16px;}
   
-   /* footer 수정 */
-.footer-contents {
-  margin-top: 72vh;
-  margin-left: -24%;
-  margin-right: -24%;
+  /* footer 수정 */
+footer__ {
   border: 1px solid #29c05e;
   border-width: 3px 0px 0px 0px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 700;
+}
+
+.footer-contents {
   display: flex;
   justify-content: center;
   background-color: white;
@@ -111,21 +128,3 @@ table tbody td  { border-collapse: separate;
 .footer-content-info {
   margin-right: 40px;
 }
-
-   
-/* 
-/* 테블릿 세로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 768px) {
-}
-
-/* 테블릿 가로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 1024px) {
-}
-
-/* 스마트폰 가로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 480px) {
-}
-
-/* 스마트폰 세로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 320px) {
-} 
