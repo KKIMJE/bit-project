@@ -99,8 +99,8 @@ footer__store {
   position: absolute;
   z-index: 1000;
   display: none;
-  min-width: 70rem;
-  max-width: 70rem;
+  min-width: 56rem;
+  max-width: 62rem;
   padding: 0.5rem 0;
   margin: 0;
   font-size: 1rem;
@@ -162,6 +162,7 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
   /* display: none; */
   display: flex;
   counter-reset: section;
+  /* align-items: baseline; */
 }
 
 .storeContents-imgCard {
@@ -174,16 +175,13 @@ body > div > div.store-contents > div > div.store-filter > div > ul {
 
 .next-store, .pre-store {
   position: relative;
-  margin-top: 278px;
+  margin-top: 243px;
+  margin-bottom: 285px;
   padding: 0;
   font-weight: bold;
   font-size: 50px;
   color: #29c05e;
   cursor: pointer;
-}
-
-.next-store {
-  margin-left: 0px;
 }
 
 .pre-store {
