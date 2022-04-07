@@ -6,16 +6,10 @@ fetch("/store/list")
   .then(function(response) {
     return response.json()})
       .then(function(stores) {
-        storeList(stores)
-
-        // store 갯수 체크
-        for (let j = 0; j < stores.length; j++) {
-          if (stores[j] != null) {
-            imgNum.push(j)
-          }
-        }
         allStoreDataList = stores
+        setTimeout(() => {storeList(stores)}, 10);
       })
+
 
 // storeAll list
 //  => ImgCard Insert
@@ -23,7 +17,6 @@ fetch("/store/list")
 let listAll = document.querySelector(".imgContainer");
 let count = 0
 let card = true
-let imgNum = []
 
 function storeList(stores) {
   
@@ -67,8 +60,8 @@ function storeList(stores) {
 
     let tagStr = `<div class="img-xbox">
     <div class="xImg box">
-      <i class="fa-regular fa-heart b"></i>
-      <i class="fa-solid fa-heart b"></i>
+      <i id="fHeart" class="fa-regular fa-heart b"></i>
+      <i id="sHeart" class="fa-solid fa-heart b"></i>
       <a><img src="./img/storelist${i}.jpg" class="xImg-ori"></a>
     </div>
     <div class="xImg-contents">
