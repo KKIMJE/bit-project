@@ -1,4 +1,4 @@
-// ==== Map Controller ====
+// ==== Map 생성 ====
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 mapOption = {
     // 지도의 중심좌표
@@ -53,7 +53,102 @@ function markerMaker(store, numList) {
   }
 }
 
-// 데이터 로딩까지 아주 잠깐만 기다립니다
+
+
+
+var mlon= 126.570667
+var mlat= 33.450701
+var vlon= 126.570667
+var vlat= 33.450701
+
+// ==== Map 현재위치 표시 ====
+// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+if (navigator.geolocation) {
+    
+  // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+  navigator.geolocation.getCurrentPosition(function(position) {
+      
+      var lat = position.coords.latitude, // 위도
+          lon = position.coords.longitude; // 경도
+
+          // mlat = lat
+          // mlon = lon
+      
+      var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+          message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+      
+      // 마커와 인포윈도우를 표시합니다
+      displayMarker(locPosition, message);
+          
+    });
+  
+} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+  
+  var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
+      message = 'geolocation을 사용할수 없어요..'
+      
+  displayMarker(locPosition, message);
+}
+// 지도에 마커와 인포윈도우를 표시하는 함수입니다
+function displayMarker(locPosition, message) {
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({  
+    map: map, 
+    position: locPosition
+}); 
+
+// 인포윈도우에 표시할 내용
+var iwContent = message, 
+    iwRemoveable = true;
+
+// 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({
+    content : iwContent,
+    removable : iwRemoveable
+});
+
+// 인포윈도우를 마커위에 표시합니다 
+// infowindow.open(map, marker);
+
+// 지도 중심좌표를 접속위치로 변경합니다
+map.setCenter(locPosition);
+}
+
+
+
+
+var polyline=new daum.maps.Polyline({
+	map:map,
+	path : [
+	new daum.maps.LatLng(mlon,mlat),
+	new daum.maps.LatLng(vlon,vlat)
+	],
+ strokeWeight: 2,
+ strokeColor: '#FF00FF',
+ strokeOpacity: 0.8,
+ strokeStyle: 'dashed'
+});
+
+//return getTimeHTML(polyline.getLength());//미터단위로 길이 반환;
+console.log("길이"+polyline.getLength());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// == 데이터 로딩까지 아주 잠깐만 기다립니다 ==
+// next, pre btn & 맵초기화가 안에 있습니다.
 setTimeout(() => {
 
   let storeNum = []
@@ -162,10 +257,10 @@ setTimeout(() => {
   let initialNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   markerMaker(allStoreDataList, initialNum)
 
-}, 50); // setTime END
+}, 30); // setTime END
 
 
-// == category-tab ==
+// == category tab ==
 const lightBtn = document.querySelector('.store-category-sort')
 lightBtn.addEventListener("click",function(e){
   if (e.target == e.currentTarget) {
@@ -182,55 +277,3 @@ xAllBtn.addEventListener("click", () => location.reload())
 
 
 
-// ==== Map 현재위치 표시 ====
-// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-if (navigator.geolocation) {
-    
-  // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-  navigator.geolocation.getCurrentPosition(function(position) {
-      
-      var lat = position.coords.latitude, // 위도
-          lon = position.coords.longitude; // 경도
-      
-      var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-          message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
-      
-      // 마커와 인포윈도우를 표시합니다
-      displayMarker(locPosition, message);
-          
-    });
-  
-} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-  
-  var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
-      message = 'geolocation을 사용할수 없어요..'
-      
-  displayMarker(locPosition, message);
-}
-
-
-// 지도에 마커와 인포윈도우를 표시하는 함수입니다
-function displayMarker(locPosition, message) {
-
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({  
-    map: map, 
-    position: locPosition
-}); 
-
-// 인포윈도우에 표시할 내용
-var iwContent = message, 
-    iwRemoveable = true;
-
-// 인포윈도우를 생성합니다
-var infowindow = new kakao.maps.InfoWindow({
-    content : iwContent,
-    removable : iwRemoveable
-});
-
-// 인포윈도우를 마커위에 표시합니다 
-// infowindow.open(map, marker);
-
-// 지도 중심좌표를 접속위치로 변경합니다
-map.setCenter(locPosition);
-}

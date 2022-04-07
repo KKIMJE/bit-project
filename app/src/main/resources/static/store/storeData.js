@@ -61,7 +61,7 @@ function storeList(stores) {
     let tagStr = `<div class="img-xbox">
       <div class="xImg box">
         <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
-        <a><img src="./img/storelist${i}.jpg" class="xImg-ori"></a>
+        <a><img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori"></a>
       </div>
       <div class="xImg-contents">
         <div class="xImg-content">
