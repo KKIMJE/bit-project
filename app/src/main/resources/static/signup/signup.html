@@ -15,59 +15,57 @@
 <link rel="stylesheet" type="text/css"
   href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
   <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="signup.css">
         
     <title>야술먹자 회원가입</title>
 </head>
 <body>
   
   <nav class="navbar__">
-        <div><!-- 공간, 삭제하지 마세요 --></div>
+    <div><!-- 공간, 삭제하지 마세요 --></div>
 
-        <div class="navbar__logo">
-            <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+    <div class="navbar__logo">
+        <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+    </div>
+
+    <ul class="navbar__menu">
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+        <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
+    </ul>
+
+    <ul class="navbar__login">
+        <!-- 알림 -->
+        <div class="btn-group">
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                    <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
+                </button>
+            </div>
         </div>
 
-        <ul class="navbar__menu">
-            <li><a href="">로그인</a></li>
-            <li><a href="">회원가입</a></li>
-            <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
-        </ul>
+        <!-- 마이페이지 -->
+        <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
 
-        <ul class="navbar__login">
-            <!-- 알림 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
-                    </button>
-                </div>
+<!-- 검색 -->
+<div class="btn-group">
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-lg-end">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-
-            <!-- 마이페이지 -->
-            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
-
-            <!-- 검색 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-lg-end">
-                      <li>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 지도 -->
-            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
         </ul>
-    </nav>
+    </div>
+</div>
+
+        <!-- 지도 -->
+        <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
+    </ul>
+  </nav>
     
     <h1>야!술먹자 회원가입</h1>
     <form name="add__form">
@@ -134,10 +132,6 @@
          </div>
     </form>
     
-    
-    
-    
-    
     <footer__>
         <div class="footer-contents">
           <div class="footer-contents-1">전화번호 : 1566-8877</div>
@@ -156,9 +150,7 @@
             <div>고객센터</div>
           </div>
         </div>
-      
-      </footer__>
-    
+    </footer__>
     
 </body>
 </html>
