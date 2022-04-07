@@ -253,10 +253,6 @@ i.fa-solid.fa-heart.b {
   cursor: pointer;
 }
 
-i.fa-regular.fa-heart.b {
-  cursor: pointer;
-}
-
 /* storeMap */
 #map {
   margin-top: 50px;

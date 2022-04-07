@@ -59,20 +59,19 @@ function storeList(stores) {
     }
 
     let tagStr = `<div class="img-xbox">
-    <div class="xImg box">
-      <i id="fHeart" class="fa-regular fa-heart b"></i>
-      <i id="sHeart" class="fa-solid fa-heart b"></i>
-      <a><img src="./img/storelist${i}.jpg" class="xImg-ori"></a>
-    </div>
-    <div class="xImg-contents">
-      <div class="xImg-content">
-        <div class="xImg-content-t">${stores[i].name}</div>
-        <div class="xImg-star">${stars}</div>
-        <div class="xImg-d">30m 이내</div>
+      <div class="xImg box">
+        <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
+        <a><img src="./img/storelist${i}.jpg" class="xImg-ori"></a>
       </div>
-      <div class="storeOpen">${printOper(stores[i].oper)}</div>
-    </div>
-  </div>`
+      <div class="xImg-contents">
+        <div class="xImg-content">
+          <div class="xImg-content-t">${stores[i].name}</div>
+          <div class="xImg-star">${stars}</div>
+          <div class="xImg-d">30m 이내</div>
+        </div>
+        <div class="storeOpen">${printOper(stores[i].oper)}</div>
+      </div>
+    </div>`
 
     if (card == true) {
       itemDiv2.innerHTML += tagStr
