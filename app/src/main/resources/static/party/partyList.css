@@ -15,16 +15,17 @@ button {
 
 .location__ {
   margin-top: 120px;
+  margin-left: 20px;
   font-size: 22px;
-  margin-left: 13px;
   color: rgba(75, 75, 75, 1);
 }
 
 #party-content-wrap {
+  width: 1107px;
   display: flex;
   position: relative;
-  flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .party-sort {
@@ -32,7 +33,7 @@ button {
   width: 517px;
   height: 23px;
   position: absolute;
-  margin-left: 10px;
+  left: 20px;
   top: 42px;
 }
 
@@ -42,67 +43,65 @@ button {
 
 .party-distance {
   font-weight: 500;
-  margin-left: 10px;
 }
 
 .party-open {
   position: absolute;
-  right: 3px;
-  top: 22px;
-  width: 152px;
-  height: 42px;
+  right: 20px;
+  top: 25px;
+  width: 132px;
+  height: 38px;
+  line-height: 38px;
   background: #90D483;
   font-weight: 600;
-  font-size: 21px;
+  font-size: 19px;
   color: #FFFFFF;
   border-radius: 10px;
 }
 
-#party-list {
+#party-body {
   width: 1107px;
-  height: 263px;
-  margin-top: 50px;
+  margin-top: 55px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.party-body {
-  border: 1px solid rgb(214, 214, 214);
-  height: 200px;
+.party-list {
+  border: 1px solid rgba(103, 103, 103, 1);
+  height: 180px;
   border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  /* background-color: rgb(230, 230, 230); */
+  width: 520px;
+  background-color: rgba(196, 196, 196, 0.127);
+  margin: 16px;
 }
 
 .party-body-top {
-  padding-left: 5px;
   display: flex;
   height: 15%;
   align-items: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #dbdbdb;
 }
 
 .party-title {
-  font-size: 20px;
-  width: 1037px;
-  font-weight: 600;
-  padding-left: 12px;
+  font-size: 16px;
+  width: 460px;
+  font-weight: 700;
+  padding-left: 10px;
   color: rgb(43, 43, 43);
 }
 
 .party-regdate {
-  font-size: 17px;
-  width: 70px;
-  padding-right: 13px;
+  font-size: 13px;
+  width: 60px;
 }
 
 .party-body-content {
   display: flex;
   height: 70%;
   box-sizing: border-box;
-  border-top: 1px solid rgb(214, 214, 214);
-  border-bottom: 1px solid rgb(214, 214, 214);
+  border-top: 1px solid rgba(103, 103, 103, 1);
+  border-bottom: 1px solid rgba(103, 103, 103, 1);
   position: relative;
   /* background-color: rgba(245, 245, 245, 1); */
 }
@@ -110,7 +109,7 @@ button {
 .leader-profile {
   display: flex;
   flex-direction: column;
-  width: 170px;
+  width: 110px;
   margin-top: 17px;
 }
 
@@ -122,82 +121,88 @@ button {
 }
 
 .leader {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin: 0 auto;
 }
 
 .leader-profile span {
   text-align: center;
   margin-top: 8px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 .party-detail {
-  width: 937px;
+  width: 410px;
   display: flex;
   position: relative;
-  flex-direction: row;
-  padding: 25px;
-  align-items: baseline;
-}
-
-.first-column,
-.second-column,
-.third-column {
-  display: flex;
   flex-direction: column;
-  width: 312px;
-}
-
-.first-column {
-  margin-left: 30px;
+  padding: 15px;
+  align-items: baseline;
 }
 
 .party-detail i {
   color: #737373;
-  padding-right: 10px;
+  padding-right: 
+  7px;
 }
 
-div.first-column > span:nth-child(1) > i {
-  font-size: 30px;
-  padding-bottom: 35px;
-}
+.first-row {
+  margin-top: 10px;
+  margin-bottom: 20px;}
 
-div.second-column > span:nth-child(1) > i {
-  font-size: 25px;
-  padding-bottom: 36px;
-}
-
-div.third-column > span > i {
-  font-size: 25px;
-  padding-bottom: 34px;
-}
-
-div.first-column > span:nth-child(2) > i {
-  font-size: 22px;
-}
-
-div.second-column > span:nth-child(2) > i {
-  font-size: 22px;
-}
-
-div.third-column > span:nth-child(2) > i {
+.first-row i {
   font-size: 24px;
+} 
+
+div.first-row > span {
+  font-size: 17px;
+}
+
+.second-row {
+  display: flex;
+  align-items: baseline;
+}
+
+.second-row div {
+  min-width: 100px;
+}
+
+.second-row span {
+ margin-left: 5px;
+}
+
+div:nth-child(1) > span > i {
+  font-size: 20px;
+}
+
+div:nth-child(2) > span > i {
+  font-size: 17px;
+}
+
+div:nth-child(3) > span > i {
+  font-size: 17px;
 }
 
 .party-detail span {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .party-body-footer {
-  padding-right: 15px;
+  padding-right: 10px;
   display: flex;
   height: 15%;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+}
+
+.party-store {
+  position: absolute;
+  left: 10px;
+  font-size: 14px;
 }
 
 .party-like, .party-member-count {
@@ -206,8 +211,8 @@ div.third-column > span:nth-child(2) > i {
   text-align: center;
   border-radius: 16px;
   background-color: white;
-  height: 26px;
-  line-height: 26px;
+  height: 22px;
+  line-height: 22px;
 }
 
 .party-like {

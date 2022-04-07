@@ -4,9 +4,6 @@ import static com.bitproject.controller.ResultMap.FAIL;
 import static com.bitproject.controller.ResultMap.SUCCESS;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,19 +11,18 @@ import com.bitproject.domain.Member;
 import com.bitproject.domain.Party;
 import com.bitproject.service.PartyService;
 
-@RestController
-@RequestMapping("/party")
-public class PartyController {
+@RestController 
+public class PartyControllerTest {
 
   @Autowired
   PartyService partyService;
 
-  @GetMapping("/list")
+  @RequestMapping("/party/list")
   public Object list() {
     return partyService.list();
   }
 
-  @PostMapping("/add")
+  @RequestMapping("/party/add")
   public Object add(@RequestBody Party party, HttpSession session) {
     Member member = (Member) session.getAttribute("loginUser");
     if (member == null) {
@@ -39,7 +35,7 @@ public class PartyController {
   }
 
 
-  @GetMapping("/get")
+  @RequestMapping("/party/get")
   public Object get(int no) {
     Party party = partyService.get(no);
     if (party == null) {
@@ -48,7 +44,7 @@ public class PartyController {
     return party;
   }
 
-  @PostMapping("/update")
+  @RequestMapping("/party/update")
   public Object update(Party party, HttpSession session) {
     Member member = (Member) session.getAttribute("loginUser");
     if (member == null) {
@@ -65,7 +61,7 @@ public class PartyController {
     }
   }
 
-  @DeleteMapping("/delete")
+  @RequestMapping("/party/delete")
   public Object delete(int no, HttpSession session) {
     Member member = (Member) session.getAttribute("loginUser");
     if (member == null) {
