@@ -14,11 +14,13 @@ body {
   align-items: center;
   height: 100%;
   min-height: 100%;
-  padding-bottom: 68px;
+  padding-bottom: 68px; /* footer 높이 */
   margin: 0;
   padding: 0;
   position: relative;
 }
+
+
 
 h1 {
   margin-top: 100px;
@@ -26,12 +28,6 @@ h1 {
   font-size: 20px;
   font-weight: 500;
   color: rgb(32, 32, 32);
-}
-
-.address {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
 }
 
 .tel {
@@ -48,7 +44,7 @@ h1 {
     
 }
 
-.submit-address-btn,.submit-add-btn,.submit-next-btn,.submit-exit-btn  {
+.submit-next-btn,.submit-exit-btn  {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
@@ -56,12 +52,12 @@ h1 {
   background-color: #29c05e;
   border-radius: 5px;
   margin-left: 14px;
-  padding: 11px;
+  padding: 8px;
 }
 
-.login__box {
+.add__box {
   width: 450px;
-  height: 730px;
+  height: 700px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;
@@ -72,8 +68,8 @@ h1 {
   margin-top: 20px;
 }
 
-.form_store {
-     margin-top:-30px;
+.form_email {
+  margin-top:0px;
   color: black;
   font-size: 15px;
   margin-left: 40px;
@@ -83,80 +79,60 @@ body > form > div > div > div > div > span {
   margin-left: 3px;
 }
 
-.form_input_name {
+.form_input_mail {
   width: 300px;
   border: 1px solid;
-  border-color:black;
+  border-color:#E1E1E1;
   border-radius: 10px;
   padding: 8px;
   margin-top: -7px;
   margin-left: 40px;
 }
 
-.form_address,.form_hr, .form_intro, .form_tag {
+.form_password,.form_name, .form_phone, .form_nickname {
+  color: black;
+  font-size: 15px;
+  padding-top: 15px;
+  margin-bottom: -5px;
+  margin-left: 40px;
+}
+
+.form_birth {
   color: black;
   font-size: 15px;
   padding-top: 10px;
   margin-bottom: -5px;
   margin-left: 40px;
-}
-
-.btn-outline-dark,.btn1-outline-dark {
-    font-size: 15px;
-  margin-top: 20px;
-  margin-bottom: -5px;
-  margin-left: 12px;
-  border: 1px solid;
-  border-color:black;
-  border-radius: 10px;
-  background-color:white;
+  margin-top: 15px;
+	
 }
 
 .form_check{
-    color: black;
+  color: black;
   font-size: 15px;
   padding-top: 20px;
   margin-bottom: -5px;
   margin-left: 40px;
 }
 
-.form_input_address {
-  width: 197px;
-  border: 1px solid;
-  border-color:black;
-  border-radius: 10px;
-  padding: 8px;
-  margin-top: -5px;
-  margin-left: 40px;
-}
-
-.form_input_address_detail {
-  margin-top: 18px;
+.form_input_password {
   width: 300px;
   border: 1px solid;
-  border-color:black;
+  border-color:#E1E1E1;
   border-radius: 10px;
   padding: 8px;
+  margin-top: -7px;
   margin-left: 40px;
 }
 
-.form_input_hr , .form_input_intro{
+.form_input_name , .form_input_birth{
    width: 299px;
   border: 1px solid;
-  border-color: black;
+  border-color: #E1E1E1;
   border-radius: 10px;
   padding: 8px;
   margin-top: -5px;
   margin-left: 40px;
-}
-
-.form_input_tel {
-  width: 299px;
-  border: 1px solid;
-  border-color:black;
-  border-radius: 10px;
-  padding: 8px;
-  margin-top: -5px;
 }
 
 .form_input_check{
@@ -164,33 +140,40 @@ body > form > div > div > div > div > span {
   border-color: black;
   border-radius: 10px;
   padding: 8px;
-  margin-top: 5px;
+  margin-top: 15px;
   
+}
+
+.form_input_nickname {
+  width: 299px;
+  border: 1px solid;
+  border-color: #E1E1E1;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: -5px;
+  margin-left: 40px;
 }
 
 
 .form_input_box{
-    width:100px;
-    border: 1px solid;
+  width:100px;
+  border: 1px solid;
   border-color: black;
   border-radius: 10px;
   padding: 8px;
   margin-top: 5px;
     
 }
-/*.submit-btn {
-  all: unset;
-  color: #EEEFF1;
-  font-size: 20px;
-  font-weight: 600;
-  background-color: #29c05e;
-  margin-bottom: 50px;
-  padding: 10px 120px;
-  border-radius: 5px;
-  width: auto;
-  margin-left: 10px;
-  margin-top: 40px;
-}*/
+
+.agree {
+  margin-left: 30px;	
+  margin-top: 20px;
+}
+
+.gender {
+ margin-left: 40px;	
+ margin-top: 5px;	
+}
 
 footer__ {
   border: 1px solid #29c05e;
