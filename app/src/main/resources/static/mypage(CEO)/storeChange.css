@@ -48,7 +48,7 @@ h1 {
 	
 }
 
-.submit-address-btn,.submit-add-btn {
+.submit-address-btn {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
@@ -56,7 +56,21 @@ h1 {
   background-color: #29c05e;
   border-radius: 5px;
   margin-left: 14px;
-  padding: 11px;
+  padding: 8px;
+   width: 60px;
+}
+
+.submit-add-btn {
+  all: unset;
+  text-align:center;
+  color: #EEEFF1;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #29c05e;
+  border-radius: 5px;
+  margin-left: 14px;
+  padding: 8px;
+  width: 60px;
 }
 
 .submit-next-btn,.submit-exit-btn {
@@ -68,7 +82,7 @@ h1 {
   border-radius: 5px;
   margin-left: 14px;
   padding: 8px;
-  width: 50px;
+  width: 60px;
 }
 
 .x-delete-btn, .x-add-btn {
@@ -78,7 +92,7 @@ h1 {
 
 .login__box {
   width: 450px;
-  height: 880px;
+  height: 1030px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;
@@ -118,11 +132,22 @@ body > form > div > div > div > div > span {
   margin-left: 40px;
 }
 
-.btn-outline-dark,.btn1-outline-dark {
+.btn-outline-dark1 {
   font-size: 15px;
   margin-top: 20px;
   margin-bottom: -5px;
-  margin-left: 12px;
+  margin-left: 130px;
+  border: 1px solid;
+  border-color:black;
+  border-radius: 10px;
+  background-color:white;
+}
+
+.btn1-outline-dark2 {
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: -5px;
+  margin-left: 150px;
   border: 1px solid;
   border-color:black;
   border-radius: 10px;
@@ -159,6 +184,7 @@ body > form > div > div > div > div > span {
 
 .form_input_hr , .form_input_intro{
    width: 299px;
+   height:100px;
   border: 1px solid;
   border-color:  #E1E1E1;
   border-radius: 10px;
