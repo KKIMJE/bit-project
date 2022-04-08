@@ -68,7 +68,7 @@ h1 {
   border-radius: 5px;
   margin-left: 14px;
   padding: 8px;
-  width: 40px;
+  width: 50px;
 }
 
 .x-delete-btn, .x-add-btn {
@@ -78,7 +78,7 @@ h1 {
 
 .login__box {
   width: 450px;
-  height: 850px;
+  height: 880px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;

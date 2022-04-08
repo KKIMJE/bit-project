@@ -40,8 +40,10 @@ h1{
 }
 
 .price-textarea{
-  border-radius:5px; 
-  width:100px;
+   border-radius:10px;
+  border: 1px solid;
+  border-color:  #E1E1E1;
+  width:20%;
 }
 
 .x-add-btn ,.x-delete-btn{
