@@ -1,4 +1,4 @@
-package com.bitproject.controller;
+/*package com.bitproject.controller;
 
 import static com.bitproject.controller.ResultMap.FAIL;
 import static com.bitproject.controller.ResultMap.SUCCESS;
@@ -81,3 +81,4 @@ public class PartyControllerTest {
     }
   }
 }
+ */

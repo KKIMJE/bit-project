@@ -9,8 +9,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Party {
   int partyNo;
-  Member writer;
-  Store store;
+  String name;
+  String mImg;
   String title;
   String contents;
   int partyFee;
