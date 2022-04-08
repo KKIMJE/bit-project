@@ -3,12 +3,11 @@ function loadData(serverInfo){
   fetch(serverInfo)
       .then(  response => response.json())
       .then(  data => {
-          limitCursor = Math.floor((data.length + 10) * 0.1)
+          limitCursor = Math.floor((data.length) * 0.1)
           allStoreDataList = data
           storeNum = numMaker(data.length)
 
           storeList(allStoreDataList)
-          
           // 맵 초기화면 세팅
           mapMarker(allStoreDataList, storeNum)
       })
@@ -183,6 +182,7 @@ var storeNum;
 var allStoreDataList;
 var limitCursor;
 var markerList = []
+
 
 loadData("/store/list")
 
