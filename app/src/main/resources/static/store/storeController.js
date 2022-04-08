@@ -1,3 +1,252 @@
+function loadData(serverInfo){
+  console.log("loadData: " + serverInfo )
+  fetch(serverInfo)
+      .then(  response => response.json())
+      .then(  data => {
+          limitCursor = Math.floor((data.length + 10) * 0.1)
+          allStoreDataList = data
+          storeNum = numMaker(data.length)
+
+          storeList(allStoreDataList)
+          
+          // 맵 초기화면 세팅
+          mapMarker(allStoreDataList, storeNum)
+      })
+}
+
+
+function numMaker (n) {
+  let nList = []
+  for (let j = 0; j < n; j ++) {
+    nList.push(j)
+  }
+  return nList
+}
+// storeAll list
+//  => ImgCard Insert
+function storeList(stores) {
+  let listAll = document.querySelector(".imgContainer");
+  let count = 0
+  let card = true
+
+  for (let i = 0; i < stores.length; i++) {
+    
+    if (count == 0) {
+      var listDiv = document.createElement("div")
+      listDiv.classList.add("storeContents-imgCard")
+      listAll.appendChild(listDiv)
+
+      var itemDiv2 = document.createElement("div")
+      itemDiv2.classList.add("store-contents-2")
+      listDiv.appendChild(itemDiv2)
+
+      var itemDiv = document.createElement("div")
+      itemDiv.classList.add("store-contents-1")
+      listDiv.appendChild(itemDiv)
+
+    } else if (count % 10 == 0) {
+      var listDiv = document.createElement("div")
+      listDiv.classList.add("storeContents-imgCard")
+      listAll.appendChild(listDiv)
+
+      var itemDiv = document.createElement("div")
+      itemDiv.classList.add("store-contents-1")
+      listDiv.appendChild(itemDiv)
+
+      var itemDiv2 = document.createElement("div")
+      itemDiv2.classList.add("store-contents-2")
+      listDiv.appendChild(itemDiv2)
+    }
+
+    if (count % 5 == 0) {
+      if (card == true) {
+        card = false
+      } else {
+        card = true
+      }
+    }
+
+    let stars = printStar(stores[i].evaluationScore)
+    let distance = distanceCal(stores[i].address)
+    let xOper = printOper(stores[i].oper)
+
+    let tagStr = `<div class="img-xbox">
+      <div class="xImg box">
+        <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
+        <a><img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori"></a>
+      </div>
+      <div class="xImg-contents">
+        <div class="xImg-content">
+          <div class="xImg-content-t">${stores[i].name}</div>
+          <div class="xImg-star">${stars}</div>
+          <div class="xImg-d">${distance}</div>
+        </div>
+        <div class="storeOpen">${xOper}</div>
+      </div>
+    </div>`
+
+    if (card == true) {
+      itemDiv2.innerHTML += tagStr
+    } else {
+      itemDiv.innerHTML += tagStr
+    }
+    count++
+  }
+  listDiv.appendChild(itemDiv)
+  listDiv.appendChild(itemDiv2)
+};
+// 영업여부
+function printOper(oper) {
+  let status = " ";
+  if (oper == 1) {
+    status = "영업중"
+  } else {
+    status = "휴일"
+  }
+  return status;
+}
+// 별점
+function printStar(score) {
+  // console.log("score: " + score)
+  let star = "⭐⭐⭐⭐⭐";
+  if (1 == score) {
+    star = "⭐"
+  } else if(2 == score) {
+    star = "⭐⭐"
+  } else if(3 == score) {
+    star = "⭐⭐⭐"
+  } else if(4 == score) {
+    star = "⭐⭐⭐⭐"
+  } else if(5 == score) {
+    star = "⭐⭐⭐⭐⭐"
+  } else {
+    star = "😥"
+  }
+  return star;
+}
+// 접속자-주점 거리 구하기
+function distanceCal (address) {
+  
+  let myLon = 0
+  let myLat = 0
+  let targetLon = 0
+  let targetLat = 0
+
+  // 주점 위치 찾기
+  // 주소-좌표 변환 객체를 생성합니다
+  let geocoder = new kakao.maps.services.Geocoder();  
+  // 주소로 좌표를 검색합니다
+  geocoder.addressSearch(address, function(result, status) {
+    // 정상적으로 검색이 완료됐으면 
+    if (status === kakao.maps.services.Status.OK) {
+      targetLat = result[0].y
+      targetLon = result[0].x
+      // var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+    } else {
+        console.log(`${address} 주소검색 실패`)
+    }
+  })
+  
+  // 접속자 현재위치 찾기
+  if (navigator.geolocation) {
+    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+    navigator.geolocation.getCurrentPosition(function(position) {
+        
+        var lat = position.coords.latitude, // 위도
+            lon = position.coords.longitude; // 경도
+
+        myLat = lat
+        myLon = lon
+    })
+  } else { // HTML5의 GeoLocation을 사용할 수 없을때 
+    console.log("현위치 검색실패")
+  }
+
+  // 접속자 위치 찾기
+  var polyline=new daum.maps.Polyline({
+    path : [
+    new daum.maps.LatLng(myLon,myLat),
+    new daum.maps.LatLng(targetLon,targetLat)
+    ]
+    // strokeWeight: 2,
+    // strokeColor: '#FF00FF',
+    // strokeOpacity: 0.8,
+    // strokeStyle: 'dashed'
+  });
+  console.log("길이" + polyline.getLength())
+  //return getTimeHTML(polyline.getLength())//미터단위로 길이 반환;
+  return polyline.getLength()
+}
+
+
+var storeNum;
+var allStoreDataList;
+var limitCursor;
+var markerList = []
+
+loadData("/store/list")
+
+// == category tab ==
+const lightBtn = document.querySelector('.store-category-sort')
+lightBtn.addEventListener("click",function(e){
+  if (e.target == e.currentTarget) {
+    return;
+  } else {
+    e.currentTarget.querySelector('.act').classList.toggle('act')
+    e.target.classList.toggle('act')
+  }
+});
+
+// category All Btn
+const xAllBtn = document.querySelector('#xAllBtn')
+xAllBtn.addEventListener("click", () => location.reload())
+
+// == next, pre button ==
+const next = document.querySelector('.next-store');
+const pre = document.querySelector('.pre-store');
+setTimeout(() => {
+// 주점 리스트 초기화 - 페이지 1로 맞추기
+let storeAll = document.querySelectorAll('.storeContents-imgCard');
+for (let i=1; i < storeAll.length; i++) {
+  storeAll[i].style.display = "none";
+}
+// cursor를 기준으로 앞뒤로 모두 none으로 변경
+let cursor = 0;
+let endPage = storeAll.length;
+const moveAl = function (cursor) {
+  if (storeAll[cursor].style.display == "none") {
+    storeAll[cursor].style.display = "flex"
+  }
+  for (let i=cursor+1; i < endPage; i++) {
+    storeAll[i].style.display = "none";
+  }
+  for (let i=cursor-1; i < cursor; i--) {
+    if (i == -1) {
+      break;
+    };
+    storeAll[i].style.display = "none";
+  }
+}
+next.addEventListener("click", () => {
+  if (cursor+1 == endPage) {
+    console.log("next: Over page")
+  } else {
+    cursor += 1;
+    console.log("cursor : " + `${cursor}`);
+    moveAl(cursor);
+  } 
+});
+pre.addEventListener("click", () => {
+  if (cursor == 0) {
+    console.log("pre: Over page")
+  } else {
+    cursor -= 1;
+    moveAl(cursor);
+    console.log("cursor : " + `${cursor}`);
+  }
+});
+}, 600)
+
 // ==== Map 생성 ====
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 mapOption = {
@@ -13,16 +262,13 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 var geocoder = new kakao.maps.services.Geocoder();
 
 // 마커구성
-let markerList = []
-function markerMaker(store, numList) {
-  
+function mapMarker(store, numList) {
   // 기존마커 삭제
   for (let j = 0; j < markerList.length; j++) {
     markerList[j].setMap(null)
   }
   // 마커 생성
   for (let i = 0; i < numList.length; i ++) {
-
     let address = store[numList[i]].address
     let name = store[numList[i]].name
   
@@ -53,14 +299,6 @@ function markerMaker(store, numList) {
   }
 }
 
-
-
-
-var mlon= 126.570667
-var mlat= 33.450701
-var vlon= 126.570667
-var vlat= 33.450701
-
 // ==== Map 현재위치 표시 ====
 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 if (navigator.geolocation) {
@@ -70,9 +308,6 @@ if (navigator.geolocation) {
       
       var lat = position.coords.latitude, // 위도
           lon = position.coords.longitude; // 경도
-
-          // mlat = lat
-          // mlon = lon
       
       var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
           message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
@@ -115,165 +350,39 @@ var infowindow = new kakao.maps.InfoWindow({
 map.setCenter(locPosition);
 }
 
+// ==== Map next, pre Btn ====
+let numStart = 0
+let numEnd = 10
+let mapCursor
 
-
-
-var polyline=new daum.maps.Polyline({
-	map:map,
-	path : [
-	new daum.maps.LatLng(mlon,mlat),
-	new daum.maps.LatLng(vlon,vlat)
-	],
- strokeWeight: 2,
- strokeColor: '#FF00FF',
- strokeOpacity: 0.8,
- strokeStyle: 'dashed'
-});
-
-//return getTimeHTML(polyline.getLength());//미터단위로 길이 반환;
-console.log("길이"+polyline.getLength());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// == 데이터 로딩까지 아주 잠깐만 기다립니다 ==
-// next, pre btn & 맵초기화가 안에 있습니다.
-setTimeout(() => {
-
-  let storeNum = []
-  let numStart = 0
-  let numEnd = 10
-  let mapCursor
-
-  let numMaker = function (data) {
-    for (var j = 0; j < data.length; j ++) {
-      storeNum.push(j)
-    }
-  }
-  numMaker(allStoreDataList)
-
-  // 총 페이지 수
-  let limitCursor = Math.floor((storeNum.length + 10) * 0.1)
-  console.log("총페이수 : " + limitCursor)
-
-  // == next, pre button ==
-  const next = document.querySelector('.next-store');
-  const pre = document.querySelector('.pre-store');
-  
-  // 주점 리스트 초기화
-  let storeAll = document.querySelectorAll('.storeContents-imgCard');
-  for (let i=1; i < storeAll.length; i++) {
-    storeAll[i].style.display = "none";
-  }
-
-  let cursor = 0;
-  let endPage = storeAll.length;
-
-  // ==== 주점리스트 next, pre Btn ====
-  // cursor를 기준으로 앞뒤로 모두 none으로 변경
-  const moveAl = function (cursor) {
-    if (storeAll[cursor].style.display == "none") {
-      storeAll[cursor].style.display = "flex"
-    }
-    for (let i=cursor+1; i < endPage; i++) {
-      storeAll[i].style.display = "none";
-    }
-    for (let i=cursor-1; i < cursor; i--) {
-      if (i == -1) {
-        break;
-      };
-      storeAll[i].style.display = "none";
-    }
-  }
-  
-  next.addEventListener("click", () => {
-    if (cursor+1 == endPage) {
-      console.log("next: Over page")
-    } else {
-      cursor += 1;
-      console.log("cursor : " + `${cursor}`);
-      moveAl(cursor);
-    } 
-  });
-
-  pre.addEventListener("click", () => {
-    if (cursor == 0) {
-      console.log("pre: Over page")
-    } else {
-      cursor -= 1;
-      moveAl(cursor);
-      console.log("cursor : " + `${cursor}`);
-    }
-  });
-
-
-  // ==== Map next, pre Btn ====
-  next.addEventListener("click", function(){
-
-    if (limitCursor == mapCursor) {
-      console.log(limitCursor)
-      console.log("next: Over page")
-    } else {
-      numStart += 10
-      numEnd += 10
-      console.log(storeNum.slice(numStart, numEnd))
-
-      let loopNum = storeNum.slice(numStart, numEnd)
-      markerMaker(allStoreDataList, loopNum)
-
-      mapCursor = numEnd/10
-      console.log("Map : " + mapCursor)
-    }
-  });
-
-  pre.addEventListener("click", function(){
-    if (numStart == 0) {
-      console.log("pre: Over page")
-    } else {
-      numStart -= 10
-      numEnd -= 10
-      console.log(storeNum.slice(numStart, numEnd))
-
-      let loopNum = storeNum.slice(numStart, numEnd)
-      markerMaker(allStoreDataList, loopNum)
-
-      mapCursor = numEnd/10
-      console.log("Map : " + mapCursor)
-    }
-  });
-
-  // 맵 초기화면 세팅
-  let initialNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  markerMaker(allStoreDataList, initialNum)
-
-}, 30); // setTime END
-
-
-// == category tab ==
-const lightBtn = document.querySelector('.store-category-sort')
-lightBtn.addEventListener("click",function(e){
-  if (e.target == e.currentTarget) {
-    return;
+next.addEventListener("click", function(){
+  if (limitCursor == mapCursor) {
+    console.log(limitCursor)
+    console.log("next: Over page")
   } else {
-    e.currentTarget.querySelector('.act').classList.toggle('act')
-    e.target.classList.toggle('act')
+    numStart += 10
+    numEnd += 10
+    console.log(storeNum.slice(numStart, numEnd))
+
+    let loopNum = storeNum.slice(numStart, numEnd)
+    mapMarker(allStoreDataList, loopNum)
+
+    mapCursor = numEnd/10
+    console.log("Map : " + mapCursor)
   }
 });
+pre.addEventListener("click", function(){
+  if (numStart == 0) {
+    console.log("pre: Over page")
+  } else {
+    numStart -= 10
+    numEnd -= 10
+    console.log(storeNum.slice(numStart, numEnd))
 
-// category All Btn
-const xAllBtn = document.querySelector('#xAllBtn')
-xAllBtn.addEventListener("click", () => location.reload())
+    let loopNum = storeNum.slice(numStart, numEnd)
+    mapMarker(allStoreDataList, loopNum)
 
-
-
+    mapCursor = numEnd/10
+    console.log("Map : " + mapCursor)
+  }
+});

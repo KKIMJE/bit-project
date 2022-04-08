@@ -1,3 +1,9 @@
+html {
+  display: block;
+  align-items: center;
+  overflow-x: hidden;
+}
+
 /* nav-bar 일부수정 */
 body > nav > ul.navbar__login > div:nth-child(3) > div > button > a > login-i {
   padding-right: 15px;
