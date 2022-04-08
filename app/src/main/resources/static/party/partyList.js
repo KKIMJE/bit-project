@@ -32,7 +32,7 @@ var pbody = document.querySelector("#party-body")
                                 </div>
                                 <div>
                                     <span>
-                                        <i class="fa-solid fa-won-sign"></i>50,000,000원</span>
+                                        <i class="fa-solid fa-won-sign"></i>${party.partyFee}</span>
                                 </div>
                             </div>
                         </div>
@@ -47,13 +47,14 @@ var pbody = document.querySelector("#party-body")
                         </div>
                         <div class="party-member-count">
                             <i class="fa-solid fa-user"></i>
-                            <span>18</span>&nbsp;/&nbsp;<span>20</span>
+                            <span>3</span>&nbsp;/&nbsp;<span>${party.maxMember}</span>
                         </div>
                     </div>
                 </div>
         `;
-        fbody.appendChild(div);
+        
       }
+      pbody.appendChild(div);
     });
 
 //     이미지 넣다가 막힘...사진은 어떻게 해야 돼? party 도메인에 없잖아 . -->
