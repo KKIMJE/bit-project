@@ -40,6 +40,8 @@ fetch(`/alcohol/get?no=${no}`)
       introChar.innerHTML = alcohol.characteristic
       storeList.innerHTML = alcohol.name
 
+      console.log(alcohol.storeImgs);
+
     });
 
 

@@ -13,5 +13,5 @@ public interface PartyService {
 
   int update(Party party);
 
-  int delete(Party party);
+  int delete(int no);
 }
