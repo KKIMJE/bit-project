@@ -43,94 +43,94 @@ INSERT INTO store_type (store_type_no,type_name) VALUES (9,'기타');
 
 -- 주점
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(1, 660, '사업자등록증1', '이구펍29클라스', '서울특별시 강남구 역삼동 817-10', '02-567-2902', '11:11:11', '맥주집', 4.0, 1, 35, 37.499952, 127.02764892578125, '주점위치아이디1', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(2, 6875, '사업자등록증2', '무월', '서울특별시 강남구 역삼1동 811-12', '02-555-3060', '22:59:11', '막걸리집', 4.0, 1, 50, 37.50338, 127.02663, '주점위치아이디2', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(3, 9877609, '사업자등록증3', '아트몬스터 강남점', '서울특별시 가남구 역삼동 테헤란로1길 28-3', '02-6448-6110', '22:59:11', '힙한 술집', 0.0, 1, 20, 37.500336, 127.02773, '주점위치아이디3', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(4, 69869, '사업자등록증4', '강남포차', '서울특별시 강남구 역삼동 역삼로1길 18', '02-565-6400', '22:59:11', '포차', 2.5, 0, NULL, 37.49442, 127.03069, '주점위치아이디4', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(5, 546798, '사업자등록증5', '강남 일미포차', '서울특별시 강남구 테헤란로 103', '02-561-9222', '22:59:11', '포차집', 5.0, 1, 60, 37.500004, 127.02823, '주점위치아이디5', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(6, 476476, '사업자등록증6', '이자카야 나무', '서울특별시 강남구 강남대로78길 8', '02-558-6787', '11:11:11', '이자카야', 4.5, 1, 35, 37.49465, 127.03005, '주점위치아이디6', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(7, 7907, '사업자등록증7', '바이트', '서울특별시 서초구 로, 강남대로 442 흥국생명빌딩 별관 2층', '02-538-2556', '22:59:11', '양주칵테일', 4.0, 1, 50, 37.501907, 127.02647, '주점위치아이디7', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(8, 34563650, '사업자등록증8', '대동집', '서울특별시 강남구 봉은사로18길 88', '02-554-4574', '22:59:11', '막걸리집', 0.0, 1, 20, 37.500957, 127.02766, '주점위치아이디8', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(9, 7897, '사업자등록증9', '골목집', '서울특별시 강남구 역삼동 813-11', '02-569-5979', '22:59:11', '막걸리소주집', 0.0, 1, 20, 37.502296, 127.02692, '주점위치아이디9', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(10, 7470780, '사업자등록증10', '엘라elah', '서울특별시 강남구 테헤란로5길 36번지 엘라 elah', '02-6052-8831', '22:59:11', '호프집', 0.0, 1, NULL, 37.50086, 127.029, '주점위치아이디10', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(11, 709587567, '사업자등록증11', '느린마을양조장', '서울특별시 서초구 서초대로73길 7', '02-587-7720', '22:59:11', '막걸리집', 0.0, 1, 20, 37.498096, 127.02525, '주점위치아이디11', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(12, 967896, '사업자등록증12', 'Beezza x brew one', '서울특별시 강남구 역삼동 601', '02-261-0817', '22:59:11', '바', 0.0, 1, 20, 37.5045, 127.02557, '주점위치아이디12', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(13, 457698798, '사업자등록증13', '작', '서울특별시 강남구 역삼1동 640-11', '02-501-2342', '22:59:11', '전통주바', 0.0, 1, 20, 37.502342, 127.03462, '주점위치아이디13', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(14, 9879, '사업자등록증14', '한량블루스', '서울특별시 서초구 서초대로75길 45', '02-261-0817', '22:59:11', '와인바', 0.0, 1, 20, 37.50144, 127.02456, '주점위치아이디14', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(15, 7987, '사업자등록증15', '심야술집', '서울특별시 강남구 역삼동 테헤란로10길 25', '02-261-0817', '22:59:11', '혼술사케', 0.0, 1, 20, 37.497555, 127.03296, '주점위치아이디15', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(16, 34563650, '사업자등록증16', '너츠펍강남본점', '서울특별시 서초구 서초동 1337-6', '02-261-0817', '22:59:11', '호가든기네스맥주맛집', 0.0, 1, 20, 37.49115, 127.02914, '주점위치아이디16', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(17, 789798, '사업자등록증17', '휴일', '서울특별시 강남구 역삼동 830-9', '02-261-0817', '22:59:11', '와인바', 0.0, 1, 20, 37.494884, 127.03148, '주점위치아이디17', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(18, 98798, '사업자등록증18', '비놀릭(vinolic)', '서울특별시 강남구 역삼동 840-2', '02-261-0817', '22:59:11', '와인바', 0.0, 1, 20, 37.491215, 127.03545, '주점위치아이디18', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(19, 3, '사업자등록증19', '엠플라운지 라이브펍', '서울특별시 강남구 논현로 404', '02-261-0817', '22:59:11', '맥주집', 0.0, 1, 20, 37.496175, 127.039426, '주점위치아이디19', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(20, 34563650, '사업자등록증20', '노가리앤비어', '서울특별시 강남구 역삼동 797-3', '02-261-0817', '22:59:11', '술집', 0.0, 1, 20, 37.495021, 127.039459, '주점위치아이디20', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(21, 3, '사업자등록증21', '오시오실내포차', '서울특별시 강남구 역삼동 779-9', '02-261-0817', '22:59:11', '포차', 0.0, 1, 20, 37.495605, 127.04563, '주점위치아이디21', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(22, 7470780, '사업자등록증22', '경성주막1929 강남역점', '서울특별시 서초구 강남대로 439', '02-261-0817', '22:59:11', '술집', 0.0, 1, 20, 37.501503, 127.02529, '주점위치아이디22', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(23, 3, '사업자등록증23', '29 Pub Champion Masstige (No3)', '서울특별시 서초구 서초동 1304-5 3호점', '02-261-0817', '22:59:11', '양주맥주', 0.0, 1, 20, 37.501926, 127.02518, '주점위치아이디23', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(24, 34563650, '사업자등록증24', '크래프트한스 강남직역점 (Craft Hans)', '서울특별시 서초구 서초동 강남대로65길 7', '02-261-0817', '22:59:11', '맥주펍', 0.0, 1, 20, 37.500217, 127.02533, '주점위치아이디24', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(25, 7470780, '사업자등록증25', '아리네술상', '서울특별시 강남구 논현로94길 11', '02-261-0817', '22:59:11', '술집', 0.0, 1, 20, 37.502495, 127.037186, '주점위치아이디25', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(26, 3, '사업자등록증26', '상도', '서울특별시 강남구 역삼동 671-22', '02-261-0817', '22:59:11', '술집', 0.0, 1, 20, 37.503246, 127.03871, '주점위치아이디26', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(27, 7470780, '사업자등록증27', '브루웍스 파티역삼점', '서울특별시 강남구 역삼동 670-22 2층', '02-261-0817', '22:59:11', '맥주집', 0.0, 1, 20, 37.502834, 127.03799, '주점위치아이디27', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(28, 7470780, '사업자등록증28', '에이와이라운지', '서울특별시 강남구 강남대로92길 13', '02-261-0817', '22:59:11', '양주맥주', 0.0, 1, 20, 37.499016, 127.02852, '주점위치아이디28', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(29, 3, '사업자등록증29', '도리마틴', '서울특별시 강남구 역삼동 672-36', '02-261-0817', '22:59:11', '사케', 0.0, 1, 20, 37.50378, 127.039406, '주점위치아이디29', 1, 1);
 INSERT INTO store
-(store_no, business_registration_no, business_registration, name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
+(store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(30, 7470780, '사업자등록증30', '노가리슈퍼 선릉점', '서울특별시 강남구 대치4동 900-7', '02-261-0817', '22:59:11', '술집', 0.0, 1, 20, 37.50217, 127.05227, '주점위치아이디30', 1, 1);
 
 
@@ -372,15 +372,6 @@ VALUES(60, 8, '기타술1', 16.5, '브랜드30', '원산지30', 130, '특징소�
 -- 주점판매술
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
-VALUES(1, 1, 5000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(1, 2, 5000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(1, 3, 5000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
 VALUES(1, 10, 5000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
@@ -409,6 +400,9 @@ VALUES(2, 3, 4500);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(2, 8, 5000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(2, 14, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(2, 19, 6000);
@@ -471,9 +465,6 @@ INSERT INTO alcohol_sales
 VALUES(4, 13, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
-VALUES(2, 14, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
 VALUES(4, 15, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
@@ -495,15 +486,6 @@ INSERT INTO alcohol_sales
 VALUES(6, 30, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
-VALUES(7, 22, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(7, 23, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(7, 24, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
 VALUES(7, 11, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
@@ -514,6 +496,15 @@ VALUES(7, 13, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(7, 14, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(7, 22, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(7, 23, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(7, 24, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(8, 19, 6000);
@@ -570,9 +561,6 @@ INSERT INTO alcohol_sales
 VALUES(10, 8, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
-VALUES(10, 30, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
 VALUES(10, 10, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
@@ -591,6 +579,9 @@ INSERT INTO alcohol_sales
 VALUES(10, 15, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
+VALUES(10, 30, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
 VALUES(11, 19, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
@@ -603,6 +594,15 @@ INSERT INTO alcohol_sales
 VALUES(11, 30, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
+VALUES(12, 11, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(12, 12, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(12, 15, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
 VALUES(12, 22, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
@@ -613,15 +613,6 @@ VALUES(12, 24, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(12, 30, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(12, 11, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(12, 12, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(12, 15, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(13, 28, 6000);
@@ -741,7 +732,13 @@ INSERT INTO alcohol_sales
 VALUES(22, 14, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
-VALUES(23, 24, 6000);
+VALUES(23, 11, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(23, 14, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(23, 15, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(23, 22, 6000);
@@ -750,13 +747,7 @@ INSERT INTO alcohol_sales
 VALUES(23, 23, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
-VALUES(23, 14, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(23, 11, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(23, 15, 6000);
+VALUES(23, 24, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(23, 30, 6000);
@@ -801,13 +792,13 @@ INSERT INTO alcohol_sales
 VALUES(26, 1, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
-VALUES(26, 9, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
 VALUES(26, 3, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(26, 5, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(26, 9, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(26, 10, 6000);
@@ -825,6 +816,12 @@ INSERT INTO alcohol_sales
 VALUES(27, 12, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
+VALUES(28, 11, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
+VALUES(28, 15, 6000);
+INSERT INTO alcohol_sales
+(store_no, alcohol_detail_no, price)
 VALUES(28, 22, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
@@ -832,12 +829,6 @@ VALUES(28, 23, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(28, 24, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(28, 11, 6000);
-INSERT INTO alcohol_sales
-(store_no, alcohol_detail_no, price)
-VALUES(28, 15, 6000);
 INSERT INTO alcohol_sales
 (store_no, alcohol_detail_no, price)
 VALUES(29, 25, 6000);
@@ -864,95 +855,95 @@ VALUES(30, 5, 6000);
 
 -- 주점사진
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(1, 1, 'img/storelist1.jpg');
+(store_img_no, store_no, store_img)
+VALUES(1, 1, '/static/asset./img/store/storelist1.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(2, 2, 'img/storelist2.jpg');
+(store_img_no, store_no, store_img)
+VALUES(2, 2, '/static/asset./img/store/storelist2.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(3, 3, 'img/storelist3.jpg');
+(store_img_no, store_no, store_img)
+VALUES(3, 3, '/static/asset./img/store/storelist3.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(4, 4, 'img/storelist4.jpg');
+(store_img_no, store_no, store_img)
+VALUES(4, 4, '/static/asset./img/store/storelist4.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(5, 5, 'img/storelist5.jpg');
+(store_img_no, store_no, store_img)
+VALUES(5, 5, '/static/asset./img/store/storelist5.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(6, 6, 'img/storelist6.jpg');
+(store_img_no, store_no, store_img)
+VALUES(6, 6, '/static/asset./img/store/storelist6.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(7, 7, 'img/storelist7.jpg');
+(store_img_no, store_no, store_img)
+VALUES(7, 7, '/static/asset./img/store/storelist7.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(8, 8, 'img/storelist8.jpg');
+(store_img_no, store_no, store_img)
+VALUES(8, 8, '/static/asset./img/store/storelist8.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(9, 9, 'img/storelist9.jpg');
+(store_img_no, store_no, store_img)
+VALUES(9, 9, '/static/asset./img/store/storelist9.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(10, 10, 'img/storelist10.jpg');
+(store_img_no, store_no, store_img)
+VALUES(10, 10, '/static/asset./img/store/storelist10.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(11, 11, 'img/storelist11.jpg');
+(store_img_no, store_no, store_img)
+VALUES(11, 11, '/static/asset./img/store/storelist11.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(12, 12, 'img/storelist12.jpg');
+(store_img_no, store_no, store_img)
+VALUES(12, 12, '/static/asset./img/store/storelist12.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(13, 13, 'img/storelist13.jpg');
+(store_img_no, store_no, store_img)
+VALUES(13, 13, '/static/asset./img/store/storelist13.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(14, 14, 'img/storelist14.jpg');
+(store_img_no, store_no, store_img)
+VALUES(14, 14, '/static/asset./img/store/storelist14.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(15, 15, 'img/storelist15.jpg');
+(store_img_no, store_no, store_img)
+VALUES(15, 15, '/static/asset./img/store/storelist15.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(16, 16, 'img/storelist16.jpg');
+(store_img_no, store_no, store_img)
+VALUES(16, 16, '/static/asset./img/store/storelist16.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(17, 17, 'img/storelist17.jpg');
+(store_img_no, store_no, store_img)
+VALUES(17, 17, '/static/asset./img/store/storelist17.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(18, 18, 'img/storelist18.jpg');
+(store_img_no, store_no, store_img)
+VALUES(18, 18, '/static/asset./img/store/storelist18.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(19, 19, 'img/storelist19.jpg');
+(store_img_no, store_no, store_img)
+VALUES(19, 19, '/static/asset./img/store/storelist19.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(20, 20, 'img/storelist20.jpg');
+(store_img_no, store_no, store_img)
+VALUES(20, 20, '/static/asset./img/store/storelist20.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(21, 21, 'img/storelist21.jpg');
+(store_img_no, store_no, store_img)
+VALUES(21, 21, '/static/asset./img/store/storelist21.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(22, 22, 'img/storelist22.jpg');
+(store_img_no, store_no, store_img)
+VALUES(22, 22, '/static/asset./img/store/storelist22.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(23, 23, 'img/storelist23.jpg');
+(store_img_no, store_no, store_img)
+VALUES(23, 23, '/static/asset./img/store/storelist23.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(24, 24, 'img/storelist24.jpg');
+(store_img_no, store_no, store_img)
+VALUES(24, 24, '/static/asset./img/store/storelist24.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(25, 25, 'img/storelist25.jpg');
+(store_img_no, store_no, store_img)
+VALUES(25, 25, '/static/asset./img/store/storelist25.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(26, 26, 'img/storelist26.jpg');
+(store_img_no, store_no, store_img)
+VALUES(26, 26, '/static/asset./img/store/storelist26.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(27, 27, 'img/storelist27.jpg');
+(store_img_no, store_no, store_img)
+VALUES(27, 27, '/static/asset./img/store/storelist27.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(28, 28, 'img/storelist28.jpg');
+(store_img_no, store_no, store_img)
+VALUES(28, 28, '/static/asset./img/store/storelist28.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(29, 29, 'img/storelist29.jpg');
+(store_img_no, store_no, store_img)
+VALUES(29, 29, '/static/asset./img/store/storelist29.jpg');
 INSERT INTO store_img
-(store_img_no, store_no, img)
-VALUES(30, 30, 'img/storelist30.jpg');
+(store_img_no, store_no, store_img)
+VALUES(30, 30, '/static/asset./img/store/storelist30.jpg');
 
 
 
