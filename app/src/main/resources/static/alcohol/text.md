@@ -42,6 +42,31 @@ where
 
 
 
+
+  select
+    d.alcohol_detail_no,
+    d.name alcoholname,
+    d.degree,
+    d.origin,
+    d.volume,
+    d.img alcoholimg,
+    alcs.store_no,
+    st.name storename,
+    st.evaluation_score,
+    st.lat,
+    st.lng,
+    st.status,
+    simg.img storeimg
+  from
+    alcohol_detail d
+    left outer join alcohol_sales alcs on d.alcohol_detail_no=alcs.alcohol_detail_no
+    left outer join store st on alcs.store_no=st.store_no
+    left outer join store_img simg on alcs.store_no=simg.store_no
+  where
+    d.alcohol_detail_no=#{no}
+
+
+
 alcohol_detail_no,
 alcohol_type_no,
 name,

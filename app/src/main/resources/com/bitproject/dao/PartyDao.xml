@@ -5,21 +5,26 @@
   
 <mapper namespace="com.bitproject.dao.PartyDao">
 
-  <resultMap type="party" id="partyMap">
-    <association property="writer" javaType="member">
-      <id column="mno" property="mno"/>
-      <result column="m.name" property="name"/>
-   </association>
+<resultMap type="party" id="partyMap2">
+</resultMap>
   
-  </resultMap>
   
    <!--      
+   <resultMap type="party" id="partyMap">
+    <association property="member" javaType="member">
+      <id column="mno" property="mno"/>
+      <result column="name" property="name"/>
+   </association>
+  </resultMap>
+   
+   
+   
    <association property="store" javaType="store">
      <id column="store_no" property="storeNo"/>
      <result column="s.name" property="name"/>
    </association> -->
 
-  <select id="findAll" resultMap="partyMap">
+  <select id="findAll" resultMap="partyMap2">
   select
     p.party_no,
     p.title,
@@ -28,11 +33,13 @@
     p.max_member,
     p.alcohol_type,
     p.alcohol_limit,
-    m.mno,
-    m.name
-  from party p
+    m.name,
+    m.m_img
+  from 
+  party p
     inner join member m on p.mno=m.mno
-  order by p.party_no desc;
+  order by 
+    p.party_no desc;
   </select>
   
   <!--   select
@@ -53,7 +60,7 @@
   order by p.party_no desc;
        -->
 
-	<select id="findByNo" resultMap="partyMap" parameterType="int">
+	<!--  select id="findByNo" resultMap="partyMap" parameterType="int">
   select
     p.party_no,
     p.title,
@@ -71,7 +78,7 @@
 		join store s on p.store_no=s.store_no
 	where 
       party_no=#{no}
-  </select>
+  </select> -->
   
   <!--     select 
       p.title,

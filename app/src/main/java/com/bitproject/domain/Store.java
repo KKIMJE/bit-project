@@ -10,7 +10,7 @@ public class Store {
   int storeNo;
   int businessRegistrationNo;
   String businessRegistration;
-  String name;
+  String storeName;
   String address;
   String tel;
   java.sql.Time hour;

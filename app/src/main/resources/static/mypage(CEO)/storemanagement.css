@@ -26,8 +26,8 @@ table tbody td  { border-collapse: separate;
                   font-size:20px;
                   padding-top: 10px;
 							    padding-bottom: 20px;
-							    padding-left: 30px;
-							    padding-right: 40ox;}
+							    padding-left: 10px;
+							   }
 
  thead          {
 								 text-align:center !important;
@@ -41,8 +41,6 @@ table tbody td  { border-collapse: separate;
 							    padding-top: 10px;
 							    padding-bottom: 20px;
 							    padding-left: 30px;
-							    padding-right: 40ox;
- 
                   }
  
  thead th        {

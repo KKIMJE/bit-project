@@ -9,7 +9,7 @@ import com.bitproject.domain.Party;
 import com.bitproject.service.PartyService;
 
 @Service // Spring IoC 컨테이너가 객체를 만들어 저장할 때 클래스 이름을 사용한다. 예) defaultBoardService
-public class DefaultPartyService  implements PartyService {
+public class DefaultPartyService implements PartyService {
 
   @Autowired
   PartyDao partyDao;
@@ -39,8 +39,8 @@ public class DefaultPartyService  implements PartyService {
 
   @Override
   @Transactional
-  public int delete(Party party) {
-    return partyDao.delete(party);
+  public int delete(int no) {
+    return partyDao.delete(no);
   }
 
 }

@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 public class AlcoholDetail {
-  int no;
+  int alcoholDetailNo;
   int alcoholTypeNo;
-  String name;
+  String alcoholName;
   float degree;
   String brand;
   String origin;
@@ -15,6 +15,6 @@ public class AlcoholDetail {
   String characteristic;
   String img;
   List<Store> stores;
-  List<StoreImg> imgs;
-
+  List<StoreImg> storeImgs;
+  List<AlcoholSales> alcoholSales;
 }

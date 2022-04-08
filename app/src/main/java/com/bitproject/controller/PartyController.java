@@ -1,8 +1,5 @@
 package com.bitproject.controller;
 
-import static com.bitproject.controller.ResultMap.FAIL;
-import static com.bitproject.controller.ResultMap.SUCCESS;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.bitproject.domain.Member;
 import com.bitproject.domain.Party;
 import com.bitproject.service.PartyService;
 
@@ -27,15 +23,8 @@ public class PartyController {
   }
 
   @PostMapping("/add")
-  public Object add(@RequestBody Party party, HttpSession session) {
-    Member member = (Member) session.getAttribute("loginUser");
-    if (member == null) {
-      return new ResultMap().setStatus(FAIL).setData("로그인 하지 않았습니다.");
-    }
-
-    party.setWriter(member);
-    partyService.add(party);
-    return new ResultMap().setStatus(SUCCESS);
+  public Object add(@RequestBody Party party) {
+    return partyService.add(party);
   }
 
 
@@ -49,39 +38,12 @@ public class PartyController {
   }
 
   @PostMapping("/update")
-  public Object update(Party party, HttpSession session) {
-    Member member = (Member) session.getAttribute("loginUser");
-    if (member == null) {
-      return new ResultMap().setStatus(FAIL).setData("로그인 하지 않았습니다.");
-    }
-
-    party.setWriter(member);
-    int count = partyService.update(party);
-
-    if (count == 1) {
-      return new ResultMap().setStatus(SUCCESS);
-    } else {
-      return new ResultMap().setStatus(FAIL).setData("모임 번호가 유효하지 않거나 모임 개설자가 아닙니다.");
-    }
+  public Object update(Party party) {
+    return partyService.update(party);
   }
 
   @DeleteMapping("/delete")
-  public Object delete(int no, HttpSession session) {
-    Member member = (Member) session.getAttribute("loginUser");
-    if (member == null) {
-      return new ResultMap().setStatus(FAIL).setData("로그인 하지 않았습니다.");
-    }
-
-    Party party = new Party();
-    party.setPartyNo(no);
-    party.setWriter(member);
-
-    int count = partyService.delete(party);
-
-    if (count == 1) {
-      return new ResultMap().setStatus(SUCCESS);
-    } else {
-      return new ResultMap().setStatus(FAIL).setData("모임 번호가 유효하지 않거나 모임 개설자가 아닙니다.");
-    }
+  public Object delete(int no) {
+    return partyService.delete(no);
   }
 }
