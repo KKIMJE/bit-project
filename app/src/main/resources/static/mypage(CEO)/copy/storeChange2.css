@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+* {
+  font-family: NanumSquareRound;
+}
+
+h1{
+  font-size:15px;
+  border-bottom:solid 1px black;
+  padding-left:5%;
+  width:25%;
+  word-spacing:5px;
+ 
+}
+
+#ig {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle !important;
+  margin-top: -16px;
+  margin-left:-15px;
+}
+
+#store-title{
+  font-size:30px;
+}
+
+.alcohol-section1{
+  margin-top:20px;  
+  margin-left:100px;
+}
+
+.alcohol-section2 ,.alcohol-section3,.alcohol-section4{ 
+  margin-left:100px;
+}
+
+.alcohol-content1,.alcohol-content2,.alcohol-content3,.alcohol-content4{
+	padding-left:20px; 
+ word-spacing:70px;
+}
+
+.price-textarea{
+   border-radius:10px;
+  border: 1px solid;
+  border-color:  #E1E1E1;
+  width:20%;
+}
+
+.x-add-btn ,.x-delete-btn{
+  border-radius:5px;
+  background-color:#FFFFFF;
+}
+
+.horizontal-line{
+  border-bottom:solid 1px black; 
+  margin-right:10%; 
+  margin-top:2.5%; 
+  width:100%;
+}
+
+.type-option,.name-option{
+	width:100px;
+}
+
+.btn{
+	margin-left:100px
+}
+
+.submit-btn,.exit-btn{
+  border-radius:20px;
+  background-color: #29c05e;
+  color: #ffffff;
+  width: 90px;
+}
+
+input {
+  margin: 3px;
+}
+
+/* footer 수정 */
+footer__ {
+  border: 1px solid #29c05e;
+  border-width: 3px 0px 0px 0px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 700;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.footer-content {
+  text-align: center;
+  margin: 7px 60px;
+  font-size: x-small;
+}
+
+.footer-contents-1 {
+  margin-top: 40px;
+}
+
+.footer-content-3 {
+  margin-top: 40px;
+  display: flex;
+}
+
+.footer-content-info {
+  margin-right: 40px;
+}
