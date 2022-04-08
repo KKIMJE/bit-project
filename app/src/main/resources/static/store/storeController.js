@@ -6,7 +6,7 @@ function loadData(serverInfo){
           limitCursor = Math.floor((data.length) * 0.1)
           allStoreDataList = data
           storeNum = numMaker(data.length)
-
+          
           storeList(allStoreDataList)
           // 맵 초기화면 세팅
           mapMarker(allStoreDataList, storeNum)
@@ -24,6 +24,7 @@ function numMaker (n) {
 // storeAll list
 //  => ImgCard Insert
 function storeList(stores) {
+  
   let listAll = document.querySelector(".imgContainer");
   let count = 0
   let card = true
@@ -124,13 +125,8 @@ function printStar(score) {
   return star;
 }
 // 접속자-주점 거리 구하기
+var targetLat, targetLon, lat, lon, dResult;
 function distanceCal (address) {
-  
-  let myLon = 0
-  let myLat = 0
-  let targetLon = 0
-  let targetLat = 0
-
   // 주점 위치 찾기
   // 주소-좌표 변환 객체를 생성합니다
   let geocoder = new kakao.maps.services.Geocoder();  
@@ -141,40 +137,39 @@ function distanceCal (address) {
       targetLat = result[0].y
       targetLon = result[0].x
       // var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+
+      // 접속자 현재위치 찾기
+      if (navigator.geolocation) {
+        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+        navigator.geolocation.getCurrentPosition(function(position) {
+            
+              lat = position.coords.latitude, // 위도
+              lon = position.coords.longitude; // 경도
+              
+              // console.log(targetLat, targetLon)
+              // console.log(lat, lon)
+        
+              // 선 객체 생성
+              let linePath = [
+                new kakao.maps.LatLng(lat, lon),
+                new kakao.maps.LatLng(targetLat, targetLon)
+              ];
+              let polyline = new kakao.maps.Polyline({
+                path : linePath
+              });
+              // console.log(polyline.getLength())
+              
+              dResult = Math.round(polyline.getLength())
+              return Math.round(polyline.getLength())
+        })
+      } else { // HTML5의 GeoLocation을 사용할 수 없을때
+        console.log("현위치 검색실패")
+      }
     } else {
         console.log(`${address} 주소검색 실패`)
     }
   })
-  
-  // 접속자 현재위치 찾기
-  if (navigator.geolocation) {
-    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-    navigator.geolocation.getCurrentPosition(function(position) {
-        
-        var lat = position.coords.latitude, // 위도
-            lon = position.coords.longitude; // 경도
-
-        myLat = lat
-        myLon = lon
-    })
-  } else { // HTML5의 GeoLocation을 사용할 수 없을때 
-    console.log("현위치 검색실패")
-  }
-
-  // 접속자 위치 찾기
-  var polyline=new daum.maps.Polyline({
-    path : [
-    new daum.maps.LatLng(myLon,myLat),
-    new daum.maps.LatLng(targetLon,targetLat)
-    ]
-    // strokeWeight: 2,
-    // strokeColor: '#FF00FF',
-    // strokeOpacity: 0.8,
-    // strokeStyle: 'dashed'
-  });
-  console.log("길이" + polyline.getLength())
-  //return getTimeHTML(polyline.getLength())//미터단위로 길이 반환;
-  return polyline.getLength()
 }
 
 
@@ -387,3 +382,6 @@ pre.addEventListener("click", function(){
     console.log("Map : " + mapCursor)
   }
 });
+
+
+
