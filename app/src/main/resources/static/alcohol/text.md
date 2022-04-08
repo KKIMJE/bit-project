@@ -18,20 +18,20 @@ where
 select
   d.alcohol_detail_no,
   d.alcohol_type_no,
-  d.name alcoholname,
+  d.name,
   d.degree,
   d.brand,
   d.origin,
   d.volume,
-  d.img alcoholimg,
+  d.img,
   d.characteristic,
   alcs.store_no,
-  st.name storename,
+  st.name,
   st.evaluation_score,
   st.lat,
   st.lng,
   st.status,
-  simg.img storeimg
+  simg.img
 from
   alcohol_detail d
   left outer join alcohol_sales alcs on d.alcohol_detail_no=alcs.alcohol_detail_no

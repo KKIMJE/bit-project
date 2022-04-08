@@ -10,9 +10,9 @@
 
   <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
   <resultMap type="alcoholDetail" id="alcoholDetailMap">
-    <id column="alcohol_detail_no" property="no"/>
+    <id column="alcohol_detail_no" property="alcoholDetailNo"/>
     <result column="alcohol_type_no" property="alcoholTypeNo"/>
-    <result column="name" property="name"/>
+    <result column="alcohol_name" property="alcoholName"/>
     <result column="degree" property="degree"/>
     <result column="brand" property="brand"/>
     <result column="origin" property="origin"/>
@@ -25,7 +25,7 @@
   <id column="store_no" property="storeNo"/>
     <result column="business_registration_no" property="businessRegistrationNo"/>
     <result column="business_registration" property="businessRegistration"/>
-    <result column="name" property="name"/>
+    <result column="store_name" property="storeName"/>
     <result column="address" property="address"/>
     <result column="tel" property="tel"/>
     <result column="hour" property="hour"/>
@@ -64,7 +64,7 @@
     select 
       alcohol_detail_no,
       alcohol_type_no,
-      name,
+      alcohol_name,
       degree,
       brand,
       origin,
@@ -76,11 +76,11 @@
     order by 
       alcohol_type_no asc
   </select>
-
+<!-- 
   <insert id="insert" parameterType="alcoholDetail">
     insert into alcohol_detail(
       alcohol_type_no,
-      name,
+      alcohol_name,
       degree,
       brand,
       origin,
@@ -90,7 +90,7 @@
     ) 
     values(
     #{alcoholTypeNo},
-    #{name},
+    #{alcoholName},
     #{degree},
     #{brand},
     #{origin},
@@ -99,38 +99,39 @@
     #{img}
     )
   </insert>
-
+-->
 
 	<select id="findByNo" resultMap="alcoholDetailMap" parameterType="int">
-    select
-      d.alcohol_detail_no,
-      d.alcohol_type_no,
-      d.name,
-      d.degree,
-      d.brand,
-      d.origin,
-      d.volume,
-      d.img,
-      d.characteristic,
-      alcs.store_no,
-      st.name,
-      st.evaluation_score,
-      st.lat,
-      st.lng,
-      st.status,
-      simg.store_img
-    from
-      alcohol_detail d
-      left outer join alcohol_sales alcs on d.alcohol_detail_no=alcs.alcohol_detail_no
-      left outer join store st on alcs.store_no=st.store_no
-      left outer join store_img simg on alcs.store_no=simg.store_no
-    where
-      d.alcohol_detail_no=#{no}
+select
+  d.alcohol_detail_no,
+  d.alcohol_type_no,
+  d.alcohol_name,
+  d.degree,
+  d.brand,
+  d.origin,
+  d.volume,
+  d.img,
+  d.characteristic,
+  alcs.store_no,
+  st.store_name,
+  st.evaluation_score,
+  st.lat,
+  st.lng,
+  st.status,
+  simg.store_img
+from
+  alcohol_detail d
+  left outer join alcohol_sales alcs on d.alcohol_detail_no=alcs.alcohol_detail_no
+  left outer join store st on alcs.store_no=st.store_no
+  left outer join store_img simg on alcs.store_no=simg.store_no
+where
+  d.alcohol_detail_no=#{no}
+
   </select>
   
 
 
-  <update id="update" parameterType="alcoholDetail">
+<!--   <update id="update" parameterType="alcoholDetail">
     update alcohol_detail set
     alcohol_type_no=#{alcoholTypeNo},
     name=#{name},
@@ -150,7 +151,7 @@
     where alcohol_detail_no=#{no}
   </delete>
 
-
+-->
 </mapper>
 
 

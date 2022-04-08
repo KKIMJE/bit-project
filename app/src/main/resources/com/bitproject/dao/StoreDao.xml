@@ -13,7 +13,7 @@
     <id column="store_no" property="storeNo"/>
     <result column="business_registration_no" property="businessRegistrationNo"/>
     <result column="business_registration" property="businessRegistration"/>
-    <result column="name" property="name"/>
+    <result column="store_name" property="storeName"/>
     <result column="address" property="address"/>
     <result column="tel" property="tel"/>
     <result column="hour" property="hour"/>
@@ -36,7 +36,7 @@
       store_no,
       business_registration_no,
       business_registration,
-      name,
+      store_name,
       address,
       tel,
       hour,
@@ -59,7 +59,7 @@
     insert into store(
       business_registration_no,
       business_registration,
-      name,
+      store_name,
       address,
       tel,
       hour,
@@ -76,7 +76,7 @@
       values(
      #{businessRegistrationNo},
      #{businessRegistration},
-     #{name},
+     #{storeName},
      #{address},
      #{tel},
      #{hour},
@@ -97,7 +97,7 @@
     select 
       business_registration_no,
       business_registration,
-      name,
+      store_name,
       address,
       tel,
       hour,
@@ -120,7 +120,7 @@
     update store set
       business_registration_no=#{businessRegistrationNo}, 
       business_registration=#{businessRegistration},
-      name=#{name},
+      store_name=#{storeName},
       address=#{address},
       tel=#{tel},
       hour=#{hour},

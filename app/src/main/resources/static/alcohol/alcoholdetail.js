@@ -32,15 +32,17 @@ fetch(`/alcohol/get?no=${no}`)
     .then(function(alcohol) {
       console.log(alcohol);
       detailImg.src = alcohol.img
-      introName.innerHTML = alcohol.name
+      introName.innerHTML = alcohol.alcoholName
       introBrand.innerHTML = alcohol.brand
       introOrigin.innerHTML = alcohol.origin
       introVol.innerHTML = alcohol.volume
       introDegree.innerHTML = alcohol.degree
       introChar.innerHTML = alcohol.characteristic
-      storeList.innerHTML = alcohol.name
+      storeList.innerHTML = alcohol.alcoholName
 
-      console.log(alcohol.storeImgs);
+      for (let i = 0; i < alcohol.length; i++) {
+        console.log(store.alcoholImgs[i].alcoholImg);
+      }
 
     });
 

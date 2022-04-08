@@ -19,9 +19,9 @@ let count = 0
 let card = true
 
 function storeList(stores) {
-  
+
   for (let i = 0; i < stores.length; i++) {
-    
+
     if (count == 0) {
       var listDiv = document.createElement("div")
       listDiv.classList.add("storeContents-imgCard")
@@ -65,7 +65,7 @@ function storeList(stores) {
       </div>
       <div class="xImg-contents">
         <div class="xImg-content">
-          <div class="xImg-content-t">${stores[i].name}</div>
+          <div class="xImg-content-t">${stores[i].storeName}</div>
           <div class="xImg-star">${stars}</div>
           <div class="xImg-d">30m 이내</div>
         </div>

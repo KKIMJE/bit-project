@@ -34,12 +34,12 @@ function allList() {
         div.classList.add("card")
         div.classList.add("border-white")
         div.innerHTML = `
-          <a href="alcoholdetail.html?no=${alcohols[i].no}">
+          <a href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
             <img src="${alcohols[i].img}" class="card-img-top">
             <div class="card-body">
               <p class="card-text">
               <ul>
-                <li>${alcohols[i].name}</li>
+                <li>${alcohols[i].alcoholName}</li>
                 <li>${alcohols[i].degree}%</li>
               </ul>
               </p>
@@ -79,12 +79,12 @@ function targetList(targetNo) {
           div.classList.add("card")
           div.classList.add("border-white")
           div.innerHTML = `
-        <a href="alcoholdetail.html?no=${alcohols[i].no}">
+        <a href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
         <img src="${alcohols[i].img}" class="card-img-top">
         <div class="card-body">
         <p class="card-text">
         <ul>
-        <li>${alcohols[i].name}</li>
+        <li>${alcohols[i].alcoholName}</li>
         <li>${alcohols[i].degree}%</li>
         </ul>
         </p>

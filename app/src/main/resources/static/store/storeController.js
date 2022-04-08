@@ -1,13 +1,13 @@
 // ==== Map 생성 ====
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 mapOption = {
     // 지도의 중심좌표
-    center: new kakao.maps.LatLng(33.450701, 126.570667), 
+    center: new kakao.maps.LatLng(33.450701, 126.570667),
     level: 3 // 지도의 확대 레벨
 };
 
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); 
+// 지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption);
 
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
@@ -15,7 +15,7 @@ var geocoder = new kakao.maps.services.Geocoder();
 // 마커구성
 let markerList = []
 function markerMaker(store, numList) {
-  
+
   // 기존마커 삭제
   for (let j = 0; j < markerList.length; j++) {
     markerList[j].setMap(null)
@@ -24,30 +24,30 @@ function markerMaker(store, numList) {
   for (let i = 0; i < numList.length; i ++) {
 
     let address = store[numList[i]].address
-    let name = store[numList[i]].name
-  
+    let name = store[numList[i]].storeName
+
     // 주소로 좌표를 검색합니다
     geocoder.addressSearch(address, function(result, status) {
-    
-        // 정상적으로 검색이 완료됐으면 
+
+        // 정상적으로 검색이 완료됐으면
         if (status === kakao.maps.services.Status.OK) {
             var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-  
+
             // 커스텀 오버레이를 생성합니다
             var customOverlay = new kakao.maps.CustomOverlay({
                 position: coords,
-                content: `<div id="mapInfo"><span>${name}</span></div>`   
+                content: `<div id="mapInfo"><span>${storeName}</span></div>`
             });
 
             markerList.push(customOverlay)
 
             // 커스텀 오버레이를 지도에 표시합니다
             customOverlay.setMap(map);
-            
+
             // 마지막으로 찍은 마커로 중심을 이동한다.
             // map.setCenter(coords);
         } else {
-            console.log(`${name}, ${address} 주소검색 실패`)
+            console.log(`${storeName}, ${address} 주소검색 실패`)
         }
     });
   }
@@ -62,44 +62,44 @@ var vlon= 126.570667
 var vlat= 33.450701
 
 // ==== Map 현재위치 표시 ====
-// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+// HTML5의 geolocation으로 사용할 수 있는지 확인합니다
 if (navigator.geolocation) {
-    
+
   // GeoLocation을 이용해서 접속 위치를 얻어옵니다
   navigator.geolocation.getCurrentPosition(function(position) {
-      
+
       var lat = position.coords.latitude, // 위도
           lon = position.coords.longitude; // 경도
 
           // mlat = lat
           // mlon = lon
-      
+
       var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
           message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
-      
+
       // 마커와 인포윈도우를 표시합니다
       displayMarker(locPosition, message);
-          
+
     });
-  
+
 } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-  
-  var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
+
+  var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
       message = 'geolocation을 사용할수 없어요..'
-      
+
   displayMarker(locPosition, message);
 }
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
 function displayMarker(locPosition, message) {
 
 // 마커를 생성합니다
-var marker = new kakao.maps.Marker({  
-    map: map, 
+var marker = new kakao.maps.Marker({
+    map: map,
     position: locPosition
-}); 
+});
 
 // 인포윈도우에 표시할 내용
-var iwContent = message, 
+var iwContent = message,
     iwRemoveable = true;
 
 // 인포윈도우를 생성합니다
@@ -108,7 +108,7 @@ var infowindow = new kakao.maps.InfoWindow({
     removable : iwRemoveable
 });
 
-// 인포윈도우를 마커위에 표시합니다 
+// 인포윈도우를 마커위에 표시합니다
 // infowindow.open(map, marker);
 
 // 지도 중심좌표를 접속위치로 변경합니다
@@ -170,7 +170,7 @@ setTimeout(() => {
   // == next, pre button ==
   const next = document.querySelector('.next-store');
   const pre = document.querySelector('.pre-store');
-  
+
   // 주점 리스트 초기화
   let storeAll = document.querySelectorAll('.storeContents-imgCard');
   for (let i=1; i < storeAll.length; i++) {
@@ -196,7 +196,7 @@ setTimeout(() => {
       storeAll[i].style.display = "none";
     }
   }
-  
+
   next.addEventListener("click", () => {
     if (cursor+1 == endPage) {
       console.log("next: Over page")
@@ -204,7 +204,7 @@ setTimeout(() => {
       cursor += 1;
       console.log("cursor : " + `${cursor}`);
       moveAl(cursor);
-    } 
+    }
   });
 
   pre.addEventListener("click", () => {
@@ -274,6 +274,3 @@ lightBtn.addEventListener("click",function(e){
 // category All Btn
 const xAllBtn = document.querySelector('#xAllBtn')
 xAllBtn.addEventListener("click", () => location.reload())
-
-
-
