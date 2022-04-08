@@ -40,9 +40,19 @@ fetch(`/alcohol/get?no=${no}`)
       introChar.innerHTML = alcohol.characteristic
       storeList.innerHTML = alcohol.alcoholName
 
-      for (let i = 0; i < alcohol.length; i++) {
-        console.log(store.alcoholImgs[i].alcoholImg);
+      for (let i = 0; i < alcohol.stores.length; i++) {
+        console.log(alcohol.stores[i].storeName);
+        console.log(alcohol.stores[i].lat);
+        console.log(alcohol.stores[i].lng);
       }
+      for (let i = 0; i < alcohol.storeImgs.length; i++) {
+        console.log(alcohol.storeImgs[i].storeImg);
+      }
+
+
+        // console.log(alcohol.stores[0].storeName);
+
+
 
     });
 
