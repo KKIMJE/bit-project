@@ -77,7 +77,7 @@ function storeList(stores) {
       </div>
       <div class="xImg-contents">
         <div class="xImg-content">
-          <div class="xImg-content-t">${stores[i].name}</div>
+          <div class="xImg-content-t">${stores[i].storeName}</div>
           <div class="xImg-star">${stars}</div>
           <div class="xImg-d">${distance}</div>
         </div>
@@ -283,7 +283,7 @@ function mapMarker(store, numList) {
             // 커스텀 오버레이를 생성합니다
             var customOverlay = new kakao.maps.CustomOverlay({
                 position: coords,
-                content: `<div id="mapInfo"><span>${storeName}</span></div>`
+                content: `<div id="mapInfo"><span>${name}</span></div>`
             });
 
             markerList.push(customOverlay)
@@ -294,7 +294,7 @@ function mapMarker(store, numList) {
             // 마지막으로 찍은 마커로 중심을 이동한다.
             // map.setCenter(coords);
         } else {
-            console.log(`${storeName}, ${address} 주소검색 실패`)
+            console.log(`${name}, ${address} 주소검색 실패`)
         }
     });
   }
