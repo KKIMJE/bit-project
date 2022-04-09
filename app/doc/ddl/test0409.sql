@@ -170,11 +170,13 @@ CREATE TABLE `sns` (
 
 
 
+-- sojudb.store definition
+
 CREATE TABLE `store` (
   `store_no` int(11) NOT NULL AUTO_INCREMENT COMMENT '주점번호',
   `business_registration_no` int(11) NOT NULL COMMENT '사업자등록증번호',
   `business_registration` varchar(500) NOT NULL COMMENT '사업자등록증',
-  `name` varchar(50) NOT NULL COMMENT '가게명',
+  `store_name` varchar(50) NOT NULL COMMENT '가게명',
   `address` varchar(255) NOT NULL COMMENT '주점주소',
   `tel` varchar(30) NOT NULL COMMENT '주점전화번호',
   `hour` text NOT NULL COMMENT '영업시간',
@@ -182,8 +184,8 @@ CREATE TABLE `store` (
   `evaluation_score` float DEFAULT 0 COMMENT '주점별점',
   `reservation_accept` tinyint(1) NOT NULL DEFAULT 0 COMMENT '예약가능여부',
   `max_member` int(11) DEFAULT NULL COMMENT '최대인원',
-  `lat` float NOT NULL COMMENT '위도',
-  `lng` float NOT NULL COMMENT '경도',
+  `lat` double NOT NULL COMMENT '위도',
+  `lng` double NOT NULL COMMENT '경도',
   `place_id` varchar(255) NOT NULL COMMENT '장소아이디',
   `oper` tinyint(1) NOT NULL DEFAULT 0 COMMENT '영업여부',
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '상태',
@@ -212,10 +214,12 @@ CREATE TABLE `tag` (
 
 
 
+-- sojudb.alcohol_detail definition
+
 CREATE TABLE `alcohol_detail` (
   `alcohol_detail_no` int(11) NOT NULL AUTO_INCREMENT COMMENT '술번호',
   `alcohol_type_no` int(11) NOT NULL COMMENT '주종번호',
-  `name` varchar(50) NOT NULL COMMENT '상품명',
+  `alcohol_name` varchar(50) NOT NULL COMMENT '상품명',
   `degree` float NOT NULL COMMENT '도수',
   `brand` varchar(50) DEFAULT NULL COMMENT '브랜드명',
   `origin` varchar(50) DEFAULT NULL COMMENT '원산지',
@@ -521,10 +525,12 @@ CREATE TABLE `sns_account` (
 
 
 
+-- sojudb.store_img definition
+
 CREATE TABLE `store_img` (
   `store_img_no` int(11) NOT NULL AUTO_INCREMENT COMMENT '사진번호',
   `store_no` int(11) NOT NULL COMMENT '주점번호',
-  `img` varchar(500) NOT NULL COMMENT '사진',
+  `store_img` varchar(500) NOT NULL COMMENT '사진',
   PRIMARY KEY (`store_img_no`),
   KEY `FK_store_TO_store_img` (`store_no`),
   CONSTRAINT `FK_store_TO_store_img` FOREIGN KEY (`store_no`) REFERENCES `store` (`store_no`) ON DELETE CASCADE

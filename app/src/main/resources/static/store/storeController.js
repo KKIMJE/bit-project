@@ -6,7 +6,7 @@ function loadData(serverInfo){
           limitCursor = Math.floor((data.length) * 0.1)
           allStoreDataList = data
           storeNum = numMaker(data.length)
-          
+
           storeList(allStoreDataList)
           // 맵 초기화면 세팅
           mapMarker(allStoreDataList, storeNum)
@@ -25,13 +25,13 @@ function numMaker (n) {
 // 주점 위치 찾기
 let targetLat, targetLon, lat, lon, tagStr
 function storeList(stores) {
-  
+
   let listAll = document.querySelector(".imgContainer");
   let count = 0
   let card = true
 
   for (let i = 0; i < stores.length; i++) {
-    
+
     if (count == 0) {
       var listDiv = document.createElement("div")
       listDiv.classList.add("storeContents-imgCard")
@@ -74,7 +74,7 @@ function storeList(stores) {
 
     geocoder.addressSearch(address,
       function(result, status) {
-      // 정상적으로 검색이 완료됐으면 
+      // 정상적으로 검색이 완료됐으면
       if (status === kakao.maps.services.Status.OK) {
         targetLat = result[0].y
         targetLon = result[0].x
@@ -164,11 +164,11 @@ function printStar(score) {
 //   // let targetLat, targetLon, lat, lon
 //   // 주점 위치 찾기
 //   // 주소-좌표 변환 객체를 생성합니다
-//   // let geocoder = new kakao.maps.services.Geocoder();  
+//   // let geocoder = new kakao.maps.services.Geocoder();
 //   // 주소로 좌표를 검색합니다
-  
+
 //   geocoder.addressSearch(address, function(result, status) {
-//     // 정상적으로 검색이 완료됐으면 
+//     // 정상적으로 검색이 완료됐으면
 //     if (status === kakao.maps.services.Status.OK) {
 //       targetLat = result[0].y
 //       targetLon = result[0].x
@@ -178,13 +178,13 @@ function printStar(score) {
 //       if (navigator.geolocation) {
 //         // GeoLocation을 이용해서 접속 위치를 얻어옵니다
 //         navigator.geolocation.getCurrentPosition(function(position) {
-            
+
 //               lat = position.coords.latitude, // 위도
 //               lon = position.coords.longitude; // 경도
-              
+
 //               // console.log(targetLat, targetLon)
 //               // console.log(lat, lon)
-        
+
 //               // 선 객체 생성
 //               let linePath = [
 //                 new kakao.maps.LatLng(lat, lon),
@@ -194,8 +194,8 @@ function printStar(score) {
 //                 path : linePath
 //               });
 //               console.log("거리" + polyline.getLength())
-              
-              
+
+
 //               // Math.round(polyline.getLength())
 //               // return polyline.getLength()
 //         })
@@ -265,7 +265,7 @@ next.addEventListener("click", () => {
     cursor += 1;
     console.log("cursor : " + `${cursor}`);
     moveAl(cursor);
-  } 
+  }
 });
 pre.addEventListener("click", () => {
   if (cursor == 0) {
@@ -340,7 +340,7 @@ if (navigator.geolocation) {
 
       var lat = position.coords.latitude, // 위도
           lon = position.coords.longitude; // 경도
-      
+
       var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
           message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
 
@@ -418,6 +418,3 @@ pre.addEventListener("click", function(){
     console.log("Map : " + mapCursor)
   }
 });
-
-
-
