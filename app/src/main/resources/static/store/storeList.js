@@ -122,8 +122,7 @@ lightBtn.addEventListener("click",function(e){
 
     if (targetNo == 0) {
       location.reload()
-    }
-    if (targetNo != 0) {
+    } else {
       targetList(targetNo)
     }
   }

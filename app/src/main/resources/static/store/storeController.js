@@ -100,12 +100,7 @@ function storeList(stores) {
             path : linePath
           });
           // console.log("거리" + polyline.getLength())
-<<<<<<< HEAD
           distanceLine.push(polyline.getLength()) 
-=======
-          console.log(polyline.getLength);
-          distanceLine.push(polyline.getLength())
->>>>>>> 17524b0bd6baab3835922181b7e9a6961e1c09bc
         })
       } else {
           console.log(`${address} 주소검색 실패`)
