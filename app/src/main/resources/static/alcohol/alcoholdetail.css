@@ -132,16 +132,21 @@
 
 }
 
-#map-store-title {
-  font-size: 30px;
-  font-weight: bold;
-}
-
 .storelist-title-span {
   font-size: 30px;
   font-weight: bold;
 }
 
+#map-store-title {
+  font-size: 30px;
+  font-weight: bold;
+}
 .map-title-div {
   margin-top: 50px;
+}
+
+#map {
+   width: 1200px;
+   height: 600px;
+   margin-top: 20px;"
 }
