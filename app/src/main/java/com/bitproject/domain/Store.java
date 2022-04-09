@@ -8,6 +8,7 @@ import lombok.experimental.Accessors;
 public class Store {
 
   int storeNo;
+  int storeTypeNo;
   int businessRegistrationNo;
   String businessRegistration;
   String storeName;

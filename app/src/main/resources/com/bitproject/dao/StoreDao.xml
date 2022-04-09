@@ -33,26 +33,28 @@
    -->
   <select id="findAll" resultMap="storeMap">
     select 
-      store_no,
-      business_registration_no,
-      business_registration,
-      store_name,
-      address,
-      tel,
-      hour,
-      introduction,
-      evaluation_score,
-      reservation_accept,
-      max_member,
-      lat,
-      lng,
-      place_id,
-      oper,
-      status
+      s.store_no,
+      s.business_registration_no,
+      s.business_registration,
+      s.store_name,
+      s.address,
+      s.tel,
+      s.hour,
+      s.introduction,
+      s.evaluation_score,
+      s.reservation_accept,
+      s.max_member,
+      s.lat,
+      s.lng,
+      s.place_id,
+      s.oper,
+      s.status,
+      st.store_type_no
     from 
-      store 
+    store s
+		inner join store_section_type st on s.store_no=st.store_no
     order by 
-      store_no desc
+      s.store_no desc;
   </select>
 
   <insert id="insert" parameterType="Store" >
