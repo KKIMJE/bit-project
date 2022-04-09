@@ -94,6 +94,7 @@ function storeList(stores) {
             path : linePath
           });
           // console.log("거리" + polyline.getLength())
+          console.log(polyline.getLength);
           distanceLine.push(polyline.getLength())
         })
       } else {
@@ -165,7 +166,8 @@ function inputDistance() {
 }
 
 inputDistance()
-console.log(distanceLine)
+console.log(distanceLine.length)
+console.log(distanceLine);
 
 // 접속자-주점 거리 구하기
 // function distanceCal (address) {
