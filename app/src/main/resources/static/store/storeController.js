@@ -1,3 +1,11 @@
+let targetLat, targetLon, lat, lon, tagStr;
+let distanceLine = [];
+var storeNum;
+var allStoreDataList;
+var limitCursor;
+var markerList = [];
+
+
 function loadData(serverInfo){
   console.log("loadData: " + serverInfo )
   fetch(serverInfo)
@@ -22,14 +30,12 @@ function numMaker (n) {
 
 // storeAll list
 //  => ImgCard Insert
-// 주점 위치 찾기
-let targetLat, targetLon, lat, lon, tagStr
-let distanceLine = []
+//  => 주점 위치 찾기
 function storeList(stores) {
   let listAll = document.querySelector(".imgContainer");
   let count = 0
   let card = true
-
+  
   for (let i = 0; i < stores.length; i++) {
 
     if (count == 0) {
@@ -168,78 +174,11 @@ function inputDistance() {
 
 console.log(distanceLine)
 
-// 접속자-주점 거리 구하기
-// function distanceCal (address) {
-//   // let targetLat, targetLon, lat, lon
-//   // 주점 위치 찾기
-//   // 주소-좌표 변환 객체를 생성합니다
-//   // let geocoder = new kakao.maps.services.Geocoder();
-//   // 주소로 좌표를 검색합니다
-
-//   geocoder.addressSearch(address, function(result, status) {
-//     // 정상적으로 검색이 완료됐으면
-//     if (status === kakao.maps.services.Status.OK) {
-//       targetLat = result[0].y
-//       targetLon = result[0].x
-//       // var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-//       // 접속자 현재위치 찾기
-//       if (navigator.geolocation) {
-//         // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-//         navigator.geolocation.getCurrentPosition(function(position) {
-
-//               lat = position.coords.latitude, // 위도
-//               lon = position.coords.longitude; // 경도
-
-//               // console.log(targetLat, targetLon)
-//               // console.log(lat, lon)
-
-//               // 선 객체 생성
-//               let linePath = [
-//                 new kakao.maps.LatLng(lat, lon),
-//                 new kakao.maps.LatLng(targetLat, targetLon)
-//               ];
-//               let polyline = new kakao.maps.Polyline({
-//                 path : linePath
-//               });
-//               console.log("거리" + polyline.getLength())
-
-
-//               // Math.round(polyline.getLength())
-//               // return polyline.getLength()
-//         })
-//       } else { // HTML5의 GeoLocation을 사용할 수 없을때
-//         console.log("현위치 검색실패")
-//       }
-//     } else {
-//         console.log(`${address} 주소검색 실패`)
-//     }
-//   })
-// }
-
-
-var storeNum;
-var allStoreDataList;
-var limitCursor;
-var markerList = []
 
 
 loadData("/store/list")
 
-// == category tab ==
-const lightBtn = document.querySelector('.store-category-sort')
-lightBtn.addEventListener("click",function(e){
-  if (e.target == e.currentTarget) {
-    return;
-  } else {
-    e.currentTarget.querySelector('.act').classList.toggle('act')
-    e.target.classList.toggle('act')
-  }
-});
 
-// category All Btn
-const xAllBtn = document.querySelector('#xAllBtn')
-xAllBtn.addEventListener("click", () => location.reload())
 
 // == next, pre button ==
 const next = document.querySelector('.next-store');
@@ -253,7 +192,7 @@ for (let i=1; i < storeAll.length; i++) {
 // cursor를 기준으로 앞뒤로 모두 none으로 변경
 let cursor = 0;
 let endPage = storeAll.length;
-const moveAl = function (cursor) {
+function moveAl(cursor) {
   if (storeAll[cursor].style.display == "none") {
     storeAll[cursor].style.display = "flex"
   }
@@ -303,7 +242,6 @@ var geocoder = new kakao.maps.services.Geocoder();
 
 // 마커구성
 function mapMarker(store, numList) {
-
   // 기존마커 삭제
   for (let j = 0; j < markerList.length; j++) {
     markerList[j].setMap(null)
