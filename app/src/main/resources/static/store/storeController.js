@@ -24,8 +24,8 @@ function numMaker (n) {
 //  => ImgCard Insert
 // 주점 위치 찾기
 let targetLat, targetLon, lat, lon, tagStr
+var distanceLine = []
 function storeList(stores) {
-  
   let listAll = document.querySelector(".imgContainer");
   let count = 0
   let card = true
@@ -90,32 +90,31 @@ function storeList(stores) {
             new kakao.maps.LatLng(targetLat, targetLon)
           ];
 
-          let polyline = new kakao.maps.Polyline({
+          polyline = new kakao.maps.Polyline({
             path : linePath
           });
-          console.log("거리" + polyline.getLength())
+          // console.log("거리" + polyline.getLength())
+          distanceLine.push(polyline.getLength())
         })
-
-        tagStr = `<div class="img-xbox">
-          <div class="xImg box">
-            <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
-            <a><img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori"></a>
-          </div>
-          <div class="xImg-contents">
-            <div class="xImg-content">
-              <div class="xImg-content-t">${storeName}</div>
-              <div class="xImg-star">${stras}</div>
-              <div class="xImg-d">${0}</div>
-            </div>
-            <div class="storeOpen">${storeOper}</div>
-          </div>
-        </div>`
-
       } else {
           console.log(`${address} 주소검색 실패`)
       }
     })
 
+    tagStr = `<div class="img-xbox">
+      <div class="xImg box">
+        <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
+        <a><img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori"></a>
+      </div>
+      <div class="xImg-contents">
+        <div class="xImg-content">
+          <div class="xImg-content-t">${storeName}</div>
+          <div class="xImg-star">${stras}</div>
+          <div class="xImg-d">${0}</div>
+        </div>
+        <div class="storeOpen">${storeOper}</div>
+      </div>
+    </div>`
 
     if (card == true) {
       itemDiv2.innerHTML += tagStr
@@ -157,7 +156,16 @@ function printStar(score) {
   return star;
 }
 
+function inputDistance() {
+  // const xDistance = document.querySelector('.xImg-d')
+  for(const d of distanceLine) {
+    console.log(d)
+    // xDistance.innerHTML = Math.round(distanceLine[i]) + "m"
+  }
+}
 
+inputDistance()
+console.log(distanceLine)
 
 // 접속자-주점 거리 구하기
 // function distanceCal (address) {
