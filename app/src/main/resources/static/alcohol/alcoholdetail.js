@@ -28,6 +28,77 @@ var storeListDiv = document.querySelector(".storelist-div")
 // var storeName = document.querySelector(".store-name")
 // var storeStatus = document.querySelector(".store-status")
 
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+  mapOption = {
+    // 지도의 중심좌표
+    center: new kakao.maps.LatLng(37.500723072486, 127.03680544372),
+    level: 3 // 지도의 확대 레벨
+  };
+
+// 지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+// 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+var mapTypeControl = new kakao.maps.MapTypeControl();
+
+// 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+// kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+var zoomControl = new kakao.maps.ZoomControl();
+map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+function closeOverlay() {
+  overlay.setMap(null);
+}
+
+
+
+
+const markerArr = []
+
+function showMarkers(alcohol) {
+
+  // 기존 마커들은 지워야 한다.
+  for (let i = 0; i < markerArr.length; i++) {
+    markerArr[i].setMap(null)
+  }
+
+  for (let i = 0; i < alcohol.stores.length; i++) {
+    const store = alcohol.stores[i]
+    const latLng = new kakao.maps.LatLng(store.lat, store.lng)
+    const marker = new kakao.maps.Marker({
+      map: map,
+      position: latLng
+    })
+    let content =`
+    <div class="wrap">
+        <div class="info">
+            <div class="title">
+                ${alcohol.stores[i].storeName}
+                <div class="close" onclick="closeOverlay()" title="닫기"></div>
+            </div>
+            <div class="body">
+                <div class="desc">
+                    <div class="ellipsis">${alcohol.stores[i].status}</div>
+                    <div class="jibun ellipsis">⭐⭐⭐⭐⭐</div>
+                </div>
+           </div>
+        </div>
+    </div>`
+
+    // 마커 위에 커스텀오버레이를 표시합니다
+    // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+    overlay = new kakao.maps.CustomOverlay({
+      content: content,
+      map: map,
+      position: marker.getPosition()
+    });
+    markerArr.push(marker)
+  } // end for
+}
+
 
 
 
@@ -49,7 +120,7 @@ fetch(`/alcohol/get?no=${no}`)
 
 
     for (let i = 0; i < alcohol.stores.length; i++) {
-      if (alcohol.stores[i].status != true) {
+      if (alcohol.stores[i].status == true) {
         alcohol.stores[i].status = "운영중"
       } else {
         alcohol.stores[i].status = "영업종료"
@@ -67,15 +138,49 @@ fetch(`/alcohol/get?no=${no}`)
         </a>
       </div>
       `
-
       storeListDiv.innerHTML += storeItemDiv
 
-
-
-
     }
+    // 마커표시
+    showMarkers(alcohol);
 
   });
+
+
+  // 마커 위에 커스텀오버레이를 표시합니다
+  // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+  // var overlay = new kakao.maps.CustomOverlay({
+  //   content: content,
+  //   map: map,
+  //   position: marker.getPosition()
+  // });
+
+
+  // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+  // kakao.maps.event.addListener(marker, 'click', function() {
+  //   overlay.setMap(map);
+  // });
+
+  // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
+  // function closeOverlay() {
+  //   overlay.setMap(null);
+  // }
+
+// let content =`
+// <div class="wrap">
+//     <div class="info">
+//         <div class="title">
+//             카카오 스페이스닷원
+//             <div class="close" onclick="closeOverlay()" title="닫기"></div>
+//         </div>
+//         <div class="body">
+//             <div class="desc">
+//                 <div class="ellipsis">제주특별자치도 제주시 첨단로 242</div>
+//                 <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>
+//             </div>
+//        </div>
+//     </div>
+// </div>`
 
 
 
