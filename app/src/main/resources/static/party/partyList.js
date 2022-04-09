@@ -56,5 +56,3 @@ var pbody = document.querySelector("#party-body")
       }
       pbody.appendChild(div);
     });
-
-//     이미지 넣다가 막힘...사진은 어떻게 해야 돼? party 도메인에 없잖아 . -->
