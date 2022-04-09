@@ -24,7 +24,7 @@ function numMaker (n) {
 //  => ImgCard Insert
 // 주점 위치 찾기
 let targetLat, targetLon, lat, lon, tagStr
-var distanceLine = []
+let distanceLine = []
 function storeList(stores) {
   let listAll = document.querySelector(".imgContainer");
   let count = 0
@@ -90,11 +90,11 @@ function storeList(stores) {
             new kakao.maps.LatLng(targetLat, targetLon)
           ];
 
-          polyline = new kakao.maps.Polyline({
+          let polyline = new kakao.maps.Polyline({
             path : linePath
           });
           // console.log("거리" + polyline.getLength())
-          distanceLine.push(polyline.getLength())
+          distanceLine.push(polyline.getLength()) 
         })
       } else {
           console.log(`${address} 주소검색 실패`)
@@ -158,13 +158,14 @@ function printStar(score) {
 
 function inputDistance() {
   // const xDistance = document.querySelector('.xImg-d')
-  for(const d of distanceLine) {
-    console.log(d)
+  console.log(00)
+  for(let key in distanceLine) {
+    console.log(key, distanceLine[key])
+    
     // xDistance.innerHTML = Math.round(distanceLine[i]) + "m"
   }
 }
 
-inputDistance()
 console.log(distanceLine)
 
 // 접속자-주점 거리 구하기
