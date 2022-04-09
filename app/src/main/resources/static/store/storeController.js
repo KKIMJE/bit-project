@@ -66,10 +66,6 @@ function storeList(stores) {
       }
     }
 
-    let stars = printStar(stores[i].evaluationScore)
-    let distance = distanceCal(stores[i].address)
-    let xOper = printOper(stores[i].oper)
-
     let tagStr = `<div class="img-xbox">
       <div class="xImg box">
         <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
@@ -78,10 +74,10 @@ function storeList(stores) {
       <div class="xImg-contents">
         <div class="xImg-content">
           <div class="xImg-content-t">${stores[i].storeName}</div>
-          <div class="xImg-star">${stars}</div>
-          <div class="xImg-d">${distance}</div>
+          <div class="xImg-star">${printStar(stores[i].evaluationScore)}</div>
+          <div class="xImg-d">${distanceCal(stores[i].address)}</div>
         </div>
-        <div class="storeOpen">${xOper}</div>
+        <div class="storeOpen">${printOper(stores[i].oper)}</div>
       </div>
     </div>`
 
@@ -125,19 +121,20 @@ function printStar(score) {
   return star;
 }
 // 접속자-주점 거리 구하기
-var targetLat, targetLon, lat, lon, dResult;
+
 function distanceCal (address) {
+  let targetLat, targetLon, lat, lon, dResult;
   // 주점 위치 찾기
   // 주소-좌표 변환 객체를 생성합니다
   let geocoder = new kakao.maps.services.Geocoder();  
   // 주소로 좌표를 검색합니다
+  
   geocoder.addressSearch(address, function(result, status) {
     // 정상적으로 검색이 완료됐으면 
     if (status === kakao.maps.services.Status.OK) {
       targetLat = result[0].y
       targetLon = result[0].x
       // var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
 
       // 접속자 현재위치 찾기
       if (navigator.geolocation) {
@@ -158,11 +155,12 @@ function distanceCal (address) {
               let polyline = new kakao.maps.Polyline({
                 path : linePath
               });
-              // console.log(polyline.getLength())
+              console.log(polyline.getLength())
               
-              dResult = Math.round(polyline.getLength())
-              return Math.round(polyline.getLength())
+              
+              // Math.round(polyline.getLength())
         })
+        
       } else { // HTML5의 GeoLocation을 사용할 수 없을때
         console.log("현위치 검색실패")
       }
@@ -170,6 +168,7 @@ function distanceCal (address) {
         console.log(`${address} 주소검색 실패`)
     }
   })
+  return dResult
 }
 
 
