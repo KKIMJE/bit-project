@@ -12,8 +12,6 @@ function loadData(serverInfo){
           mapMarker(allStoreDataList, storeNum)
       })
 }
-
-
 function numMaker (n) {
   let nList = []
   for (let j = 0; j < n; j ++) {
@@ -21,8 +19,11 @@ function numMaker (n) {
   }
   return nList
 }
+
 // storeAll list
 //  => ImgCard Insert
+// 주점 위치 찾기
+let targetLat, targetLon, lat, lon, tagStr
 function storeList(stores) {
   
   let listAll = document.querySelector(".imgContainer");
@@ -66,20 +67,55 @@ function storeList(stores) {
       }
     }
 
-    let tagStr = `<div class="img-xbox">
-      <div class="xImg box">
-        <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
-        <a><img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori"></a>
-      </div>
-      <div class="xImg-contents">
-        <div class="xImg-content">
-          <div class="xImg-content-t">${stores[i].storeName}</div>
-          <div class="xImg-star">${printStar(stores[i].evaluationScore)}</div>
-          <div class="xImg-d">${distanceCal(stores[i].address)}</div>
-        </div>
-        <div class="storeOpen">${printOper(stores[i].oper)}</div>
-      </div>
-    </div>`
+    let address = stores[i].address
+    let storeName = stores[i].storeName
+    let stras = printStar(stores[i].evaluationScore)
+    let storeOper = printOper(stores[i].oper)
+
+    geocoder.addressSearch(address,
+      function(result, status) {
+      // 정상적으로 검색이 완료됐으면 
+      if (status === kakao.maps.services.Status.OK) {
+        targetLat = result[0].y
+        targetLon = result[0].x
+
+        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+        navigator.geolocation.getCurrentPosition(function(position) {
+          lat = position.coords.latitude, // 위도
+          lon = position.coords.longitude; // 경도
+
+          // 선 객체 생성
+          let linePath = [
+            new kakao.maps.LatLng(lat, lon),
+            new kakao.maps.LatLng(targetLat, targetLon)
+          ];
+
+          let polyline = new kakao.maps.Polyline({
+            path : linePath
+          });
+          console.log("거리" + polyline.getLength())
+        })
+
+        tagStr = `<div class="img-xbox">
+          <div class="xImg box">
+            <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
+            <a><img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori"></a>
+          </div>
+          <div class="xImg-contents">
+            <div class="xImg-content">
+              <div class="xImg-content-t">${storeName}</div>
+              <div class="xImg-star">${stras}</div>
+              <div class="xImg-d">${0}</div>
+            </div>
+            <div class="storeOpen">${storeOper}</div>
+          </div>
+        </div>`
+
+      } else {
+          console.log(`${address} 주소검색 실패`)
+      }
+    })
+
 
     if (card == true) {
       itemDiv2.innerHTML += tagStr
@@ -120,56 +156,57 @@ function printStar(score) {
   }
   return star;
 }
+
+
+
 // 접속자-주점 거리 구하기
-
-function distanceCal (address) {
-  let targetLat, targetLon, lat, lon, dResult;
-  // 주점 위치 찾기
-  // 주소-좌표 변환 객체를 생성합니다
-  let geocoder = new kakao.maps.services.Geocoder();  
-  // 주소로 좌표를 검색합니다
+// function distanceCal (address) {
+//   // let targetLat, targetLon, lat, lon
+//   // 주점 위치 찾기
+//   // 주소-좌표 변환 객체를 생성합니다
+//   // let geocoder = new kakao.maps.services.Geocoder();  
+//   // 주소로 좌표를 검색합니다
   
-  geocoder.addressSearch(address, function(result, status) {
-    // 정상적으로 검색이 완료됐으면 
-    if (status === kakao.maps.services.Status.OK) {
-      targetLat = result[0].y
-      targetLon = result[0].x
-      // var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+//   geocoder.addressSearch(address, function(result, status) {
+//     // 정상적으로 검색이 완료됐으면 
+//     if (status === kakao.maps.services.Status.OK) {
+//       targetLat = result[0].y
+//       targetLon = result[0].x
+//       // var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-      // 접속자 현재위치 찾기
-      if (navigator.geolocation) {
-        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-        navigator.geolocation.getCurrentPosition(function(position) {
+//       // 접속자 현재위치 찾기
+//       if (navigator.geolocation) {
+//         // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+//         navigator.geolocation.getCurrentPosition(function(position) {
             
-              lat = position.coords.latitude, // 위도
-              lon = position.coords.longitude; // 경도
+//               lat = position.coords.latitude, // 위도
+//               lon = position.coords.longitude; // 경도
               
-              // console.log(targetLat, targetLon)
-              // console.log(lat, lon)
+//               // console.log(targetLat, targetLon)
+//               // console.log(lat, lon)
         
-              // 선 객체 생성
-              let linePath = [
-                new kakao.maps.LatLng(lat, lon),
-                new kakao.maps.LatLng(targetLat, targetLon)
-              ];
-              let polyline = new kakao.maps.Polyline({
-                path : linePath
-              });
-              console.log(polyline.getLength())
+//               // 선 객체 생성
+//               let linePath = [
+//                 new kakao.maps.LatLng(lat, lon),
+//                 new kakao.maps.LatLng(targetLat, targetLon)
+//               ];
+//               let polyline = new kakao.maps.Polyline({
+//                 path : linePath
+//               });
+//               console.log("거리" + polyline.getLength())
               
               
-              // Math.round(polyline.getLength())
-        })
-        
-      } else { // HTML5의 GeoLocation을 사용할 수 없을때
-        console.log("현위치 검색실패")
-      }
-    } else {
-        console.log(`${address} 주소검색 실패`)
-    }
-  })
-  return dResult
-}
+//               // Math.round(polyline.getLength())
+//               // return polyline.getLength()
+//         })
+//       } else { // HTML5의 GeoLocation을 사용할 수 없을때
+//         console.log("현위치 검색실패")
+//       }
+//     } else {
+//         console.log(`${address} 주소검색 실패`)
+//     }
+//   })
+// }
 
 
 var storeNum;
