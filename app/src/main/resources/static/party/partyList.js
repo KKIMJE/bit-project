@@ -6,7 +6,7 @@ var pbody = document.querySelector("#party-body")
     })
     .then(function(result) {      
       for (var party of result) {
-        pbody.innerHTML += `<div class="party-list">
+        pbody.innerHTML += `<a href="/party/partyDetail.html&no=${party.partyNo}" class="party-list"> 
                             <div class="party-body-top">
                                 <div class="party-title">${party.title}</div>
                                 <div class="party-regdate">${party.regDate}</div>
@@ -50,7 +50,7 @@ var pbody = document.querySelector("#party-body")
                             <span>3</span>&nbsp;/&nbsp;<span>${party.maxMember}</span>
                         </div>
                     </div>
-                </div>
+                </a>
         `;
         
       }
