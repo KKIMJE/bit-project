@@ -7,11 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Bootstrap CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       
         <link
             rel="stylesheet"
             type="text/css"
@@ -104,6 +106,51 @@
 </ul>
 </nav>
 
+<!-- 부트스트랩의 모달 창을 사용할려면 아래의 class 이름들을 그대로 사용해야 한다. 변경하면 모양이 달라진다.-->
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="myModal" role="dialog"> <!-- 사용자 지정 부분① : id명 -->
+
+    <div class="modal-dialog">
+
+    
+
+      <!-- Modal content-->
+
+    <center><div class="modal-content" >
+
+        <div class="modal-header">
+          <center><h4 class="modal-title">주점 리스트</h4></center> <!-- 사용자 지정 부분② : 타이틀 -->
+        </div>
+
+        <div class="modal-body" style="font-size:20px;">
+
+          <center>
+          <button type="button" class="x-go-btn" >오자네왔능가</button><br><br>
+          <button type="button" class="x-go-btn" >치킨데이</button><br><br>
+          <button type="button" class="x-go-btn" >족발왕</button><br>
+          
+          </center> 
+            
+            
+           <center>
+         <button type="button" class="x-close-btn" data-dismiss="modal">확인</button>
+          </center> 
+        </div>
+
+        <div class="footer-content" >
+      <footer__>
+ <a class="footer-logo"> <img src="../img/logo.png" alt=""></a>
+</footer__>
+        </div>
+
+      </div></center>
+
+    </div>
+
+  </div>
+  
 <div class="mypage-main">
 <h1>마이페이지</h1>
 <div>
@@ -116,35 +163,40 @@
             </div>
         </div>
     </div>
+    
     <div class="mypage-settings">
         <div class="mypage-setting">
             <a href="#">
-                <span>주점등록</span>
-                <span class="setting-btn">></span>
+                <span onClick="location.href='../memberBoss/MemberBoss.html'">주점추가</span>
+                <span class="setting-btn" onClick="location.href='../memberBoss/MemberBoss.html'">></span>
             </a>
         </div>
+        
         <div class="mypage-setting">
             <a href="#">
-                <span>주점관리</span>
-                <span class="setting-btn">></span>
+                <span onClick="location.href='storeChange.html'">주점수정</span>
+                <span class="setting-btn" onClick="location.href='storeChange.html'">></span>
             </a>
         </div>
+        
         <div class="mypage-setting">
             <a href="#">
-                <span>리뷰관리</span>
-                <span class="setting-btn">></span>
+                <span onClick="location.href='storemanagement.html'">주점관리</span>
+                <span class="setting-btn" onClick="location.href='storemanagement.html'">></span>
             </a>
         </div>
+        
         <div class="mypage-setting">
             <a href="#">
-                <span>음주관리</span>
-                <span class="setting-btn">></span>
+                <span data-toggle="modal" data-target="#myModal" >리뷰관리</span>
+                <span class="setting-btn" data-toggle="modal" data-target="#myModal" >></span>
             </a>
         </div>
+        
         <div class="mypage-setting">
             <a href="#">
-                <span>예약관리</span>
-                <span class="setting-btn">></span>
+                <span data-toggle="modal" data-target="#myModal" >예약관리</span>
+                <span class="setting-btn" data-toggle="modal" data-target="#myModal" >></span>
             </a>
         </div>
 </div>

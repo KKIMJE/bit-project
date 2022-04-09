@@ -4,6 +4,7 @@
 /* 찜목록 콘텐츠 대분류 */
 .selectlist-container {
   display: flex;
+  flex-wrap:wrap;
   flex-direction: column;
   align-items: center;
 }

@@ -9,6 +9,14 @@ body {
   margin: 0 auto !important;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
 #party-wrap {
   display: flex;
   flex-direction: column;
