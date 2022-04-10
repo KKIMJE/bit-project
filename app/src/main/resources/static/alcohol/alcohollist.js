@@ -23,7 +23,7 @@ function allList() {
         if (i % 5 == 0) {
           var no = 1;
           var itemDiv = document.createElement("div");
-          itemDiv.classList.add(`"alclist-item-div${no}"`);
+          itemDiv.classList.add("alclist-item-div");
           itemDiv.classList.add("d-flex");
           itemDiv.classList.add("flex-row");
           no++
@@ -34,7 +34,7 @@ function allList() {
         div.classList.add("card")
         div.classList.add("border-white")
         div.innerHTML = `
-          <a href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
+          <a class="alc-link" href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
             <img src="${alcohols[i].img}" class="card-img-top">
             <div class="card-body">
               <p class="card-text">
@@ -66,7 +66,7 @@ function targetList(targetNo) {
           if (count % 5 == 0) {
             var no = 1
             var itemDiv = document.createElement("div")
-            itemDiv.classList.add(`"alclist-item-div${no}"`)
+            itemDiv.classList.add("alclist-item-div")
             itemDiv.classList.add("d-flex")
             itemDiv.classList.add("flex-row")
             no++
@@ -79,7 +79,7 @@ function targetList(targetNo) {
           div.classList.add("card")
           div.classList.add("border-white")
           div.innerHTML = `
-        <a href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
+        <a class="alc-link" href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
         <img src="${alcohols[i].img}" class="card-img-top">
         <div class="card-body">
         <p class="card-text">

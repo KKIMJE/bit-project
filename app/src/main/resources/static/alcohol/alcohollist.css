@@ -45,16 +45,25 @@
 @media screen and (min-width: 320px) {
 }
 
-.alcohol-list-div {
+/* .alcohol-list-div {
   display: block;
+} */
+
+body {
+  font-family: NanumSquareRound;
+}
+
+html {
+
 }
 
 
 .alclist-category-div {
   font-family: NanumSquareRound;
   display: flex;
+  position: static;
   align-items: baseline;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 100px;
   margin-left: -25%;
   margin-right: -25%;
@@ -104,14 +113,24 @@
   border-color: rgb(160, 160, 160);
 }
 
+.alclist-item-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 1280px;
+}
+
+.alc-link {
+  width: 150px;
+}
+
 .d-flex {
   display: flex;
   text-align: center;
 }
 
 .card {
-  width: 400px;
-  height: 250px;
+  margin-right: 105px;
   margin-bottom: 20px;
   position: static;
   border: none;

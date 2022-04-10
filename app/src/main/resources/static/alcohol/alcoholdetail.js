@@ -57,6 +57,7 @@ function closeOverlay() {
 
 
 const markerArr = []
+var overlayArr = []
 
 function showMarkers(alcohol) {
 
@@ -95,11 +96,15 @@ function showMarkers(alcohol) {
       map: map,
       position: marker.getPosition()
     });
-    markerArr.push(marker)
+
+    markerArr.push(marker);
+    overlayArr.push(overlay);
   } // end for
 }
 
-
+function closeOverlay() {
+  overlay.setMap(null);
+}
 
 
 fetch(`/alcohol/get?no=${no}`)
@@ -145,6 +150,11 @@ fetch(`/alcohol/get?no=${no}`)
     showMarkers(alcohol);
 
   });
+
+  console.log(overlayArr);
+
+
+
 
 
   // 마커 위에 커스텀오버레이를 표시합니다
