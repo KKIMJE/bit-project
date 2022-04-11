@@ -8,9 +8,12 @@ function targetList(targetNo) {
       let listAll = document.querySelector(".imgContainer");
       let count = 0
       let card = true
+      let tStoreNumList = [] // 필터링된 주점 번호모음
 
       for (var i = 0; i < stores.length; i++) {
-        if (targetNo == stores[i].storeTypeNo) {
+        if (targetNo == stores[i].storeTypeNo) { // 카테고리 필터링
+          tStoreNumList.push(i)
+
           if (count == 0) {
             var listDiv = document.createElement("div")
             listDiv.classList.add("storeContents-imgCard")
@@ -103,8 +106,11 @@ function targetList(targetNo) {
           count++
         }
       }
+      console.log("해당 주점수 : " + tStoreNumList.length)
       listDiv.appendChild(itemDiv)
       listDiv.appendChild(itemDiv2)
+      targetMapMarker(stores, tStoreNumList)
+      targetMapNextpreBtnSet(stores, tStoreNumList)
     })
 };
 
@@ -115,7 +121,7 @@ lightBtn.addEventListener("click",function(e){
   } else {
     e.currentTarget.querySelector('.act').classList.toggle('act')
     e.target.classList.toggle('act')
-    
+    // 지금 맵마커 리스트는 각각 초기화하는거 설정햇고 타겟맵마커 넥스트 버튼 세팅만 위치조절해서 잘하면될듯
     $('.imgContainer').empty()
 
     let targetNo = e.target.value
@@ -124,7 +130,9 @@ lightBtn.addEventListener("click",function(e){
       location.reload()
     } else {
       targetList(targetNo)
+      btnStatus = false
     }
   }
+  nextPreBtnSet() // 버튼 다시 세팅
 });
 
