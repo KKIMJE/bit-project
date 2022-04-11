@@ -40,7 +40,7 @@ h1 {
   align-items: baseline;
   font-size: 15px;
   margin-top: 13px;
-  margin-left: 40px;
+  
 }
 
 .btn{
@@ -73,7 +73,19 @@ h1 {
   width: 60px;
 }
 
-.submit-next-btn,.submit-exit-btn {
+.submit-next-btn {
+  all: unset;
+  color: #EEEFF1;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #29c05e;
+  border-radius: 5px;
+  margin-left: -30px;
+  padding: 8px;
+  width: 60px;
+}
+
+.submit-exit-btn {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
@@ -92,7 +104,7 @@ h1 {
 
 .login__box {
   width: 450px;
-  height: 1030px;
+  height: 980px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;
@@ -104,7 +116,7 @@ h1 {
 }
 
 .form_store {
-   margin-top:-30px;
+   margin-top:-10px;
   color:  black;
   font-size: 15px;
   margin-left: 40px;
@@ -124,12 +136,19 @@ body > form > div > div > div > div > span {
   margin-left: 40px;
 }
 
-.form_address,.form_hr, .form_intro, .form_tag {
+.form_address {
   color: black;
   font-size: 15px;
   padding-top: 10px;
   margin-bottom: -5px;
   margin-left: 40px;
+}
+
+ .form_hr, .form_intro, .form_tag {
+  color: black;
+  font-size: 15px;
+  padding-top: 10px;
+  margin-bottom: -5px;
 }
 
 .btn-outline-dark1 {
@@ -159,7 +178,6 @@ body > form > div > div > div > div > span {
   font-size: 15px;
   padding-top: 20px;
   margin-bottom: -5px;
-  margin-left: 40px;
 }
 
 .form_input_address {
@@ -190,7 +208,7 @@ body > form > div > div > div > div > span {
   border-radius: 10px;
   padding: 8px;
   margin-top: -5px;
-  margin-left: 40px;
+  
 }
 
 .form_input_tel {
