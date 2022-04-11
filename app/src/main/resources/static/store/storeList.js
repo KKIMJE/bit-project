@@ -107,9 +107,13 @@ function targetList(targetNo) {
         }
       }
       console.log("해당 주점수 : " + tStoreNumList.length)
+      if (itemDiv == null) {
+        console.log("null")
+        return
+      } 
       listDiv.appendChild(itemDiv)
       listDiv.appendChild(itemDiv2)
-      targetMapMarker(stores, tStoreNumList)
+      targetMapMarker(stores, tStoreNumList.slice(0, 10))
       targetMapNextpreBtnSet(stores, tStoreNumList)
     })
 };
@@ -121,7 +125,7 @@ lightBtn.addEventListener("click",function(e){
   } else {
     e.currentTarget.querySelector('.act').classList.toggle('act')
     e.target.classList.toggle('act')
-    // 지금 맵마커 리스트는 각각 초기화하는거 설정햇고 타겟맵마커 넥스트 버튼 세팅만 위치조절해서 잘하면될듯
+
     $('.imgContainer').empty()
 
     let targetNo = e.target.value
