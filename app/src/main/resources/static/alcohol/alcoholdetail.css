@@ -120,11 +120,11 @@
 
 .store-name {
   font-weight: bold;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .store-status {
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 5px;
   color: gray;
 }
@@ -198,7 +198,8 @@
 }
 
 .info .title {
-  padding: 5px 0 0 10px;
+  padding-top: 5px;
+  padding-left: 5px;
   height: 30px;
   background: #29c05e;
   border-bottom: 1px solid #ddd;

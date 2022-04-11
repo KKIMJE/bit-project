@@ -57,7 +57,7 @@ function closeOverlay() {
 
 
 const markerArr = []
-var overlayArr = []
+var overlay
 
 function showMarkers(alcohol) {
 
@@ -78,12 +78,11 @@ function showMarkers(alcohol) {
         <div class="info">
             <div class="title">
                 ${alcohol.stores[i].storeName}
-                <div class="close" onclick="closeOverlay()" title="닫기"></div>
             </div>
             <div class="body">
                 <div class="desc">
-                    <div class="ellipsis">${alcohol.stores[i].status}</div>
-                    <div class="jibun ellipsis">⭐⭐⭐⭐⭐</div>
+                    <div class="marker-store-status">${alcohol.stores[i].status}</div>
+                    <div class="marker-store-score">⭐⭐⭐⭐⭐</div>
                 </div>
            </div>
         </div>
@@ -98,13 +97,15 @@ function showMarkers(alcohol) {
     });
 
     markerArr.push(marker);
-    overlayArr.push(overlay);
+    // overlayArr.push(overlay);
   } // end for
 }
 
 function closeOverlay() {
   overlay.setMap(null);
 }
+
+
 
 
 fetch(`/alcohol/get?no=${no}`)
@@ -151,7 +152,9 @@ fetch(`/alcohol/get?no=${no}`)
 
   });
 
-  console.log(overlayArr);
+
+
+
 
 
 
