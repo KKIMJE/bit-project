@@ -9,6 +9,7 @@ public class Store {
 
   int storeNo;
   int storeTypeNo;
+  int mno;
   int businessRegistrationNo;
   String businessRegistration;
   String storeName;

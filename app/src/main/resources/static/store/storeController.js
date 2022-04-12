@@ -3,7 +3,7 @@ let targetLat, targetLon, lat, lon, tagStr;
 let distanceLine = [];
 let markerList = [];
 let targetMarkerList = [];
-let btnStatus = false
+let btnStatus = false // map next, pre 버튼의 중복 동작 방지
 
 var next = document.querySelector('.next-store');
 var pre = document.querySelector('.pre-store');
@@ -19,7 +19,7 @@ function loadData(serverInfo){
           let storeNumList = numMaker(data.length)
 
           storeList(allStoreDataList) // 전체 주점 초기 세팅
-          mapMarker(allStoreDataList, storeNumList) // 맵 초기화면 세팅
+          mapMarker(allStoreDataList, [0,1,2,3,4,5,6,7,8,9]) // 전체 맵 초기화면 세팅
           mapNextpreBtnSet(allStoreDataList, storeNumList)
       })
 }
@@ -78,6 +78,7 @@ function storeList(stores) {
     let storeName = stores[i].storeName
     let stras = printStar(stores[i].evaluationScore)
     let storeOper = printOper(stores[i].oper)
+    let heart = printheart(stores[i].mno, stores[i].storeNo)
 
     geocoder.addressSearch(address,
       function(result, status) {
@@ -110,7 +111,7 @@ function storeList(stores) {
 
     tagStr = `<div class="img-xbox">
       <div class="xImg box">
-        <i id="heart" data-heart="${i}" class="fa-heart b fa-solid"></i>
+        ${heart}
         <a><img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori"></a>
       </div>
       <div class="xImg-contents">
@@ -162,6 +163,16 @@ function printStar(score) {
   }
   return star;
 }
+// 주점찜
+function printheart(mno, storeNo) {
+  if (mno == null || mno == 0) {
+    console.log("해당 주점은 찜이 없습니다.")
+    return `<i id="heart" class="b"></i>`
+  } else {
+    console.log(`${mno}님이 ${storeNo}를 찜했습니다.`)
+    return `<i id="heart" class="fa-heart b fa-solid"></i>`
+  }
+}
 
 // 거리 계산값 입력 : 수정중
 function inputDistance() {
@@ -176,9 +187,8 @@ function inputDistance() {
 
 console.log(distanceLine)
 
-// next pre btn setter
+// == next, pre button ==
 function nextPreBtnSet() {
-  // == next, pre button ==
   setTimeout(() => {
     // 주점 리스트 초기화 - 페이지 1로 맞추기
     let storeAll = document.querySelectorAll('.storeContents-imgCard');
@@ -189,7 +199,7 @@ function nextPreBtnSet() {
     let cursor = 0;
     let endPage = storeAll.length;
     function moveAl(cursor) {
-      if (storeAll[cursor].style.display == null) {
+      if (storeAll[cursor].style.display == null || storeAll[cursor].style == null) {
         return
       }
       if (storeAll[cursor].style.display == "none") {
