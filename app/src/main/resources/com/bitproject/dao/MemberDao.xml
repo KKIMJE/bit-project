@@ -68,7 +68,7 @@
     ) 
     values(
     #{email},
-    #{pwd},
+    password(#{pwd}),
     #{name},
     #{tel},
     #{gender},
