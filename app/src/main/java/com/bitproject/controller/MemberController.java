@@ -73,8 +73,12 @@ public class MemberController {
   }
 
 
+  @SuppressWarnings("unchecked")
   @RequestMapping("/member/facebookLogin")
   public Object facebookLogin(String accessToken, HttpSession session) {
+
+    System.out.println("facebookLogin() 호출됨");
+
 
     // 1) accessToken을 가지고 페이스북으로 가서 로그인 사용자 정보를 가져온다.
     RestTemplate restTemplate = new RestTemplate();
@@ -82,8 +86,10 @@ public class MemberController {
         "https://graph.facebook.com/v13.0/me?access_token={value1}&fields={value2}", // 요청할 URL 
         Map.class, // 서버에서 받은 결과의 타입 
         accessToken, // URL의 첫 번째 자리에 들어갈 값
-        "id,name,email,gender" // 페이스북 측에 요청하는 로그인 사용자 정보
+        "id,name,email" // 페이스북 측에 요청하는 로그인 사용자 정보
         );
+
+
 
     // 2) 사용자 이름과 이메일을 알아낸다.
     String name = result.get("name");
@@ -103,7 +109,9 @@ public class MemberController {
           .setEmail(email)
           .setName(name)
           .setPassword("1111")
+          .setTel("1111111233")
           .setNickName(email));
+
       session.setAttribute("loginUser", memberService.get(email));
       return new ResultMap().setStatus(SUCCESS).setData("새 회원 로그인");
     }

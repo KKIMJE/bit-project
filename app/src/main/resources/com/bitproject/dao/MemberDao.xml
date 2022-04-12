@@ -61,6 +61,17 @@
       email=#{email} and password=password(#{password})
   </select>
   
+      <select id="findByEmail" resultMap="memberMap">
+    select 
+      mno,
+      name,
+      email
+    from 
+      member
+    where
+      email=#{email}
+  </select>
+  
   <!--  
     <select id="findAll" resultMap="memberMap">
     select 

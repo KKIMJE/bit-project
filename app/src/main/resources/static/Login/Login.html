@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="login.css">
-        
+
     <title>야술먹자 로그인</title>
 </head>
 <body>
@@ -36,7 +36,7 @@
 
         <ul class="navbar__login">
             <!-- 알림 -->
-            <div class="btn-group"> 
+            <div class="btn-group">
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                         <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
@@ -45,10 +45,10 @@
             </div>
 
             <!-- 마이페이지 -->
-            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a> 
+            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
 
             <!-- 검색 -->
-            <div class="btn-group"> 
+            <div class="btn-group">
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                         <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
@@ -61,10 +61,10 @@
                     </li>
                     </ul>
                 </div>
-            </div> 
+            </div>
 
             <!-- 지도 -->
-            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a> 
+            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
         </ul>
     </nav>
 
@@ -85,15 +85,15 @@
           <div class="login__sns__contents">
             <!-- SNS로그인 후작업 필요 -->
             <div>
-              <fb:login-button 
-                  scope="public_profile,email" 
+              <fb:login-button
+                  scope="public_profile,email"
                   onlogin="checkLoginState();"></fb:login-button>
             </div>
             <!-- <button>
-            <div class="fb-login-button" 
-            data-size="large" 
-            data-button-type="login_with" 
-            data-layout="default" 
+            <div class="fb-login-button"
+            data-size="large"
+            data-button-type="login_with"
+            data-layout="default"
             data-auto-logout-link="false" data-use-continue-as="false">
             </div>
           </button> -->
@@ -109,20 +109,20 @@
     <script type="text/javascript">
       var xEmail = document.querySelector("input[name=email]");
       var xPassword = document.querySelector("input[name=password]");
-        
+
       document.querySelector("form[name=login__form]").onsubmit = function() {
         if ( xEmail.value == "" ||
               xPassword.value == "") {
           window.alert("필수 입력 항목이 비어 있습니다.");
           return false;
         }
-        
+
         var fd = new FormData(document.forms.namedItem("login__form"));
-        
-        fetch("/member/signin", { 
+
+        fetch("/member/signin", {
             method: "POST",
             body: new URLSearchParams(fd)
-          }) 
+          })
           .then(function(response) {
             return response.json();
           })
@@ -135,17 +135,17 @@
           });
         return false;
       };
-      
+
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '272674241595180', // 개발자가 등록한 앱 ID
-          cookie     : true,  
-          xfbml      : true,  
-          version    : 'v13.0' 
+          appId      : '394993095383103', // 개발자가 등록한 앱 ID
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v13.0'
         });
         FB.AppEvents.logPageView();
       };
-      
+
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -153,20 +153,25 @@
         js.src = "https://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-      
+
       function checkLoginState() {
-          FB.getLoginStatus(function(response) { 
+        console.log("checkLoginState() 호출됨");
+          FB.getLoginStatus(function(response) {
+            console.log(response);
+            console.log(response.authResponse.accessToken);
               if (response.status === 'connected') { // 로그인이 정상적으로 되었을 때,
-                  
+
                   var params = new URLSearchParams();
                 params.append("accessToken", response.authResponse.accessToken);
-      
+
                 fetch("/member/facebookLogin", {
                     method: "POST",
-                    body: params 
+                    body: params
                   }).then(function(response) {
+                    console.log(response);
                       return response.json();
                   }).then(function(result) {
+                    console.log(result);
                       if (result.status == "success") {
                           console.log(result.data)
                           location.href = "../main/main.html";
@@ -175,18 +180,18 @@
                           console.log(result.data);
                       }
                   });
-                
+
               } else { // 로그인이 되지 않았을 때,
                   console.log("로그인 되지 않았음");
               }
           });
       }
       </script>
-      
+
       <script src="/node_modules/js-cookie/dist/js.cookie.js"></script>
       <script>
         //userEmail 쿠키가 있다면 값을 꺼내서 이메일 입력 상자에 넣는다.
-        var userEmail = Cookies.get('userEmail'); 
+        var userEmail = Cookies.get('userEmail');
         if (userEmail != undefined) {
             xEmail.value = userEmail;
         }
@@ -213,16 +218,16 @@
             <div>고객센터</div>
           </div>
         </div>
-      
+
       </footer__>
-    
+
 
 </body>
 </html>
 <!-- icons -->
 <script src="https://kit.fontawesome.com/22437c0385.js"
   crossorigin="anonymous"></script>
-  
+
 <!-- Bootstrap CSS -->
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -230,9 +235,6 @@
   crossorigin="anonymous">
 </script>
 
-<script async defer crossorigin="anonymous" 
-src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v13.0&appId=1035699987303606&autoLogAppEvents=1" 
+<script async defer crossorigin="anonymous"
+src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v13.0&appId=1035699987303606&autoLogAppEvents=1"
 nonce="HPolkPqu"></script>
-
-
-
