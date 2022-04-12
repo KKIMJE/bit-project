@@ -107,11 +107,24 @@ body {
 
 .filter-font {
   margin: 0px 15px;
+  padding: 4px 6px;
+  font-weight: 700;
   background-color: white;
-  border-width: 0.5px;
   border-style: solid;
+  border-color: white;
   border-radius: 16px;
-  border-color: rgb(160, 160, 160);
+  cursor: pointer;
+}
+
+.filterAct {
+  margin: 0px 15px;
+  padding: 4px 6px;
+  font-weight: 700;
+  background-color: #29c05e;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 16px;
 }
 
 .alclist-item-div {

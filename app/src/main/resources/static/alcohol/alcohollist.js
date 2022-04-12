@@ -1,20 +1,10 @@
 const lightBtn = document.querySelector('.category-sort-div');
-var listDiv = document.querySelector(".alcohol-list-div")
+const filterBtn = document.querySelector('.filter')
 var itemDiv = document.querySelector(".alclist-item-div")
+// var listDiv = document.querySelector(".alcohol-list-div")
 
-
-
-
-// function makeItemDiv() {
-//     var no = 1
-//     var itemDiv = document.createElement("div")
-//     itemDiv.classList.add(`"alclist-item-div${no}"`)
-//     itemDiv.classList.add("d-flex")
-//     itemDiv.classList.add("flex-row")
-//     no++
-//     listDiv.appendChild(itemDiv)
-// }
-
+var allListArr = []
+var targetListArr = []
 
 function allList() {
   fetch("/alcohol/list")
@@ -23,7 +13,7 @@ function allList() {
     })
     .then(function(alcohols) {
       for (var i = 0; i < alcohols.length; i++) {
-        var div = document.createElement("div")
+        let div = document.createElement("div")
         div.classList.add("card")
         div.classList.add("border-white")
         div.innerHTML = `
@@ -33,18 +23,19 @@ function allList() {
               <p class="card-text">
               <ul>
                 <li>${alcohols[i].alcoholName}</li>
-                <li>${alcohols[i].degree}%</li>
+                <li class="alchol-degree-value">${alcohols[i].degree}%</li>
               </ul>
               </p>
             </div>
           </a>
         `
+        allListArr.push(div)
         itemDiv.appendChild(div)
+        console.log(allListArr);
       }
+
     })
 }
-
-
 
 function targetList(targetNo) {
   fetch("/alcohol/list")
@@ -52,39 +43,33 @@ function targetList(targetNo) {
       return response.json()
     })
     .then(function(alcohols) {
-      var count = 0
       for (var i = 0; i < alcohols.length; i++) {
         if (targetNo == alcohols[i].alcoholTypeNo) {
-
-
-          var div = document.createElement("div")
-          div.classList.add("card")
-          div.classList.add("border-white")
-          div.innerHTML = `
+          let targetDiv = document.createElement("div")
+          targetDiv.classList.add("card")
+          targetDiv.classList.add("border-white")
+          targetDiv.innerHTML = `
         <a class="alc-link" href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
         <img src="${alcohols[i].img}" class="card-img-top">
         <div class="card-body">
         <p class="card-text">
         <ul>
         <li>${alcohols[i].alcoholName}</li>
-        <li>${alcohols[i].degree}%</li>
+        <li class="alchol-degree-value">${alcohols[i].degree}%</li>
         </ul>
         </p>
         </div>
         </a>
         `
-          itemDiv.appendChild(div)
-          count++
+
+          itemDiv.appendChild(targetDiv)
+          targetListArr = [];
+          targetListArr.push(targetDiv)
+          console.log(targetListArr);
         }
       }
     })
-
 }
-
-
-
-
-
 
 lightBtn.addEventListener("click", function(e) {
   $('.alcohol-list-div div').empty()
@@ -103,9 +88,22 @@ lightBtn.addEventListener("click", function(e) {
     }
     if (targetNo != 0) {
       targetList(targetNo)
+
     }
   }
 });
+
+filterBtn.addEventListener("click", function(e) {
+  if (e.target == e.currentTarget) {
+    return;
+  } else {
+    e.currentTarget.querySelector('.filterAct').classList.toggle('filterAct');
+    e.target.classList.toggle('filterAct');
+  }
+})
+
+
+
 
 // if (count % 5 == 0) {
 //   var itemDiv = document.createElement("div")
