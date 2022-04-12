@@ -68,24 +68,24 @@
     </ul>
 </nav>
 
-    <h1>야!술먹자 회원가입</h1>
+    <h1>야술먹자 회원가입</h1>
     <form name="add__form">
       <div class="add__box">
         <div class="content">
           <p class="form_email">이메일</p><br>
-          <input name="name" type="text" class="form_input_mail">
+          <input name="email" type="email" class="form_input_mail">
 
         <div class="password">
             <p class="form_password">비밀번호</p><br>
             <div>
-              <input name="password" type="text" class="form_input_password">
+              <input name="password" type="password" class="form_input_password">
             </div>
           </div>
-
+<!-- 
           <div class="password_again">
             <p class="form_password">비밀번호 확인</p><br>
-            <input name="password_again" type="text" class="form_input_password">
-          </div>
+            <input name="password_again" type="password" class="form_input_password">
+          </div> -->
 
           <div class="name">
             <p class="form_name">이름</p><br>
@@ -94,7 +94,7 @@
 
            <div class="phone">
             <p class="form_phone">휴대전화</p><br>
-            <input name="password_again" type="text" class="form_input_password">
+            <input name="tel" type="tel" class="form_input_password">
           </div>
 
            <div>
@@ -121,17 +121,67 @@
 
            <center>
            <div class="agree">
-          <input type="checkbox"  class="form_input_check1">
+          <input type="checkbox" class="form_input_check1">
           이용약관, 개인정보 수집 및 이용 동의 (필수)</div>
             </center>
             <center><div class="btn">
          <button class="submit-next-btn">가입완료</button>
-         <button class="submit-exit-btn">취소</button>
+         <button class="submit-exit-btn" type="button">취소</button>
          </center>
 
           </div>
          </div>
     </form>
+
+    <script type="text/javascript">
+      var xName = document.querySelector("input[name=name]");
+      var xEmail = document.querySelector("input[name=email]");
+      var xPassword = document.querySelector("input[name=password]");
+        
+      document.querySelector("form[name=add__form]").onsubmit = function() {
+        if (xName.value == "" || 
+            xEmail.value == "" ||
+            xPassword.value == "") {
+          window.alert("필수 입력 항목이 비어 있습니다.");
+          return false;
+        }
+        
+        var fd = new FormData(document.forms.namedItem("add__form"));
+        
+        fetch("/member/signup", { 
+            method: "POST",
+            body: new URLSearchParams(fd)
+          }) 
+          .then(function(response) {
+            console.log(response);
+            return response.json();
+          })
+          .then(function(result) {
+            console.log(result);
+            if (result.status == "success") {
+              location.href = "../main/main.html";
+            } else {
+              window.alert("회원가입 실패!!");
+            }
+          });
+        return false;
+      };
+      
+      document.querySelector(".submit-exit-btn").onclick = function() {
+        window.location.href = "../main/main.html";
+      };
+      </script>
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- <footer__>
         <div class="footer-contents">

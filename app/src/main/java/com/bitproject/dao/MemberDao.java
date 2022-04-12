@@ -14,7 +14,7 @@ public interface MemberDao {
 
   int insert(Member member);
 
-  Member findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
+  Member findByEmailAndPassword(@Param("email") String email, @Param("pwd") String pwd);
 
   Member findByEmail(String email);
 

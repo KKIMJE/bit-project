@@ -77,6 +77,17 @@
     #{nickName}
     )
   </insert>
+  
+  <select id="findByEmailAndPassword" resultMap="memberMap">
+    select 
+      mno,
+      name,
+      email
+    from 
+      member
+    where
+      email=#{email} and pwd=password(#{pwd})
+  </select>
 
 
 	<select id="findByNo" resultMap="memberMap" parameterType="int">
