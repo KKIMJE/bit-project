@@ -21,8 +21,6 @@ public class MemberController {
 
   @RequestMapping("/member/signup")
   public Object signUp(Member member) {
-    System.out.println("우라라라라라라라라랄라라라");
-    System.out.println(member);
     if (memberService.add(member) == 1) {
       return new ResultMap().setStatus(SUCCESS);
     } else {
@@ -31,8 +29,8 @@ public class MemberController {
   }
 
   @RequestMapping("/member/signin")
-  public Object signin(String email, String pwd, boolean saveEmail, HttpServletResponse response, HttpSession session) {
-    Member loginUser = memberService.get(email, pwd);
+  public Object signin(String email, String password, boolean saveEmail, HttpServletResponse response, HttpSession session) {
+    Member loginUser = memberService.get(email, password);
     if (loginUser == null) {
       return new ResultMap().setStatus(FAIL);
     }
@@ -104,7 +102,8 @@ public class MemberController {
       memberService.add(new Member()
           .setEmail(email)
           .setName(name)
-          .setPwd("1111"));
+          .setPassword("1111")
+          .setNickName(email));
       session.setAttribute("loginUser", memberService.get(email));
       return new ResultMap().setStatus(SUCCESS).setData("새 회원 로그인");
     }

@@ -21,7 +21,6 @@
     <title>야술먹자 로그인</title>
 </head>
 <body>
-<div id="fb-root"></div>
   <nav class="navbar__">
         <div><!-- 공간, 삭제하지 마세요 --></div>
 
@@ -129,7 +128,7 @@
           })
           .then(function(result) {
             if (result.status == "success") {
-                location.href = "/main.html";
+                location.href = "../main/main.html";
             } else {
                 window.alert("로그인 실패!")
             }
@@ -170,7 +169,7 @@
                   }).then(function(result) {
                       if (result.status == "success") {
                           console.log(result.data)
-                          location.href = "/main.html";
+                          location.href = "../main/main.html";
                       } else {
                           window.alert("페이스북 로그인 실패!");
                           console.log(result.data);

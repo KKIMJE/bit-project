@@ -18,8 +18,8 @@ public class DefaultMemberService implements MemberService {
   }
 
   @Override
-  public Member get(String email, String pwd) {
-    return memberDao.findByEmailAndPassword(email, pwd);
+  public Member get(String email, String password) {
+    return memberDao.findByEmailAndPassword(email, password);
   }
 
   @Override

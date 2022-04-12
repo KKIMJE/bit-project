@@ -12,7 +12,6 @@
   <resultMap type="member" id="memberMap">
     <id column="mno" property="mno"/>
     <result column="email" property="email"/>
-    <result column="pwd" property="pwd"/>
     <result column="name" property="name"/>
     <result column="tel" property="tel"/>
     <result column="join_date" property="joinDate"/>
@@ -31,7 +30,39 @@
   <!-- 
     id => 인터페이스의 메서드 이름과 일치해야 한다.
    -->
-  <select id="findAll" resultMap="memberMap">
+
+   <insert id="insert" parameterType="member">
+    insert into member(email,
+    password,
+    name,
+    tel,
+    gender,
+    birth,
+    self_introduction,
+    nickname) 
+    values(#{email},
+    password(#{password}),
+    #{name},
+    #{tel},
+    #{gender},
+    #{birth},
+    #{selfIntroduction},
+    #{nickName})
+  </insert>
+  
+    <select id="findByEmailAndPassword" resultMap="memberMap">
+    select 
+      mno,
+      name,
+      email
+    from 
+      member
+    where
+      email=#{email} and password=password(#{password})
+  </select>
+  
+  <!--  
+    <select id="findAll" resultMap="memberMap">
     select 
       mno,
       email,
@@ -53,40 +84,6 @@
       member 
     order by 
       mno desc
-  </select>
-
-   <insert id="insert" parameterType="member">
-    insert into member(
-    email,
-    pwd,
-    name,
-    tel,
-    gender,
-    birth,
-    self_introduction,
-    nickname
-    ) 
-    values(
-    #{email},
-    password(#{pwd}),
-    #{name},
-    #{tel},
-    #{gender},
-    #{birth},
-    #{selfIntroduction},
-    #{nickName}
-    )
-  </insert>
-  
-  <select id="findByEmailAndPassword" resultMap="memberMap">
-    select 
-      mno,
-      name,
-      email
-    from 
-      member
-    where
-      email=#{email} and pwd=password(#{pwd})
   </select>
 
 
@@ -136,6 +133,7 @@
     where mno=#{no}
   </delete>
 
+-->
 
 </mapper>
 

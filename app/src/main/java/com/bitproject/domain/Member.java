@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
 public class Member {
   int mno;
   String email;
-  String pwd;
+  String password;
   String name;
   String tel;
   Timestamp joinDate;
