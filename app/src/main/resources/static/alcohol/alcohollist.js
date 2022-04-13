@@ -77,7 +77,6 @@ function allList() {
     })
 }
 
-
 function targetList(targetNo) {
   fetch("/alcohol/list")
     .then(function(response) {
@@ -111,7 +110,6 @@ function targetList(targetNo) {
 
 
 lightBtn.addEventListener("click", function(e) {
-  allArr = [];
   targetArr = [];
   $('.alcohol-list-div div').empty()
   if (e.target == e.currentTarget) {
