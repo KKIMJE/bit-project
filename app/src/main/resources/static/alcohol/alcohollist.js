@@ -63,13 +63,12 @@ function targetList(targetNo) {
         `
 
           itemDiv.appendChild(targetDiv)
-          targetListArr = [];
-          targetListArr.push(targetDiv)
-          console.log(targetListArr);
+          targetListArr.push(alcohols[i])
         }
       }
     })
 }
+console.log(targetListArr);
 
 lightBtn.addEventListener("click", function(e) {
   $('.alcohol-list-div div').empty()
