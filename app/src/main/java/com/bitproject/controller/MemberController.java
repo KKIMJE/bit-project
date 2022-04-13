@@ -110,8 +110,8 @@ public class MemberController {
           .setName(name)
           .setPassword("1111")
           .setTel("1111111233")
-          .setNickName(email));
-
+          .setNickName(email)
+          .setSocialAccept(true));
       session.setAttribute("loginUser", memberService.get(email));
       return new ResultMap().setStatus(SUCCESS).setData("새 회원 로그인");
     }

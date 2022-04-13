@@ -67,7 +67,7 @@
   
   #x-self-intro{resize:none; margin-top:-20px; border-radius:10px; background-color: #E2E2E2; width:600px; height:100px; font-weight: 400; font-size: 20px;line-height: 19px;}
 
-   #x-connect-btn {margin-top:-15px;background-color:#FFFFFF; border-radius:10px;}
+   #x-connect-btn {margin-top:-15px;background-color:#FFFFFF; border-radius:10px; margin-left:10px;}
    
    #x-name {margin-top:-10px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
@@ -77,7 +77,7 @@
    
    #x-birth{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
-   #x-e-address{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
+   #x-e-address{margin-top:-5px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
    #x-pwd{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
