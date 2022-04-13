@@ -2,21 +2,21 @@ package com.bitproject.dao;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-import com.bitproject.domain.Store;
+import com.bitproject.domain.MyStore;
 
 @Mapper  
 public interface MyStoreDao {
   
   int countAll();
   
-  List<Store> findAll();
+  List<MyStore> findAll();
 
-  int insert(Store store);
+  int insert(MyStore mystore);
 
-  Store findByNo(int no);
+  MyStore findByNo(int no);
 
-  int update(Store store);
+  int update(MyStore mystore);
 
-  int delete(Store store);
+  int delete(MyStore mystore);
 
 }
