@@ -1,3 +1,4 @@
+-- 주점데이터 30개
 INSERT INTO sojudb.store
 (store_no, business_registration_no, business_registration, store_name, address, tel, `hour`, introduction, evaluation_score, reservation_accept, max_member, lat, lng, place_id, oper, status)
 VALUES(1, 660, '사업자등록증1', '이구펍29클라스', '서울특별시 강남구 역삼동 817-10', '02-567-2902', '11:11:11', '맥주집', 4.0, 1, 35, 37.5, 127.028, '주점위치아이디1', 1, 1);
