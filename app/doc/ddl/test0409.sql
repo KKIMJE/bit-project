@@ -103,6 +103,10 @@ DROP TABLE IF EXISTS store_img RESTRICT;
 -- 모임댓글
 DROP TABLE IF EXISTS party_comment RESTRICT;
 
+DROP TABLE IF EXISTS party_board_select RESTRICT;
+
+DROP TABLE IF EXISTS party_comment_like RESTRICT;
+
 
 
 CREATE TABLE `alcohol_type` (

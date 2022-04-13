@@ -7,24 +7,24 @@ import com.bitproject.dao.StoreDao;
 import com.bitproject.domain.Store;
 
 @RestController 
-public class StoreController {
+public class MyStoreController {
 
 
   @Autowired
   StoreDao storeDao;
 
-  @RequestMapping("/store/list")
+  @RequestMapping("/Mystore/list")
   public Object list() {
     return storeDao.findAll();
   }
 
-  @RequestMapping("/store/add")
+  @RequestMapping("/Mystore/add")
   public Object add(Store store) {
     return storeDao.insert(store);
   }
 
 
-  @RequestMapping("/store/get")
+  @RequestMapping("/Mystore/get")
   public Object get(int no) {
     Store store = storeDao.findByNo(no);
     if (store == null) {
@@ -33,12 +33,12 @@ public class StoreController {
     return store;
   }
 
-  @RequestMapping("/store/update")
+  @RequestMapping("/Mystore/update")
   public Object update(Store store) {
     return storeDao.update(store);
   }
 
-  @RequestMapping("/store/delete")
+  @RequestMapping("/Mystore/delete")
   public Object delete(Store no) {
     return storeDao.delete(no);
   }

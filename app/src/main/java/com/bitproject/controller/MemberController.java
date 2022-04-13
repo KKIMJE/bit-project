@@ -110,6 +110,7 @@ public class MemberController {
           .setName(name)
           .setPassword("1111")
           .setTel("1111111233")
+          .setSocialAccept(true)
           .setNickName(email));
 
       session.setAttribute("loginUser", memberService.get(email));
