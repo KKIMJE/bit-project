@@ -30,6 +30,7 @@ function numMaker (n) {
   return nList
 }
 
+
 // storeAll list => ImgCard Insert, 주점 위치 찾기
 function storeList(stores) {
   let listAll = document.querySelector(".imgContainer");
@@ -77,7 +78,7 @@ function storeList(stores) {
     let stras = printStar(stores[i].evaluationScore)
     let storeOper = printOper(stores[i].oper)
     let heart = printheart(stores[i].mno, stores[i].storeNo)
-
+ 
     tagStr = `<div class="img-xbox">
       <div class="xImg box">
         ${heart}
@@ -87,7 +88,7 @@ function storeList(stores) {
         <div class="xImg-content">
           <div class="xImg-content-t">${storeName}</div>
           <div class="xImg-star">${stras}</div>
-          <div class="xImg-d" data-address="${stores[i].address}">xxx</div>
+          <div class="xImg-d" data-address="${stores[i].address}">🚧계산중🚧</div>
         </div>
         <div class="storeOpen">${storeOper}</div>
       </div>
@@ -103,45 +104,90 @@ function storeList(stores) {
 
   listDiv.appendChild(itemDiv)
   listDiv.appendChild(itemDiv2)
-
-  computeDistance();
+  
+  computeDistance()
 };
-
-
+// 거리계산
 function computeDistance() {
+  let distanceList = []
   $('.xImg-d').each((index, e) => {
-    geocoder.addressSearch($(e).attr("data-address"), function(result, status) {
-      // 정상적으로 검색이 완료됐으면
-      if (status === kakao.maps.services.Status.OK) {
-        targetLat = result[0].y
-        targetLon = result[0].x
+    distanceList.push($(e).attr("data-address"))
+  })
   
-        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-        navigator.geolocation.getCurrentPosition(function(position) {
-          lat = position.coords.latitude, // 위도
-          lon = position.coords.longitude; // 경도
-        })
-          // 선 객체 생성
-          let linePath = [
-            new kakao.maps.LatLng(lat, lon),
-            new kakao.maps.LatLng(targetLat, targetLon)
-          ];
-  
-          let polyline = new kakao.maps.Polyline({
-            path : linePath
-          });
+  let geocoder = new kakao.maps.services.Geocoder();
+  const addressSearch = address => {
+      return new Promise((resolve, reject) => {
+        geocoder.addressSearch(address, function(result, status) {
+          if (status === kakao.maps.services.Status.OK) {
+            resolve({"lat": result[0].y, "lng": result[0].x});
+          } else {
+            reject(status);
+          }
+        });
+      });
+  };
 
-          // $(e).html(distance(lat, lon, targetLat, targetLon, "K"))
-          $(e).html(polyline.getLength())
-
-        
-      } else {
-          console.log(`${address} 주소검색 실패`)
-      }
+  //GeoLocation을 이용해서 접속 위치를 얻어옵니다
+  const geoLocation = () => {
+    return new Promise((resolve) => {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        resolve({"lat": position.coords.latitude, "lng": position.coords.longitude});
+      })
     })
-  });
-}
+  }
 
+  const distanceLine = (posList, curPos) => {
+    return new Promise((resolve) => {
+
+      const dLines = []
+
+      for(const position of posList) {
+        // 선 객체 생성
+        let linePath = [
+          new kakao.maps.LatLng(position.lat, position.lng),
+          new kakao.maps.LatLng(curPos.lat, curPos.lng)
+        ];
+
+        let polyline = new kakao.maps.Polyline({
+          path : linePath
+        });
+
+        dLines.push(Math.round(polyline.getLength()))
+      }
+      resolve(dLines)
+    })
+  }
+
+  // async-await
+  (async () => {
+    try {
+        const positions = [];
+        for(const address of distanceList) {
+            const result = await addressSearch(address);
+            positions.push(result)
+        }
+        // console.log(positions)
+
+        const geoResult = await geoLocation()
+        // console.log(geoResult)
+
+        const distanceValue = await distanceLine(positions, geoResult)
+        // console.log(distanceValue)
+
+        $('.xImg-d').each((index, e) => {
+          if (1000 < distanceValue[index]) {
+            $(e).html((distanceValue[index] * 0.001).toFixed(2) + "km")
+          } else {
+            $(e).html(distanceValue[index].toFixed(2) + "m")
+          }
+        })
+
+    } catch (e) {
+        console.log(e);
+    }
+  })();
+
+}
 // 영업여부
 function printOper(oper) {
   let status = " ";

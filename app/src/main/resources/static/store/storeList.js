@@ -49,39 +49,9 @@ function targetList(targetNo) {
             }
           }
 
-          let address = stores[i].address
           let storeName = stores[i].storeName
           let stras = printStar(stores[i].evaluationScore)
           let storeOper = printOper(stores[i].oper)
-
-          geocoder.addressSearch(address,
-            function(result, status) {
-            // 정상적으로 검색이 완료됐으면
-            if (status === kakao.maps.services.Status.OK) {
-              targetLat = result[0].y
-              targetLon = result[0].x
-      
-              // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-              navigator.geolocation.getCurrentPosition(function(position) {
-                lat = position.coords.latitude, // 위도
-                lon = position.coords.longitude; // 경도
-      
-                // 선 객체 생성
-                let linePath = [
-                  new kakao.maps.LatLng(lat, lon),
-                  new kakao.maps.LatLng(targetLat, targetLon)
-                ];
-      
-                let polyline = new kakao.maps.Polyline({
-                  path : linePath
-                });
-                // console.log("거리" + polyline.getLength())
-                distanceLine.push(polyline.getLength()) 
-              })
-            } else {
-                console.log(`${address} 주소검색 실패`)
-            }
-          })
 
           tagStr = `<div class="img-xbox">
           <div class="xImg box">
@@ -92,7 +62,7 @@ function targetList(targetNo) {
             <div class="xImg-content">
               <div class="xImg-content-t">${storeName}</div>
               <div class="xImg-star">${stras}</div>
-              <div class="xImg-d">${0}</div>
+              <div class="xImg-d" data-address="${stores[i].address}">🚧계산중🚧</div>
             </div>
             <div class="storeOpen">${storeOper}</div>
           </div>
@@ -113,8 +83,9 @@ function targetList(targetNo) {
       } 
       listDiv.appendChild(itemDiv)
       listDiv.appendChild(itemDiv2)
-      targetMapMarker(stores, tStoreNumList.slice(0, 10))
-      targetMapNextpreBtnSet(stores, tStoreNumList)
+      targetMapMarker(stores, tStoreNumList.slice(0, 10)) // 초기 맵세팅
+      targetMapNextpreBtnSet(stores, tStoreNumList) // next pre btn 세팅
+      computeDistance() // 거리계산
     })
 };
 
@@ -134,7 +105,7 @@ lightBtn.addEventListener("click",function(e){
       location.reload()
     } else {
       targetList(targetNo)
-      btnStatus = false
+      btnStatus = false // map next, pre 버튼의 중복 동작 방지
     }
   }
   nextPreBtnSet() // 버튼 다시 세팅

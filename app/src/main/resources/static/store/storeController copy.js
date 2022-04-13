@@ -1,6 +1,5 @@
 let allStoreDataList;
 let targetLat, targetLon, lat, lon, tagStr;
-let distanceLine = [];
 let markerList = [];
 let targetMarkerList = [];
 let btnStatus = false // map next, pre 버튼의 중복 동작 방지
@@ -30,6 +29,7 @@ function numMaker (n) {
   }
   return nList
 }
+
 
 // storeAll list => ImgCard Insert, 주점 위치 찾기
 function storeList(stores) {
@@ -74,40 +74,11 @@ function storeList(stores) {
       }
     }
 
-    let address = stores[i].address
     let storeName = stores[i].storeName
     let stras = printStar(stores[i].evaluationScore)
     let storeOper = printOper(stores[i].oper)
     let heart = printheart(stores[i].mno, stores[i].storeNo)
-
-    geocoder.addressSearch(address, function(result, status) {
-      // 정상적으로 검색이 완료됐으면
-      if (status === kakao.maps.services.Status.OK) {
-        targetLat = result[0].y
-        targetLon = result[0].x
-
-        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-        navigator.geolocation.getCurrentPosition(function(position) {
-          lat = position.coords.latitude, // 위도
-          lon = position.coords.longitude; // 경도
-
-          // 선 객체 생성
-          let linePath = [
-            new kakao.maps.LatLng(lat, lon),
-            new kakao.maps.LatLng(targetLat, targetLon)
-          ];
-
-          let polyline = new kakao.maps.Polyline({
-            path : linePath
-          });
-          console.log("거리" + polyline.getLength())
-          distanceLine.push(polyline.getLength()) 
-        })
-      } else {
-          console.log(`${address} 주소검색 실패`)
-      }
-    })
-
+ 
     tagStr = `<div class="img-xbox">
       <div class="xImg box">
         ${heart}
@@ -117,7 +88,7 @@ function storeList(stores) {
         <div class="xImg-content">
           <div class="xImg-content-t">${storeName}</div>
           <div class="xImg-star">${stras}</div>
-          <div class="xImg-d">${0}</div>
+          <div class="xImg-d" data-address="${stores[i].address}">distance</div>
         </div>
         <div class="storeOpen">${storeOper}</div>
       </div>
@@ -130,9 +101,54 @@ function storeList(stores) {
     }
     count++
   }
+
   listDiv.appendChild(itemDiv)
   listDiv.appendChild(itemDiv2)
+  
+  computeDistance()
 };
+
+
+// 거리계산
+function computeDistance() {
+
+  $('.xImg-d').each((index, e) => {
+    geocoder.addressSearch($(e).attr("data-address"), function(result, status) {
+      // 정상적으로 검색이 완료됐으면
+      if (status === kakao.maps.services.Status.OK) {
+        targetLat = result[0].y
+        targetLon = result[0].x
+
+        //GeoLocation을 이용해서 접속 위치를 얻어옵니다
+        navigator.geolocation.getCurrentPosition(function(position) {
+          lat = position.coords.latitude, // 위도
+          lon = position.coords.longitude; // 경도
+        })
+
+        if (lat != 0 && lon != 0) {
+
+          // 선 객체 생성
+          let linePath = [
+            new kakao.maps.LatLng(lat, lon),
+            new kakao.maps.LatLng(targetLat, targetLon)
+          ];
+  
+          let polyline = new kakao.maps.Polyline({
+            path : linePath
+          });
+
+          $(e).html(Math.round(polyline.getLength()))
+
+        } else {
+          console.log("현재위치 검색 실패")
+        }
+          
+      } else {
+          console.log(`${address} 주소검색 실패`)
+      }
+    })
+  })
+}
 // 영업여부
 function printOper(oper) {
   let status = " ";
@@ -165,26 +181,14 @@ function printStar(score) {
 // 주점찜
 function printheart(mno, storeNo) {
   if (mno == null || mno == 0) {
-    console.log("해당 주점은 찜이 없습니다.")
+    //console.log("해당 주점은 찜이 없습니다.")
     return `<i id="heart" class="b"></i>`
   } else {
-    console.log(`${mno}님이 ${storeNo}를 찜했습니다.`)
+    //console.log(`${mno}님이 ${storeNo}를 찜했습니다.`)
     return `<i id="heart" class="fa-heart b fa-solid"></i>`
   }
 }
 
-// 거리 계산값 입력 : 수정중
-function inputDistance() {
-  // const xDistance = document.querySelector('.xImg-d')
-  console.log(00)
-  for(let key in distanceLine) {
-    console.log(key, distanceLine[key])
-    
-    // xDistance.innerHTML = Math.round(distanceLine[i]) + "m"
-  }
-}
-
-console.log(distanceLine)
 
 // == next, pre button ==
 function nextPreBtnSet() {
