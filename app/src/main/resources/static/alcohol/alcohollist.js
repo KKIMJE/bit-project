@@ -3,7 +3,6 @@ const filterBtn = document.querySelector('.filter')
 var itemDiv = document.querySelector(".alclist-item-div")
 // var listDiv = document.querySelector(".alcohol-list-div")
 
-var allArr = [];
 var targetArr = [];
 
 function degreeSort(alcoholArr) {
@@ -72,9 +71,9 @@ function allList() {
           </a>
         `
         itemDiv.appendChild(div)
-        allArr.push(alcohols[i])
+        targetArr.push(alcohols[i])
       }
-      console.log(allArr);
+      console.log(targetArr);
     })
 }
 
@@ -144,12 +143,12 @@ filterBtn.addEventListener("click", function(e) {
     let targetNo = e.target.value
 
     if (targetNo == 0) {
-      degreeSort(allArr);
-      sortList(allArr);
+      degreeSort(targetArr);
+      sortList(targetArr);
     }
     if (targetNo == 1) {
-      alphabeticalOrderSort(allArr)
-      sortList(allArr)
+      alphabeticalOrderSort(targetArr)
+      sortList(targetArr)
     }
   }
 })
