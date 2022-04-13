@@ -280,7 +280,7 @@ function nextPreBtnSet() {
   }, 600)
 }
 
-
+// 초기 로드 세팅
 loadData("/store/list")
 nextPreBtnSet()
 btnStatus = true

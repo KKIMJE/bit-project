@@ -80,7 +80,7 @@ function targetList(targetNo) {
       if (itemDiv == null) {
         console.log("null")
         return
-      } 
+      }
       listDiv.appendChild(itemDiv)
       listDiv.appendChild(itemDiv2)
       targetMapMarker(stores, tStoreNumList.slice(0, 10)) // 초기 맵세팅
