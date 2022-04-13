@@ -34,6 +34,7 @@
      color:#d0d0d0;
      border-radius:10px;
      width:80px;
+     margin-top: 10px;
    }
    
   #x-update-btn{ 
@@ -54,27 +55,29 @@
         border:none;
      font-size:10px;
       text-decoration:underline;
-    margin-bottom: 0.25rem!important;}
+    margin-bottom: 0rem;}
   
   
   
   #x-complete-form {font-size:15px;}
   
-  #ig{margin-left: 5%; margin-top: -25px; width:100px; height:100px; }
+  #ig{margin-left: 5%; margin-top: 0px; width:100px; height:100px; }
   
    #img{margin-top:-15px; width:50px; height:50px; }
   
-  #x-self-intro{resize:none; margin-top:-30px; border-radius:10px; background-color: #E2E2E2; width:600px; height:100px; font-weight: 400; font-size: 25px;line-height: 19px;}
+  #x-self-intro{resize:none; margin-top:-15px; border-radius:10px; background-color: #E2E2E2; width:600px; height:100px; font-weight: 400; font-size: 20px;line-height: 19px;}
 
-   #x-connect-btn {margin-top:-15px;background-color:#FFFFFF; border-radius:10px;}
+   #x-connect-btn {margin-top:-15px;background-color:#FFFFFF; border-radius:10px; margin-left:10px;}
    
-   #x-name {margin-top:-10px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
+   #x-name {margin-top:-5px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
+   
+   #x-nickname {margin-top:-10px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
    #x-sex {margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
    #x-birth{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
-   #x-e-address{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
+   #x-e-address{margin-top:-5px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
    #x-pwd{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
