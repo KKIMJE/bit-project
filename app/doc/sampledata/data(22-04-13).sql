@@ -245,6 +245,7 @@ VALUES(20, 4, '해창 12', 12.0, '해창주조장', '대한민국', 900, '땅끝
 INSERT INTO alcohol_detail
 (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
 VALUES(21, 4, '복순도가 막걸리', 6.0, '복순도가', '대한민국', 935, '복순도가 손 막걸리는 전통 방식으로 빚은 가양주로써 100% 국내산 햅쌀을 옛 항아리에 담아 전통방식 그대로 막걸리를 빚습니다.
+
 ', 'alcoholimg/alcohol55.png');
 INSERT INTO alcohol_detail
 (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
