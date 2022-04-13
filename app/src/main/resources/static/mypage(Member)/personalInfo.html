@@ -69,28 +69,46 @@
     </nav>
 
 <content>
-<h1 >개인정보</h1><br>
+
+<center><h1 >개인정보</h1><br></center>
 <center><img id= "ig" src="./img/profile-photo(1).jpg"><br>
  <div class="profile-group">
 <center style="margin-left: 5%;"><b>김흥국</b></center>
-<center><button onclick="toggleImg()" style= "margin-left: 5%; background-color:#FFFFFF; border-radius:10px;">프로필 변경</button></div></center>
+<center><button onclick="toggleImg()" style= "margin-left: 5%; background-color:#FFFFFF; border-radius:10px;">이미지 변경</button></div></center>
 <!--<center><input type = "file" name="photo" multiple></center> 고려사항-->
 <br><br>
 
 <form id="x-complete-form"> 
 <div class="x-info-div-container"> 
 <div class ="personal-info-setting" style= "margin-top:-20px;">
-<p>실명 <br><br>
+<p>실명<br><br>
 <input id="x-name" type="text" name="name" value="홍길동" ></p><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
-<p>성별<br><br>
+닉네임
+<div class="middle">
+  <div style="margin-right:20px; margin-top:-20px;">
+   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    </div>
+<input id="x-nickname" type="text"  name="nickname" value="김흥국"> </p><br><br>
+</div>
+
+<div class ="personal-info-setting" style= "margin-top:-10px;">
+성별
+<div class="middle">
+  <div style="margin-right:20px; margin-top:-20px;">
+   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    </div>
 <input id="x-sex" type="text"  name="sex" value="남"> </p><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
-<p>생년월일<br><br>
+생년월일
+<div class="middle">
+  <div style="margin-right:20px; margin-top:-20px;">
+   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    </div>
 <input id="x-birth" type="text" name="date" value="2000.02.02"><p><br><br>
 </div>
 
@@ -99,9 +117,8 @@
 <input id="x-e-address" type="email" name="email" value="aaa@test.com"><p><br><br>
 </div>
 
-<div class ="personal-info-setting" style= "margin-top:-10px;">
+<div class ="personal-info-setting" style= "margin-top:-10px;"></div>
 비밀번호
-
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
    <button id="x-update-btn" type="button">수정</button><p><br><br>
@@ -109,9 +126,8 @@
 <input id="x-pwd" type="password" name="pwd" value="0000"><br><br>
 </div>
 
-<div class ="personal-info-setting" style= "margin-top:-10px;">
+<div class ="personal-info-setting" style= "margin-top:-10px;"></div>
 전화번호
-
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
    <button id="x-update-btn" type="button">수정</button><p><br><br>
@@ -127,8 +143,7 @@ SNS계정<br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
-자기소개
- 
+자기소개 
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
    <button id="x-update-btn" type="button">수정</button><p><br><br>
