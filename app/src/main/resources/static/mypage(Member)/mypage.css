@@ -111,7 +111,7 @@ body > div > div > div.mypage-settings > div > a > span:nth-child(2) {
   bottom: -17px;
 }
 
-.ceo-account-btn {
+#ceo-account-btn {
   border: 1px solid #000000;
   border-radius: 10px;
   background-color: white;
@@ -122,38 +122,7 @@ body > div > div > div.mypage-settings > div > a > span:nth-child(2) {
   bottom: -17px;
 }
 
-/* 모달부분 */
-.modal-header{
-	background-color: #29c05e;
-  color:white;
-	font-size:20px;
-}
 
-
-.modal-content{
-	width:600px; 
-	height:270px;
-	margin-top:300px;
-}
-
-.x-close-btn{
-	margin-top:20px;
-	border-radius:5px;
-  background-color: #29c05e;
-  color:white;
-     font-size:20px;
-	 height:35px;
-}
-
-.x-go-btn{
-	border-radius:5px;
-  background-color: #29c05e;
-    color:white;
-     font-size:20px;
-     height:35px;
-      margin-top:15px;
-
-}
 
 
 /* 푸터 */
@@ -167,6 +136,14 @@ footer__ {
   font-weight: 700;
 }
 
+body > div.swal2-container.swal2-center.swal2-backdrop-show > 
+div > div.swal2-actions > button.swal2-confirm.swal2-styled:focus{
+	outline:0;
+}
+body > div.swal2-container.swal2-center.swal2-backdrop-show > 
+div > div.swal2-actions > button.swal2-confirm.swal2-styled{
+  outline:0;
+}
 
 /*footer */
 
