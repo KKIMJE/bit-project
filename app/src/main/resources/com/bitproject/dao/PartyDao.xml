@@ -34,10 +34,12 @@
     p.alcohol_type,
     p.alcohol_limit,
     m.name,
-    m.m_img
+    m.m_img,
+    s.address
   from 
   party p
     inner join member m on p.mno=m.mno
+    inner join store s on p.store_no=s.store_no
   order by 
     p.party_no desc;
   </select>

@@ -39,7 +39,7 @@ var pbody = document.querySelector("#party-body")
                     </div>
                     <div class="party-body-footer">
                         <div class="party-store">
-                            <span>50m</span>
+                            <span>${party.address}</span>
                         </div>
                         <div class="party-like">
                             <i class="fa-solid fa-heart like-click"></i>
