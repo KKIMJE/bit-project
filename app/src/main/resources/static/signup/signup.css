@@ -41,7 +41,7 @@ h1 {
     margin-top: 13px;
 }
 
-.submit-next-btn,.submit-exit-btn  {
+.submit-next-btn{
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
@@ -50,6 +50,17 @@ h1 {
   border-radius: 5px;
   margin-left: 14px;
   padding: 8px;
+}
+
+.submit-exit-btn{
+  all: unset;
+  color: #EEEFF1;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #29c05e;
+  border-radius: 5px;
+  margin-left: 14px;
+  padding: 8px 20px 8px 20px;	
 }
 
 .add__box {

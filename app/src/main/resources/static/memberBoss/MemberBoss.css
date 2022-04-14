@@ -44,7 +44,7 @@ h1 {
 }
 
 .btn{
-  margin-top: 13px;
+  margin-top: -20px;
   
 }
 
@@ -92,7 +92,7 @@ h1 {
   font-weight: 500;
   background-color: #29c05e;
   border-radius: 5px;
-  margin-left: 14px;
+  margin-left: -30px;
   padding: 8px;
   width: 60px;
 }
@@ -104,7 +104,7 @@ h1 {
 
 .login__box {
   width: 450px;
-  height: 980px;
+  height: 700px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;
