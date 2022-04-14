@@ -124,8 +124,15 @@ fetch(`/alcohol/get?no=${no}`)
     introChar.innerHTML = alcohol.characteristic
     storeList.innerHTML = alcohol.alcoholName
 
-
+    if (alcohol.stores.length == 0) {
+      let tmpDiv = `
+      <div class="tmp-div">이 주류를 판매하는 술집이 없습니다.</div>
+      `
+      storeListDiv.innerHTML = tmpDiv
+    }
+    
     for (let i = 0; i < alcohol.stores.length; i++) {
+
       if (alcohol.stores[i].status == true) {
         alcohol.stores[i].status = "운영중"
       } else {
