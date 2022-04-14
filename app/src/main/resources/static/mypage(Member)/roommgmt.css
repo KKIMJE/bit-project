@@ -1,5 +1,6 @@
 
 h1 {
+	margin-left:100px;
 	margin-top: 50px;
   font-size: 25px;
   font-weight: 500;
@@ -69,6 +70,7 @@ h1 {
   font-weight: 500;
 }
 .roomlist-category-sort {
+	margin-left:-200px;
   display: flex;
   align-items: baseline;
  
@@ -113,7 +115,7 @@ h1 {
 	 background-color:#ffffff;
 	 width:800px;
 	 height:200px;
-	 margin-top:50px;
+	 margin-top:20px;
 	  margin-left:30px;
 }
 
