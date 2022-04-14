@@ -20,6 +20,8 @@ public class Party {
   String alcoholLimit;
   Timestamp regDate;
   Timestamp updateDate;
+  String address;
+  int storeNo;
 }
 
 
