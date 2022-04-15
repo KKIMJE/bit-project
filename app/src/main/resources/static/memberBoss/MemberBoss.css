@@ -28,6 +28,11 @@ h1 {
   color: rgb(32, 32, 32);
 }
 
+.file-upload{
+    margin-left:-20px;
+   
+}
+
 .address {
   display: flex;
   flex-direction: column;
@@ -44,7 +49,7 @@ h1 {
 }
 
 .btn{
-  margin-top: -20px;
+  margin-top: 13px;
   
 }
 
@@ -75,13 +80,12 @@ h1 {
 
 .submit-next-btn {
   all: unset;
-  text-align:center;
   color: #EEEFF1;
   font-size: 15px;
   font-weight: 500;
   background-color: #29c05e;
   border-radius: 5px;
-  margin-left: -20px;
+  margin-left: -30px;
   padding: 8px;
   width: 60px;
 }
@@ -93,7 +97,7 @@ h1 {
   font-weight: 500;
   background-color: #29c05e;
   border-radius: 5px;
-  margin-left: 20px;
+  margin-left: 14px;
   padding: 8px;
   width: 60px;
 }
@@ -105,7 +109,7 @@ h1 {
 
 .login__box {
   width: 450px;
-  height: 1000px;
+  height: 1030px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;
@@ -145,33 +149,15 @@ body > form > div > div > div > div > span {
   margin-left: 40px;
 }
 
- .form_hr, .form_intro, .form_tag {
+ .form_hr, .form_intro, .form_tag ,.form_number {
   color: black;
   font-size: 15px;
   padding-top: 10px;
   margin-bottom: -5px;
 }
 
-.btn-outline-dark1 {
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: -10px;
-  margin-left: -180px;
-  border: 1px solid;
-  border-color:black;
-  border-radius: 10px;
-  background-color:white;
-}
-
-.btn1-outline-dark2 {
-  font-size: 15px;
-  margin-top: -25px;
-  margin-bottom: 30px;
-  margin-left: 150px;
-  border: 1px solid;
-  border-color:black;
-  border-radius: 10px;
-  background-color:white;
+.tag{
+   margin-top:10px;
 }
 
 .form_check{
@@ -212,7 +198,7 @@ body > form > div > div > div > div > span {
   
 }
 
-.form_input_tel {
+.form_input_tel, .form_input_number {
   width: 299px;
   border: 1px solid;
   border-color: #E1E1E1;
@@ -220,6 +206,7 @@ body > form > div > div > div > div > span {
   padding: 8px;
   margin-top: -5px;
 }
+
 
 .form_input_check{
   border: 1px solid;

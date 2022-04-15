@@ -120,6 +120,11 @@
             <textarea name="introduction" id="intro"  style="resize:none;" class="form_input_intro"></textarea>
           </div>
           
+           <div class="number">
+            <p class="form_number">사업자등록번호</p><br>
+            <input name="businessRegistrationNo" id="businessRegistrationNo" class="form_input_number">
+           </div>
+          
            <div class="tag">
             <p class="form_tag">태그선택
             <a href="#pop_info_1" class="submit-add-btn">추가</a>
@@ -127,30 +132,30 @@
           </div>
 
            <div id="pop_info_1" class="pop_wrap" style="display:none;">
-		    <div class="pop_inner">
-		      <p class="dsc">사장님의 가게에 어울리는 태그를 골라주세요</p>
-		      <button type="button" class="btn_add">등록</button>
-		    </div>
-		  </div>
+        <div class="pop_inner">
+          <p class="dsc">사장님의 가게에 어울리는 태그를 골라주세요</p>
+          <button type="button" class="btn_add">등록</button>
+        </div>
+      </div>
 
 
            <div>
             <p class="form_check">예약 가능 여부 <br>
-            <center>가능<input type="checkbox"  class="form_input_check" checked>불가능<input type="checkbox" class="form_input_check">
-            최대인원 <input name="max-num" type="text"  class="form_input_box" > 
+            <center>가능<input name="reservationAccept" type="checkbox"  class="form_input_check" checked>불가능<input name="reservationAccept"  type="checkbox" class="form_input_check">
+            최대인원 <input name="maxMember" type="text"  class="form_input_box" > 
             <!-- 사각형 -->
           </div> </center>
            
-           <center><div class="x-btn-outline-group">
-      <button class="btn-outline-dark1"  type="button">사업자등록증 첨부하기</button><br>
-     <div><button class="btn1-outline-dark2"  type="button">주점 사진 첨부하기</button></div>
+           <center><div class="file-upload">
+     <div><input name="file" type="file"></div>
     </div> </center>
           
           <center><div class="btn">
-         <button class="submit-next-btn">등록</button>
+         <button class="submit-next-btn">다음</button>
          <button class="submit-exit-btn">나가기</button>
          </div>
          </center>
+         
          
          </div>
         </div>
