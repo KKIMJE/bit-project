@@ -177,226 +177,88 @@ INSERT INTO alcohol_type (alcohol_type_no,type_name) VALUES (7,'전통주');
 INSERT INTO alcohol_type (alcohol_type_no,type_name) VALUES (8,'기타');
 
 --술
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(1, 1, '참이슬 후레쉬', 16.5, '하이트진로', '대한민국', 360, '대나무 숯으로 4번 걸러 더 깨끗한 목넘김과 이슬형태의 곡선 라벨로 더욱 트렌디해진 참이슬fresh 입니다.', 'alcoholimg/alcohol1.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(2, 1, '참이슬 오리지널', 20.1, '하이트진로', '대한민국', 360, '대한민국 소주의 정통성을 지켜온 정통소주로서 대나무 숯으로 4번 걸러,
+
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(1, 1, '참이슬 후레쉬', 16.5, '하이트진로', '대한민국', 360, '대나무 숯으로 4번 걸러 더 깨끗한 목넘김과 이슬형태의 곡선 라벨로 더욱 트렌디해진 참이슬fresh 입니다.', 'alcoholimg/alcohol1.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(2, 1, '참이슬 오리지널', 20.1, '하이트진로', '대한민국', 360, '대한민국 소주의 정통성을 지켜온 정통소주로서 대나무 숯으로 4번 걸러,
 숙취 유발 물질을 깨끗하게 제거하고 레귤러 대비 높은 도수로, 깊고 진한 맛을
 구현해 진짜 소주의 참맛을 아는 소비자들에게 꾸준히 사랑받는 제품입니다.', 'alcoholimg/alcohol2.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(3, 1, '진로이즈백', 16.5, '하이트진로', '대한민국', 360, '진로만이 가지고 있는 No.1 헤리티지를 재해석하여 스카이 블루 색상의 병과
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(3, 1, '진로이즈백', 16.5, '하이트진로', '대한민국', 360, '진로만이 가지고 있는 No.1 헤리티지를 재해석하여 스카이 블루 색상의 병과
 은색 트위스트 캡으로 복원하였습니다. 편한 음용감을 즐기는 20대를 위해
 16.5도의 순하고 부드러운 목넘김, 마실수록 깔끔한 맛을 구현했습니다.', 'alcoholimg/alcohol3.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(4, 1, '일품진로', 25.0, '하이트진로', '대한민국', 375, '증류의 처음과 마지막에 나오는 원액은 과감히 버리고 향과 풍미가 뛰어난 중간 원액만을 사용하였으며 냉동여과공법으로 영하의 온도에서 잡미, 불순물을 제거하여 깔끔하고 부드러운 목넘김과 은은한 맛을 구연하였습니다.
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(4, 1, '일품진로', 25.0, '하이트진로', '대한민국', 375, '증류의 처음과 마지막에 나오는 원액은 과감히 버리고 향과 풍미가 뛰어난 중간 원액만을 사용하였으며 냉동여과공법으로 영하의 온도에서 잡미, 불순물을 제거하여 깔끔하고 부드러운 목넘김과 은은한 맛을 구연하였습니다.
 ', 'alcoholimg/alcohol4.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(5, 1, '처음처럼', 16.5, '롯데칠성', '대한민국', 360, '''처음처럼''은 소주 원료의 80%가량을 차지하는 물을 ''알칼리 환원수''로 바꾸고, ''물 입자가 작아 목 넘김이 부드러운 소주'', ''세계 최초 알칼리 환원수 소주''임을 강조하며 단기간에 ''명품 소주''로 자리매김했다.', 'alcoholimg/alcohol5.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(6, 1, '한라산17', 17.0, '한라산소주', '대한민국', 375, '국내 생산 쌀을 발효 증류한 증류식 소주원액의 거친 향과 잡맛을 제거하기 위해 0도 이하에서 냉각하는 최첨단 냉각공법(Chilling Process)과 고품질의 활성탄으로 초순도 탈취를 하여 In Line Blender 공법으로 세밀하고 균일하게 블랜딩(Blending)시킨 후 청정 제주 한라산 800고지에서 자생하는 조릿대 잎차 침출액이 첨가되어 순하고 목넘김이 부드러운 저도수 소주입니다.', 'alcoholimg/alcohol6.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(7, 1, '한라산21', 21.0, '한라산소주', '대한민국', 375, '청정 제주에서 생산된 쌀로 만든 증류원액과 화산암반수로 만든 프리미엄 소주입니다. 특히 알칼리성 화산암반수를 지하에서 뽑아 올려 미네랄 용존산소가 풍부한 청정수를 화학처리를 거치지 않고 자연수 상태로 사용합니다. 연속식 증류방식으로 만들어진 고순도 주정에 청정 제주의 쌀로 만든 증류원액과 기능성식품인 올리고당과 숙취해소에 좋은 아스파라긴을 첨가한 후  In Line Blender 공법으로 블랜딩하고 초정밀 여과처리로 첫 느낌이 부드럽고 뒤끝이 깨끗한 소주입니다. 1950년의 한일소주의 명맥을 잇는 소주로 1993년 출시 현재까지 소주 애호가들의 변함없는 사랑을 받아오고 있습니다.', 'alcoholimg/alcohol7.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(8, 1, '좋은데이', 16.5, '무학', '대한민국', 360, '당류를 과감하게 없애고 최고급 천연 감미료인 토마틴과 효소처리스테비아를 사용하여 설탕과 과당 사용 없이도 기분 좋은 깔끔한 맛을 구현, 버블형태의 활성산소가 주류탱크 안에 주입되어 72시간 동안 물과 알코올의 결합력을 놓이는 과정을 거쳐 술 맛을 더욱 부드럽게 구현하였습니다.', 'alcoholimg/alcohol8.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(9, 2, '카스fresh', 4.5, '카스', '대한민국', 330, '올 뉴 카스 프레시는 카스만의 콜드브루 공법을 통해 맥주의 상쾌함과 깔끔한 맛을 한층 더 극대화하였습니다. 톡 쏘고 상쾌한 맛으로 대한민국에서 가장 사랑받는 카스 프레시는 여러분의 인생 곳곳의 즐거운 순간들과 함께했을 때 가장 맛있게 즐길 수 있는 맥주로 새롭게 돌아왔습니다.', 'alcoholimg/alcohol9.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(10, 2, '테라', 4.6, '하이트진로', '대한민국', 330, '세계 공기질 부문 1위 호주에서 자란 청정맥아와 오직 발효공정에서 나오는 리얼탄산을 100% 사용하여 거품은 조밀하고 탄산은 오래 지속됩니다. 국내 레귤러 라거 최초 Green Bottle을 적용하였고, 토네이도 패턴을 통해 눈으로 보는 청량감을 구현하였습니다.', 'alcoholimg/alcohol10.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(11, 2, '산미구엘', 5.0, '산미구엘', '필리핀', 320, '숙성된듯한 진한 맛이 느껴지는 깔끔한 맥주. 약간의 신맛과 달콤한 맛이 느껴진다.', 'alcoholimg/alcohol11.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(12, 2, '하이네켄 오리지널', 5.0, '하이네켄', '네덜란드', 330, '소맥맛에 좀더 쓴 맛이다. 정제된 쌉쌀함의 목넘김과 묵직한 뒷맛이 그나마 대량 생산된 라거 맥주 중에서는 특별한 느낌이다. 하이네켄에서 자체적으로 선정하는 스타서브 프로그램의 순위권 매장에서 하이네켄 생맥주를 마셔보면 미묘하게 벌꿀향이 나는 것을 맡을 수 있다.', 'alcoholimg/alcohol12.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(13, 2, '칭다오 맥주', 4.7, '칭다오', '중국', 640, ' 씁쓸한 맛이 적고 달싹하면서도 시원한 청량감을 주는 맛', 'alcoholimg/alcohol13.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(14, 2, '아사히 수퍼드라이', 5.2, '아사히', '일본', 330, '일본에서 가장 많이 팔리는 아사히 수퍼드라이 맥주 ', 'alcoholimg/alcohol14.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(15, 2, '버드와이저', 5.0, '앤하이저부시', '미국', 330, '미국을 대표하는 맥주로, 매년 미국에서 판매량 1위를 놓치지 않는 앤하이저부시의 대표적인 상품', 'alcoholimg/alcohol15.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(16, 3, '카멜 로드 몬테레이 피노 누아', 13.5, '잭슨 패밀리 와인', '미국', 750, '밝은 루비의 빛깔과 함께 체리, 레드 커런트 등의 붉은 과일향과 스파이스, 가벼운 꽃향기를 느낄 수 있으며, 기분 좋은 산도와 긴 피니쉬가 특징인 와인이다.', 'alcoholimg/alcohol43.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(17, 3, '우마니 론끼, 요리오 오', 13.5, '우마니론끼', '이탈리아', 750, '체리향,자두향 ,약간의 민트, 끝에 발사믹 향', 'alcoholimg/alcohol44.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(18, 3, '페데리코 파테니나, 레세르바', 18.0, '페데리코 파테니나', '스페인', 750, '테라코타 벽돌을 연상케 하는 밝은 레드 컬러를 띠고 있으며, 진한 과일 향과 함께 우아한 바닐라 부케가 어우러진다. 잘 다듬어진 탄닌과 균형 잡힌 매끈한 질감을 즐길 수 있는 풀 바디 스타일의 와인이다.', 'alcoholimg/alcohol48.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(19, 4, '느린마을 막걸리', 6.0, '배상면주가', '대한민국', 750, '느린마을 막걸리는 일체의 인공감미료 없이, 엄선된 원료와 최적의 발효과정을 거쳐 빚어낸 프리미엄 수제 생 막걸리 입니다.', 'alcoholimg/alcohol53.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(20, 4, '해창 12', 12.0, '해창주조장', '대한민국', 900, '땅끝마을 해남에서 빚어지는 해창막걸리는 은근하면서 투박하다. 막걸리는 쌀과 누룩과 물을 섞어 빚은, 한민족의 고유한 술이다. ', 'alcoholimg/alcohol54.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(21, 4, '복순도가 막걸리', 6.0, '복순도가', '대한민국', 935, '복순도가 손 막걸리는 전통 방식으로 빚은 가양주로써 100% 국내산 햅쌀을 옛 항아리에 담아 전통방식 그대로 막걸리를 빚습니다.', 'alcoholimg/alcohol55.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(22, 5, '조니워커블루 21년', 40.0, '조니워커', '영국', 750, '죠니워커 블루는 죠니워커 가문의 가장 오래되고 진귀한 원액으로 만들어지는 스카치 위스키의 걸작품입니다.대부분 장기 숙성된 원액으로 블랜딩하기 때문에 전세계 일부 계층에만 한정적으로 공급되는 위스키의 명품입니다. 최상의 품질과 명성을 유지하기 위해 생산되는 모든 병마다 고유번호를 부여하고 있다.', 'alcoholimg/alcohol64.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(25, 6, '간바레 오또상', 14.5, '하쿠류주조', '일본', 300, '니카타 지방의 좋은 쌀로 만든 술로 조센급의 하쿠류 제품을 장기불황에 지쳐있는 현지 셀러리맨들에게 저렴한 가격에 공급하자는 의도로 기획되어 니카타 지방에서 큰 인기를 얻은 제품입니다. 국내에서도 반응이 좋아 업소를 운영하시는 분들에게 추천해드리고 있는 상품입니다.', 'alcoholimg/alcohol73.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(28, 7, '고흥 유자주', 8.0, '녹동양조장', '대한민국', 500, '새콤달콤한 유자 향 뒤에 고소 담백한 곡물 향을 느낄 수 있는 술이다.', 'alcoholimg/alcohol80.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(30, 8, '기타술1', 16.5, '브랜드30', '원산지30', 130, '특징소개30', 'alcoholimg/alcohol30.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(61, 3, '알타 비스타, 비베 스위트 스파클링', 9.0, '알타 비스타 Alta Vista', '아르헨티나', 750, '옅은 녹색을 띄는 볕집 색을 띠며 상큼하면서 흰 꽃, 패션프루츠, 복숭아(백도) 계열의 스톤 푸드 아로마가 피어 오른다. 입 안에서는 섬세하고 우아한 기포가 매력적이며, 뛰어난 밸런스의 산도감과 단 맛이 기분 좋게 다가오는 와인이다.', 'alcoholimg/alcohol45.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(62, 3, '알루메아 샤도네이 테레 시칠리아네 오가닉', 13.0, '오리온 와인즈', '이탈리아', 750, '열대과일과 흰색 꽃 아로마가 피어 오르며, 입 안에서는 신선하고 과실향이 지배적이고 잘익은 황도, 허니서클, 호두파이 풍미를 지니고 있다. 훌륭한 균형과 기분 좋은 산도롤 긴 여운을 남기는 와인이다.', 'alcoholimg/alcohol46.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(63, 3, '팀 아담스, 셰이퍼 쉬라즈', 15.0, '팀 아담스', '호주', 750, '진한 자두와 체리의 과일향과 함께 초콜릿, 향신료, 가죽, 말린 허브향 등 다양한 숙성향이 매력적이다. 입 안에서는 잘 익은 과일과 오크 풍미, 매끄럽고 긴 여운을 남기는 풀바디 와인이다.', 'alcoholimg/alcohol47.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(64, 1, '시원한 청풍', 17.5, '시원소주', '대한민국', 360, '시원소주에서 제조. 이는 아스파라긴이 함유되어있어 부드러운 맛을 자랑한다.', 'alcoholimg/alcohol31.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(65, 1, 'O2린', 17.8, '맥키스 컴퍼니', '대한민국', 360, '맥키스 컴퍼니에서 제조. 이는 산소가 3배 많은 소주로 산소소주라고 불리기도 한다.', 'alcoholimg/alcohol32.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(66, 1, '하이트', 19.0, '진로', '대한민국', 360, '진로에서 제조. 수출용으로는 하이트 블루밍 3종이 있다', 'alcoholimg/alcohol33.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(67, 1, '잎새주', 18.5, '보해양조', '대한민국', 360, '보해양조에서 제조. 이는 100% 자연에서 추출한 감미료를 사용하여 인공조미료가 첨가되어 있지 않다.', 'alcoholimg/alcohol34.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(68, 1, '참소주', 16.9, '금복', '대한민국', 360, '금복주에서 제조. 참소주는 첨단고순도정밀여과공법을 도입했다.', 'alcoholimg/alcohol35.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(69, 1, 'C1', 16.5, '대선주조', '대한민국', 360, '대선주조에서 제조. C1프리미엄 소주는 국내 최초로 제조과정에 음악을 들려주는 음향숙성진동공법을 도입했다.', 'alcoholimg/alcohol36.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(70, 2, '한맥', 4.6, '오비맥주', '대한민국', 330, '100% 국내산 쌀이 주는 부드러운 감칠맛과 담백함이 어우러져 좋은 음식과 함께할 때 그 맛이 배가 됩니다.', 'alcoholimg/alcohol37.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(71, 2, '칼스버그', 5.0, '칼스버그', '덴마크', 330, '세계 최초로 ''순수 효모 배양법''을 개발 무상 배포하여 ''라거맥주의 아버지''로 널리 알려진 칼스버그 맥주.', 'alcoholimg/alcohol39.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(72, 2, '클라우드', 5.0, '롯데칠성음료', '대한민국', 500, '100% 발효원액에 추가로 물을 타지 않은 오리지널 그래비티 공법으로 만들어 맛이 깊고 풍부한 맥주입니다.', 'alcoholimg/alcohol38.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(73, 2, '크로넨버그 블랑 1664', 5.0, '크로넨버그', '프랑스', 330, '부드러운 청량감과 달콤한 끝 맛으로 유럽을 넘어 세계 맥주 팬들에게 고품질의 밀맥주', 'alcoholimg/alcohol40.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(74, 2, '기네스 드래프트', 4.2, '기네스', '아일랜드', 330, '맥아와 로스팅 특성을 살린 쌉싸름한 맛과 단맛의 완벽한 조화', 'alcoholimg/alcohol41.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(75, 2, '블루문', 5.4, '블루 문', '미국', 355, '블루문(영어: Blue Moon)은 미국의 밀러쿠어스에서 발매하는 밀맥주이다.', 'alcoholimg/alcohol42.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(76, 3, '젠틀 타이거 화이트', 10.0, '로스 트레스 세르디토스', '스페인', 750, '부드러운 산미와 과일향이 조화롭게 올라오고, 입 안에서는 밸런스가 느껴지는 와인이다.', 'alcoholimg/alcohol49.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(77, 3, '사비오', 14.0, '미구엘 토레스 칠레', '칠레', 750, '진한 루비 컬러를 띠며 붉은 과일의 향과 베리 및 향신료의 아 름다운 아로마가 가죽향과 감초와 함께 나타난다. 입 안에서는 과일과 야채의 타닌을 팔렛트로 느낄 수 있으며 시음 후 섬세 하고 실키함을 느낄 수 있는 와인이다.', 'alcoholimg/alcohol50.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(78, 3, '알레한드로 페르난데즈, 알레하이렌 크리안자', 13.0, '알레한드로 페르난데즈', '스페인', 750, '라 만차 프리미엄 레드 와인으로 성공을 거둔 후, 이 지역에서 거의 잊혀지다시피 한 토착 품종으로 2007년 첫 선을 보인 화이트 와인이다. 페르난데스는 ''레드 와인의 영혼을 가진 화이트 와인''이라고 표현했다.', 'alcoholimg/alcohol51.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(79, 3, '두게싸 리아, 아스티 세코', 11.0, '카페타 프란체스코 카페타 - 발비 소프라니', '이탈리아', 750, '연한 노란색을 띠고 등나무 꽃, 아카시아 꽃, 신선한 열대 과일의 아로마가 느껴진다. 입 안에서는 부드러우며 적절한 산도에 균형감이 뛰어난 드라이 스파클링 와인이다.', 'alcoholimg/alcohol52.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(80, 4, '이화백주', 6.0, '이화백주', '대한민국', 940, '자연발효 과정에서 생긴 천연탄산이 입안에서 톡톡, 우리쌀로 만든 프리미엄 생막걸리입니다.', 'alcoholimg/alcohol56.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(81, 4, '화성 생막걸리', 6.0, '배혜정도가', '대한민국', 750, '1998년부터 막걸리를 제조해온 막걸리 제조 전문 기업의 막걸리', 'alcoholimg/alcohol57.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(82, 4, '서울생막걸리', 6.0, '서울생주조', '대한민국', 750, '2009년 9월 설립된 서울생주조 양조장에서 생상된 막걸리', 'alcoholimg/alcohol58.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(83, 4, '국순당 생막걸리', 6.0, '국순당', '대한민국', 750, '두 번의 쌀 발효에 세 번의 유산균 발효를 더해 빚은 생막걸리', 'alcoholimg/alcohol59.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(84, 4, '영탁 생막걸리', 6.0, '예천양조', '대한민국', 750, '미스터트롯의 영탁이 부른 <막걸리한잔> 노래가 히트하면서 (주)예천양조에서 출시한 막걸리입니다.', 'alcoholimg/alcohol60.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(85, 4, '골목 막걸리', 6.0, '우리술', '대한민국', 750, '깔끔하면서 뒷 끝 맛이 달달한 막걸리이다.', 'alcoholimg/alcohol61.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(86, 4, '담은', 6.0, '1932포천일동막걸리', '대한민국', 750, '더 깔끔하고 구름같은 맛을 담아내기 위해 고두밥을 찌지 않고 생쌀을 발효하여 만든 막걸리입니다.', 'alcoholimg/alcohol62.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(87, 4, '지평 생 쌀막걸리', 5.0, '지평주조', '대한민국', 750, '지평주조에서 가장 많이 팔리는 목넘김이 좋은 쌀 막걸리', 'alcoholimg/alcohol63.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(88, 5, '로얄살루트 21년', 40.0, '로얄살루트', '영국', 700, '짙은 금빛과 호박색을 지니고 있느 로얄샬루트 21년은  풍부한 과일향과 가을꽃을 연상시키느 달콤한 향취와 피트가 어우러진 복합적인 맛을 느끼게 합니다.여왕의 대관식에 헌정되어 ‘여왕의 술’이란 별칭으로 불리는 로얄 살루트의 역사는 1951년부터 시작된다. 예로부터 최고의 생산품은 언제나 왕에게 바치는 법으로, 세계 최고의 위스키 원액 생산 가문인 시바스 브라더스
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(5, 1, '처음처럼', 16.5, '롯데칠성', '대한민국', 360, '''처음처럼''은 소주 원료의 80%가량을 차지하는 물을 ''알칼리 환원수''로 바꾸고, ''물 입자가 작아 목 넘김이 부드러운 소주'', ''세계 최초 알칼리 환원수 소주''임을 강조하며 단기간에 ''명품 소주''로 자리매김했다.', 'alcoholimg/alcohol5.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(6, 1, '한라산17', 17.0, '한라산소주', '대한민국', 375, '국내 생산 쌀을 발효 증류한 증류식 소주원액의 거친 향과 잡맛을 제거하기 위해 0도 이하에서 냉각하는 최첨단 냉각공법(Chilling Process)과 고품질의 활성탄으로 초순도 탈취를 하여 In Line Blender 공법으로 세밀하고 균일하게 블랜딩(Blending)시킨 후 청정 제주 한라산 800고지에서 자생하는 조릿대 잎차 침출액이 첨가되어 순하고 목넘김이 부드러운 저도수 소주입니다.', 'alcoholimg/alcohol6.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(7, 1, '한라산21', 21.0, '한라산소주', '대한민국', 375, '청정 제주에서 생산된 쌀로 만든 증류원액과 화산암반수로 만든 프리미엄 소주입니다. 특히 알칼리성 화산암반수를 지하에서 뽑아 올려 미네랄 용존산소가 풍부한 청정수를 화학처리를 거치지 않고 자연수 상태로 사용합니다. 연속식 증류방식으로 만들어진 고순도 주정에 청정 제주의 쌀로 만든 증류원액과 기능성식품인 올리고당과 숙취해소에 좋은 아스파라긴을 첨가한 후  In Line Blender 공법으로 블랜딩하고 초정밀 여과처리로 첫 느낌이 부드럽고 뒤끝이 깨끗한 소주입니다. 1950년의 한일소주의 명맥을 잇는 소주로 1993년 출시 현재까지 소주 애호가들의 변함없는 사랑을 받아오고 있습니다.', 'alcoholimg/alcohol7.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(8, 1, '좋은데이', 16.5, '무학', '대한민국', 360, '당류를 과감하게 없애고 최고급 천연 감미료인 토마틴과 효소처리스테비아를 사용하여 설탕과 과당 사용 없이도 기분 좋은 깔끔한 맛을 구현, 버블형태의 활성산소가 주류탱크 안에 주입되어 72시간 동안 물과 알코올의 결합력을 놓이는 과정을 거쳐 술 맛을 더욱 부드럽게 구현하였습니다.', 'alcoholimg/alcohol8.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(9, 2, '카스fresh', 4.5, '카스', '대한민국', 330, '올 뉴 카스 프레시는 카스만의 콜드브루 공법을 통해 맥주의 상쾌함과 깔끔한 맛을 한층 더 극대화하였습니다. 톡 쏘고 상쾌한 맛으로 대한민국에서 가장 사랑받는 카스 프레시는 여러분의 인생 곳곳의 즐거운 순간들과 함께했을 때 가장 맛있게 즐길 수 있는 맥주로 새롭게 돌아왔습니다.', 'alcoholimg/alcohol9.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(10, 2, '테라', 4.6, '하이트진로', '대한민국', 330, '세계 공기질 부문 1위 호주에서 자란 청정맥아와 오직 발효공정에서 나오는 리얼탄산을 100% 사용하여 거품은 조밀하고 탄산은 오래 지속됩니다. 국내 레귤러 라거 최초 Green Bottle을 적용하였고, 토네이도 패턴을 통해 눈으로 보는 청량감을 구현하였습니다.', 'alcoholimg/alcohol10.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(11, 2, '산미구엘', 5.0, '산미구엘', '필리핀', 320, '숙성된듯한 진한 맛이 느껴지는 깔끔한 맥주. 약간의 신맛과 달콤한 맛이 느껴진다.', 'alcoholimg/alcohol11.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(12, 2, '하이네켄 오리지널', 5.0, '하이네켄', '네덜란드', 330, '소맥맛에 좀더 쓴 맛이다. 정제된 쌉쌀함의 목넘김과 묵직한 뒷맛이 그나마 대량 생산된 라거 맥주 중에서는 특별한 느낌이다. 하이네켄에서 자체적으로 선정하는 스타서브 프로그램의 순위권 매장에서 하이네켄 생맥주를 마셔보면 미묘하게 벌꿀향이 나는 것을 맡을 수 있다.', 'alcoholimg/alcohol12.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(13, 2, '칭다오 맥주', 4.7, '칭다오', '중국', 640, ' 씁쓸한 맛이 적고 달싹하면서도 시원한 청량감을 주는 맛', 'alcoholimg/alcohol13.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(14, 2, '아사히 수퍼드라이', 5.2, '아사히', '일본', 330, '일본에서 가장 많이 팔리는 아사히 수퍼드라이 맥주 ', 'alcoholimg/alcohol14.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(15, 2, '버드와이저', 5.0, '앤하이저부시', '미국', 330, '미국을 대표하는 맥주로, 매년 미국에서 판매량 1위를 놓치지 않는 앤하이저부시의 대표적인 상품', 'alcoholimg/alcohol15.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(16, 3, '카멜 로드 몬테레이 피노 누아', 13.5, '잭슨 패밀리 와인', '미국', 750, '밝은 루비의 빛깔과 함께 체리, 레드 커런트 등의 붉은 과일향과 스파이스, 가벼운 꽃향기를 느낄 수 있으며, 기분 좋은 산도와 긴 피니쉬가 특징인 와인이다.', 'alcoholimg/alcohol43.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(17, 3, '우마니 론끼, 요리오 오', 13.5, '우마니론끼', '이탈리아', 750, '체리향,자두향 ,약간의 민트, 끝에 발사믹 향', 'alcoholimg/alcohol44.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(18, 3, '페데리코 파테니나, 레세르바', 18.0, '페데리코 파테니나', '스페인', 750, '테라코타 벽돌을 연상케 하는 밝은 레드 컬러를 띠고 있으며, 진한 과일 향과 함께 우아한 바닐라 부케가 어우러진다. 잘 다듬어진 탄닌과 균형 잡힌 매끈한 질감을 즐길 수 있는 풀 바디 스타일의 와인이다.', 'alcoholimg/alcohol48.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(19, 4, '느린마을 막걸리', 6.0, '배상면주가', '대한민국', 750, '느린마을 막걸리는 일체의 인공감미료 없이, 엄선된 원료와 최적의 발효과정을 거쳐 빚어낸 프리미엄 수제 생 막걸리 입니다.', 'alcoholimg/alcohol53.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(20, 4, '해창 12', 12.0, '해창주조장', '대한민국', 900, '땅끝마을 해남에서 빚어지는 해창막걸리는 은근하면서 투박하다. 막걸리는 쌀과 누룩과 물을 섞어 빚은, 한민족의 고유한 술이다. ', 'alcoholimg/alcohol54.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(21, 4, '복순도가 막걸리', 6.0, '복순도가', '대한민국', 935, '복순도가 손 막걸리는 전통 방식으로 빚은 가양주로써 100% 국내산 햅쌀을 옛 항아리에 담아 전통방식 그대로 막걸리를 빚습니다.', 'alcoholimg/alcohol55.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(22, 5, '조니워커블루 21년', 40.0, '조니워커', '영국', 750, '죠니워커 블루는 죠니워커 가문의 가장 오래되고 진귀한 원액으로 만들어지는 스카치 위스키의 걸작품입니다.대부분 장기 숙성된 원액으로 블랜딩하기 때문에 전세계 일부 계층에만 한정적으로 공급되는 위스키의 명품입니다. 최상의 품질과 명성을 유지하기 위해 생산되는 모든 병마다 고유번호를 부여하고 있다.', 'alcoholimg/alcohol64.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(25, 6, '간바레 오또상', 14.5, '하쿠류주조', '일본', 300, '니카타 지방의 좋은 쌀로 만든 술로 조센급의 하쿠류 제품을 장기불황에 지쳐있는 현지 셀러리맨들에게 저렴한 가격에 공급하자는 의도로 기획되어 니카타 지방에서 큰 인기를 얻은 제품입니다. 국내에서도 반응이 좋아 업소를 운영하시는 분들에게 추천해드리고 있는 상품입니다.', 'alcoholimg/alcohol73.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(28, 7, '고흥 유자주', 8.0, '녹동양조장', '대한민국', 500, '새콤달콤한 유자 향 뒤에 고소 담백한 곡물 향을 느낄 수 있는 술이다.', 'alcoholimg/alcohol80.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(30, 8, '기타술1', 16.5, '브랜드30', '원산지30', 130, '특징소개30', 'alcoholimg/alcohol30.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(61, 3, '알타 비스타, 비베 스위트 스파클링', 9.0, '알타 비스타 Alta Vista', '아르헨티나', 750, '옅은 녹색을 띄는 볕집 색을 띠며 상큼하면서 흰 꽃, 패션프루츠, 복숭아(백도) 계열의 스톤 푸드 아로마가 피어 오른다. 입 안에서는 섬세하고 우아한 기포가 매력적이며, 뛰어난 밸런스의 산도감과 단 맛이 기분 좋게 다가오는 와인이다.', 'alcoholimg/alcohol45.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(62, 3, '알루메아 샤도네이 테레 시칠리아네 오가닉', 13.0, '오리온 와인즈', '이탈리아', 750, '열대과일과 흰색 꽃 아로마가 피어 오르며, 입 안에서는 신선하고 과실향이 지배적이고 잘익은 황도, 허니서클, 호두파이 풍미를 지니고 있다. 훌륭한 균형과 기분 좋은 산도롤 긴 여운을 남기는 와인이다.', 'alcoholimg/alcohol46.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(63, 3, '팀 아담스, 셰이퍼 쉬라즈', 15.0, '팀 아담스', '호주', 750, '진한 자두와 체리의 과일향과 함께 초콜릿, 향신료, 가죽, 말린 허브향 등 다양한 숙성향이 매력적이다. 입 안에서는 잘 익은 과일과 오크 풍미, 매끄럽고 긴 여운을 남기는 풀바디 와인이다.', 'alcoholimg/alcohol47.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(64, 1, '시원한 청풍', 17.5, '시원소주', '대한민국', 360, '시원소주에서 제조. 이는 아스파라긴이 함유되어있어 부드러운 맛을 자랑한다.', 'alcoholimg/alcohol31.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(65, 1, 'O2린', 17.8, '맥키스 컴퍼니', '대한민국', 360, '맥키스 컴퍼니에서 제조. 이는 산소가 3배 많은 소주로 산소소주라고 불리기도 한다.', 'alcoholimg/alcohol32.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(66, 1, '하이트', 19.0, '진로', '대한민국', 360, '진로에서 제조. 수출용으로는 하이트 블루밍 3종이 있다', 'alcoholimg/alcohol33.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(67, 1, '잎새주', 18.5, '보해양조', '대한민국', 360, '보해양조에서 제조. 이는 100% 자연에서 추출한 감미료를 사용하여 인공조미료가 첨가되어 있지 않다.', 'alcoholimg/alcohol34.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(68, 1, '참소주', 16.9, '금복', '대한민국', 360, '금복주에서 제조. 참소주는 첨단고순도정밀여과공법을 도입했다.', 'alcoholimg/alcohol35.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(69, 1, 'C1', 16.5, '대선주조', '대한민국', 360, '대선주조에서 제조. C1프리미엄 소주는 국내 최초로 제조과정에 음악을 들려주는 음향숙성진동공법을 도입했다.', 'alcoholimg/alcohol36.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(70, 2, '한맥', 4.6, '오비맥주', '대한민국', 330, '100% 국내산 쌀이 주는 부드러운 감칠맛과 담백함이 어우러져 좋은 음식과 함께할 때 그 맛이 배가 됩니다.', 'alcoholimg/alcohol37.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(71, 2, '칼스버그', 5.0, '칼스버그', '덴마크', 330, '세계 최초로 ''순수 효모 배양법''을 개발 무상 배포하여 ''라거맥주의 아버지''로 널리 알려진 칼스버그 맥주.', 'alcoholimg/alcohol39.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(72, 2, '클라우드', 5.0, '롯데칠성음료', '대한민국', 500, '100% 발효원액에 추가로 물을 타지 않은 오리지널 그래비티 공법으로 만들어 맛이 깊고 풍부한 맥주입니다.', 'alcoholimg/alcohol38.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(73, 2, '크로넨버그 블랑 1664', 5.0, '크로넨버그', '프랑스', 330, '부드러운 청량감과 달콤한 끝 맛으로 유럽을 넘어 세계 맥주 팬들에게 고품질의 밀맥주', 'alcoholimg/alcohol40.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(74, 2, '기네스 드래프트', 4.2, '기네스', '아일랜드', 330, '맥아와 로스팅 특성을 살린 쌉싸름한 맛과 단맛의 완벽한 조화', 'alcoholimg/alcohol41.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(75, 2, '블루문', 5.4, '블루 문', '미국', 355, '블루문(영어: Blue Moon)은 미국의 밀러쿠어스에서 발매하는 밀맥주이다.', 'alcoholimg/alcohol42.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(76, 3, '젠틀 타이거 화이트', 10.0, '로스 트레스 세르디토스', '스페인', 750, '부드러운 산미와 과일향이 조화롭게 올라오고, 입 안에서는 밸런스가 느껴지는 와인이다.', 'alcoholimg/alcohol49.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(77, 3, '사비오', 14.0, '미구엘 토레스 칠레', '칠레', 750, '진한 루비 컬러를 띠며 붉은 과일의 향과 베리 및 향신료의 아 름다운 아로마가 가죽향과 감초와 함께 나타난다. 입 안에서는 과일과 야채의 타닌을 팔렛트로 느낄 수 있으며 시음 후 섬세 하고 실키함을 느낄 수 있는 와인이다.', 'alcoholimg/alcohol50.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(78, 3, '알레한드로 페르난데즈, 알레하이렌 크리안자', 13.0, '알레한드로 페르난데즈', '스페인', 750, '라 만차 프리미엄 레드 와인으로 성공을 거둔 후, 이 지역에서 거의 잊혀지다시피 한 토착 품종으로 2007년 첫 선을 보인 화이트 와인이다. 페르난데스는 ''레드 와인의 영혼을 가진 화이트 와인''이라고 표현했다.', 'alcoholimg/alcohol51.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(79, 3, '두게싸 리아, 아스티 세코', 11.0, '카페타 프란체스코 카페타 - 발비 소프라니', '이탈리아', 750, '연한 노란색을 띠고 등나무 꽃, 아카시아 꽃, 신선한 열대 과일의 아로마가 느껴진다. 입 안에서는 부드러우며 적절한 산도에 균형감이 뛰어난 드라이 스파클링 와인이다.', 'alcoholimg/alcohol52.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(80, 4, '이화백주', 6.0, '이화백주', '대한민국', 940, '자연발효 과정에서 생긴 천연탄산이 입안에서 톡톡, 우리쌀로 만든 프리미엄 생막걸리입니다.', 'alcoholimg/alcohol56.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(81, 4, '화성 생막걸리', 6.0, '배혜정도가', '대한민국', 750, '1998년부터 막걸리를 제조해온 막걸리 제조 전문 기업의 막걸리', 'alcoholimg/alcohol57.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(82, 4, '서울생막걸리', 6.0, '서울생주조', '대한민국', 750, '2009년 9월 설립된 서울생주조 양조장에서 생상된 막걸리', 'alcoholimg/alcohol58.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(83, 4, '국순당 생막걸리', 6.0, '국순당', '대한민국', 750, '두 번의 쌀 발효에 세 번의 유산균 발효를 더해 빚은 생막걸리', 'alcoholimg/alcohol59.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(84, 4, '영탁 생막걸리', 6.0, '예천양조', '대한민국', 750, '미스터트롯의 영탁이 부른 <막걸리한잔> 노래가 히트하면서 (주)예천양조에서 출시한 막걸리입니다.', 'alcoholimg/alcohol60.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(85, 4, '골목 막걸리', 6.0, '우리술', '대한민국', 750, '깔끔하면서 뒷 끝 맛이 달달한 막걸리이다.', 'alcoholimg/alcohol61.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(86, 4, '담은', 6.0, '1932포천일동막걸리', '대한민국', 750, '더 깔끔하고 구름같은 맛을 담아내기 위해 고두밥을 찌지 않고 생쌀을 발효하여 만든 막걸리입니다.', 'alcoholimg/alcohol62.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(87, 4, '지평 생 쌀막걸리', 5.0, '지평주조', '대한민국', 750, '지평주조에서 가장 많이 팔리는 목넘김이 좋은 쌀 막걸리', 'alcoholimg/alcohol63.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(88, 5, '로얄살루트 21년', 40.0, '로얄살루트', '영국', 700, '짙은 금빛과 호박색을 지니고 있느 로얄샬루트 21년은  풍부한 과일향과 가을꽃을 연상시키느 달콤한 향취와 피트가 어우러진 복합적인 맛을 느끼게 합니다.여왕의 대관식에 헌정되어 ‘여왕의 술’이란 별칭으로 불리는 로얄 살루트의 역사는 1951년부터 시작된다. 예로부터 최고의 생산품은 언제나 왕에게 바치는 법으로, 세계 최고의 위스키 원액 생산 가문인 시바스 브라더스
 사는 엘리자베스 2세 영국 여왕의 대관식을 위하여 특별 제작한 오크 통에서 21년 동안 숙성시킨 위스키를 제조했다.
 그리고 국왕 주관의 공식 행사에서 21발의 축포를 쏘는 데서 아이디어를 얻어 ‘왕의 예포’라는 뜻의 ‘로얄 살루트’라는 이름을 붙였으며, 1953년부터 발매를 시작했다. 로얄 살루트 21년은 영국의 일급 장인들에 의해 수공 제작된 아름다운 도자기 병에 담고, 다시 고급 벨벳에 감싸 최고급 명품 위스키로서의 가치를 표현한다. 루비, 에메랄드, 사파이어 등 3가지 색상으로 만드는데, 이는 영국 군주의 왕관을 장식하는 보석들을 의미한다. 각기 다른 색상의 패키지에 담긴 내용물은 맛과 향 모두 동일하다.', 'alcoholimg/alcohol65.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(89, 5, '글렌피딕 12년', 40.0, '글렌피딕', '영국', 700, '배 맛이 감도는 신선하고 상쾌한 향이 특징임 전 세계 싱글 몰트 위스키 마켓의 리더로서 시장을 이끌어 나가고 있는 글렌피딕은 골짜기를 뜻하는 ‘글렌’과 사슴을 뜻하는 ‘피딕’의 합성어로, 1887년 크리스마스에 스코틀랜드 스페이사이드 지역에 위치한 글렌피딕 증류소에서 탄생하였다.', 'alcoholimg/alcohol66.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(90, 5, '잭다니엘 싱글베럴', 40.0, '잭다니엘', '미국', 700, '잭다니엘 싱글베럴은 뛰어나고 중후한 맛이 특징이다. 특히 그을린 오크통의 향, 바닐라, 캬라멜 향이 강조되는데, 각각의 베럴에 사용된 참나무의 차이로 인해 그 베럴로부터 나온 한 병 한 병마다 맛, 향, 색깔이 오묘하게 다르다.', 'alcoholimg/alcohol67.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(91, 5, '아그와', 30.0, '아그와', '네덜란드', 700, '세계 각국에서 선택한 볼리비아산 코카잎를 포함한 최상의 허브 36가지와 과라나, 인삼과 같은 식물로 만든다는 특징을 가지고 있다.', 'alcoholimg/alcohol68.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(92, 5, '짐빔 화이트', 40.0, '짐빔', '미국', 700, '전형적인 버번 위스키의 오렌지 색상에 가볍고 매끄러우며 풍부한 바닐라, 캐러멜 향이 난다. 달콤한 꿀과 감초 사탕 맛이 느껴진다. 여운이 짧으나 매력적이며 복합적인 풍미를 지니고 있다', 'alcoholimg/alcohol69.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(93, 5, '깔루아', 26.0, '더 앱솔루트 컴퍼니', '미국', 700, '데낄라, 커피, 설탕을 주성분으로 만들어진 멕시코산의 커피 리큐르(Liqueur)를 말한다.', 'alcoholimg/alcohol70.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(94, 5, '예거 마이스터', 35.0, '마스트-예거마이스터', '독일', 700, '마스트 예거마이스터사는 1878년 빌헬름 마스트(Wilhelm Mast)가 설립했다. 1934년 빌헬름의 아들 쿨트 마스트(Cult Mast)가 허브, 과일, 뿌리 등 56가지의 재료로 만든 리큐어를 개발하여 1935년에 ''예거마이스터''란 이름으로 출시했다. 오래 된 천식, 위장병 등을 치료할 약용 리큐어로 개발되어 비터스(Bitters)와 비슷하지만 쓴 맛의 비터스와는 달리 달콤한 맛을 가졌다. 독일에서는 아직도 이 술을 가정 상비약으로 구비해 놓은 집들이 많다.', 'alcoholimg/alcohol71.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(95, 5, '스미노프 그린애플', 37.5, '스미노프', '미국', 750, '스미노프 그린애플은 보드가 본연의 풍부하고 부드러운 맛과 은은한 사과의 향이 풍미를 더한다.', 'alcoholimg/alcohol72.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(96, 6, '월계관 준마이', 15.6, '월계관', '미국', 750, '일본의 최대 청주 메이커인 월계관의 캘리포니아주 새크라멘토 주조장에서 생산된 사케로, 향긋한 과일향과 깔끔한 맛이 특징입니다. 미주, 유럽에서 인기리에 판매되고 있으며 국내에서도 오랜 기간 많은 사랑을 받아 국내에서 판매되는 사케를 통틀어 가장 높은 인지도와 판매량을 가진 제품입니다', 'alcoholimg/alcohol74.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(97, 6, '온나나카세 준마이다이긴죠', 16.0, '오무라야주조', '일본', 720, '와카다케 오니고로시로 유명한 오무라야 주조장의 최고급주로, 아련히 느껴지는 단맛과 은은한 향, 부드러운 목넘김이 특징이다. 이 술이 너무 맛있던 나머지, 남자들이 여자들을 가까이 하지 않고 술만 마셔댔다 하여 여인을 울리는 술이라는 별명이 붙었다.', 'alcoholimg/alcohol75.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(98, 6, '송죽매 준마이', 15.0, '타카라 사케', '미국', 750, '2011년 사케 품평회 금메달 수상한 사케', 'alcoholimg/alcohol76.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(99, 6, '쿠보타 만쥬', 15.5, '아사히주조', '일본', 720, '170년의 전통을 지켜온 쿠보타 브랜드의 최고봉으로 아사히주조가 지닌 모든 실력과 정성을 담았고, 또한 대대로 이어받은 장인의 혼을 담은 일품입니다. 한정생산, 한정판매하며 품귀 현상에 프리미 엄이 붙기도 하는 최고급 청주입니다.', 'alcoholimg/alcohol77.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(100, 6, '닷사이 23', 16.0, '아사히주조', '일본', 125, '쌀의 단맛도 나고 부드러우면서 온도가 올라가면 약간 카라한 맛이 나는 사케', 'alcoholimg/alcohol78.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(101, 6, '하나기자쿠라', 12.0, '기자쿠라', '일본', 720, '20~30대 젊은 여성층을 타겟으로 하는 달콤한 맛의 사케이다.', 'alcoholimg/alcohol79.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(102, 7, '서울의 밤', 25.0, '더한주류', '대한민국', 375, '높은 도수의 술이지만 씁쓸한 맛보단 매실의 달콤한 풍미가 돋보이는 술이다.', 'alcoholimg/alcohol81.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(103, 7, '매실원주', 13.0, '더한주류', '대한민국', 375, '꿀과 매실 향을 달콤하게 풍기는 술이다.', 'alcoholimg/alcohol82.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(104, 7, '동백꽃, 제주', 16.0, '제주본초협동조합', '대한민국', 365, '‘동백꽃, 제주’는 은은하게 풍기는 달달한 향에 청포도 사탕을 먹는 듯한 달콤함이 느껴지는 술이다.', 'alcoholimg/alcohol83.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(105, 7, '안동소주 일품 40% 골드', 40.0, '안동소주일품', '대한민국', 500, '마시기 전 오크 향이 가볍게 코를 스치고 혀에 닿자마자 짜릿하게 다가오는 쌀의 감칠맛이 그야말로 일품인 소주', 'alcoholimg/alcohol84.png');
-INSERT INTO alcohol_detail
-(alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img)
-VALUES(106, 7, '문배술 40', 40.0, '문배주양조원', '대한민국', 200, '달콤한 꽃 향과 감칠맛이 나고 배와 사과 같은 과실 향기와 그 뒤를 은은하게 받치는 향신료의 뉘앙스를 가져서 마치 고량주 같은 느낌이 드는 술', 'alcoholimg/alcohol85.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(89, 5, '글렌피딕 12년', 40.0, '글렌피딕', '영국', 700, '배 맛이 감도는 신선하고 상쾌한 향이 특징임 전 세계 싱글 몰트 위스키 마켓의 리더로서 시장을 이끌어 나가고 있는 글렌피딕은 골짜기를 뜻하는 ‘글렌’과 사슴을 뜻하는 ‘피딕’의 합성어로, 1887년 크리스마스에 스코틀랜드 스페이사이드 지역에 위치한 글렌피딕 증류소에서 탄생하였다.', 'alcoholimg/alcohol66.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(90, 5, '잭다니엘 싱글베럴', 40.0, '잭다니엘', '미국', 700, '잭다니엘 싱글베럴은 뛰어나고 중후한 맛이 특징이다. 특히 그을린 오크통의 향, 바닐라, 캬라멜 향이 강조되는데, 각각의 베럴에 사용된 참나무의 차이로 인해 그 베럴로부터 나온 한 병 한 병마다 맛, 향, 색깔이 오묘하게 다르다.', 'alcoholimg/alcohol67.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(91, 5, '아그와', 30.0, '아그와', '네덜란드', 700, '세계 각국에서 선택한 볼리비아산 코카잎를 포함한 최상의 허브 36가지와 과라나, 인삼과 같은 식물로 만든다는 특징을 가지고 있다.', 'alcoholimg/alcohol68.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(92, 5, '짐빔 화이트', 40.0, '짐빔', '미국', 700, '전형적인 버번 위스키의 오렌지 색상에 가볍고 매끄러우며 풍부한 바닐라, 캐러멜 향이 난다. 달콤한 꿀과 감초 사탕 맛이 느껴진다. 여운이 짧으나 매력적이며 복합적인 풍미를 지니고 있다', 'alcoholimg/alcohol69.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(93, 5, '깔루아', 26.0, '더 앱솔루트 컴퍼니', '미국', 700, '데낄라, 커피, 설탕을 주성분으로 만들어진 멕시코산의 커피 리큐르(Liqueur)를 말한다.', 'alcoholimg/alcohol70.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(94, 5, '예거 마이스터', 35.0, '마스트-예거마이스터', '독일', 700, '마스트 예거마이스터사는 1878년 빌헬름 마스트(Wilhelm Mast)가 설립했다. 1934년 빌헬름의 아들 쿨트 마스트(Cult Mast)가 허브, 과일, 뿌리 등 56가지의 재료로 만든 리큐어를 개발하여 1935년에 ''예거마이스터''란 이름으로 출시했다. 오래 된 천식, 위장병 등을 치료할 약용 리큐어로 개발되어 비터스(Bitters)와 비슷하지만 쓴 맛의 비터스와는 달리 달콤한 맛을 가졌다. 독일에서는 아직도 이 술을 가정 상비약으로 구비해 놓은 집들이 많다.', 'alcoholimg/alcohol71.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(95, 5, '스미노프 그린애플', 37.5, '스미노프', '미국', 750, '스미노프 그린애플은 보드가 본연의 풍부하고 부드러운 맛과 은은한 사과의 향이 풍미를 더한다.', 'alcoholimg/alcohol72.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(96, 6, '월계관 준마이', 15.6, '월계관', '미국', 750, '일본의 최대 청주 메이커인 월계관의 캘리포니아주 새크라멘토 주조장에서 생산된 사케로, 향긋한 과일향과 깔끔한 맛이 특징입니다.', 'alcoholimg/alcohol74.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(97, 6, '온나나카세 준마이다이긴죠', 16.0, '오무라야주조', '일본', 720, '와카다케 오니고로시로 유명한 오무라야 주조장의 최고급주로, 아련히 느껴지는 단맛과 은은한 향, 부드러운 목넘김이 특징이다. 이 술이 너무 맛있던 나머지, 남자들이 여자들을 가까이 하지 않고 술만 마셔댔다 하여 여인을 울리는 술이라는 별명이 붙었다.', 'alcoholimg/alcohol75.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(98, 6, '송죽매 준마이', 15.0, '타카라 사케', '미국', 750, '2011년 사케 품평회 금메달 수상한 사케', 'alcoholimg/alcohol76.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(99, 6, '쿠보타 만쥬', 15.5, '아사히주조', '일본', 720, '170년의 전통을 지켜온 쿠보타 브랜드의 최고봉으로 아사히주조가 지닌 모든 실력과 정성을 담았고, 또한 대대로 이어받은 장인의 혼을 담은 일품입니다. 한정생산, 한정판매하며 품귀 현상에 프리미 엄이 붙기도 하는 최고급 청주입니다.', 'alcoholimg/alcohol77.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(100, 6, '닷사이 23', 16.0, '아사히주조', '일본', 125, '쌀의 단맛도 나고 부드러우면서 온도가 올라가면 약간 카라한 맛이 나는 사케', 'alcoholimg/alcohol78.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(101, 6, '하나기자쿠라', 12.0, '기자쿠라', '일본', 720, '20~30대 젊은 여성층을 타겟으로 하는 달콤한 맛의 사케이다.', 'alcoholimg/alcohol79.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(28, 7, '고흥 유자주', 8.0, '녹동양조장', '대한민국', 500, '새콤달콤한 유자 향 뒤에 고소 담백한 곡물 향을 느낄 수 있는 술이다.', 'alcoholimg/alcohol80.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(102, 7, '서울의 밤', 25.0, '더한주류', '대한민국', 375, '높은 도수의 술이지만 씁쓸한 맛보단 매실의 달콤한 풍미가 돋보이는 술이다.', 'alcoholimg/alcohol81.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(103, 7, '매실원주', 13.0, '더한주류', '대한민국', 375, '꿀과 매실 향을 달콤하게 풍기는 술이다.', 'alcoholimg/alcohol82.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(104, 7, '동백꽃 제주', 16.0, '제주본초협동조합', '대한민국', 365, '동백꽃 제주는 은은하게 풍기는 달달한 향에 청포도 사탕을 먹는 듯한 달콤함이 느껴지는 술이다.', 'alcoholimg/alcohol83.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(105, 7, '안동소주 일품 40 골드', 40.0, '안동소주일품', '대한민국', 500, '마시기 전 오크 향이 가볍게 코를 스치고 혀에 닿자마자 짜릿하게 다가오는 쌀의 감칠맛이 그야말로 일품인 소주', 'alcoholimg/alcohol84.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(106, 7, '문배술 40', 40.0, '문배주양조원', '대한민국', 200, '달콤한 꽃 향과 감칠맛이 나고 배와 사과 같은 과실 향기와 그 뒤를 은은하게 받치는 향신료의 뉘앙스를 가져서 마치 고량주 같은 느낌이 드는 술', 'alcoholimg/alcohol85.png');
+INSERT INTO alcohol_detail (alcohol_detail_no, alcohol_type_no, alcohol_name, `degree`, brand, origin, volume, characteristic, img) VALUES(30, 8, '기타술1', 16.5, '브랜드30', '원산지30', 130, '특징소개30', 'alcoholimg/alcohol30.png');
+
 
 
 -- 주점판매술
