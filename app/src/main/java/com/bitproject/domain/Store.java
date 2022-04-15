@@ -15,7 +15,7 @@ public class Store {
   String storeName;
   String address;
   String tel;
-  java.sql.Time hour;
+  String hour;
   String introduction;
   float evaluationScore;
   boolean reservationAccept;
