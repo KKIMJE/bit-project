@@ -75,12 +75,13 @@ h1 {
 
 .submit-next-btn {
   all: unset;
+  text-align:center;
   color: #EEEFF1;
   font-size: 15px;
   font-weight: 500;
   background-color: #29c05e;
   border-radius: 5px;
-  margin-left: -30px;
+  margin-left: -20px;
   padding: 8px;
   width: 60px;
 }
@@ -92,7 +93,7 @@ h1 {
   font-weight: 500;
   background-color: #29c05e;
   border-radius: 5px;
-  margin-left: -30px;
+  margin-left: 20px;
   padding: 8px;
   width: 60px;
 }
@@ -104,7 +105,7 @@ h1 {
 
 .login__box {
   width: 450px;
-  height: 700px;
+  height: 1000px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;
@@ -153,9 +154,9 @@ body > form > div > div > div > div > span {
 
 .btn-outline-dark1 {
   font-size: 15px;
-  margin-top: 20px;
-  margin-bottom: -5px;
-  margin-left: 130px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  margin-left: -180px;
   border: 1px solid;
   border-color:black;
   border-radius: 10px;
@@ -164,8 +165,8 @@ body > form > div > div > div > div > span {
 
 .btn1-outline-dark2 {
   font-size: 15px;
-  margin-top: 20px;
-  margin-bottom: -5px;
+  margin-top: -25px;
+  margin-bottom: 30px;
   margin-left: 150px;
   border: 1px solid;
   border-color:black;
