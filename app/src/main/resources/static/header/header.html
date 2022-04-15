@@ -4,19 +4,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
+    <!-- jquery -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
     <!-- Bootstrap js -->
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-    <!-- jquery -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <!-- icons -->
-    <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    
 </head>
 
 <style>
@@ -135,7 +134,7 @@ ul.navbar__login > div:nth-child(3) > div > button:hover {
 }
 
 login-i:hover {
-  color: #29c05e;
+  color: rgb(63, 63, 63);
 }
 
 /* 검색 */
@@ -157,6 +156,30 @@ body > nav > ul.navbar__login > div:nth-child(3) > div > ul {
   bottom: 0px;
 }
 
+#header > nav > ul.navbar__login > div:nth-child(3) > div > button {
+  color: #fff;
+  background-color: white;
+  border-color: white;
+  box-shadow: 0 0 0 0rem rgb(130 138 145 / 50%);
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 
 </style>
 
