@@ -1,0 +1,195 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
+    <!-- jquery -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<style>
+@charset "UTF-8";
+
+/* nav-bar */
+body > nav {
+  background-color: white;
+  z-index: 1000;
+}
+
+.navbar__ {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  align-items: center;
+  padding: 3px 12px;
+  border: 1px solid rgb(160, 160, 160);
+  border-width: 0px 0px 1px 0px;
+  border-radius: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-family: NanumSquareRound;
+  background-color: white;
+}
+
+.navbar__ a {
+  text-decoration: none;
+  color: rgb(63, 63, 63);
+}
+
+.navbar__logo {
+  font-size: 24px;
+  margin-left: 220px;
+  margin-bottom: 4px;
+  background-color: white;
+}
+
+.navbar__menu {
+  display: none;
+  font-weight: 700;
+  align-items: baseline;
+  list-style: none;
+  padding-left: 0;
+  padding-top: 12px;
+  font-size: 15px;
+  background-color: white;
+}
+
+.navbar__menu li {
+  padding: 8px 12px 0px 0px;
+  background-color: white;
+}
+
+.navbar__menu menu-i {
+  font-size: 24px;
+  padding: 0px 15px;
+  background-color: white;
+}
+
+/* login */
+.navbar__login {
+  display: flex;
+  font-weight: 700;
+  align-items: baseline;
+  list-style: none;
+  padding-left: 0;
+  padding-top: 1px;
+}
+
+.navbar__login login-i {
+  font-size: 24px;
+  padding: 0px 15px;
+}
+
+.navbar__login li {
+  padding: 8px 12px 0px 0px;
+}
+
+/* 알림 */
+.navbar__login > div > div > button > a > login-i {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.navbar__login > div > div > button {
+  border: #fff;
+  border-color: #fff;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-check:focus + .btn-secondary,
+.btn-secondary:focus {
+  color: #fff;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-secondary:hover {
+  border: #fff;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: none;
+}
+
+/* 검색 */
+.navbar__login > div:nth-child(3) > div > ul {
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+  border-color: #ffffff;
+  width: 250px;
+}
+
+.navbar__login > div:nth-child(3) > div > ul > li {
+  padding-right: 0;
+}
+
+body > nav > ul.navbar__login > div:nth-child(3) > div > ul {
+  max-width: 70rem;
+  min-width: 20rem;
+  bottom: 0px;
+}
+
+</style>
+
+<nav class="navbar__">
+    <div><!-- 공간, 삭제하지 마세요 --></div>
+
+    <div class="navbar__logo">
+        <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+    </div>
+
+    <ul class="navbar__menu">
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+        <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
+    </ul>
+
+    <ul class="navbar__login">
+        <!-- 알림 -->
+        <div class="btn-group"> 
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                    <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
+                </button>
+            </div>
+        </div>
+
+        <!-- 마이페이지 -->
+        <a href=""><login-i class="fa-solid fa-user-large"></login-i></a> 
+
+        <!-- 검색 -->
+        <div class="btn-group"> 
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                    <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-lg-end">
+                  <li>
+                    <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </div> 
+
+        <!-- 지도 -->
+        <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a> 
+    </ul>
+</nav>
