@@ -1,3 +1,5 @@
+// import { partyList } from '../common/api/apiList.js';
+
 var pbody = document.querySelector("#party-body")
 var dbody = document.querySelector("#my-position")
 
@@ -84,10 +86,8 @@ function onGeoOk(position){
     .then(function(response) {
         return response.json();
     })
-    .then(function() {
-        let mp = result.documents[0].address.address_name
-        console.log(mp);
-        dbody.innerHTML = `${mp}`;
+    .then(function(result) {
+        dbody.innerHTML = result.documents[0].address.address_name
         });
     }
 
