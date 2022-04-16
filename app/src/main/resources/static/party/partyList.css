@@ -30,8 +30,8 @@ body {
 #party-wrap > button {
   font-size: 22px;
   color: rgba(75, 75, 75, 1);
-  margin-left: 10px;
-  width: 163px;
+  margin-left: 3px;
+  width: 300px;
   transition: none;
 }
 
