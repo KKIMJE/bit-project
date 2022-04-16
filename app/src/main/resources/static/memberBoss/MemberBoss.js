@@ -100,7 +100,7 @@
        
       };
 
-      document.querySelector(".submit-exit-btn").onclick = function() {
+      document.querySelector("#exit").onclick = function() {
         window.location.href = "../main/main.html";
       };
     
