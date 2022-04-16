@@ -79,10 +79,8 @@
         <div class="address">
             <p class="form_address">주소</p><br>
             <div>
-              <input type="text" id="member_post" class="form_input_address" placeholder="우편번호" readonly="readonly" onclick="findAddr()">
-              <button class="submit-address-btn" onclick="findAddr()">우편번호</button>
-              <input type="text"  id="member_addr" class="form_input_address_detail" placeholder="주소" readonly="readonly">
-              <input type="text" class="form_input_address_detail" placeholder="상세주소">
+              <input type="text" id="address_kakao"  name="address" class="form_input_address_detail" placeholder="주소" readonly>
+              <input type="text" class="form_input_address_detail"  name="address_detail" placeholder="상세주소">
             </div>
           </div>
           
@@ -122,7 +120,7 @@
           
            <div class="number">
             <p class="form_number">사업자등록번호</p><br>
-            <input name="businessRegistrationNo" id="businessRegistrationNo" class="form_input_number">
+            <input id="businessRegistrationNo" class="form_input_number">
            </div>
           
            <div class="tag">
@@ -195,51 +193,21 @@
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous">
 </script>
-<script>
-var target = document.querySelectorAll('.submit-add-btn');
-var btnPopClose = document.querySelectorAll('.pop_wrap .btn_add');
-var targetID;
 
-// 팝업 열기
-for(var i = 0; i < target.length; i++){
-  target[i].addEventListener('click', function(){
-    targetID = this.getAttribute('href');
-    document.querySelector(targetID).style.display = 'block';
-  });
-}
-
-// 팝업 닫기
-for(var j = 0; j < target.length; j++){
-  btnPopClose[j].addEventListener('click', function(){
-    this.parentNode.parentNode.style.display = 'none';
-  });
-}
-</script>
-
-<script>
-function findAddr(){
-    new daum.Postcode({
-        oncomplete: function(data) {
-            
-            console.log(data);
-            
-            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-            // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-            var roadAddr = data.roadAddress; // 도로명 주소 변수
-            var jibunAddr = data.jibunAddress; // 지번 주소 변수
-            // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById('member_post').value = data.zonecode;
-            if(roadAddr !== ''){
-                document.getElementById("member_addr").value = roadAddr;
-            } 
-            else if(jibunAddr !== ''){
-                document.getElementById("member_addr").value = jibunAddr;
-            }
-        }
-    }).open();
-}
-</script>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="MemberBoss.js"></script>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+window.onload = function(){
+    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+        //카카오 지도 발생
+        new daum.Postcode({
+            oncomplete: function(data) { //선택시 입력값 세팅
+                document.getElementById("address_kakao").value = data.address; // 주소 넣기
+                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+            }
+        }).open();
+    });
+}
+</script>
 </html>
