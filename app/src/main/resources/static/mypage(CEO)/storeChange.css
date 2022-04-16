@@ -28,6 +28,11 @@ h1 {
   color: rgb(32, 32, 32);
 }
 
+.file-upload{
+	 margin-left:-20px;
+	
+}
+
 .address {
   display: flex;
   flex-direction: column;
@@ -58,19 +63,6 @@ h1 {
   margin-left: 14px;
   padding: 8px;
    width: 60px;
-}
-
-.submit-add-btn {
-  all: unset;
-  text-align:center;
-  color: #EEEFF1;
-  font-size: 15px;
-  font-weight: 500;
-  background-color: #29c05e;
-  border-radius: 5px;
-  margin-left: 14px;
-  padding: 8px;
-  width: 60px;
 }
 
 .submit-next-btn {
@@ -144,33 +136,15 @@ body > form > div > div > div > div > span {
   margin-left: 40px;
 }
 
- .form_hr, .form_intro, .form_tag {
+ .form_hr, .form_intro, .form_tag ,.form_number {
   color: black;
   font-size: 15px;
   padding-top: 10px;
   margin-bottom: -5px;
 }
 
-.btn-outline-dark1 {
-  font-size: 15px;
-  margin-top: 20px;
-  margin-bottom: -5px;
-  margin-left: 130px;
-  border: 1px solid;
-  border-color:black;
-  border-radius: 10px;
-  background-color:white;
-}
-
-.btn1-outline-dark2 {
-  font-size: 15px;
-  margin-top: 20px;
-  margin-bottom: -5px;
-  margin-left: 150px;
-  border: 1px solid;
-  border-color:black;
-  border-radius: 10px;
-  background-color:white;
+.tag{
+	margin-top:10px;
 }
 
 .form_check{
@@ -211,7 +185,7 @@ body > form > div > div > div > div > span {
   
 }
 
-.form_input_tel {
+.form_input_tel, .form_input_number {
   width: 299px;
   border: 1px solid;
   border-color: #E1E1E1;
@@ -219,6 +193,7 @@ body > form > div > div > div > div > span {
   padding: 8px;
   margin-top: -5px;
 }
+
 
 .form_input_check{
   border: 1px solid;
@@ -263,6 +238,20 @@ body > form > div > div > div > div > span {
   vertical-align: middle !important;
   margin-top: -16px;
 }
+
+#submit-add-btn {
+  all: unset;
+  text-align:center;
+  color: #EEEFF1;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #29c05e;
+  border-radius: 5px;
+  margin-left: 14px;
+  padding: 8px;
+  width: 60px;
+}
+
 
 input {
   margin: 3px;

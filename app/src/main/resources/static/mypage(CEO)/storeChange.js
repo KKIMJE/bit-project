@@ -16,89 +16,111 @@
             });
         });*/
 
-   function sample6_execDaumPostcode() {
+window.onload = function(){
+    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+        //카카오 지도 발생
         new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
+            oncomplete: function(data) { //선택시 입력값 세팅
+                document.getElementById("address_kakao").value = data.address; // 주소 넣기
+                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
             }
         }).open();
+    });
+}
+
+  
+   /* 삭제 추가 */ 
+      // 1) URL에서 쿼리스트링(query string)을 추출한다.
+   var arr = location.href.split("?"); 
+  console.log(arr);
+
+  if (arr.length == 1) {
+    alert("요청 형식이 옳바르지 않습니다.")
+    throw "URL 형식 오류!";
+  }
+
+  var qs = arr[1];
+  console.log(qs);
+
+  
+  var params = new URLSearchParams(qs);
+  var storeName = params.get("storeName");
+
+  if (storeName == null) {
+    alert("가게명이 없습니다.");
+    throw "파라미터 오류!";
+  }
+  console.log(no);
+
+  var xStoreName = document.querySelector("input[name=storeName]");
+  var xTel = document.querySelector("input[name=tel]");
+  var xHour = document.querySelector("textarea[name=hour]");
+  var xIntroduction = document.querySelector("textarea[name=introduction]");
+  var xReservationAccept = document.querySelector("#reservationAccept");
+  var xBusinessRegistrationNo = document.querySelector("input[name=businessRegistrationNo]");
+
+  // 3) 서버에서 데이터 가져오기
+  fetch(`/store/update?storeName=${storeName}`)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(result) {
+      // 4) 연락처 상세 정보를 화면에 출력한다.
+      if (result.status == "fail") {
+        window.alert("서버 요청 오류!");
+        console.log(result.data);
+        return;
+      }
+      
+      var store = result.data;
+      
+      xStoreName.value = store.storename;
+      xTel.value = store.tel;
+      xHour.value = store.hour;
+      xIntroduction.value = store.introduction;
+      xReservationAccept.value = store.reservationAccept;
+      xBusinessRegistrationNo.value = store.BusinessRegistrationNo;
+    });
+
+  document.querySelector("#x-update-btn").onclick = function() {
+    if (xTitle.value == "" || xContent.value == "") {
+      window.alert("필수 입력 항목이 비어 있습니다.");
+      return;
     }
     
-   /*
-      var xName = document.querySelector("input[name=name]");
-      var xEmail = document.querySelector("input[name=email]");
-      var xPassword = document.querySelector("input[name=password]");
-
-      document.querySelector("form[name=addform]").onsubmit = function() {
-        if (xName.value == ""  
-            xEmail.value == "" 
-            xPassword.value == "") {
-          window.alert("필수 입력 항목이 비어 있습니다.");
-          return false;
+    var fd = new FormData(document.forms.namedItem("form1"));
+    
+    fetch("/board/update", {
+        method: "POST",
+        body: new URLSearchParams(fd)
+      }).then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        if (result.status == "success") {
+          location.href = "?content=/board/index.html";
+        } else {
+          window.alert("게시글 변경 실패!");
+          console.log(result.data);
         }
+      });
+  };
 
-        var fd = new FormData(document.forms.namedItem("addform"));
-
-        fetch("/member/signup", { 
-            method: "POST",
-            body: new URLSearchParams(fd)
-          }) 
-          .then(function(response) {
-            console.log(response);
-            return response.json();
-          })
-          .then(function(result) {
-            console.log(result);
-            if (result.status == "success") {
-              location.href = "../main/main.html";
-            } else {
-              window.alert("회원가입 실패!!");
-            }
-          });
-        return false;
-      };
-
-      document.querySelector(".submit-exit-btn").onclick = function() {
+ document.querySelector("#exit").onclick = function() {
         window.location.href = "../main/main.html";
       };
-    
+
+  document.querySelector("#x-delete-btn").onclick = function() {
+    fetch(`/board/delete?no=${no}`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        if (result.status == "success") {
+          location.href = "?content=/board/index.html";
+        } else {
+          window.alert("게시글 삭제 실패!");
+          console.log(result.data);
+        }
+      });
+  };

@@ -15,6 +15,7 @@
   crossorigin="anonymous">
 <link rel="stylesheet" type="text/css"
   href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="storeChange.css">
@@ -73,15 +74,13 @@
       <div class="login__box">
         <div class="content">
           <p class="form_store">가게명</p><br>
-          <input name="name" type="text" class="form_input_name">
+          <input name="storeName" type="text" class="form_input_name">
 
         <div class="address">
             <p class="form_address">주소</p><br>
             <div>
-              <input type="text" id="sample6_postcode" class="form_input_address" placeholder="우편번호">
-              <button class="submit-address-btn" onclick="sample6_execDaumPostcode()">우편번호</button>
-              <input type="text"  id="sample6_address" class="form_input_address_detail" placeholder="주소">
-              <input type="text"  id="sample6_detailAddress" class="form_input_address_detail" placeholder="상세주소">
+              <input type="text" id="address_kakao"  name="address" class="form_input_address_detail" placeholder="주소" readonly>
+              <input type="text" class="form_input_address_detail"  name="address_detail" placeholder="상세주소">
             </div>
           </div>
           
@@ -111,17 +110,22 @@
           
           <div class="hr">
             <p class="form_hr">영업시간</p><br>
-            <textarea id = "hr" style="resize:none;" class="form_input_hr"></textarea>
+            <textarea name="hour" id = "hr" style="resize:none;" class="form_input_hr"></textarea>
           </div>
 
            <div class="intro">
             <p class="form_intro">가게소개</p><br>
-            <textarea id="intro"  style="resize:none;" class="form_input_intro"></textarea>
+            <textarea name="introduction" id="intro"  style="resize:none;" class="form_input_intro"></textarea>
+          </div>
+          
+          <div class="number">
+            <p class="form_number">사업자등록번호</p><br>
+            <input name="businessRegistrationNo" id="businessRegistrationNo" class="form_input_number">
           </div>
           
            <div class="tag">
             <p class="form_tag">태그선택
-               <button class="submit-add-btn">추가</button>
+            <button type="button" id="submit-add-btn">추가</button>
             <!-- 사각형 -->
           </div>
 
@@ -133,21 +137,20 @@
       </div>
 
 
-           <div>
+           <div style="margin-top:10px;">
             <p class="form_check">예약 가능 여부 <br>
-            <center>가능<input type="checkbox"  class="form_input_check" checked>불가능<input type="checkbox" class="form_input_check">
-            최대인원 <input name="max-num" type="text"  class="form_input_box" > 
+            <center>가능<input id="reservationAccept" type="checkbox"  class="form_input_check" checked>불가능<input name="reservationAccept"  type="checkbox" class="form_input_check">
+            최대인원 <input id="maxMember" type="text"  class="form_input_box" > 
             <!-- 사각형 -->
           </div> </center>
            
-           <center><div class="x-btn-outline-group">
-      <button class="btn-outline-dark1"  type="button">사업자등록증 첨부하기</button><br>
-     <div><button class="btn1-outline-dark2"  type="button">주점 사진 첨부하기</button></div>
+           <center><div class="file-upload">
+     <div><input name="file" type="file"></div>
     </div> </center>
           
           <center><div class="btn">
          <button class="submit-next-btn">다음</button>
-         <button class="submit-exit-btn">나가기</button>
+        <button type="button" id="exit" class="submit-exit-btn">나가기</button>
          </div>
          </center>
          
