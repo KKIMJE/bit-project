@@ -111,12 +111,15 @@ function targetList(targetNo) {
 
 lightBtn.addEventListener("click", function(e) {
   targetArr = [];
-  $('.alcohol-list-div div').empty()
+  console.log(e.target);
+  console.log(e.currentTarget);
   if (e.target == e.currentTarget) {
     return;
   } else {
     e.currentTarget.querySelector('.act').classList.toggle('act');
     e.target.classList.toggle('act');
+
+    $('.alcohol-list-div div').empty()
 
     let targetNo = e.target.value
 
@@ -131,13 +134,14 @@ lightBtn.addEventListener("click", function(e) {
 });
 
 filterBtn.addEventListener("click", function(e) {
-  $('.alcohol-list-div div').empty()
   if (e.target == e.currentTarget) {
     return;
   } else {
     e.currentTarget.querySelector('.filterAct').classList.toggle('filterAct');
     e.target.classList.toggle('filterAct');
 
+    $('.alcohol-list-div div').empty()
+    
     let targetNo = e.target.value
 
     if (targetNo == 0) {
