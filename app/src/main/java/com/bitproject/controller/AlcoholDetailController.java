@@ -3,43 +3,47 @@ package com.bitproject.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.bitproject.dao.AlcoholDetailDao;
 import com.bitproject.domain.AlcoholDetail;
+import com.bitproject.service.AlcoholDetailService;
 
 @RestController 
 public class AlcoholDetailController {
 
   @Autowired
-  AlcoholDetailDao alcoholDetailDao;
+  AlcoholDetailService alcoholDetailService;
 
   @RequestMapping("/alcohol/list")
-  public Object list() {
-    return alcoholDetailDao.findAll();
+  public Object list(int pageSize, int pageNo) {
+    return alcoholDetailService.list(pageSize, pageNo);
   }
 
-  @RequestMapping("/alcohol/add")
-  public Object add(AlcoholDetail alcoholDetail) {
-    return alcoholDetailDao.insert(alcoholDetail);
-  }
+  //  @RequestMapping("/alcohol/add")
+  //  public Object add(AlcoholDetail alcoholDetail) {
+  //    return alcoholDetailService.insert(alcoholDetail);
+  //  }
 
 
   @RequestMapping("/alcohol/get")
   public Object get(int no) {
-    AlcoholDetail alcoholDetail = alcoholDetailDao.findByNo(no);
+    AlcoholDetail alcoholDetail = alcoholDetailService.get(no);
     if (alcoholDetail == null) {
       return "";
     }
     return alcoholDetail;
   }
-
-
-  @RequestMapping("/alcohol/update")
-  public Object update(AlcoholDetail alcoholDetail) {
-    return alcoholDetailDao.update(alcoholDetail);
+  @RequestMapping("/alcohol/size")
+  public int size() {
+    return alcoholDetailService.size();
   }
 
-  @RequestMapping("/alcohol/delete")
-  public Object delete(int no) {
-    return alcoholDetailDao.delete(no);
-  }
+
+  //  @RequestMapping("/alcohol/update")
+  //  public Object update(AlcoholDetail alcoholDetail) {
+  //    return alcoholDetailService.update(alcoholDetail);
+  //  }
+
+  //  @RequestMapping("/alcohol/delete")
+  //  public Object delete(int no) {
+  //    return alcoholDetailService.delete(no);
+  //  }
 }
