@@ -1,9 +1,93 @@
 const lightBtn = document.querySelector('.category-sort-div');
 const filterBtn = document.querySelector('.filter')
 var itemDiv = document.querySelector(".alclist-item-div")
+const preBtn = document.querySelector(".pre-btn")
+const nextBtn = document.querySelector(".next-btn")
+let pageNumber = document.querySelector(".page-number")
 // var listDiv = document.querySelector(".alcohol-list-div")
 
 var targetArr = [];
+let pageSize = 10;
+let pageNo = 1;
+let totalPageSize = 0;
+let alcoholSize = 0;
+
+fetch("/alcohol/size")
+  .then(response => {
+    return response.json()
+  })
+  .then(size => {
+    totalPageSize = Math.ceil(size / pageSize); // 총 페이지 수
+  });
+
+
+nextBtn.addEventListener("click", (e) => {
+  console.log(pageNo);
+  $('.alcohol-list-div div').empty()
+  console.log(totalPageSize);
+  fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${pageNo + 1}`)
+    .then(function(response) {
+      return response.json()
+    })
+    .then(function(alcohols) {
+        for (var i = 0; i < alcohols.length; i++) {
+          let div = document.createElement("div")
+          div.classList.add("card")
+          div.classList.add("border-white")
+          div.innerHTML = `
+          <a class="alc-link" href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
+            <img src="${alcohols[i].img}" class="card-img-top">
+            <div class="card-body">
+              <p class="card-text">
+              <ul>
+                <li>${alcohols[i].alcoholName}</li>
+                <li class="alchol-degree-value">${alcohols[i].degree}%</li>
+              </ul>
+              </p>
+            </div>
+          </a>
+        `
+          itemDiv.appendChild(div)
+        }
+        pageNo++;
+        pageNumber.innerHTML = pageNo;
+    })
+})
+
+
+preBtn.addEventListener("click", (e) => {
+  $('.alcohol-list-div div').empty()
+  fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${pageNo - 1}`)
+    .then(function(response) {
+      return response.json()
+    })
+    .then(function(alcohols) {
+      for (var i = 0; i < alcohols.length; i++) {
+        let div = document.createElement("div")
+        div.classList.add("card")
+        div.classList.add("border-white")
+        div.innerHTML = `
+          <a class="alc-link" href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
+            <img src="${alcohols[i].img}" class="card-img-top">
+            <div class="card-body">
+              <p class="card-text">
+              <ul>
+                <li>${alcohols[i].alcoholName}</li>
+                <li class="alchol-degree-value">${alcohols[i].degree}%</li>
+              </ul>
+              </p>
+            </div>
+          </a>
+        `
+        itemDiv.appendChild(div)
+        // targetArr.push(alcohols[i])
+      }
+    })
+  pageNo--;
+  pageNumber.innerHTML = pageNo;
+})
+
+
 
 function degreeSort(alcoholArr) {
   alcoholArr.sort((a, b) => {
@@ -48,7 +132,7 @@ function sortList(sortListArr) {
 }
 
 function allList() {
-  fetch("/alcohol/list?pageSize=81&pageNo=1")
+  fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${pageNo}`)
     .then(function(response) {
       return response.json()
     })
@@ -78,7 +162,7 @@ function allList() {
 }
 
 function targetList(targetNo) {
-  fetch("/alcohol/list?pageSize=81&pageNo=1")
+  fetch("/alcohol/list")
     .then(function(response) {
       return response.json()
     })
@@ -111,8 +195,6 @@ function targetList(targetNo) {
 
 lightBtn.addEventListener("click", function(e) {
   targetArr = [];
-  console.log(e.target);
-  console.log(e.currentTarget);
   if (e.target == e.currentTarget) {
     return;
   } else {
@@ -154,106 +236,3 @@ filterBtn.addEventListener("click", function(e) {
     }
   }
 })
-
-
-
-
-
-// if (count % 5 == 0) {
-//   var itemDiv = document.createElement("div")
-//   itemDiv.classList.add("alclist-item-div")
-//   itemDiv.classList.add("d-flex")
-//   itemDiv.classList.add("flex-row")
-//   listDiv.appendChild(itemDiv)
-// }
-
-// $('.alcohol-list-div div').empty()
-
-
-// console.log(e.target.value);
-
-// fetch("/alcohol/list")
-//   .then(function(response) {
-//     return response.json()
-//   })
-//   .then(function(alcohols) {
-//     $('.alcohol-list-div div').empty()
-//     var count = 0;
-//     for (var i = 0; i < alcohols.length; i++) {
-//       var itemDiv = document.querySelector(".alclist-item-div")
-//       if (e.target.value == alcohols[i].alcoholTypeNo) {
-//         count++
-//
-//         if (count == 5) {
-//           makeItemDiv();
-//         }
-//
-//         var div = document.createElement("div")
-//         div.classList.add("card")
-//         div.classList.add("border-white")
-//         div.innerHTML = `
-//         <a href="alcoholdetail.html?no=${alcohols[i].no}">
-//           <img src="${alcohols[i].img}" class="card-img-top">
-//           <div class="card-body">
-//             <p class="card-text">
-//             <ul>
-//               <li>${alcohols[i].name}</li>
-//               <li>${alcohols[i].degree}%</li>
-//             </ul>
-//             </p>
-//           </div>
-//         </a>
-//       `
-//         itemDiv.appendChild(div)
-//       }
-//     }
-//   })
-
-
-
-
-
-
-
-
-
-// fetch("/alcohol/list")
-//   .then(function(response) {
-//     console.log(response);
-//     return response.json();
-//   })
-//   .then(function(alcohols) {
-//     console.log(alcohols);
-//
-//     for (var i = 0; i < alcohols.length; i++) {
-//       if (i % 5 == 0) {
-//         var no = 1
-//         var itemDiv = document.createElement("div")
-//         itemDiv.classList.add(`"alclist-item-div${no}"`)
-//         itemDiv.classList.add("d-flex")
-//         itemDiv.classList.add("flex-row")
-//         no++
-//         listDiv.appendChild(itemDiv)
-//       }
-//
-//       var div = document.createElement("div")
-//       div.classList.add("card")
-//       div.classList.add("border-white")
-//       div.innerHTML = `
-//           <a href="alcoholdetail.html?no=${alcohols[i].no}">
-//             <img src="${alcohols[i].img}" class="card-img-top">
-//             <div class="card-body">
-//               <p class="card-text">
-//               <ul>
-//                 <li>${alcohols[i].name}</li>
-//                 <li>${alcohols[i].degree}%</li>
-//               </ul>
-//               </p>
-//             </div>
-//           </a>
-//         `
-//       itemDiv.appendChild(div)
-//
-//     }
-//
-//   })
