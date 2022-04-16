@@ -76,29 +76,27 @@ var options = {
     };
 
 
-    
-
-
-function onGeoOk(position){
-    
     var lat;
     var lng;
     
-    function success(position) {
-        //좌표를 알아내어 kakaoAPI url에 사용한다.
-        lat = position.coords.latitude;
-        lng = position.coords.longitude;
+function success(position) {
+    //좌표를 알아내어 kakaoAPI url에 사용한다.
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
 
-        console.log('위도 : ' + lat); 
-        console.log('경도: ' + lng);
-    };
-        
-    function error(err) {
-        console.warn('ERROR(' + err.code + '): ' + err.message);
-    };
+    console.log('위도 : ' + lat); 
+    console.log('경도: ' + lng);
+};
+    
+function error(err) {
+    console.warn('ERROR(' + err.code + '): ' + err.message);
+};
 
-    navigator.geolocation.getCurrentPosition(success, error, options);
+navigator.geolocation.getCurrentPosition(success, error, options);
 
+
+function onGeoOk(position){
+    console.log(lat, lng);
     // const REST_API_KEY = "4e01457312537eb81d1716cd0d22bcfd";
     
     //kakao REST API에 get 요청을 보낸다.
@@ -113,7 +111,7 @@ function onGeoOk(position){
         console.log(JSON.stringify(response.data));
         // console.log(response);
         // return response.json();
-    }, false)
+    })
       .then(function(result) { 
         console.log(result);
     });

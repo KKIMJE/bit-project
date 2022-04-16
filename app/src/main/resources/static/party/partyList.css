@@ -9,30 +9,36 @@ body {
   margin: 0 auto !important;
 }
 
-a {
+#party-body > a {
   text-decoration: none;
 }
 
-a:hover {
-  color: inherit;
+#party-body > a:hover {
+  color: rgba(75, 75, 75, 1);;
 }
 
 #party-wrap {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   font-family: NanumSquareRound;
   justify-content: center;
   width: 1107px;
   position: relative;
+  margin-top: 120px
 }
 
-.location__ {
+#party-wrap > button {
   font-size: 22px;
   color: rgba(75, 75, 75, 1);
-  margin: 120px 0 0 20px;
+  margin-left: 10px;
   width: 163px;
-  padding: 0;
+  transition: none;
+}
+
+#party-wrap > button:focus {
+  box-shadow: none;
+  border: none;
+  transition: none;
 }
 
 .modal-header {
