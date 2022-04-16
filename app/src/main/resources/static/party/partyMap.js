@@ -29,6 +29,27 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 
 
+/*********************************
+    중심좌표 변경 이벤트 등록하기 
+**********************************/
+
+// 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+kakao.maps.event.addListener(map, 'center_changed', function() {
+
+    // 지도의 중심좌표를 얻어옵니다 
+    var latlng = map.getCenter(); 
+    
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new kakao.maps.services.Geocoder();
+
+    var message = '<p>중심 좌표는 위도 ' + latlng.getLat() + ', 경도 ' + latlng.getLng() + '입니다</p>';
+
+    var resultDiv = document.getElementById('my-address-center');
+    resultDiv.innerHTML = message;
+
+});
+
+
 /**************************
 중심좌표에 따른 현재 주소 
 **************************/
@@ -40,7 +61,7 @@ var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입
     infowindow = new kakao.maps.InfoWindow({zindex:1}); // 클릭한 위치에 대한 주소를 표시할 인포윈도우입니다
 
 // 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
-kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+kakao.maps.event.addListener(map, 'mouseup', function(mouseEvent) {
     searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
             var detailAddr = '<div>' + result[0].address.address_name + '</div>';
@@ -88,40 +109,3 @@ function displayCenterInfo(result, status) {
         }
     }    
 }
-
-
-
-
-
-// // 주소-좌표 변환 객체를 생성합니다
-// var geocoder = new kakao.maps.services.Geocoder();
-
-// var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입니다
-//     infowindow = new kakao.maps.InfoWindow({zindex:1}); // 클릭한 위치에 대한 주소를 표시할 인포윈도우입니다
-
-// var center = map.getCenter();
-
-// console.log(center.getLng());
-// console.log(center.getLat());
-
-// // 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
-// kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-//     searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-//         if (status === kakao.maps.services.Status.OK) {
-//             var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-//             detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-            
-//             var content = '<div class="bAddr">' +
-//                             '<span class="title">법정동 주소정보</span>' + 
-//                             detailAddr + 
-//                         '</div>';
-
-//             // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
-//             infowindow.setContent(content);
-//             infowindow.open(map, marker);
-//         }   
-//     });
-// });
-
-
-
