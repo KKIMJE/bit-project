@@ -28,7 +28,6 @@ footer__store {
   margin-right: 40px;
 }
 
-
 .xMain-img {
   width: 400px;
   height: 400px;
@@ -43,7 +42,6 @@ footer__store {
   margin: 0;
   padding: 0;
 }
-
 .img-box {
   margin-top: 110px;
   padding: 0;
@@ -54,9 +52,77 @@ footer__store {
   flex-wrap: nowrap;
   flex-direction: row;
 }
-
 .xSub-box1, .xSub-box2 {
   display: flex;
   margin: 0;
   padding: 0;
+}
+
+i {
+  font-size:larger; 
+}
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.storeBox {
+  margin-top: 35px;
+}
+.storeName {
+  font-size: 40px;
+}
+.storeBox, .storeTextBox-1-1, .storeTextBox-1-2 {
+  display: flex;
+}
+.storeTextBox {
+  margin-right: 70px;
+}
+.storeTextBox-1 {
+  margin: 0;
+  padding: 0;
+}
+.storeTextBox-2 {
+  margin-left: 5px;
+}
+.storeTextBox-3 {
+  margin-left: 5px;
+}
+.storeTextBox-1-2 {
+  margin-top: 13px;
+  margin-left: 5px;
+}
+.storeTextBox-1-1-1 {
+  margin-left: 10px;
+}
+.storeStar {
+  font-size: 20px;
+}
+.storeDetailInfo {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #b6b6b6;
+}
+.storeTextBox-2, .storeTextBox-3 {
+  margin-top: 30px;
+}
+.storeTime {
+  font-size: 20px;
+  font-weight: bold;
+}
+.storeTimeInfo {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.storeSuggestion {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.storeTel, .storeTag, .storeIntro {
+  margin-top: 10px;
+}
+.storeShare {
+  margin: 0px 20px;
 }

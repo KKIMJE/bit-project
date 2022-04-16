@@ -24,45 +24,79 @@
       });
   </script>
 
-  <title>야술먹자 - 주점 상세정보</title>
+  <title>야술먹자 주점 상세정보</title>
 </head>
 <body>
 
   <div id="header"></div>
 
-  <div class="img-box">
+  <div class="contentBox">
 
-    <img class="xMain-img" src="storelist1.jpg" alt="">
+    <!-- 주점이미지 -->
+    <div class="img-box">
 
-    <div class="xSub-box">
-      <div class="xSub-box1">
-        <img class="xSub-img" src="storelist7.jpg" alt="">
-        <img class="xSub-img" src="storelist2.jpg" alt="">
+      <img class="xMain-img" src="storelist1.jpg" alt="">
+  
+      <div class="xSub-box">
+        <div class="xSub-box1">
+          <img class="xSub-img" src="storelist7.jpg" alt="">
+          <img class="xSub-img" src="storelist2.jpg" alt="">
+        </div>
+        <div class="xSub-box2">
+          <img class="xSub-img" src="storelist3.jpg" alt="">
+          <img class="xSub-img" src="storelist4.jpg" alt="">
+        </div>
       </div>
-      <div class="xSub-box2">
-        <img class="xSub-img" src="storelist3.jpg" alt="">
-        <img class="xSub-img" src="storelist4.jpg" alt="">
+      
+    </div>
+    
+    <!-- 주점정보 -->
+    <div class="storeBox">
+      <div class="storeTextBox">
+
+        <div class="storeTextBox-1">
+          <div class="storeTextBox-1-1">
+            <div class="storeName">엘라</div>
+            <div class="storeTextBox-1-1-1">
+              <div class="storeDetailInfo">영업중 / 80m 이내</div>
+              <div class="storeStar">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <div class="storeTextBox-1-2">
+            <div><i id="heart" class="fa-heart fa-solid"></i>151</div>
+            <div class="storeShare"><i class="fa-solid fa-share-nodes"></i>공유하기</div>
+            <div><i class="fa-solid fa-shield-halved"></i></i>신고하기</div>
+          </div>
+        </div>
+  
+        <div class="storeTextBox-2">
+          <div class="storeAddress"><i class="fa-solid fa-location-dot"></i>서울 강남구 테헤란로 5길 1층 엘라</div>
+          <div class="storeTel"><i class="fa-solid fa-phone"></i>02-6052-8831</div>
+          <div class="storeTag"><i class="fa-solid fa-hashtag"></i>혼술, 조용한</div>
+          <div class="storeIntro"><i class="fa-solid fa-comment"></i>브런치와 펍을 한번에</div>
+        </div>
+  
+        <div class="storeTextBox-3">
+          <div class="storeTime">영업시간</div>
+          <div class="storeTimeInfo">월요일은 정기휴무 입니다.</div>
+        </div>
+      </div>
+  
+  
+      <div class="storeMap">
+        <div id="map" style="width:400px;height:320px;"></div>
       </div>
     </div>
     
-  </div>
-
-  <div>
-    <div>
-      <div>
-        <div></div>
-        <div></div><div></div><div></div>
-      </div>
-
-      <div></div>
-      <div></div>
+    <!-- 추천 -->
+    <div class="storeSuggestion">
+      <div class="sugAlc">추천주류</div>
+      <div class="sugFood">대표안주</div>
     </div>
 
-
-    <div>
-
-    </div>
   </div>
+  
+
 
 
 
@@ -70,5 +104,23 @@
 
 </body>
 </html>
+<!-- kakaoMap -->
+<script>
+  var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+  mapOption = {
+      // 지도의 중심좌표
+      center: new kakao.maps.LatLng(33.450701, 126.570667),
+      level: 3 // 지도의 확대 레벨
+  };
+  var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+</script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87&libraries=services"></script>
+<script>
+  var container = document.getElementById('map');
+  var options = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667),
+    level: 3
+  };
 
-
+  var map = new kakao.maps.Map(container, options);
+</script>
