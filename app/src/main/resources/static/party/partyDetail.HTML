@@ -6,230 +6,161 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!-- font -->
         <link
             rel="stylesheet"
             type="text/css"
             href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
-        <!-- font -->
-        <link rel="stylesheet" href="../css/nav.css">
         <link rel="stylesheet" href="../css/common.css">
         <link rel="stylesheet" href="partyDatail.css">
 
         <title>야술먹자 우리지금만나</title>
+
+        <!-- Bootstrap js -->
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- axios -->
+        <script src="../../node_modules/axios/dist/axios.js"></script>
+        <!-- jquery -->
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#header').load('../header/header.html');
+                $('#footer').load('../footer/footer.html');
+            });
+        </script>
     </head>
     <body>
 
-        <nav class="navbar__">
-            <div>
-                <!-- 공간, 삭제하지 마세요 -->
-            </div>
-
-            <div class="navbar__logo">
-                <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
-            </div>
-
-            <ul class="navbar__menu">
-                <li>
-                    <a href="">로그인</a>
-                </li>
-                <li>
-                    <a href="">회원가입</a>
-                </li>
-                <a href="">
-                    <menu-i class="fa-solid fa-map-location-dot"></menu-i>
-                </a>
-            </li>
-        </ul>
-
-        <ul class="navbar__login">
-            <!-- 알림 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button
-                        type="button"
-                        class="btn btn-secondary dropdown-toggle"
-                        data-bs-toggle="dropdown"
-                        data-bs-display="static"
-                        aria-expanded="false">
-                        <a href="">
-                            <login-i class="fa-solid fa-bell"></login-i>
-                        </a>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 마이페이지 -->
-            <a href="">
-                <login-i class="fa-solid fa-user-large"></login-i>
-            </a>
-
-            <!-- 검색 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button
-                        type="button"
-                        class="btn btn-secondary dropdown-toggle"
-                        data-bs-toggle="dropdown"
-                        data-bs-display="static"
-                        aria-expanded="false">
-                        <a href="">
-                            <login-i class="fa-solid fa-magnifying-glass"></login-i>
-                        </login-i>
-                    </a>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-lg-end">
-                    <li>
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Search Input"
-                                aria-label="Username"
-                                aria-describedby="basic-addon1">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 지도 -->
-        <a href="">
-            <login-i class="fa-solid fa-map-location-dot"></login-i>
-        </a>
-</ul>
-</nav>
+        <div id="header"></div>
 
 <div class="party-detail-wrap">
-<h1 class="party-title"></h1>
-<div class="party-board">
-    <div class="leader-profile">
-        <img class="profile-img leader" src="img/profile_suzy.jpg" alt="방장 프로필">
-        <span>수지곤쥬♡</span>
-        <button type="button" class="button-join">
-            <i class="fa-solid fa-champagne-glasses"></i>&nbsp참여요청</button>
-    </div>
-    <div class="party-board-group">
-        <div class="party-board-detail">
-            <div class="first-column">
-                <span>
-                    <i class="fa-solid fa-bottle-droplet"></i>소주소주소주소주소주소주우라게</span>
-                <span>
-                    <i class="fa-solid fa-whiskey-glass"></i>3병 이상</span>
-            </div>
-            <div class="second-column">
-                <span>
-                    <i class="fa-solid fa-calendar-days"></i>3월 3일(목) 23:00</span>
-                <span>
-                    <i class="fa-solid fa-won-sign"></i>50,000,000,000원</span>
-            </div>
-            <div class="third-column">
-                <span>
-                    <i class="fa-solid fa-user"></i>5명</span>
-                <span>
-                    <i class="fa-solid fa-store"></i>서초동
-                </span>
-            </div>
+    <h1 class="party-title">엥? 이거 어디갔었음...?</h1>
+    <div class="party-board">
+        <div class="leader-profile">
+            <img class="profile-img leader" src="img/profile_suzy.jpg" alt="방장 프로필">
+            <span>수지곤쥬♡</span>
+            <button type="button" class="button-join">
+                <i class="fa-solid fa-champagne-glasses"></i>&nbsp참여요청</button>
         </div>
-        <div class="party-board-content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-            molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-            officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-            molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-            officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-            molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-            officiis assumenda officia quibusdam deleniti eos cupiditate dolore
-            doloribuscupiditate dolore doloribus
-            <div class="party-board-option">
-                <div class="party-like">
-                    <i class="fa-regular fa-heart like-click"></i>
-                    <i class="fa-solid fa-heart like-click"></i>
+        <div class="party-board-group">
+            <div class="party-board-detail">
+                <div class="first-column">
+                    <span>
+                        <i class="fa-solid fa-bottle-droplet"></i>소주소주소주소주소주소주우라게</span>
+                    <span>
+                        <i class="fa-solid fa-whiskey-glass"></i>3병 이상</span>
+                </div>
+                <div class="second-column">
+                    <span>
+                        <i class="fa-solid fa-calendar-days"></i>3월 3일(목) 23:00</span>
+                    <span>
+                        <i class="fa-solid fa-won-sign"></i>50,000,000,000원</span>
+                </div>
+                <div class="third-column">
+                    <span>
+                        <i class="fa-solid fa-user"></i>5명</span>
+                    <span>
+                        <i class="fa-solid fa-store"></i>서초동
+                    </span>
+                </div>
+            </div>
+            <div class="party-board-content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
+                molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
+                officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
+                molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
+                officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
+                molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
+                officiis assumenda officia quibusdam deleniti eos cupiditate dolore
+                doloribuscupiditate dolore doloribus
+                <div class="party-board-option">
+                    <div class="party-like">
+                        <i class="fa-regular fa-heart like-click"></i>
+                        <i class="fa-solid fa-heart like-click"></i>
+                        <div>
+                            <span>222</span></div>
+                    </div>
                     <div>
-                        <span>222</span></div>
-                </div>
-                <div>
-                    <button type="button">
-                        <i class="fa-solid fa-share"></i>
-                        <span>&nbsp;공유</span>
-                    </button>
-                </div>
-                <div>
-                    <button type="button">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>&nbsp;신고</span>
-                    </button>
+                        <button type="button">
+                            <i class="fa-solid fa-share"></i>
+                            <span>&nbsp;공유</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span>&nbsp;신고</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="btn-common btn-common-board">
-    <button type="button" class="button-font btn-option">수정</button>
-    <button type="button" class="button-font btn-option">삭제</button>
-</div>
+    <div class="btn-common btn-common-board">
+        <button type="button" class="button-font btn-option">수정</button>
+        <button type="button" class="button-font btn-option">삭제</button>
+    </div>
 
-<div class="party-comment">
-    <div class="party-comment-fst">
-        <div>
-            <img class="profile-img people" src="img/profile_sumi.jpg">
-        </div>
-        <div>
-            <div class="comment-text">
-                <p class="people-name">젠틀맨이다</p>
-                <div class="comment-content">오우 강남에 미인이 나타나셨다.
-                    라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+    <div class="party-comment">
+        <div class="party-comment-fst">
+            <div>
+                <img class="profile-img people" src="img/profile_sumi.jpg">
+            </div>
+            <div>
+                <div class="comment-text">
+                    <p class="people-name">젠틀맨이다</p>
+                    <div class="comment-content">오우 강남에 미인이 나타나셨다.
+                        라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+                    </div>
+                </div>
+                <div class="comment-footer">
+                    <p class="comment-datetime">2022-01-01 22:13:10</p>
+                    <div class="comment-option">
+                        <button type="button">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span>&nbsp;신고</span>
+                        </button>
+                        <button type="button">
+                            <i class="fa-solid fa-pencil"></i>
+                            <span>&nbsp;답글쓰기</span>
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="comment-footer">
-                <p class="comment-datetime">2022-01-01 22:13:10</p>
-                <div class="comment-option">
-                    <button type="button">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>&nbsp;신고</span>
-                    </button>
-                    <button type="button">
-                        <i class="fa-solid fa-pencil"></i>
-                        <span>&nbsp;답글쓰기</span>
-                    </button>
+        </div>
+        <div class="party-comment-snd">
+            <div>
+                <img class="profile-img people" src="img/profile_bobby.jpg">
+            </div>
+            <div>
+                <div class="comment-text">
+                    <p class="people-name">BOBBY</p>
+                    <div class="comment-content-snd">
+                        ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
+                        masissuyo~>ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
+                        masissuyo~>ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
+                        masissuyo~>ganjanggejang masissuyo~
+                    </div>
+                </div>
+                <div class="comment-footer">
+                    <p class="comment-datetime">2022-01-01 22:13:10</p>
+                    <div class="comment-option">
+                        <button type="button">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <span>&nbsp;신고</span></button>
+                        <button type="button">
+                            <i class="fa-solid fa-pencil"></i>
+                            <span>&nbsp;답글쓰기</span></button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="party-comment-snd">
-        <div>
-            <img class="profile-img people" src="img/profile_bobby.jpg">
-        </div>
-        <div>
-            <div class="comment-text">
-                <p class="people-name">BOBBY</p>
-                <div class="comment-content-snd">
-                    ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
-                    masissuyo~>ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
-                    masissuyo~>ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
-                    masissuyo~>ganjanggejang masissuyo~
-                </div>
-            </div>
-            <div class="comment-footer">
-                <p class="comment-datetime">2022-01-01 22:13:10</p>
-                <div class="comment-option">
-                    <button type="button">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>&nbsp;신고</span></button>
-                    <button type="button">
-                        <i class="fa-solid fa-pencil"></i>
-                        <span>&nbsp;답글쓰기</span></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
     <div class="comment-pages">
         <button type="button">1</button>
@@ -238,28 +169,24 @@
     </div>
 </div>
 
-
-    <form class="comment-write">
-        <div>
-        <p>
-            <span>수지곤쥬♡</span>님의 글에 댓글 남기기
-        </p>
-        <textarea name="comment" placeholder="댓글을 남겨보세요"></textarea>
-        </div>
-        <div class="btn-common btn-position">
-            <input type="submit" class="button-font btn-complete" value="작성완료"></input>
-        </div>
-    </form>
+<form class="comment-write">
+<div>
+    <p>
+        <span>수지곤쥬♡</span>님의 글에 댓글 남기기
+    </p>
+    <textarea name="comment" placeholder="댓글을 남겨보세요"></textarea>
+</div>
+<div class="btn-common btn-position">
+    <input type="submit" class="button-font btn-complete" value="작성완료"></input>
+</div>
+</form>
 </div>
 
-</body>
+<div id="footer"></div>
 
-</html>
 <!-- icons -->
 <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
-<!-- Bootstrap CSS -->
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-crossorigin="anonymous"></script>
-<script src="partyDetail.js"></script>
+<script type="module" src="partyDetail.js"></script>
+
+</body>
+</html>

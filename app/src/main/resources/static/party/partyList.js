@@ -153,9 +153,14 @@ function computeDistance() {
   }
 
 
-/****************
-    현주소 출력
-****************/
+/*********************************
+    현주소 혹은 설정된 주소 출력
+*********************************/
+// 1) URL에서 쿼리스트링(query string)을 추출한다.
+var arr = location.href.split("?");
+// console.log(arr);
+
+if (arr.length == 1) {
 var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -189,6 +194,23 @@ function onGeoError(){
 //navigator.geolocation.getCurrentPosition(위치받는함수, 에러났을때 함수, 옵션)
 navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError,options);
 
+} else {
+  // 2) 쿼리 스트링에서 주소 값을 추출한다.
+  var qs = arr[1];
+  // console.log(qs);
+
+  var params = new URLSearchParams(qs);
+  var myposition = params.get("myposition");
+
+  if (myposition == null) {
+    alert("주소가 올바르지 않습니다!");
+    throw "파라미터 오류!";
+  }
+
+  dbody.innerHTML = myposition;
+  // console.log(myposition);
+}
+
 /***************
     result 정보
 ***************/
@@ -215,5 +237,7 @@ navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError,options);
     현위치로 재검색(페이지 새로고침)
 ***********************************/
 $('.position-reload').click(function() {
+  // 지도에서 주소를 설정했다면 파라미터를 제거합니다
+    history.replaceState({}, null, location.pathname);
     location.reload();
 });

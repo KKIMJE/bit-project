@@ -57,6 +57,8 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
     중심좌표 변경에 따른 주소 출력 
 ***********************************/
 
+var myposition;
+
 // 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
 kakao.maps.event.addListener(map, 'center_changed', function() {
 
@@ -70,10 +72,23 @@ kakao.maps.event.addListener(map, 'center_changed', function() {
     var callback = function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
             var resultDiv = document.getElementById('my-address-center');
-            resultDiv.innerHTML = result[0].address.address_name;
+            myposition = result[0].address.address_name;
+            resultDiv.innerHTML = myposition;
         }
     };
 
     geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
 
+});
+
+
+
+/***********************
+    설정된 주소 넘기기
+***********************/
+$('.address-complete').click(function() {
+    
+    location.href = `partyList.html?myposition=${myposition}`;
+    // console.log(myposition);
+    //location.href = "partyList.html";
 });

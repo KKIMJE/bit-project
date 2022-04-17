@@ -57,6 +57,11 @@
     <select id="countAll" resultType="int">
     select count(*) from alcohol_Detail
   </select>
+  
+  <select id="countByTarget" resultType="int" parameterType="int">
+    select count(*) from alcohol_Detail
+    where alcohol_type_no=#{targetNo}
+  </select>
 
 
   <!--
@@ -81,7 +86,7 @@
   </select>
   
   <!-- targetList -->
-<!--     <select id="findAll" resultMap="alcoholDetailMap">
+<select id="findByTarget" resultMap="alcoholDetailMap">
     select
       alcohol_detail_no,
       alcohol_type_no,
@@ -94,11 +99,12 @@
       img
     from
       alcohol_detail
+    where alcohol_type_no=#{targetNo}
     order by
       alcohol_type_no asc
       limit #{offset}, #{rowCount}
   </select>
-  -->
+
   
 <!--
   <insert id="insert" parameterType="alcoholDetail">
