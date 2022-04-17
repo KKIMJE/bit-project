@@ -37,13 +37,34 @@
     m.name,
     m.m_img,
     s.address
-  from 
-  party p
+  from party p
     inner join member m on p.mno=m.mno
     inner join store s on p.store_no=s.store_no
   order by 
     p.party_no desc;
   </select>
+  
+  <select id="findByNo" resultMap="partyMap2" parameterType="int">
+  select
+    p.party_no,
+    p.title,
+    p.contents,
+    p.reg_date,
+    p.party_fee,
+    p.meeting_date,
+    p.max_member,
+    p.alcohol_type,
+    p.alcohol_limit,
+    m.name,
+    m.m_img,
+    s.address
+  from party p
+    join member m on p.mno=m.mno
+    join store s on p.store_no=s.store_no
+  where 
+      party_no=#{no}
+  </select>
+  
   
   <!--   select
     p.party_no,
