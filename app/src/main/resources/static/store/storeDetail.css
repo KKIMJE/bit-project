@@ -1,33 +1,16 @@
-/* footer 수정 */
-footer__store {
-  font-weight: 700;
-}
-.footer-contents {
-  margin-top: 80px;
-  margin-left: -25%;
-  margin-right: -25%;
-  border: 1px solid #29c05e;
-  border-width: 3px 0px 0px 0px;
-  display: flex;
-  justify-content: center;
-  background-color: white;
-}
-.footer-content {
-  text-align: center;
-  margin: 7px 60px;
-  font-size: x-small;
-}
-.footer-contents-1 {
-  margin-top: 40px;
-}
-.footer-content-3 {
-  margin-top: 40px;
-  display: flex;
-}
-.footer-content-info {
-  margin-right: 40px;
+body {
+  font-family: NanumSquareRound;
+  margin: 0;
+  padding: 0;
 }
 
+/* 전체박스 묶음 */
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 상단이미지 박스 */
 .xMain-img {
   width: 400px;
   height: 400px;
@@ -57,56 +40,68 @@ footer__store {
   margin: 0;
   padding: 0;
 }
-
-i {
-  font-size:larger; 
+/* 모든 아이콘 */
+.fa-solid {
+  color: rgb(63, 63, 63);
+  font-size: larger;
+  margin-right: 5px;
 }
-.contentBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* 주점박스 정렬 */
 .storeBox {
   margin-top: 35px;
 }
 .storeName {
-  font-size: 40px;
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(63, 63, 63);
 }
 .storeBox, .storeTextBox-1-1, .storeTextBox-1-2 {
   display: flex;
 }
+.storeTextBox-1-1{
+  flex-direction: column;
+}
+.storeTextBox-1-1-1 {
+  margin-left: 5px;
+  margin-top: 13px;
+}
 .storeTextBox {
-  margin-right: 70px;
+  margin-right: 100px;
 }
 .storeTextBox-1 {
   margin: 0;
   padding: 0;
 }
-.storeTextBox-2 {
-  margin-left: 5px;
-}
-.storeTextBox-3 {
-  margin-left: 5px;
-}
 .storeTextBox-1-2 {
   margin-top: 13px;
   margin-left: 5px;
 }
-.storeTextBox-1-1-1 {
-  margin-left: 10px;
+.storeTextBox-2, .storeTextBox-3 {
+  margin-top: 20px;
 }
+.storeTextBox-2 {
+  margin-left: 5px;
+}
+.storeTextBox-3 {
+  margin-left: 4px;
+}
+/* 별점 */
 .storeStar {
   font-size: 20px;
 }
-.storeDetailInfo {
+/* 하트 */
+#heart {
+  color: red;
+}
+/* 영엽중 표시 */
+.storeDetailInfo { 
   font-size: 13px;
   margin-bottom: 5px;
-  color: #b6b6b6;
+  color: #616161;
 }
-.storeTextBox-2, .storeTextBox-3 {
-  margin-top: 30px;
-}
-.storeTime {
+/* 영엽시간 */
+.storeTime, .sugAlc, .sugFood {
+  color: rgb(63, 63, 63);
   font-size: 20px;
   font-weight: bold;
 }
@@ -114,15 +109,129 @@ i {
   margin-left: 10px;
   margin-top: 10px;
 }
-.storeSuggestion {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
 .storeTel, .storeTag, .storeIntro {
   margin-top: 10px;
 }
 .storeShare {
   margin: 0px 20px;
+}
+/* 추천주류 추천안주 */
+.storeSuggestion {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.sugAlcBox, .sugFoodBox {
+  display: flex;
+  flex-direction: column;
+}
+.relative {
+  position: relative;
+  left: 20px;
+}
+.sugFoodBox {
+  margin-top: 35px;
+}
+.sugAlcImg, .sugFoodImg {
+  display: flex;
+  margin-top: 10px;
+}
+.xAlc-img, .xFood-img {
+  object-fit: cover;
+  width: 148px;
+  height: 148px;
+  border-radius: 9px;
+}
+.xAlc-name, .xFood-name {
+  margin-top: 4px;
+  color: #616161;
+  font-weight: 300;
+}
+.xAlc-price, .xFood-price {
+  font-weight: 600;
+}
+.sugAlcImg-card, .sugFoodImg-card {
+  text-align: center;
+  margin: 0px 5.5px;
+}
+/* 주점리뷰 */
+.storeReviewBox {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.xReviewBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.storeReviewBack {
+  width: 760px;
+  height: 180px;
+  background: rgba(196, 196, 196, 0.2);
+  border-radius: 29px;
+  margin-left: 27px;
+  margin-top: 20px;
+}
+.reviewSort, .reviewSortChoice {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.reviewSortChoice {
+  margin-right: 30px;
+}
+.reviewSort-title {
+  color: rgb(63, 63, 63);
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+.choiceRecent, .choiceStar, .choicePhoto {
+  margin: 0px 10px;
+  font-size:small;
+  cursor: pointer;
+}
+.storeReviewBack {
+  display: flex;
+}
+.reviewprofile {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 25px;
+}
+.profile-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border-radius: 100px;
+}
+.reviewerName {
+  margin: 7px 0px;
+}
+.reviewStar {
+  font-size: small;
+}
+.reviewContents {
+  font-size: small;
+  margin: 0px 20px;
+  margin-top: 24px;
+  margin-bottom: 18px;
+  line-height: 20px;
+}
+.review-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-right: 5px;
+  padding: 0;
+  border-radius: 10px;
+}
+.reviewImgBox {
+  margin-top: 10px;
 }

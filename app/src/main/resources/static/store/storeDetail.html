@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,8 +18,8 @@
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script>
       $(document).ready(function () {
-              $('#header').load('../header/header.html');
-              $('#footer').load('../footer/footer.html');
+        $('#header').load('../header/header.html');
+        $('#footer').load('../footer/footer_1.html');
       });
   </script>
 
@@ -30,9 +29,10 @@
 
   <div id="header"></div>
 
+  <!-- 모든 콘텐츠 -->
   <div class="contentBox">
 
-    <!-- 주점이미지 -->
+    <!-- 주점이미지박스 -->
     <div class="img-box">
 
       <img class="xMain-img" src="storelist1.jpg" alt="">
@@ -65,55 +65,158 @@
           <div class="storeTextBox-1-2">
             <div><i id="heart" class="fa-heart fa-solid"></i>151</div>
             <div class="storeShare"><i class="fa-solid fa-share-nodes"></i>공유하기</div>
-            <div><i class="fa-solid fa-shield-halved"></i></i>신고하기</div>
+            <div><i class="fa-solid fa-shield-halved"></i>신고하기</div>
           </div>
         </div>
   
         <div class="storeTextBox-2">
           <div class="storeAddress"><i class="fa-solid fa-location-dot"></i>서울 강남구 테헤란로 5길 1층 엘라</div>
-          <div class="storeTel"><i class="fa-solid fa-phone"></i>02-6052-8831</div>
+          <div class="storeTel"><i class="fa-solid fa-phone"></i><span>02-6052-8831</span></div>
           <div class="storeTag"><i class="fa-solid fa-hashtag"></i>혼술, 조용한</div>
           <div class="storeIntro"><i class="fa-solid fa-comment"></i>브런치와 펍을 한번에</div>
         </div>
   
         <div class="storeTextBox-3">
           <div class="storeTime">영업시간</div>
-          <div class="storeTimeInfo">월요일은 정기휴무 입니다.</div>
+          <div class="storeTimeInfo">매일 오후5~12시, 휴무일 - 월요일</div>
         </div>
       </div>
-  
   
       <div class="storeMap">
         <div id="map" style="width:400px;height:320px;"></div>
       </div>
     </div>
     
-    <!-- 추천 -->
-    <div class="storeSuggestion">
-      <div class="sugAlc">추천주류</div>
-      <div class="sugFood">대표안주</div>
+    <!-- 추천주류, 안주 -->
+    <div class="storeSuggestion relative">
+      <div class="sugAlcBox">
+        <div class="sugAlc">추천주류</div>
+        <div class="sugAlcImg">
+          <div class="sugAlcImg-card">
+            <img class="xAlc-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
+            <p class="xAlc-name">필스너우르켈</p>
+            <p class="xAlc-price">8000원</p>
+          </div>
+          <div class="sugAlcImg-card">
+            <img class="xAlc-img" src="../alcohol/alcoholimg/alcohol42.png" alt="">
+            <p class="xAlc-name">필스너우르켈</p>
+            <p class="xAlc-price">8000원</p>
+          </div>
+          <div class="sugAlcImg-card">
+            <img class="xAlc-img" src="../alcohol/alcoholimg/alcohol43.png" alt="">
+            <p class="xAlc-name">필스너우르켈</p>
+            <p class="xAlc-price">8000원</p>
+          </div>
+          <div class="sugAlcImg-card">
+            <img class="xAlc-img" src="../alcohol/alcoholimg/alcohol44.png" alt="">
+            <p class="xAlc-name">필스너우르켈</p>
+            <p class="xAlc-price">8000원</p>
+          </div>
+          <div class="sugAlcImg-card">
+            <img class="xAlc-img" src="../alcohol/alcoholimg/alcohol45.png" alt="">
+            <p class="xAlc-name">필스너우르켈</p>
+            <p class="xAlc-price">8000원</p>
+          </div>
+        </div>
+      </div>
+      <div class="sugFoodBox"></div>
+        <div class="sugFood">대표안주</div>
+        <div class="sugFoodImg">
+          <div class="sugFoodImg-card">
+            <img class="xFood-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
+            <p class="xFood-name">필스너우르켈</p>
+            <p class="xFood-price">8000원</p>
+          </div>
+          <div class="sugFoodImg-card">
+            <img class="xFood-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
+            <p class="xFood-name">필스너우르켈</p>
+            <p class="xFood-price">8000원</p>
+          </div>
+          <div class="sugFoodImg-card">
+            <img class="xFood-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
+            <p class="xFood-name">필스너우르켈</p>
+            <p class="xFood-price">8000원</p>
+          </div>
+          <div class="sugFoodImg-card">
+            <img class="xFood-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
+            <p class="xFood-name">필스너우르켈</p>
+            <p class="xFood-price">8000원</p>
+          </div>
+          <div class="sugFoodImg-card">
+            <img class="xFood-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
+            <p class="xFood-name">필스너우르켈</p>
+            <p class="xFood-price">8000원</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-  </div>
+    <!-- 리뷰 -->
+    <div class="storeReviewBox relative1">
+      
+      <div class="reviewSort">
+        <div class="reviewSort-title">리뷰</div>
+        <div class="reviewSortChoice">
+          <form method="get" action="form-action.html">
+            <label><input type="radio" name="review" value="choiceRecent" class="choiceRecent">최신순</label>
+            <label><input type="radio" name="review" value="choiceRecent" class="choiceStar">별점순</label>
+            <label><input type="radio" name="review" value="choiceRecent" class="choicePhoto">포토리뷰</label>
+            <!-- <p><input type="submit" value="Submit"> <input type="reset" value="Reset"></p> -->
+          </form>
+        </div>
+      </div>
+
+      <div class="xReviewBox">
+        <div class="storeReviewBack">
+          <div class="reviewprofile">
+            <div><img class="profile-img" src="storelist4.jpg" alt=""></div>
+            <div class="reviewerName">개코</div>
+            <div class="reviewStar">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="reviewContents">
+            <div class="reviewDate">2022-02-27</div>
+            <div class="reviewText">코젤다크 먹고 싶었는데 시나몬 가루도 많이 뿌려주시고 맥앤치즈랑 정말 맛있게 잘 먹었어요~ 음악도 좋도 분위기도 좋아요!!</div>
+            <div class="reviewImgBox">
+              <img class="review-img" src="storelist7.jpg" alt="">
+              <img class="review-img" src="storelist7.jpg" alt="">
+              <img class="review-img" src="storelist7.jpg" alt="">
+              <img class="review-img" src="storelist7.jpg" alt="">
+              <img class="review-img" src="storelist7.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="storeReviewBack">
+          <div class="reviewprofile">
+            <div><img class="profile-img" src="storelist4.jpg" alt=""></div>
+            <div class="reviewerName">개코</div>
+            <div class="reviewStar">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="reviewContents">
+            <div class="reviewDate">2022-02-27</div>
+            <div class="reviewText">코젤다크 먹고 싶었는데 시나몬 가루도 많이 뿌려주시고 맥앤치즈랑 정말 맛있게 잘 먹었어요~ 음악도 좋도 분위기도 좋아요!!</div>
+            <div class="reviewImgBox">
+              <img class="review-img" src="storelist7.jpg" alt="">
+              <img class="review-img" src="storelist7.jpg" alt="">
+              <img class="review-img" src="storelist7.jpg" alt="">
+              <img class="review-img" src="storelist7.jpg" alt="">
+              <img class="review-img" src="storelist7.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div><!-- 모든 콘텐츠 END -->
   
-
-
-
 
   <div id="footer"></div>
 
 </body>
 </html>
 <!-- kakaoMap -->
-<script>
-  var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-  mapOption = {
-      // 지도의 중심좌표
-      center: new kakao.maps.LatLng(33.450701, 126.570667),
-      level: 3 // 지도의 확대 레벨
-  };
-  var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-</script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87&libraries=services"></script>
 <script>
   var container = document.getElementById('map');
@@ -121,6 +224,5 @@
     center: new kakao.maps.LatLng(33.450701, 126.570667),
     level: 3
   };
-
   var map = new kakao.maps.Map(container, options);
 </script>
