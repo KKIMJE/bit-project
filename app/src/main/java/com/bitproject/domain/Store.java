@@ -12,6 +12,7 @@ public class Store {
   int mno;
   int businessRegistrationNo;
   String businessRegistration;
+  String tagName;
   String storeName;
   String address;
   String tel;

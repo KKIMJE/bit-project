@@ -79,13 +79,13 @@ INSERT INTO sojudb.tag
 VALUES(26, '노포');
 INSERT INTO sojudb.tag
 (tag_no, name)
-VALUES(27, '#주점태그27');
+VALUES(27, '특이한');
 INSERT INTO sojudb.tag
 (tag_no, name)
-VALUES(28, '#주점태그28');
+VALUES(28, '나만아는');
 INSERT INTO sojudb.tag
 (tag_no, name)
-VALUES(29, '#주점태그29');
+VALUES(29, '동네');
 INSERT INTO sojudb.tag
 (tag_no, name)
-VALUES(30, '#주점태그30');
+VALUES(30, '대학가');
