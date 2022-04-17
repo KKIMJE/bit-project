@@ -9,9 +9,13 @@ public interface AlcoholDetailService {
 
   List<AlcoholDetail> list(int pageSize, int pageNo);
 
+  List<AlcoholDetail> targetList(int targetNo, int pageSize, int pageNo);
+
   AlcoholDetail get(int no);
 
   int size();
+
+  int targetSize(int targetNo);
 
   //  int update(AlcoholDetail alcoholDetail);
 

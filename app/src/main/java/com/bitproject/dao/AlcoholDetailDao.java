@@ -10,11 +10,17 @@ public interface AlcoholDetailDao {
 
   int countAll();
 
+  int countByTarget(int targetNo);
+
   List<AlcoholDetail> findAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
+
+  List<AlcoholDetail> findByTarget(@Param("targetNo") int targetNo, @Param("rowCount") int rowCount, @Param("offset") int offset);
 
   //  int insert(AlcoholDetail alc);
 
   AlcoholDetail findByNo(int no);
+
+
 
   //  int update(AlcoholDetail alc);
 

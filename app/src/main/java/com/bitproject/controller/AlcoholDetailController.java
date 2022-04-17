@@ -17,6 +17,15 @@ public class AlcoholDetailController {
     return alcoholDetailService.list(pageSize, pageNo);
   }
 
+  @RequestMapping("/alcohol/targetList")
+  public Object targetList(int targetNo, int pageSize, int pageNo) {
+    System.out.println("targetList() 호출됨");
+    System.out.printf("targetNo: %d, pageSize: %d, pageNo: %d \n", targetNo, pageSize, pageNo);
+    return alcoholDetailService.targetList(targetNo, pageSize, pageNo);
+  }
+
+
+
   //  @RequestMapping("/alcohol/add")
   //  public Object add(AlcoholDetail alcoholDetail) {
   //    return alcoholDetailService.insert(alcoholDetail);
@@ -31,9 +40,15 @@ public class AlcoholDetailController {
     }
     return alcoholDetail;
   }
+
   @RequestMapping("/alcohol/size")
   public int size() {
     return alcoholDetailService.size();
+  }
+
+  @RequestMapping("/alcohol/targetSize")
+  public int targetSize(int targetNo) {
+    return alcoholDetailService.targetSize(targetNo);
   }
 
 

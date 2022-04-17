@@ -19,6 +19,13 @@ public class DefaultAlcoholDetailService implements AlcoholDetailService {
   }
 
   @Override
+  public List<AlcoholDetail> targetList(int targetNo, int pageSize, int pageNo) {
+    System.out.println("targetList() 호출됨");
+    System.out.printf("targetNo: %d, pageSize: %d, pageNo: %d \n", targetNo, pageSize, pageNo);
+    return alcoholDetailDao.findByTarget(targetNo, pageSize, ((pageNo - 1) * pageSize));
+  }
+
+  @Override
   public AlcoholDetail get(int no) {
     AlcoholDetail alcoholDetail = alcoholDetailDao.findByNo(no);
     return alcoholDetail;
@@ -28,6 +35,12 @@ public class DefaultAlcoholDetailService implements AlcoholDetailService {
   public int size() {
     return alcoholDetailDao.countAll();
   }
+
+  @Override
+  public int targetSize(int targetNo) {
+    return alcoholDetailDao.countByTarget(targetNo);
+  }
+
 
   //  @Override
   //  public int add(AlcoholDetail alcoholDetail) {
