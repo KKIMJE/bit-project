@@ -181,6 +181,24 @@ body > nav > ul.navbar__login > div:nth-child(3) > div > ul {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.btn-check:focus+.btn-secondary, .btn-secondary:focus {
+    color: #fff;
+    background-color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 0 0rem rgb(130 138 145 / 50%);
+}
+
+.btn-secondary:focus {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 0 0rem rgb(130 138 145 / 50%);
+}
+
+body > nav > ul.navbar__login > div:nth-child(1) > div > button::after {
+  display: none;
+}
+
 </style>
 
 <nav class="navbar__">
