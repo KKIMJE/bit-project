@@ -16,6 +16,7 @@
             });
         });*/
 
+/* 주소입력 */
 window.onload = function(){
     document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
         //카카오 지도 발생
@@ -44,23 +45,29 @@ window.onload = function(){
 
   
   var params = new URLSearchParams(qs);
-  var storeName = params.get("storeName");
+  var storeNo= params.get("storeNo"); //이게 맞는지 불확실.. 
 
-  if (storeName == null) {
-    alert("가게명이 없습니다.");
+  if (storeNo == null) {
+    alert("해당번호의 가게가 없습니다!");
     throw "파라미터 오류!";
   }
   console.log(no);
 
+//가게명 주소 주점테마 전화번호 영업시간 가게소개 사업자등록번호 , 태그(아직추가안함), 파일업로드 (추가안함)
   var xStoreName = document.querySelector("input[name=storeName]");
+  var xAddress = document.querySelector("input[name=address]"); 
+  var xOptionDivContainer = document.querySelector("#x-option-div-container");
   var xTel = document.querySelector("input[name=tel]");
   var xHour = document.querySelector("textarea[name=hour]");
   var xIntroduction = document.querySelector("textarea[name=introduction]");
-  var xReservationAccept = document.querySelector("#reservationAccept");
   var xBusinessRegistrationNo = document.querySelector("input[name=businessRegistrationNo]");
+  //태그추가해야함
+  var xReservationAccept = document.querySelector("#reservationAccept");
+  //파일업로드 추가해야함
+
 
   // 3) 서버에서 데이터 가져오기
-  fetch(`/store/update?storeName=${storeName}`)
+  fetch(`/store/get?storeNo=${storeNo}`)
     .then(function(response) {
       return response.json();
     })
@@ -75,22 +82,30 @@ window.onload = function(){
       var store = result.data;
       
       xStoreName.value = store.storename;
-      xTel.value = store.tel;
+      xAddress.value = store.address;
+      xTel.value=store.tel;
       xHour.value = store.hour;
       xIntroduction.value = store.introduction;
-      xReservationAccept.value = store.reservationAccept;
       xBusinessRegistrationNo.value = store.BusinessRegistrationNo;
+      //태그추가 
+      xBusinessRegistrationNo.value = store.BusinessRegistrationNo;
+      //파일업로드추가 
+   
+  /* if (store.Img != null) {
+        xPhoto.src = "/store/img?filename=" + store.img;
+      }*/
     });
 
-  document.querySelector("#x-update-btn").onclick = function() {
-    if (xTitle.value == "" || xContent.value == "") {
+  document.querySelector("#next").onclick = function() {
+    if (xStoreName.value == "" ||  xTel.value == "" || xHour.value == "" ) {
       window.alert("필수 입력 항목이 비어 있습니다.");
       return;
     }
-    
+ 
+  
     var fd = new FormData(document.forms.namedItem("form1"));
     
-    fetch("/board/update", {
+    fetch("/store/update", {
         method: "POST",
         body: new URLSearchParams(fd)
       }).then(function(response) {
@@ -98,29 +113,31 @@ window.onload = function(){
       })
       .then(function(result) {
         if (result.status == "success") {
-          location.href = "?content=/board/index.html";
+          location.href = "../main/main.html";
         } else {
-          window.alert("게시글 변경 실패!");
+          window.alert("주점 변경 실패!");
           console.log(result.data);
         }
       });
   };
-
+ 
+ 
  document.querySelector("#exit").onclick = function() {
         window.location.href = "../main/main.html";
       };
 
-  document.querySelector("#x-delete-btn").onclick = function() {
-    fetch(`/board/delete?no=${no}`)
+  document.querySelector("#delete").onclick = function() {
+    fetch(`/store/delete?storeNo=${storeNo}`)
       .then(function(response) {
         return response.json();
       })
       .then(function(result) {
         if (result.status == "success") {
-          location.href = "?content=/board/index.html";
+          location.href = "../main/main.html";
         } else {
-          window.alert("게시글 삭제 실패!");
+          window.alert("주점 삭제 실패!");
           console.log(result.data);
         }
       });
   };
+  

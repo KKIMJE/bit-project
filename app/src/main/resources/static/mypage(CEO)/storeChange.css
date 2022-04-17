@@ -77,7 +77,7 @@ h1 {
   width: 60px;
 }
 
-.submit-exit-btn {
+.submit-exit-btn,.submit-delete-btn {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
@@ -89,12 +89,8 @@ h1 {
   width: 60px;
 }
 
-.x-delete-btn, .x-add-btn {
-  border-color: #EEEFF1;  
-  
-}
 
-.login__box {
+.form1__box {
   width: 450px;
   height: 1030px;
   border-radius: 10px;
