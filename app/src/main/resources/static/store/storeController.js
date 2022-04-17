@@ -78,11 +78,13 @@ function storeList(stores) {
     let stras = printStar(stores[i].evaluationScore)
     let storeOper = printOper(stores[i].oper)
     let heart = printheart(stores[i].mno, stores[i].storeNo)
- 
+
     tagStr = `<div class="img-xbox">
       <div class="xImg box">
         ${heart}
-        <a><img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori"></a>
+        <a class="store-link" href="storeDetail.html?no=${stores[i].storeNo}">
+          <img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori">
+        </a>
       </div>
       <div class="xImg-contents">
         <div class="xImg-content">
@@ -294,6 +296,8 @@ mapOption = {
     level: 3 // 지도의 확대 레벨
 };
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+var zoomControl = new kakao.maps.ZoomControl();
+map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 var geocoder = new kakao.maps.services.Geocoder(); // 주소-좌표 변환 객체를 생성합니다
 
 // 마커구성
