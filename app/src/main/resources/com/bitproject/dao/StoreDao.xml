@@ -143,7 +143,7 @@
 
   <delete id="delete" parameterType="int">
     delete from store 
-    where store_no=#{no}
+    where store_no=#{storeNo}
   </delete>
 
 </mapper>
