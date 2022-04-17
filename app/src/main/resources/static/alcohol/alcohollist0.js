@@ -12,6 +12,8 @@ let pageNo = 1;
 let totalPageSize = 0;
 let alcoholSize = 0;
 
+
+// 전체 주류 개수
 fetch("/alcohol/size")
   .then(response => {
     return response.json()
@@ -20,7 +22,16 @@ fetch("/alcohol/size")
     totalPageSize = Math.ceil(size / pageSize); // 총 페이지 수
   });
 
+// target 주류 개수
+// fetch(`/alcohol/targetSize?targetNo=1`)
+//   .then(response => {
+//     return response.json()
+//   })
+//   .then(size => {
+//     totalPageSize = Math.ceil(size / pageSize); // 총 페이지 수
+//   });
 
+// 다음 버튼
 nextBtn.addEventListener("click", (e) => {
   console.log(pageNo);
   $('.alcohol-list-div div').empty()
@@ -30,11 +41,11 @@ nextBtn.addEventListener("click", (e) => {
       return response.json()
     })
     .then(function(alcohols) {
-        for (var i = 0; i < alcohols.length; i++) {
-          let div = document.createElement("div")
-          div.classList.add("card")
-          div.classList.add("border-white")
-          div.innerHTML = `
+      for (var i = 0; i < alcohols.length; i++) {
+        let div = document.createElement("div")
+        div.classList.add("card")
+        div.classList.add("border-white")
+        div.innerHTML = `
           <a class="alc-link" href="alcoholdetail.html?no=${alcohols[i].alcoholDetailNo}">
             <img src="${alcohols[i].img}" class="card-img-top">
             <div class="card-body">
@@ -47,14 +58,14 @@ nextBtn.addEventListener("click", (e) => {
             </div>
           </a>
         `
-          itemDiv.appendChild(div)
-        }
-        pageNo++;
-        pageNumber.innerHTML = pageNo;
+        itemDiv.appendChild(div)
+      }
+      pageNo++;
+      pageNumber.innerHTML = pageNo;
     })
 })
 
-
+// 이전 버튼
 preBtn.addEventListener("click", (e) => {
   $('.alcohol-list-div div').empty()
   fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${pageNo - 1}`)
@@ -88,13 +99,13 @@ preBtn.addEventListener("click", (e) => {
 })
 
 
-
+// 도수별 정렬
 function degreeSort(alcoholArr) {
   alcoholArr.sort((a, b) => {
     return a.degree - b.degree;
   })
 }
-
+// 가나다순 정렬
 function alphabeticalOrderSort(alcoholArr) {
   alcoholSortArr = alcoholArr.sort((a, b) => {
     let x = a.alcoholName.toLowerCase();
@@ -109,6 +120,7 @@ function alphabeticalOrderSort(alcoholArr) {
   })
 }
 
+// 정렬 배열 list 생성
 function sortList(sortListArr) {
   for (var i = 0; i < sortListArr.length; i++) {
     let div = document.createElement("div")
@@ -131,6 +143,7 @@ function sortList(sortListArr) {
   }
 }
 
+// 전체 list 생성
 function allList() {
   fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${pageNo}`)
     .then(function(response) {
@@ -161,6 +174,7 @@ function allList() {
     })
 }
 
+// target list 생성
 function targetList(targetNo) {
   fetch("/alcohol/list")
     .then(function(response) {
@@ -193,6 +207,7 @@ function targetList(targetNo) {
 }
 
 
+// 카테고리 버튼
 lightBtn.addEventListener("click", function(e) {
   targetArr = [];
   if (e.target == e.currentTarget) {
@@ -215,6 +230,7 @@ lightBtn.addEventListener("click", function(e) {
   }
 });
 
+// 필터 버튼
 filterBtn.addEventListener("click", function(e) {
   if (e.target == e.currentTarget) {
     return;
