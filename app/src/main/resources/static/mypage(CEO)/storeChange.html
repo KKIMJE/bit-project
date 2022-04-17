@@ -70,8 +70,8 @@
     </nav>
 
     <h1>주점수정</h1>
-     <form name="login__form">
-      <div class="login__box">
+     <form name="form1">
+      <div class="form1__box">
         <div class="content">
           <p class="form_store">가게명</p><br>
           <input name="storeName" type="text" class="form_input_name">
@@ -80,7 +80,7 @@
             <p class="form_address">주소</p><br>
             <div>
               <input type="text" id="address_kakao"  name="address" class="form_input_address_detail" placeholder="주소" readonly>
-              <input type="text" class="form_input_address_detail"  name="address_detail" placeholder="상세주소">
+              <input type="text" class="form_input_address_detail"  name="address" placeholder="상세주소">
             </div>
           </div>
           
@@ -88,18 +88,19 @@
           <h2 class="alcohol-content">주점테마</h2><br>
           </div>
           
-          <div style="margin-left: 40px;">
+          <div id ="x-option-div-container" style="margin-left: 40px;">
         <!--<input type="checkbox" id="cb1" checked>-->
-          <select class="type-option">
-           <option>포차</option>
-          <option>펍</option>
-          <option>바</option>
-          <option>이자카야</option>
-          <option>주막</option>
-          <option>감성주점</option>
-          <option>루프탑</option>
-          <option>가라오케</option>
-          <option>기타</option>
+          <div class="type-option">
+          <select>
+           <option value="1">포차</option>
+          <option value="2">펍</option>
+          <option value="3">바</option>
+          <option value="4">이자카야</option>
+          <option value="5">주막</option>
+          <option value="6">감성주점</option>
+          <option value="7">루프탑</option>
+          <option value="8">가라오케</option>
+          <option value="9">기타</option>
         </select> 
         
    
@@ -129,12 +130,12 @@
             <!-- 사각형 -->
           </div>
 
-           <div id="pop_info_1" class="pop_wrap" style="display:none;">
+           <!--<div id="pop_info_1" class="pop_wrap" style="display:none;">
         <div class="pop_inner">
           <p class="dsc">사장님의 가게에 어울리는 태그를 골라주세요</p>
           <button type="button" class="btn_add">등록</button>
         </div>
-      </div>
+      </div>-->
 
 
            <div style="margin-top:10px;">
@@ -149,8 +150,9 @@
     </div> </center>
           
           <center><div class="btn">
-         <button class="submit-next-btn">다음</button>
+         <button type="button" id="next" class="submit-next-btn">확인</button>
         <button type="button" id="exit" class="submit-exit-btn">나가기</button>
+         <button type="button" id="delete" class="submit-delete-btn">삭제</button>
          </div>
          </center>
          

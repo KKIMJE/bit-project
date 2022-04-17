@@ -20,8 +20,9 @@
         <title>야술먹자 우리지금만나</title>
         
         <!-- Bootstrap js -->
-<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- axios -->
+        <script src="../../node_modules/axios/dist/axios.js"></script>
         <!-- jquery -->
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 
@@ -41,7 +42,7 @@
         <!-- 현위치 지도검색 -->
         <!-- Button trigger modal -->
         <button type="button" class="btn location__" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="fa-solid fa-location-dot"></i>&nbsp;<span id="my-position">테헤란로 13길</span>
+            <i class="fa-solid fa-location-dot"></i>&nbsp;<span id="my-position"></span>
         </button>
 
         <!-- Modal -->
@@ -53,7 +54,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <button type="button" class="btn">
+                        <button type="button" class="btn position-reload">
                             <i class="fa-solid fa-location-arrow"></i>&nbsp;현위치로 재검색</button>
                         <button type="button" class="btn" onclick="location.href='partyMap.html'">
                             <i class="fa-solid fa-map"></i>&nbsp;지도로 위치 검색</button>
@@ -98,11 +99,13 @@
             </div>
         </div>
     </div>
+
     <div id="footer"></div>
 
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
+    <script type="module" src="partyList.js"></script>
+    <!-- kakaoMap -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=869ba892f15eedfec5a2c871c6d4a639&libraries=services"></script>
+</body>
 </html>
-<!-- icons -->
-<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
-<!-- axios -->
-<script type="module" src="partyList.js"></script>
-<!-- <script src="../node_modules/axios/dist/axios.min.js"></script> -->

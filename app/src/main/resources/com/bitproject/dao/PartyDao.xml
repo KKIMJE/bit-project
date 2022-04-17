@@ -28,6 +28,7 @@
   select
     p.party_no,
     p.title,
+    p.reg_date,
     p.party_fee,
     p.meeting_date,
     p.max_member,
