@@ -40,6 +40,16 @@ from
 where
   d.alcohol_detail_no=#{no}
 
+select
+  s.store_no,
+  st.tag_no,
+  t.name
+  from store s
+  left outer join store_tag st on s.store_no=st.store_no
+  left outer join tag t on st.tag_no=t.tag_no
+  where
+  s.store_no=#{no}
+
 
 
 
@@ -255,7 +265,7 @@ order by
     img
   from
     alcohol_detail
-  where alcohol_type_no=1
+  where alcohol_type_no=2
   order by
   degree asc
     limit 0, 10;
