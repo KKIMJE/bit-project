@@ -60,7 +60,6 @@ fetch("/party/list")
     `;
 }
 computeDistance();
-console.log(pbody);
 
 });
 
@@ -136,20 +135,13 @@ function computeDistance() {
           // console.log(geoResult)
   
           const distanceValue = await distanceLine(positions, geoResult) // 가게 위치와 현위치를 이은 선
+          // console.log(distanceValue)
   
-          console.log(distanceValue);
-
           $('.store-distance').each((index, e) => { // 각 모임의 거리 값을 넣는다.
-            // 1km 미만이면 m 로 출력한다.
-            // 1~5km 사이면 km로 출력한다
-            // 5km 이상이면 출력하지 않는다.
-
-            if (distanceValue[index] < 1000) {
-              $(e).html(distanceValue[index] + "m")
-            } else if (1000 <= distanceValue[index] < 5000) {
+            if (1000 < distanceValue[index]) {
               $(e).html((distanceValue[index] * 0.001).toFixed() + "km 이상") // $(e).html : html 태그의 내용을 이걸로 바꾸겠다. 
             } else {
-              $('.party-list').css('display','none');
+              $(e).html(distanceValue[index] + "m")
             }
           })
   
@@ -250,33 +242,112 @@ $('.position-reload').click(function() {
     location.reload();
 });
 
-/**************************
-    최신순 / 거리순 정렬
-**************************/
-$(".party-sort #btnCreatDtOrder, .party-sort #btnAddressOrder").click(function() {
-  // console.log("눌렸다!")
-	var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
-	listSort($(this), dataNm);
+/************************************
+    
+***********************************/
+$('.party-distance').click(function() {
+  orderDistance();
 });
 
-function listSort($targetObj, dataNm){
-  // console.log("잉?")
-	//정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
-  $("#party-body").each((index, e) => { 
-    console.log($(this).text());     // 요렇게 하면 현재 요소의 text 값을 콘솔에 출력해줄 것이다.
-  console.log("index : " + index);
-})
+$('.party-new').click(function() {
 
-// html(
-  // 	$('#party-body li').sort(function(a, b){
-    //     console.log("지나간다");
-    //     console.log(a)
-    //     console.log(b)
-    // 		return $(b).data(dataNm) - $(a).data(dataNm);
-    //만약에 역순으로 정렬하고 싶은 경우 반대로 return하면 됩니다. 
-    //return $(a).data(dataNm) - $(b).data(dataNm);
-    // );
-	// //현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
-	// $(".order").removeClass("bold");
-	// $targetObj.addClass("bold");
+
+});
+
+function orderDistance() {
+  let distanceList = []
+  $('.store-distance').each((index, e) => { // .store-distance를 다 잡아와서 nodelist를 리턴해 each로 꺼낸다. html 태그 자체가 꺼내지는데, 태그들의 리스트를 e로 하나씩 뽑을 것이다. e 안에는 각 주소가 담겨있다.
+    distanceList.push($(e).attr("data-address")) // e에 저장된 주소 값을 뽑아서 배열에 옮겨 담을 것이다.
+  })
+
+  var mapContainer = document.getElementById('map')
+  let geocoder = new kakao.maps.services.Geocoder();
+
+  const addressSearch = address => { // 주소를 넣으면
+      return new Promise((resolve, reject) => { // address가 들어가서 위도경도 값을 찾았으면 resolve에 담아 리턴되고 아니라면 status가 반환된다.
+        geocoder.addressSearch(address, function(result, status) {
+          if (status === kakao.maps.services.Status.OK) {
+            resolve({"lat": result[0].y, "lng": result[0].x});
+          } else {
+            reject(status);
+          }
+        });
+      });
+  };
+
+  //GeoLocation을 이용해서 접속 위치를 얻어옵니다
+  const geoLocation = () => { // 현위치
+    return new Promise((resolve) => {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        resolve({"lat": position.coords.latitude, "lng": position.coords.longitude});
+      })
+    })
+  }
+
+  const distanceLine = (posList, curPos) => { // (가게위치, 현재위치)
+    return new Promise((resolve) => {
+
+      const dLines = []
+
+      for(const position of posList) {
+        // 선 객체 생성
+        let linePath = [ // 가게와 내 위치 사이의 선 객체
+          new kakao.maps.LatLng(position.lat, position.lng), // 가게마다 위도 경도가 바뀌면서 linePath를 형성
+          new kakao.maps.LatLng(curPos.lat, curPos.lng) // 내 위치 고정
+        ];
+
+        let polyline = new kakao.maps.Polyline({
+          path : linePath
+        });
+
+        dLines.push(Math.round(polyline.getLength())) // 소수점 이하를 반올림해하여 다시 담는다.
+      }
+      resolve(dLines)
+    })
+  }
+
+  // async-await
+  (async () => { // 익명함수
+    try {
+        const positions = [];
+        for(const address of distanceList) { // 가게 위치
+            const result = await addressSearch(address); // 위도 경도값을 담는다.
+            positions.push(result)
+        }
+        // console.log(positions)
+
+        const geoResult = await geoLocation() // 현위치
+        // console.log(geoResult)
+
+        const distanceValue = await distanceLine(positions, geoResult) // 가게 위치와 현위치를 이은 선
+        console.log(distanceValue)
+
+        let arrDistance = []; 
+
+        $('.store-distance').each((index, e) => { // 각 모임의 거리 값을 넣는다.
+          if (distanceValue[index] < 10000000) {
+            
+            let obj1 = { storeno: index, distance: distanceValue[index] };
+            // console.log(obj1);
+            arrDistance.push(obj1);
+          } else {
+            $('.party-list').css('display','none');
+          }
+          //   $(e).html((distanceValue[index] * 0.001).toFixed() + "km 이상") // $(e).html : html 태그의 내용을 이걸로 바꾸겠다.
+          // } else {
+            //   $(e).html(distanceValue[index] + "m")
+            // }
+          })
+
+          arrDistance.sort(function(a, b) {
+            return a.distance - b.distance;
+          });
+          
+          console.log(arrDistance);
+          
+    } catch (e) {
+        console.log(e);
+    }
+  })();
+
 }

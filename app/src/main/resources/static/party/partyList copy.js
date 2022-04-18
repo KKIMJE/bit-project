@@ -60,7 +60,6 @@ fetch("/party/list")
     `;
 }
 computeDistance();
-console.log(pbody);
 
 });
 
@@ -136,20 +135,13 @@ function computeDistance() {
           // console.log(geoResult)
   
           const distanceValue = await distanceLine(positions, geoResult) // 가게 위치와 현위치를 이은 선
+          // console.log(distanceValue)
   
-          console.log(distanceValue);
-
           $('.store-distance').each((index, e) => { // 각 모임의 거리 값을 넣는다.
-            // 1km 미만이면 m 로 출력한다.
-            // 1~5km 사이면 km로 출력한다
-            // 5km 이상이면 출력하지 않는다.
-
-            if (distanceValue[index] < 1000) {
-              $(e).html(distanceValue[index] + "m")
-            } else if (1000 <= distanceValue[index] < 5000) {
+            if (1000 < distanceValue[index]) {
               $(e).html((distanceValue[index] * 0.001).toFixed() + "km 이상") // $(e).html : html 태그의 내용을 이걸로 바꾸겠다. 
             } else {
-              $('.party-list').css('display','none');
+              $(e).html(distanceValue[index] + "m")
             }
           })
   
@@ -250,33 +242,15 @@ $('.position-reload').click(function() {
     location.reload();
 });
 
-/**************************
-    최신순 / 거리순 정렬
-**************************/
-$(".party-sort #btnCreatDtOrder, .party-sort #btnAddressOrder").click(function() {
-  // console.log("눌렸다!")
-	var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
-	listSort($(this), dataNm);
+/************************************
+    
+***********************************/
+$('.party-distance').click(function() {
+
+
 });
 
-function listSort($targetObj, dataNm){
-  // console.log("잉?")
-	//정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
-  $("#party-body").each((index, e) => { 
-    console.log($(this).text());     // 요렇게 하면 현재 요소의 text 값을 콘솔에 출력해줄 것이다.
-  console.log("index : " + index);
-})
+$('.party-new').click(function() {
 
-// html(
-  // 	$('#party-body li').sort(function(a, b){
-    //     console.log("지나간다");
-    //     console.log(a)
-    //     console.log(b)
-    // 		return $(b).data(dataNm) - $(a).data(dataNm);
-    //만약에 역순으로 정렬하고 싶은 경우 반대로 return하면 됩니다. 
-    //return $(a).data(dataNm) - $(b).data(dataNm);
-    // );
-	// //현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
-	// $(".order").removeClass("bold");
-	// $targetObj.addClass("bold");
-}
+
+});

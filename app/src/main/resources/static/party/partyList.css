@@ -9,6 +9,10 @@ body {
   margin: 0 auto !important;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 #party-body > a {
   text-decoration: none;
 }

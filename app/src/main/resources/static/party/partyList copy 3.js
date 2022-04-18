@@ -60,7 +60,6 @@ fetch("/party/list")
     `;
 }
 computeDistance();
-console.log(pbody);
 
 });
 
@@ -254,28 +253,23 @@ $('.position-reload').click(function() {
     최신순 / 거리순 정렬
 **************************/
 $(".party-sort #btnCreatDtOrder, .party-sort #btnAddressOrder").click(function() {
-  // console.log("눌렸다!")
+  console.log("눌렸다!")
 	var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
 	listSort($(this), dataNm);
 });
 
 function listSort($targetObj, dataNm){
-  // console.log("잉?")
-	//정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
-  $("#party-body").each((index, e) => { 
-    console.log($(this).text());     // 요렇게 하면 현재 요소의 text 값을 콘솔에 출력해줄 것이다.
-  console.log("index : " + index);
-})
 
-// html(
-  // 	$('#party-body li').sort(function(a, b){
-    //     console.log("지나간다");
-    //     console.log(a)
-    //     console.log(b)
-    // 		return $(b).data(dataNm) - $(a).data(dataNm);
-    //만약에 역순으로 정렬하고 싶은 경우 반대로 return하면 됩니다. 
-    //return $(a).data(dataNm) - $(b).data(dataNm);
-    // );
+  console.log("잉?")
+	//정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
+	$(".party-list").html(
+		$('#party-body a').sort(function(a, b){
+			return $(b).data(dataNm) - $(a).data(dataNm);
+            //만약에 역순으로 정렬하고 싶은 경우 반대로 return하면 됩니다. 
+            //return $(a).data(dataNm) - $(b).data(dataNm);
+		})
+	);
+
 	// //현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
 	// $(".order").removeClass("bold");
 	// $targetObj.addClass("bold");
