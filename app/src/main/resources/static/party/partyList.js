@@ -256,6 +256,7 @@ $('.position-reload').click(function() {
 $(".party-sort #btnCreatDtOrder, .party-sort #btnAddressOrder").click(function() {
   // console.log("눌렸다!")
 	var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
+  console.log("눌렸다");
 	listSort($(this), dataNm);
 });
 
@@ -271,9 +272,10 @@ $(".party-sort #btnCreatDtOrder, .party-sort #btnAddressOrder").click(function()
 
   function listSort($targetObj, dataNm){
     //정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
-    $("#party-body").html(
-      $('.party-list').sort(function(a, b){
-        return $(b).data(dataNm) - $(a).data(dataNm);
+    $('#party-body').html(
+      $('.store-distance').sort(function(a, b){
+        // console.log($(b).data(dataNm));
+        return $(b).text() - $(a).text();
               //만약에 역순으로 정렬하고 싶은 경우 반대로 return하면 됩니다. 
               //return $(a).data(dataNm) - $(b).data(dataNm);
       })
