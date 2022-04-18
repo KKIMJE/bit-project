@@ -17,7 +17,7 @@
 <!-- font -->
 <link rel="stylesheet" href="../css/nav.css">
 <link rel="stylesheet" href="../css/common.css">
-<link rel="stylesheet" href="storeChange2.css">
+<link rel="stylesheet" href="storeChange3.css">
 
 <title>야술먹자 주점수정</title>
 </head>
@@ -69,151 +69,76 @@
     </nav>
 
 
+
 <content>
     <center style="margin-top:100px">
         <div style="line-height:60px; vertical-align:middle !important;">
-           <img id='ig'  src="../mypage(CEO)/img/ceo-icon.jpg">
+           <img id='ig'  src="../ceo/img/ceo-icon.jpg">
     <span id="store-title">야!술먹자 주점 수정</span>
     </div>
     </center>
 
-<div class ="alcohol-section1">
-  <h1>주류 등록</h1> <br>
+<div class ="menu">
+  <h1>메뉴 등록</h1> <br>
      * 체크표시로 최대 6개까지만 대표를 설정할 수 있습니다.<br><br>
-       <h2 class="alcohol-content1">주종 주류명 가격</h2><br>
-        <div id ="x-option-div-container" >
-        <input type="checkbox" id="cb1" checked> 
-          <select id="type-option">
-          <option value="1">소주</option>
-          <option value="2">맥주</option>
-          <option value="3">와인</option>
-          <option value="4">막걸리</option>
-          <option value="5">양주</option>
-          <option value="6">사케</option>
-          <option value="7">전통주</option>
-          <option value="8">기타</option>
-        </select> 
-          <select id="name-option">
-          <option value="1">처음처럼</option>
-          <option value="2">테라</option>
-          <option value="3">와인1</option>
-          <option value="4">막걸리1</option>
-          <option value="5">양주2</option>
-          <option value="6">사케1</option>
-          <option value="7">전통주1</option>
-          <option value="8">기타술1</option>
-        </select>
-        <input name="price" type="text"  class="price-textarea"  value="">
-    <button class="x-add-btn" type="button"> 이미지 추가 </button>
-      <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
-        <div class ="horizontal-line">
-        </div>
-      </div>
-      </div>
-       <br>
-
-<div class ="alcohol-section2">
-        <h2 class="alcohol-content2">주종 주류명 가격</h2><br>
+     <div class ="menu-section1">
+       <h2 class="menu-content1" >메뉴명 가격 </h2><br>
         <input type="checkbox" id="cb1" checked>
-          <select id="type-option">
-          <option>소주</option>
-          <option>맥주</option>
-          <option>와인</option>
-          <option>막걸리</option>
-          <option>양주</option>
-          <option>사케</option>
-          <option>전통주</option>
-          <option>기타</option>
-        </select> 
-          <select id="name-option">
-          <option>처음처럼</option>
-          <option>테라</option>
-          <option>와인1</option>
-          <option>막걸리1</option>
-          <option>양주2</option>
-          <option>사케1</option>
-          <option>전통주1</option>
-          <option>기타술1</option>
-        </select> 
-        <input name="price" type="text"  class="price-textarea"  value="">
-    <button class="x-add-btn" type="button"> 이미지 추가 </button>
+        <input name ="menu" type="text"  class="menu-textarea" value="">
+       <input name="price" type="text"  class="price-textarea"  value="">
+    <button class="x-add-btn" type="button"> 이미지추가 </button>
       <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
         <div class ="horizontal-line">
         </div>
+      </div>
       </div>
        <br>
 
-<div class ="alcohol-section3">
- <h2 class="alcohol-content3">주종 주류명 가격</h2><br>
-        <input type="checkbox" id="cb1" >
-          <select id="type-option">
-          <option>소주</option>
-          <option>맥주</option>
-          <option>와인</option>
-          <option>막걸리</option>
-          <option>양주</option>
-          <option>사케</option>
-          <option>전통주</option>
-          <option>기타</option>
-        </select> 
-          <select id="name-option">
-          <option>처음처럼</option>
-          <option>테라</option>
-          <option>와인1</option>
-          <option>막걸리1</option>
-          <option>양주2</option>
-          <option>사케1</option>
-          <option>전통주1</option>
-          <option>기타술1</option>
-        </select> 
-        <input name="price" type="text"  class="price-textarea"  value="">
-    <button class="x-add-btn" type="button"> 이미지 추가 </button>
+<div class ="menu-section2">
+       <h2  class="menu-content2">메뉴명 가격</h2><br>
+        <input type="checkbox" id="cb1" checked>
+         <input name ="menu" type="text"  class="menu-textarea" value="">
+       <input name="price" type="text"  class="price-textarea"  value="">
+    <button class="x-add-btn" type="button"> 이미지추가 </button>
       <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
         <div class ="horizontal-line">
         </div>
       </div>
-       <br>
+        <br>
 
-<div class ="alcohol-section4">
- <h2 class="alcohol-content4" >주종 주류명 가격</h2><br>
-        <input type="checkbox" id="cb1" >
-          <select id="type-option">
-          <option>소주</option>
-          <option>맥주</option>
-          <option>와인</option>
-          <option>막걸리</option>
-          <option>양주</option>
-          <option>사케</option>
-          <option>전통주</option>
-          <option>기타</option>
-        </select> 
-          <select id="name-option">
-          <option>처음처럼</option>
-          <option>테라</option>
-          <option>와인1</option>
-          <option>막걸리1</option>
-          <option>양주2</option>
-          <option>사케1</option>
-          <option>전통주1</option>
-          <option>기타술1</option>
-        </select> 
-        <input name="price" type="text"  class="price-textarea"  value="">
-    <button class="x-add-btn" type="button"> 이미지 추가 </button>
+<div class ="menu-section3">
+         <h2 class="menu-content3">메뉴명 가격</h2><br>
+           <input type="checkbox" id="cb1">
+         <input name ="menu" type="text"  class="menu-textarea" value="">
+       <input name="price" type="text"  class="price-textarea"  value="">
+     <button class="x-add-btn" type="button"> 이미지추가 </button>
       <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
         <div class ="horizontal-line">
         </div>
       </div>
-       <br>
-       
-        <center style="margin-left:100px;vertical-align:middle !important;  word-spacing:20px;">
+        <br>
+
+<div class ="menu-section4">
+         <h2 class="menu-content4">메뉴명 가격</h2><br>
+           <input type="checkbox" id="cb1">
+        <input name ="menu" type="text"  class="menu-textarea" value="">
+       <input name="price" type="text"  class="price-textarea"  value="">
+     <button class="x-add-btn" type="button"> 이미지추가 </button>
+      <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
+        <div class ="horizontal-line">
+        </div>
+      </div>
+        <br>
+
+        <center style="vertical-align:middle !important; margin-left:80px; word-spacing:20px;">
           추가 삭제<br>
-   <button type="button" id="add" class="x-add-btn">+</button>
+    <button type="button" id="add" class="x-add-btn">+</button>
     <button  type="button" id="delete" class="x-delete-btn">-</button>
     </center>
     <br>
     
     <center><div class="btn">
-       <button type="button" id="register" class="submit-btn">등록</button> 
+      <button type="button" id="register" class="submit-btn">등록</button> 
        <button type="button" id="exit" class="exit-btn">나가기</button>
            </div>
     </center>
@@ -252,4 +177,4 @@
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
-<script src="storeChange2.js"></script> 
+<script src="storeChange3.js"></script> 

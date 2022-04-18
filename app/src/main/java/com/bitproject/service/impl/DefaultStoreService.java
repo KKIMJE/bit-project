@@ -39,8 +39,8 @@ public class DefaultStoreService  implements StoreService {
 
   @Override
   @Transactional
-  public int delete(Store store) {
-    return storeDao.delete(store);
+  public int delete(int no) {
+    return storeDao.delete(no);
   }
 
 }

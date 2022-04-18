@@ -13,5 +13,7 @@ public interface StoreService {
 
   int update(Store store);
 
-  int delete(Store store);
+  int delete(int no);
+  
+  
 }

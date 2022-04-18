@@ -119,7 +119,7 @@
       s.lng,
       s.place_id,
       s.oper,
-      s.status,
+      s.status
       <!-- ( SELECT t.name
             FROM tag t
            WHERE t.tag_no = stag.tag_no ) AS tagName-->

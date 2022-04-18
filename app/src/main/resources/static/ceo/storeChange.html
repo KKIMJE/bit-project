@@ -70,17 +70,18 @@
     </nav>
 
     <h1>주점수정</h1>
-     <form name="form1"  method="post">
+     <form name="form1">
       <div class="form1__box">
         <div class="content">
           <p class="form_store">가게명</p><br>
+          <input name="storeNo" type="hidden" class="form_input_name">
           <input name="storeName" type="text" class="form_input_name">
 
         <div class="address">
             <p class="form_address">주소</p><br>
             <div>
               <input type="text" id="address_kakao"  name="address" class="form_input_address_detail" placeholder="주소" readonly>
-              <input type="text" class="form_input_address_detail"  name="address" placeholder="상세주소">
+              <input type="text" class="form_input_address_detail"   placeholder="상세주소">
             </div>
           </div>
           
@@ -139,11 +140,20 @@
 
 
            <div style="margin-top:10px;">
-            <p class="form_check">예약 가능 여부 <br>
-            <center>가능<input id="reservationAccept" type="checkbox"  class="form_input_check" checked>불가능<input id="reservationAccept"  type="checkbox" class="form_input_check">
-            최대인원 <input id="maxMember" type="text"  class="form_input_box" > 
+            <p class="form_check">예약 가능 여부 <br></p>
+            <center>
+            가능<input name="reservationAccept"  id="revOn" type="radio"  class="form_input_check" checked>
+            불가능<input name="reservationAccept"  id="revOff" type="radio" class="form_input_check">
+            최대인원 <input id="maxMember" type="text"  class="form_input_box" >
+            </center>
+            <!-- 
+            가능
+            <input id="reservationAccept" type="checkbox"  class="form_input_check" checked>불가능
+            <input id="reservationAccept"  type="checkbox" class="form_input_check">
+            최대인원 <input id="maxMember" type="text"  class="form_input_box" >
+             --> 
             <!-- 사각형 -->
-          </div> </center>
+          </div> 
            
            <center><div class="file-upload">
      <div><input name="file" type="file"></div>
@@ -194,5 +204,4 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 crossorigin="anonymous"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="storeChange.js"></script> 
-
 
