@@ -255,5 +255,7 @@ order by
     img
   from
     alcohol_detail
-  where alcohol_type_no=7
+  where alcohol_type_no=1
+  order by
+  degree asc
     limit 0, 10;
