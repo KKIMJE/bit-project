@@ -1,5 +1,6 @@
 package com.bitproject.domain;
 
+import java.util.List;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -11,8 +12,10 @@ public class Store {
   int storeTypeNo;
   int mno;
   int businessRegistrationNo;
+  int tagNo;
   String businessRegistration;
-  //  String tagName;
+  List<Tag> Tags;
+  List<StoreSelect> StoreSlect;
   String storeName;
   String address;
   String tel;

@@ -237,12 +237,7 @@ body {
   margin-top: 10px;
 }
 /* map */
-#mapInfo {
+#mapInfo > span > i {
   color: #29C05E;
-  background: #FFFFFF;
-  border: 3px solid #29C05E;
-  border-radius: 28.5px;
-  text-align:center;
-  padding:6px 10px;
-  font-weight: 700;
+  font-size: 35px;
 }
