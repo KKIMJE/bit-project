@@ -17,4 +17,6 @@ public interface StoreDao {
 
   int delete(Store store);
 
+  Object error(Store no);
+
 }

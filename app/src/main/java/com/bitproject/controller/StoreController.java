@@ -1,6 +1,7 @@
 package com.bitproject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.bitproject.dao.StoreDao;
@@ -33,7 +34,7 @@ public class StoreController {
     return store;
   }
 
-  @RequestMapping("/store/update")
+  @PostMapping("/store/update")
   public Object update(Store store) {
     return storeDao.update(store);
   }
@@ -42,4 +43,11 @@ public class StoreController {
   public Object delete(Store no) {
     return storeDao.delete(no);
   }
+  
+  @RequestMapping("/store/error")
+  public Object error(Store no) {
+    return storeDao.error(no);
+  }
+  
+  
 }
