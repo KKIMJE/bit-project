@@ -12,7 +12,7 @@ fetch("/party/list")
 })
 .then(function(result) {      
     for (var party of result) {
-    pbody.innerHTML += `<a href="/party/partyDetail.html" class="party-list"> 
+    pbody.innerHTML += `<a href="/party/partyDetail.html" class="party-list" data-address="${party.address}"> 
                         <div class="party-body-top">
                             <div class="party-title">${party.title}</div>
                             <div class="party-regdate">${party.regDate}</div>
@@ -259,13 +259,33 @@ $(".party-sort #btnCreatDtOrder, .party-sort #btnAddressOrder").click(function()
 	listSort($(this), dataNm);
 });
 
-function listSort($targetObj, dataNm){
-  // console.log("잉?")
-	//정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
-  $("#party-body").each((index, e) => { 
-    console.log($(this).text());     // 요렇게 하면 현재 요소의 text 값을 콘솔에 출력해줄 것이다.
-  console.log("index : " + index);
-})
+// function listSort($targetObj, dataNm){
+//   // console.log("잉?")
+// 	//정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
+//   $("#party-body a").sort(function(a, b){
+//       		return $(b).data(dataNm) - $(a).data(dataNm);
+//     }
+//     )
+//     console.log($(".party-list"));
+//   }
+
+  function listSort($targetObj, dataNm){
+    //정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
+    $("#party-body").html(
+      $('.party-list').sort(function(a, b){
+        return $(b).data(dataNm) - $(a).data(dataNm);
+              //만약에 역순으로 정렬하고 싶은 경우 반대로 return하면 됩니다. 
+              //return $(a).data(dataNm) - $(b).data(dataNm);
+      })
+    );
+  
+    // //현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
+    // $(".order").removeClass("color-red");
+    // $targetObj.addClass("color-red");
+  }
+
+
+
 
 // html(
   // 	$('#party-body li').sort(function(a, b){
@@ -279,4 +299,3 @@ function listSort($targetObj, dataNm){
 	// //현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
 	// $(".order").removeClass("bold");
 	// $targetObj.addClass("bold");
-}
