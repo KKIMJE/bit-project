@@ -94,7 +94,8 @@ body {
   color: red;
 }
 /* 영엽중 표시 */
-.storeDetailInfo { 
+.storeDetailInfo {
+  display: flex;
   font-size: 13px;
   margin-bottom: 5px;
   color: #616161;

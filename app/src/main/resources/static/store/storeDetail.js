@@ -14,14 +14,6 @@ if (no == null) {
   throw "파라미터 오류!";
 }
 
-
-// var introName = document.querySelector(".intro-name-span")
-// var introBrand = document.querySelector(".intro-brand-span")
-
-// var storeListDiv = document.querySelector(".storelist-div")
-// var storeName = document.querySelector(".store-name")
-// var storeStatus = document.querySelector(".store-status")
-
 fetch(`/store/get?no=${no}`)
   .then(function(response) {
     return response.json() 
@@ -29,14 +21,6 @@ fetch(`/store/get?no=${no}`)
     console.log(store);
     mapMarker(store)
     storeTextBox(store)
-    // detailImg.src = alcohol.img
-    // introName.innerHTML = alcohol.alcoholName
-    // introBrand.innerHTML = alcohol.brand
-    // introOrigin.innerHTML = alcohol.origin
-    // introVol.innerHTML = alcohol.volume
-    // introDegree.innerHTML = alcohol.degree
-    // introChar.innerHTML = alcohol.characteristic
-    // storeList.innerHTML = alcohol.alcoholName
 });
 
 // Map 생성
@@ -52,8 +36,7 @@ function mapMarker(store) {
   // 마커 생성
   let address = store.address
   let name = store.storeName
-
-  console.log(address, name)
+  // console.log(address, name)
 
   // 주소로 좌표를 검색합니다
   geocoder.addressSearch(address, function(result, status) {
@@ -79,6 +62,27 @@ function mapMarker(store) {
   });
   
 }
+// 주점 정보 입력
+function storeTextBox (store) {
+  let storeOper = document.querySelector(".storeOper")
+  let storeName = document.querySelector(".storeName")
+  let storeAddress = document.querySelector(".storeAddress")
+  let storeTel = document.querySelector(".storeTel")
+  let storeIntro = document.querySelector(".storeIntro")
+  let storeTimeInfo = document.querySelector(".storeTimeInfo")
+  let storeStar = document.querySelector(".storeStar")
+
+  
+  
+  storeName.innerHTML = store.storeName // 주점이름
+  storeAddress.innerHTML += store.address // 주점주소
+  storeTel.innerHTML += store.tel // 주점주소
+  storeIntro.innerHTML += store.introduction // 주점소개
+  storeTimeInfo.innerHTML = store.hour // 영업시간
+  storeStar.innerHTML = printStar(store.evaluationScore) // 별점
+  storeOper.innerHTML = printOper(store.oper) + " / " +  "&nbsp;" // 영업여부, 거리
+  computeDistance(store.address) // 거리계산
+}
 // 영업여부
 function printOper(oper) {
   let status = " ";
@@ -89,10 +93,77 @@ function printOper(oper) {
   }
   return status;
 }
+// 별점
+function printStar(score) {
+  // console.log("score: " + score)
+  let star = "⭐⭐⭐⭐⭐";
+  if (1 == score) {
+    star = "⭐"
+  } else if(2 == score) {
+    star = "⭐⭐"
+  } else if(3 == score) {
+    star = "⭐⭐⭐"
+  } else if(4 == score) {
+    star = "⭐⭐⭐⭐"
+  } else if(5 == score) {
+    star = "⭐⭐⭐⭐⭐"
+  } else {
+    star = "😥"
+  }
+  return star;
+}
+// 거리계산
+function computeDistance(address) {
+  let geocoder = new kakao.maps.services.Geocoder(); 
+  const addressSearch = address => {// 주소 => 좌표리턴
+      return new Promise((resolve, reject) => {
+        geocoder.addressSearch(address, function(result, status) {
+          if (status === kakao.maps.services.Status.OK) {
+            resolve({"lat": result[0].y, "lng": result[0].x});
+          } else {
+            reject(status);
+          }
+        });
+      });
+  };
+  //GeoLocation을 이용해서 접속 위치를 얻어옵니다
+  const geoLocation = () => {
+    return new Promise((resolve) => {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        resolve({"lat": position.coords.latitude, "lng": position.coords.longitude});
+      })
+    })
+  }
+  const distanceLine = (storePos, curPos) => {
+    return new Promise((resolve) => {
 
-function storeTextBox (store) {
-  let storeName = document.querySelector(".storeName")
+      // 선 객체 생성
+      let linePath = [
+        new kakao.maps.LatLng(storePos.lat, storePos.lng),
+        new kakao.maps.LatLng(curPos.lat, curPos.lng)
+      ];
 
+      let polyline = new kakao.maps.Polyline({
+        path : linePath
+      });
 
-  storeName.innerHTML = store.storeName
+      resolve(Math.round(polyline.getLength()))
+    })
+  }
+  // async-await
+  (async () => {
+    try {
+      const storeGeoResult = await addressSearch(address)
+      const geoResult = await geoLocation()
+      const distanceValue = await distanceLine(storeGeoResult, geoResult)
+
+      if (1000 < distanceValue) {
+        $('.storeDistance').html((distanceValue * 0.001).toFixed(2) + "km")
+      } else {
+        $('.storeDistance').html(distanceValue.toFixed(2) + "m")
+      }
+    } catch (e) {
+        console.log(e);
+    }
+  })();
 }

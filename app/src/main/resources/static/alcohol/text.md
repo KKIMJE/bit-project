@@ -210,3 +210,52 @@ m.mno=1;
 <!-- 찜 데이터 삭제 -->
 delete from party_board_select
 where mno=1 and party_board_no=2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select
+  alcohol_detail_no,
+  alcohol_type_no,
+  alcohol_name,
+  degree,
+  brand,
+  origin,
+  volume,
+  characteristic,
+  img
+from
+  alcohol_detail
+where alcohol_type_no=7
+order by
+  alcohol_type_no asc
+  limit 0, 10;
+
+
+  select
+    alcohol_detail_no,
+    alcohol_type_no,
+    alcohol_name,
+    degree,
+    brand,
+    origin,
+    volume,
+    characteristic,
+    img
+  from
+    alcohol_detail
+  where alcohol_type_no=1
+  order by
+  degree asc
+    limit 0, 10;
