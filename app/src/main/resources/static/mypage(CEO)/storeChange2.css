@@ -58,9 +58,7 @@ h1{
   width:100%;
 }
 
-.type-option,.name-option{
-	width:100px;
-}
+
 
 .btn{
 	margin-left:100px
@@ -77,6 +75,9 @@ input {
   margin: 3px;
 }
 
+#type-option,#name-option{
+  width:100px;
+}
 /* footer 수정 */
 footer__ {
   border: 1px solid #29c05e;

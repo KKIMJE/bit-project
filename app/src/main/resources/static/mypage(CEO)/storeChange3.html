@@ -78,27 +78,29 @@
     </div>
     </center>
 
-<div class ="menu-section1">
+<div class ="menu">
   <h1>메뉴 등록</h1> <br>
      * 체크표시로 최대 6개까지만 대표를 설정할 수 있습니다.<br><br>
+     <div class ="menu-section1">
        <h2 class="menu-content1" >메뉴명 가격 </h2><br>
         <input type="checkbox" id="cb1" checked>
-        <input type="text"  class="menu-textarea" value="오자네왔능가">
-       <input type="text"  class="price-textarea"  value="5000원">
+        <input name ="menu" type="text"  class="menu-textarea" value="">
+       <input name="price" type="text"  class="price-textarea"  value="">
     <button class="x-add-btn" type="button"> 이미지추가 </button>
-      <button class="x-delete-btn" type="button">삭제</button>
+      <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
         <div class ="horizontal-line">
         </div>
+      </div>
       </div>
        <br>
 
 <div class ="menu-section2">
        <h2  class="menu-content2">메뉴명 가격</h2><br>
         <input type="checkbox" id="cb1" checked>
-        <input type="text" class="menu-textarea" value="오자네왔능가">
-        <input type="text" class="price-textarea" value="5000원">
+         <input name ="menu" type="text"  class="menu-textarea" value="">
+       <input name="price" type="text"  class="price-textarea"  value="">
     <button class="x-add-btn" type="button"> 이미지추가 </button>
-      <button class="x-delete-btn" type="button">삭제</button>
+      <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
         <div class ="horizontal-line">
         </div>
       </div>
@@ -107,10 +109,10 @@
 <div class ="menu-section3">
          <h2 class="menu-content3">메뉴명 가격</h2><br>
            <input type="checkbox" id="cb1">
-        <input type="text" class="menu-textarea" value="오자네왔능가">
-       <input type="text" class="price-textarea" value="5000원">
+         <input name ="menu" type="text"  class="menu-textarea" value="">
+       <input name="price" type="text"  class="price-textarea"  value="">
      <button class="x-add-btn" type="button"> 이미지추가 </button>
-      <button class="x-delete-btn" type="button">삭제</button>
+      <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
         <div class ="horizontal-line">
         </div>
       </div>
@@ -119,10 +121,10 @@
 <div class ="menu-section4">
          <h2 class="menu-content4">메뉴명 가격</h2><br>
            <input type="checkbox" id="cb1">
-        <input type="text" class="menu-textarea" value="오자네왔능가">
-       <input type="text" class="price-textarea" value="5000원">
+        <input name ="menu" type="text"  class="menu-textarea" value="">
+       <input name="price" type="text"  class="price-textarea"  value="">
      <button class="x-add-btn" type="button"> 이미지추가 </button>
-      <button class="x-delete-btn" type="button">삭제</button>
+      <button  type="button"  class="x-delete-btn" onclick="deleteDiv(event)">삭제</button>
         <div class ="horizontal-line">
         </div>
       </div>
@@ -130,14 +132,14 @@
 
         <center style="vertical-align:middle !important; margin-left:80px; word-spacing:20px;">
           추가 삭제<br>
-    <button class="x-add-btn" type="button">+</button>
-    <button class="x-delete-btn" type="button">-</button>
+    <button type="button" id="add" class="x-add-btn">+</button>
+    <button  type="button" id="delete" class="x-delete-btn">-</button>
     </center>
     <br>
     
     <center><div class="btn">
-      <button class="submit-btn">등록</button> 
-      <button class="exit-btn">나가기</button>
+      <button type="button" id="register" class="submit-btn">등록</button> 
+       <button type="button" id="exit" class="exit-btn">나가기</button>
            </div>
     </center>
   <br>
@@ -175,4 +177,4 @@
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
-<script src="storeChange.js"></script> 
+<script src="storeChange3.js"></script> 
