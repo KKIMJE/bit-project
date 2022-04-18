@@ -50,16 +50,16 @@
       s.oper,
       s.status,
       st.store_type_no,
-      ss.mno,
-      (SELECT tag.name
+      ss.mno
+      <!--(SELECT tag.name
             FROM tag t
-           WHERE t.tag_no = stag.tag_no) AS tagName
+           WHERE t.tag_no = stag.tag_no) AS tagName -->
     from
     	store s
     	left outer join store_section_type st on s.store_no=st.store_no
     	left outer join store_select ss on s.store_no=ss.store_no
-    	inner join store_tag stag on s.store_no=stag.store_no,
-    	tag
+    	<!-- inner join store_tag stag on s.store_no=stag.store_no,
+    	tag -->
     order by 
       s.store_no desc;
   </select>
@@ -120,13 +120,13 @@
       s.place_id,
       s.oper,
       s.status,
-      ( SELECT t.name
+      <!-- ( SELECT t.name
             FROM tag t
-           WHERE t.tag_no = stag.tag_no ) AS tagName
+           WHERE t.tag_no = stag.tag_no ) AS tagName-->
     from
       store s
-      inner join store_tag stag on s.store_no=stag.store_no,
-      tag
+      <!--inner join store_tag stag on s.store_no=stag.store_no,
+      tag-->
     where 
       s.store_no=#{no}
   </select>
