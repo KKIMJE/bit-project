@@ -43,4 +43,9 @@ public class DefaultStoreService  implements StoreService {
     return storeDao.delete(no);
   }
 
+  @Override
+  public int getCountMno(int no) {
+    return storeDao.findByNoCountMno(no);
+  }
+
 }

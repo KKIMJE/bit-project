@@ -128,7 +128,7 @@ body {
 }
 .relative {
   position: relative;
-  left: 20px;
+  left: -12px;
 }
 .sugFoodBox {
   margin-top: 35px;
@@ -139,8 +139,8 @@ body {
 }
 .xAlc-img, .xFood-img {
   object-fit: cover;
-  width: 148px;
-  height: 148px;
+  width: 140px;
+  height: 140px;
   border-radius: 9px;
 }
 .xAlc-name, .xFood-name {

@@ -6,12 +6,14 @@ import com.bitproject.domain.Store;
 
 @Mapper  
 public interface StoreDao {
- 
+
   List<Store> findAll();
 
   int insert(Store store);
 
   Store findByNo(int no);
+
+  int findByNoCountMno(int no);
 
   int update(Store store);
 

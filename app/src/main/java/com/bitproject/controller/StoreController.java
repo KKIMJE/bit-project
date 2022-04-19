@@ -38,6 +38,12 @@ public class StoreController {
     return store;
   }
 
+  @RequestMapping("/store/getMnoCnt")
+  public int getMnoCnt(int no) {
+    //System.out.println("StoreNo: " + no + ", Get Store: " + store);
+    return storeService.getCountMno(no);
+  }
+
   @PostMapping("/store/update")
   public Object update(Store store) {
     //System.out.println("Before Update: " + store);

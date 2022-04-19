@@ -11,9 +11,11 @@ public interface StoreService {
 
   Store get(int no);
 
+  int getCountMno(int no);
+
   int update(Store store);
 
   int delete(int no);
-  
-  
+
+
 }

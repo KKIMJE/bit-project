@@ -72,10 +72,10 @@ function storeTextBox (store) {
   let storeTimeInfo = document.querySelector(".storeTimeInfo")
   let storeStar = document.querySelector(".storeStar")
   let storeTag = document.querySelector(".storeTag")
-  
-  // 주점입장에서 어떤주점을 누가 찜을 했느가
 
-  
+  storeAlcPrint(store.alcoholSales)
+
+  storeCountMno(store.storeNo) // 주점찜
   storeName.innerHTML = store.storeName // 주점이름
   storeAddress.innerHTML += store.address // 주점주소
   storeTel.innerHTML += store.tel // 주점주소
@@ -86,6 +86,7 @@ function storeTextBox (store) {
   storeOper.innerHTML = printOper(store.oper) + " / " +  "&nbsp;" // 영업여부, 거리
   computeDistance(store.address) // 거리계산
 }
+
 // 영업여부
 function printOper(oper) {
   let status = " ";
@@ -182,3 +183,42 @@ function computeDistance(address) {
     }
   })();
 }
+// 주점찜
+function storeCountMno(storeNo) {
+  fetch(`/store/getMnoCnt?no=${storeNo}`)
+  .then(function(response) {
+    return response.json() 
+  }).then(function(cnt) {
+    let storeMnoCnt = document.querySelector(".storeMnoCnt")
+    storeMnoCnt.innerHTML += cnt
+  });
+}
+
+function storeAlcPrint(alcList) {
+  let sugAlcImg = document.querySelector(".sugAlcImg")
+  let str = ""
+  for (let i=0; i < alcList.length; i++) {
+    str += `
+    <a class="alc-link" href="/alcohol/alcoholdetail.html?no=${alcList[i].alcoholDetailNo}">
+      <div class="sugAlcImg-card">
+        <img class="xAlc-img" src="/alcohol/alcoholimg/alcohol42.png" alt="">
+        <p class="xAlc-name">필스너우르켈</p>
+        <p class="xAlc-price">${alcList[i].price}원</p>
+      </div>
+    </a>`
+
+    console.log(alcList[i].alcoholDetailNo)
+    console.log(alcList[i].price)
+  }
+  sugAlcImg.innerHTML = str
+}
+
+
+
+
+// 추천주류
+//<div class="sugAlcImg-card">
+//<img class="xAlc-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
+//<p class="xAlc-name">필스너우르켈</p>
+//<p class="xAlc-price">8000원</p>
+//</div>

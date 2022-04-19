@@ -89,13 +89,34 @@
 }
 
 
-.writing__ {
+ .writing__ {
   display: flex;
   position: relative;
-  width: 85px;
+  width: 100px;
   height: 25px;
-  left: 1020px;
+  left: 1000px;
   top: 170px;
+  line-height: 20px;
+  /* background: #90D483; */
+  background: #29c05e;
+  font-weight: 600;
+  font-size: 19px;
+  color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.party-open {
+  position: absolute;
+  right: 20px;
+  top: 170px;
+  width: 132px;
+  height: 38px;
+  line-height: 38px;
+  background: #90D483;
+  font-weight: 600;
+  font-size: 19px;
+  color: #FFFFFF;
+  border-radius: 10px;
 }
 
 .card {
