@@ -29,7 +29,7 @@ function myLoad() {
       pbody.innerHTML += `<a href="/party/partyDetail.html" class="party-list" data-creatdt="${party.partyNo}"> 
                           <div class="party-body-top">
                               <div class="party-title">${party.title}</div>
-                              <div class="party-regdate">${party.regDate}</div>
+                              <div class="party-regdate">` + timeCheck(`${party.regDate}`) + `</div>
                           </div> 
                           <div class="party-body-content">
                               <div class="leader-profile">
@@ -73,6 +73,7 @@ function myLoad() {
               </a>
       `;
   }
+
   computeDistance();
   });
 
@@ -292,7 +293,7 @@ function mapLoad() {
                   </a>
           `;
       }
-      
+
       /**********************
           설정된 주소 출력
       **********************/
@@ -406,6 +407,34 @@ function mapLoad() {
     }
 }
 
+/******************************
+    등록일 포맷 변환하여 출력
+******************************/
+function timeCheck(time) {
+
+  var now = new Date()
+  var writeDay = new Date(time)
+
+  var BeforeDay;
+
+  if (now.getMonth() - writeDay.getMonth() > 0) {
+    console.log(now.getMonth() - writeDay.getMonth())
+    return BeforeDay = "오래 전"
+  } else if (30 > now.getDate() - writeDay.getDate() && now.getDate() - writeDay.getDate() > 0) {
+    return BeforeDay = now.getDate() - writeDay.getDate() + "일 전"
+  } else if (24 > now.getHours() - writeDay.getHours() && now.getHours() - writeDay.getHours() > 0) {
+    return BeforeDay = now.getHours() - writeDay.getHours() + "시간 전"
+  } else if (60 > now.getMinutes() - writeDay.getMinutes() && now.getMinutes() - writeDay.getMinutes() > 0) {
+    return BeforeDay = now.getMinutes() - writeDay.getMinutes() + "분 전"
+  } else {
+    return BeforeDay = "방금전"
+  }
+
+}
+
+
+
+
 
 /************************************
     현위치로 재검색(페이지 새로고침)
@@ -416,9 +445,10 @@ $('.position-reload').click(function() {
     location.reload();
 });
 
+// F5 클릭 시
 window.onkeydown = function() {
   var kcode = event.keyCode;
-  if (kcode == 116  || kcode == true && (kcode == 82)) {
+  if (kcode == 116) {
     history.replaceState({}, null, location.pathname);
   }
 }
@@ -468,5 +498,5 @@ $targetObj.addClass("bold");
 *****************/
 
 $('.party-open').click(function() {
-    location.href = 'partyEditor.html';
+    location.href = 'partyForm.html';
   });
