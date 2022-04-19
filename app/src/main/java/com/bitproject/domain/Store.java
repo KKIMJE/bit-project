@@ -13,8 +13,10 @@ public class Store {
   int mno;
   int businessRegistrationNo;
   int tagNo;
-  //  int countMno;
+  //  int alcoholDetailNo;
+  //int price;
   String businessRegistration;
+  List<AlcoholSales> AlcoholSales;
   List<Tag> Tags;
   String storeName;
   String address;

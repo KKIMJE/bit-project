@@ -27,6 +27,11 @@
     <result column="oper" property="oper"/>
     <result column="status" property="status"/>
     
+    <collection property="AlcoholSales" ofType="AlcoholSales">
+      <result column="alcohol_detail_no" property="alcoholDetailNo"/>
+      <result column="price" property="price"/>
+    </collection>
+    
     <collection property="Tags" ofType="tag">
       <result column="tag_no" property="tagNo"/>
       <result column="name" property="name"/>
@@ -120,25 +125,28 @@
       s.place_id,
       s.oper,
       s.status,
-	  t.name
+	  t.name,
+	  ass.alcohol_detail_no,
+	  ass.price
 	from 
 	  store s
 	  left outer join store_tag st on s.store_no=st.store_no
 	  left outer join tag t on st.tag_no=t.tag_no
+	  left outer join alcohol_sales ass on s.store_no=ass.store_no
 	where
 	  s.store_no=#{no}
   </select>
-  
+
   <!-- 스토어를 찜한 사람을 카운트한다. -->
   <select id="findByNoCountMno" resultType="int">
     select 
       count(*) 
-    from 
+    from
       store_select
     where
       store_no=#{no}
   </select>
-
+  
   <update id="update" parameterType="Store">
     update store set
       business_registration_no=#{businessRegistrationNo}, 
@@ -166,11 +174,3 @@
   </delete>
 
 </mapper>
-
-
-
-
-
-
-
-

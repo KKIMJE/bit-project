@@ -72,7 +72,9 @@ function storeTextBox (store) {
   let storeTimeInfo = document.querySelector(".storeTimeInfo")
   let storeStar = document.querySelector(".storeStar")
   let storeTag = document.querySelector(".storeTag")
-  
+
+  storeAlcPrint(store.alcoholSales)
+
   storeCountMno(store.storeNo) // 주점찜
   storeName.innerHTML = store.storeName // 주점이름
   storeAddress.innerHTML += store.address // 주점주소
@@ -84,6 +86,7 @@ function storeTextBox (store) {
   storeOper.innerHTML = printOper(store.oper) + " / " +  "&nbsp;" // 영업여부, 거리
   computeDistance(store.address) // 거리계산
 }
+
 // 영업여부
 function printOper(oper) {
   let status = " ";
@@ -190,6 +193,27 @@ function storeCountMno(storeNo) {
     storeMnoCnt.innerHTML += cnt
   });
 }
+
+function storeAlcPrint(alcList) {
+  let sugAlcImg = document.querySelector(".sugAlcImg")
+  let str = ""
+  for (let i=0; i < alcList.length; i++) {
+    str += `
+    <a class="alc-link" href="/alcohol/alcoholdetail.html?no=${alcList[i].alcoholDetailNo}">
+      <div class="sugAlcImg-card">
+        <img class="xAlc-img" src="/alcohol/alcoholimg/alcohol42.png" alt="">
+        <p class="xAlc-name">필스너우르켈</p>
+        <p class="xAlc-price">${alcList[i].price}원</p>
+      </div>
+    </a>`
+
+    console.log(alcList[i].alcoholDetailNo)
+    console.log(alcList[i].price)
+  }
+  sugAlcImg.innerHTML = str
+}
+
+
 
 
 // 추천주류
