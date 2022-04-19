@@ -132,7 +132,6 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 1280px;
-  height: 500px;
 }
 
 .alc-link {
@@ -149,7 +148,7 @@ body {
   align-items: center;
   width: 255px;
   /* margin-right: 105px; */
-  /* margin-bottom: 20px; */
+  margin-bottom: 20px;
   position: static;
   border: none;
 }
@@ -168,14 +167,4 @@ body {
   height: 150px;
   /* margin-left: 52.5px; */
 
-}
-
-.page-btn-div {
-  display: flex;
-  justify-content: center;
-  margin-top: 75px;
-}
-
-.page-btn-act {
-  display: none;
 }
