@@ -13,9 +13,9 @@ public class Store {
   int mno;
   int businessRegistrationNo;
   int tagNo;
+  //  int countMno;
   String businessRegistration;
   List<Tag> Tags;
-  List<StoreSelect> storeSelect;
   String storeName;
   String address;
   String tel;

@@ -73,9 +73,7 @@ function storeTextBox (store) {
   let storeStar = document.querySelector(".storeStar")
   let storeTag = document.querySelector(".storeTag")
   
-  // 주점입장에서 어떤주점을 누가 찜을 했느가
-
-  
+  storeCountMno(store.storeNo) // 주점찜
   storeName.innerHTML = store.storeName // 주점이름
   storeAddress.innerHTML += store.address // 주점주소
   storeTel.innerHTML += store.tel // 주점주소
@@ -182,3 +180,21 @@ function computeDistance(address) {
     }
   })();
 }
+// 주점찜
+function storeCountMno(storeNo) {
+  fetch(`/store/getMnoCnt?no=${storeNo}`)
+  .then(function(response) {
+    return response.json() 
+  }).then(function(cnt) {
+    let storeMnoCnt = document.querySelector(".storeMnoCnt")
+    storeMnoCnt.innerHTML += cnt
+  });
+}
+
+
+// 추천주류
+//<div class="sugAlcImg-card">
+//<img class="xAlc-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
+//<p class="xAlc-name">필스너우르켈</p>
+//<p class="xAlc-price">8000원</p>
+//</div>
