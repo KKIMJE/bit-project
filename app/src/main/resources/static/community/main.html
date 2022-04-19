@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <title>야술먹자</title>
+    <title>야술먹자 커뮤니티</title>
 </head>
-<body>
+<body onload="allList()">
 
     <nav class="navbar__">
         <div><!-- 공간, 삭제하지 마세요 --></div>
@@ -79,13 +80,13 @@
 
    <!-- 필터 -->
        <div class="category">
-           <button type="button" class="category-font act">ㅁ전체</button>
-           <button type="button" class="category-font">술집추천</button>
-           <button type="button" class="category-font">분실/실종센터</button>
-           <button type="button" class="category-font">일상</button>
-           <button type="button" class="category-font">사건사고</button>
-           <button type="button" class="category-font">술게임</button>
-           <button type="button" class="category-font">기타</button>
+           <button type="button" class="category-font act" value="1">ㅁ전체</button>
+           <button type="button" class="category-font" value="2">술집추천</button>
+           <button type="button" class="category-font" value="3">분실/실종센터</button>
+           <button type="button" class="category-font" value="4">일상</button>
+           <button type="button" class="category-font" value="5">사건사고</button>
+           <button type="button" class="category-font" value="6">술게임</button>
+           <button type="button" class="category-font" value="7">기타</button>
        </div>
 
 
@@ -99,46 +100,6 @@
 
 
      <div class="card">
-       <div class="card-body">
-           <img class="community_img" src="">
-           <div class="card-category">카테고리</div><br>
-           <div class="contents">
-             <div class="card-contents-name">제목</div>
-             <div id="card-contents">더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기<button class="see_more">. . .</button></div><br>
-           </div> <br>
-           <div class="card-like"><img src="" alt=""><i class="fa-regular fa-thumbs-up"></i> 556</div>
-           <div class="card-comment"><img src="" alt=""><i class="fa-regular fa-comment"></i> 댓글 18</div>
-           <div class="community_time">0분 전</div>
-           <div class="community_writer">글쓴이</div>
-       </div>
-       <div class="card-body">
-           <img class="community_img" src="">
-           <div class="card-category">카테고리</div><br>
-           <div class="contents">
-             <div class="card-contents-name">제목</div>
-             <div id="card-contents">더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기<button class="see_more">. . .</button></div><br>
-           </div> <br>
-           <div class="card-like"><img src="" alt=""><i class="fa-regular fa-thumbs-up"></i> 556</div>
-           <div class="card-comment"><img src="" alt=""><i class="fa-regular fa-comment"></i> 댓글 18</div>
-           <div class="community_time">0분 전</div>
-           <div class="community_writer">글쓴이</div>
-       </div>
-       <div class="card-body">
-           <img class="community_img" src="">
-           <div class="card-category">카테고리</div><br>
-           <div class="contents">
-             <div class="card-contents-name">제목</div>
-             <div id="card-contents">더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기더보기<button class="see_more">. . .</button></div><br>
-           </div> <br>
-           <div class="card-like"><img src="" alt=""><i class="fa-regular fa-thumbs-up"></i> 556</div>
-           <div class="card-comment"><img src="" alt=""><i class="fa-regular fa-comment"></i> 댓글 18</div>
-           <div class="community_time">0분 전</div>
-           <div class="community_writer">글쓴이</div>
-       </div>
-
-
-
-
 
      </div>
 
@@ -166,9 +127,6 @@
     </html>
     <!-- icons -->
     <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
-    <!-- kakaoMap -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87"></script>
-    <script src="storeMap.js"></script>
     <!-- Bootstrap CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="store.js"></script>
+    <script src="main.js"></script>

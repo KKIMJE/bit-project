@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.CommunityDao">
+
+<resultMap type="communityMain" id="communityMap">
+    <id column="board_no" property="boardNo"/>
+    <result column="community_no" property="communityNo"/>
+    <result column="mno" property="mno"/>
+    <result column="title" property="boardTitle"/>
+    <result column="contents" property="boardContents"/>
+    <result column="reg_date" property="regDate"/>
+</resultMap>
+  
+  <select id="findAll" resultMap="communityMap">
+  select
+    b.board_no,
+    b.community_no,
+    b.title,
+    b.contents,
+    b.reg_date,
+    m.name
+  from 
+    board b
+      inner join member m on b.mno=m.mno
+  order by 
+    b.board_no desc
+  </select>
+  
+  <!--  
+    <insert id="insert" parameterType="CommunityMain">
+    insert into board(
+    board_no,
+    community_no,
+    title,
+    contents
+    ) 
+    values(
+    #{boardNo},
+    #{communityNo},
+    #{boardTitle},
+    #{boardContents}
+    )
+  </insert>
+  
+  
+  <update id="update" parameterType="CommunityMain">
+    update board set
+      title=#{boardTitle},
+      contents=#{boardContents}
+    where 
+     board_no=#{boardNo}
+  </update>
+
+  <delete id="delete" parameterType="CommunityMain">
+    delete from board 
+    where board_no=#{boardNo}
+  </delete>
+  -->
+  
+    <select id="findByNo" resultMap="communityMap" parameterType="int">
+  select
+    b.board_no,
+    b.community_no,
+    b.title,
+    b.contents,
+    b.reg_date,
+    m.name
+  from 
+    board b
+      inner join member m on b.mno=m.mno
+  where
+    b.board_no=#{no}
+  
+  </select>
+  
+  
+
+</mapper>
+
+
+
+
+
+
