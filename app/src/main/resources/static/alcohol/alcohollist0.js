@@ -9,11 +9,12 @@ var pageBtnDiv = document.querySelector(".page-btn-div")
 
 
 let targetArr = [];
-let categoryTargetNo = 0;
+let categoryTargetNo;
 let filterTargetNo;
 let pageSize = 10;
 let pageNo = 1;
 var totalPageSize; // 전체 페이지 사이즈
+
 
 // 도수별 정렬
 function degreeSort(alcoholArr) {
@@ -66,6 +67,7 @@ function createdList(listArr) {
 
 // 주류 페이지 수
 function AlcoholPageSize(targetNo) {
+  console.log(targetNo)
   if (targetNo == 0) {
     fetch("/alcohol/size")
       .then(response => {
@@ -73,6 +75,7 @@ function AlcoholPageSize(targetNo) {
       })
       .then(size => {
         totalPageSize = Math.ceil(size / pageSize); // 총 페이지 수
+        console.log(totalPageSize);
       });
   } else {
     fetch(`/alcohol/targetSize?targetNo=${targetNo}`)
@@ -81,14 +84,13 @@ function AlcoholPageSize(targetNo) {
       })
       .then(size => {
         totalPageSize = Math.ceil(size / pageSize); // target 총 페이지 수
+        console.log(totalPageSize);
       });
   }
 }
 
 // 전체 list 생성
 function allList() {
-  AlcoholPageSize(0);
-  console.log(totalPageSize);
   pageNumber.innerHTML = "1";
   fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${pageNo}`)
     .then(function(response) {
@@ -115,8 +117,8 @@ nextBtn.addEventListener("click", (e) => {
       .then(function(alcohols) {
         createdList(alcohols);
       })
+
   } else {
-    // pageNumber.innerHTML = "1";
     fetch(`/alcohol/targetList?targetNo=${categoryTargetNo}&pageSize=${pageSize}&pageNo=${pageNo + 1}`)
       .then(function(response) {
         return response.json()
@@ -175,22 +177,24 @@ function targetList(targetNo) {
     .then(function(alcohols) {
       createdList(alcohols);
       console.log(targetArr);
+      if (totalPageSize == 1) {
+        nextBtn.classList.add("page-btn-act")
+      }
     })
 }
 
 
 // 카테고리 버튼
 lightBtn.addEventListener("click", function(e) {
+
+  console.log(totalPageSize);
+  categoryTargetNo = e.target.value;
+  AlcoholPageSize(categoryTargetNo);
   // let totalPageSize;
   targetArr = [];
   pageNo = 1;
   nextBtn.classList.remove("page-btn-act")
   preBtn.classList.add("page-btn-act")
-
-  categoryTargetNo = e.target.value;
-  console.log(categoryTargetNo);
-
-  AlcoholPageSize(categoryTargetNo);
 
   if (e.target == e.currentTarget) {
     return;
@@ -205,9 +209,9 @@ lightBtn.addEventListener("click", function(e) {
     }
     if (categoryTargetNo != 0) {
       targetList(categoryTargetNo);
-      console.log(totalPageSize);
     }
   }
+  console.log(totalPageSize);
 });
 
 // 필터 버튼
