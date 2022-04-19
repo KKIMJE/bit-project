@@ -22,7 +22,7 @@
       showCancelButton: true,
       inputValidator: (value) => {
         return new Promise((resolve) => {
-          if (value === 'oranges') {
+          if (value === '태그') {
             resolve()
           } else {
             resolve('적어도 하나의 태그를 선택하셔야 합니다 :)')
@@ -30,6 +30,12 @@
         })
       }
   })
+<<<<<<< HEAD
+  if (fruit) {
+    Swal.fire(`You selected: ${태그}`)      
+  }
+=======
+>>>>>>> 8854438d6f4558b963d01692da6b84412df8dac5
    
   var xStoreName = document.querySelector("input[name=storeName]");
   var xTel = document.querySelector("input[name=tel]");
