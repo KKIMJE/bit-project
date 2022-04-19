@@ -31,11 +31,11 @@
       <result column="tag_no" property="tagNo"/>
       <result column="name" property="name"/>
     </collection>
-    
+<!--
     <collection property="StoreSelect" ofType="storeSelect">
       <result column="store_no" property="storeNo"/>
       <result column="mno" property="mNo"/>
-    </collection>
+    </collection> -->
     
   </resultMap>
 
