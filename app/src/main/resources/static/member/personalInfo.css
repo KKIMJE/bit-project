@@ -27,17 +27,19 @@
   .x-info-div-container{
     padding-left: 5%;
   }
-   
-  #x-leave-btn {
-     margin-left:90%;
-     background-color:#FFFFFF;
-     color:#d0d0d0;
-     border-radius:10px;
-     width:80px;
-     margin-top: 10px;
-   }
-   
-  #x-update-btn{ 
+  
+  .submit-exit-btn {
+  all: unset;
+  color: #EEEFF1;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #29c05e;
+  border-radius: 5px;
+  margin-left: 14px;
+  padding: 8px;
+  width: 60px;
+}
+  .submit-change-btn{ 
      /* margin-left:85%;
      background-color:#FFFFFF;
      color:#000000;
@@ -56,6 +58,17 @@
      font-size:10px;
       text-decoration:underline;
     margin-bottom: 0rem;}
+  
+   
+  #delete {
+     margin-left:90%;
+     background-color:#FFFFFF;
+     color:#d0d0d0;
+     border-radius:10px;
+     width:80px;
+     margin-top: 10px;
+   }
+   
   
   
   

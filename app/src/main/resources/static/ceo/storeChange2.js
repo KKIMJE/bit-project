@@ -1,29 +1,25 @@
 /* 삭제 추가 */ 
       // 1) URL에서 쿼리스트링(query string)을 추출한다.
    var arr = location.href.split("?"); 
-  console.log(arr);
+   console.log(arr);
+    var storeNo;
 
-  if (arr.length == 1) {
-    alert("요청 형식이 올바르지 않습니다.")
-    throw "URL 형식 오류!";
-  }
+  if (arr.length > 1) {
+    
 
   var qs = arr[1];
   console.log(qs);
 
   
   var params = new URLSearchParams(qs);
-  var storeNo= params.get("storeNo"); 
+  storeNo= params.get("storeNo"); 
 
-  if (storeNo == null) {
-    alert("해당번호의 가게가 없습니다!");
-    throw "파라미터 오류!";
+  console.log(storeNo);
   }
-  console.log(no);
-
+  
+  
 //가게명 주소 주점테마 전화번호 영업시간 가게소개 사업자등록번호 , 태그(아직추가안함), 파일업로드 (추가안함)
-  var xMenu = document.querySelector("input[name=menu]");
-  var xPrice=document.querySelector("input[name=price]");
+  var xStoreNo = document.querySelector("input[name=storeNo]");
   var xOptionDivContainer = document.querySelector("#x-option-div-container");
   var xTel = document.querySelector("input[name=tel]");
   var xHour = document.querySelector("textarea[name=hour]");

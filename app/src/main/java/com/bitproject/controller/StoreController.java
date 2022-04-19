@@ -23,7 +23,7 @@ public class StoreController {
 
   @RequestMapping("/store/add")
   public Object add(Store store) {
-    //System.out.println("store: " + store);
+    System.out.println("store: " + store);
     return storeService.add(store);
   }
 

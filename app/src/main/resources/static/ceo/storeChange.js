@@ -110,7 +110,7 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
       
     }
 
-  document.querySelector("#next").onclick = function() {
+  document.querySelector("#change").onclick = function() {
     if (xStoreName.value == "" ||  xTel.value == "" || xHour.value == "" ) {
       window.alert("필수 입력 항목이 비어 있습니다.");
       return;
@@ -129,7 +129,7 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
         console.log(result); // 1
         //if (result.status == "success") {
           if (result == 1) {
-          location.href = "/mypage(CEO)/storeChange.html?storeNo="+storeNo;
+          location.href = "/ceo/storeChange.html?storeNo="+storeNo;
         } else {
           window.alert("주점 변경 실패!");
           console.log(result.data);
@@ -139,11 +139,17 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
  
  
     document.querySelector("#exit").onclick = function() {
-        window.location.href = "../main/main.html";
+        window.location.href = "/ceo/storemanagement.html";
+      };
+
+      
+      
+       document.querySelector("#next").onclick = function() {
+        window.location.href = "/ceo/storeChange2.html";
       };
     
 
-  document.querySelector("#delete").onclick = function() {
+  /*document.querySelector("#delete").onclick = function() {
     fetch(`/store/delete?no=${storeNo}`)
       .then(function(response) {
         return response.json();
@@ -151,12 +157,12 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
       .then(function(result) { 
         //if (result.status == "success") {
         if (result == 1) {
-          location.href = "/mypage(CEO)/storeChange.html";
+          location.href = "/ceo/storeChange.html";
         } else {
           window.alert("주점 삭제 실패!");
           console.log(result);
         }
       });
       
-  };
+  };*/
   
