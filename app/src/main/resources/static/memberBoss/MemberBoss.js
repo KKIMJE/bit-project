@@ -1,5 +1,5 @@
 
-<<<<<<< HEAD
+
 $().ready(function () {s
 $("#add_tag").click(function () {
 const { value: fruit } = Swal.fire({
@@ -40,7 +40,7 @@ if (fruit) {
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-=======
+
   $("#add_tag").click(async function () {
     const { value: 태그 } = await Swal.fire({
       title: '사장님 가게에 어울리는 태그를 선택하세요',
@@ -71,7 +71,6 @@ if (fruit) {
         })
       }
     })
->>>>>>> d697149d5f8f4036b9574816f741493ae6dada08
 
     if (fruit) {
       Swal.fire(`You selected: ${fruit}`)
@@ -117,7 +116,6 @@ if (fruit) {
 
   }
 
-<<<<<<< HEAD
       document.querySelector("#exit").onclick = function() {
         window.location.href = "../main/main.html";
       };
@@ -125,6 +123,4 @@ if (fruit) {
     document.querySelector("#next").onclick = function() {
         window.location.href = "../ceo/storemanagement.html";
       };
-=======
-      
->>>>>>> d697149d5f8f4036b9574816f741493ae6dada08
+
