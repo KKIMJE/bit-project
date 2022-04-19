@@ -48,7 +48,7 @@ function mapMarker(store) {
         // 커스텀 오버레이를 생성합니다
         var customOverlay = new kakao.maps.CustomOverlay({
             position: coords,
-            content: `<div id="mapInfo"><span>${name}</span></div>`
+            content: `<div id="mapInfo"><span><i class="fa-solid fa-location-dot"></i></span></div>`
         });
 
         // 커스텀 오버레이를 지도에 표시합니다
@@ -71,14 +71,17 @@ function storeTextBox (store) {
   let storeIntro = document.querySelector(".storeIntro")
   let storeTimeInfo = document.querySelector(".storeTimeInfo")
   let storeStar = document.querySelector(".storeStar")
-
+  let storeTag = document.querySelector(".storeTag")
   
+  // 주점입장에서 어떤주점을 누가 찜을 했느가
+
   
   storeName.innerHTML = store.storeName // 주점이름
   storeAddress.innerHTML += store.address // 주점주소
   storeTel.innerHTML += store.tel // 주점주소
   storeIntro.innerHTML += store.introduction // 주점소개
   storeTimeInfo.innerHTML = store.hour // 영업시간
+  storeTag.innerHTML += tags(store.tags) // 태그
   storeStar.innerHTML = printStar(store.evaluationScore) // 별점
   storeOper.innerHTML = printOper(store.oper) + " / " +  "&nbsp;" // 영업여부, 거리
   computeDistance(store.address) // 거리계산
@@ -92,6 +95,18 @@ function printOper(oper) {
     status = "휴일"
   }
   return status;
+}
+// 태그
+function tags (tagArr) {
+  let tagStr = ""
+  for (let i=0; i < tagArr.length; i++) {
+    if (i == tagArr.length-1) {
+      tagStr += tagArr[i].name
+    } else {
+      tagStr += tagArr[i].name + ", "
+    }
+  }
+  return tagStr
 }
 // 별점
 function printStar(score) {

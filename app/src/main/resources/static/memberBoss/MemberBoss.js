@@ -1,21 +1,5 @@
-/*$().ready(function() {
-    $("#ceo-account-btn").click(function () {
-                Swal.fire({
-                    icon: 'success',
-                    text: '주점을 등록하면 사장님 계정이 생성됩니다.',
-                    showCancelButton:true,
-                    confirmButtonColor:'#90d483',
-                    cancelButtonColor: '#90d483',
-                    confirmButtonText:'들어가기',
-                    cancelButtonText:'나가기'
-                }).then((result) => {
-                  if(result.isConfirmed) {
-                    location.href = "../../memberBoss/MemberBoss.html";
-                  }
-                })
-            });
-        });*/
 
+<<<<<<< HEAD
 $().ready(function () {s
 $("#add_tag").click(function () {
 const { value: fruit } = Swal.fire({
@@ -56,86 +40,84 @@ if (fruit) {
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+=======
+  $("#add_tag").click(async function () {
+    const { value: 태그 } = await Swal.fire({
+      title: '사장님 가게에 어울리는 태그를 선택하세요',
+      input: 'select',
+      inputOptions: {
+        '태그선택': {
+           apples: 'Apples',
+           bananas: 'Bananas',
+           grapes: 'Grapes',
+           oranges: 'Oranges'
+        },
+        'Vegetables': {
+           potato: 'Potato',
+           broccoli: 'Broccoli',
+           carrot: 'Carrot'
+        },
+        'icecream': 'Ice cream'
+      },
+      inputPlaceholder: '태그 선택하기',
+      showCancelButton: true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value === 'oranges') {
+            resolve()
+          } else {
+            resolve('적어도 하나의 태그를 선택하셔야 합니다 :)')
+          }
+        })
+      }
+    })
+>>>>>>> d697149d5f8f4036b9574816f741493ae6dada08
 
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
+    if (fruit) {
+      Swal.fire(`You selected: ${fruit}`)
     }
-    
+  })
+  
    
-      var xStoreName = document.querySelector("input[name=storeName]");
-      var xTel = document.querySelector("input[name=tel]");
-      var xHour = document.querySelector("textarea[name=hour]");
-        var xIntroduction = document.querySelector("textarea[name=introduction]");
-         
+  var xStoreName = document.querySelector("input[name=storeName]");
+  var xTel = document.querySelector("input[name=tel]");
+  var xHour = document.querySelector("textarea[name=hour]");
+  var xIntroduction = document.querySelector("textarea[name=introduction]");
 
-      document.querySelector("form[name=login__form]").onsubmit = function() {
-       /* if (xNam.value == ""  
-            xEmail.value == "" 
-            xPassword.value == "") {
-          window.alert("필수 입력 항목이 비어 있습니다.");
+  document.querySelector("form[name=login__form]").onsubmit = function() {
+    /*if(xNam.value == ""  
+         xEmail.value == "" 
+         xPassword.value == "") {
+         window.alert("필수 입력 항목이 비어 있습니다.");
           return false;
-        }*/
+         }*/
 
-        var fd = new FormData(document.forms.namedItem("login__form"));
+    var fd = new FormData(document.forms.namedItem("login__form"));
+    fetch("/store/add",{ 
+      method: "POST",
+      body: new URLSearchParams(fd)
+    }) 
+    .then(function(response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function(result) {
+      console.log(result);
+      if (result.status == "success") {
+        alert("성공했습니다")
+      } else {
+        window.alert("실패!!");
+      }
+    });
+  
+          
+    document.querySelector("#exit").onclick = function() {
+      window.location.href = "../ceo/storemanagement.html";
+    };
 
-        fetch("/store/add", { 
-            method: "POST",
-            body: new URLSearchParams(fd)
-          }) 
-          .then(function(response) {
-            console.log(response);
-            return response.json();
-          })
-          .then(function(result) {
-            console.log(result);
-           /* if (result.status == "success") {
-             alert("성공했습니다")
-            } else {
-              window.alert("실패!!");
-            }*/
-          });
-       
-      };
+  }
 
+<<<<<<< HEAD
       document.querySelector("#exit").onclick = function() {
         window.location.href = "../main/main.html";
       };
@@ -143,3 +125,6 @@ if (fruit) {
     document.querySelector("#next").onclick = function() {
         window.location.href = "../ceo/storemanagement.html";
       };
+=======
+      
+>>>>>>> d697149d5f8f4036b9574816f741493ae6dada08
