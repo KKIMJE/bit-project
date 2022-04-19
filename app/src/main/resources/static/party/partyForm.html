@@ -17,11 +17,6 @@
         <link rel="stylesheet" href="../css/common.css">
         <link rel="stylesheet" href="partyForm.css">
 
-        <!-- 스마트에디터 -->
-        <script src="../asset/summernote-0.8.18-dist/summernote-lite.js"></script>
-        <script src="../asset/summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
-        <link rel="stylesheet" href="../asset/summernote-0.8.18-dist/summernote-lite.css">
-
         <title>야술먹자 우리지금만나 글쓰기</title>
         
         <!-- Bootstrap js -->
@@ -30,6 +25,11 @@
         <script src="../../node_modules/axios/dist/axios.js"></script>
         <!-- jquery -->
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+        <!-- 에디터 -->
+        <script src="../asset/summernote-0.8.18-dist/summernote-lite.js"></script>
+        <script src="../asset/summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
+        <link rel="stylesheet" href="../asset/summernote-0.8.18-dist/summernote-lite.css">
 
         <script>
             $(document).ready(function () {
@@ -42,36 +42,36 @@
 
         <div id="header"></div>
 
-        
-      <select class="board-category">
-        <option>게시판을 선택해주세요</option>
-        <option>술집추천</option>
-        <option>분실/실종센터</option>
-        <option>일상</option>
-        <option>사건사고</option>
-        <option>술게임</option>
-        <option>기타</option>
-        <option>우리지금만나</option>
-        <option>기타</option>
-      </select>
-
-      <button class="save" type="button"><span style="margin-left:12px;">저장</span></button>
-      <button class="quit" type="button"><span style="margin-left:4px;">나가기</span></button>
-
-      <input class="write-title" type="text" name="title" value=""placeholder="제목을 입력해주세요" >
-
-      <div class="select-Category">
-        <div class="picture" type="button"><i class="fa-solid fa-file-image fa-3x"></i></div>
-      </div>
-
-
-    <div class="smart-editor">
-      <form method="post">
-        <textarea id="summernote" name="editordata"></textarea>
-      </form>
-    </div>
+        <div class="editor">
+          <form name="partyBoard" method="post">
+            <div class="editorbtns">
+              <button class="save" type="button"><span>저장</span></button>
+              <button class="quit" type="button"><span>나가기</span></button>
+            </div>
       
-    
+            <input class="party-title" type="text" name="title" value=""placeholder="제목을 입력해주세요" >
+      
+            <div class="select-poption">
+              <div class="picture" type="button"><i class="fa-solid fa-location-dot"></i></div>
+              <input name="date" type="date" class="picture"><i class="fa-solid fa-calendar-days"></i>
+              <div class="picture" type="button"><i class="fa-solid fa-bottle-droplet"></i>
+                <p>주종
+                  <select>
+                    <option value="1">소주</option>
+                    <option value="2">맥주</option>
+                  </select>
+                </p>
+              </div>
+              <input name="date" type="text" class="picture"><i class="fa-solid fa-whiskey-glass"></i></div>
+              <input name="date" type="number" class="picture"><i class="fa-solid fa-won-sign"></i></div>
+              <input name="date" type="text" class="picture"><i class="fa-solid fa-user"></i></div>
+            </div>
+
+            <textarea id="summernote" name="editordata"></textarea>
+
+          </form>
+        </div>
+      
         <div id="footer"></div>
 
     <!-- icons -->
