@@ -130,7 +130,7 @@ fetch(`/alcohol/get?no=${no}`)
       `
       storeListDiv.innerHTML = tmpDiv
     }
-    
+
     for (let i = 0; i < alcohol.stores.length; i++) {
 
       if (alcohol.stores[i].status == true) {
@@ -141,7 +141,7 @@ fetch(`/alcohol/get?no=${no}`)
 
       let storeItemDiv = `
       <div class="store-item-div">
-        <a href="#">
+        <a href="/store/storeDetail.html?no=${alcohol.stores[i].storeNo}">
           <img class="store-img" src="${alcohol.storeImgs[i].storeImg}">
           <div class="item-div">
             <span class="store-name">${alcohol.stores[i].storeName}</span>
