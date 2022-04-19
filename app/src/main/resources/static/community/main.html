@@ -72,10 +72,7 @@
          <div class="location__">
            <h5>현재 위치</h5>
          </div>
-         <div class="serch">
-           <input class="serch_box" type="text" placeholder="키워드를 입력해주세요" name="" value="">
-           <button class="serch_btn">검색</button>
-         </div>
+
        </div>
 
    <!-- 필터 -->
@@ -92,11 +89,13 @@
 
        <!-- 최신순 공감순 글쓰기 -->
      <div class="recent_like">
-         <button type="button"><i class="fa-regular fa-circle"></i> 최신순</button>
-         <button type="button"><i class="fa-regular fa-circle"></i> 공감순</button>
+         <button id="recent" class="recent order bold" type="button" data-datanm="communityDt"><i class="fa-regular fa-circle"></i> 최신순</button>
+         <button id="like" type="button" data-datanm="communityLike"><i class="fa-regular fa-circle"></i> 공감순</button>
      </div>
 
-      <button class="writing__" type="button"><i class="fa-solid fa-pen"></i>  글쓰기</button>
+     <button class="writing__" type="button">
+         <i class="fa-solid fa-pen"></i>&nbsp;글쓰기
+     </button>
 
 
      <div class="card">

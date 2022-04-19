@@ -44,14 +44,20 @@ function sortCategory(no) {
 
 usedBoard = [];
 
-function findDupliBoard(arr1, arr2) {
-   newBoards = arr1.concat(arr2).filter(item => !arr2.includes(item));
-   for (var i = 0; i < arr1.length; i++) {
-     if(newBoards[i].communityNo === arr1[i].communityNo) {
+newBoards = [];
 
+function findDupliBoard(arr1, arr2) {
+   // newBoards = arr1.filter(item => !arr2.includes(item));
+
+   for (var i = 0; i < arr1.length; i++) {
+     newBoards.push()
+     for (var j = 0; j < arr2.length; j++) {
+       if(`arr1[i].communityNo` === `arr2[i].communityNo`) {
+         newBoards.pop()
+         break;
+       }
      }
    }
-
    return newBoards
 }
 
@@ -64,27 +70,28 @@ function allList() {
       return response.json()
     })
     .then(function(boards) {
-      findDupliBoard(boards, usedBoard)
-      console.log(newBoards);
-      console.log(usedBoard);
+
+
       for (var i = 0; i < 5; i++) {
         var div = document.createElement("div")
         div.classList.add("card-body")
         div.innerHTML = `
             <img class="community_img" src="">
-            <div class="card-category">${newBoards[i].communityNo}</div><br>
+            <div class="card-category">${boards[i].communityNo}</div><br>
             <div class="contents">
-              <div class="card-contents-name">${newBoards[i].boardTitle}</div>
-              <div id="card-contents">${newBoards[i].boardContents}<button class="see_more">. . .</button></div><br>
+              <div class="card-contents-name">${boards[i].boardTitle}</div>
+              <div id="card-contents">${boards[i].boardContents}<button class="see_more">. . .</button></div><br>
             </div> <br>
-            <div class="card-like"><i class="fa-regular fa-thumbs-up"></i> ${newBoards[i].boardLike}</div>
-            <div class="card-comment"><i class="fa-regular fa-comment"></i> 댓글 ${newBoards[i].boardCommentCount}</div>
-            <div class="community_time">` + timeCheck(`${newBoards[i].regDate}`) + `</div>
-            <div class="community_writer">${newBoards[i].name}</div>
+            <div class="card-like"><i class="fa-regular fa-thumbs-up"></i> ${boards[i].boardLike}</div>
+            <div class="card-comment"><i class="fa-regular fa-comment"></i> 댓글 ${boards[i].boardCommentCount}</div>
+            <div class="community_time">` + timeCheck(`${boards[i].regDate}`) + `</div>
+            <div class="community_writer">${boards[i].name}</div>
         `
         boardCardDiv.appendChild(div)
-        usedBoard = usedBoard.concat(newBoards[i])
 
+
+        boards.shift()
+        // pop() 마지막
       }
     })
 }
@@ -202,6 +209,23 @@ lightBtn.addEventListener("click", function(e) {
     }
   }
 })
+
+$("#recent").click(function() {
+	var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
+	listSortDate($(this), dataNm);
+});
+
+function listSortDate($targetObj, dataNm){
+  $('.card').html(
+    $('.card .card-body').sort(function(a, b){
+      return $(b).data(dataNm) - $(a).data(dataNm);
+    })
+  );
+
+  $(".order").removeClass("bold");
+  $targetObj.addClass("bold");
+}
+
 
 // // ===== 무한 스크롤 (스크롤 이벤트) =====
 // document.addEventListener("scroll", debounce(e => {

@@ -12,10 +12,10 @@ public class StoreController {
 
   @Autowired
   StoreService storeService;
-  
-//  @Autowired
-//  StoreDao storeDao;
-  
+
+  //  @Autowired
+  //  StoreDao storeDao;
+
   @RequestMapping("/store/list")
   public Object list() {
     return storeService.list();
@@ -23,7 +23,7 @@ public class StoreController {
 
   @RequestMapping("/store/add")
   public Object add(Store store) {
-    //System.out.println("store: " + store);
+    System.out.println("store: " + store);
     return storeService.add(store);
   }
 
@@ -51,13 +51,13 @@ public class StoreController {
     int row_num = storeService.delete(no);
     //System.out.println("After Update: " + row_num);
     return row_num;
-   // return storeService.delete(no);
+    // return storeService.delete(no);
   }
-  
-//  @RequestMapping("/store/error")
-//  public error(Store no) {
-//    return storeService.error(no);
-//  }
-  
-  
+
+  //  @RequestMapping("/store/error")
+  //  public error(Store no) {
+  //    return storeService.error(no);
+  //  }
+
+
 }
