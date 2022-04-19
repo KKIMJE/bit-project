@@ -78,58 +78,58 @@
 <div class="x-info-div-container"> 
 <div class ="personal-info-setting" style= "margin-top:-20px;">
 <p>실명<br><br>
-<input id="x-name" type="text" name="name" value="홍길동" ></p><br><br>
+<input id="x-name" type="text" name="name"  ></p><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-5px;">
 닉네임
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
-   <button id="x-update-btn" type="button">수정</button><p><br><br>
+   <button type="button"  class="submit-change-btn">수정</button><p><br><br>
     </div>
-<input id="x-nickname" type="text"  name="nickname" value="김흥국"> </p><br><br>
+<input id="x-nickname" type="text"  name="nickname" > </p><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
 성별
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
-   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    <button type="button"  class="submit-change-btn">수정</button><p><br><br>
     </div>
-<input id="x-sex" type="text"  name="sex" value="남"> </p><br><br>
+<input id="x-sex" type="text"  name="gender" > </p><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
 생년월일
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
-   <button id="x-update-btn" type="button">수정</button><p><br><br>
+   <button type="button"  class="submit-change-btn">수정</button><p><br><br>
     </div>
-<input id="x-birth" type="text" name="date" value="2000.02.02"><p><br><br>
+<input id="x-birth" type="text" name="birth" ><p><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
 <p>이메일 주소<br><br>
-<input id="x-e-address" type="email" name="email" value="aaa@test.com"><p><br><br>
+<input id="x-e-address" type="email" name="email" ><p><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;"></div>
 비밀번호
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
-   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    <button type="button" class="submit-change-btn">수정</button><p><br><br>
     </div>
-<input id="x-pwd" type="password" name="pwd" value="0000"><br><br>
+<input id="x-pwd" type="password" name="password" ><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;"></div>
 전화번호
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
-   <button id="x-update-btn" type="button">수정</button><p><br><br>
+    <button type="button"  class="submit-change-btn">수정</button><p><br><br>
     </div>
     
-<input id="x-phonenumber" type="tel" name="tel"  value="01012345678"><br><br>
+<input id="x-phonenumber" type="tel" name="tel" ><br><br>
 </div>
 
 <div class ="personal-info-setting" style= "margin-top:-10px;">
@@ -142,16 +142,19 @@ SNS계정<br><br><br>
 자기소개 
 <div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
-   <button id="x-update-btn" type="button">수정</button><p><br><br>
+   <button type="button"  class="submit-change-btn">수정</button><p><br><br>
     </div>
     
-<textarea onkeydown = 'counter();' id='x-self-intro'>
-안녕하세요!      
-           
+<textarea name="selfIntroduction" onkeydown = 'counter();' id='x-self-intro'>
 </textarea><br><!-- <span id="count">0/300자</span><br><br>-->
  </div>   
 </div> 
-<button id="x-leave-btn" type="button">탈퇴하기</button>
+<button type="button" id="delete" class="submit-delete-btn">탈퇴하기</button>
+
+<!--<center><div class="btn">
+ <button type="button" id="exit" class="submit-exit-btn">나가기</button>
+  </div>
+  </center>-->
 </form>
 
 </content>

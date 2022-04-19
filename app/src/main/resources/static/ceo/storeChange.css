@@ -65,7 +65,7 @@ h1 {
    width: 60px;
 }
 
-.submit-next-btn {
+.submit-change-btn {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
@@ -77,7 +77,7 @@ h1 {
   width: 60px;
 }
 
-.submit-exit-btn,.submit-delete-btn {
+.submit-next-btn,.submit-exit-btn {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;

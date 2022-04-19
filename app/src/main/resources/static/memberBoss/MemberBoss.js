@@ -16,6 +16,42 @@
             });
         });*/
 
+$().ready(function () {s
+$("#add_tag").click(function () {
+const { value: fruit } = Swal.fire({
+  title: 'Select field validation',
+  input: 'select',
+  inputOptions: {
+    'Fruits': {
+      apples: 'Apples',
+      bananas: 'Bananas',
+      grapes: 'Grapes',
+      oranges: 'Oranges'
+    },
+    'Vegetables': {
+      potato: 'Potato',
+      broccoli: 'Broccoli',
+      carrot: 'Carrot'
+    },
+    'icecream': 'Ice cream'
+  },
+  inputPlaceholder: 'Select a fruit',
+  showCancelButton: true,
+  inputValidator: (value) => {
+    return new Promise((resolve) => {
+      if (value === 'oranges') {
+        resolve()
+      } else {
+        resolve('You need to select oranges :)')
+      }
+    })
+  }
+});
+
+if (fruit) {
+  Swal.fire(`You selected: ${fruit}`)
+}
+
    function sample6_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -104,3 +140,6 @@
         window.location.href = "../main/main.html";
       };
     
+    document.querySelector("#next").onclick = function() {
+        window.location.href = "../ceo/storemanagement.html";
+      };
