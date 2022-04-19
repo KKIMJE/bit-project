@@ -73,7 +73,7 @@ function storeTextBox (store) {
   let storeStar = document.querySelector(".storeStar")
   let storeTag = document.querySelector(".storeTag")
   
-
+  // 주점입장에서 어떤주점을 누가 찜을 했느가
 
   
   storeName.innerHTML = store.storeName // 주점이름

@@ -15,7 +15,7 @@ public class Store {
   int tagNo;
   String businessRegistration;
   List<Tag> Tags;
-  List<StoreSelect> StoreSlect;
+  List<StoreSelect> storeSelect;
   String storeName;
   String address;
   String tel;

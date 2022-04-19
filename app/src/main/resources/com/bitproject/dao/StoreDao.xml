@@ -32,7 +32,7 @@
       <result column="name" property="name"/>
     </collection>
     
-    <collection property="StoreSelect" ofType="StoreSelect">
+    <collection property="StoreSelect" ofType="storeSelect">
       <result column="store_no" property="storeNo"/>
       <result column="mno" property="mNo"/>
     </collection>
@@ -128,7 +128,6 @@
       s.lng,
       s.place_id,
       s.oper,
-<<<<<<< HEAD
       s.status,
 	  t.name
 	from 
@@ -141,26 +140,26 @@
   
     <!-- 
     parameterType => 메서드의 파라미터 타입 및 개수와 일치해야 한다.
-   -->
+   
   <select id="countMno" resultType="int">
     select 
       count(sst.mno) 
     from 
       join store_select sst on sst.store_no=store.store_no
-=======
+
       s.status
-      <!-- ( SELECT t.name
+       ( SELECT t.name
             FROM tag t
-           WHERE t.tag_no = stag.tag_no ) AS tagName-->
+           WHERE t.tag_no = stag.tag_no ) AS tagName
     from
       store s
-      <!--inner join store_tag stag on s.store_no=stag.store_no,
-      tag-->
+      inner join store_tag stag on s.store_no=stag.store_no,
+      아예 스토어 셀렉트를 가져와라 가져와서 mno만 세라 store_no=#{no}로 판별하면됨
+      tag
     where 
       s.store_no=#{no}
->>>>>>> 03a1ed73701e4478f608beb69f42b75ae56b1c31
   </select>
-
+-->
   <update id="update" parameterType="Store">
     update store set
       business_registration_no=#{businessRegistrationNo}, 
