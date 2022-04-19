@@ -15,7 +15,6 @@ let pageNo = 1;
 let totalPageSize = 0; // 전체 페이지 사이즈
 let totalTargetPageSize = 0; // 카테고리별 페이지 사이즈
 
-
 // 전체 주류 개수
 fetch("/alcohol/size")
   .then(response => {
@@ -88,6 +87,7 @@ fetch(`/alcohol/targetSize?targetNo=${targetNo}`)
 
 // 전체 list 생성
 function allList() {
+  pageNumber.innerHTML = "1";
   fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${pageNo}`)
     .then(function(response) {
       return response.json()
@@ -139,8 +139,6 @@ preBtn.addEventListener("click", (e) => {
 })
 
 
-
-
 // target list 생성
 function targetList(targetNo) {
   pageNumber.innerHTML = "1";
@@ -171,6 +169,8 @@ lightBtn.addEventListener("click", function(e) {
     console.log(categoryTargetNo);
 
     if (categoryTargetNo == 0) {
+      pageNo = 1;
+      preBtn.classList.add("page-btn-act")
       allList()
     }
     if (categoryTargetNo != 0) {
