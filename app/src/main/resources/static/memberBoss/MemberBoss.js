@@ -9,6 +9,7 @@
            역세권: '역세권',
            현지인: '현지인',
            헌팅: '헌팅',
+        },
            분위기좋은: '분위기좋은',
            데이트: '데이트',
            가성비: '가성비',
@@ -28,10 +29,6 @@
           }
         })
       }
-
-         if (fruit) {
-           Swal.fire(`You selected: ${fruit}`)
-    }
   })
    
   var xStoreName = document.querySelector("input[name=storeName]");
@@ -77,3 +74,4 @@
 
   }
 
+    }) 
