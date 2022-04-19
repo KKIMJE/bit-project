@@ -128,6 +128,7 @@
       s.lng,
       s.place_id,
       s.oper,
+<<<<<<< HEAD
       s.status,
 	  t.name
 	from 
@@ -146,6 +147,18 @@
       count(sst.mno) 
     from 
       join store_select sst on sst.store_no=store.store_no
+=======
+      s.status
+      <!-- ( SELECT t.name
+            FROM tag t
+           WHERE t.tag_no = stag.tag_no ) AS tagName-->
+    from
+      store s
+      <!--inner join store_tag stag on s.store_no=stag.store_no,
+      tag-->
+    where 
+      s.store_no=#{no}
+>>>>>>> 03a1ed73701e4478f608beb69f42b75ae56b1c31
   </select>
 
   <update id="update" parameterType="Store">

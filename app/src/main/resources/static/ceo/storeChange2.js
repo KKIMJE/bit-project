@@ -1,36 +1,4 @@
-/*$().ready(function() {
-    $("#ceo-account-btn").click(function () {
-                Swal.fire({
-                    icon: 'success',
-                    text: '주점을 등록하면 사장님 계정이 생성됩니다.',
-                    showCancelButton:true,
-                    confirmButtonColor:'#90d483',
-                    cancelButtonColor: '#90d483',
-                    confirmButtonText:'들어가기',
-                    cancelButtonText:'나가기'
-                }).then((result) => {
-                  if(result.isConfirmed) {
-                    location.href = "../../memberBoss/MemberBoss.html";
-                  }
-                })
-            });
-        });*/
-
-/* 주소입력 */
-window.onload = function(){
-    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
-        //카카오 지도 발생
-        new daum.Postcode({
-            oncomplete: function(data) { //선택시 입력값 세팅
-                document.getElementById("address_kakao").value = data.address; // 주소 넣기
-                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
-            }
-        }).open();
-    });
-}
-
-  
-   /* 삭제 추가 */ 
+/* 삭제 추가 */ 
       // 1) URL에서 쿼리스트링(query string)을 추출한다.
    var arr = location.href.split("?"); 
   console.log(arr);
@@ -54,13 +22,13 @@ window.onload = function(){
   console.log(no);
 
 //가게명 주소 주점테마 전화번호 영업시간 가게소개 사업자등록번호 , 태그(아직추가안함), 파일업로드 (추가안함)
-  var xStoreName = document.querySelector("input[name=storeName]");
-  var xAddress = document.querySelector("input[name=address]"); 
+  var xMenu = document.querySelector("input[name=menu]");
+  var xPrice=document.querySelector("input[name=price]");
   var xOptionDivContainer = document.querySelector("#x-option-div-container");
   var xTel = document.querySelector("input[name=tel]");
   var xHour = document.querySelector("textarea[name=hour]");
   var xIntroduction = document.querySelector("textarea[name=introduction]");
-  var xBusinessRegistrationNo = document.querySelector("input[name=businessRegistrationNo]");
+  var xTelDivContainer = document.querySelector("#x-tel-div-container");
   //태그추가해야함
   var xReservationAccept = document.querySelector("#reservationAccept");
   var xMaxMember = document.querySelector("#maxMember");
@@ -115,7 +83,7 @@ window.onload = function(){
       })
       .then(function(result) {
         if (result.status == "success") {
-          location.href = "mypage(CEO)/storeChange.html";
+          location.href = "mypage(CEO)/storeChange2.html";
         } else {
           window.alert("주점 변경 실패!");
           console.log(result.data);

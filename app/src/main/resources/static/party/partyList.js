@@ -12,7 +12,7 @@ fetch("/party/list")
 })
 .then(function(result) {      
     for (var party of result) {
-    pbody.innerHTML += `<a href="/party/partyDetail.html" class="party-list"> 
+    pbody.innerHTML += `<a href="/party/partyDetail.html" class="party-list" data-creatdt="${party.partyNo}"> 
                         <div class="party-body-top">
                             <div class="party-title">${party.title}</div>
                             <div class="party-regdate">${party.regDate}</div>
@@ -144,6 +144,8 @@ function computeDistance() {
             // 1~5km 사이면 km로 출력한다
             // 5km 이상이면 출력하지 않는다.
 
+            $( `#party-body > a:nth-child(${index + 1})` ).attr( 'data-distance', `${distanceValue[index]}` );
+
             if (distanceValue[index] < 1000) {
               $(e).html(distanceValue[index] + "m")
             } else if (1000 <= distanceValue[index] < 5000) {
@@ -152,14 +154,12 @@ function computeDistance() {
               $('.party-list').css('display','none');
             }
           })
-  
       } catch (e) {
           console.log(e);
       }
     })();
   
   }
-
 
 /*********************************
     현주소 혹은 설정된 주소 출력
@@ -250,22 +250,69 @@ $('.position-reload').click(function() {
     location.reload();
 });
 
+
+
 /**************************
     최신순 / 거리순 정렬
 **************************/
+
+/*
 $(".party-sort #btnCreatDtOrder, .party-sort #btnAddressOrder").click(function() {
   // console.log("눌렸다!")
 	var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
+  // console.log($(this));
 	listSort($(this), dataNm);
 });
+*/
 
-function listSort($targetObj, dataNm){
-  // console.log("잉?")
-	//정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
-  $("#party-body").each((index, e) => { 
-    console.log($(this).text());     // 요렇게 하면 현재 요소의 text 값을 콘솔에 출력해줄 것이다.
-  console.log("index : " + index);
-})
+$(".party-sort #btnCreatDtOrder").click(function() {
+	var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
+	listSortDate($(this), dataNm);
+});
+
+$(".party-sort #btnAddressOrder").click(function() {
+	var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
+	listSortAddress($(this), dataNm);
+});
+
+
+function listSortDate($targetObj, dataNm){
+  $('#party-body').html(
+    $('#party-body a').sort(function(a, b){
+      return $(b).data(dataNm) - $(a).data(dataNm);
+    })
+  );
+//현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
+$(".order").removeClass("bold");
+$targetObj.addClass("bold");
+} 
+
+function listSortAddress($targetObj, dataNm){
+    //정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
+    $('#party-body').html(
+      $('#party-body a').sort(function(a, b){
+        return $(a).data(dataNm) - $(b).data(dataNm);
+      })
+    );
+//현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
+$(".order").removeClass("bold");
+$targetObj.addClass("bold");
+  }
+
+
+
+  // function listSort($targetObj, dataNm){
+//   // console.log("잉?")
+// 	//정렬하고자 하는 목록에 대해 sort 해서 다시 html로 뿌려주는 부분.
+//   $("#party-body a").sort(function(a, b){
+//       		return $(b).data(dataNm) - $(a).data(dataNm);
+//     }
+//     )
+//     console.log($(".party-list"));
+//   }
+
+
+
 
 // html(
   // 	$('#party-body li').sort(function(a, b){
@@ -279,4 +326,3 @@ function listSort($targetObj, dataNm){
 	// //현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
 	// $(".order").removeClass("bold");
 	// $targetObj.addClass("bold");
-}

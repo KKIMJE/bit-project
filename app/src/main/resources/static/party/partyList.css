@@ -10,7 +10,7 @@ body {
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: 900;
 }
 
 #party-body > a {
@@ -77,14 +77,6 @@ button {
   position: absolute;
   left: 20px;
   top: 42px;
-}
-
-.party-new {
-  font-weight: 900;
-}
-
-.party-distance {
-  font-weight: 500;
 }
 
 .party-open {
