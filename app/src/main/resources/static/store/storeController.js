@@ -178,9 +178,9 @@ function computeDistance() {
 
         $('.xImg-d').each((index, e) => {
           if (1000 < distanceValue[index]) {
-            $(e).html((distanceValue[index] * 0.001).toFixed(2) + "km")
+            $(e).html(Math.round((distanceValue[index] * 0.001)) + "km")
           } else {
-            $(e).html(distanceValue[index].toFixed(2) + "m")
+            $(e).html(Math.round(distanceValue[index]) + "m")
           }
         })
 
@@ -279,7 +279,7 @@ function nextPreBtnSet() {
         console.log("cursor : " + `${cursor}`);
       }
     });
-  }, 600)
+  }, 500)
 }
 
 // 초기 로드 세팅
