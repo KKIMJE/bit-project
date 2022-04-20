@@ -15,9 +15,10 @@ public class StoreController {
 
   //  @Autowired
   //  StoreDao storeDao;
+  //
 
   @RequestMapping("/store/list")
-  public Object list() {
+  public Object list() {     
     return storeService.list();
   }
 

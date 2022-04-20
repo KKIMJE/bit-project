@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!-- font -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="partyForm.css">
+
+        <title>야술먹자 우리지금만나 글쓰기</title>
+        
+        <!-- Bootstrap js -->
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- axios -->
+        <script src="../../node_modules/axios/dist/axios.js"></script>
+        <!-- jquery -->
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+        <!-- 에디터 -->
+        <script src="../asset/summernote-0.8.18-dist/summernote-lite.js"></script>
+        <script src="../asset/summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
+        <link rel="stylesheet" href="../asset/summernote-0.8.18-dist/summernote-lite.css">
+
+        <script>
+            $(document).ready(function () {
+                $('#header').load('../header/header.html');
+                $('#footer').load('../footer/footer.html');
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div class="editor">
+          <form name="partyBoard" method="post">
+            <div class="editorbtns">
+              <button class="save" type="button"><span>저장</span></button>
+              <button class="quit" type="button"><span>나가기</span></button>
+            </div>
+      
+            <input class="party-title" type="text" name="title" value=""placeholder="제목을 입력해주세요" >
+      
+            <div class="select-poption">
+              <div class="picture" type="button"><i class="fa-solid fa-location-dot"></i></div>
+              <input name="date" type="date" class="picture"><i class="fa-solid fa-calendar-days"></i>
+              <div class="picture" type="button"><i class="fa-solid fa-bottle-droplet"></i>
+                <p>주종
+                  <select>
+                    <option value="1">소주</option>
+                    <option value="2">맥주</option>
+                  </select>
+                </p>
+              </div>
+              <input name="date" type="text" class="picture"><i class="fa-solid fa-whiskey-glass"></i></div>
+              <input name="date" type="number" class="picture"><i class="fa-solid fa-won-sign"></i></div>
+              <input name="date" type="text" class="picture"><i class="fa-solid fa-user"></i></div>
+            </div>
+
+            <textarea id="summernote" name="editordata"></textarea>
+
+          </form>
+        </div>
+      
+        <div id="footer"></div>
+
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
+    <script type="module" src="partyForm.js"></script>
+</body>
+</html>

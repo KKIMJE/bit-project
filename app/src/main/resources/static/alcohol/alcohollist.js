@@ -44,7 +44,12 @@ function createdList(listArr) {
   for (let alcohol of listArr) {
     let div = document.createElement("div")
     div.classList.add("card")
-    div.classList.add("border-white")
+    div.classList.add("border")
+    div.classList.add("border-1")
+    div.classList.add("rounded-3")
+    div.classList.add("shadow-lg")
+    // div.classList.add("border-dark")
+    div.classList.add("x-card-border")
     div.innerHTML = `
     <a class="alc-link" href="alcoholdetail.html?no=${alcohol.alcoholDetailNo}">
     <img src="${alcohol.img}" class="card-img-top">
@@ -52,7 +57,7 @@ function createdList(listArr) {
     <p class="card-text">
     <ul>
     <li>${alcohol.alcoholName}</li>
-    <li class="alchol-degree-value">${alcohol.degree}%</li>
+    <li class="alchol-degree-value">도수: ${alcohol.degree}%</li>
     </ul>
     </p>
     </div>

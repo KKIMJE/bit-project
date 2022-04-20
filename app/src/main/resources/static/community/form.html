@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="form.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- 스마트에디터 -->
-    <script src="summernote-0.8.18-dist/summernote-lite.js"></script>
-    <script src="summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
-    <link rel="stylesheet" href="summernote-0.8.18-dist/summernote-lite.css">
+    <script src="../asset/summernote-0.8.18-dist/summernote-lite.js"></script>
+    <script src="../asset/summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
+    <link rel="stylesheet" href="../asset/summernote-0.8.18-dist/summernote-lite.css">
 
     <title>야술먹자 커뮤니티</title>
 </head>
@@ -68,23 +68,34 @@
 
       <select class="board-category">
         <option>게시판을 선택해주세요</option>
-        <option>술집추천</option>
-        <option>분실/실종센터</option>
-        <option>일상</option>
-        <option>사건사고</option>
-        <option>술게임</option>
-        <option>기타</option>
-        <option>우리지금만나</option>
-        <option>기타</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
       </select>
 
       <button class="save" type="button"><span style="margin-left:12px;">저장</span></button>
       <button class="quit" type="button"><span style="margin-left:4px;">나가기</span></button>
 
-      <input class="write-title" type="text" name="title" value=""placeholder="제목을 입력해주세요" >
+      <input class="write-title" type="text" name="title" value=""placeholder="제목을 입력해주세요">
 
       <div class="select-Category">
-        <div class="picture" type="button"><i class="fa-solid fa-file-image fa-3x"></i></div>
+        <div class="select-picture" type="button"><i class="fa-regular fa-image fa-2x"></i></div><br>
+          <div class="select-picture-detail">사진</div>
+        <div class="select-location" type="button"><i class="fa-solid fa-location-dot fa-2x"></i></div><br>
+          <div class="select-location-detail">장소</div>
+        <div class="select-calender" type="button"><i class="fa-regular fa-calendar-days fa-2x"></i></div><br>
+          <div class="select-calender-detail">일정</div>
+        <div class="select-money" type="button"><i class="fa-solid fa-sack-dollar fa-2x"></i></div><br>
+          <div class="select-money-detail">회비</div>
+        <div class="select-alcohol-category" type="button"><i class="fa-solid fa-bottle-droplet fa-2x"></i></div><br>
+          <div class="select-alcohol-category-detail">주종</div>
+        <div class="select-alcohol-amount" type="button"><i class="fa-solid fa-wine-glass-empty fa-2x"></i></div><br>
+          <div class="select-alcohol-amount-detail">주량</div>
+        <div class="select-people" type="button"><i class="fa-regular fa-user fa-2x"></i></div><br>
+          <div class="select-people-detail">인원</div>
       </div>
 
 
@@ -93,7 +104,7 @@
         <textarea id="summernote" name="editordata"></textarea>
       </form>
     </div>
-      
+
 
 
 

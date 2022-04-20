@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+button{
+  all: unset;
+}
+
+.editor {
+  margin: 110px 0;
+  width: 1100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editorbtns {
+  display: flex;
+  align-items: baseline;
+  justify-content: end;
+}
+
+.save {
+  background: #90D483;
+  width: 90px;
+  height: 40px;
+  color: #343434;
+  border-radius: 10px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.quit {
+  background: #90D483;
+  width: 90px;
+  height: 40px;
+  color: #343434;
+  border-radius: 10px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.party-title {
+  width: 1100px;
+  height: 45px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
+
+.select-poption {
+  display: flex;
+  width: 1100px;
+  height: 60px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
