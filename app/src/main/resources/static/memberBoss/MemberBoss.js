@@ -30,12 +30,11 @@
         })
       }
   })
-<<<<<<< HEAD
+
   if (fruit) {
     Swal.fire(`You selected: ${태그}`)      
   }
-=======
->>>>>>> 8854438d6f4558b963d01692da6b84412df8dac5
+
    
   var xStoreName = document.querySelector("input[name=storeName]");
   var xTel = document.querySelector("input[name=tel]");
