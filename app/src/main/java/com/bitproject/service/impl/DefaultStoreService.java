@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.bitproject.dao.StoreDao;
 import com.bitproject.domain.Store;
 import com.bitproject.service.StoreService;
-
+//
 @Service // Spring IoC 컨테이너가 객체를 만들어 저장할 때 클래스 이름을 사용한다. 예) defaultBoardService
 public class DefaultStoreService  implements StoreService {
 
@@ -46,6 +46,11 @@ public class DefaultStoreService  implements StoreService {
   @Override
   public int getCountMno(int no) {
     return storeDao.findByNoCountMno(no);
+  }
+
+  @Override
+  public List<Store> findByStoreAlc(int no) {
+    return storeDao.findByStoreAlc(no);
   }
 
 }

@@ -8,6 +8,6 @@ public class AlcoholSales{
   int storeNo;
   int alcoholDetailNo;
   int price;
-
+  String name;
 
 }
