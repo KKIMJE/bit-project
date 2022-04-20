@@ -15,6 +15,8 @@ public interface StoreDao {
 
   int findByNoCountMno(int no);
 
+  List<Store> findByStoreAlc(int no);
+
   int update(Store store);
 
   int delete(int no);    

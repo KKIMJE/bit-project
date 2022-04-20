@@ -48,4 +48,9 @@ public class DefaultStoreService  implements StoreService {
     return storeDao.findByNoCountMno(no);
   }
 
+  @Override
+  public List<Store> findByStoreAlc(int no) {
+    return storeDao.findByStoreAlc(no);
+  }
+
 }

@@ -17,5 +17,6 @@ public interface StoreService {
 
   int delete(int no);
 
+  List<Store> findByStoreAlc(int no);
 
 }

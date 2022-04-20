@@ -1,5 +1,6 @@
 package com.bitproject.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,6 +44,12 @@ public class StoreController {
   public int getMnoCnt(int no) {
     //System.out.println("StoreNo: " + no + ", Get Store: " + store);
     return storeService.getCountMno(no);
+  }
+
+  @RequestMapping("/store/getStoreAlc")
+  public List<Store> getStoreAlc(int no) {
+    //System.out.println("StoreNo: " + no + ", Get Store: " + store);
+    return storeService.findByStoreAlc(no);
   }
 
   @PostMapping("/store/update")
