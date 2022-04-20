@@ -51,160 +51,57 @@
       
             <input class="party-title" type="text" name="title" value=""placeholder="제목을 입력해주세요" >
       
+
             <div class="select-poption">
 
-                <!-- Button trigger modal -->
-              <button type="button" id="p-location" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="">
-                <i class="fa-solid fa-location-dot"></i>장소
-              </button>
-
               <!-- Modal -->
-              <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">원하시는 주점을 지도에서 클릭해 선택해주세요</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div id="map"></div>
-                    </div>
-                    <div class="modal-footer">
-                      현재 선택하신 주점은 <span>엘라</span>입니다.
-                      <button type="button" class="btn btn-primary">선택하기</button>
-                    </div>
-                  </div>
-                </div>
-              </div>   -->
-
-
-              <!-- Button trigger modal -->
-              <button type="button" id="p-date" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa-solid fa-calendar-days"></i>일정
-              </button>
-            <!--Modal -->
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">모임을 원하는 날짜를 지정해주세요</h5>
+                      <h5 class="modal-title" id="exampleModalLabel"></h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body p-option">
-                      
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <span></span>
+                      <button type="button" class="btn btn-primary">저장하기</button>
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>  
 
+                <!-- Button trigger modal 장소-->
+              <button type="button" id="p-location" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="">
+                <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;장소
+              </button>
 
+              <!-- Button trigger modal 일정-->
+              <button type="button" id="p-date" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;일정
+              </button>
 
-              <!-- Button trigger modal -->
+              <!-- Button trigger modal 주종-->
               <button type="button" id="p-type" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa-solid fa-bottle-droplet"></i>주종
+                <i class="fa-solid fa-bottle-droplet"></i>&nbsp;&nbsp;주종
               </button>
-              <!-- Modal -->
-              <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">마시고 싶은 주종을 선택해주세요</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                  </div>
-                </div>
-              </div> -->
 
-
-              <!-- Button trigger modal -->
+              <!-- Button trigger modal 주량-->
               <button type="button" id="p-limit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa-solid fa-whiskey-glass"></i>주량
+                <i class="fa-solid fa-whiskey-glass"></i>&nbsp;&nbsp;주량
               </button>
-              <!-- Modal -->
-              <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">원하시는 참여자의 주량을 적어주세요</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                  </div>
-                </div>
-              </div> -->
 
-
-
-              <!-- Button trigger modal -->
+              <!-- Button trigger modal 회비-->
               <button type="button" id="p-fee" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa-solid fa-won-sign"></i>회비
+                <i class="fa-solid fa-won-sign"></i>&nbsp;&nbsp;회비
               </button>
-              <!-- Modal -->
-              <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">모임 회비를 적어주세요</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                  </div>
-                </div>
-              </div> -->
 
-
-
-              <!-- Button trigger modal -->
+              <!-- Button trigger modal 인원-->
               <button type="button" id="p-member" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa-solid fa-user"></i>인원
+                <i class="fa-solid fa-user"></i>&nbsp;&nbsp;인원
               </button>
-              <!-- Modal -->
-              <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">모임 회비를 적어주세요</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                  </div>
-                </div>
-              </div> -->
 
-
-
-
-
-
-
-
-
-
-
-              
-              <input name="date" type="datetime-local" class=""><i class="fa-solid fa-calendar-days"></i>
-              <div class="" type="button"><i class="fa-solid fa-bottle-droplet"></i>
-                <p>주종
-                  <select>
-                    <option value="1">소주</option>
-                    <option value="2">맥주</option>
-                    <option value="3">와인</option>
-                    <option value="4">막걸리</option>
-                    <option value="5">양주</option>
-                    <option value="6">사케</option>
-                    <option value="7">전통주</option>
-                    <option value="8">기타</option>
-                  </select>
-                </p>
-              </div>
-              <input name="date" type="text" class=""><i class="fa-solid fa-whiskey-glass"></i></div>
-              <input name="date" type="number" class=""><i class="fa-solid fa-won-sign"></i></div>
-              <input name="date" type="text" class=""><i class="fa-solid fa-user"></i></div>
             </div>
 
           </div>
