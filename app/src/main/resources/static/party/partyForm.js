@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	//여기 아래 부분
 	$('#summernote').summernote({
     toolbar: [
         // [groupName, [list of button]]
@@ -7,11 +6,9 @@ $(document).ready(function() {
         ['fontsize', ['fontsize']],
         ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
         ['color', ['forecolor','color']],
-        ['table', ['table']],
         ['para', ['ul', 'ol', 'paragraph']],
         ['height', ['height']],
-        ['insert',['picture','link','video']],
-        ['view', ['fullscreen', 'help']]
+        ['insert',['picture']]
       ],
       fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
       fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72'],
@@ -20,8 +17,9 @@ $(document).ready(function() {
 		  maxHeight: null,             // 최대 높이
 		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
 		  lang: "ko-KR",					// 한글 설정
-		  placeholder: '최대 2048자까지 쓸 수 있습니다'	//placeholder 설정
-
+		  placeholder: '내용을 입력해주세요',	//placeholder 설정
+      onImageUpload: function(files, editor, welEditable) { sendFile(files[0], editor, welEditable); } // 파일 업로드 - 임의
 
 	});
 });
+
