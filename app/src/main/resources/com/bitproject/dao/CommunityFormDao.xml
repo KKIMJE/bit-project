@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.CommunityFormDao">
+
+<resultMap type="communityForm" id="communityFormMap">
+    <id column="board_no" property="boardNo"/>
+    <result column="mno" property="mNo"/>
+    <result column="community_no" property="communityNo"/>
+    <result column="title" property="boardTitle"/>
+    <result column="contents" property="boardContents"/>
+    <result column="reg_date" property="regDate"/>
+    <result column="update_date" property="updateDate"/>
+    <result column="view_count" property="viewCount"/>
+</resultMap>
+  
+  <select id="findAll" resultMap="communityFormMap">
+  select
+    board_no,
+    community_no,
+    title,
+    contents,
+    reg_date
+  from 
+    board
+  order by 
+    board_no desc
+  </select>
+  
+  
+    <insert id="insert" parameterType="CommunityForm">
+    insert into board(
+    board_no,
+    mno,
+    community_no,
+    title,
+    contents,
+    reg_date,
+    update_date,
+    view_count
+    ) 
+    values(
+    #{boardNo},
+    #{mNo},
+    #{communityNo},
+    #{boardTitle},
+    #{boardContents},
+    #{regDate},
+    #{updateDate},
+    #{viewCount}
+    )
+  </insert>
+  
+    
+  <update id="update" parameterType="CommunityForm">
+    update board set
+      community_no=#{communityNo},
+      title=#{boardTitle},
+      contents=#{boardContents}
+    where 
+     board_no=#{boardNo}
+  </update>
+
+  <delete id="delete" parameterType="int">
+    delete from board 
+    where board_no=#{no}
+  </delete>
+
+  
+    <select id="findByNo" resultMap="communityFormMap" parameterType="int">
+  select
+    board_no,
+    community_no,
+    title,
+    contents,
+    reg_date,
+  from 
+    board b
+  where
+    board_no=#{no}
+  
+  </select>
+  
+  
+
+</mapper>
+
+
+
+
+
+

@@ -54,9 +54,6 @@ body {
 }
 
 
-
-
-
 .alclist-category-div {
   font-family: NanumSquareRound;
   display: flex;
@@ -64,10 +61,8 @@ body {
   align-items: baseline;
   justify-content: space-around;
   width: 1280px;
-  margin-top: 100px;
-  /* margin-left: -30%; */
-  /* margin-right: -25%; */
-  margin-bottom: 50px;
+  margin-top: 90px;
+  margin-bottom: 10px;
   font-weight: 700;
 }
 
@@ -130,14 +125,14 @@ body {
 .alclist-item-div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   width: 1280px;
   height: 500px;
 }
 
-.alc-link {
+/* .alc-link {
   width: 150px;
-}
+} */
 
 .d-flex {
   display: flex;
@@ -147,35 +142,46 @@ body {
 .card {
   display: flex;
   align-items: center;
-  width: 255px;
-  /* margin-right: 105px; */
-  /* margin-bottom: 20px; */
+  width: 180px;
+  height: 300px;
+  margin: 20px;
   position: static;
-  border: none;
+  border-radius: 20px;
 }
 
 .card-body {
   font-size: 20px;
-  padding: 0;
+  font-weight: bold;
+  /* padding: 0; */
   /* padding-left: 80px; */
 }
 
 .card-img-top {
+  padding-top: 5px;
   /* object-fit: cover;
   object-position: center;
   overflow: hidden; */
-  width: 150px;
-  height: 150px;
+  /* width: 50%; */
+  /* height: 200px; */
   /* margin-left: 52.5px; */
-
 }
 
 .page-btn-div {
   display: flex;
   justify-content: center;
-  margin-top: 75px;
+  margin-top: 200px;
 }
 
 .page-btn-act {
   display: none;
+}
+
+.alchol-degree-value {
+  margin-top: 10px;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.rounded-lg {
+  border-radius: 10px;
 }

@@ -22,11 +22,12 @@ var introVol = document.querySelector(".intro-vol-span")
 var introDegree = document.querySelector(".intro-degree-span")
 var introChar = document.querySelector(".intro-char-span")
 var storeList = document.querySelector(".storelist-title-span")
-
-
 var storeListDiv = document.querySelector(".storelist-div")
 // var storeName = document.querySelector(".store-name")
 // var storeStatus = document.querySelector(".store-status")
+
+const markerArr = []
+// var overlay
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
   mapOption = {
@@ -34,7 +35,6 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     center: new kakao.maps.LatLng(37.500723072486, 127.03680544372),
     level: 3 // 지도의 확대 레벨
   };
-
 // 지도를 생성합니다
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
@@ -49,15 +49,83 @@ map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 var zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-function closeOverlay() {
-  overlay.setMap(null);
+
+
+// 지도를 클릭한 위치에 표출할 마커입니다
+var marker = new kakao.maps.Marker({
+    // 지도 중심좌표에 마커를 생성합니다
+    position: map.getCenter()
+});
+
+marker.setMap(map);
+
+// 지도에 클릭 이벤트를 등록합니다
+// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+
+
+  // 클릭한 위도, 경도 정보를 가져옵니다
+  var latlng = mouseEvent.latLng;
+
+  // 마커 위치를 클릭한 위치로 옮깁니다
+  marker.setPosition(latlng);
+
+});
+
+
+// HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+if (navigator.geolocation) {
+
+    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+        var lat = position.coords.latitude, // 위도
+            lon = position.coords.longitude; // 경도
+
+        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+            message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+
+        // 마커와 인포윈도우를 표시합니다
+        displayMarker(locPosition, message);
+
+      });
+
+} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+
+    var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
+        message = 'geolocation을 사용할수 없어요..'
+
+    displayMarker(locPosition, message);
+}
+
+// 지도에 마커와 인포윈도우를 표시하는 함수입니다
+function displayMarker(locPosition, message) {
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map,
+        position: locPosition
+    });
+
+    var iwContent = message, // 인포윈도우에 표시할 내용
+        iwRemoveable = true;
+
+    // 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+    });
+
+    // 인포윈도우를 마커위에 표시합니다
+    infowindow.open(map, marker);
+
+    // 지도 중심좌표를 접속위치로 변경합니다
+    map.setCenter(locPosition);
 }
 
 
 
 
-const markerArr = []
-var overlay
 
 function showMarkers(alcohol) {
 
@@ -100,12 +168,6 @@ function showMarkers(alcohol) {
     // overlayArr.push(overlay);
   } // end for
 }
-
-function closeOverlay() {
-  overlay.setMap(null);
-}
-
-
 
 
 fetch(`/alcohol/get?no=${no}`)
@@ -167,40 +229,6 @@ fetch(`/alcohol/get?no=${no}`)
 
 
 
-  // 마커 위에 커스텀오버레이를 표시합니다
-  // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
-  // var overlay = new kakao.maps.CustomOverlay({
-  //   content: content,
-  //   map: map,
-  //   position: marker.getPosition()
-  // });
-
-
-  // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
-  // kakao.maps.event.addListener(marker, 'click', function() {
-  //   overlay.setMap(map);
-  // });
-
-  // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
-  // function closeOverlay() {
-  //   overlay.setMap(null);
-  // }
-
-// let content =`
-// <div class="wrap">
-//     <div class="info">
-//         <div class="title">
-//             카카오 스페이스닷원
-//             <div class="close" onclick="closeOverlay()" title="닫기"></div>
-//         </div>
-//         <div class="body">
-//             <div class="desc">
-//                 <div class="ellipsis">제주특별자치도 제주시 첨단로 242</div>
-//                 <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>
-//             </div>
-//        </div>
-//     </div>
-// </div>`
 
 
 

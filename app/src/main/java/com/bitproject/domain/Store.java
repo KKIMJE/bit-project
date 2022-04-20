@@ -17,6 +17,7 @@ public class Store {
   //int price;
   String businessRegistration;
   List<AlcoholSales> AlcoholSales;
+  //  List<AlcoholDetail> AlcoholDetails;
   List<Tag> Tags;
   String storeName;
   String address;
@@ -24,7 +25,7 @@ public class Store {
   String hour;
   String introduction;
   float evaluationScore;
-  boolean reservationAccept;
+  boolean reservationAccept;     
   int maxMember;
   float lat;
   float lng;
