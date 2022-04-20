@@ -1,5 +1,40 @@
+
+var xcate = document.querySelector(".board-category")
+var xtitle = document.querySelector(".write-title")
+var xcontent = document.querySelector("#summernote")
+
+document.querySelector(".save").addEventListener("click", function()
+{
+	console.log(xcate.value);
+	console.log(xtitle.value);
+	console.log(xcontent.value);
+
+	fetch("/communityForm/list")
+		.then(function(response) {
+			return response.json()
+		})
+		.then(function(boards) {
+
+		})
+
+var xmno = boards.mNo
+
+	fetch(`/communityForm/add?mNo=10&communityNo=${xcate.value}&boardTitle=${xtitle.value}&boardContents=${xcontent.value}`)
+	.then(function (response){
+		return response.text()
+	})
+	.then(function(text) {
+		// location.href = "main.html"
+	});
+})
+
+//
+
+
+
+
 $(document).ready(function() {
-	//여기 아래 부분
+
 	$('#summernote').summernote({
     toolbar: [
         // [groupName, [list of button]]
@@ -21,7 +56,5 @@ $(document).ready(function() {
 		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
 		  lang: "ko-KR",					// 한글 설정
 		  placeholder: '최대 2048자까지 쓸 수 있습니다'	//placeholder 설정
-
-
 	});
 });
