@@ -27,14 +27,16 @@
     <result column="oper" property="oper"/>
     <result column="status" property="status"/>
     
+    <!-- 
     <collection property="AlcoholDetails" ofType="AlcoholDetail">
       <result column="alcohol_detail_no" property="alcoholDetailNo"/>
       <result column="name" property="alcoholName"/>
-    </collection>
+    </collection> -->
     
     <collection property="AlcoholSales" ofType="AlcoholSales">
       <result column="alcohol_detail_no" property="alcoholDetailNo"/>
       <result column="price" property="price"/>
+      <result column="alc_name" property="name"/>
     </collection>
     
     <collection property="Tags" ofType="tag">
@@ -132,12 +134,14 @@
       s.status,
 	  t.name,
 	  ass.alcohol_detail_no,
-	  ass.price
+	  ass.price,
+	  acd.name as alc_name	  
 	from 
 	  store s
 	  left outer join store_tag st on s.store_no=st.store_no
 	  left outer join tag t on st.tag_no=t.tag_no
 	  left outer join alcohol_sales ass on s.store_no=ass.store_no
+	  left outer join alcohol_detail acd on ass.alcohol_detail_no=acd.alcohol_detail_no 
 	where
 	  s.store_no=#{no}
   </select>

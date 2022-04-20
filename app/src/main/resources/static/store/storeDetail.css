@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: NanumSquareRound;
   margin: 0;
@@ -150,6 +154,9 @@ body {
 }
 .xAlc-price, .xFood-price {
   font-weight: 600;
+}
+.xAlc-price {
+  color: rgb(42, 42, 42);
 }
 .sugAlcImg-card, .sugFoodImg-card {
   text-align: center;

@@ -17,7 +17,7 @@ public class Store {
   //int price;
   String businessRegistration;
   List<AlcoholSales> AlcoholSales;
-  List<AlcoholDetail> AlcoholDetails;
+  //  List<AlcoholDetail> AlcoholDetails;
   List<Tag> Tags;
   String storeName;
   String address;
