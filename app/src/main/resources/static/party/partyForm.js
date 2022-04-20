@@ -1,3 +1,7 @@
+/***********************
+  summernote 기본 설정
+***********************/
+
 $(document).ready(function() {
 	$('#summernote').summernote({
     toolbar: [
@@ -51,7 +55,6 @@ $(".pbtn").on('click', function(e){
     console.log(ptarget);
   }
 
-
   let strT = null;
   let strB = null;
   let strF = null;
@@ -60,13 +63,23 @@ $(".pbtn").on('click', function(e){
     case 1 : // 장소
     
       strT = "지도를 움직여 모임 위치를 지정해주세요";
-      strB = '<div id="map"></div>';
+      strB = '<div id="map">'
+      + '<div class="my-address">'
+      + '<span id="my-address-center"></span>'
+      + '</div>'
+      + '<div class="my-address-marker">'
+      + '<i class="fa-solid fa-location-dot"></i>'
+      + '</div>'
+      + '<div class="my-address-complete">'
+      + '<button type="button" class="address-complete">이 위치로 주소 설정</button>'
+      + '</div>';
+
       strF = "주소적기";
 
       $('.modal-body').html(strB);
 
 /*****************
-    모달 지도 생성  
+  모달 지도 생성  
 *****************/
     var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
     var options = { //지도를 생성할 때 필요한 기본 옵션
@@ -80,9 +93,9 @@ $(".pbtn").on('click', function(e){
     setTimeout(function(){ map.relayout(); }, 1500);
 
     
-/********************************
+/******************************
   geolocation으로 현위치 지정
-*******************************/
+******************************/
 
 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 if (navigator.geolocation) {
@@ -104,6 +117,7 @@ var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667)
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition2); 
 }
+
       $('.modal-title').html(strT);
       $('.modal-footer span').html(strF);
       break;
@@ -184,7 +198,9 @@ var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667)
   }
 });
 
-// 장소 클릭 시 
+/**********************************
+  모임옵션에 따른 모달창 크기 변경
+**********************************/
 $('#p-location').click(function(){
   $("#exampleModal > div").removeClass("pmodal-size");
   $("#exampleModal > div").addClass("mmodal-size");
@@ -194,3 +210,11 @@ $("#p-date, #p-type, #p-limit, #p-fee, #p-member").click(function(){
   $("#exampleModal > div").removeClass("mmodal-size");
   $("#exampleModal > div").addClass("pmodal-size");
 })
+
+
+/**************
+  나가기 버튼
+**************/
+document.querySelector(".exit").onclick = function() {
+  location.href = "partyList.html";
+};
