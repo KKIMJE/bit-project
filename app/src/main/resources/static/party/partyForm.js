@@ -11,7 +11,7 @@ $(document).ready(function() {
       ],
       fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
       fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72'],
-		  height: 400,                 // 에디터 높이
+		  height: 450,                 // 에디터 높이
 		  minHeight: null,             // 최소 높이
 		  maxHeight: null,             // 최대 높이
 		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
@@ -23,12 +23,11 @@ $(document).ready(function() {
 });
 
 
-
 /*********************************
   버튼 클릭시 생성되는 모달 변경
 *********************************/
 
-$(".btn").on('click', function(e){
+$(".pbtn").on('click', function(e){
   console.log(e.target.id);
   let ptarget = e.target.id;
 
@@ -60,7 +59,7 @@ $(".btn").on('click', function(e){
   switch (ptarget) {
     case 1 : // 장소
     
-      strT = "원하시는 주점을 지도에서 클릭해 선택해주세요";
+      strT = "지도를 움직여 모임 위치를 지정해주세요";
       strB = '<div id="map"></div>';
       strF = "주소적기";
 
@@ -185,4 +184,13 @@ var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667)
   }
 });
 
+// 장소 클릭 시 
+$('#p-location').click(function(){
+  $("#exampleModal > div").removeClass("pmodal-size");
+  $("#exampleModal > div").addClass("mmodal-size");
+})
 
+$("#p-date, #p-type, #p-limit, #p-fee, #p-member").click(function(){
+  $("#exampleModal > div").removeClass("mmodal-size");
+  $("#exampleModal > div").addClass("pmodal-size");
+})

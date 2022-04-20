@@ -5,12 +5,11 @@ button{
 }
 
 .modal-open {
-  /* overflow-y:scroll !important; */
   padding-right:0 !important;
 }
 
 .editor {
-  margin-top: 115px;
+  margin-top: 135px;
   width: 1100px;
   display: flex;
   flex-direction: column;
@@ -20,6 +19,7 @@ button{
   display: flex;
   align-items: baseline;
   justify-content: end;
+  margin-bottom: 30px;
 }
 
 .save {
@@ -62,13 +62,25 @@ button{
 }
 
 #map {
-  width: 750px;
+  width: 100%;
   height: 480px;
 }
 
-.modal-dialog {
+.mmodal-size {
   max-width: 850px !important;
   height: 600px;
+}
+
+.pmodal-size {
+  max-width: 350px !important;
+}
+
+#exampleModal > div > div > div.modal-footer > button {
+  width: 70px;
+}
+
+#exampleModalLabel {
+  font-size: 20px;
 }
 
 .select-poption .btn {
@@ -80,8 +92,8 @@ button{
   border: none;
 }
 
-#summernote {
-  margin-top: 0px;
-  margin-left: 300px;
-  margin-bottom: 35px;
+/*푸터 하단 고정*/
+footer__ {
+  position : absolute;
+  bottom : 0;
 }
