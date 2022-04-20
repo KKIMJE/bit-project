@@ -4,23 +4,41 @@ const lightBtn = document.querySelector(".category");
 // 몇분 전 표시
 function timeCheck(time) {
 
+  var min = 60 * 1000
   var now = new Date()
   var writeDay = new Date(time)
+  var minsAgo = Math.floor((now - writeDay) / (min))
 
-  var BeforeDay = null
+  var result = {
+			'raw': writeDay.getFullYear() + '-' + (writeDay.getMonth() + 1 > 9 ? '' : '0') + (writeDay.getMonth() + 1) + '-' + (writeDay.getDate() > 9 ? '' : '0') +  writeDay.getDate() + ' ' + (writeDay.getHours() > 9 ? '' : '0') +  writeDay.getHours() + ':' + (writeDay.getMinutes() > 9 ? '' : '0') +  writeDay.getMinutes() + ':'  + (writeDay.getSeconds() > 9 ? '' : '0') +  writeDay.getSeconds(),
+			'formatted': '',
+		};
 
-  if (now.getMonth() - writeDay.getMonth() > 0) {
-    return BeforeDay = "오래전"
-  } else if (30 > now.getDate() - writeDay.getDate() && now.getDate() - writeDay.getDate() > 0) {
-    return BeforeDay = now.getDate() - writeDay.getDate() + "일 전"
-  } else if (24 > now.getHours() - writeDay.getHours() && now.getHours() - writeDay.getHours() > 0) {
-    return BeforeDay = now.getHours() - writeDay.getHours() + "시간 전"
-  } else if (60 > now.getMinutes() - writeDay.getMinutes() && now.getMinutes() - writeDay.getMinutes() > 0) {
-    return BeforeDay = now.getMinutes() - writeDay.getMinutes() + "분 전"
-  } else {
-    return BeforeDay = "방금전"
-  }
+    if (minsAgo < 60) { // 1시간 내
+			result.formatted = minsAgo + '분 전';
+		} else if (minsAgo < 60 * 24) { // 하루 내
+			result.formatted = Math.floor(minsAgo / 60) + '시간 전';
+		} else { // 하루 이상
+			result.formatted = Math.floor(minsAgo / 60 / 24) + '일 전';
+		};
 
+		return result.formatted;
+
+
+
+  // var BeforeDay = null
+  //
+  // if (now.getMonth() - writeDay.getMonth() > 0) {
+  //   return BeforeDay = "오래전"
+  // } else if (30 > now.getDate() - writeDay.getDate() && now.getDate() - writeDay.getDate() > 0) {
+  //   return BeforeDay = now.getDate() - writeDay.getDate() + "일 전"
+  // } else if (24 > now.getHours() - writeDay.getHours() && now.getHours() - writeDay.getHours() > 0) {
+  //   return BeforeDay = now.getHours() - writeDay.getHours() + "시간 전"
+  // } else if (60 > now.getMinutes() - writeDay.getMinutes() && now.getMinutes() - writeDay.getMinutes() > 0) {
+  //   return BeforeDay = now.getMinutes() - writeDay.getMinutes() + "분 전"
+  // } else {
+  //   return BeforeDay = "방금전"
+  // }
 }
 
 // 커뮤니티 번호 스트링으로
