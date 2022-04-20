@@ -14,80 +14,203 @@
   crossorigin="anonymous">
 <link rel="stylesheet" type="text/css"
   href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
-  <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="MemberBoss.css">
+<link rel="stylesheet" href="../css/nav.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="MemberBoss.css">
 
-    <title>야술먹자 주점등록</title>
+<title>야술먹자 주점등록</title>
 </head>
 <body>
 
-    <nav class="navbar__">
-        <div><!-- 공간, 삭제하지 마세요 --></div>
+  <nav class="navbar__">
+    <div>
+      <!-- 공간, 삭제하지 마세요 -->
+    </div>
 
-        <div class="navbar__logo">
-            <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+    <div class="navbar__logo">
+      <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+    </div>
+
+    <ul class="navbar__menu">
+      <li><a href="">로그인</a></li>
+      <li><a href="">회원가입</a></li>
+      <li><a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a>
+      </li>
+    </ul>
+
+    <ul class="navbar__login">
+      <!-- 알림 -->
+      <div class="btn-group">
+        <div class="btn-group">
+          <button type="button"
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown" data-bs-display="static"
+            aria-expanded="false">
+            <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
+          </button>
+        </div>
+      </div>
+
+      <!-- 마이페이지 -->
+      <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
+
+      <!-- 검색 -->
+      <div class="btn-group">
+        <div class="btn-group">
+          <button type="button"
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown" data-bs-display="static"
+            aria-expanded="false">
+            <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i>
+              </login-i></a>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control"
+                  placeholder="Search Input" aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 지도 -->
+      <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
+    </ul>
+  </nav>
+
+  <h1>주점등록</h1>
+  <form name="login__form">
+    <div class="login__box">
+      <div class="content">
+        <p class="form_store">가게명</p>
+        <br> <input name="storeName" type="text"
+          class="form_input_name">
+
+        <div class="address">
+          <p class="form_address">주소</p>
+          <br>
+          <div>
+            <input type="text" id="address_kakao" name="address"
+              class="form_input_address_detail" placeholder="주소"
+              readonly> <input type="text"
+              class="form_input_address_detail" name="address_detail"
+              placeholder="상세주소">
+          </div>
         </div>
 
-        <ul class="navbar__menu">
-            <li><a href="">로그인</a></li>
-            <li><a href="">회원가입</a></li>
-            <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
-        </ul>
+        <div>
+          <h2 class="alcohol-content">주점테마</h2>
+          <br>
+        </div>
 
-        <ul class="navbar__login">
-            <!-- 알림 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
-                    </button>
-                </div>
-            </div>
+        <div style="margin-left: 40px;">
+          <select class="type-option">
+            <option>포차</option>
+            <option>펍</option>
+            <option>바</option>
+            <option>이자카야</option>
+            <option>주막</option>
+            <option>감성주점</option>
+            <option>루프탑</option>
+            <option>가라오케</option>
+            <option>기타</option>
+          </select>
 
-            <!-- 마이페이지 -->
-            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
 
-            <!-- 검색 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-lg-end">
-                      <li>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
+          <div class="tel">
+            <p class="form_tel">전화번호</p>
+            <br> <input name="tel" type="tel"
+              class="form_input_tel">
+          </div>
 
-            <!-- 지도 -->
-            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
-        </ul>
-    </nav>
+          <div class="hr">
+            <p class="form_hr">영업시간</p>
+            <br>
+            <textarea name="hour" id="hr" style="resize: none;"
+              class="form_input_hr"></textarea>
+          </div>
 
-    <h1>주점등록</h1>
-     <form name="login__form">
-      <div class="login__box">
-        <div class="content">
-          <p class="form_store">가게명</p><br>
-          <input name="name" type="text" class="form_input_name">
+          <div class="intro">
+            <p class="form_intro">가게소개</p>
+            <br>
+            <textarea name="introduction" id="intro"
+              style="resize: none;" class="form_input_intro"></textarea>
+          </div>
 
-<input type="text" id="sample6_postcode" placeholder="우편번호">
-<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" id="sample6_address" placeholder="주소"><br>
-<input type="text" id="sample6_detailAddress" placeholder="상세주소">
-<input type="text" id="sample6_extraAddress" placeholder="참고항목">
+          <div class="number">
+            <p class="form_number">사업자등록번호</p>
+            <br> <input id="businessRegistrationNo"
+              class="form_input_number">
+          </div>
+
+          <div class="tag">
+            <p class="form_tag">
+              태그선택 <button id="add_tag" class="add-btn">추가</button>
+              <!-- 사각형 -->
+          </div>
+
+
+          <div>
+            <p class="form_check">
+              예약 가능 여부 <br></p>
+            <center>
+              가능<input name="reservationAccept" type="checkbox" class="form_input_check" checked>불가능
+                <input name="reservationAccept" type="checkbox" class="form_input_check"> 최대인원 
+                <input name="maxMember" type="text" class="form_input_box">
+            </center>
+              <!-- 사각형 -->
+          </div>
           
 
+          <center>
+            <div class="file-upload">
+              <div>
+                <input name="file" type="file">
+              </div>
+            </div>
+          </center>
+
+          <center>
+            <div class="btn">
+              <button id="next" class="submit-next-btn">다음</button>
+              <button type="button" id="exit" class="submit-exit-btn">나가기</button>
+            </div>
+          </center>
+
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- <footer__>
+        <div class="footer-contents">
+          <div class="footer-contents-1">전화번호 : 1566-8877</div>
+          <div class="footer-content">
+            <div>
+              <a class="footer-logo" href="../main/main.html">
+                <img src="../img/logo.png" alt=""></a>
+            </div>
+            <div>
+              @ Copyright Yasulmukja All Rights Reserved<br> Designed
+              by Tissue94
+            </div>
+          </div>
+          <div class="footer-content-3">
+            <div class="footer-content-info">공지사항</div>
+            <div>고객센터</div>
+          </div>
+        </div>
+
+    </footer__> -->
+
 </body>
-</html>
+
 <!-- icons -->
-<script src="https://kit.fontawesome.com/22437c0385.js"
-  crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
 <!-- Bootstrap CSS -->
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -95,53 +218,111 @@
   crossorigin="anonymous">
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
+    window.onload = function() {
+    document
+    .getElementById("address_kakao")
+    .addEventListener(
+      "click",
+    function() { //주소입력칸을 클릭하면
+                 //카카오 지도 발생
+    new daum.Postcode(
+        {oncomplete : function(data) { //선택시 입력값 세팅
+          document.getElementById("address_kakao").value = data.address; // 주소 넣기
+          document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+        }
+      }).open();
+     });
     }
 </script>
+
+<script>
+
+$("#add_tag").click(async function () {
+  const { value: 태그 } = await Swal.fire({
+    title: '사장님 가게에 어울리는 태그를 선택하세요',
+    input: 'select',
+    inputOptions: {
+      '태그선택': {
+         아늑한: '#아늑한',
+         역세권: '역세권',
+         현지인: '현지인',
+         헌팅: '헌팅',
+      },
+         분위기좋은: '분위기좋은',
+         데이트: '데이트',
+         가성비: '가성비',
+         노래가좋은: '노래가좋은',
+         맛난안주: '맛난안주',
+         야외: '야외',
+         노포: '노포'
+    },
+    inputPlaceholder: '태그 선택하기',
+    showCancelButton: true,
+    inputValidator: (value) => {
+      return new Promise((resolve) => {
+        if (value === '태그') {
+          resolve()
+        } else {
+          resolve('적어도 하나의 태그를 선택하셔야 합니다 :)')
+        }
+      })
+    }
+})
+
+if (fruit) {
+  Swal.fire(`You selected: ${태그}`)      
+}
+
+ 
+var xStoreName = document.querySelector("input[name=storeName]");
+var xTel = document.querySelector("input[name=tel]");
+var xHour = document.querySelector("textarea[name=hour]");
+var xIntroduction = document.querySelector("textarea[name=introduction]");
+var xBusinessRegistrationNo = document.querySelector("input[name=businessRegistrationNo]");
+var xAddressKakao = document.querySelector("input[name=AddressKakao]");
+
+document.querySelector("form[name=login__form]").onsubmit = function() {
+  if(xStoreName.value == "" || 
+     xTel.value == "" ||
+     xBusinessRegistrationNo == "" ||
+     xIntroduction == "" ||
+     xAddressKakao == "" ||
+     xHour.value == "") {
+     window.alert("필수 입력 항목이 비어 있습니다.");
+       return false;
+     }
+       
+  var fd = new FormData(document.forms.namedItem("login__form"));
+  fetch("/store/add",{ 
+    method: "POST",
+    body: new URLSearchParams(fd)
+  }) 
+  .then(function(response) {
+    console.log(response);
+    return response.json();
+  })
+  .then(function(result) {
+    console.log(result);
+    if (result.status == "success") {
+      alert("성공했습니다")
+    } else {
+      window.alert("실패!!");
+    }
+    });
+  return false;
+};
+
+  
+document.querySelector("#next").onclick = function() {
+    window.location.href = "../memberBoss/MemberBoss2.html";
+};
+</script>
+
+</html>
