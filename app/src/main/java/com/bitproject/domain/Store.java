@@ -24,7 +24,7 @@ public class Store {
   String hour;
   String introduction;
   float evaluationScore;
-  boolean reservationAccept;
+  boolean reservationAccept;     
   int maxMember;
   float lat;
   float lng;
