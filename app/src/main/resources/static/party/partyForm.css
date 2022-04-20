@@ -4,6 +4,11 @@ button{
   all: unset;
 }
 
+.modal-open {
+  overflow-y:scroll !important;
+  padding-right:0 !important;
+}
+
 .editor {
   margin: 110px 0;
   width: 1100px;
@@ -52,8 +57,17 @@ button{
 .select-poption {
   display: flex;
   width: 1100px;
-  height: 60px;
+  height: 50px;
   border: 1px solid #ddd;
   margin-bottom: 10px;
 }
 
+#map {
+  width: 750px;
+  height: 480px;
+}
+
+.modal-dialog {
+  max-width: 850px !important;
+  height: 600px;
+}
