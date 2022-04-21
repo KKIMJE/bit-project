@@ -1,25 +1,25 @@
 -- 주점 이미지
 INSERT INTO sojudb.store_img
-(store_img_no, store_no, img)
-VALUES(1, 10, 'storelist10-0');
+(store_no, store_img)
+VALUES(10, 'storelist10-0');
 INSERT INTO sojudb.store_img
-(store_img_no, store_no, img)
-VALUES(2, 10, 'storelist10-1');
+(store_no, store_img)
+VALUES(10, 'storelist10-1');
 INSERT INTO sojudb.store_img
-(store_img_no, store_no, img)
-VALUES(3, 10, 'storelist10-2');
+(store_no, store_img)
+VALUES(10, 'storelist10-2');
 INSERT INTO sojudb.store_img
-(store_img_no, store_no, img)
-VALUES(4, 10, 'storelist10-3');
+(store_no, store_img)
+VALUES(10, 'storelist10-3');
 INSERT INTO sojudb.store_img
-(store_img_no, store_no, img)
-VALUES(5, 10, 'storelist10-4');
+(store_no, store_img)
+VALUES(10, 'storelist10-4');
 INSERT INTO sojudb.store_img
-(store_img_no, store_no, img)
-VALUES(6, 10, 'storelist10-5');
+(store_no, store_img)
+VALUES(10, 'storelist10-5');
 INSERT INTO sojudb.store_img
-(store_img_no, store_no, img)
-VALUES(7, 10, 'storelist10-6');
+(store_no, store_img)
+VALUES(10, 'storelist10-6');
 
 
 -- 주점찜

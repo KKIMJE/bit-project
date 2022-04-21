@@ -1287,6 +1287,27 @@ VALUES(29, 29, '/static/asset/img/store/storelist29.jpg');
 INSERT INTO store_img
 (store_img_no, store_no, store_img)
 VALUES(30, 30, '/static/asset/img/store/storelist30.jpg');
+INSERT INTO sojudb.store_img
+(store_no, store_img)
+VALUES(10, 'storelist10-0');
+INSERT INTO sojudb.store_img
+(store_no, store_img)
+VALUES(10, 'storelist10-1');
+INSERT INTO sojudb.store_img
+(store_no, store_img)
+VALUES(10, 'storelist10-2');
+INSERT INTO sojudb.store_img
+(store_no, store_img)
+VALUES(10, 'storelist10-3');
+INSERT INTO sojudb.store_img
+(store_no, store_img)
+VALUES(10, 'storelist10-4');
+INSERT INTO sojudb.store_img
+(store_no, store_img)
+VALUES(10, 'storelist10-5');
+INSERT INTO sojudb.store_img
+(store_no, store_img)
+VALUES(10, 'storelist10-6');
 
 
 
