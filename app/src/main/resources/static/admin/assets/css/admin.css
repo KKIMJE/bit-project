@@ -1,0 +1,18 @@
+tbody {
+  text-align: center;
+}
+
+
+.admin-page {
+  display: flex;
+  justify-content: center;
+}
+
+.x-admin-page {
+  margin-top: 50px;
+}
+
+#x-board-table {
+  width: 80vw;
+  border: solid 1px;
+}
