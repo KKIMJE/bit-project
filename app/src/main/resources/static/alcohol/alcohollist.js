@@ -57,7 +57,7 @@ function createdList(listArr) {
     <p class="card-text">
     <ul>
     <li>${alcohol.alcoholName}</li>
-    <li class="alchol-degree-value">도수: ${alcohol.degree}%</li>
+    <li class="alchol-degree-value">${alcohol.degree}%</li>
     </ul>
     </p>
     </div>
