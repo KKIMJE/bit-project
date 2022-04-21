@@ -61,7 +61,7 @@
     from 
       member
     where
-      email=#{email} and password=password(#{password})and member_status = 1
+      email=#{email} and password=password(#{password}) and member_status = 0
   </select>
   
       <select id="findByEmail" resultMap="memberMap">

@@ -124,10 +124,12 @@
             body: new URLSearchParams(fd)
           })
           .then(function(response) {
+            //console.log(fd);
+            console.log(response);
             return response.json();
           })
           .then(function(result) {
-              console.log("login : " + result);
+            console.log(result);
             if (result.status == "success") {
                 //location.href = "../main/main.html?mno=" + result.data.mno ;
                 location.href = "../member/personalInfo.html?mno=" + result.data.mno ;
@@ -140,7 +142,7 @@
 
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '815310272760018', // 개발자가 등록한 앱 ID
+          appId      : '1035699987303606', // 개발자가 등록한 앱 ID
           cookie     : true,
           xfbml      : true,
           version    : 'v13.0'
