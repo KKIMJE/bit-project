@@ -74,6 +74,7 @@ function myLoad() {
       `;
   }
 
+
   computeDistance();
   });
 
@@ -134,6 +135,7 @@ function myLoad() {
           resolve(dLines)
         })
       }
+
     
       // async-await
       (async () => { // 익명함수
@@ -147,8 +149,6 @@ function myLoad() {
             const geoResult = await geoLocation() // 현위치
     
             const distanceValue = await distanceLine(positions, geoResult) // 가게 위치와 현위치를 이은 선
-    
-            console.log(distanceValue);
 
             $('.store-distance').each((index, e) => { // 각 모임의 거리 값을 넣는다.
               // 1km 미만이면 m 로 출력한다.
@@ -210,6 +210,7 @@ function myLoad() {
   let myposition = navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError,options);
     dbody.innerHTML = myposition;
     // console.log(myposition);
+
 }
 
 /***************
@@ -249,7 +250,7 @@ function mapLoad() {
           pbody.innerHTML += `<a href="/party/partyDetail.html" class="party-list" data-creatdt="${party.partyNo}"> 
                               <div class="party-body-top">
                                   <div class="party-title">${party.title}</div>
-                                  <div class="party-regdate">${party.regDate}</div>
+                                  <div class="party-regdate">` + timeCheck(`${party.regDate}`) + `</div>
                               </div> 
                               <div class="party-body-content">
                                   <div class="leader-profile">
@@ -407,33 +408,33 @@ function mapLoad() {
     }
 }
 
+
+
 /******************************
     등록일 포맷 변환하여 출력
 ******************************/
 function timeCheck(time) {
 
+  var min = 60 * 1000
   var now = new Date()
   var writeDay = new Date(time)
+  var minsAgo = Math.floor((now - writeDay) / (min))
 
-  var BeforeDay;
+  var result = {
+			'raw': writeDay.getFullYear() + '-' + (writeDay.getMonth() + 1 > 9 ? '' : '0') + (writeDay.getMonth() + 1) + '-' + (writeDay.getDate() > 9 ? '' : '0') +  writeDay.getDate() + ' ' + (writeDay.getHours() > 9 ? '' : '0') +  writeDay.getHours() + ':' + (writeDay.getMinutes() > 9 ? '' : '0') +  writeDay.getMinutes() + ':'  + (writeDay.getSeconds() > 9 ? '' : '0') +  writeDay.getSeconds(),
+			'formatted': '',
+		};
 
-  if (now.getMonth() - writeDay.getMonth() > 0) {
-    console.log(now.getMonth() - writeDay.getMonth())
-    return BeforeDay = "오래 전"
-  } else if (30 > now.getDate() - writeDay.getDate() && now.getDate() - writeDay.getDate() > 0) {
-    return BeforeDay = now.getDate() - writeDay.getDate() + "일 전"
-  } else if (24 > now.getHours() - writeDay.getHours() && now.getHours() - writeDay.getHours() > 0) {
-    return BeforeDay = now.getHours() - writeDay.getHours() + "시간 전"
-  } else if (60 > now.getMinutes() - writeDay.getMinutes() && now.getMinutes() - writeDay.getMinutes() > 0) {
-    return BeforeDay = now.getMinutes() - writeDay.getMinutes() + "분 전"
-  } else {
-    return BeforeDay = "방금전"
-  }
+    if (minsAgo < 60) { // 1시간 내
+			result.formatted = minsAgo + '분 전';
+		} else if (minsAgo < 60 * 24) { // 하루 내
+			result.formatted = Math.floor(minsAgo / 60) + '시간 전';
+		} else { // 하루 이상
+			result.formatted = Math.floor(minsAgo / 60 / 24) + '일 전';
+		};
 
+		return result.formatted;
 }
-
-
-
 
 
 /************************************
@@ -490,7 +491,7 @@ function listSortAddress($targetObj, dataNm){
 //현재 정렬된 방식을 강조(표시)하기 위해 Class 제거 및 추가
 $(".order").removeClass("bold");
 $targetObj.addClass("bold");
-  }
+}
 
 
 /*****************
@@ -499,4 +500,4 @@ $targetObj.addClass("bold");
 
 $('.party-open').click(function() {
     location.href = 'partyForm.html';
-  });
+});
