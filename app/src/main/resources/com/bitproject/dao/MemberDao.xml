@@ -61,7 +61,8 @@
     from 
       member
     where
-      email=#{email} and password=password(#{password})and member_status = 1
+      email=#{email} and password=password(#{password})
+      <!-- memberstatus=0 -->
   </select>
   
       <select id="findByEmail" resultMap="memberMap">
@@ -72,7 +73,7 @@
     from 
       member
     where
-      email=#{email}and member_status = 1
+      email=#{email}  <!-- memberstatus=0 -->
   </select>
   
  <select id="findByMno" resultMap="memberMap">
@@ -89,7 +90,7 @@
     from 
       member
     where
-      mno=#{mno}and member_status = 1
+      mno=#{mno}  <!-- memberstatus=0 -->
   </select>
   
   
@@ -103,11 +104,11 @@
     birth=#{birth},
    <!-- email=#{email},-->
     password=password(#{password}),
-    tel=#{tel},
+    tel=#{tel}
     <!--social_accept={socialAccept},
     self_introduction=#{selfIntroduction}-->
     where 
-    mno=#{mno}and member_status = 1
+    mno=#{mno}  <!-- memberstatus=0 -->
   </update>
   
     <select id="findByNo" resultMap="memberMap" parameterType="int">
@@ -133,7 +134,7 @@
       from 
       member m
       where 
-       m.mno=#{mno}and member_status = 1
+       m.mno=#{mno}  <!-- memberstatus=0 -->
   </select>
   
   <!--  
