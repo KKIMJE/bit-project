@@ -15,7 +15,7 @@ $(document).ready(function() {
       ],
       fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
       fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72'],
-		  height: 450,                 // 에디터 높이
+		  height: 400,                 // 에디터 높이
 		  minHeight: null,             // 최소 높이
 		  maxHeight: null,             // 최대 높이
 		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
@@ -69,12 +69,7 @@ $(".pbtn").on('click', function(e){
       + '</div>'
       + '<div class="my-address-marker">'
       + '<i class="fa-solid fa-location-dot"></i>'
-      + '</div>'
-      + '<div class="my-address-complete">'
-      + '<button type="button" class="address-complete">이 위치로 주소 설정</button>'
       + '</div>';
-
-      strF = "주소적기";
 
       $('.modal-body').html(strB);
 
@@ -118,6 +113,47 @@ var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667)
     map.setCenter(locPosition2); 
 }
 
+
+/***********************************
+    중심좌표 변경에 따른 주소 출력 
+***********************************/
+
+var myposition;
+
+// 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+kakao.maps.event.addListener(map, 'center_changed', function() {
+
+    // 지도의 중심좌표를 얻어옵니다 
+    var latlng = map.getCenter(); 
+    
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new kakao.maps.services.Geocoder();
+
+    var coord = new kakao.maps.LatLng(latlng.getLat(), latlng.getLng());
+    var callback = function(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+            var resultDiv = document.getElementById('my-address-center');
+            myposition = result[0].address.address_name;
+            resultDiv.innerHTML = myposition;
+        }
+    };
+
+    geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+
+});
+
+// -------------------------------------------------------------------------------하는중
+/***********************
+    설정된 주소 넘기기
+***********************/
+$('.modal-footer button').click(function() {
+    
+  // 세션에 이 정보를 어떻게 저장해???????????
+  //location.href = `partyList.html?myposition=${myposition}`;
+  // console.log(myposition);
+  //location.href = "partyList.html";
+});
+
       $('.modal-title').html(strT);
       $('.modal-footer span').html(strF);
       break;
@@ -129,7 +165,6 @@ var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667)
   
     $('.modal-title').html(strT);
     $('.modal-body').html(strB);
-    $('.modal-footer span').html(strF);
       break;
 
     case 3 : // 주종
@@ -166,7 +201,7 @@ var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667)
 
     case 5 : // 회비
     strT = "모임 회비를 적어주세요";
-    strB = '<input name="fee" type="number">'
+    strB = '<input name="fee" type="number" min="0" max="10000000">'
     + '<span>원</span>'
     strF = '';
   
