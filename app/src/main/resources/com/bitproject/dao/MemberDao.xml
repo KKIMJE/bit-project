@@ -25,6 +25,7 @@
     <result column="block_date" property="blockDate"/>
     <result column="block_accept" property="blockAccept"/>
     <result column="member_status" property="memberStatus"/>
+    
   </resultMap>
 
   <!-- 
@@ -60,7 +61,7 @@
     from 
       member
     where
-      email=#{email} and password=password(#{password})
+      email=#{email} and password=password(#{password})and member_status = 1
   </select>
   
       <select id="findByEmail" resultMap="memberMap">
@@ -71,7 +72,68 @@
     from 
       member
     where
-      email=#{email}
+      email=#{email}and member_status = 1
+  </select>
+  
+ <select id="findByMno" resultMap="memberMap">
+    select 
+      mno,
+      name,
+      gender,
+      birth,
+      email,
+      password,
+      tel,
+      m_img,
+      self_introduction
+    from 
+      member
+    where
+      mno=#{mno}and member_status = 1
+  </select>
+  
+  
+  
+   <update id="update" parameterType="member">
+    update member set
+    <!--m_img=#{mImg}-->
+    <!--name=#{name},-->
+    nickname=#{nickname},
+    gender=#{gender},
+    birth=#{birth},
+   <!-- email=#{email},-->
+    password=password(#{password}),
+    tel=#{tel},
+    <!--social_accept={socialAccept},
+    self_introduction=#{selfIntroduction}-->
+    where 
+    mno=#{mno}and member_status = 1
+  </update>
+  
+    <select id="findByNo" resultMap="memberMap" parameterType="int">
+    select
+      m.m_img,
+      m.mno, 
+      m.name,
+      m.email,
+      m.pwd,
+      m.name,
+      m.tel,
+      m.join_date,
+      m.social_accept,
+      m.gender,
+      m.birth,
+      m.self_introduction,
+      m.m_img,
+      m.nickname,
+      m.score,
+      m.block_date,
+      m.block_accept,
+      m.member_status
+      from 
+      member m
+      where 
+       m.mno=#{mno}and member_status = 1
   </select>
   
   <!--  
@@ -100,52 +162,11 @@
   </select>
 
 
-	<select id="findByNo" resultMap="memberMap" parameterType="int">
-    select
-      mno, 
-      email,
-      pwd,
-      name,
-      tel,
-      join_date,
-      social_accept,
-      gender,
-      birth,
-      self_introduction,
-      m_img,
-      nickname,
-      score,
-      block_date,
-      block_accept,
-      member_status
-    from 
-      member
-    where 
-      mno=#{no}
-  </select>
+
   
 
 
-  <update id="update" parameterType="member">
-    update member set
-      pwd=#{pwd}, 
-      name=#{name},
-      tel=#{tel},
-      gender=#{gender},
-      birth=#{birth},
-      self_introduction=#{selfIntroduction},
-      m_img=#{mImg},
-      nickname=#{nickName}
-    where 
-      mno=#{mno}
-  </update>
-  
-
-  <delete id="delete" parameterType="int">
-    delete from member 
-    where mno=#{no}
-  </delete>
-
+ 
 -->
 
 </mapper>

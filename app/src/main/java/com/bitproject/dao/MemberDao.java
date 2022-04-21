@@ -18,11 +18,11 @@ public interface MemberDao {
 
   Member findByEmail(String email);
 
-  Member findByNo(int no);
+  Member findByMno(int no);
 
   int update(Member member);
 
-  int delete(int no);
+
 
 }
 

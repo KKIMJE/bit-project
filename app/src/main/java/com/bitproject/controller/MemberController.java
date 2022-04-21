@@ -30,7 +30,7 @@ public class MemberController {
 
   @RequestMapping("/member/signin")
   public Object signin(String email, String password, boolean saveEmail, HttpServletResponse response, HttpSession session) {
-    Member loginUser = memberService.get(email, password);
+    Member loginUser = memberService.getMemberByEmailAndPassword(email, password);
     if (loginUser == null) {
       return new ResultMap().setStatus(FAIL);
     }
@@ -49,7 +49,11 @@ public class MemberController {
     }
     response.addCookie(cookie); // 응답할 때 쿠키 정보를 응답헤더에 포함시킨다.
 
-    return new ResultMap().setStatus(SUCCESS);
+    ResultMap map = new ResultMap();
+    map.setStatus(SUCCESS);
+    map.setData(loginUser);
+    //return new ResultMap().setStatus(SUCCESS);
+    return map;
   }
 
   @RequestMapping("/member/getLoginUser")
@@ -70,6 +74,31 @@ public class MemberController {
   public Object signout(HttpSession session) {
     session.invalidate();
     return new ResultMap().setStatus(SUCCESS);
+  }
+  
+  @RequestMapping("/member/update")
+  public Object update(Member member) {
+    //System.out.println("Before Update: " + store);
+    //System.out.println("After Update: " + storeService.update(store));
+    return memberService.update(member);
+  }
+  
+  @RequestMapping("/member/get")
+  public Object get(int no) {
+   Member member = memberService.getMemberByMno(no);
+   ResultMap map = new ResultMap();
+   
+   System.out.println("@@@@"+member);
+   
+   if(member == null) {
+     map.setStatus(FAIL);
+     map.setData(null);
+   } else {
+     map.setStatus(SUCCESS);
+     map.setData(member);
+   }
+   
+   return map;
   }
 
 
@@ -96,7 +125,7 @@ public class MemberController {
     String email = result.get("email");
 
     // 3) 현재 등록된 사용자 중에서 해당 이메일의 사용자가 있는지 찾아본다.
-    Member member = memberService.get(email);
+    Member member = memberService.getMemberByEmail(email);
 
     if (member != null) {
       // 4-1) 등록된 사용자가 있다면 그 사용자로 자동 로그인 처리한다.
@@ -113,8 +142,9 @@ public class MemberController {
           .setSocialAccept(true)
           .setNickName(email));
 
-      session.setAttribute("loginUser", memberService.get(email));
+      session.setAttribute("loginUser", memberService.getMemberByEmail(email));
       return new ResultMap().setStatus(SUCCESS).setData("새 회원 로그인");
     }
   }
 }
+

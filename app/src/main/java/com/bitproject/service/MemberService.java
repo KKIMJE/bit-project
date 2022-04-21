@@ -7,8 +7,12 @@ public interface MemberService {
 
   int add(Member member);
 
-  Member get(String email, String password);
+  Member getMemberByEmailAndPassword(String email, String password);
 
-  Member get(String email);
-
+  Member getMemberByEmail(String email);
+  
+  Member getMemberByMno(int mno);
+  
+  int update(Member member);
+  
 }

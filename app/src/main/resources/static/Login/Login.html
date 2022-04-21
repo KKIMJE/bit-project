@@ -127,8 +127,10 @@
             return response.json();
           })
           .then(function(result) {
+              console.log("login : " + result);
             if (result.status == "success") {
-                location.href = "../main/main.html";
+                //location.href = "../main/main.html?mno=" + result.data.mno ;
+                location.href = "../member/personalInfo.html?mno=" + result.data.mno ;
             } else {
                 window.alert("로그인 실패!")
             }

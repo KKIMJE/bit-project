@@ -6,6 +6,8 @@ import com.bitproject.domain.Store;
 public interface StoreService {
 
   int add(Store store);
+  
+  
 
   List<Store> list();
 
