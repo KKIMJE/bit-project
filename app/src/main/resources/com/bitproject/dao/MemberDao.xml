@@ -61,8 +61,12 @@
     from 
       member
     where
+<<<<<<< HEAD
       email=#{email} and password=password(#{password})
       <!-- memberstatus=0 -->
+=======
+      email=#{email} and password=password(#{password}) and member_status = 0
+>>>>>>> 5c8ad914f4b75c723bdabdff963afa84bf01d1c8
   </select>
   
       <select id="findByEmail" resultMap="memberMap">
