@@ -58,21 +58,106 @@ select {
   left: 0px;
   height: 100px;
   border : 1px solid black;
-
 }
 
+.fa-regular,
 .fa-solid {
   position: relative;
   top: 10px;
-  left: 20px;
-  height: 100px;
-  width: 100px;
+  height: 30px;
+  width: 30px;
 }
 
-/* #summernote {
+.select-picture {
   position: relative;
-  top: 7700px;
-} */
+  width: 25px;
+  height: 48px;
+  left: 20px;
+}
+
+.select-picture-detail {
+  position: relative;
+  left: -5px;
+  top: 55px;
+}
+
+.select-location {
+  position: relative;
+  left: 60px;
+  width: 35px;
+  height: 45px;
+}
+
+.select-location-detail {
+  position: relative;
+  left: 23px;
+  top: 55px;
+}
+
+.select-calender {
+  position: relative;
+  left: 100px;
+  width: 40px;
+  height: 45px;
+}
+
+.select-calender-detail {
+  position: relative;
+  left: 58px;
+  top: 55px;
+}
+
+.select-money {
+  position: relative;
+  left: 140px;
+  width: 35px;
+  height: 45px;
+}
+
+.select-money-detail {
+  position: relative;
+  left: 105px;
+  top: 55px;
+}
+
+.select-alcohol-category {
+  position: relative;
+  left: 190px;
+  width: 35px;
+  height: 45px;
+}
+
+.select-alcohol-category-detail {
+  position: relative;
+  left: 150px;
+  top: 55px;
+}
+
+.select-alcohol-amount {
+  position: relative;
+  left: 230px;
+  width: 35px;
+  height: 45px;
+}
+
+.select-alcohol-amount-detail {
+  position: relative;
+  left: 190px;
+  top: 55px;
+}
+
+.select-people {
+  position: relative;
+  left: 270px;
+  width: 40px;
+  height: 45px;
+}
+
+.select-people-detail {
+  position: relative;
+  left: 230px;
+  top: 55px;
+}
 
 .smart-editor {
   position: relative;

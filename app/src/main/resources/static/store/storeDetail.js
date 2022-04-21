@@ -174,9 +174,9 @@ function computeDistance(address) {
       const distanceValue = await distanceLine(storeGeoResult, geoResult)
 
       if (1000 < distanceValue) {
-        $('.storeDistance').html((distanceValue * 0.001).toFixed(2) + "km")
+        $('.storeDistance').html((distanceValue * 0.001).toFixed(0) + "km")
       } else {
-        $('.storeDistance').html(distanceValue.toFixed(2) + "m")
+        $('.storeDistance').html(distanceValue.toFixed(0) + "m")
       }
     } catch (e) {
         console.log(e);
@@ -197,12 +197,17 @@ function storeCountMno(storeNo) {
 function storeAlcPrint(alcList) {
   let sugAlcImg = document.querySelector(".sugAlcImg")
   let str = ""
+
+  if (alcList.length == 0) {
+    str = "추천주류를 준비중입니다."
+  }
+
   for (let i=0; i < alcList.length; i++) {
     str += `
     <a class="alc-link" href="/alcohol/alcoholdetail.html?no=${alcList[i].alcoholDetailNo}">
       <div class="sugAlcImg-card">
-        <img class="xAlc-img" src="/alcohol/alcoholimg/alcohol42.png" alt="">
-        <p class="xAlc-name">필스너우르켈</p>
+        <img class="xAlc-img" src="../alcohol/alcoholimg/alcohol${alcList[i].alcoholDetailNo}.png" alt="">
+        <p class="xAlc-name">${alcList[i].name}</p>
         <p class="xAlc-price">${alcList[i].price}원</p>
       </div>
     </a>`

@@ -106,9 +106,6 @@ public class MemberController {
   @RequestMapping("/member/facebookLogin")
   public Object facebookLogin(String accessToken, HttpSession session) {
 
-    System.out.println("facebookLogin() 호출됨");
-
-
     // 1) accessToken을 가지고 페이스북으로 가서 로그인 사용자 정보를 가져온다.
     RestTemplate restTemplate = new RestTemplate();
     Map<String,String> result = restTemplate.getForObject(

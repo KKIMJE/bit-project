@@ -4,8 +4,12 @@ button{
   all: unset;
 }
 
+.modal-open {
+  padding-right:0 !important;
+}
+
 .editor {
-  margin: 110px 0;
+  margin-top: 135px;
   width: 1100px;
   display: flex;
   flex-direction: column;
@@ -15,6 +19,7 @@ button{
   display: flex;
   align-items: baseline;
   justify-content: end;
+  margin-bottom: 30px;
 }
 
 .save {
@@ -29,7 +34,7 @@ button{
   font-weight: 600;
 }
 
-.quit {
+.exit {
   background: #90D483;
   width: 90px;
   height: 40px;
@@ -52,8 +57,68 @@ button{
 .select-poption {
   display: flex;
   width: 1100px;
-  height: 60px;
-  border: 1px solid #ddd;
+  height: 45px;
   margin-bottom: 10px;
 }
 
+#map {
+  width: 100%;
+  height: 480px;
+}
+
+.mmodal-size {
+  max-width: 850px !important;
+  height: 600px;
+}
+
+.pmodal-size {
+  max-width: 370px !important;
+}
+
+#exampleModal > div > div > div.modal-footer > button {
+  width: 70px;
+}
+
+#exampleModalLabel {
+  font-size: 20px;
+}
+
+.select-poption .btn {
+  margin-right: 3px;
+  width: 60px;
+  height: 32px;
+  font-size: 18px !important;
+  background-color: #90D483 !important;
+  border: none;
+}
+
+/*지도(위치 선택)*/
+
+.my-address-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  color: rgb(252, 180, 21);
+  font-size: 45px;
+  text-shadow: -1px 0 #fca015, 0 1px #fca015, 1px 0 #fca015, 0 -1px #fca015;
+}
+
+.my-address {
+  width: 100%;
+  height: 51px;
+  line-height: 51px;
+  position: absolute;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  background: white;
+  opacity:0.8;
+  z-index: 2;
+}
+
+/*푸터 하단 고정*/
+footer__ {
+  position : absolute;
+  bottom : 0;
+}

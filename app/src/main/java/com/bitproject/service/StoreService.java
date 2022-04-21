@@ -2,7 +2,7 @@ package com.bitproject.service;
 
 import java.util.List;
 import com.bitproject.domain.Store;
-
+//
 public interface StoreService {
 
   int add(Store store);
@@ -19,5 +19,6 @@ public interface StoreService {
 
   int delete(int no);
 
+  List<Store> findByStoreAlc(int no);
 
 }

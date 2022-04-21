@@ -27,9 +27,9 @@
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 
         <!-- 에디터 -->
-        <script src="../asset/summernote-0.8.18-dist/summernote-lite.js"></script>
-        <script src="../asset/summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
-        <link rel="stylesheet" href="../asset/summernote-0.8.18-dist/summernote-lite.css">
+        <script src="summernote-0.8.18-dist/summernote-lite.js"></script>
+        <script src="summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
+        <link rel="stylesheet" href="summernote-0.8.18-dist/summernote-lite.css">
 
         <script>
             $(document).ready(function () {
@@ -46,26 +46,65 @@
           <form name="partyBoard" method="post">
             <div class="editorbtns">
               <button class="save" type="button"><span>저장</span></button>
-              <button class="quit" type="button"><span>나가기</span></button>
+              <button class="exit" type="button"><span>나가기</span></button>
             </div>
       
             <input class="party-title" type="text" name="title" value=""placeholder="제목을 입력해주세요" >
       
+
             <div class="select-poption">
-              <div class="picture" type="button"><i class="fa-solid fa-location-dot"></i></div>
-              <input name="date" type="date" class="picture"><i class="fa-solid fa-calendar-days"></i>
-              <div class="picture" type="button"><i class="fa-solid fa-bottle-droplet"></i>
-                <p>주종
-                  <select>
-                    <option value="1">소주</option>
-                    <option value="2">맥주</option>
-                  </select>
-                </p>
-              </div>
-              <input name="date" type="text" class="picture"><i class="fa-solid fa-whiskey-glass"></i></div>
-              <input name="date" type="number" class="picture"><i class="fa-solid fa-won-sign"></i></div>
-              <input name="date" type="text" class="picture"><i class="fa-solid fa-user"></i></div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel"></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <span></span>
+                      <button type="button" class="btn btn-primary">저장하기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+
+                <!-- Button trigger modal 장소-->
+              <button type="button" id="p-location" class="btn btn-primary pbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="">
+                <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;장소
+              </button>
+
+              <!-- Button trigger modal 일정-->
+              <button type="button" id="p-date" class="btn btn-primary pbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;일정
+              </button>
+
+              <!-- Button trigger modal 주종-->
+              <button type="button" id="p-type" class="btn btn-primary pbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-bottle-droplet"></i>&nbsp;&nbsp;주종
+              </button>
+
+              <!-- Button trigger modal 주량-->
+              <button type="button" id="p-limit" class="btn btn-primary pbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-whiskey-glass"></i>&nbsp;&nbsp;주량
+              </button>
+
+              <!-- Button trigger modal 회비-->
+              <button type="button" id="p-fee" class="btn btn-primary pbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-won-sign"></i>&nbsp;&nbsp;회비
+              </button>
+
+              <!-- Button trigger modal 인원-->
+              <button type="button" id="p-member" class="btn btn-primary pbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-user"></i>&nbsp;&nbsp;인원
+              </button>
+
             </div>
+
+          </div>
 
             <textarea id="summernote" name="editordata"></textarea>
 
@@ -74,6 +113,9 @@
       
         <div id="footer"></div>
 
+
+    <!-- kakaoMap -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=869ba892f15eedfec5a2c871c6d4a639&libraries=services"></script>
     <!-- icons -->
     <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
     <script type="module" src="partyForm.js"></script>
