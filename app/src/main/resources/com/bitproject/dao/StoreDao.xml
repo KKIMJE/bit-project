@@ -27,15 +27,27 @@
     <result column="oper" property="oper"/>
     <result column="status" property="status"/>
     
-    <collection property="AlcoholSales" ofType="AlcoholSales">
+    <collection property="alcoholSales" ofType="AlcoholSales">
       <result column="alcohol_detail_no" property="alcoholDetailNo"/>
       <result column="price" property="price"/>
-      <result column="alc_name" property="name"/> <!-- alcoholDetail 테이블의 name을 가져옴 -->
+      <result column="alc_name" property="name"/> <!-- alcoholDetail 테이블의 name을 alcoholSales 도메인에서 받음 -->
     </collection>
     
-    <collection property="Tags" ofType="tag">
+    <collection property="storeMenu" ofType="storeMenu">
+      <result column="sm_name" property="storeMenuName"/>
+      <result column="sm_price" property="storeMenuPrice"/>
+      <result column="main_accept" property="mainAccept"/>
+    </collection>
+    
+    <collection property="tags" ofType="tag">
       <result column="tag_no" property="tagNo"/>
       <result column="name" property="name"/>
+    </collection>
+    
+    <collection property="storeImg" ofType="storeImg">
+      <result column="store_img_no" property="storeImgNo"/>
+      <result column="store_no" property="storeNo"/>
+      <result column="img" property="storeImg"/>
     </collection>
     
   </resultMap>
@@ -109,7 +121,7 @@
   </insert>
 
 	<select id="findByNo" resultMap="storeMap" parameterType="int">
-    select distinct
+    select
       s.store_no, 
       s.business_registration_no,
       s.business_registration,
@@ -121,21 +133,23 @@
       s.evaluation_score,
       s.reservation_accept,
       s.max_member,
-      s.lat,
-      s.lng,
-      s.place_id,
       s.oper,
       s.status,
 	  t.name,
 	  ass.alcohol_detail_no,
 	  ass.price,
-	  acd.name as alc_name	  
+	  acd.name as alc_name,
+	  sm.name as sm_name,
+	  sm.price as sm_price,
+	  si.img
 	from 
 	  store s
 	  left outer join store_tag st on s.store_no=st.store_no
 	  left outer join tag t on st.tag_no=t.tag_no
+	  left outer join store_menu sm on s.store_no=sm.store_no
 	  left outer join alcohol_sales ass on s.store_no=ass.store_no
-	  left outer join alcohol_detail acd on ass.alcohol_detail_no=acd.alcohol_detail_no 
+	  left outer join alcohol_detail acd on ass.alcohol_detail_no=acd.alcohol_detail_no
+	  left outer join store_img si on si.store_no=s.store_no 
 	where
 	  s.store_no=#{no}
   </select>

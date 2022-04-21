@@ -9,7 +9,7 @@ body {
 }
 
 /* 전체박스 묶음 */
-.contentBox {
+.xcontentBox {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -179,7 +179,7 @@ body {
   height: 180px;
   background: rgba(196, 196, 196, 0.2);
   border-radius: 29px;
-  margin-left: 27px;
+  margin-left: -22px;
   margin-top: 20px;
 }
 .reviewSort, .reviewSortChoice {
@@ -194,7 +194,7 @@ body {
   color: rgb(63, 63, 63);
   font-size: 20px;
   font-weight: bold;
-  margin-left: 30px;
+  margin-left: -16px;
 }
 .choiceRecent, .choiceStar, .choicePhoto {
   margin: 0px 10px;
@@ -248,4 +248,21 @@ body {
 #mapInfo > span > i {
   color: #29C05E;
   font-size: 35px;
+}
+
+/* 모달 */
+.img-box {
+  margin-top: 400;
+  padding-top: 400;
+}
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+body.modal-open {
+  margin-left: 0% !important;
+  margin-right: 0% !important;
+  overflow: hidden !important;
+  padding-right: 17px !important;
 }

@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bitproject.domain.Store;
 import com.bitproject.service.StoreService;
 
-@RestController 
+@RestController
+@RequestMapping("/store")
 public class StoreController {
 
   @Autowired
@@ -18,19 +19,19 @@ public class StoreController {
   //  StoreDao storeDao;
   //
 
-  @RequestMapping("/store/list")
+  @RequestMapping("/list")
   public Object list() {     
     return storeService.list();
   }
 
-  @RequestMapping("/store/add")
+  @RequestMapping("/add")
   public Object add(Store store) {
     System.out.println("store: " + store);
     return storeService.add(store);
   }
 
 
-  @RequestMapping("/store/get")
+  @RequestMapping("/get")
   public Object get(int no) {
     Store store = storeService.get(no);
     //System.out.println("StoreNo: " + no + ", Get Store: " + store);
@@ -40,26 +41,26 @@ public class StoreController {
     return store;
   }
 
-  @RequestMapping("/store/getMnoCnt")
+  @RequestMapping("/getMnoCnt")
   public int getMnoCnt(int no) {
     //System.out.println("StoreNo: " + no + ", Get Store: " + store);
     return storeService.getCountMno(no);
   }
 
-  @RequestMapping("/store/getStoreAlc")
+  @RequestMapping("/getStoreAlc")
   public List<Store> getStoreAlc(int no) {
     //System.out.println("StoreNo: " + no + ", Get Store: " + store);
     return storeService.findByStoreAlc(no);
   }
 
-  @PostMapping("/store/update")
+  @PostMapping("/update")
   public Object update(Store store) {
     //System.out.println("Before Update: " + store);
     //System.out.println("After Update: " + storeService.update(store));
     return storeService.update(store);
   }
 
-  @RequestMapping("/store/delete")
+  @RequestMapping("/delete")
   public int delete(int no) {
     //System.out.println("Delete: " + no);
     int row_num = storeService.delete(no);

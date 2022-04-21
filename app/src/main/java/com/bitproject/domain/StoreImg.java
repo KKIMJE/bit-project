@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class StoreImg{
 
-  int StoreImgNo;
+  int storeImgNo;
   int storeNo;
   String storeImg;
 

@@ -73,8 +73,9 @@ function storeTextBox (store) {
   let storeStar = document.querySelector(".storeStar")
   let storeTag = document.querySelector(".storeTag")
 
-  storeAlcPrint(store.alcoholSales)
-
+  storeDetailImgPrint(store.storeImg) // 주점 상세 이미지
+  storeAlcPrint(store.alcoholSales) // 추천주류
+  storeMenuPrint(store.storeMenu) // 추천메뉴
   storeCountMno(store.storeNo) // 주점찜
   storeName.innerHTML = store.storeName // 주점이름
   storeAddress.innerHTML += store.address // 주점주소
@@ -193,8 +194,8 @@ function storeCountMno(storeNo) {
     storeMnoCnt.innerHTML += cnt
   });
 }
-
-function storeAlcPrint(alcList) {
+// 추천주류
+function storeAlcPrint(alcList) { 
   let sugAlcImg = document.querySelector(".sugAlcImg")
   let str = ""
 
@@ -202,7 +203,7 @@ function storeAlcPrint(alcList) {
     str = "추천주류를 준비중입니다."
   }
 
-  for (let i=0; i < alcList.length; i++) {
+  for (let i=0; i < 5; i++) { // 최대 출력 5개
     str += `
     <a class="alc-link" href="/alcohol/alcoholdetail.html?no=${alcList[i].alcoholDetailNo}">
       <div class="sugAlcImg-card">
@@ -212,18 +213,75 @@ function storeAlcPrint(alcList) {
       </div>
     </a>`
 
-    console.log(alcList[i].alcoholDetailNo)
-    console.log(alcList[i].price)
+    // console.log(alcList[i].alcoholDetailNo)
+    // console.log(alcList[i].price)
   }
   sugAlcImg.innerHTML = str
 }
 
+// 추천안주
+function storeMenuPrint(storeMenuList) {
+  let sugFoodImg = document.querySelector(".sugFoodImg")
+  let str = ""
+
+  if (storeMenuList.length == 0) {
+    str = "추천메뉴를 준비중입니다."
+  }
+
+  for (let i=0; i < 5; i++) { // 최대 출력 5개
+    str += `
+      <div class="sugAlcImg-card">
+        <img class="xAlc-img" src="../asset/img/storeMenu/storeMenu${i+1}.jpg" alt="">
+        <p class="xAlc-name">${storeMenuList[i].storeMenuName}</p>
+        <p class="xAlc-price">${storeMenuList[i].storeMenuPrice}원</p>
+      </div>`
+
+    // console.log(storeMenuList[i].storeMenuName)
+    // console.log(storeMenuList[i].storeMenuPrice)
+  }
+  sugFoodImg.innerHTML = str
+}
+
+// 주점상세 이미지
+function storeDetailImgPrint(Imgs) {
+  
+
+  let imgBox = document.querySelector(".img-box")
+  let str 
+  if (Imgs.length == 0) {
+    str = "이미지를 준비중입니다."
+  }
+
+// 최대 출력 5개
+  str = `
+  <img class="xMain-img" src="../asset/img/storeDetail/${Imgs[0].storeImg}.jpg" alt="">
+  
+  <div class="xSub-box">
+    <div class="xSub-box1">
+      <img class="xSub-img" src="../asset/img/storeDetail/${Imgs[1].storeImg}.jpg" alt="">
+      <img class="xSub-img" src="../asset/img/storeDetail/${Imgs[2].storeImg}.jpg" alt="">
+    </div>
+    <div class="xSub-box2">
+      <img class="xSub-img" src="../asset/img/storeDetail/${Imgs[3].storeImg}.jpg" alt="">
+      <img class="xSub-img" src="../asset/img/storeDetail/${Imgs[4].storeImg}.jpg" alt="">
+    </div>
+  </div>`
+
+  // console.log(Imgs)
+
+  imgBox.innerHTML = str
+}
+
+// 모달
+// var myModal = document.getElementById('myModal')
+// var myInput = document.getElementById('myInput')
+
+// myModal.addEventListener('shown.bs.modal', function () {
+//   myInput.focus()
+// })
 
 
 
-// 추천주류
-//<div class="sugAlcImg-card">
-//<img class="xAlc-img" src="../alcohol/alcoholimg/alcohol41.png" alt="">
-//<p class="xAlc-name">필스너우르켈</p>
-//<p class="xAlc-price">8000원</p>
-//</div>
+
+
+
