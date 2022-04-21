@@ -138,7 +138,7 @@
 	  t.name,
 	  ass.alcohol_detail_no,
 	  ass.price,
-	  acd.name as alc_name,
+	  acd.alcohol_name as alc_name,
 	  sm.name as sm_name,
 	  sm.price as sm_price,
 	  si.img
