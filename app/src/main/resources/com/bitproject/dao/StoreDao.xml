@@ -47,7 +47,7 @@
     <collection property="storeImg" ofType="storeImg">
       <result column="store_img_no" property="storeImgNo"/>
       <result column="store_no" property="storeNo"/>
-      <result column="img" property="storeImg"/>
+      <result column="store_img" property="storeImg"/>
     </collection>
     
   </resultMap>
