@@ -141,7 +141,7 @@
 	  acd.alcohol_name as alc_name,
 	  sm.name as sm_name,
 	  sm.price as sm_price,
-	  si.img
+	  si.store_img
 	from 
 	  store s
 	  left outer join store_tag st on s.store_no=st.store_no
