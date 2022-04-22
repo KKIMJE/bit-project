@@ -11,6 +11,10 @@ public interface PartyDao {
 
   int insert(Party party);
 
+  // int insertMaxMember(int maxMember);
+
+  //String insertAdress(String address);
+
   Party findByNo(int no);
 
   int update(Party party);

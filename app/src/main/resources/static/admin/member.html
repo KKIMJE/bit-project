@@ -8,8 +8,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/member.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-  <title>야술먹자 - 관리자 회원</title>
+  <title>야술먹자 - 회원관리</title>
 </head>
 
 <body id="body-pd">
@@ -62,56 +61,106 @@
   </div>
 
 
-
-  <h1 class="x-admin-title" style="margin:20px 0 20px 20px;">관리자 페이지</h1>
+  <h1 class="x-admin-title" style="margin:20px 0 20px 20px;">회원관리</h1>
   <hr>
   <div class="member-page">
     <div class="x-member-page">
-      <table id="x-board-table">
-        <thead>
+      <div class="x-member-curr">
+        <h2>회원현황(명)</h2>
+        <table id="x-curr-table" border="1">
           <tr>
-            <th style="width:5vw;">회원번호</th>
+              <th>전체회원</th>
+              <td>2000</td>
+          </tr>
+          <tr>
+              <th>일반회원</th>
+              <td>1000</td>
+          </tr>
+          <tr>
+              <th>사장회원</th>
+              <td>1000</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="x-member-search">
+        <form name="search-form">
+          <div class="">
+            <select style="height:22px;">
+              <option value="email">이메일</option>
+              <option value="nickName">닉네임</option>
+            </select>
+            <input type="text">
+            <button type="button" class="x-search-btn">검색</button>
+          </div>
+        </form>
+      </div>
+
+      <table id="x-member-table">
+        <thead>
+          <tr style="height:50px;">
+            <th>회원번호</th>
             <th>이메일</th>
             <th>이름</th>
             <th>닉네임</th>
-            <th>멤버타입</th>
-            <th>멤버상태</th>
+            <th>성별</th>
+            <th>생년월일</th>
+            <th>전화번호</th>
+            <th>소셜회원여부</th>
+            <th>회원타입</th>
+            <th>가입일</th>
+            <th>회원상태</th>
+            <th>제재여부</th>
+            <th>관리</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td><a href="memberDetail.html">1</a></td>
-            <td>test@test.com</td>
-            <td>테스트이름</td>
-            <td>감자감자</td>
-            <td>사장님</td>
-            <td>멤버상태??</td>
-          </tr>
-          <tr>
-            <td><a href="#">1</a></td>
-            <td>test@test.com</td>
-            <td>테스트이름</td>
-            <td>감자감자</td>
-            <td>사장님</td>
-            <td>멤버상태??</td>
-          </tr>
-          <tr>
-            <td><a href="#">1</a></td>
-            <td>test@test.com</td>
-            <td>테스트이름</td>
-            <td>감자감자</td>
-            <td>사장님</td>
-            <td>멤버상태??</td>
-          </tr>
-          <tr>
-            <td><a href="#">1</a></td>
-            <td>test@test.com</td>
-            <td>테스트이름</td>
-            <td>감자감자</td>
-            <td>사장님</td>
-            <td>멤버상태??</td>
-          </tr>
 
+        <tbody>
+          <tr style="height:50px;">
+            <td>1</td>
+            <td>test@test.com</td>
+            <td>홍길동</td>
+            <td>kill동</td>
+            <td>남자</td>
+            <td>1991.05.21</td>
+            <td>010-2929-2929</td>
+            <td>있음</td>
+            <td>사장</td>
+            <td>2022-04-22</td>
+            <td>일반</td>
+            <td>2</td>
+            <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
+          </tr>
+          <tr style="height:50px;">
+            <td>2</td>
+            <td>test@test.com</td>
+            <td>홍길동</td>
+            <td>kill동</td>
+            <td>남자</td>
+            <td>1991.05.21</td>
+            <td>010-2929-2929</td>
+            <td>있음</td>
+            <td>일반</td>
+            <td>2022-04-22</td>
+            <td>일반</td>
+            <td>2</td>
+            <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
+          </tr>
+          <tr style="height:50px;">
+            <td>3</td>
+            <td>test@test.com</td>
+            <td>홍길동</td>
+            <td>kill동</td>
+            <td>남자</td>
+            <td>1991.05.21</td>
+            <td>010-2929-2929</td>
+            <td>있음</td>
+            <td>일반</td>
+            <td>2022-04-22</td>
+            <td>일반</td>
+            <td>2</td>
+            <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
+          </tr>
         </tbody>
       </table>
     </div>

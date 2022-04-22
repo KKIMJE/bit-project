@@ -44,6 +44,16 @@
     p.party_no desc;
   </select>
   
+  
+  <!--  <insert id="insertAdress" parameterType="String">
+    insert into party(address) 
+    values(#{address})
+  </insert> -->
+  
+  
+  
+  
+  
   <select id="findByNo" resultMap="partyMap2" parameterType="int">
   select
     p.party_no,
@@ -64,6 +74,10 @@
   where 
       party_no=#{no}
   </select>
+  
+  
+  
+  
   
   
   <!--   select
