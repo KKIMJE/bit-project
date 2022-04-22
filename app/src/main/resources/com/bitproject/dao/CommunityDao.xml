@@ -53,12 +53,12 @@
     where 
      board_no=#{boardNo}
   </update>
-
-  <delete id="delete" parameterType="CommunityMain">
+  -->
+  <delete id="delete" parameterType="int">
     delete from board 
     where board_no=#{boardNo}
   </delete>
-  -->
+
   
     <select id="findByNo" resultMap="communityMap" parameterType="int">
   select

@@ -1,3 +1,10 @@
+// 글쓰기 form.html로 이동
+document.querySelector(".writing__").addEventListener("click", function() {
+  console.log(e.target);
+	location.href = "form.html"
+})
+
+
 var boardCardDiv = document.querySelector(".card")
 const lightBtn = document.querySelector(".category");
 

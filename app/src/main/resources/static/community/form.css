@@ -14,7 +14,7 @@ select {
  position: relative;
  width: 75px;
  height: 27px;
- left: 737px;
+ left: 837px;
  top: 120px;
  line-height: 20px;
  /* background: #90D483; */
@@ -30,7 +30,7 @@ select {
  position: relative;
  width: 75px;
  height: 27px;
- left: 827px;
+ left: 927px;
  top: 93px;
  line-height: 20px;
  /* background: #90D483; */
@@ -45,119 +45,11 @@ select {
 .write-title {
   position: relative;
   top: 115px;
-  width: 900px;
+  width: 1000px;
   left: 0px;
   height: 45px;
 }
 
-.select-Category {
-  position: relative;
-  display: flex;
-  top: 130px;
-  width: 900px;
-  left: 0px;
-  height: 100px;
-  border : 1px solid black;
-}
-
-.fa-regular,
-.fa-solid {
-  position: relative;
-  top: 10px;
-  height: 30px;
-  width: 30px;
-}
-
-.select-picture {
-  position: relative;
-  width: 25px;
-  height: 48px;
-  left: 20px;
-}
-
-.select-picture-detail {
-  position: relative;
-  left: -5px;
-  top: 55px;
-}
-
-.select-location {
-  position: relative;
-  left: 60px;
-  width: 35px;
-  height: 45px;
-}
-
-.select-location-detail {
-  position: relative;
-  left: 23px;
-  top: 55px;
-}
-
-.select-calender {
-  position: relative;
-  left: 100px;
-  width: 40px;
-  height: 45px;
-}
-
-.select-calender-detail {
-  position: relative;
-  left: 58px;
-  top: 55px;
-}
-
-.select-money {
-  position: relative;
-  left: 140px;
-  width: 35px;
-  height: 45px;
-}
-
-.select-money-detail {
-  position: relative;
-  left: 105px;
-  top: 55px;
-}
-
-.select-alcohol-category {
-  position: relative;
-  left: 190px;
-  width: 35px;
-  height: 45px;
-}
-
-.select-alcohol-category-detail {
-  position: relative;
-  left: 150px;
-  top: 55px;
-}
-
-.select-alcohol-amount {
-  position: relative;
-  left: 230px;
-  width: 35px;
-  height: 45px;
-}
-
-.select-alcohol-amount-detail {
-  position: relative;
-  left: 190px;
-  top: 55px;
-}
-
-.select-people {
-  position: relative;
-  left: 270px;
-  width: 40px;
-  height: 45px;
-}
-
-.select-people-detail {
-  position: relative;
-  left: 230px;
-  top: 55px;
-}
 
 .smart-editor {
   position: relative;

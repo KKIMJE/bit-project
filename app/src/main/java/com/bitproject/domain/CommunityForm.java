@@ -16,4 +16,5 @@ public class CommunityForm{
   java.sql.Timestamp regDate;
   java.sql.Timestamp updateDate;
   int viewCount;
+  Member writer;
 }
