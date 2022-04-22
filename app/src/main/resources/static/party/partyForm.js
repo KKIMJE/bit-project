@@ -62,7 +62,7 @@ $(".pbtn").on('click', function(e){
   switch (ptarget) {
     //------장소-------
     case 1 :
-    
+
       strT = "지도를 움직여 모임 위치를 지정해주세요";
       strB = '<div id="map">'
       + '<div class="my-address">'
@@ -76,47 +76,47 @@ $(".pbtn").on('click', function(e){
       $('.modal-body').html(strB);
 
     /*****************
-      모달 지도 생성  
+      모달 지도 생성
     *****************/
     var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
     var options = { //지도를 생성할 때 필요한 기본 옵션
       center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
       level: 3 //지도의 레벨(확대, 축소 정도)
     };
-    
+
     var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
     // 지도 표시 영역이스타일이 잡히고 난 후 map.relayout()을 호출한다.
     setTimeout(function(){ map.relayout(); }, 1500);
 
-    
+
     /******************************
       geolocation으로 현위치 지정
     ******************************/
 
-    // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+    // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
     if (navigator.geolocation) {
-      
+
     // GeoLocation을 이용해서 접속 위치를 얻어옵니다
     navigator.geolocation.getCurrentPosition(function(position) {
-        
+
         var lat = position.coords.latitude, // 위도
             lon = position.coords.longitude; // 경도
 
             var locPosition = new kakao.maps.LatLng(lat, lon);
             // 지도 중심좌표를 접속위치로 변경합니다
-            map.setCenter(locPosition);    
+            map.setCenter(locPosition);
     });
 
     } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
 
     var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667)
         // 지도 중심좌표를 접속위치로 변경합니다
-        map.setCenter(locPosition2); 
+        map.setCenter(locPosition2);
     }
 
     /*********************************
-      중심좌표 변경에 따른 주소 출력 
+      중심좌표 변경에 따른 주소 출력
     **********************************/
 
     var myposition;
@@ -124,9 +124,9 @@ $(".pbtn").on('click', function(e){
     // 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
     kakao.maps.event.addListener(map, 'center_changed', function() {
 
-        // 지도의 중심좌표를 얻어옵니다 
-        var latlng = map.getCenter(); 
-        
+        // 지도의 중심좌표를 얻어옵니다
+        var latlng = map.getCenter();
+
         // 주소-좌표 변환 객체를 생성합니다
         var geocoder = new kakao.maps.services.Geocoder();
 
@@ -144,14 +144,14 @@ $(".pbtn").on('click', function(e){
     });
 
     $('.modal-footer span').data('location',`${myposition}`);
-    
+
     /******************
     설정된 주소 넘기기
     ******************/
     $('.modal-footer button').click(function() {
       $('#ps-location span').text(`${myposition}`);
     });
-    
+
     break;
 
     //------일정-------
@@ -160,7 +160,7 @@ $(".pbtn").on('click', function(e){
 
     strT = "모임을 원하는 날짜를 지정해주세요";
     strB = '<input type="datetime-local" id="meetingDate">';
-  
+
     $('.modal-title').html(strT);
     $('.modal-body').html(strB);
 
@@ -191,7 +191,7 @@ $(".pbtn").on('click', function(e){
     + '<option value="8">전통주</option>'
     + '</select>'
     + '</p>';
-  
+
     $('.modal-title').html(strT);
     $('.modal-body').html(strB);
 
@@ -212,7 +212,7 @@ $(".pbtn").on('click', function(e){
     strT = "원하시는 참여자의 주량을 적어주세요";
     strB = '<input id="alcoholLimit" type="text">';
 
-  
+
     $('.modal-title').html(strT);
     $('.modal-body').html(strB);
 
@@ -224,7 +224,7 @@ $(".pbtn").on('click', function(e){
       $('.modal-footer span').data('alimit', `${limit}`);
       $('#ps-limit span').text(`${limit}`);
     });
-    
+
       break;
 
 
@@ -234,7 +234,7 @@ $(".pbtn").on('click', function(e){
     strB = '<input name="fee" type="number" min="0" max="10000000">'
     + '<span>원</span>'
 
-  
+
     $('.modal-title').html(strT);
     $('.modal-body').html(strB);
 
@@ -266,7 +266,7 @@ $(".pbtn").on('click', function(e){
     + '<option value="10">10</option>'
     + '</select>명'
 
-  
+
     $('.modal-title').html(strT);
     $('.modal-body').html(strB);
 
