@@ -57,7 +57,6 @@ $(".pbtn").on('click', function(e){
 
   let strT = null;
   let strB = null;
-  let strF = null;
 
   switch (ptarget) {
     //------장소-------
@@ -148,6 +147,7 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 주소 넘기기
     ******************/
+    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
       $('#ps-location span').text(`${myposition}`);
     });
@@ -167,6 +167,7 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 일정 넘기기
     *******************/
+    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
     meetingDate = $('#meetingDate').val();
     $('.modal-footer span').data('date', `${meetingDate}`);
@@ -179,8 +180,7 @@ $(".pbtn").on('click', function(e){
     //------주종-------
     case 3 :
     strT = "마시고 싶은 주종을 선택해주세요";
-    strB = '<p>주종'
-    + '<select name="alcoholType">'
+    strB = '<select name="alcoholType">'
     + '<option value="1">전체</option>'
     + '<option value="2">소주</option>'
     + '<option value="3">맥주</option>'
@@ -189,8 +189,7 @@ $(".pbtn").on('click', function(e){
     + '<option value="6">양주</option>'
     + '<option value="7">사케</option>'
     + '<option value="8">전통주</option>'
-    + '</select>'
-    + '</p>';
+    + '</select>';
   
     $('.modal-title').html(strT);
     $('.modal-body').html(strB);
@@ -198,6 +197,7 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 주종 넘기기
     ******************/
+    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
       let type = $('select[name=alcoholType] option:selected').text();
       $('.modal-footer span').data('atype', `${type}`);
@@ -205,7 +205,6 @@ $(".pbtn").on('click', function(e){
     });
 
       break;
-
 
     //------주량-------
     case 4 :
@@ -219,6 +218,7 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 주량 넘기기
     ******************/
+    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
       let limit = $('#alcoholLimit').val();
       $('.modal-footer span').data('alimit', `${limit}`);
@@ -231,7 +231,7 @@ $(".pbtn").on('click', function(e){
     //------회비-------
     case 5 :
     strT = "모임 회비를 적어주세요";
-    strB = '<input name="fee" type="number" min="0" max="10000000">'
+    strB = '<input id="alcoholFee" type="number" min="0" max="10000000">'
     + '<span>원</span>'
 
   
@@ -241,11 +241,12 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 회비 넘기기
     ******************/
-  /*  $('.modal-footer button').click(function() {
-      let type = $('select[name=alcoholType] option:selected').text();
-      $('.modal-footer span').data('alcoholType', `${type}`);
-      $('#ps-type span').text(`${type}`);
-    });*/
+    $('.modal-footer button').off("click");
+    $('.modal-footer button').click(function() {
+      let fee = $('#alcoholFee').val();
+      $('.modal-footer span').data('afee', `${fee}`);
+      $('#ps-fee span').text(`${fee}`);
+    });
 
       break;
 
@@ -253,7 +254,7 @@ $(".pbtn").on('click', function(e){
     //------인원-------
     case 6 :
     strT = "원하시는 최대 인원을 선택해주세요";
-    strB = '<select name="type">'
+    strB = '<select name="maxMember">'
     + '<option value="1">1</option>'
     + '<option value="2">2</option>'
     + '<option value="3">3</option>'
@@ -273,11 +274,12 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 인원 넘기기
     ******************/
-    /*$('.modal-footer button').click(function() {
-      let type = $('select[name=alcoholType] option:selected').text();
-      $('.modal-footer span').data('alcoholType', `${type}`);
-      $('#ps-type span').text(`${type}`);
-    });*/
+    $('.modal-footer button').off("click");
+    $('.modal-footer button').click(function() {
+      let member = $('select[name=maxMember] option:selected').text();
+      $('.modal-footer span').data('amember', `${member}`);
+      $('#ps-member span').text(`${member}`);
+    });
 
       break;
   }
