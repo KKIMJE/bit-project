@@ -45,12 +45,11 @@
         <div class="editor">
           <form name="partyBoard" method="post">
             <div class="editorbtns">
-              <button class="save" type="button"><span>저장</span></button>
+              <button class="save" type="submit"><span>저장</span></button>
               <button class="exit" type="button"><span>나가기</span></button>
             </div>
-      
+    
             <input class="party-title" type="text" name="title" value=""placeholder="제목을 입력해주세요" >
-      
 
             <div class="select-poption">
 
@@ -66,7 +65,7 @@
                     </div>
                     <div class="modal-footer">
                       <span></span>
-                      <button type="button" class="btn btn-primary">저장하기</button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">저장하기</button>
                     </div>
                   </div>
                 </div>
@@ -104,7 +103,14 @@
 
             </div>
 
-          </div>
+            <div class="poption-select-wrap">
+              <div class="poption-select" id="ps-location"><span></span></div>
+              <div class="poption-select" id="ps-date"><span></span></div>
+              <div class="poption-select" id="ps-type"><span></span></div>
+              <div class="poption-select" id="ps-limit"><span></span></div>
+              <div class="poption-select" id="ps-fee"><span></span></div>
+              <div class="poption-select" id="ps-member"><span></span></div>
+            </div>
 
             <textarea id="summernote" name="editordata"></textarea>
 
