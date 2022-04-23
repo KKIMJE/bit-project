@@ -7,6 +7,10 @@ public interface PartyService {
 
   int add(Party party);
 
+  //int addMaxMember(int maxMember);
+
+  // String add(String address);
+
   List<Party> list();
 
   Party get(int no);

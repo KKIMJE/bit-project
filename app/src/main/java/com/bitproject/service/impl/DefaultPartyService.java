@@ -20,6 +20,16 @@ public class DefaultPartyService implements PartyService {
     return partyDao.insert(party);
   }
 
+  /*@Override
+  public int addMaxMember(int maxMember) {
+    return partyDao.insertMaxMember(maxMember);
+  }*/
+
+  /*  @Override
+  public String add(String address) {
+    return partyDao.insertAdress(address);
+  } */
+
   @Override
   public List<Party> list() {
     return partyDao.findAll();
@@ -42,5 +52,6 @@ public class DefaultPartyService implements PartyService {
   public int delete(int no) {
     return partyDao.delete(no);
   }
+
 
 }
