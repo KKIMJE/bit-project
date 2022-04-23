@@ -9,6 +9,8 @@ public interface AdminMemberService {
 
   int size();
 
+  int typeSize(boolean memberStatus);
+
   //  int add(Member member);
   //
   //  Member getMemberByEmailAndPassword(String email, String password);

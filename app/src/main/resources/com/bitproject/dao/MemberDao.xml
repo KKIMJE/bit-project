@@ -25,6 +25,7 @@
     <result column="block_date" property="blockDate"/>
     <result column="block_accept" property="blockAccept"/>
     <result column="member_status" property="memberStatus"/>
+    <result column="member_count" property="storeCount"/>
     
   </resultMap>
 

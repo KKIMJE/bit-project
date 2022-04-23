@@ -22,10 +22,9 @@
     <result column="m_img" property="mImg"/>
     <result column="nickname" property="nickName"/>
     <result column="score" property="score"/>
-    <result column="block_date" property="blockDate"/>
     <result column="block_accept" property="blockAccept"/>
     <result column="member_status" property="memberStatus"/>
-    
+    <result column="store_count" property="storeCount"/>
   </resultMap>
   
 
@@ -45,7 +44,8 @@
       birth,
       nickname,
       block_accept,
-      member_status
+      member_status,
+      store_count
     from 
       member 
     order by 
@@ -55,6 +55,11 @@
   
       <select id="countAll" resultType="int">
     select count(*) from Member
+  </select>
+  
+        <select id="countByMemberType" resultType="int">
+    select count(*) from Member
+    where member_status=${memberStatus}
   </select>
    
    

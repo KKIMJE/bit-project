@@ -31,6 +31,11 @@ public class DefaultAdminMemberService implements AdminMemberService {
     return adminMemberDao.countAll();
   }
 
+  @Override
+  public int typeSize(boolean memberStatus) {
+    return adminMemberDao.countByMemberType(memberStatus);
+  }
+
 
 
   //  @Override

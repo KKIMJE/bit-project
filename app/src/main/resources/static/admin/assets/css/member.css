@@ -1,7 +1,7 @@
 .member-page {
   display: flex;
   justify-content: center;
-  height: 2000px;
+  height: 1000px;
 }
 
 .x-member-search {
@@ -48,5 +48,8 @@ padding: 0 50px 0 50px;
 .pagination-ul li {
   float: left;
   padding: 5px;
+}
 
+.x-page-btn {
+  font-size: 15px;
 }

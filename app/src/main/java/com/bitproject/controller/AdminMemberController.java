@@ -21,5 +21,10 @@ public class AdminMemberController {
     return adminMemberService.size();
   }
 
+  @RequestMapping("/admin/member/typesize")
+  public int typeSize(boolean memberStatus) {
+    return adminMemberService.typeSize(memberStatus);
+  }
+
 }
 

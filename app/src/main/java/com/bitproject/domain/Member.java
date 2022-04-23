@@ -20,7 +20,7 @@ public class Member {
   String mImg;
   String nickName;
   float score;
-  Timestamp blockDate;
-  boolean blockAccept;
+  int blockAccept;
   String memberStatus;
+  int storeCount;
 }
