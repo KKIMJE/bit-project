@@ -26,7 +26,8 @@ function myLoad() {
   })
   .then(function(result) {      
       for (var party of result) {
-      pbody.innerHTML += `<a href="/party/partyDetail.html" class="party-list" data-creatdt="${party.partyNo}"> 
+        console.log(party)
+      pbody.innerHTML += `<a href="partyDetail.html?no=${party.partyNo}" class="party-list" data-creatdt="${party.partyNo}"> 
                           <div class="party-body-top">
                               <div class="party-title">${party.title}</div>
                               <div class="party-regdate">` + timeCheck(`${party.regDate}`) + `</div>
@@ -34,7 +35,7 @@ function myLoad() {
                           <div class="party-body-content">
                               <div class="leader-profile">
                                   <img class="profile-img leader" src="img/profile_suzy.jpg" alt="방장 프로필">
-                                  <span>${party.name}</span>
+                                  <span>${party.nickName}</span>
                               </div>
                               <div class="party-detail">
                           <div class="first-row">
@@ -247,7 +248,7 @@ function mapLoad() {
       })
       .then(function(result) {      
           for (var party of result) {
-          pbody.innerHTML += `<a href="/party/partyDetail.html" class="party-list" data-creatdt="${party.partyNo}"> 
+          pbody.innerHTML += `<a href="partyDetail.html?no=${party.partyNo}" class="party-list" data-creatdt="${party.partyNo}"> 
                               <div class="party-body-top">
                                   <div class="party-title">${party.title}</div>
                                   <div class="party-regdate">` + timeCheck(`${party.regDate}`) + `</div>
@@ -255,7 +256,7 @@ function mapLoad() {
                               <div class="party-body-content">
                                   <div class="leader-profile">
                                       <img class="profile-img leader" src="img/profile_suzy.jpg" alt="방장 프로필">
-                                      <span>${party.name}</span>
+                                      <span>${party.nickName}</span>
                                   </div>
                                   <div class="party-detail">
                               <div class="first-row">
