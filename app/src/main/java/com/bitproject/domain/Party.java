@@ -1,6 +1,7 @@
 package com.bitproject.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
@@ -20,6 +21,9 @@ public class Party {
   Timestamp updateDate;
   String address;
   int storeNo;
+  List<PartyComment> partyComments;
+
+
   public int getPartyNo() {
     return partyNo;
   }

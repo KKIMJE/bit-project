@@ -6,18 +6,12 @@ public class PartyComment{
 
   int partyCommentNo;
   int mNo;
+  String nickName;
+  String mImg;
   int partyNo;
   String partyCommentContents;
   Timestamp commentDate;
   Timestamp updateDate;
-
-  @Override
-  public String toString() {
-    return "PartyComment [partyCommentNo=" + partyCommentNo + ", mNo=" + mNo + ", partyNo="
-        + partyNo + ", partyCommentContents=" + partyCommentContents + ", commentDate="
-        + commentDate + ", updateDate=" + updateDate + "]";
-  }
-
 
   public int getPartyCommentNo() {
     return partyCommentNo;
@@ -30,6 +24,18 @@ public class PartyComment{
   }
   public void setmNo(int mNo) {
     this.mNo = mNo;
+  }
+  public String getNickName() {
+    return nickName;
+  }
+  public void setNickName(String nickName) {
+    this.nickName = nickName;
+  }
+  public String getmImg() {
+    return mImg;
+  }
+  public void setmImg(String mImg) {
+    this.mImg = mImg;
   }
   public int getPartyNo() {
     return partyNo;
@@ -56,7 +62,11 @@ public class PartyComment{
     this.updateDate = updateDate;
   }
 
-
-
-
+  @Override
+  public String toString() {
+    return "PartyComment [partyCommentNo=" + partyCommentNo + ", mNo=" + mNo + ", nickName="
+        + nickName + ", mImg=" + mImg + ", partyNo=" + partyNo + ", partyCommentContents="
+        + partyCommentContents + ", commentDate=" + commentDate + ", updateDate=" + updateDate
+        + "]";
+  }
 }

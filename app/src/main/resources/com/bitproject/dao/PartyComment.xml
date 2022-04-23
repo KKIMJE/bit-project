@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.PartyCommentDao">
+
+  <resultMap type="partyComment" id="partyCommentMap">
+    <id column="party_comment_no" property="partyCommentNo"/>
+    <result column="mno" property="mNo"/>
+    <result column="party_no" property="partyNo"/>
+    <result column="party_comment_contents" property="partyCommentContents"/>
+    <result column="comment_date" property="commentDate"/>
+    <result column="update_date" property="updateDate"/>        
+  </resultMap>
+  
+  <insert id="insert" parameterType="PartyComment" >
+    insert into party_comment(
+			mno,
+			party_no,
+			party_comment_contents
+      )
+    values(
+     #{mNo},
+     #{partyNo},
+     #{partyCommentContents}
+     )
+  </insert>
+
+</mapper>

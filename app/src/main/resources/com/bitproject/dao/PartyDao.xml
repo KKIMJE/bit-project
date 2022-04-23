@@ -8,7 +8,7 @@
   <resultMap type="party" id="partyMap2">
 		<id column="party_no" property="partyNo"/>
     <result column="mno" property="mno"/>
-    <result column="nickname" property="nickName"/>
+    <result column="m_nickname" property="nickName"/>
     <result column="m_img" property="mImg"/>
     <result column="title" property="title"/>
     <result column="contents" property="contents"/>
@@ -21,8 +21,20 @@
     <result column="update_date" property="updateDate"/>
     <result column="address" property="address"/>
     <result column="store_no" property="storeNo"/>
-  </resultMap>
   
+    <collection property="partyComments" ofType="partyComment">
+      <id column="party_comment_no" property="partyCommentNo"/>
+      <result column="mno" property="mNo"/>
+      <result column="pc_nickname" property="nickName"/> <!-- nickname이 중복되어 별명을 줌 -->
+      <result column="m_img" property="mImg"/>
+      <result column="party_no" property="partyNo"/>
+      <result column="party_comment_contents" property="partyCommentContents"/>
+      <result column="comment_date" property="commentDate"/>
+      <result column="update_date" property="updateDate"/>
+    </collection>
+    
+  </resultMap>
+
   
    <!--      
    <resultMap type="party" id="partyMap">
@@ -67,12 +79,21 @@
   <select id="findByNo" resultMap="partyMap2" parameterType="int">
   select
     p.title,
-    m.nickname
+    p.alcohol_type,
+    p.alcohol_limit,
+    p.party_fee,
+    p.meeting_date,
+    p.max_member,
+    p.alcohol_type,
+    m.nickname as m_nickname,
+    pc.nickname as pc_nickname,
+    pc.m_img,
+    pc.party_comment_contents
   from party p
-    join member m on p.mno=m.mno
-    join store s on p.store_no=s.store_no
+    inner join member m on p.mno=m.mno
+    left outer join party_comment pc on p.party_no=pc.party_no
   where 
-    party_no=#{no}
+    p.party_no=#{no}
   </select>
   
 	<!--  select id="findByNo" resultMap="partyMap" parameterType="int">
