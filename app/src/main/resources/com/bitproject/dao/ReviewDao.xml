@@ -13,6 +13,13 @@
     <result column="reg_date" property="regDate"/>
     <result column="comment_contents" property="commentContents"/>
     <result column="comment_reg_date" property="commentRegDate"/>
+    
+    <collection property="reviewImgs" ofType="ReviewImg">
+      <result column="review_img_no" property="reviewImgNo"/>
+      <result column="reservation_no" property="reservationNo"/>
+      <result column="img" property="img"/>
+    </collection>    
+    
   </resultMap>
 
   <select id="findAll" resultMap="reviewMap">
@@ -37,17 +44,17 @@
 
    <select id="findByNo" resultMap="reviewMap" parameterType="int">
     select
-      reservation_no,
-      store_no,
-      contents,
-      score,
-      reg_date
+      r.reservation_no,
+      r.store_no,
+      r.contents,
+      r.score,
+      r.reg_date,
+      ri.img
     from 
-      review
+      review r
+      left outer join review_img ri on ri.reservation_no=r.reservation_no
     where
       store_no=#{no}
-    order by 
-      reservation_no desc
   </select>
 
   <delete id="delete" parameterType="int">

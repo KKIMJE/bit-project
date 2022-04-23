@@ -12,7 +12,7 @@ public interface ReviewDao {
 
   int insert(Review review);
 
-  Review findByNo(int no);
+  List<Review> findByNo(int no);
 
   int update(Review review);
 

@@ -352,49 +352,39 @@ function nextPreBtnSet() {
   }, 500)
 }
 // 주점리뷰 (기본최신순)
-function StoreReviewPrint(rivewData) {
+function StoreReviewPrint(reviewData) {
 
   let xReviewBox = document.querySelector(".xReviewBox")
   let str = ""
 
-  if (rivewData.length == 0) {
+  if (reviewData.length == 0) {
     str = "해당리뷰가 없습니다."
   }
-  
-  console.log(rivewData.score)
-  console.log(rivewData.regDate)
-  console.log(rivewData.contents)
 
-  str += `
+  for (let i=0; i < reviewData.length; i++) {
+    str += `
     <div class="storeReviewBack">
     <div class="reviewprofile">
       <div><img class="profile-img" src="storelist4.jpg" alt=""></div>
       <div class="reviewerName">개코</div>
-      <div class="reviewStar">${printStar(rivewData.score)}</div>
+      <div class="reviewStar">${printStar(reviewData[i].score)}</div>
     </div>
     <div class="reviewContents">
-      <div class="reviewDate">${rivewData.regDate.slice(0, 10)}</div>
-      <div class="reviewText">${rivewData.contents}</div>
+      <div class="reviewDate">${reviewData[i].regDate.slice(0, 10)}</div>
+      <div class="reviewText">${reviewData[i].contents}</div>
       <div class="reviewImgBox">
-        <img class="review-img" src="storelist7.jpg" alt="">
-        <img class="review-img" src="storelist7.jpg" alt="">
-        <img class="review-img" src="storelist7.jpg" alt="">
-        <img class="review-img" src="storelist7.jpg" alt="">
-        <img class="review-img" src="storelist7.jpg" alt="">
+        ${reviewImgPrint(reviewData[i].reviewImgs)}
       </div>
     </div>
   </div>`
-
-  
-  
-  console.log("str : ", str)
+  }
   xReviewBox.innerHTML = str
-
 }
 // 주점 평점 별점 계산
 // 회원이 선택한 별점을 표시함
 function printStar(score) {
   // console.log("score: " + score)
+  score = Math.round(score)
   let star = "⭐⭐⭐⭐⭐";
   if (1 == score) {
     star = "⭐"
@@ -411,4 +401,18 @@ function printStar(score) {
   }
   return star;
 }
+function reviewImgPrint(rimgs) {
+  
+  let str =""
+  // let reviewImgBox = document.querySelector(".reviewImgBox")
+  for (let i=0; i < rimgs.length; i++) {
+    if (rimgs[i].img != null) {
+      str += `<img class="review-img" src="../asset/img/storeReviewImg/${rimgs[i].img}.jpg" alt="">`
+    }
+  }
+  console.log(str.slice(9, str.length))
+  return str.slice(9, str.length)
 
+}
+
+// <img class="review-img" src="${reviewData[i].reviewImgs}" alt="">

@@ -1,5 +1,6 @@
 package com.bitproject.service.impl;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,8 +21,8 @@ public class DefaultReviewService  implements ReviewService {
   }
 
   @Override
-  public Review get(int no) {
-    Review review = reviewdao.findByNo(no);
+  public List<Review> get(int no) {
+    List<Review> review = reviewdao.findByNo(no);
     return review;
   }
 
