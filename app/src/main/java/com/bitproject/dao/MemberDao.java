@@ -22,17 +22,6 @@ public interface MemberDao {
 
   int update(Member member);
 
-
-
+  Member emailCheck(String email);
 }
-
-
-
-
-
-
-
-
-
-
 

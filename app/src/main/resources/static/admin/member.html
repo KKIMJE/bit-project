@@ -11,7 +11,7 @@
   <title>야술먹자 - 회원관리</title>
 </head>
 
-<body id="body-pd">
+<body id="body-pd" onload=" memberList(1)">
   <div class="l-navbar" id="navbar">
     <nav class="nav">
       <div>
@@ -68,12 +68,8 @@
       <div class="x-member-curr">
         <h2>회원현황(명)</h2>
         <table id="x-curr-table">
-            <th>전체회원</th>
-            <td>2000</td>
-            <th>일반회원</th>
-            <td>1000</td>
-            <th>사장회원</th>
-            <td>1000</td>
+
+
         </table>
       </div>
 
@@ -104,7 +100,7 @@
             <th>회원타입</th>
             <th>가입일</th>
             <th>회원상태</th>
-            <th>제재여부</th>
+            <th>제재횟수</th>
             <th>관리</th>
           </tr>
         </thead>
@@ -112,10 +108,11 @@
         </tbody>
       </table>
 
-        <a href=""><h2>dddddddd</h2></a>
+<div class="pagination">
+  <ul class="pagination-ul">
 
-        <button type="button" onclick="countMember()">aaaa</button>
-
+  </ul>
+</div>
 
 
     </div>
@@ -125,6 +122,7 @@
   <!-- JS -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/member.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
 </body>
 
 </html>

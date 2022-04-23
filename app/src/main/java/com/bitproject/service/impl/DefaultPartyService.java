@@ -14,8 +14,8 @@ public class DefaultPartyService implements PartyService {
   @Autowired
   PartyDao partyDao;
 
+  /*@Transactional*/
   @Override
-  @Transactional
   public int add(Party party) {
     return partyDao.insert(party);
   }

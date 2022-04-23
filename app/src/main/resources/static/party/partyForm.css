@@ -128,9 +128,10 @@ button{
   border: 3px solid #90D483;
   border-radius: 6px;
   margin-right: 3px;
-  font-size: 10px;
+  font-size: 17px;
 }
 
+/*지정한 파티 옵션*/
 #ps-location {
   width: 304px;
 }

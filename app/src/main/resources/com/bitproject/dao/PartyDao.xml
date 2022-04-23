@@ -5,9 +5,36 @@
   
 <mapper namespace="com.bitproject.dao.PartyDao">
 
-<resultMap type="party" id="partyMap2">
-</resultMap>
+  <resultMap type="party" id="partyMap2">
+		<id column="party_no" property="partyNo"/>
+    <result column="mno" property="mno"/>
+    <result column="m_nickname" property="nickName"/>
+    <result column="m_img" property="mImg"/>
+    <result column="title" property="title"/>
+    <result column="contents" property="contents"/>
+    <result column="party_fee" property="partyFee"/>
+    <result column="meeting_date" property="meetingDate"/>
+    <result column="max_member" property="maxMember"/>
+    <result column="alcohol_type" property="alcoholType"/>
+    <result column="alcohol_limit" property="alcoholLimit"/>
+    <result column="reg_date" property="regDate"/>
+    <result column="update_date" property="updateDate"/>
+    <result column="address" property="address"/>
+    <result column="store_no" property="storeNo"/>
   
+    <collection property="partyComments" ofType="partyComment">
+      <id column="party_comment_no" property="partyCommentNo"/>
+      <result column="mno" property="mNo"/>
+      <result column="pc_nickname" property="nickName"/> <!-- nickname이 중복되어 별명을 줌 -->
+      <result column="m_img" property="mImg"/>
+      <result column="party_no" property="partyNo"/>
+      <result column="party_comment_contents" property="partyCommentContents"/>
+      <result column="comment_date" property="commentDate"/>
+      <result column="update_date" property="updateDate"/>
+    </collection>
+    
+  </resultMap>
+
   
    <!--      
    <resultMap type="party" id="partyMap">
@@ -34,7 +61,7 @@
     p.max_member,
     p.alcohol_type,
     p.alcohol_limit,
-    m.name,
+    m.nickname,
     m.m_img,
     s.address
   from party p
@@ -44,36 +71,65 @@
     p.party_no desc;
   </select>
   
-  
-  <!--  <insert id="insertAdress" parameterType="String">
-    insert into party(address) 
-    values(#{address})
-  </insert> -->
-  
-  
-  
-  
+  <insert id="insert" parameterType="Party">
+    insert into party(mno,nickname,title,contents,address,party_fee,meeting_date,max_member,alcohol_type,alcohol_limit) 
+    values(#{mno},#{nickName},#{title},#{contents},#{address},#{partyFee},#{meetingDate},#{maxMember},#{alcoholType},#{alcoholLimit})
+  </insert>
   
   <select id="findByNo" resultMap="partyMap2" parameterType="int">
   select
-    p.party_no,
     p.title,
-    p.contents,
-    p.reg_date,
+    p.alcohol_type,
+    p.alcohol_limit,
     p.party_fee,
     p.meeting_date,
     p.max_member,
     p.alcohol_type,
-    p.alcohol_limit,
-    m.name,
-    m.m_img,
-    s.address
+    m.nickname as m_nickname,
+    pc.nickname as pc_nickname,
+    pc.m_img,
+    pc.party_comment_contents
   from party p
-    join member m on p.mno=m.mno
-    join store s on p.store_no=s.store_no
+    inner join member m on p.mno=m.mno
+    left outer join party_comment pc on p.party_no=pc.party_no
   where 
-      party_no=#{no}
+    p.party_no=#{no}
   </select>
+  
+	<!--  select id="findByNo" resultMap="partyMap" parameterType="int">
+  select
+    p.party_no,
+    p.title,
+		p.party_fee,
+		p.meeting_date,
+		p.max_member,
+		p.alcohol_type,
+		p.alcohol_limit,
+		s.store_no,
+		s.name,
+		m.mno,
+		m.name
+	from party p
+		join member m on p.mno=m.mno
+		join store s on p.store_no=s.store_no
+	where 
+      party_no=#{no}
+  </select> -->
+  
+  
+  
+  
+  
+    <!--     <insert id="insert" parameterType="Party">
+    insert into party(title,contents,partyFee,meetingDate,maxMember,alcoholType,alcoholLimit,writer) 
+    values(#{title},#{contents},#{party_fee},#{meeting_date},#{max_member},#{alcohol_type},#{alcohol_limit},#{write.mno})
+  </insert>
+   -->
+  
+  </mapper>  
+  
+  
+  
   
   
   
@@ -98,25 +154,6 @@
   order by p.party_no desc;
        -->
 
-	<!--  select id="findByNo" resultMap="partyMap" parameterType="int">
-  select
-    p.party_no,
-    p.title,
-		p.party_fee,
-		p.meeting_date,
-		p.max_member,
-		p.alcohol_type,
-		p.alcohol_limit,
-		s.store_no,
-		s.name,
-		m.mno,
-		m.name
-	from party p
-		join member m on p.mno=m.mno
-		join store s on p.store_no=s.store_no
-	where 
-      party_no=#{no}
-  </select> -->
   
   <!--     select 
       p.title,
@@ -140,15 +177,8 @@
       
       -->
   
-    <insert id="insert" parameterType="Party">
-    insert into party(title,contents,partyFee,meetingDate,maxMember,alcoholType,alcoholLimit,writer) 
-    values(#{title},#{contents},#{party_fee},#{meeting_date},#{max_member},#{alcohol_type},#{alcohol_limit},#{write.mno})
-  </insert>
-  
-  <!-- store
-  ,#{store.storeNo}
-   -->
 
+<!--
   <update id="update" parameterType="Party">
     update party set
       title=#{title}, 
@@ -160,9 +190,8 @@
   <delete id="delete" parameterType="party">
     delete from party 
     where party_no=#{partyNo}
-  </delete>
+  </delete>-->
 
-</mapper>
 
 
 <!--     

@@ -27,7 +27,8 @@ button {
   margin-top: 10px;
   box-sizing: border-box;
   border-bottom: 1px solid #c7c7c7;
-  height: 300px;
+  min-height: 300px;
+  max-height: 400px;
 }
 
 .profile-img {
@@ -227,6 +228,10 @@ div.party-board-option button i {
 .party-comment {
   box-sizing: border-box;
   border-top: 1px solid #c7c7c7;
+}
+
+.card-header {
+  font-weight: bold;
 }
 
 .party-comment-fst {

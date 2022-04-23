@@ -1,7 +1,7 @@
 .member-page {
   display: flex;
   justify-content: center;
-  height: 2000px;
+  height: 1000px;
 }
 
 .x-member-search {
@@ -37,4 +37,19 @@ padding: 0 50px 0 50px;
 
 #x-member-table thead {
   background-color: rgb(212, 212, 212);
+}
+
+.pagination {
+  display: flex;
+  justify-content:center;
+  margin-top: 20px;
+}
+
+.pagination-ul li {
+  float: left;
+  padding: 5px;
+}
+
+.x-page-btn {
+  font-size: 15px;
 }

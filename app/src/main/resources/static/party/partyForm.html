@@ -43,13 +43,13 @@
         <div id="header"></div>
 
         <div class="editor">
-          <form name="partyBoard" method="post">
+          <form name="partyBoard">
             <div class="editorbtns">
-              <button class="save" type="submit"><span>저장</span></button>
+              <button class="save" type="button"><span>저장</span></button>
               <button class="exit" type="button"><span>나가기</span></button>
             </div>
     
-            <input class="party-title" type="text" name="title" placeholder="제목을 입력해주세요" >
+            <input class="party-title" type="text" name="title" placeholder="제목을 입력해주세요" required>
 
             <div class="select-poption">
 
@@ -104,15 +104,15 @@
             </div>
 
             <div class="poption-select-wrap">
-              <div class="poption-select" id="ps-location"><span></span></div>
-              <div class="poption-select" id="ps-date"><span></span></div>
-              <div class="poption-select" id="ps-type"><span></span></div>
-              <div class="poption-select" id="ps-limit"><span></span></div>
-              <div class="poption-select" id="ps-fee"><span></span></div>
-              <div class="poption-select" id="ps-member"><span></span></div>
+              <div class="poption-select" id="ps-location"><input name="address" readonly></input></div>
+              <div class="poption-select" id="ps-date"><input name="meetingDate" readonly></input></div>
+              <div class="poption-select" id="ps-type"><input name="alcoholType" readonly></input></div>
+              <div class="poption-select" id="ps-limit"><input name="alcoholLimit" readonly></input></div>
+              <div class="poption-select" id="ps-fee"><input name="partyFee" readonly></input></div>
+              <div class="poption-select" id="ps-member"><input name="maxMember" readonly></input></div>
             </div>
 
-            <textarea id="summernote" name="editordata"></textarea>
+            <textarea id="summernote" name="contents"></textarea>
 
           </form>
         </div>

@@ -1,6 +1,9 @@
 package com.bitproject.controller;
 
+import static com.bitproject.controller.ResultMap.FAIL;
+import static com.bitproject.controller.ResultMap.SUCCESS;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,14 +36,13 @@ public class StoreController {
 
   @RequestMapping("/get")
   public Object get(int no) {
-    Store store = storeService.get(no);
-    //System.out.println("StoreNo: " + no + ", Get Store: " + store);
+   Store store = storeService.get(no);
     if (store == null) {
-      return "";
+      return new ResultMap().setStatus(FAIL).setData("해당 번호의 게시글이 없습니다.");
     }
-    return store;
+    return new ResultMap().setStatus(SUCCESS).setData(store);
   }
-
+  
   @RequestMapping("/getMnoCnt")
   public int getMnoCnt(int no) {
     //System.out.println("StoreNo: " + no + ", Get Store: " + store);
@@ -54,10 +56,16 @@ public class StoreController {
   }
 
   @PostMapping("/update")
-  public Object update(Store store) {
-    //System.out.println("Before Update: " + store);
-    //System.out.println("After Update: " + storeService.update(store));
-    return storeService.update(store);
+  public Object update(Store store, HttpSession session) {
+    Store loginmember = (Store) session.getAttribute("loginUser");
+    store.setStoreNo(loginmember.getStoreNo());
+   int count = storeService.update(store);
+    
+    if(count ==1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("유효하지 않거나 게시글 작성자가 아닙니다.");
+    }
   }
 
   @RequestMapping("/delete")

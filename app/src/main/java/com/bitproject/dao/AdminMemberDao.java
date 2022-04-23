@@ -12,6 +12,8 @@ public interface AdminMemberDao {
 
   int countAll();
 
+  int countByMemberType(boolean memberStatus);
+
   //  int countAll();
   //
   //  List<Member> findAll();
