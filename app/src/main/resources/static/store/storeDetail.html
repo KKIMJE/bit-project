@@ -16,6 +16,7 @@
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- jquery -->
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  
   <script>
       $(document).ready(function () {
         $('#header').load('../header/header.html');
@@ -34,11 +35,14 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">주점 상세 이미지</h5>
+          <h5 class="modal-title" id="exampleModalLabel">주점 이미지 목록</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <span class="pre-store"><</span>
+            <div class="imgContainer">
+            </div>
+          <span class="next-store">></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -210,8 +214,6 @@
 
   </div><!-- 모든 콘텐츠 END -->
 
-  
-
   <div id="footer"></div>
 
 </body>
@@ -219,3 +221,7 @@
 <!-- kakaoMap -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87&libraries=services"></script>
 <script src="storeDetail.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+

@@ -73,6 +73,7 @@ function storeTextBox (store) {
   let storeStar = document.querySelector(".storeStar")
   let storeTag = document.querySelector(".storeTag")
 
+  ModalImgPrint(store.storeImg) // 주점 모달 이미지
   storeDetailImgPrint(store.storeImg) // 주점 상세 이미지
   storeAlcPrint(store.alcoholSales) // 추천주류
   storeMenuPrint(store.storeMenu) // 추천메뉴
@@ -218,7 +219,6 @@ function storeAlcPrint(alcList) {
   }
   sugAlcImg.innerHTML = str
 }
-
 // 추천안주
 function storeMenuPrint(storeMenuList) {
   let sugFoodImg = document.querySelector(".sugFoodImg")
@@ -241,7 +241,6 @@ function storeMenuPrint(storeMenuList) {
   }
   sugFoodImg.innerHTML = str
 }
-
 // 주점상세 이미지
 function storeDetailImgPrint(Imgs) {
   
@@ -271,16 +270,80 @@ function storeDetailImgPrint(Imgs) {
 
   imgBox.innerHTML = str
 }
+// 주점상세 모달 이미지
+function ModalImgPrint(Imgs) {
 
-// 모달
-// var myModal = document.getElementById('myModal')
-// var myInput = document.getElementById('myInput')
+  let str;
+  let imgContainer = document.querySelector('.imgContainer')
 
-// myModal.addEventListener('shown.bs.modal', function () {
-//   myInput.focus()
-// })
+  if (Imgs.length == 0) {
+    str = "이미지를 준비중입니다."
+  }
+
+  for (let i=0; i < Imgs.length; i++) {
+    if (Imgs[i].storeImg == null) {
+      continue
+    }
+    str += `<div class="storeContents-imgCard"><img class="ximg" src="../asset/img/storeDetail/${Imgs[i].storeImg}.jpg"></div>`
+  }
+
+  console.log(str.slice(9, str.length))
+  imgContainer.innerHTML = str.slice(9, str.length)
+  nextPreBtnSet()
+}
 
 
+var next = document.querySelector('.next-store');
+var pre = document.querySelector('.pre-store');
+function nextPreBtnSet() {
+  setTimeout(() => {
+    // 주점 리스트 초기화 - 페이지 1로 맞추기
+    let storeAll = document.querySelectorAll('.storeContents-imgCard');
+    for (let i=1; i < storeAll.length; i++) {
+      storeAll[i].style.display = "none";
+    }
+    // cursor를 기준으로 앞뒤로 모두 none으로 변경
+    let cursor = 0;
+    let endPage = storeAll.length;
+    function moveAl(cursor) {
+      if (storeAll[cursor].style.display == null || storeAll[cursor].style == null) {
+        return
+      }
+      if (storeAll[cursor].style.display == "none") {
+        storeAll[cursor].style.display = "flex"
+      } else {
+        return
+      }
+      for (let i=cursor+1; i < endPage; i++) {
+        storeAll[i].style.display = "none";
+      }
+      for (let i=cursor-1; i < cursor; i--) {
+        if (i == -1) {
+          break;
+        };
+        storeAll[i].style.display = "none";
+      }
+    }
+    next.addEventListener("click", () => {
+      if (cursor+1 == endPage) {
+        console.log("next: Over page")
+      } else {
+        cursor += 1;
+        console.log("cursor : " + `${cursor}`);
+        moveAl(cursor);
+      }
+    });
+    pre.addEventListener("click", () => {
+      if (cursor == 0) {
+        console.log("pre: Over page")
+      } else {
+        cursor -= 1;
+        moveAl(cursor);
+        console.log("cursor : " + `${cursor}`);
+      }
+    });
+  }, 500)
+}
 
 
 
