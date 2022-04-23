@@ -16,6 +16,7 @@
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- jquery -->
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  
   <script>
       $(document).ready(function () {
         $('#header').load('../header/header.html');
@@ -34,11 +35,14 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">주점 상세 이미지</h5>
+          <h5 class="modal-title" id="exampleModalLabel">주점 이미지 목록</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <span class="pre-store"><</span>
+            <div class="imgContainer">
+            </div>
+          <span class="next-store">></span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -148,7 +152,8 @@
       </div>
 
       <div class="xReviewBox">
-        <div class="storeReviewBack">
+
+        <!-- <div class="storeReviewBack">
           <div class="reviewprofile">
             <div><img class="profile-img" src="storelist4.jpg" alt=""></div>
             <div class="reviewerName">개코</div>
@@ -165,52 +170,12 @@
               <img class="review-img" src="storelist7.jpg" alt="">
             </div>
           </div>
-        </div>
-        <div class="storeReviewBack">
-          <div class="reviewprofile">
-            <div><img class="profile-img" src="storelist4.jpg" alt=""></div>
-            <div class="reviewerName">개코</div>
-            <div class="reviewStar">⭐⭐⭐⭐⭐</div>
-          </div>
-          <div class="reviewContents">
-            <div class="reviewDate">2022-02-27</div>
-            <div class="reviewText">코젤다크 먹고 싶었는데 시나몬 가루도 많이 뿌려주시고 맥앤치즈랑 정말 맛있게 잘 먹었어요~ 음악도 좋도 분위기도 좋아요!!</div>
-            <div class="reviewImgBox">
-              <img class="review-img" src="storelist7.jpg" alt="">
-              <img class="review-img" src="storelist7.jpg" alt="">
-              <img class="review-img" src="storelist7.jpg" alt="">
-              <img class="review-img" src="storelist7.jpg" alt="">
-              <img class="review-img" src="storelist7.jpg" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="storeReviewBack">
-          <div class="reviewprofile">
-            <div><img class="profile-img" src="storelist4.jpg" alt=""></div>
-            <div class="reviewerName">개코</div>
-            <div class="reviewStar">⭐⭐⭐⭐⭐</div>
-          </div>
-          <div class="reviewContents">
-            <div class="reviewDate">2022-02-27</div>
-            <div class="reviewText">코젤다크 먹고 싶었는데 시나몬 가루도 많이 뿌려주시고 맥앤치즈랑 정말 맛있게 잘 먹었어요~ 음악도 좋도 분위기도 좋아요!!</div>
-            <div class="reviewImgBox">
-              <img class="review-img" src="storelist7.jpg" alt="">
-              <img class="review-img" src="storelist7.jpg" alt="">
-              <img class="review-img" src="storelist7.jpg" alt="">
-              <img class="review-img" src="storelist7.jpg" alt="">
-              <img class="review-img" src="storelist7.jpg" alt="">
-            </div>
-          </div>
-        </div>
-
-
-
+        </div> -->
+ 
       </div>
     </div>
 
   </div><!-- 모든 콘텐츠 END -->
-
-  
 
   <div id="footer"></div>
 
@@ -219,3 +184,7 @@
 <!-- kakaoMap -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87&libraries=services"></script>
 <script src="storeDetail.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+

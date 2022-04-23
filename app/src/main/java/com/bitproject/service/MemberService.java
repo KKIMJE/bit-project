@@ -10,9 +10,11 @@ public interface MemberService {
   Member getMemberByEmailAndPassword(String email, String password);
 
   Member getMemberByEmail(String email);
-  
+
   Member getMemberByMno(int mno);
-  
+
   int update(Member member);
-  
+
+  Member emailCheck(String email);
+
 }

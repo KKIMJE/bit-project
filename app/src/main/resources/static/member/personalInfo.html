@@ -7,168 +7,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link rel="stylesheet" href="../css/nav.css">
+    <!-- Bootstrap js -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="personalInfo.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    
+     <script>
+    $(document).ready(function() {
+      $('#header').load('../header/header.html');
+      $('#footer').load('../footer/footer.html');
+    });
+  </script>
 
   <title>야술먹자 개인정보</title>
   
+  </head>
+  <body>
+  <div id="header"></div>
 
-</head>
-
-<body>
-
-  <nav class="navbar__">
-        <div><!-- 공간, 삭제하지 마세요 --></div>
-
-        <div class="navbar__logo">
-            <a href="main.html"><img src="../img/logo.png" alt=""></a>
-        </div>
-
-        <ul class="navbar__menu">
-            <li><a href="">로그인</a></li>
-            <li><a href="">회원가입</a></li>
-            <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
-        </ul>
-
-        <ul class="navbar__login">
-            <!-- 알림 -->
-            <div class="btn-group"> 
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 마이페이지 -->
-            <a href="../mypage(Member)/mypage.html"><login-i class="fa-solid fa-user-large"></login-i></a> 
-
-        <!-- 검색 -->
-        <div class="btn-group">
-            <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                    <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-lg-end">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                </ul>
-            </div>
-        </div> 
-
-            <!-- 지도 -->
-            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a> 
-        </ul>
-    </nav>
-
-<content>
-
-<center><h1 >개인정보</h1><br></center>
+   <div id="personal-Info" style="margin-top:100px;">
+<center><h1 style=" font-weight:500;
+  font-size:30px;">개인정보</h1><br></center>
 <center><img id= "ig" src="./img/profile-photo(1).jpg"><br>
  <div class="profile-group">
-<center><button onclick="toggleImg()" style= "margin-left: 5%; background-color:#FFFFFF; border-radius:10px;">이미지 변경</button></div></center>
+<center><button onclick="toggleImg()" style= "background-color:#FFFFFF; border-radius:10px;">이미지 변경</button></div></center>
 <!--<center><input type = "file" name="photo" multiple></center> 고려사항-->
 <br><br>
 
 <form name="form1" id="x-complete-form"> 
 <div class="x-info-div-container"> 
 <div class ="personal-info-setting" style= "margin-top:-20px;">
-<p>실명<br><br>
-<input name="mno" type="hidden">
+<p style="margin-top:10px;">실명<br><br>
+<input name="mno" type="hidden" value="!">
 <input id="x-name" type="text" name="name"  ></p><br><br>
 </div>
 
-<div class ="personal-info-setting" style= "margin-top:-5px;">
-닉네임
-<div class="middle">
-  <div style="margin-right:20px; margin-top:-20px;">
-   <button type="button"  class="submit-change-btn">수정</button><p><br><br>
+<div class ="personal-info-setting" >
+<p style ="margin-top:5px;">닉네임<br><br>
+<input id="x-nickname" type="text"  name="nickName" > </p><br><br>
+  <div style="margin-right:20px; margin-top:-10px;">
+  <div class="middle">
+   <!-- <button type="button"  class="submit-change-btn">수정</button><p><br><br>-->
     </div>
-<input id="x-nickname" type="text"  name="nickname" > </p><br><br>
+
 </div>
 
-<div class ="personal-info-setting" style= "margin-top:-10px;">
-성별
-<div class="middle">
-  <div style="margin-right:20px; margin-top:-20px;">
-    <button type="button"  class="submit-change-btn">수정</button><p><br><br>
-    </div>
+<div class ="personal-info-setting" style= "margin-top:10px;">
+<p >성별<br><br>
 <input id="x-sex" type="text"  name="gender" > </p><br><br>
-</div>
+  <div style="margin-right:20px; margin-top:-10px;">
 
-<div class ="personal-info-setting" style= "margin-top:-10px;">
-생년월일
-<div class="middle">
-  <div style="margin-right:20px; margin-top:-20px;">
-   <button type="button"  class="submit-change-btn">수정</button><p><br><br>
+    <!--<button type="button"  class="submit-change-btn">수정</button><p><br><br>-->
     </div>
-<input id="x-birth" type="text" name="birth" ><p><br><br>
 </div>
 
-<div class ="personal-info-setting" style= "margin-top:-10px;">
+<div class ="personal-info-setting" style= "margin-top:10px;">
+<p>생년월일<br><br>
+<input id="x-birth" type="number" name="birth" ><p><br><br>
+  <div style="margin-right:20px; margin-top:-20px;">
+   <!-- <button type="button"  class="submit-change-btn">수정</button><p><br><br>-->
+    </div>
+</div>
+
+<div class ="personal-info-setting" style= "margin-top:20px;">
 <p>이메일 주소<br><br>
 <input id="x-e-address" type="email" name="email" ><p><br><br>
+  <div style="margin-right:20px; margin-top:-20px;">
+</div>
 </div>
 
-<div class ="personal-info-setting" style= "margin-top:-10px;"></div>
-비밀번호
-<div class="middle">
-  <div style="margin-right:20px; margin-top:-20px;">
-    <button type="button" class="submit-change-btn">수정</button><p><br><br>
-    </div>
+<div class ="personal-info-setting" style= "margin-top:20px;">
+<p>비밀번호<br><br>
 <input id="x-pwd" type="password" name="password" ><br><br>
-</div>
-
-<div class ="personal-info-setting" style= "margin-top:-10px;"></div>
-전화번호
-<div class="middle">
-  <div style="margin-right:20px; margin-top:-20px;">
-    <button type="button"  class="submit-change-btn">수정</button><p><br><br>
+  <div style="margin-right:20px; margin-top:-20px">
     </div>
-    
-<input id="x-phonenumber" type="tel" name="tel" ><br><br>
 </div>
 
-<div class ="personal-info-setting" style= "margin-top:-10px;">
-SNS계정<br><br><br>
+<div class ="personal-info-setting" style= "margin-top:20px;"></div>
+<p>전화번호<br><br>
+<input id="x-phonenumber" type="text" name="tel" ><br><br>
+  <div style="margin-right:20px; margin-top:-20px;">
+    </div>
+</div>
+
+<div class ="personal-info-setting" style= "margin-top:20px;">
+<p>SNS계정<br><br><br>
 <img id ="img" src="./img/kakao-talk.png"> 홍길동 
  <button id="x-connect-btn"  type="button">연결해제</button><br><br>
 </div>
 
-<div class ="personal-info-setting" style= "margin-top:-10px;">
+<div class ="personal-info-setting" style= "margin-top:-5px;">
 자기소개 
-<div class="middle">
   <div style="margin-right:20px; margin-top:-20px;">
-   <button type="button"  class="submit-change-btn">수정</button><p><br><br>
     </div>
     
 <textarea name="selfIntroduction"  id='x-self-intro'>
 </textarea><br><!-- <span id="count">0/300자</span><br><br>-->
  </div>   
 </div> 
-<button type="button" id="delete" class="submit-delete-btn">탈퇴하기</button>
-
+</form>
+<br><br><br>
 <!--<center><div class="btn">
  <button type="button" id="exit" class="submit-exit-btn">나가기</button>
   </div>
   </center>-->
-</form>
+   <center><div class="btn">
+            <button type="button" id="change" class="submit-change-btn">변경</button>
+        <button type="button" id="delete" class="submit-delete-btn">탈퇴하기</button>
+        <!--<button type="button" id="delete" class="submit-delete-btn">삭제</button>-->
+         </div>
+         </div>
+         </center>
+
 
 </content>
+
+ <!-- icons -->
+    <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
+    <script src="personalInfo.js"></script>
 </body>
 </html>
-<!-- icons -->
-<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
-<!-- Bootstrap CSS -->
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-crossorigin="anonymous"></script>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="personalInfo.js"></script>

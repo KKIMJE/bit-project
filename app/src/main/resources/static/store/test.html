@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>title</title>
+<!-- Bootstrap cdn 설정 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+</head>
+
+<body>
+    <ul class="bxslider">
+        <li><a href="#"><img src="http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F99C7143A5BEE75FB3092D4" alt="" title="이미지1"></a></li>
+        <li><a href="#"><img src="http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile10.uf.tistory.com%2Fimage%2F99C7223A5BEE75FB303A8E" alt="" title="이미지2"></a></li>
+        <li><a href="#"><img src="http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile7.uf.tistory.com%2Fimage%2F9982093A5BEE75FC259992" alt="" title="이미지3"></a></li>
+    </ul>
+    <script>
+    $(document).ready(function () {
+
+        $('.bxslider').bxSlider({ // 클래스명 주의!
+    
+            auto: true, // 자동으로 애니메이션 시작
+    
+            speed: 500,  // 애니메이션 속도
+    
+            pause: 5000,  // 애니메이션 유지 시간 (1000은 1초)
+    
+            mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+    
+            autoControls: true, // 시작 및 중지버튼 보여짐
+    
+            pager: true, // 페이지 표시 보여짐
+    
+            captions: true, // 이미지 위에 텍스트를 넣을 수 있음
+    
+        });
+    
+    });
+</script> 
+    
+    
+
+
+
+
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@
 <!-- 
   namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
  -->
-<mapper namespace="com.bitproject.dao.MemberDao">
+<mapper namespace="com.bitproject.dao.AdminMemberDao">
 
   <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
   <resultMap type="member" id="memberMap">
@@ -22,17 +22,50 @@
     <result column="m_img" property="mImg"/>
     <result column="nickname" property="nickName"/>
     <result column="score" property="score"/>
-    <result column="block_date" property="blockDate"/>
     <result column="block_accept" property="blockAccept"/>
     <result column="member_status" property="memberStatus"/>
-    <result column="member_count" property="storeCount"/>
-    
+    <result column="store_count" property="storeCount"/>
   </resultMap>
+  
 
   <!-- 
     id => 인터페이스의 메서드 이름과 일치해야 한다.
    -->
-
+   
+       <select id="findAll" resultMap="memberMap">
+    select 
+      mno,
+      email,
+      name,
+      tel,
+      join_date,
+      social_accept,
+      gender,
+      birth,
+      nickname,
+      block_accept,
+      member_status,
+      store_count
+    from 
+      member 
+    order by 
+      mno desc
+      limit #{offset}, #{rowCount}
+  </select>
+  
+      <select id="countAll" resultType="int">
+    select count(*) from Member
+  </select>
+  
+        <select id="countByMemberType" resultType="int">
+    select count(*) from Member
+    where member_status=${memberStatus}
+  </select>
+   
+   
+   
+   
+<!--
    <insert id="insert" parameterType="member">
     insert into member(email,
     password,
@@ -53,7 +86,9 @@
     #{selfIntroduction},
     #{nickName})
   </insert>
-  
+   -->
+   
+   <!-- 
     <select id="findByEmailAndPassword" resultMap="memberMap">
     select 
       mno,
@@ -62,10 +97,12 @@
     from 
       member
     where
-      email=#{email} and password=password(#{password})
-      <!-- and memberstatus=0 -->
+      email=#{email} and password=password(#{password})      
   </select>
-  
+   -->   
+   
+   
+  <!-- 
       <select id="findByEmail" resultMap="memberMap">
     select 
       mno,
@@ -74,9 +111,11 @@
     from 
       member
     where
-      email=#{email}  <!-- and memberstatus=0 -->
+      email=#{email}
   </select>
-  
+   -->
+   
+   <!-- 
  <select id="findByMno" resultMap="memberMap">
     select 
       mno,
@@ -91,27 +130,24 @@
     from 
       member
     where
-      mno=#{mno}  <!-- and memberstatus=0 -->
+      mno=#{mno}
   </select>
+   -->
   
-  
-  
+  <!-- 
    <update id="update" parameterType="member">
     update member set
-    <!--m_img=#{mImg}-->
-    <!--name=#{name},-->
     nickname=#{nickname},
     gender=#{gender},
     birth=#{birth},
-   <!-- email=#{email},-->
     password=password(#{password}),
     tel=#{tel}
-    <!--social_accept={socialAccept},
-    self_introduction=#{selfIntroduction}-->
     where 
-    mno=#{mno}  <!-- and memberstatus=0 -->
+    mno=#{mno}
   </update>
-  
+   -->
+   
+   <!-- 
     <select id="findByNo" resultMap="memberMap" parameterType="int">
     select
       m.m_img,
@@ -135,47 +171,18 @@
       from 
       member m
       where 
-       m.mno=#{mno}  <!-- and memberstatus=0 -->
+       m.mno=#{mno}
   </select>
-  
-  <select id="emailCheck" parameterType="member" resultType="member">
-  select count(*)
-  From member
-  where email = #{email}
-  </select>
-  
-  
-  <!-- 
-    <select id="findAll" resultMap="memberMap">
-    select 
-      mno,
-      email,
-      pwd,
-      name,
-      tel,
-      join_date,
-      social_accept,
-      gender,
-      birth,
-      self_introduction,
-      m_img,
-      nickname,
-      score,
-      block_date,
-      block_accept,
-      member_status
-    from 
-      member 
-    order by 
-      mno desc
-  </select>
--->
-
-
-  
-
-
- 
-
+   -->
+   
+   
 
 </mapper>
+
+
+
+
+
+
+
+

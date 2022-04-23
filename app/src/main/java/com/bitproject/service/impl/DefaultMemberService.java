@@ -51,7 +51,7 @@ public class DefaultMemberService implements MemberService {
 
   }
 
-  
+
 
   @Override
 
@@ -61,7 +61,7 @@ public class DefaultMemberService implements MemberService {
 
   }
 
- 
+
 
   @Override
 
@@ -73,8 +73,12 @@ public class DefaultMemberService implements MemberService {
 
   }
 
-  
+  @Override
+  public Member emailCheck(String email) {
+    Member result = memberDao.emailCheck(email);
+    return result;    
+  }
 
-  
+
 
 }
