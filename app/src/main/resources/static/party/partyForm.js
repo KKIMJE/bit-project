@@ -21,8 +21,6 @@ $(document).ready(function() {
 		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
 		  lang: "ko-KR",					// 한글 설정
 		  placeholder: '내용을 입력해주세요',	//placeholder 설정
-      onImageUpload: function(files, editor, welEditable) { sendFile(files[0], editor, welEditable); } // 파일 업로드 - 임의
-
 	});
 });
 
@@ -57,6 +55,9 @@ $(".pbtn").on('click', function(e){
 
   let strT = null;
   let strB = null;
+
+  // 실행 전 중복 이벤트 제거
+  $('.modal-footer button').off("click");
 
   switch (ptarget) {
     //------장소-------
@@ -147,9 +148,8 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 주소 넘기기
     ******************/
-    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
-      $('#ps-location span').text(`${myposition}`);
+      $('#ps-location input').val(`${myposition}`);
     });
 
     break;
@@ -167,11 +167,10 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 일정 넘기기
     *******************/
-    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
     meetingDate = $('#meetingDate').val();
     $('.modal-footer span').data('date', `${meetingDate}`);
-    $('#ps-date span').text(`${meetingDate}`);
+    $('#ps-date input').val(`${meetingDate}`);
     })
 
     break;
@@ -197,11 +196,10 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 주종 넘기기
     ******************/
-    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
       let type = $('select[name=alcoholType] option:selected').text();
       $('.modal-footer span').data('atype', `${type}`);
-      $('#ps-type span').text(`${type}`);
+      $('#ps-type input').val(`${type}`);
     });
 
       break;
@@ -218,11 +216,10 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 주량 넘기기
     ******************/
-    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
       let limit = $('#alcoholLimit').val();
       $('.modal-footer span').data('alimit', `${limit}`);
-      $('#ps-limit span').text(`${limit}`);
+      $('#ps-limit input').val(`${limit}`);
     });
 
       break;
@@ -241,11 +238,10 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 회비 넘기기
     ******************/
-    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
       let fee = $('#alcoholFee').val();
       $('.modal-footer span').data('afee', `${fee}`);
-      $('#ps-fee span').text(`${fee}`);
+      $('#ps-fee input').val(`${fee}`);
     });
 
       break;
@@ -274,11 +270,10 @@ $(".pbtn").on('click', function(e){
     /******************
     설정된 인원 넘기기
     ******************/
-    $('.modal-footer button').off("click");
     $('.modal-footer button').click(function() {
       let member = $('select[name=maxMember] option:selected').text();
       $('.modal-footer span').data('amember', `${member}`);
-      $('#ps-member span').text(`${member}`);
+      $('#ps-member input').val(`${member}`);
     });
 
       break;
@@ -298,6 +293,55 @@ $("#p-date, #p-type, #p-limit, #p-fee, #p-member").click(function(){
   $("#exampleModal > div").addClass("pmodal-size");
 })
 
+
+/****************
+  폼 데이터 저장
+****************/
+
+
+//저장버튼 클릭
+$('.save').click(function() {
+  var pTitle = document.querySelector("input[name=title]");
+  var pContent = document.querySelector("textarea[name=contents]");
+  var pLocation = document.querySelector("input[name=address]");
+  var pDate = document.querySelector("input[name=meetingDate]");
+  var pType = document.querySelector("input[name=alcoholType]");
+  var pLimit = document.querySelector("input[name=alcoholLimit]");
+  var pFee = document.querySelector("input[name=partyFee]");
+  var pMember = document.querySelector("input[name=maxMember]");
+
+  console.log(pTitle.value)
+  console.log(pContent.value)
+  console.log(pLocation.value)
+  console.log(pDate.value)
+  console.log(pType.innerHTML)
+  console.log(pLimit.value)
+  console.log(pFee.value)
+  console.log(pMember.value)
+    
+  if (pTitle.value == "" || pContent.value == "" || pLocation.value == "" || pDate.value == "" || pType.value == "" || pLimit.value == "" || pFee.value == "" || pMember.value == "") {
+    alert("필수 입력 항목이 비어 있습니다.");
+    return;
+  } 
+
+    var pb = new FormData(document.forms.namedItem("partyBoard"));
+    
+    
+    fetch(`/party/add`, {
+        method: "POST",
+        body: new URLSearchParams(pb)
+      }).then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        console.log(result);
+        if (result.status == "success") {
+          location.href = "partyList.html";
+        } else {
+          alert(result.data);
+        }
+      });
+});
 
 /**************
   나가기 버튼
