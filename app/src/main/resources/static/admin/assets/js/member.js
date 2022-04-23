@@ -1,4 +1,5 @@
 let tbody = document.querySelector("#x-member-table tbody")
+let paginationUl = document.querySelector(".pagination-ul")
 
 
 let pageSize = 10;
@@ -7,29 +8,62 @@ let totalMemberPage;
 
 
 
+
+
 // 전체 회원 수
 fetch("/admin/member/size")
-.then(response => {
-  return response.text()
-})
-.then(result => {
-  totalMemberPage = Math.ceil(result / pageSize)
-  console.log(totalMemberPage);
-})
+  .then(response => {
+    return response.json()
+  })
+  .then(result => {
+    totalMemberPage = Math.ceil(result / pageSize)
+    console.log(totalMemberPage);
+
+    for (let i = 1; i <= totalMemberPage; i++) {
+      console.log("aaa");
+      let paginationLi = `
+    <li><span><a onclick="memberList(${i})">${i}</a></span></li>
+    `
+      paginationUl.innerHTML += paginationLi;
+    }
+  })
 
 
-fetch("/admin/member/list?pageSize=10&pageNo=1")
-.then(response => {
-  return response.json()
-})
-.then(members => {
-  console.log(members);
+function memberList(pageNo) {
+  $(tbody).empty()
+
+  fetch(`/admin/member/list?pageSize=${pageSize}&pageNo=${pageNo}`)
+    .then(response => {
+      return response.json()
+    })
+    .then(members => {
+      console.log(members);
 
 
-  for (let member of members) {
-    console.log(member.joinDate);
 
-    let memberTr = `
+
+      for (let member of members) {
+        console.log(member.joinDate);
+
+        if (member.gender == false) {
+          member.gender = "남자"
+        } else {
+          member.gender = "여자"
+        }
+
+        if (member.socialAccept == false) {
+          member.socialAccept = "아니오"
+        } else {
+          member.socialAccept = "예"
+        }
+
+        if (member.memberStatus == 1) {
+          member.memberStatus = "사장"
+        } else {
+          member.memberStatus = "일반"
+        }
+
+        let memberTr = `
      <tr style="height:50px;">
        <td>${member.mno}</td>
        <td>${member.email}</td>
@@ -46,25 +80,8 @@ fetch("/admin/member/list?pageSize=10&pageNo=1")
        <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
      </tr>
     `
-    tbody.innerHTML += memberTr
-  }
-})
+        tbody.innerHTML += memberTr
+      }
 
-
-
-
-// <tr style="height:50px;">
-//   <td>1</td>
-//   <td>test@test.com</td>
-//   <td>홍길동</td>
-//   <td>kill동</td>
-//   <td>남자</td>
-//   <td>1991.05.21</td>
-//   <td>010-2929-2929</td>
-//   <td>있음</td>
-//   <td>사장</td>
-//   <td>2022-04-22</td>
-//   <td>일반</td>
-//   <td>2</td>
-//   <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
-// </tr>
+    })
+}
