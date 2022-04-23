@@ -75,21 +75,36 @@ public class MemberController {
     session.invalidate();
     return new ResultMap().setStatus(SUCCESS);
   }
-  
+
+
   @RequestMapping("/member/update")
-  public Object update(Member member) {
-    //System.out.println("Before Update: " + store);
-    //System.out.println("After Update: " + storeService.update(store));
-    return memberService.update(member);
+  public Object update(Member member,HttpSession session) {
+    Member loginmember =(Member)session.getAttribute("loginUser");
+    member.setMno(loginmember.getMno());
+    int count = memberService.update(member);
+
+    if(count ==1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("유효하지 않거나 게시글 작성자가 아닙니다.");
+    }
   }
-  
+
+ /* @ResponseBody
+  @PostMapping("/emailCheck")
+  @RequestMapping("/member/emailCheck")
+  public Object emailCheck(@RequestParam("email") String email) {
+    return memberService.emailCheck(email);
+  }*/
+
   @RequestMapping("/member/get")
-  public Object get(int no) {
-   Member member = memberService.getMemberByMno(no);
+  public Object get(HttpSession session) {
+  Member loginmember =(Member)session.getAttribute("loginUser");
+  int mno = loginmember.getMno();
+   Member member = memberService.getMemberByMno(mno);
+ //  System.out.println("mno:"+no+", Get Member:"+member);
    ResultMap map = new ResultMap();
-   
    System.out.println("@@@@"+member);
-   
    if(member == null) {
      map.setStatus(FAIL);
      map.setData(null);
@@ -97,7 +112,6 @@ public class MemberController {
      map.setStatus(SUCCESS);
      map.setData(member);
    }
-   
    return map;
   }
 
@@ -144,4 +158,3 @@ public class MemberController {
     }
   }
 }
-

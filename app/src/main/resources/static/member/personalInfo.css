@@ -5,8 +5,7 @@
   margin-top: 120px;
   margin-left: 5%;
   left:100px;
- font-weight:500;
-  font-size:30px;
+
 }
 
   div.left {
@@ -28,45 +27,35 @@
     padding-left: 5%;
   }
   
-  .submit-exit-btn {
+  .btn{
+  margin-left:100px;
+  }
+ 
+.submit-change-btn {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
   font-weight: 500;
   background-color: #29c05e;
-  border-radius: 5px;
+  border:1px solid #29c05e;
+  border-radius: 10px;
+  padding: 8px;
+  width: 60px;
+  height:20px;
+}
+
+ .submit-delete-btn {
+     all: unset;
+ color:#d0d0d0;
+  font-size: 15px;
+  font-weight: 500;
+  background-color:#FFFFFF;
+  border-radius: 10px;
+border:1px solid black;
   margin-left: 14px;
   padding: 8px;
   width: 60px;
-}
-  .submit-change-btn{ 
-     /* margin-left:85%;
-     background-color:#FFFFFF;
-     color:#000000;
-     border:none;
-     font-size:10px;
-     text-decoration:underline;
-     float: right;*/
-     
-      margin-left:100%;
-      width:40px;
-    /* position: relative;
-    left: 1150px;*/
-     background-color:#FFFFFF;
-     color:#000000;
-        border:none;
-     font-size:10px;
-      text-decoration:underline;
-    margin-bottom: 0rem;}
-  
-   
-  #delete {
-     margin-left:90%;
-     background-color:#FFFFFF;
-     color:#d0d0d0;
-     border-radius:10px;
-     width:80px;
-     margin-top: 10px;
+  height:20px;
    }
    
   
@@ -74,43 +63,30 @@
   
   #x-complete-form {font-size:15px;}
   
-  #ig{margin-left: 5%; margin-top: 0px; width:100px; height:100px; }
+  #ig{margin-top: 0px; width:100px; height:100px; }
   
    #img{margin-top:-15px; width:50px; height:50px; }
   
-  #x-self-intro{resize:none; margin-top:-15px; border-radius:10px; background-color: #E2E2E2; width:600px; height:100px; font-weight: 400; font-size: 20px;line-height: 19px;}
+  #x-self-intro{resize:none; margin-top:30px; border-radius:10px; background-color: #E2E2E2; width:600px; height:100px; font-weight: 400; font-size: 20px;line-height: 19px;}
 
-   #x-connect-btn {margin-top:-15px;background-color:#FFFFFF; border-radius:10px; margin-left:10px;}
+   #x-connect-btn {margin-top:-5px;background-color:#FFFFFF; border-radius:10px; margin-left:10px;}
    
-   #x-name {margin-top:-5px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
+   #x-name {margin-top:5px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
-   #x-nickname {margin-top:-10px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
+   #x-nickname { border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
-   #x-sex {margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
+   #x-sex {border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
-   #x-birth{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
+   #x-birth{border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
    
-   #x-e-address{margin-top:-5px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
+   #x-e-address{border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
-   #x-pwd{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
+   #x-pwd{border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
    
-   #x-phonenumber{margin-top:-10px;border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px;position: absolute;}
+   #x-phonenumber{border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px;position: absolute;}
    
    #count { float: right ; }
    
   
-/* 테블릿 세로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 768px) {
-}
 
-/* 테블릿 가로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 1024px) {
-}
 
-/* 스마트폰 가로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 480px) {
-}
-
-/* 스마트폰 세로 사이즈 넘어가면 적용 */
-@media screen and (min-width: 320px) {
-}

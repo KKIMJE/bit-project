@@ -137,7 +137,14 @@
        m.mno=#{mno}  <!-- and memberstatus=0 -->
   </select>
   
-  <!--  
+  <select id="emailCheck" parameterType="member" resultType="member">
+  select count(*)
+  From member
+  where email = #{email}
+  </select>
+  
+  
+  <!-- 
     <select id="findAll" resultMap="memberMap">
     select 
       mno,
@@ -161,21 +168,13 @@
     order by 
       mno desc
   </select>
-
+-->
 
 
   
 
 
  
--->
+
 
 </mapper>
-
-
-
-
-
-
-
-

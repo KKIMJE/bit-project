@@ -33,23 +33,6 @@ window.onload = function(){
    /* 삭제 추가 */ 
       // 1) URL에서 쿼리스트링(query string)을 추출한다.
 
-   var arr = location.href.split("?"); 
-  console.log(arr);
-  var storeNo;
-  
-  if (arr.length > 1) {
-
-    // http://localhost:8080/mypage(CEO)/storeChange.html arr[0]    storeNo=36&parm3=44 arr[1]
-
-    var qs = arr[1];
-    console.log(qs);
-  
-    var params = new URLSearchParams(qs);
-    storeNo= params.get("storeNo"); 
-
-    
-    console.log(storeNo);
-  }
   
   //if (storeNo == null) {
   //    alert("해당번호의 가게가 없습니다!");
@@ -72,11 +55,11 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
   //파일업로드 추가해야함
 
 
-  if( storeNo ) {
+  //if( storeNo ) {
     
 
   // 3) 서버에서 데이터 가져오기
-  fetch(`/store/get?no=${storeNo}`)
+  fetch(`/store/get`)
     .then(function(response) {
       return response.json();
     })
@@ -88,8 +71,8 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
         console.log(result);
         return;
       }
-      //console.log(result);
-      var store = result;
+      console.log(result.data);
+      var store = result.data;
       xStoreNo.value = store.storeNo;
       xStoreName.value = store.storeName;
       xAddress.value = store.address;
@@ -100,25 +83,21 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
       //태그추가해야함 
       xReservationAccept.value = store.reservationAccept;
       xMaxMember.value = store.maxMember;
-      //파일업로드추가해야함 
+      //파일업로드추가해야함
    
   /* if (store.Img != null) {
         xPhoto.src = "/store/img?filename=" + store.img;
       }*/
-    });
-    } else {
-      
-    }
+    
 
   document.querySelector("#change").onclick = function() {
     if (xStoreName.value == "" ||  xTel.value == "" || xHour.value == "" ) {
       window.alert("필수 입력 항목이 비어 있습니다.");
       return;
     }
- 
-  
+
     var fd = new FormData(document.forms.namedItem("form1"));
-    
+    // console.log(fd);
     fetch("/store/update", {
         method: "POST",
         body: new URLSearchParams(fd)
@@ -126,10 +105,8 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
         return response.json();
       })
       .then(function(result) {
-        console.log(result); // 1
-        //if (result.status == "success") {
-          if (result == 1) {
-          location.href = "/ceo/storeChange.html?storeNo="+storeNo;
+          if (result == "success") {
+          location.href = "/ceo/storeChange.html";
         } else {
           window.alert("주점 변경 실패!");
           console.log(result.data);
