@@ -25,7 +25,7 @@
       comment_contents,
       comment_reg_date
     from 
-      review 
+      review
     order by 
       reservation_no desc
   </select>
@@ -35,7 +35,7 @@
     values(#{reservationNo},#{storeNo},#{contents},#{score},#{commentContents})
   </insert>
 
-	<select id="findByNo" resultMap="reviewMap" parameterType="int">
+   <select id="findByNo" resultMap="reviewMap" parameterType="int">
     select
       reservation_no,
       store_no,
@@ -44,8 +44,10 @@
       reg_date
     from 
       review
-    where 
-      reservation_no=#{no}
+    where
+      store_no=#{no}
+    order by 
+      reservation_no desc
   </select>
 
   <delete id="delete" parameterType="int">
