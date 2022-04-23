@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 
+  namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
+ -->
+<mapper namespace="com.bitproject.dao.AdminMemberDao">
+
+  <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
+  <resultMap type="member" id="memberMap">
+    <id column="mno" property="mno"/>
+    <result column="email" property="email"/>
+    <result column="name" property="name"/>
+    <result column="tel" property="tel"/>
+    <result column="join_date" property="joinDate"/>
+    <result column="social_accept" property="socialAccept"/>
+    <result column="gender" property="gender"/>
+    <result column="birth" property="birth"/>
+    <result column="self_introduction" property="selfIntroduction"/>
+    <result column="m_img" property="mImg"/>
+    <result column="nickname" property="nickName"/>
+    <result column="score" property="score"/>
+    <result column="block_date" property="blockDate"/>
+    <result column="block_accept" property="blockAccept"/>
+    <result column="member_status" property="memberStatus"/>
+    
+  </resultMap>
+  
+
+  <!-- 
+    id => 인터페이스의 메서드 이름과 일치해야 한다.
+   -->
+   
+       <select id="findAll" resultMap="memberMap">
+    select 
+      mno,
+      email,
+      name,
+      tel,
+      join_date,
+      social_accept,
+      gender,
+      birth,
+      nickname,
+      block_accept,
+      member_status
+    from 
+      member 
+    order by 
+      mno desc
+      limit #{offset}, #{rowCount}
+  </select>
+  
+      <select id="countAll" resultType="int">
+    select count(*) from Member
+  </select>
+   
+   
+   
+   
+<!--
+   <insert id="insert" parameterType="member">
+    insert into member(email,
+    password,
+    name,
+    tel,
+    social_accept,
+    gender,
+    birth,
+    self_introduction,
+    nickname) 
+    values(#{email},
+    password(#{password}),
+    #{name},
+    #{tel},
+    #{socialAccept},
+    #{gender},
+    #{birth},
+    #{selfIntroduction},
+    #{nickName})
+  </insert>
+   -->
+   
+   <!-- 
+    <select id="findByEmailAndPassword" resultMap="memberMap">
+    select 
+      mno,
+      name,
+      email
+    from 
+      member
+    where
+      email=#{email} and password=password(#{password})      
+  </select>
+   -->   
+   
+   
+  <!-- 
+      <select id="findByEmail" resultMap="memberMap">
+    select 
+      mno,
+      name,
+      email
+    from 
+      member
+    where
+      email=#{email}
+  </select>
+   -->
+   
+   <!-- 
+ <select id="findByMno" resultMap="memberMap">
+    select 
+      mno,
+      name,
+      gender,
+      birth,
+      email,
+      password,
+      tel,
+      m_img,
+      self_introduction
+    from 
+      member
+    where
+      mno=#{mno}
+  </select>
+   -->
+  
+  <!-- 
+   <update id="update" parameterType="member">
+    update member set
+    nickname=#{nickname},
+    gender=#{gender},
+    birth=#{birth},
+    password=password(#{password}),
+    tel=#{tel}
+    where 
+    mno=#{mno}
+  </update>
+   -->
+   
+   <!-- 
+    <select id="findByNo" resultMap="memberMap" parameterType="int">
+    select
+      m.m_img,
+      m.mno, 
+      m.name,
+      m.email,
+      m.pwd,
+      m.name,
+      m.tel,
+      m.join_date,
+      m.social_accept,
+      m.gender,
+      m.birth,
+      m.self_introduction,
+      m.m_img,
+      m.nickname,
+      m.score,
+      m.block_date,
+      m.block_accept,
+      m.member_status
+      from 
+      member m
+      where 
+       m.mno=#{mno}
+  </select>
+   -->
+   
+   
+
+</mapper>
+
+
+
+
+
+
+
+

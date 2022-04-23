@@ -1,6 +1,7 @@
 .member-page {
   display: flex;
   justify-content: center;
+  height: 2000px;
 }
 
 .x-member-search {
@@ -16,18 +17,22 @@
   border-collapse: collapse;
   /* border: 1px rgb(212, 212, 212) solid; */
   /* overflow: hidden; */
-  width: 40%;
+
 }
 
 #x-curr-table th {
+  padding: 0 30px 0 30px;
   /* border-radius: 5px; */
   background-color: rgb(212, 212, 212);
+}
+#x-curr-table td {
+padding: 0 50px 0 50px;
 }
 
 #x-member-table {
   text-align: center;
   border-collapse: collapse;
-  width: 80vw;
+  width: 85vw;
 }
 
 #x-member-table thead {
