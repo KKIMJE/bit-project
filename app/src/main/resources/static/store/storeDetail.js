@@ -6,8 +6,10 @@ var qs = arr[1];
 
 var params = new URLSearchParams(qs);
 var no = params.get("no");
-
 console.log(no);
+// 주점상세 모달이미지 버튼
+var next = document.querySelector('.next-store');
+var pre = document.querySelector('.pre-store');
 
 if (no == null) {
   alert("error");
@@ -21,6 +23,14 @@ fetch(`/store/get?no=${no}`)
     console.log(store);
     mapMarker(store)
     storeTextBox(store)
+});
+
+fetch(`/review/get?no=${no}`)
+  .then(function(response) {
+    return response.json() 
+  }).then(function(reviews) {
+    console.log(reviews);
+    StoreReviewPrint(reviews)
 });
 
 // Map 생성
@@ -270,7 +280,7 @@ function storeDetailImgPrint(Imgs) {
 
   imgBox.innerHTML = str
 }
-// 주점상세 모달 이미지
+// 주점상세 모달 이미지 
 function ModalImgPrint(Imgs) {
 
   let str;
@@ -287,14 +297,11 @@ function ModalImgPrint(Imgs) {
     str += `<div class="storeContents-imgCard"><img class="ximg" src="../asset/img/storeDetail/${Imgs[i].storeImg}.jpg"></div>`
   }
 
-  console.log(str.slice(9, str.length))
+  // console.log(str.slice(9, str.length))
   imgContainer.innerHTML = str.slice(9, str.length)
   nextPreBtnSet()
 }
-
-
-var next = document.querySelector('.next-store');
-var pre = document.querySelector('.pre-store');
+// 주점상세 모달이미지 버튼 이벤트
 function nextPreBtnSet() {
   setTimeout(() => {
     // 주점 리스트 초기화 - 페이지 1로 맞추기
@@ -344,7 +351,64 @@ function nextPreBtnSet() {
     });
   }, 500)
 }
+// 주점리뷰 (기본최신순)
+function StoreReviewPrint(rivewData) {
 
+  let xReviewBox = document.querySelector(".xReviewBox")
+  let str = ""
 
+  if (rivewData.length == 0) {
+    str = "해당리뷰가 없습니다."
+  }
+  
+  console.log(rivewData.score)
+  console.log(rivewData.regDate)
+  console.log(rivewData.contents)
 
+  str += `
+    <div class="storeReviewBack">
+    <div class="reviewprofile">
+      <div><img class="profile-img" src="storelist4.jpg" alt=""></div>
+      <div class="reviewerName">개코</div>
+      <div class="reviewStar">${printStar(rivewData.score)}</div>
+    </div>
+    <div class="reviewContents">
+      <div class="reviewDate">${rivewData.regDate.slice(0, 10)}</div>
+      <div class="reviewText">${rivewData.contents}</div>
+      <div class="reviewImgBox">
+        <img class="review-img" src="storelist7.jpg" alt="">
+        <img class="review-img" src="storelist7.jpg" alt="">
+        <img class="review-img" src="storelist7.jpg" alt="">
+        <img class="review-img" src="storelist7.jpg" alt="">
+        <img class="review-img" src="storelist7.jpg" alt="">
+      </div>
+    </div>
+  </div>`
+
+  
+  
+  console.log("str : ", str)
+  xReviewBox.innerHTML = str
+
+}
+// 주점 평점 별점 계산
+// 회원이 선택한 별점을 표시함
+function printStar(score) {
+  // console.log("score: " + score)
+  let star = "⭐⭐⭐⭐⭐";
+  if (1 == score) {
+    star = "⭐"
+  } else if(2 == score) {
+    star = "⭐⭐"
+  } else if(3 == score) {
+    star = "⭐⭐⭐"
+  } else if(4 == score) {
+    star = "⭐⭐⭐⭐"
+  } else if(5 == score) {
+    star = "⭐⭐⭐⭐⭐"
+  } else {
+    star = "😥"
+  }
+  return star;
+}
 
