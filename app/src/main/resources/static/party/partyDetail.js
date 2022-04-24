@@ -6,8 +6,8 @@ var pcbody = document.querySelector(".party-comment-fst")
 var arr = location.href.split("?"); 
 
 if (arr.length == 1) {
-  alert("요청 형식이 올바르지 않습니다.")
-  throw "URL 형식 오류!";
+    alert("요청 형식이 올바르지 않습니다.")
+    throw "URL 형식 오류!";
 }
 
 var qs = arr[1];
@@ -17,52 +17,71 @@ var params = new URLSearchParams(qs);
 var no = params.get("no");
 
 if (no == null) {
-  alert("게시물 번호가 없습니다.");
-  throw "파라미터 오류!";
+    alert("게시물 번호가 없습니다.");
+    throw "파라미터 오류!";
 }
 
-  var pTitle = document.querySelector(".party-title");
-  var pNickname = document.querySelector(".leader-profile span");
-  var pcNickname = document.querySelector(".nickname");
-  var pAlcoholType = document.querySelector(".ptype");
-  var pDate = document.querySelector(".pdate");
-  var pAlcoholLimit = document.querySelector(".plimit");
-  var pFee = document.querySelector(".pfee");
-  var pMember = document.querySelector(".pmember");
+var pTitle = document.querySelector(".party-title");
+var pNickname = document.querySelector(".leader-profile span");
+var pcNickname = document.querySelector(".nickname");
+var pAlcoholType = document.querySelector(".ptype");
+var pDate = document.querySelector(".pdate");
+var pAlcoholLimit = document.querySelector(".plimit");
+var pFee = document.querySelector(".pfee");
+var pMember = document.querySelector(".pmember");
 
   // 서버에서 데이터 가져오기
-  fetch(`/party/get?no=${no}`)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(result) {
-      // 모임 게시판 상세 정보를 화면에 출력한다.
-      if (result.status == "fail") {
-    	  window.alert("서버 요청 오류!");
-    	  console.log(result.data);
-    	  return;
-      }
-      console.log(result)
-      var party = result.data;
-      console.log(party.maxMember)
+fetch(`/party/get?no=${no}`)
+.then(function(response) {
+    return response.json();
+})
+.then(function(result) {
+    // 모임 게시판 상세 정보를 화면에 출력한다.
+    if (result.status == "fail") {
+        window.alert("서버 요청 오류!");
+        console.log(result.data);
+        return;
+    }
+    console.log(result)
+    var party = result.data;
+    console.log(party.maxMember)
 
-      pTitle.innerHTML = party.title;
-      pNickname.innerHTML = party.nickName;
-      pAlcoholType.innerHTML = party.alcoholType;
-      pDate.innerHTML = party.meetingDate;
-      pAlcoholLimit.innerHTML = party.alcoholLimit;
-      pFee.innerHTML = `${party.partyFee}원`;
-      pMember.innerHTML = `${party.maxMember}명`;
+    pTitle.innerHTML = party.title;
+    pNickname.innerHTML = party.nickName;
+    pAlcoholType.innerHTML = party.alcoholType;
+    pDate.innerHTML = party.meetingDate;
+    pAlcoholLimit.innerHTML = party.alcoholLimit;
+    pFee.innerHTML = `${party.partyFee}원`;
+    pMember.innerHTML = `${party.maxMember}명`;
 
-      pcNickname.innerHTML = party.nickName;
+    pcNickname.innerHTML = party.nickName;
 
-      console.log(pTitle.innerHTML);
-    });
+    console.log(pTitle.innerHTML);
+});
 
 
+/*****************
+    참여요청 모달
+*****************/
+    $(".button-join").click(function () {
+                Swal.fire({
+                    icon: 'success',
+                    text: '참여요청이 완료되었습니다.',
+                    showCancelButton:false,
+                    confirmButtonColor:'#90d483',
+                    cancelButtonColor: '#90d483',
+                    confirmButtonText:'확인',
+                }).then((result) => {
+                    if(result.isConfirmed) {
+                    // 방장에게 참여요청 보내는 코드 적기
+                }
+                })
+            });
+
+            
 /*    for (var partyComment of result) {
-      console.log(partyComment)
-      pcbody.innerHTML += `<div>
+    console.log(partyComment)
+    pcbody.innerHTML += `<div>
     <img class="profile-img people" src="img/profile_sumi.jpg">
 </div>
 <div>
