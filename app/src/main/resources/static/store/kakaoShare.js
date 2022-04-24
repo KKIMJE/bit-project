@@ -1,17 +1,5 @@
-<a id="kakao-link-btn" href="javascript:sendLink()">
-    <img
-      src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-    />
-</a>
-
-<!-- kakao sdk 호출 -->
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
-<script type="text/javascript">
 // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
 Kakao.init('978692169dcc813ed6376dfc7bba8b87');
-
-// SDK 초기화 여부를 판단합니다.
 console.log(Kakao.isInitialized());
 
 function sendLink() {
@@ -52,14 +40,3 @@ function sendLink() {
     installTalk: true,
     })
 }
-</script>
-    
-    
-
-
-
-
-
-
-</body>
-</html>

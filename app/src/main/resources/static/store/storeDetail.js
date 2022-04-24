@@ -26,7 +26,6 @@ fetch(`/store/get?no=${no}`)
       mapMarker(store.data)
 });
 
-
 fetch(`/review/get?no=${no}`)
   .then(function(response) {
     return response.json() 
@@ -434,4 +433,3 @@ function reviewMemberinfo(reservationInfo) {
     }
   }
 }
-// ${reservationInfo[i].member[0].mimg}

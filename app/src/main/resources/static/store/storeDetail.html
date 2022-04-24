@@ -90,7 +90,9 @@
           </div>
           <div class="storeTextBox-1-2">
             <div class="storeMnoCnt"><i id="heart" class="fa-heart fa-solid"></i></div>
-            <div class="storeShare"><i class="fa-solid fa-share-nodes"></i>공유하기</div>
+            <a id="kakao-link-btn" href="javascript:sendLink()">
+              <div class="storeShare"><i class="fa-solid fa-share-nodes"></i>공유하기</div>
+            </a>
             <div><i class="fa-solid fa-shield-halved"></i>신고하기</div>
           </div>
         </div>
@@ -184,4 +186,7 @@
 <!-- kakaoMap -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87&libraries=services"></script>
 <script src="storeDetail.js"></script>
+<!-- kakao sdk 호출 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="kakaoShare.js"></script>
 

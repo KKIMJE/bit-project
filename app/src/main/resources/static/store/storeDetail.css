@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: rgb(63, 63, 63) !important;
+}
+
 body {
   font-family: NanumSquareRound;
   margin: 0;
@@ -119,6 +123,7 @@ body {
 }
 .storeShare {
   margin: 0px 20px;
+  text-decoration: none;
 }
 /* 추천주류 추천안주 */
 .storeSuggestion {
