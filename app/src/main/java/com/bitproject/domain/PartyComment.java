@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class PartyComment{
 
   int partyCommentNo;
-  int mNo;
+  int mno;
   String nickName;
   String mImg;
   int partyNo;
@@ -19,11 +19,11 @@ public class PartyComment{
   public void setPartyCommentNo(int partyCommentNo) {
     this.partyCommentNo = partyCommentNo;
   }
-  public int getmNo() {
-    return mNo;
+  public int getmno() {
+    return mno;
   }
-  public void setmNo(int mNo) {
-    this.mNo = mNo;
+  public void setmNo(int mno) {
+    this.mno = mno;
   }
   public String getNickName() {
     return nickName;
@@ -64,7 +64,7 @@ public class PartyComment{
 
   @Override
   public String toString() {
-    return "PartyComment [partyCommentNo=" + partyCommentNo + ", mNo=" + mNo + ", nickName="
+    return "PartyComment [partyCommentNo=" + partyCommentNo + ", mno=" + mno + ", nickName="
         + nickName + ", mImg=" + mImg + ", partyNo=" + partyNo + ", partyCommentContents="
         + partyCommentContents + ", commentDate=" + commentDate + ", updateDate=" + updateDate
         + "]";

@@ -23,7 +23,6 @@ public class Party {
   int storeNo;
   List<PartyComment> partyComments;
 
-
   public int getPartyNo() {
     return partyNo;
   }
@@ -114,13 +113,21 @@ public class Party {
   public void setStoreNo(int storeNo) {
     this.storeNo = storeNo;
   }
+  public List<PartyComment> getPartyComments() {
+    return partyComments;
+  }
+  public void setPartyComments(List<PartyComment> partyComments) {
+    this.partyComments = partyComments;
+  }
+
   @Override
   public String toString() {
     return "Party [partyNo=" + partyNo + ", mno=" + mno + ", nickName=" + nickName + ", mImg="
         + mImg + ", title=" + title + ", contents=" + contents + ", partyFee=" + partyFee
         + ", meetingDate=" + meetingDate + ", maxMember=" + maxMember + ", alcoholType="
         + alcoholType + ", alcoholLimit=" + alcoholLimit + ", regDate=" + regDate + ", updateDate="
-        + updateDate + ", address=" + address + ", storeNo=" + storeNo + "]";
+        + updateDate + ", address=" + address + ", storeNo=" + storeNo + ", partyComments="
+        + partyComments + "]";
   }
 
 }

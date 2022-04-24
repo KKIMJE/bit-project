@@ -43,7 +43,7 @@ public class PartyController {
   public Object get(int no) {
     Party party = partyService.get(no);
     if (party == null) {
-      return new ResultMap().setStatus(FAIL).setData("해당 번호의 게시글이 없습니다.");
+      return new ResultMap().setStatus(FAIL).setData("해당 모임의 게시글이 없습니다.");
     }
     return new ResultMap().setStatus(SUCCESS).setData(party);
   }

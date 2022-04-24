@@ -24,7 +24,7 @@
   
     <collection property="partyComments" ofType="partyComment">
       <id column="party_comment_no" property="partyCommentNo"/>
-      <result column="mno" property="mNo"/>
+      <result column="mno" property="mno"/>
       <result column="pc_nickname" property="nickName"/> <!-- nickname이 중복되어 별명을 줌 -->
       <result column="m_img" property="mImg"/>
       <result column="party_no" property="partyNo"/>
