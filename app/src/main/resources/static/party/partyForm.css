@@ -123,6 +123,10 @@ button{
   margin-bottom: 10px;
 }
 
+.poption-select-wrap input {
+  border: none;
+}
+
 .poption-select {
   display: flex;
   border: 3px solid #90D483;
@@ -149,6 +153,26 @@ button{
 }
 #ps-member {
   width: 124px;
+  margin-right: 0 !important;
+}
+
+#ps-location input {
+  width: 304px;
+}
+#ps-date input {
+  width: 284px;
+}
+#ps-type input {
+  width: 124px;
+}
+#ps-limit input {
+  width: 119px;
+}
+#ps-fee input {
+  width: 119px;
+}
+#ps-member input {
+  width: 118px;
   margin-right: 0 !important;
 }
 
