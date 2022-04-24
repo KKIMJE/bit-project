@@ -44,7 +44,7 @@ if (no == null) {
       }
       console.log(result)
       var party = result.data;
-      //console.log(party.partyComments)
+      console.log(party.maxMember)
 
       pTitle.innerHTML = party.title;
       pNickname.innerHTML = party.nickName;

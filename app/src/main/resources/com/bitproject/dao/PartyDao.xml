@@ -20,7 +20,6 @@
     <result column="reg_date" property="regDate"/>
     <result column="update_date" property="updateDate"/>
     <result column="address" property="address"/>
-    <result column="store_no" property="storeNo"/>
   
     <collection property="partyComments" ofType="partyComment">
       <id column="party_comment_no" property="partyCommentNo"/>
@@ -61,19 +60,18 @@
     p.max_member,
     p.alcohol_type,
     p.alcohol_limit,
-    m.nickname,
-    m.m_img,
-    s.address
+    p.address,
+    m.nickname as m_nickname,
+    m.m_img
   from party p
     inner join member m on p.mno=m.mno
-    inner join store s on p.store_no=s.store_no
   order by 
     p.party_no desc;
   </select>
   
   <insert id="insert" parameterType="Party">
-    insert into party(mno,nickname,title,contents,address,party_fee,meeting_date,max_member,alcohol_type,alcohol_limit) 
-    values(#{mno},#{nickName},#{title},#{contents},#{address},#{partyFee},#{meetingDate},#{maxMember},#{alcoholType},#{alcoholLimit})
+    insert into party(mno,title,contents,address,party_fee,meeting_date,max_member,alcohol_type,alcohol_limit) 
+    values(#{mno},#{title},#{contents},#{address},#{partyFee},#{meetingDate},#{maxMember},#{alcoholType},#{alcoholLimit})
   </insert>
   
   <select id="findByNo" resultMap="partyMap2" parameterType="int">
@@ -95,6 +93,8 @@
   where 
     p.party_no=#{no}
   </select>
+  
+  </mapper>
   
 	<!--  select id="findByNo" resultMap="partyMap" parameterType="int">
   select
@@ -126,7 +126,7 @@
   </insert>
    -->
   
-  </mapper>  
+
   
   
   

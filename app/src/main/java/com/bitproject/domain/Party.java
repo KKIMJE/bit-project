@@ -22,7 +22,6 @@ public class Party {
   String address;
   int storeNo;
   List<PartyComment> partyComments;
-
   public int getPartyNo() {
     return partyNo;
   }
@@ -129,6 +128,7 @@ public class Party {
         + updateDate + ", address=" + address + ", storeNo=" + storeNo + ", partyComments="
         + partyComments + "]";
   }
+
 
 }
 

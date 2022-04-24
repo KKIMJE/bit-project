@@ -33,7 +33,6 @@ public class PartyController {
     Member member = (Member) session.getAttribute("loginUser");
     party.setNickName(member.getNickName());
     party.setMno(member.getMno());
-    System.out.println(party);
 
     partyService.add(party);
     return new ResultMap().setStatus(SUCCESS);
