@@ -12,6 +12,7 @@ public class Review {
   int storeNo;
   String contents;
   List<ReviewImg> reviewImgs;
+  List<Member> member;
   float score;
   String commentContents;
   java.sql.Timestamp regDate;

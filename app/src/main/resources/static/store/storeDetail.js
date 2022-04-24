@@ -16,14 +16,16 @@ if (no == null) {
   throw "파라미터 오류!";
 }
 
+
 fetch(`/store/get?no=${no}`)
   .then(function(response) {
     return response.json() 
   }).then(function(store) {
-    console.log(store);
-    mapMarker(store)
-    storeTextBox(store)
+      console.log(store);
+      storeTextBox(store.data)
+      mapMarker(store.data)
 });
+
 
 fetch(`/review/get?no=${no}`)
   .then(function(response) {
@@ -31,6 +33,14 @@ fetch(`/review/get?no=${no}`)
   }).then(function(reviews) {
     console.log(reviews);
     StoreReviewPrint(reviews)
+});
+
+fetch(`/reservation/get?no=${no}`)
+  .then(function(response) {
+    return response.json() 
+  }).then(function(reservation) {
+    console.log(reservation);
+    reviewMemberinfo(reservation)
 });
 
 // Map 생성
@@ -83,8 +93,8 @@ function storeTextBox (store) {
   let storeStar = document.querySelector(".storeStar")
   let storeTag = document.querySelector(".storeTag")
 
+  storeDetailImgPrint(store.storeImg) // 주점 이미지
   ModalImgPrint(store.storeImg) // 주점 모달 이미지
-  storeDetailImgPrint(store.storeImg) // 주점 상세 이미지
   storeAlcPrint(store.alcoholSales) // 추천주류
   storeMenuPrint(store.storeMenu) // 추천메뉴
   storeCountMno(store.storeNo) // 주점찜
@@ -98,7 +108,6 @@ function storeTextBox (store) {
   storeOper.innerHTML = printOper(store.oper) + " / " +  "&nbsp;" // 영업여부, 거리
   computeDistance(store.address) // 거리계산
 }
-
 // 영업여부
 function printOper(oper) {
   let status = " ";
@@ -254,14 +263,12 @@ function storeMenuPrint(storeMenuList) {
 // 주점상세 이미지
 function storeDetailImgPrint(Imgs) {
   
-
   let imgBox = document.querySelector(".img-box")
   let str 
   if (Imgs.length == 0) {
     str = "이미지를 준비중입니다."
   }
-
-// 최대 출력 5개
+  // 최대 출력 5개
   str = `
   <img class="xMain-img" src="../asset/img/storeDetail/${Imgs[0].storeImg}.jpg" alt="">
   
@@ -277,16 +284,14 @@ function storeDetailImgPrint(Imgs) {
   </div>`
 
   // console.log(Imgs)
-
   imgBox.innerHTML = str
 }
 // 주점상세 모달 이미지 
 function ModalImgPrint(Imgs) {
-
   let str;
   let imgContainer = document.querySelector('.imgContainer')
-
-  if (Imgs.length == 0) {
+  
+  if (Imgs == null) {
     str = "이미지를 준비중입니다."
   }
 
@@ -351,37 +356,35 @@ function nextPreBtnSet() {
     });
   }, 500)
 }
-// 주점리뷰 (기본최신순)
+// 주점리뷰 (기본최신순) : reviewImgPrint, reviewMemberinfo
 function StoreReviewPrint(reviewData) {
-
   let xReviewBox = document.querySelector(".xReviewBox")
   let str = ""
 
-  if (reviewData.length == 0) {
-    str = "해당리뷰가 없습니다."
+  if (reviewData == null) {
+    console.log("reviewData null")
   }
 
   for (let i=0; i < reviewData.length; i++) {
-    str += `
-    <div class="storeReviewBack">
-    <div class="reviewprofile">
-      <div><img class="profile-img" src="storelist4.jpg" alt=""></div>
-      <div class="reviewerName">개코</div>
-      <div class="reviewStar">${printStar(reviewData[i].score)}</div>
-    </div>
-    <div class="reviewContents">
-      <div class="reviewDate">${reviewData[i].regDate.slice(0, 10)}</div>
-      <div class="reviewText">${reviewData[i].contents}</div>
-      <div class="reviewImgBox">
-        ${reviewImgPrint(reviewData[i].reviewImgs)}
-      </div>
-    </div>
-  </div>`
+    str += 
+    `<div class="storeReviewBack">
+        <div class="reviewprofile">
+          <div class="profile-img"></div>
+          <div class="reviewerName"></div>
+          <div class="reviewStar">${printStar(reviewData[i].score)}</div>
+        </div>
+        <div class="reviewContents">
+          <div class="reviewDate">${reviewData[i].regDate.slice(0, 10)}</div>
+          <div class="reviewText">${reviewData[i].contents}</div>
+          <div class="reviewImgBox">
+            ${reviewImgPrint(reviewData[i].reviewImgs)}
+          </div>
+        </div>
+    </div>`
   }
   xReviewBox.innerHTML = str
 }
-// 주점 평점 별점 계산
-// 회원이 선택한 별점을 표시함
+// 주점 평점, 회원이 선택한 별점을 표시함
 function printStar(score) {
   // console.log("score: " + score)
   score = Math.round(score)
@@ -401,6 +404,7 @@ function printStar(score) {
   }
   return star;
 }
+// 리뷰 이미지 출력
 function reviewImgPrint(rimgs) {
   
   let str =""
@@ -408,11 +412,26 @@ function reviewImgPrint(rimgs) {
   for (let i=0; i < rimgs.length; i++) {
     if (rimgs[i].img != null) {
       str += `<img class="review-img" src="../asset/img/storeReviewImg/${rimgs[i].img}.jpg" alt="">`
+    } else {
+      continue
     }
   }
-  console.log(str.slice(9, str.length))
-  return str.slice(9, str.length)
-
+  // console.log(str)
+  return str
 }
-
-// <img class="review-img" src="${reviewData[i].reviewImgs}" alt="">
+//리뷰 닉네임, 회원사진
+function reviewMemberinfo(reservationInfo) {
+  let reviewerNames = document.querySelectorAll(".reviewerName")
+  let profileImg = document.querySelectorAll(".profile-img")
+  for (let i=0; i < reservationInfo.length; i++) {
+    if (reservationInfo[i].member[0].nickName != null) {
+      // console.log(reservationInfo[i].member[0].nickName)
+      // console.log(reservationInfo[i].member[0].mimg)
+      reviewerNames[i].innerHTML = reservationInfo[i].member[0].nickName
+      profileImg[i].innerHTML = `<img src="../asset/img/memberReview/${reservationInfo[i].member[0].mimg}.jpg">`
+    } else {
+      continue
+    }
+  }
+}
+// ${reservationInfo[i].member[0].mimg}

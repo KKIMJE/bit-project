@@ -18,7 +18,7 @@
       <result column="review_img_no" property="reviewImgNo"/>
       <result column="reservation_no" property="reservationNo"/>
       <result column="img" property="img"/>
-    </collection>    
+    </collection>
     
   </resultMap>
 
@@ -55,6 +55,8 @@
       left outer join review_img ri on ri.reservation_no=r.reservation_no
     where
       store_no=#{no}
+    order by 
+      reservation_no desc
   </select>
 
   <delete id="delete" parameterType="int">

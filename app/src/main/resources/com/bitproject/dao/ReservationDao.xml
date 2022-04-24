@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 
+  namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
+ -->
+<mapper namespace="com.bitproject.dao.ReservationDao">
+
+  <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
+  <resultMap type="reservation" id="reservationMap">
+    <id column="reservation_no" property="reservationNo"/>
+    <result column="store_no" property="storeNo"/>
+    <result column="date" property="date"/>
+    <result column="people" property="people"/>
+    <result column="name" property="name"/>
+    <result column="tel" property="tel"/>
+    <result column="request" property="request"/>
+    <result column="pay_no" property="payNo"/>
+    <result column="pay_company" property="payCompany"/>
+    <result column="pay_price" property="payPrice"/>
+    <result column="pay_date" property="payDate"/>
+    <result column="status" property="status"/>
+    <result column="mno" property="mno"/>
+    
+    <collection property="member" ofType="Member">
+      <result column="nickname" property="nickName"/>
+      <result column="m_img" property="mImg"/>
+    </collection>
+    
+  </resultMap>
+
+  <!-- 
+    id => 인터페이스의 메서드 이름과 일치해야 한다.
+   -->
+  <select id="findAll" resultMap="reservationMap">
+    select 
+      reservation_no,
+      store_no,
+      date,
+      people,
+      name,
+      tel,
+      request,
+      pay_no,
+      pay_company,
+      pay_price,
+      pay_date,
+      status,
+      mno
+    from 
+      reservation
+    order by 
+      reservation_no desc
+  </select>
+
+
+  <select id="findByNo" resultMap="reservationMap" parameterType="int">
+    select 
+      rv.reservation_no,
+      r.reservation_no review_no,
+      rv.store_no,
+      rv.mno,
+      rv.date,
+      rv.people,
+      rv.name,
+      rv.tel,
+      rv.request,
+      m.nickname,
+      m.m_img
+    from 
+      reservation rv
+      left outer join member m on m.mno=rv.mno
+      inner join review r on r.store_no=rv.store_no
+    where 
+      r.store_no=#{no}
+    order by 
+      reservation_no desc
+  </select>
+
+
+
+<!-- 
+
+  <insert id="insert" parameterType="Board">
+    insert into board(mno,community_no,title,contents,view_count) 
+    values(#{mNo},#{communityNo},#{title},#{contents},#{viewCount})
+  </insert> 
+  
+  <update id="update" parameterType="Board">
+    update board set
+      title=#{title}, 
+      contents=#{contents}
+    where 
+      board_no=#{boardNo}
+  </update>
+
+  <delete id="delete" parameterType="int">
+    delete from board 
+    where board_no=#{no}
+  </delete>
+  
+  <update id="increaseViewCount" parameterType="int">
+    update board set 
+      view_count=view_count + 1 
+    where board_no=#{no}
+  </update>
+  
+-->
+  
+
+</mapper>
+
+
+
+
+
+
+
+

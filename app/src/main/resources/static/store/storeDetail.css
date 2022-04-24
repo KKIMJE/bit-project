@@ -212,7 +212,7 @@ body {
   margin-left: 30px;
   margin-top: 25px;
 }
-.profile-img {
+.profile-img > img {
   width: 80px;
   height: 80px;
   object-fit: cover;
