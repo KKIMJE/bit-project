@@ -7,7 +7,7 @@
 
   <resultMap type="partyComment" id="partyCommentMap">
     <id column="party_comment_no" property="partyCommentNo"/>
-    <result column="mno" property="mNo"/>
+    <result column="mno" property="mno"/>
     <result column="party_no" property="partyNo"/>
     <result column="party_comment_contents" property="partyCommentContents"/>
     <result column="comment_date" property="commentDate"/>
@@ -21,7 +21,7 @@
 			party_comment_contents
       )
     values(
-     #{mNo},
+     #{mno},
      #{partyNo},
      #{partyCommentContents}
      )

@@ -33,7 +33,6 @@ public class PartyController {
     Member member = (Member) session.getAttribute("loginUser");
     party.setNickName(member.getNickName());
     party.setMno(member.getMno());
-    System.out.println(party);
 
     partyService.add(party);
     return new ResultMap().setStatus(SUCCESS);
@@ -43,7 +42,7 @@ public class PartyController {
   public Object get(int no) {
     Party party = partyService.get(no);
     if (party == null) {
-      return new ResultMap().setStatus(FAIL).setData("해당 번호의 게시글이 없습니다.");
+      return new ResultMap().setStatus(FAIL).setData("해당 모임의 게시글이 없습니다.");
     }
     return new ResultMap().setStatus(SUCCESS).setData(party);
   }

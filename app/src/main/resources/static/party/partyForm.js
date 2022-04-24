@@ -275,7 +275,6 @@ $(".pbtn").on('click', function(e){
       $('.modal-footer span').data('amember', `${member}`);
       $('#ps-member input').val(`${member}`);
     });
-
       break;
   }
 });

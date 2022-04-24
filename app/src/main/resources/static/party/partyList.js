@@ -22,11 +22,13 @@ function myLoad() {
 
   fetch("/party/list")
   .then(function(response) {
+      console.log(response)
       return response.json();
   })
   .then(function(result) {      
       for (var party of result) {
         console.log(party)
+  
       pbody.innerHTML += `<a href="partyDetail.html?no=${party.partyNo}" class="party-list" data-creatdt="${party.partyNo}"> 
                           <div class="party-body-top">
                               <div class="party-title">${party.title}</div>
@@ -60,7 +62,7 @@ function myLoad() {
                   </div>
                   <div class="party-body-footer">
                       <div class="party-store">
-                          <div class="store-distance" data-address="${party.address}">🚧계산중🚧</div>
+                          <div class="meeting-distance" data-address="${party.address}">🚧계산중🚧</div>
                       </div>
                       <div class="party-like">
                           <i class="fa-solid fa-heart like-click"></i>
@@ -82,12 +84,12 @@ function myLoad() {
   // pbody.innerHTML += `<a href="/party/partyDetail.html&no=${party.partyNo}" class="party-list"> 
 
 
-  /********************************
-      현위치와 가게와의 거리 계산
-  ********************************/
+  /************************************
+      현위치와 모임 위치와의 거리 계산
+  ************************************/
   function computeDistance() {
       let distanceList = []
-      $('.store-distance').each((index, e) => { // .store-distance를 다 잡아와서 nodelist를 리턴해 each로 꺼낸다. html 태그 자체가 꺼내지는데, 태그들의 리스트를 e로 하나씩 뽑을 것이다. e 안에는 각 주소가 담겨있다.
+      $('.meeting-distance').each((index, e) => { // .store-distance를 다 잡아와서 nodelist를 리턴해 each로 꺼낸다. html 태그 자체가 꺼내지는데, 태그들의 리스트를 e로 하나씩 뽑을 것이다. e 안에는 각 주소가 담겨있다.
         distanceList.push($(e).attr("data-address")) // e에 저장된 주소 값을 뽑아서 배열에 옮겨 담을 것이다.
       })
 
@@ -115,15 +117,15 @@ function myLoad() {
         })
       }
     
-      const distanceLine = (posList, curPos) => { // (가게위치, 현재위치)
+      const distanceLine = (posList, curPos) => { // (모임위치, 현재위치)
         return new Promise((resolve) => {
     
           const dLines = []
     
           for(const position of posList) {
             // 선 객체 생성
-            let linePath = [ // 가게와 내 위치 사이의 선 객체
-              new kakao.maps.LatLng(position.lat, position.lng), // 가게마다 위도 경도가 바뀌면서 linePath를 형성
+            let linePath = [ // 모임과 내 위치 사이의 선 객체
+              new kakao.maps.LatLng(position.lat, position.lng), // 모임마다 위도 경도가 바뀌면서 linePath를 형성
               new kakao.maps.LatLng(curPos.lat, curPos.lng) // 내 위치 고정
             ];
     
@@ -142,16 +144,16 @@ function myLoad() {
       (async () => { // 익명함수
         try {
             const positions = [];
-            for(const address of distanceList) { // 가게 위치
+            for(const address of distanceList) { // 모임 위치
                 const result = await addressSearch(address); // 위도 경도값을 담는다.
                 positions.push(result)
             }
     
             const geoResult = await geoLocation() // 현위치
     
-            const distanceValue = await distanceLine(positions, geoResult) // 가게 위치와 현위치를 이은 선
+            const distanceValue = await distanceLine(positions, geoResult) // 모임 위치와 현위치를 이은 선
 
-            $('.store-distance').each((index, e) => { // 각 모임의 거리 값을 넣는다.
+            $('.meeting-distance').each((index, e) => { // 각 모임의 거리 값을 넣는다.
               // 1km 미만이면 m 로 출력한다.
               // 1~5km 사이면 km로 출력한다
               // 5km 이상이면 출력하지 않는다.
@@ -210,31 +212,30 @@ function myLoad() {
   //navigator.geolocation.getCurrentPosition(위치받는함수, 에러났을때 함수, 옵션)
   let myposition = navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError,options);
     dbody.innerHTML = myposition;
-    // console.log(myposition);
+    console.log(myposition);
 
 }
 
 /***************
     result 정보
 ***************/
-    // console.log(result)
-    // address:
-    // address_name: "경기 하남시 신장동 281"
-    // main_address_no: "281"
-    // mountain_yn: "N"
-    // region_1depth_name: "경기"
-    // region_2depth_name: "하남시"
-    // region_3depth_name: "신장동"
+// console.log(result)
+// address:
+// address_name: "경기 하남시 신장동 281"
+// main_address_no: "281"
+// mountain_yn: "N"
+// region_1depth_name: "경기"
+// region_2depth_name: "하남시"
+// region_3depth_name: "신장동"
 
-    // road_address:
-    // address_name: "경기도 하남시 미사대로 505"
-    // building_name: "미사리경정장・조정카누경기장"
-    // main_building_no: "505"
-    // region_1depth_name: "경기"
-    // region_2depth_name: "하남시"
-    // region_3depth_name: ""
-    // road_name: "미사대로"
-
+// road_address:
+// address_name: "경기도 하남시 미사대로 505"
+// building_name: "미사리경정장・조정카누경기장"
+// main_building_no: "505"
+// region_1depth_name: "경기"
+// region_2depth_name: "하남시"
+// region_3depth_name: ""
+// road_name: "미사대로"
 
 
 
@@ -281,7 +282,7 @@ function mapLoad() {
                       </div>
                       <div class="party-body-footer">
                           <div class="party-store">
-                              <div class="store-distance" data-address="${party.address}">🚧계산중🚧</div>
+                              <div class="meeting-distance" data-address="${party.address}">🚧계산중🚧</div>
                           </div>
                           <div class="party-like">
                               <i class="fa-solid fa-heart like-click"></i>
@@ -316,17 +317,16 @@ function mapLoad() {
       });
       
       
- 
+
 
       /************************************
           설정된 위치와 가게와의 거리 계산
       ************************************/
       function computeDistance2(mypos) {
-        // let myposition = $('#my-position').val();
         // console.log(myposition);
         
           let distanceList = []
-          $('.store-distance').each((index, e) => { // .store-distance를 다 잡아와서 nodelist를 리턴해 each로 꺼낸다. html 태그 자체가 꺼내지는데, 태그들의 리스트를 e로 하나씩 뽑을 것이다. e 안에는 각 주소가 담겨있다.
+          $('.meeting-distance').each((index, e) => { // .meeting-distance를 다 잡아와서 nodelist를 리턴해 each로 꺼낸다. html 태그 자체가 꺼내지는데, 태그들의 리스트를 e로 하나씩 뽑을 것이다. e 안에는 각 주소가 담겨있다.
             distanceList.push($(e).attr("data-address")) // e에 저장된 주소 값을 뽑아서 배열에 옮겨 담을 것이다.
           })
       
@@ -346,7 +346,7 @@ function mapLoad() {
           };
         
         
-          const distanceLine = (posList, curPos) => { // (가게위치, 현재위치)
+          const distanceLine = (posList, curPos) => { // (모임위치, 현재위치)
             return new Promise((resolve) => {
         
               const dLines = []
@@ -354,7 +354,7 @@ function mapLoad() {
               for(const position of posList) {
                 // 선 객체 생성
                 let linePath = [ // 가게와 내 위치 사이의 선 객체
-                  new kakao.maps.LatLng(position.lat, position.lng), // 가게마다 위도 경도가 바뀌면서 linePath를 형성
+                  new kakao.maps.LatLng(position.lat, position.lng), // 모임마다 위도 경도가 바뀌면서 linePath를 형성
                   new kakao.maps.LatLng(curPos.lat, curPos.lng) // 내 위치 고정
                 ];
         
@@ -373,21 +373,18 @@ function mapLoad() {
       (async () => { // 익명함수
         try {
             const positions = [];
-            for(const address of distanceList) { // 가게 위치
+            for(const address of distanceList) { // 모임 위치
                 const result = await addressSearch(address); // 위도 경도값을 담는다.
                 positions.push(result)
             }
 
-            // let myposition = await $('#my-position').val();
-            // console.log(myposition);
-    
             const geoResult = await addressSearch(mypos) // 설정한 위치
     
             const distanceValue = await distanceLine(positions, geoResult) // 가게 위치와 현위치를 이은 선
     
             console.log(distanceValue);
 
-            $('.store-distance').each((index, e) => { // 각 모임의 거리 값을 넣는다.
+            $('.meeting-distance').each((index, e) => { // 각 모임의 거리 값을 넣는다.
               // 1km 미만이면 m 로 출력한다.
               // 1~5km 사이면 km로 출력한다
               // 5km 이상이면 출력하지 않는다.
@@ -407,7 +404,7 @@ function mapLoad() {
         }
       })();
     }
-}
+  }
 
 
 
