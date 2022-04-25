@@ -8,7 +8,7 @@ import com.bitproject.dao.PartyCommentDao;
 import com.bitproject.domain.PartyComment;
 import com.bitproject.service.PartyCommentService;
 
-@Service // Spring IoC 컨테이너가 객체를 만들어 저장할 때 클래스 이름을 사용한다. 예) defaultBoardService
+@Service
 public class DefaultPartyCommentService implements PartyCommentService {
 
   @Autowired

@@ -22,6 +22,7 @@ public class Party {
   String address;
   int storeNo;
   List<PartyComment> partyComments;
+
   public int getPartyNo() {
     return partyNo;
   }

@@ -1,9 +1,13 @@
 package com.bitproject.controller;
 
+import static com.bitproject.controller.ResultMap.SUCCESS;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.bitproject.domain.Member;
+import com.bitproject.domain.PartyComment;
 import com.bitproject.service.PartyCommentService;
 
 @RestController
@@ -14,16 +18,22 @@ public class PartyCommentController {
   @Autowired
   PartyCommentService partyCommentService;
 
+  @PostMapping("/add")
+  public Object add(PartyComment partyComment, HttpSession session) {
+    Member member = (Member) session.getAttribute("loginUser");
+    partyComment.setNickName(member.getNickName());
+    partyComment.setMno(member.getMno());
+
+    partyCommentService.add(partyComment);
+    return new ResultMap().setStatus(SUCCESS);
+  }
+
+
+
+  /*
   @GetMapping("/list")
   public Object list() {
     return partyCommentService.list();
-  }
-
-  /*@Transactional*/
-  /*@PostMapping("/add")
-  public Object add(PartyComment partyComment, HttpSession session) {
-
-
   }
 
   @GetMapping("/get")

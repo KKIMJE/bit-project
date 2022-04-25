@@ -76,6 +76,7 @@
   
   <select id="findByNo" resultMap="partyMap2" parameterType="int">
   select
+    p.party_no,
     p.title,
     p.alcohol_type,
     p.alcohol_limit,
@@ -84,9 +85,11 @@
     p.max_member,
     p.alcohol_type,
     m.nickname as m_nickname,
+    pc.party_comment_no,
     pc.nickname as pc_nickname,
     pc.m_img,
-    pc.party_comment_contents
+    pc.party_comment_contents,
+    pc.comment_date
   from party p
     inner join member m on p.mno=m.mno
     left outer join party_comment pc on p.party_no=pc.party_no

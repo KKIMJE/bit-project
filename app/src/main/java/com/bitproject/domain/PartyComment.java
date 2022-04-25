@@ -19,10 +19,10 @@ public class PartyComment{
   public void setPartyCommentNo(int partyCommentNo) {
     this.partyCommentNo = partyCommentNo;
   }
-  public int getmno() {
+  public int getMno() {
     return mno;
   }
-  public void setmNo(int mno) {
+  public void setMno(int mno) {
     this.mno = mno;
   }
   public String getNickName() {

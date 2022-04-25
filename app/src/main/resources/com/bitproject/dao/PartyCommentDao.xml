@@ -8,6 +8,8 @@
   <resultMap type="partyComment" id="partyCommentMap">
     <id column="party_comment_no" property="partyCommentNo"/>
     <result column="mno" property="mno"/>
+    <result column="nickname" property="nickName"/>
+    <result column="m_img" property="mImg"/>
     <result column="party_no" property="partyNo"/>
     <result column="party_comment_contents" property="partyCommentContents"/>
     <result column="comment_date" property="commentDate"/>
@@ -16,9 +18,9 @@
   
   <insert id="insert" parameterType="PartyComment" >
     insert into party_comment(
-			mno,
-			party_no,
-			party_comment_contents
+      mno,
+      party_no,
+      party_comment_contents
       )
     values(
      #{mno},
