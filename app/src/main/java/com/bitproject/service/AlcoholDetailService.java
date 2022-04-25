@@ -11,7 +11,11 @@ public interface AlcoholDetailService {
 
   List<AlcoholDetail> targetList(int targetNo, int pageSize, int pageNo);
 
+  Object add(AlcoholDetail alcoholDetail);
+
   AlcoholDetail get(int no);
+
+  List<AlcoholDetail> get(String filt, String value);
 
   int size();
 

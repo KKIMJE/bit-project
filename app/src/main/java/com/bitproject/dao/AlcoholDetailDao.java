@@ -16,9 +16,11 @@ public interface AlcoholDetailDao {
 
   List<AlcoholDetail> findByTarget(@Param("targetNo") int targetNo, @Param("rowCount") int rowCount, @Param("offset") int offset);
 
-  //  int insert(AlcoholDetail alc);
-
   AlcoholDetail findByNo(int no);
+
+  List<AlcoholDetail> findByValue(@Param("filt") String filt, @Param("value") String value);
+
+  AlcoholDetail insert(AlcoholDetail alcoholDetail);
 
 
 

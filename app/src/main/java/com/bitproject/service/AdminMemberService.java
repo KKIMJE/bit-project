@@ -11,13 +11,14 @@ public interface AdminMemberService {
 
   int typeSize(boolean memberStatus);
 
+  List<Member> get(String filt, String value);
+
   //  int add(Member member);
   //
   //  Member getMemberByEmailAndPassword(String email, String password);
   //
   //  Member getMemberByEmail(String email);
   //
-  //  Member getMemberByMno(int mno);
   //
   //  int update(Member member);
 

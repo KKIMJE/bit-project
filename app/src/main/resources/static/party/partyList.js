@@ -37,7 +37,7 @@ function myLoad() {
                           <div class="party-body-content">
                               <div class="leader-profile">
                                   <img class="profile-img leader" src="img/profile_suzy.jpg" alt="방장 프로필">
-                                  <span>${party.nickName}</span>
+                                  <span>${party.writer.nickName}</span>
                               </div>
                               <div class="party-detail">
                           <div class="first-row">
@@ -257,7 +257,7 @@ function mapLoad() {
                               <div class="party-body-content">
                                   <div class="leader-profile">
                                       <img class="profile-img leader" src="img/profile_suzy.jpg" alt="방장 프로필">
-                                      <span>${party.nickName}</span>
+                                      <span>${party.writer.nickName}</span>
                                   </div>
                                   <div class="party-detail">
                               <div class="first-row">

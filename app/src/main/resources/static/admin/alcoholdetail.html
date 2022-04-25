@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/alcoholdetail.css">
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <title>야술먹자 - 주류등록</title>
+</head>
+
+<body>
+  <div class="l-navbar" id="navbar">
+    <nav class="nav">
+      <div>
+        <div class="nav__brand">
+          <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+          <a href="#" class="nav__logo">관리자페이지</a>
+        </div>
+        <div class="nav__list">
+          <a href="/admin/member.html" class="nav__link active">
+            <ion-icon name="person-outline" class="nav__icon"></ion-icon>
+            <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
+            <span class="nav_name">회원관리</span>
+          </a>
+          <a href="/admin/alcohol.html" class="nav__link">
+            <ion-icon name="wine-outline" class="nav__icon"></ion-icon>
+            <span class="nav_name">주종관리</span>
+          </a>
+          <a href="#" class="nav__link">
+            <ion-icon name="storefront-outline" class="nav__icon"></ion-icon>
+            <span class="nav_name">주점관리</span>
+          </a>
+
+          <div href="#" class="nav__link collapse">
+            <ion-icon name="alert-circle-outline" class="nav__icon"></ion-icon>
+            <span class="nav_name">신고관리</span>
+
+            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+            <ul class="collapse__menu">
+              <a href="#" class="collapse__sublink">회원신고관리</a>
+              <a href="#" class="collapse__sublink">주점신고관리</a>
+              <a href="#" class="collapse__sublink">게시글신고관리</a>
+            </ul>
+          </div>
+
+          <a href="#" class="nav__link">
+            <ion-icon name="megaphone-outline" class="nav__icon"></ion-icon>
+            <span class="nav_name">공지사항관리</span>
+          </a>
+        </div>
+        <a href="#" class="nav__link">
+          <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+          <span class="nav_name">로그아웃</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <h1>주류등록</h1>
+  <form name="alcohol__form">
+    <div class="alcohol__box">
+      <div class="content">
+        <p class="alcohol-name">주류명</p>
+        <br> <input name="alcoholName" type="text" class="form_input_name">
+        <p class="alcohol-content">주종</p>
+        <br>
+        <div>
+          <select name="alcoholTypeNo" class="type-option">
+            <option value="1">소주</option>
+            <option value="2">맥주</option>
+            <option value="3">와인</option>
+            <option value="4">막걸리</option>
+            <option value="5">양주</option>
+            <option value="6">사케</option>
+            <option value="7">전통주</option>
+            <option value="8">기타</option>
+          </select>
+
+
+          <div class="x-alcohol-degree">
+            <p class="alcohol-degree">도수(%)</p>
+            <br> <input name="degree" type="number" step="0.1" class="form_input_degree">
+          </div>
+
+          <div class="x-alcohol-brand">
+            <p class="alcohol-brand">브랜드</p>
+            <br>
+            <input name="brand" type="text" class="form_input_brand">
+          </div>
+
+          <div class="x-alcohol-origin">
+            <p class="alcohol-origin">원산지</p>
+            <br>
+            <input name="origin" type="text" class="form_input_origin"></textarea>
+          </div>
+
+          <div class="x-alcohol-volume">
+            <p class="alcohol-volume">용량(병, ml)</p>
+            <br> <input name="volume" type="number" class="form_input_volume">
+          </div>
+
+          <div class="x-alcohol-char">
+            <p class="alcohol-char">특징</p>
+            <br>
+            <textarea name="characteristic" id="intro" style="resize: none;" class="form_input_intro"></textarea>
+          </div>
+
+
+          <!-- <div class="file-upload">
+            <p class="alcohol-img-div">이미지 등록</p>
+            <br><input name="file" type="file" class="add-alcohol-img">
+          </div> -->
+
+          <!-- <center>
+            <div class="file-upload">
+              <p class="">이미지등록</p>
+              <div class="alcohol-img-div">
+                <br><input name="file" type="file" class="add-alcohol-img">
+              </div>
+            </div>
+          </center> -->
+
+          <center style=" margin-left: 30px;">
+            <div class="btn">
+              <button type="button" class="submit-add-btn">등록</button>
+              <button type="button" id="exit" class="submit-exit-btn">나가기</button>
+            </div>
+          </center>
+
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+
+  <!-- IONICONS -->
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/alcoholdetail.js"></script>
+
+</body>
+
+</html>

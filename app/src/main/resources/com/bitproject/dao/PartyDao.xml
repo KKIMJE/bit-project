@@ -7,10 +7,7 @@
 
   <resultMap type="party" id="partyMap2">
 		<id column="party_no" property="partyNo"/>
-    <result column="mno" property="mno"/>
-    <result column="m_nickname" property="nickName"/>
-    <result column="m_img" property="mImg"/>
-    <result column="title" property="title"/>
+		<result column="title" property="title"/>
     <result column="contents" property="contents"/>
     <result column="party_fee" property="partyFee"/>
     <result column="meeting_date" property="meetingDate"/>
@@ -20,16 +17,20 @@
     <result column="reg_date" property="regDate"/>
     <result column="update_date" property="updateDate"/>
     <result column="address" property="address"/>
+    <association property="writer" javaType="member">
+      <id column="p_mno" property="mno"/>
+      <result column="p_nickname" property="nickName"/>
+    </association>
   
     <collection property="partyComments" ofType="partyComment">
       <id column="party_comment_no" property="partyCommentNo"/>
-      <result column="mno" property="mno"/>
-      <result column="pc_nickname" property="nickName"/> <!-- nickname이 중복되어 별명을 줌 -->
-      <result column="m_img" property="mImg"/>
       <result column="party_no" property="partyNo"/>
       <result column="party_comment_contents" property="partyCommentContents"/>
       <result column="comment_date" property="commentDate"/>
-      <result column="update_date" property="updateDate"/>
+      <association property="commentWriter" javaType="member">
+       <id column="pcw_mno" property="mno"/>
+       <result column="pcw_nickname" property="nickName"/>
+      </association>
     </collection>
     
   </resultMap>
@@ -61,35 +62,43 @@
     p.alcohol_type,
     p.alcohol_limit,
     p.address,
-    m.nickname as m_nickname,
-    m.m_img
-  from party p
-    inner join member m on p.mno=m.mno
+    m.mno as p_mno,
+    m.nickname as p_nickname
+  from 
+    party p
+    inner join member m on (p.writer = m.mno)
   order by 
     p.party_no desc;
   </select>
   
   <insert id="insert" parameterType="Party">
-    insert into party(mno,title,contents,address,party_fee,meeting_date,max_member,alcohol_type,alcohol_limit) 
-    values(#{mno},#{title},#{contents},#{address},#{partyFee},#{meetingDate},#{maxMember},#{alcoholType},#{alcoholLimit})
+    insert into party(writer,title,contents,address,party_fee,meeting_date,max_member,alcohol_type,alcohol_limit) 
+    values(#{writer.mno},#{title},#{contents},#{address},#{partyFee},#{meetingDate},#{maxMember},#{alcoholType},#{alcoholLimit})
   </insert>
   
   <select id="findByNo" resultMap="partyMap2" parameterType="int">
   select
+    p.party_no,
     p.title,
-    p.alcohol_type,
-    p.alcohol_limit,
+    p.reg_date,
     p.party_fee,
     p.meeting_date,
     p.max_member,
     p.alcohol_type,
-    m.nickname as m_nickname,
-    pc.nickname as pc_nickname,
-    pc.m_img,
-    pc.party_comment_contents
+    p.alcohol_limit,
+    p.address,
+    m.mno as p_mno,
+    m.nickname as p_nickname,
+    pc.party_comment_no,
+    pc.party_comment_contents,
+    pc.comment_date,
+    m2.mno as pcw_mno,
+    m2.nickname as pcw_nickname,
+    m2.m_img as pcw_img
   from party p
-    inner join member m on p.mno=m.mno
+    inner join member m on p.writer=m.mno
     left outer join party_comment pc on p.party_no=pc.party_no
+    inner join member m2 on pc.writer=m2.mno
   where 
     p.party_no=#{no}
   </select>
@@ -191,22 +200,6 @@
     delete from party 
     where party_no=#{partyNo}
   </delete>-->
-
-
-
-<!--     
-    <result column="mno" property="mNo"/>
-    <result column="store_no" property="storeNo"/>
-    <result column="title" property="title"/>
-    <result column="contents" property="contents"/>
-    <result column="party_fee" property="party_fee"/>
-    <result column="meeting_date" property="meeting_date"/>
-    <result column="max_member" property="max_member"/>
-    <result column="alcohol_type" property="alcohol_type"/>
-    <result column="alcohol_limit" property="communityNo"/>
-    <result column="view_count" property="viewCount"/>
-    <result column="reg_date" property="regDate"/>
-    <result column="update_date" property="updateDate"/> -->
 
 
 

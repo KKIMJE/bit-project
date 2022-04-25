@@ -1,9 +1,14 @@
 package com.bitproject.controller;
 
+import static com.bitproject.controller.ResultMap.SUCCESS;
+import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.bitproject.domain.AlcoholDetail;
+import com.bitproject.domain.Member;
 import com.bitproject.service.AlcoholDetailService;
 
 @RestController 
@@ -24,12 +29,16 @@ public class AlcoholDetailController {
     return alcoholDetailService.targetList(targetNo, pageSize, pageNo);
   }
 
+  @PostMapping("/alcohol/add")
+  public Object add(AlcoholDetail alcoholDetail, HttpSession session) {
 
+    Member member = (Member) session.getAttribute("loginUser");
+    alcoholDetail.setWriter(member);
 
-  //  @RequestMapping("/alcohol/add")
-  //  public Object add(AlcoholDetail alcoholDetail) {
-  //    return alcoholDetailService.insert(alcoholDetail);
-  //  }
+    alcoholDetailService.add(alcoholDetail);
+    return new ResultMap().setStatus(SUCCESS);
+
+  }
 
 
   @RequestMapping("/alcohol/get")
@@ -38,8 +47,18 @@ public class AlcoholDetailController {
     if (alcoholDetail == null) {
       return "";
     }
+    return new ResultMap().setStatus(SUCCESS).setData(alcoholDetail);
+  }
+
+  @RequestMapping("/alcohol/getfilt")
+  public List<AlcoholDetail> get(String  filt, String value) {
+    List<AlcoholDetail> alcoholDetail = alcoholDetailService.get(filt, value);
+    //    if (member == null) {
+    //      return ;
+    //    }
     return alcoholDetail;
   }
+
 
   @RequestMapping("/alcohol/size")
   public int size() {

@@ -138,7 +138,7 @@
        m.mno=#{mno}  <!-- and memberstatus=0 -->
   </select>
   
-  <select id="emailCheck" parameterType="member" resultType="member">
+  <select id="emailCheck" parameterType="member" resultType="int">
   select count(*)
   From member
   where email = #{email}

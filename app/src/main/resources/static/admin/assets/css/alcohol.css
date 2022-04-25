@@ -1,14 +1,14 @@
-.member-page {
+.alcohol-page {
   display: flex;
   justify-content: center;
   height: 1000px;
 }
 
-.x-member-search {
+.x-alcohol-search {
   margin-bottom: 10px;
 }
 
-.x-member-curr {
+.x-alcohol-curr {
   margin-bottom: 50px;
 }
 
@@ -29,13 +29,13 @@
 padding: 0 50px 0 50px;
 }
 
-#x-member-table {
+#x-alcohol-table {
   text-align: center;
   border-collapse: collapse;
   width: 85vw;
 }
 
-#x-member-table thead {
+#x-alcohol-table thead {
   background-color: rgb(212, 212, 212);
 }
 
@@ -52,4 +52,8 @@ padding: 0 50px 0 50px;
 
 .x-page-btn {
   font-size: 15px;
+}
+
+.alcohol-add-btn {
+  float: right;
 }

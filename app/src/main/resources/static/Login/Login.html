@@ -134,8 +134,11 @@
           })
           .then(function(result) {
             console.log(result);
-            if (result.status == "success") {
-                location.href = "../main/main.html?mno=" + result.data.mno ;
+            if (result.data.email == "admin@admin.com") {
+              location.href = "../admin/member.html"
+            }
+            else if (result.status == "success") {
+                location.href = "../main/main.html"
                 //location.href = "../member/personalInfo.html?mno=" + result.data.mno ;
             } else {
                 window.alert("로그인 실패!")
