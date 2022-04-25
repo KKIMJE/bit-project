@@ -38,7 +38,6 @@ public class DefaultPartyService implements PartyService {
   }
 
   @Override
-  @Transactional
   public int delete(int no) {
     return partyDao.delete(no);
   }

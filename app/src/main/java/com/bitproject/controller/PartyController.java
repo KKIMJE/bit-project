@@ -46,7 +46,7 @@ public class PartyController {
     return new ResultMap().setStatus(SUCCESS).setData(party);
   }
 
-  @PostMapping("/update")
+  @DeleteMapping("/update")
   public Object update(Party party) {
     return partyService.update(party);
   }

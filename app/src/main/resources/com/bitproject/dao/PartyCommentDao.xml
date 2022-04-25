@@ -21,12 +21,12 @@
     insert into party_comment(
       party_no,
       party_comment_contents,
-      writer
+      commentWriter
       )
     values(
      #{partyNo},
      #{partyCommentContents},
-     #{writer.mno}
+     #{commentWriter.mno}
      )
   </insert>
 

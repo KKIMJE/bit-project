@@ -19,9 +19,10 @@ public class PartyCommentController {
   PartyCommentService partyCommentService;
 
   @PostMapping("/add")
-  public Object add(PartyComment partyComment, HttpSession session) {
+  public Object add(int no, PartyComment partyComment, HttpSession session) {
     Member member = (Member) session.getAttribute("loginUser");
     partyComment.setCommentWriter(member);
+    partyComment.setPartyNo(no);
 
     partyCommentService.add(partyComment);
     return new ResultMap().setStatus(SUCCESS);
