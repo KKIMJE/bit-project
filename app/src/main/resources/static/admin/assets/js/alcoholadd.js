@@ -32,7 +32,7 @@ $(".submit-add-btn").on("click", () => {
     })
     .then(result => {
       console.log(result);
-      window.location.href = "/admin/alcohol.html"
+      window.location.href = "/admin/alcohollist.html"
     })
 
 })
@@ -41,5 +41,5 @@ $(".submit-add-btn").on("click", () => {
 
 // 나가기 버튼
 $(".submit-exit-btn").on("click", () => {
-  location.href = "/admin/member.html";
+  location.href = "/admin/alcohollist.html";
 })
