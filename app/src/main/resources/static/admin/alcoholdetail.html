@@ -70,7 +70,7 @@
         <p class="alcohol-content">주종</p>
         <br>
         <div>
-          <select class="type-option">
+          <select name="alcoholTypeNo" class="type-option">
             <option value="1">소주</option>
             <option value="2">맥주</option>
             <option value="3">와인</option>
@@ -84,7 +84,7 @@
 
           <div class="x-alcohol-degree">
             <p class="alcohol-degree">도수(%)</p>
-            <br> <input name="degree" type="number" class="form_input_degree">
+            <br> <input name="degree" type="number" step="0.1" class="form_input_degree">
           </div>
 
           <div class="x-alcohol-brand">
@@ -101,20 +101,20 @@
 
           <div class="x-alcohol-volume">
             <p class="alcohol-volume">용량(병, ml)</p>
-            <br> <input type="number" class="form_input_volume">
+            <br> <input name="volume" type="number" class="form_input_volume">
           </div>
 
           <div class="x-alcohol-char">
             <p class="alcohol-char">특징</p>
             <br>
-            <textarea name="introduction" id="intro" style="resize: none;" class="form_input_intro"></textarea>
+            <textarea name="characteristic" id="intro" style="resize: none;" class="form_input_intro"></textarea>
           </div>
 
 
-          <div class="file-upload">
+          <!-- <div class="file-upload">
             <p class="alcohol-img-div">이미지 등록</p>
             <br><input name="file" type="file" class="add-alcohol-img">
-          </div>
+          </div> -->
 
           <!-- <center>
             <div class="file-upload">
@@ -127,7 +127,7 @@
 
           <center style=" margin-left: 30px;">
             <div class="btn">
-              <button id="next" class="submit-next-btn">다음</button>
+              <button type="button" class="submit-add-btn">등록</button>
               <button type="button" id="exit" class="submit-exit-btn">나가기</button>
             </div>
           </center>

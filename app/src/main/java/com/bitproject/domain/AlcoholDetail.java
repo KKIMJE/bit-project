@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class AlcoholDetail {
+  Member writer;
   int alcoholDetailNo;
   int alcoholTypeNo;
   String alcoholName;

@@ -19,6 +19,10 @@
     <result column="volume" property="volume"/>
     <result column="characteristic" property="characteristic"/>
     <result column="img" property="img"/>
+    
+    <association property="writer" javaType="member">
+      <id column="mno" property="mno"/>
+    </association>
 
 
 <collection property="stores" ofType="Store">
@@ -106,30 +110,30 @@
   </select>
 
   
-<!--
+
   <insert id="insert" parameterType="alcoholDetail">
     insert into alcohol_detail(
+      writer,
       alcohol_type_no,
       alcohol_name,
       degree,
       brand,
       origin,
       volume,
-      characteristic,
-      img
+      characteristic
     )
     values(
+    #{writer.mno},
     #{alcoholTypeNo},
     #{alcoholName},
     #{degree},
     #{brand},
     #{origin},
     #{volume},
-    #{characteristic},
-    #{img}
+    #{characteristic}
     )
   </insert>
--->
+
 
 	<select id="findByNo" resultMap="alcoholDetailMap" parameterType="int">
 select
