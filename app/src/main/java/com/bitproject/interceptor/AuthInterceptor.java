@@ -22,9 +22,8 @@ public class AuthInterceptor implements HandlerInterceptor {
     log.trace("preHandle() 호출됨!");
 
     // 로그인 여부 검사
-    HttpSession session = request.getSession(); // getSession()메서드는 서버에 생성된 세션이 있다면 세션을 반환하고, 없다면 세 세션을 생성하여 반환한다.
+    HttpSession session = request.getSession();
     Member loginUser = (Member) session.getAttribute("loginUser");
-    // System.out.println(loginUser);
     if (loginUser == null) {
       // 로그인을 하지 않았으면 오류 메시지를 JSON 형식으로 직접 응답한다.
       response.setContentType("application/json;charset=UTF-8");

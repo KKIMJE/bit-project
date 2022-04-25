@@ -24,3 +24,4 @@ public class Member {
   String memberStatus;
   int storeCount;
 }
+
