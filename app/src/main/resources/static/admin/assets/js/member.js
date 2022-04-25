@@ -64,53 +64,7 @@ function memberList(pageNo) {
     .then(members => {
       console.log(members);
 
-      for (let member of members) {
-        console.log(member.storeCount);
-
-        if (member.gender == false) {
-          member.gender = "남자"
-        } else {
-          member.gender = "여자"
-        }
-
-        if (member.socialAccept == false) {
-          member.socialAccept = "아니오"
-        } else {
-          member.socialAccept = "예"
-        }
-
-        if (member.memberStatus == false) {
-          member.memberStatus = "일반"
-        } else {
-          member.memberStatus = "탈퇴"
-        }
-
-        if (member.storeCount == 0) {
-          member.storeCount = "일반"
-        } else {
-          member.storeCount = "사장"
-        }
-
-        // 멤버 테이블
-        let memberTr = `
-     <tr style="height:50px;">
-       <td>${member.mno}</td>
-       <td>${member.email}</td>
-       <td>${member.name}</td>
-       <td>${member.nickName}</td>
-       <td>${member.gender}</td>
-       <td>${member.birth}</td>
-       <td>${member.tel}</td>
-       <td>${member.socialAccept}</td>
-       <td>${member.storeCount}</td>
-       <td>${member.joinDate.split("T", 1)}</td>
-       <td>${member.memberStatus}</td>
-       <td>${member.blockAccept}</td>
-       <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
-     </tr>
-    `
-        tbody.innerHTML += memberTr
-      }
+      createList(members);
 
       // 회원 현황 테이블
       let currDt = `
@@ -184,6 +138,7 @@ $('.x-search-btn').on("click", () => {
 
   if (searchValue == "") {
     alert("검색어를 입력하세요")
+    return;
   }
   $(tbody).empty()
   $(paginationUl).empty()

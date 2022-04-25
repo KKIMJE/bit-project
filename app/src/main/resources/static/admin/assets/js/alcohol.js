@@ -11,7 +11,7 @@ let totalAlcoholPage;
 let totalAlcoholCount;
 
 
-// 전체 회원 수 및 페이지 버튼 생성
+// 전체 주류 수 및 페이지 버튼 생성
 fetch("/alcohol/size")
   .then(response => {
     return response.json()
@@ -19,12 +19,12 @@ fetch("/alcohol/size")
   .then(result => {
     totalAlcoholCount = result
     totalAlcoholPage = Math.ceil(result / pageSize)
-    console.log(totalMemberPage);
+    console.log(totalAlcoholPage);
 
-    for (let i = 1; i <= totalMemberPage; i++) {
+    for (let i = 1; i <= totalAlcoholPage; i++) {
       console.log("aaa");
       let paginationLi = `
-    <li><span><a class="x-page-btn" onclick="memberList(${i})">${i}</a></span></li>
+    <li><span><a class="x-page-btn" onclick="alcoholList(${i})">${i}</a></span></li>
     `
       paginationUl.innerHTML += paginationLi;
     }
@@ -32,84 +32,24 @@ fetch("/alcohol/size")
 
 
 
-// 전체 주류 수
-  fetch("/alcohol/size")
-    .then(response => {
-      return response.text()
-    })
-    .then(size => {
-      console.log(totalPageSize);
-    });
 
 
 
 // 멤버 페이지
-function memberList(pageNo) {
+function alcoholList(pageNo) {
   $(tbody).empty()
 
-  fetch(`/admin/member/list?pageSize=${pageSize}&pageNo=${pageNo}`)
+  fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${pageNo}`)
     .then(response => {
       return response.json()
     })
-    .then(members => {
-      console.log(members);
-
-      for (let member of members) {
-        console.log(member.storeCount);
-
-        if (member.gender == false) {
-          member.gender = "남자"
-        } else {
-          member.gender = "여자"
-        }
-
-        if (member.socialAccept == false) {
-          member.socialAccept = "아니오"
-        } else {
-          member.socialAccept = "예"
-        }
-
-        if (member.memberStatus == false) {
-          member.memberStatus = "일반"
-        } else {
-          member.memberStatus = "탈퇴"
-        }
-
-        if (member.storeCount == 0) {
-          member.storeCount = "일반"
-        } else {
-          member.storeCount = "사장"
-        }
-
-        // 멤버 테이블
-        let memberTr = `
-     <tr style="height:50px;">
-       <td>${member.mno}</td>
-       <td>${member.email}</td>
-       <td>${member.name}</td>
-       <td>${member.nickName}</td>
-       <td>${member.gender}</td>
-       <td>${member.birth}</td>
-       <td>${member.tel}</td>
-       <td>${member.socialAccept}</td>
-       <td>${member.storeCount}</td>
-       <td>${member.joinDate.split("T", 1)}</td>
-       <td>${member.memberStatus}</td>
-       <td>${member.blockAccept}</td>
-       <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
-     </tr>
-    `
-        tbody.innerHTML += memberTr
-      }
+    .then(alcohols => {
+        createList(alcohols);
 
       // 회원 현황 테이블
       let currDt = `
-            <th>전체회원</th>
-            <td>${totalMemberCount}</td>
-            <th>일반회원</th>
-            <td>${userMemberCount}</td>
-            <th>사장회원</th>
-            <td>${ceoMemberCount}</td>
+            <th>전체주류</th>
+            <td>${totalAlcoholCount}</td>
       `
       currTable.innerHTML = currDt
 
@@ -117,53 +57,58 @@ function memberList(pageNo) {
 }
 
 
-function createList(members) {
-  for (let member of members) {
-    console.log(member.storeCount);
+function createList(alcohols) {
+  for (let alcohol of alcohols) {
+    switch(alcohol.alcoholTypeNo) {
+      case 1:
+      alcohol.alcoholTypeNo = "소주"
+      break;
 
-    if (member.gender == false) {
-      member.gender = "남자"
-    } else {
-      member.gender = "여자"
+      case 2:
+      alcohol.alcoholTypeNo = "맥주"
+      break;
+
+      case 3:
+      alcohol.alcoholTypeNo = "와인"
+      break;
+
+      case 4:
+      alcohol.alcoholTypeNo = "막걸리"
+      break;
+
+      case 5:
+      alcohol.alcoholTypeNo = "양주"
+      break;
+
+      case 6:
+      alcohol.alcoholTypeNo = "사케"
+      break;
+
+      case 7:
+      alcohol.alcoholTypeNo = "전통주"
+      break;
+
+      case 8:
+      alcohol.alcoholTypeNo = "기타"
+      break;
+      // default:
+      // alert("없는 타입의 주류 입니다.")
     }
 
-    if (member.socialAccept == false) {
-      member.socialAccept = "아니오"
-    } else {
-      member.socialAccept = "예"
-    }
-
-    if (member.memberStatus == false) {
-      member.memberStatus = "일반"
-    } else {
-      member.memberStatus = "탈퇴"
-    }
-
-    if (member.storeCount == 0) {
-      member.storeCount = "일반"
-    } else {
-      member.storeCount = "사장"
-    }
-
-    // 멤버 테이블
-    let memberTr = `
+    // 주류 테이블
+    let alcoholTr = `
  <tr style="height:50px;">
-   <td>${member.mno}</td>
-   <td>${member.email}</td>
-   <td>${member.name}</td>
-   <td>${member.nickName}</td>
-   <td>${member.gender}</td>
-   <td>${member.birth}</td>
-   <td>${member.tel}</td>
-   <td>${member.socialAccept}</td>
-   <td>${member.storeCount}</td>
-   <td>${member.joinDate.split("T", 1)}</td>
-   <td>${member.memberStatus}</td>
-   <td>${member.blockAccept}</td>
-   <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
+   <td>${alcohol.alcoholDetailNo}</td>
+   <td>${alcohol.alcoholTypeNo}</td>
+   <td>${alcohol.alcoholName}</td>
+   <td>${alcohol.degree}</td>
+   <td>${alcohol.brand}</td>
+   <td>${alcohol.origin}</td>
+   <td>${alcohol.volume}</td>
+   <td><button type="button" name="button">수정</button><button type="button" name="button">삭제</button></td>
  </tr>
 `
-    tbody.innerHTML += memberTr
+    tbody.innerHTML += alcoholTr
   }
 }
 
@@ -171,18 +116,62 @@ function createList(members) {
 $('.x-search-btn').on("click", () => {
   let searchFilt = $('.x-search-div select').val()
   let searchValue = $('.x-search-div input').val()
+  console.log(searchFilt);
+  console.log(searchValue);
 
   if (searchValue == "") {
     alert("검색어를 입력하세요")
+    return
   }
+
+  switch(searchValue) {
+    case "소주":
+    searchValue = "1"
+    break;
+
+    case "맥주":
+    searchValue = "2"
+    break;
+
+    case "와인":
+    searchValue = "3"
+    break;
+
+    case "막걸리":
+    searchValue = "4"
+    break;
+
+    case "양주":
+    searchValue = "5"
+    break;
+
+    case "사케":
+    searchValue = "6"
+    break;
+
+    case "전통주":
+    searchValue = "7"
+    break;
+
+    case "기타":
+    searchValue = "8"
+    break;
+    // default:
+    // alert("없는 타입의 주류 입니다.")
+  }
+
+  console.log(searchFilt);
+  console.log(searchValue);
+
+
   $(tbody).empty()
   $(paginationUl).empty()
-  fetch(`/admin/member/get?filt=${searchFilt}&value=${searchValue}`)
+  fetch(`/alcohol/getfilt?filt=${searchFilt}&value=${searchValue}`)
     .then(response => {
       return response.json()
     })
-    .then(members => {
-      createList(members);
+    .then(alcohols => {
+      createList(alcohols);
     })
 
 })

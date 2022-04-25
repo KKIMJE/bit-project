@@ -158,7 +158,22 @@ where
   d.alcohol_detail_no=#{no}
 
   </select>
-
+  
+  <select id="findByValue" resultMap="alcoholDetailMap" parameterType="String">
+      select
+      alcohol_detail_no,
+      alcohol_type_no,
+      alcohol_name,
+      degree,
+      brand,
+      origin,
+      volume,
+      characteristic,
+      img
+    from 
+      alcohol_detail 
+    where ${filt} like CONCAT('%',#{value},'%')
+</select>
 
 
 <!--   <update id="update" parameterType="alcoholDetail">

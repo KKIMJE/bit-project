@@ -12,7 +12,7 @@
   <title>야술먹자 - 주류관리</title>
 </head>
 
-<body id="body-pd" onload=" memberList(1)">
+<body id="body-pd" onload=" alcoholList(1)">
   <div class="l-navbar" id="navbar">
     <nav class="nav">
       <div>
@@ -67,16 +67,16 @@
   <div class="alcohol-page">
     <div class="x-alcohol-page">
       <div class="x-alcohol-curr">
-        <h2>회원현황(명)</h2>
+        <h2>주류등록현황</h2>
         <table id="x-curr-table">
         </table>
       </div>
 
-      <div class="x-member-search">
+      <div class="x-alcohol-search">
           <div class="x-search-div">
             <select style="height:22px;">
-              <option value="email">이메일</option>
-              <option value="nickName">닉네임</option>
+              <option value="alcohol_name">이름</option>
+              <option value="alcohol_type_no">주종</option>
             </select>
             <input type="text">
             <button type="button" class="x-search-btn">검색</button>
@@ -87,17 +87,12 @@
         <thead>
           <tr style="height:50px;">
             <th>번호</th>
-            <th>이메일</th>
+            <th>주종</th>
             <th>이름</th>
-            <th>닉네임</th>
-            <th>성별</th>
-            <th>생년월일</th>
-            <th>전화번호</th>
-            <th>소셜여부</th>
-            <th>회원타입</th>
-            <th>가입일</th>
-            <th>회원상태</th>
-            <th>제재횟수</th>
+            <th>도수(%)</th>
+            <th>브랜드</th>
+            <th>원산지</th>
+            <th>용량(병, ml)</th>
             <th>관리</th>
           </tr>
         </thead>

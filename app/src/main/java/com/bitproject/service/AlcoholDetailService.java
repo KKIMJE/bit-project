@@ -13,6 +13,8 @@ public interface AlcoholDetailService {
 
   AlcoholDetail get(int no);
 
+  List<AlcoholDetail> get(String filt, String value);
+
   int size();
 
   int targetSize(int targetNo);
