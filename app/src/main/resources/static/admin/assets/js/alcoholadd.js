@@ -1,12 +1,12 @@
 // 등록 버튼
-$(".submit-add-btn").on("click", () => {
-  let xAlcoholName = $("input[name=alcoholName]").val()
-  let xAlcoholType = $("select[name=alcoholTypeNo]").val()
-  let xAlcoholDegree = $("input[name=degree]").val()
-  let xAlcoholBrand = $("input[name=brand]").val()
-  let xAlcoholOrigin = $("input[name=origin]").val()
-  let xAlcoholVolume = $("input[name=volume]").val()
-  let xAlcoholChar = $("textarea[name=characteristic]").val()
+document.querySelector(".submit-add-btn").addEventListener("click", () => {
+  let xAlcoholName = document.querySelector("input[name=alcoholName]").value
+  let xAlcoholType = document.querySelector("select[name=alcoholTypeNo]").value
+  let xAlcoholDegree = document.querySelector("input[name=degree]").value
+  let xAlcoholBrand = document.querySelector("input[name=brand]").value
+  let xAlcoholOrigin = document.querySelector("input[name=origin]").value
+  let xAlcoholVolume = document.querySelector("input[name=volume]").value
+  let xAlcoholChar = document.querySelector("textarea[name=characteristic]").value
   // let xAlcoholImg = $("input[name=img]")
 
   if (xAlcoholName == "" ||
@@ -32,8 +32,13 @@ $(".submit-add-btn").on("click", () => {
     })
     .then(result => {
       console.log(result);
-      window.location.href = "/admin/alcohollist.html"
+      if (result.status == "success") {
+        location.href = "/admin/alcohollist.html"
+      } else {
+        alert(result.data);
+      }
     })
+
 
 })
 

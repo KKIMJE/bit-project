@@ -1,5 +1,6 @@
 package com.bitproject.controller;
 
+import static com.bitproject.controller.ResultMap.FAIL;
 import static com.bitproject.controller.ResultMap.SUCCESS;
 import java.util.List;
 import javax.servlet.http.HttpSession;
@@ -31,13 +32,14 @@ public class AlcoholDetailController {
 
   @PostMapping("/alcohol/add")
   public Object add(AlcoholDetail alcoholDetail, HttpSession session) {
-
     Member member = (Member) session.getAttribute("loginUser");
     alcoholDetail.setWriter(member);
-
-    alcoholDetailService.add(alcoholDetail);
-    return new ResultMap().setStatus(SUCCESS);
-
+    int count = alcoholDetailService.add(alcoholDetail);
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("게시글 작성자가 아닙니다.");
+    }
   }
 
 
@@ -45,7 +47,7 @@ public class AlcoholDetailController {
   public Object get(int no) {
     AlcoholDetail alcoholDetail = alcoholDetailService.get(no);
     if (alcoholDetail == null) {
-      return "";
+      return new ResultMap().setStatus(FAIL).setData("해당 번호의 데이터가 없습니다.");
     }
     return new ResultMap().setStatus(SUCCESS).setData(alcoholDetail);
   }
@@ -71,13 +73,31 @@ public class AlcoholDetailController {
   }
 
 
-  //  @RequestMapping("/alcohol/update")
-  //  public Object update(AlcoholDetail alcoholDetail) {
-  //    return alcoholDetailService.update(alcoholDetail);
-  //  }
+  @RequestMapping("/alcohol/update")
+  public Object update(AlcoholDetail alcoholDetail, HttpSession session) {
+    Member member = (Member) session.getAttribute("loginUser");
+    alcoholDetail.setWriter(member);
+    int count = alcoholDetailService.update(alcoholDetail);
 
-  //  @RequestMapping("/alcohol/delete")
-  //  public Object delete(int no) {
-  //    return alcoholDetailService.delete(no);
-  //  }
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("게시글 작성자가 아닙니다.");
+    }
+
+  }
+
+  @RequestMapping("/alcohol/delete")
+  public Object delete(int no, HttpSession session) {
+    Member member = (Member) session.getAttribute("loginUser");
+    AlcoholDetail alcoholDetail = new AlcoholDetail();
+    alcoholDetail.setWriter(member);
+    alcoholDetail.setAlcoholDetailNo(no);
+    int count = alcoholDetailService.delete(alcoholDetail);
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("게시글 작성자가 아닙니다.");
+    }
+  }
 }

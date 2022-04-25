@@ -102,11 +102,27 @@ function createList(alcohols) {
    <td>${alcohol.brand}</td>
    <td>${alcohol.origin}</td>
    <td>${alcohol.volume}</td>
-   <td><button type="button" onclick="location.href='alcoholupdate.html?no=${alcohol.alcoholDetailNo}'">수정</button><button type="button" class="x-delete-btn">삭제</button></td>
+   <td><button type="button" onclick="location.href='alcoholupdate.html?no=${alcohol.alcoholDetailNo}'">수정</button><button type="button" class="x-delete-btn" value="${alcohol.alcoholDetailNo}">삭제</button></td>
  </tr>
 `
     tbody.innerHTML += alcoholTr
   }
+  $(".x-delete-btn").on("click", (e) => {
+    console.log(e.target.value);
+
+    fetch(`/alcohol/delete?no=${e.target.value}`)
+    .then(response => {
+      return response.json()
+    })
+    .then(result => {
+      if (result.status == "success") {
+        location.href = "/admin/alcohollist.html";
+      } else {
+        window.alert("데이터 삭제 실패!");
+        console.log(result.data);
+      }
+    })
+  })
 }
 
 // 주류 검색

@@ -152,12 +152,14 @@ select
   st.lat,
   st.lng,
   st.status,
-  simg.store_img
+  simg.store_img,
+  m.mno
 from
   alcohol_detail d
   left outer join alcohol_sales alcs on d.alcohol_detail_no=alcs.alcohol_detail_no
   left outer join store st on alcs.store_no=st.store_no
   left outer join store_img simg on alcs.store_no=simg.store_no
+  left outer join member m on d.writer=m.mno
 where
   d.alcohol_detail_no=#{no}
 
@@ -180,25 +182,23 @@ where
 </select>
 
 
-<!--   <update id="update" parameterType="alcoholDetail">
+  <update id="update" parameterType="alcoholDetail">
     update alcohol_detail set
+    alcohol_name=#{alcoholName},
     alcohol_type_no=#{alcoholTypeNo},
-    name=#{name},
     degree=#{degree},
     brand=#{brand},
     origin=#{origin},
     volume=#{volume},
-    characteristic=#{characteristic},
-    img=#{img}
+    characteristic=#{characteristic}
     where
-      alcohol_detail_no=#{no}
+      alcohol_detail_no=#{alcoholDetailNo} and writer=#{writer.mno}
   </update>
 
-
-  <delete id="delete" parameterType="int">
+ 
+  <delete id="delete" parameterType="alcoholDetail">
     delete from alcohol_detail
-    where alcohol_detail_no=#{no}
+    where alcohol_detail_no=#{alcoholDetailNo} and writer=#{writer.mno}
   </delete>
 
--->
 </mapper>
