@@ -10,6 +10,7 @@ public class PartyComment{
   String partyCommentContents;
   Timestamp commentDate;
   Timestamp updateDate;
+
   public int getPartyCommentNo() {
     return partyCommentNo;
   }

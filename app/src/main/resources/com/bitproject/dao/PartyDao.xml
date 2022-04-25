@@ -35,22 +35,6 @@
     
   </resultMap>
 
-  
-   <!--      
-   <resultMap type="party" id="partyMap">
-    <association property="member" javaType="member">
-      <id column="mno" property="mno"/>
-      <result column="name" property="name"/>
-   </association>
-  </resultMap>
-   
-   
-   
-   <association property="store" javaType="store">
-     <id column="store_no" property="storeNo"/>
-     <result column="s.name" property="name"/>
-   </association> -->
-
   <select id="findAll" resultMap="partyMap2">
   select
     p.party_no,
@@ -98,95 +82,18 @@
   from party p
     inner join member m on p.writer=m.mno
     left outer join party_comment pc on p.party_no=pc.party_no
-    inner join member m2 on pc.writer=m2.mno
+    inner join member m2 on pc.commentWriter=m2.mno
   where 
     p.party_no=#{no}
   </select>
   
+  <delete id="delete" parameterType="party">
+    delete from party 
+    where party_no=#{partyNo}
+  </delete>
+  
   </mapper>
   
-	<!--  select id="findByNo" resultMap="partyMap" parameterType="int">
-  select
-    p.party_no,
-    p.title,
-		p.party_fee,
-		p.meeting_date,
-		p.max_member,
-		p.alcohol_type,
-		p.alcohol_limit,
-		s.store_no,
-		s.name,
-		m.mno,
-		m.name
-	from party p
-		join member m on p.mno=m.mno
-		join store s on p.store_no=s.store_no
-	where 
-      party_no=#{no}
-  </select> -->
-  
-  
-  
-  
-  
-    <!--     <insert id="insert" parameterType="Party">
-    insert into party(title,contents,partyFee,meetingDate,maxMember,alcoholType,alcoholLimit,writer) 
-    values(#{title},#{contents},#{party_fee},#{meeting_date},#{max_member},#{alcohol_type},#{alcohol_limit},#{write.mno})
-  </insert>
-   -->
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!--   select
-    p.party_no,
-    p.title,
-    p.party_fee,
-    p.meeting_date,
-    p.max_member,
-    p.alcohol_type,
-    p.alcohol_limit,
-    s.store_no,
-    s.name,
-    m.mno,
-    m.name
-  from party p
-    join member m on p.mno=m.mno
-    join store s on p.store_no=s.store_no
-  order by p.party_no desc;
-       -->
-
-  
-  <!--     select 
-      p.title,
-      p.party_fee,
-      p.meeting_date,
-      p.max_member,
-      p.alcohol_type,
-      p.alcohol_limit,
-      p.reg_date,
-      s.store_no,
-      s.name,
-      m.mno,
-      m.name
-    from 
-      party
-    where 
-      party_no=#{no} -->
-  <!-- s.store_no,
-      s.name 
-      inner join store s on (p.store = s.storeNo) 
-      
-      -->
-  
-
 <!--
   <update id="update" parameterType="Party">
     update party set
@@ -195,11 +102,7 @@
     where 
       party_no=#{partyNo} and writer=#{writer.mno}
   </update>
-
-  <delete id="delete" parameterType="party">
-    delete from party 
-    where party_no=#{partyNo}
-  </delete>-->
+-->
 
 
 
