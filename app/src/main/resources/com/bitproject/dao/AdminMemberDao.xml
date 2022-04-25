@@ -61,8 +61,25 @@
     select count(*) from Member
     where member_status=${memberStatus}
   </select>
-   
-   
+  
+  <select id="findByValue" resultMap="memberMap" parameterType="String">
+ select 
+      mno,
+      email,
+      name,
+      tel,
+      join_date,
+      social_accept,
+      gender,
+      birth,
+      nickname,
+      block_accept,
+      member_status,
+      store_count
+    from 
+      member 
+    where ${filt} like CONCAT('%',#{value},'%')
+  </select>
    
    
 <!--

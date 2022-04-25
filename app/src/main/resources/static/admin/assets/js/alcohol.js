@@ -1,4 +1,4 @@
-let tbody = document.querySelector("#x-member-table tbody")
+let tbody = document.querySelector("#x-alcohol-table tbody")
 let paginationUl = document.querySelector(".pagination-ul")
 let currTable = document.querySelector("#x-curr-table")
 
@@ -7,19 +7,18 @@ let currTable = document.querySelector("#x-curr-table")
 
 let pageSize = 10;
 let pageNo = 1;
-let totalMemberPage;
-let totalMemberCount;
-let userMemberCount;
-let ceoMemberCount;
+let totalAlcoholPage;
+let totalAlcoholCount;
+
 
 // 전체 회원 수 및 페이지 버튼 생성
-fetch("/admin/member/size")
+fetch("/alcohol/size")
   .then(response => {
     return response.json()
   })
   .then(result => {
-    totalMemberCount = result
-    totalMemberPage = Math.ceil(result / pageSize)
+    totalAlcoholCount = result
+    totalAlcoholPage = Math.ceil(result / pageSize)
     console.log(totalMemberPage);
 
     for (let i = 1; i <= totalMemberPage; i++) {
@@ -31,25 +30,16 @@ fetch("/admin/member/size")
     }
   })
 
-// 일반 회원 수
-fetch("/admin/member/typesize?memberStatus=false")
-  .then(response => {
-    return response.json()
-  })
-  .then(result => {
-    userMemberCount = result;
-  })
 
 
-// 전체 회원 수
-fetch("/admin/member/typesize?memberStatus=true")
-  .then(response => {
-    return response.json()
-  })
-  .then(result => {
-    ceoMemberCount = result;
-
-  })
+// 전체 주류 수
+  fetch("/alcohol/size")
+    .then(response => {
+      return response.text()
+    })
+    .then(size => {
+      console.log(totalPageSize);
+    });
 
 
 
