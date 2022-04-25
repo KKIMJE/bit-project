@@ -20,6 +20,8 @@ public interface AlcoholDetailDao {
 
   List<AlcoholDetail> findByValue(@Param("filt") String filt, @Param("value") String value);
 
+  AlcoholDetail insert(AlcoholDetail alcoholDetail);
+
 
 
   //  int update(AlcoholDetail alc);

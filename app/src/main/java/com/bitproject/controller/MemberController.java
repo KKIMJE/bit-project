@@ -6,15 +6,24 @@ import java.util.Map;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 import com.bitproject.domain.Member;
 import com.bitproject.service.MemberService;
 
 @RestController 
+@RequestMapping("/member/*")
 public class MemberController {
+
+  private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+  // MemberController의 로그를 출력하기 위해 getLogger 메소드를 사용해서 LoggerFactory에 담고 logger변수에 저장
+
 
   @Autowired
   MemberService memberService;
@@ -26,6 +35,15 @@ public class MemberController {
     } else {
       return new ResultMap().setStatus(FAIL);
     }
+  }
+
+
+  @RequestMapping("member/logout") // logout에 매핑
+  public ModelAndView logout(HttpSession session, ModelAndView mav) {
+    memberService.logout(session); // 세션 초기화 작업
+    mav.setViewName("../main/main.html"); // 이동할 페이지의 이름
+    mav.addObject("message", "logout"); //변수 저장
+    return mav; //페이지로 이동
   }
 
   @RequestMapping("/member/signin")
@@ -72,6 +90,7 @@ public class MemberController {
 
   @RequestMapping("/member/signout")
   public Object signout(HttpSession session) {
+    memberService.logout(session);
     session.invalidate();
     return new ResultMap().setStatus(SUCCESS);
   }
@@ -90,29 +109,28 @@ public class MemberController {
     }
   }
 
- /* @ResponseBody
-  @PostMapping("/emailCheck")
+  @ResponseBody
+  //@PostMapping("/emailCheck")
   @RequestMapping("/member/emailCheck")
-  public Object emailCheck(@RequestParam("email") String email) {
+  public Object emailCheck(String email) {
     return memberService.emailCheck(email);
-  }*/
+  }
 
   @RequestMapping("/member/get")
   public Object get(HttpSession session) {
-  Member loginmember =(Member)session.getAttribute("loginUser");
-  int mno = loginmember.getMno();
-   Member member = memberService.getMemberByMno(mno);
- //  System.out.println("mno:"+no+", Get Member:"+member);
-   ResultMap map = new ResultMap();
-   System.out.println("@@@@"+member);
-   if(member == null) {
-     map.setStatus(FAIL);
-     map.setData(null);
-   } else {
-     map.setStatus(SUCCESS);
-     map.setData(member);
-   }
-   return map;
+    Member loginmember =(Member)session.getAttribute("loginUser");
+    int mno = loginmember.getMno();
+    Member member = memberService.getMemberByMno(mno);
+    ResultMap map = new ResultMap();
+    System.out.println("@@@@"+member);
+    if(member == null) {
+      map.setStatus(FAIL);
+      map.setData(null);
+    } else {
+      map.setStatus(SUCCESS);
+      map.setData(member);
+    }
+    return map;
   }
 
 
