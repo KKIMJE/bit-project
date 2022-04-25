@@ -101,6 +101,9 @@ body {
 #heart {
   color: red;
 }
+.storeMnoCnt {
+  cursor: pointer;
+}
 /* 영엽중 표시 */
 .storeDetailInfo {
   display: flex;

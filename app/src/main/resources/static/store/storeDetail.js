@@ -95,6 +95,18 @@ $(".choicePhoto").click(function() {
   listSortPhoto(dataNm);
 });
 
+let cntSwitch = true
+$(".storeMnoCnt").click(function() {
+  while(cntSwitch) { 
+    let str = $(".storeMnoCnt").html()
+    count = str.replace(/[^0-9]/g,''); // int만 추출
+    count++
+    cntSwitch = false
+  }
+  $(".storeMnoCnt").html(`<i id="heart" class="fa-heart fa-solid"></i>${count}`)
+});
+
+
 
 // Map 생성
 var container = document.getElementById('map');
@@ -502,8 +514,3 @@ function reviewMemberinfo(reservationInfo) {
     }
   }
 }
-
-
-// location.reload();
-    // eValue = e.target.value;
-    // console.log(eValue);
