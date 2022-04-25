@@ -174,12 +174,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* #review-body {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-} */
 .xReviewBox  {
   display: flex;
   justify-content: center;
@@ -272,10 +266,11 @@ button {
   background: none;
 }
  body.modal-open {
-  margin-left: 0% !important;
+  margin-left: 0px !important;
   margin-right: 0% !important;
   overflow: hidden !important;
-  padding-right: 17px !important;
+  padding-right: 0px !important;
+  overflow-y:scroll !important;
 }
 .btn-check:focus+.btn-secondary, .btn-secondary:focus {
   font-size: 1rem !important;
