@@ -32,7 +32,7 @@ var pMember = document.querySelector(".pmember");
 //var pCommentContent = document.querySelector(".comment-content");
 // var pcNickname = document.querySelector(".people-name");
 
-  // 서버에서 데이터 가져오기
+// 서버에서 데이터 가져오기
 fetch(`/party/get?no=${no}`)
 .then(function(response) {
     return response.json();
@@ -65,7 +65,7 @@ fetch(`/party/get?no=${no}`)
                 </div>
                 <div>
                     <div class="comment-text">
-                        <p class="people-name">젠틀맨이다</p>
+                        <p class="people-name">${partyComment.commentWriter.nickName}</p>
                         <div class="comment-content">
                             ${partyComment.partyCommentContents}
                         </div>
@@ -108,7 +108,7 @@ $(".button-join").click(function () {
 ************/
 $(".btn-complete").click(function () {
 
-    var pComment = document.querySelector("textarea[name=comment]");
+    var pComment = document.querySelector("textarea[name=partyCommentContents]");
 
     if (pComment.value == "") {
         alert("내용을 입력해주세요.");
@@ -117,7 +117,7 @@ $(".btn-complete").click(function () {
 
     var cf = new FormData(document.forms.namedItem("commentform"));
     
-    fetch("/partyComment/add", {
+    fetch(`/partyComment/add?no=${no}`, {
         method: "POST",
         body: new URLSearchParams(cf)
     }).then(function(response) {
@@ -127,13 +127,36 @@ $(".btn-complete").click(function () {
     .then(function(result) {
         console.log(result);
         if (result.status == "success") {
-            alert("성공");
+            pComment.value = '';
+            location.reload();
+            // 업데이트 호출해야 함.
         } else {
             alert("실패");
         }
     });
 });
 
+
+/************
+모임 delete
+************/
+$(".delete").click(function () {
+    fetch(`/party/delete?no=${no}`,{
+        method: "DELETE"
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(result) {
+    console.log(result);
+        if (result.status == "success") {
+            alert("해당 모임을 삭제하였습니다.")
+            location.href = "/party/partyList.html";
+        } else {
+            alert("모임 삭제를 실패하였습니다.");
+        }
+    });
+})
 
 
 
