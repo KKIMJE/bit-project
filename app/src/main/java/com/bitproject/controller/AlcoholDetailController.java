@@ -1,5 +1,6 @@
 package com.bitproject.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,13 +26,6 @@ public class AlcoholDetailController {
   }
 
 
-
-  //  @RequestMapping("/alcohol/add")
-  //  public Object add(AlcoholDetail alcoholDetail) {
-  //    return alcoholDetailService.insert(alcoholDetail);
-  //  }
-
-
   @RequestMapping("/alcohol/get")
   public Object get(int no) {
     AlcoholDetail alcoholDetail = alcoholDetailService.get(no);
@@ -40,6 +34,16 @@ public class AlcoholDetailController {
     }
     return alcoholDetail;
   }
+
+  @RequestMapping("/alcohol/getfilt")
+  public List<AlcoholDetail> get(String  filt, String value) {
+    List<AlcoholDetail> alcoholDetail = alcoholDetailService.get(filt, value);
+    //    if (member == null) {
+    //      return ;
+    //    }
+    return alcoholDetail;
+  }
+
 
   @RequestMapping("/alcohol/size")
   public int size() {

@@ -7,26 +7,28 @@
 
   <resultMap type="partyComment" id="partyCommentMap">
     <id column="party_comment_no" property="partyCommentNo"/>
-    <result column="mno" property="mno"/>
-    <result column="nickname" property="nickName"/>
-    <result column="m_img" property="mImg"/>
     <result column="party_no" property="partyNo"/>
     <result column="party_comment_contents" property="partyCommentContents"/>
     <result column="comment_date" property="commentDate"/>
     <result column="update_date" property="updateDate"/>        
+    <association property="commentWriter" javaType="member">
+      <id column="mno" property="mno"/>
+      <result column="nickname" property="nickName"/>
+    </association>
   </resultMap>
   
   <insert id="insert" parameterType="PartyComment" >
     insert into party_comment(
-      mno,
       party_no,
-      party_comment_contents
+      party_comment_contents,
+      writer
       )
     values(
-     #{mno},
      #{partyNo},
-     #{partyCommentContents}
+     #{partyCommentContents},
+     #{writer.mno}
      )
   </insert>
+
 
 </mapper>

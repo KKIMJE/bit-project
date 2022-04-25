@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+* {
+  font-family: NanumSquareRound;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  background-color:rgba(250, 250, 250, 1);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 1200px;
+  min-height: 100%;
+  padding-bottom: 68px;
+  /* margin: 0; */
+  /* padding: 0; */
+  /* position: relative; */
+}
+
+h1 {
+  text-align: center;
+  font-weight: 500;
+  color: rgb(32, 32, 32);
+}
+
+.file-upload{
+  margin: 20px 0 50px 0;
+}
+
+
+
+.x-alcohol-degree {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  font-size: 20px;
+  margin-top: 13px;
+}
+
+.alcohol-degree {
+  margin: 30px 0 0 0;
+}
+
+
+
+
+
+.add-btn {
+  all: unset;
+  text-align:center;
+  color: #EEEFF1;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #29c05e;
+  border-radius: 5px;
+  margin-left: 14px;
+  padding: 8px;
+  width: 60px;
+}
+
+.submit-next-btn {
+  all: unset;
+  color: #EEEFF1;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #29c05e;
+  border-radius: 5px;
+  margin-left: -30px;
+  padding: 8px;
+  width: 60px;
+}
+
+.submit-exit-btn {
+  all: unset;
+  color: #EEEFF1;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #29c05e;
+  border-radius: 5px;
+  margin-left: 14px;
+  padding: 8px;
+  width: 60px;
+}
+
+.x-delete-btn, .x-add-btn {
+  border-color: #EEEFF1;
+
+}
+
+.alcohol__box {
+  width: 500px;
+  height: 1050px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: #E1E1E1;
+  /* padding: 40px; */
+  background-color:white;
+  display:flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.alcohol-name {
+   /* margin-top:-10px; */
+  margin: 70px 0 0 0;
+  font-size: 20px;
+  /* margin-left: 40px; */
+}
+
+body > form > div > div > div > div > span {
+  margin-left: 3px;
+}
+
+.form_input_name {
+  width: 300px;
+  border: 1px solid;
+  border-color:  #E1E1E1;
+  border-radius: 10px;
+  padding: 8px;
+  /* margin-top: -7px; */
+  /* margin-left: 40px; */
+}
+
+
+ .alcohol-brand, .alcohol-origin, .form_tag ,.alcohol-volume, .alcohol-char, .alcohol-img-div {
+  font-size: 20px;
+  /* padding-top: 10px; */
+  margin-bottom: -5px;
+}
+
+.tag{
+   margin-top:10px;
+}
+
+.form_check{
+  color: black;
+  font-size: 15px;
+  padding-top: 20px;
+  margin-bottom: -5px;
+}
+
+
+
+.form_input_degree, .form_input_volume, .form_input_brand, .form_input_origin {
+  width: 299px;
+  border: 1px solid;
+  border-color: #E1E1E1;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: -5px;
+}
+
+
+.form_input_check{
+  border: 1px solid;
+  border-color: black;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 5px;
+
+}
+
+.alcohol-content {
+  margin: 30px 0 0 0;
+  font-size: 20px;
+}
+
+
+.form_input_box{
+  width:100px;
+  border: 1px solid;
+  border-color: #E1E1E1;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 5px;
+
+}
+
+.form_input_intro {
+   width: 299px;
+   height:100px;
+  border: 1px solid;
+  border-color:  #E1E1E1;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: -5px;
+}
+
+.alcohol-img-div {
+  margin: 0;
+}
+
+
+
+
+/*.submit-btn {
+  all: unset;
+  color: #EEEFF1;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #29c05e;
+  margin-bottom: 50px;
+  padding: 10px 120px;
+  border-radius: 5px;
+  width: auto;
+  margin-left: 10px;
+  margin-top: 40px;
+}*/
+#ig {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle !important;
+  margin-top: -16px;
+}

@@ -31,8 +31,7 @@ public class PartyController {
   public Object add(Party party, HttpSession session) {
 
     Member member = (Member) session.getAttribute("loginUser");
-    party.setNickName(member.getNickName());
-    party.setMno(member.getMno());
+    party.setWriter(member);
 
     partyService.add(party);
     return new ResultMap().setStatus(SUCCESS);

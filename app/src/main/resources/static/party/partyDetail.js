@@ -48,14 +48,14 @@ fetch(`/party/get?no=${no}`)
     var party = result.data;
 
     pTitle.innerHTML = party.title;
-    pNickname.innerHTML = party.nickName;
+    pNickname.innerHTML = party.writer.nickName;
     pAlcoholType.innerHTML = party.alcoholType;
     pDate.innerHTML = party.meetingDate;
     pAlcoholLimit.innerHTML = party.alcoholLimit;
     pFee.innerHTML = `${party.partyFee}원`;
     pMember.innerHTML = `${party.maxMember}명`;
 
-    pNickname2.innerHTML = party.nickName;
+    pNickname2.innerHTML = party.writer.nickName;
 
     for (var partyComment of party.partyComments) {
             pcbody.innerHTML += 

@@ -32,6 +32,12 @@ public class DefaultAlcoholDetailService implements AlcoholDetailService {
   }
 
   @Override
+  public List<AlcoholDetail> get(String filt, String value) {
+    List<AlcoholDetail> alcoholDetail = alcoholDetailDao.findByValue(filt, value);
+    return alcoholDetail;
+  }
+
+  @Override
   public int size() {
     return alcoholDetailDao.countAll();
   }
@@ -40,6 +46,7 @@ public class DefaultAlcoholDetailService implements AlcoholDetailService {
   public int targetSize(int targetNo) {
     return alcoholDetailDao.countByTarget(targetNo);
   }
+
 
 
   //  @Override
