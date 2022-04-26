@@ -39,6 +39,10 @@ padding: 0 50px 0 50px;
   background-color: rgb(212, 212, 212);
 }
 
+#x-alcohol-table tbody tr:hover {
+  background-color: rgb(212, 212, 212);
+}
+
 .pagination {
   display: flex;
   justify-content:center;
@@ -56,4 +60,8 @@ padding: 0 50px 0 50px;
 
 .alcohol-add-btn {
   float: right;
+}
+
+.pagination-ul li:hover {
+  background-color: rgb(212, 212, 212);
 }

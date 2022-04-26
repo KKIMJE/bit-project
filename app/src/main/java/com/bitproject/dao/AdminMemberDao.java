@@ -28,7 +28,7 @@ public interface AdminMemberDao {
   //
   //  Member findByMno(int no);
   //
-  //  int update(Member member);
+  int update(int no);
 
 
 

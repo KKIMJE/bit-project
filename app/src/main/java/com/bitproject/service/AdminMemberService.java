@@ -20,6 +20,6 @@ public interface AdminMemberService {
   //  Member getMemberByEmail(String email);
   //
   //
-  //  int update(Member member);
+  int update(int no);
 
 }
