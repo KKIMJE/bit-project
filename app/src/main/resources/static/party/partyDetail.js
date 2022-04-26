@@ -73,7 +73,7 @@ fetch(`/party/get?no=${no}`)
                     <div class="comment-footer">
                         <p class="comment-datetime">${partyComment.commentDate}</p>
                         <div class="comment-option">
-                            <button type="button">
+                            <button type="button" class="report2">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                 <span>&nbsp;신고</span>
                             </button>
@@ -167,5 +167,38 @@ $(".update").click(function () {
 })
 
 
+/************
+    신고
+************/
 
+$(".report").click(function () {
+    reportModal();
+})
 
+$( document ).on("click", ".report2", function() { // 동적 생성된 html에 이벤트 걸기
+    reportModal();
+})
+
+function reportModal() {
+    Swal.fire({
+        title: '신고하기',
+        input: 'text',
+        inputAttributes: {
+          autocapitalize: 'off'
+        },
+        inputLabel: '신고 이유를 적어주세요',
+        showCancelButton: false,
+        confirmButtonText: '제출하기',
+        showLoaderOnConfirm: true,
+        preConfirm: () => {
+          fetch(`/report/add?no=${no}&rtype=0`) // 회원: 0, 주점: 1, 게시글: 2 
+            .then(response => {
+              console.log("와우")
+              return response.json()
+            })
+            .then((result) => {
+                console.log("성공!")
+        })
+    }
+})
+}
