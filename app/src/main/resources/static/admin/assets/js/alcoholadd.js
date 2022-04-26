@@ -1,13 +1,13 @@
 // 등록 버튼
+let xAlcoholName = document.querySelector("input[name=alcoholName]")
+let xAlcoholType = document.querySelector("select[name=alcoholTypeNo]")
+let xAlcoholDegree = document.querySelector("input[name=degree]")
+let xAlcoholBrand = document.querySelector("input[name=brand]")
+let xAlcoholOrigin = document.querySelector("input[name=origin]")
+let xAlcoholVolume = document.querySelector("input[name=volume]")
+let xAlcoholChar = document.querySelector("textarea[name=characteristic]")
+
 document.querySelector(".submit-add-btn").addEventListener("click", () => {
-  let xAlcoholName = document.querySelector("input[name=alcoholName]").value
-  let xAlcoholType = document.querySelector("select[name=alcoholTypeNo]").value
-  let xAlcoholDegree = document.querySelector("input[name=degree]").value
-  let xAlcoholBrand = document.querySelector("input[name=brand]").value
-  let xAlcoholOrigin = document.querySelector("input[name=origin]").value
-  let xAlcoholVolume = document.querySelector("input[name=volume]").value
-  let xAlcoholChar = document.querySelector("textarea[name=characteristic]").value
-  // let xAlcoholImg = $("input[name=img]")
 
   if (xAlcoholName == "" ||
     xAlcoholType == "" ||
