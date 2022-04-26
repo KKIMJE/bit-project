@@ -63,7 +63,7 @@ h1 {
   width: 60px;
 }
 
-.submit-add-btn {
+.submit-add-btn, .submit-update-btn {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
@@ -107,6 +107,13 @@ h1 {
 }
 
 .alcohol-name {
+   /* margin-top:-10px; */
+  margin: 30px 0 0 0;
+  font-size: 20px;
+  /* margin-left: 40px; */
+}
+
+.alcohol-no {
    /* margin-top:-10px; */
   margin: 70px 0 0 0;
   font-size: 20px;

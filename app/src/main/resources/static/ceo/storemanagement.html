@@ -70,9 +70,9 @@
 
 
   <content>
-  <center style="margin-top:100px;padding-right:40%; ">
+  <center style="margin-top:100px;">
   <div style="line-height:60px; vertical-align:middle !important;">
-    <img id="ig" src="./img/ceo-icon.jpg">
+    <img id="ig" src="./img/ceo-icon.jpg"  >
     <span style="font-size:30px;">주점관리</span>
     </div>
   </center>
@@ -84,8 +84,11 @@
     </div>
     </div>-->
     
-  <!--<div class>
-    <input type="button" class="x-add-btn-1" style="margin-left:90%;"value="추가"> -->
+  <div class>
+  <!--  <a href="storeChange.html" >
+            <input type='button' class='x-update-btn' style="margin-left:80%;" value='수정'> -->
+            <!--<button type='button' class='x-delete-btn'  style="margin-left:90%;">삭제</button>
+    <!--<input type="button" class="x-add-btn-1" style="margin-left:90%;"value="추가"> -->
     
    <!--  <center style="vertical-align:middle !important;">
     <hr size="5" noshade width=1250px >
@@ -95,34 +98,35 @@
 </div>
 
 <div class= "store-table" >
-       <table>
+       <table id="x-store-table" >
         <colgroup>
-          <col width="7%" />
-          <col width="12%" />
+          <col width="15%" />
+          <col width="25%" />
           <col />
-          <col width="0%" />
-          <col width="18%" />
-          <col width="7%" />
-          <col width="-15%" />
+          <col width="6%" />
+          <col width="5%" />
+          <col width="2%" />
+          <col width="-10%" />
         </colgroup>
         <thead >
           <tr>
             <th>번호</th>
             <th>주점명</th>
             <th>주소</th>
-            <th>등록일</th>
-            <th>영업</th>
-            <th></th>
-            <th></th>
+            <th>영업&nbsp;</th>
+            <th><!--<a href="storeChange.html" >
+            <input type='button' class='x-update-btn' value='수정'> 
+           </a></th>-->
+            <!--<th> <button type='button' class='x-delete-btn' style="width:60px;">삭제</button></th>-->
           </tr>
         </thead>
 
         <tbody>
-          <tr>
+        <!-- 
+           <tr>
             <td>1</td>
             <td>엘라</td>
             <td>서울 강남구 테헤란로 5길 36 1층</td>
-            <td>2022-03-02</td>
             <td><input type="checkbox" checked>영업중 <input
               type="checkbox">종료</td>
             <td><a href="storeChange.html" >
@@ -131,7 +135,7 @@
             <td></td>
           </tr>
 
-          <tr>
+           <tr>
             <td>2</td>
             <td>엘라</td>
             <td>서울 강남구 테헤란로 5길 36 1층</td>
@@ -156,7 +160,7 @@
               value='수정'> <input type='button'
               class='x-delete-btn' value='삭제'></td>
             <td></td>
-          </tr>
+          </tr>-->
         </tbody>
       </table>
  </div>

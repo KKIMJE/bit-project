@@ -3,6 +3,7 @@ package com.bitproject.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import com.bitproject.dao.AlcoholDetailDao;
 import com.bitproject.domain.AlcoholDetail;
 import com.bitproject.service.AlcoholDetailService;
@@ -20,13 +21,12 @@ public class DefaultAlcoholDetailService implements AlcoholDetailService {
 
   @Override
   public List<AlcoholDetail> targetList(int targetNo, int pageSize, int pageNo) {
-    System.out.println("targetList() 호출됨");
-    System.out.printf("targetNo: %d, pageSize: %d, pageNo: %d \n", targetNo, pageSize, pageNo);
     return alcoholDetailDao.findByTarget(targetNo, pageSize, ((pageNo - 1) * pageSize));
   }
 
+  @Transactional
   @Override
-  public Object add(AlcoholDetail alcoholDetail) {
+  public int add(AlcoholDetail alcoholDetail) {
     return alcoholDetailDao.insert(alcoholDetail);
 
   }
@@ -53,24 +53,16 @@ public class DefaultAlcoholDetailService implements AlcoholDetailService {
     return alcoholDetailDao.countByTarget(targetNo);
   }
 
+  @Transactional
+  @Override
+  public int update(AlcoholDetail alcoholDetail) {
+    return alcoholDetailDao.update(alcoholDetail);
+  }
 
-
-
-  //  @Override
-  //  public int add(AlcoholDetail alcoholDetail) {
-  //    return 0;
-  //  }
-
-
-  //  @Override
-  //  public int update(AlcoholDetail alcoholDetail) {
-  //    return 0;
-  //  }
-
-  //  @Override
-  //  public int delete(AlcoholDetail alcoholDetail) {
-  //    return 0;
-  //  }
+  @Override
+  public int delete(AlcoholDetail alcoholDetail) {
+    return alcoholDetailDao.delete(alcoholDetail);
+  }
 
 
 }
