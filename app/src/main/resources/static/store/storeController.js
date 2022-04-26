@@ -16,10 +16,9 @@ function loadData(serverInfo){
   fetch(serverInfo)
       .then(  response => response.json())
       .then(  data => {
-
-          allStoreDataList = data
-          let storeNumList = numMaker(data.length)
-
+        console.log(data)
+          allStoreDataList = data.data
+          let storeNumList = numMaker(data.data.length)
           storeList(allStoreDataList) // 전체 주점 초기 세팅
           mapMarker(allStoreDataList, [0,1,2,3,4,5,6,7,8,9]) // 전체 맵 초기화면 세팅
           mapNextpreBtnSet(allStoreDataList, storeNumList)
@@ -35,11 +34,15 @@ function numMaker (n) {
 
 
 // storeAll list => ImgCard Insert, 주점 위치 찾기
-function storeList(stores) {
+function storeList(xStores) {
+
+  console.log(xStores)
+
   let listAll = document.querySelector(".imgContainer");
   let count = 0
   let card = true
-  
+  let stores = xStores
+
   for (let i = 0; i < stores.length; i++) {
 
     if (count == 0) {
@@ -76,6 +79,8 @@ function storeList(stores) {
         card = true
       }
     }
+
+    
 
     let storeName = stores[i].storeName
     let stras = printStar(stores[i].evaluationScore)
@@ -312,7 +317,8 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 var geocoder = new kakao.maps.services.Geocoder(); // 주소-좌표 변환 객체를 생성합니다
 
 // 마커구성
-function mapMarker(store, numList) {
+function mapMarker(xStore, numList) {
+  
   // 기존마커 삭제
   for (let j = 0; j < targetMarkerList.length; j++) {
     targetMarkerList[j].setMap(null)
@@ -322,8 +328,10 @@ function mapMarker(store, numList) {
   }
   // 마커 생성
   for (let i = 0; i < numList.length; i ++) {
-    let address = store[numList[i]].address
-    let name = store[numList[i]].storeName
+    console.log(i)
+    console.log(xStore[numList[i]])
+    let address = xStore[numList[i]].address
+    let name = xStore[numList[i]].storeName
 
     // 주소로 좌표를 검색합니다
     geocoder.addressSearch(address, function(result, status) {
@@ -351,7 +359,10 @@ function mapMarker(store, numList) {
     });
   }
 }
-function targetMapMarker(store, numList) {
+function targetMapMarker(xStore, numList) {
+
+  let store = xStore
+
   // 기존마커 삭제
   for (let j = 0; j < markerList.length; j++) {
     markerList[j].setMap(null)
@@ -390,7 +401,10 @@ function targetMapMarker(store, numList) {
     });
   }
 }
-function sortMapMarker(store, numList) {
+function sortMapMarker(xStore, numList) {
+
+  let store = xStore
+
   // 기존마커 삭제
   for (let j = 0; j < markerList.length; j++) {
     markerList[j].setMap(null)
@@ -429,16 +443,6 @@ function sortMapMarker(store, numList) {
     });
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -494,20 +498,23 @@ map.setCenter(locPosition);
 }
 
 // ==== Map next, pre Btn ====
-function mapNextpreBtnSet(storesData, numLsit) {
+function mapNextpreBtnSet(xStoresData, numList) {
+
+  let storesData = xStoresData
+  
   targetMarkerList = []
 
   let numStart = 0
   let numEnd = 10
   let mapCursor
-  let allStoreNum = numLsit
+  let allStoreNum = numList
   let limitCursor = Math.floor((allStoreNum.length) * 0.1)
   
   next.addEventListener("click", function(){
     if (btnStatus == false) {
       return
     }
-    console.log("origin")
+    console.log("originBtn")
     if (limitCursor == mapCursor) {
       console.log(limitCursor)
       console.log("next: Over page")
@@ -527,7 +534,7 @@ function mapNextpreBtnSet(storesData, numLsit) {
     if (btnStatus == false) {
       return
     }
-    console.log("origin")
+    console.log("originBtn")
     if (numStart == 0) {
       console.log("pre: Over page")
     } else {
@@ -556,7 +563,7 @@ function targetMapNextpreBtnSet(storesData, numLsit) {
   let limitCursor = Math.floor((allStoreNum.length) * 0.1)
   
   next.addEventListener("click", function(){
-    console.log("target")
+    console.log("targetBtn")
     if (limitCursor == mapCursor) {
       console.log(limitCursor)
       console.log("next: Over page")
@@ -573,7 +580,7 @@ function targetMapNextpreBtnSet(storesData, numLsit) {
     }
   });
   pre.addEventListener("click", function(){
-    console.log("target")
+    console.log("targetBtn")
     if (targetNumStart == 0) {
       console.log("pre: Over page")
     } else {
@@ -602,7 +609,7 @@ function sortMapNextpreBtnSet(storesData, numLsit) {
   let limitCursor = Math.floor((allStoreNum.length) * 0.1)
   
   next.addEventListener("click", function(){
-    console.log("target")
+    console.log("sortBtn")
     if (limitCursor == mapCursor) {
       console.log(limitCursor)
       console.log("next: Over page")
@@ -619,7 +626,7 @@ function sortMapNextpreBtnSet(storesData, numLsit) {
     }
   });
   pre.addEventListener("click", function(){
-    console.log("target")
+    console.log("sortBtn")
     if (targetNumStart == 0) {
       console.log("pre: Over page")
     } else {

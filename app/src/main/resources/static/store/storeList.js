@@ -4,7 +4,10 @@ function targetList(targetNo) {
     .then(function(response) {
       return response.json()
     })
-    .then(function(stores) {
+    .then(function(data) {
+
+      stores = data.data
+
       let listAll = document.querySelector(".imgContainer");
       let count = 0
       let card = true
@@ -118,16 +121,6 @@ lightBtn.addEventListener("click",function(e){
 
 
 
-
-
-
-
-
-
-
-
-
-
 // 거리순 정렬
 var sortJSON = function(data, key, type) { // json 데이터 정렬
   if (type == undefined) {
@@ -148,14 +141,16 @@ function distanceSortList() {
     .then(function(response) {
       return response.json()
     })
-    .then(function(stores) {
+    .then(function(data) {
+
+      stores = data.data
 
       $('.imgContainer').empty()
       let listAll = document.querySelector(".imgContainer");
       let count = 0
       let card = true
       
-      console.log(dValueList) 
+      console.log(dValueList)// 거리계산 값 배열
       let dValueNumList = [] // 순수 숫자배열
 
       for (var i = 0; i < dValueList.length; i++) {
@@ -252,7 +247,7 @@ $(".xDistance").click(function() {
   
   // 거리순으로 sort한 후에 List 정렬
   sortJSON(dValueList, "dValue", "asc") // 거리값 정렬
-  console.log(dValueList)
+  // console.log(dValueList)
   distanceSortList()
   btnStatus = false
   targetBtnStatus = false

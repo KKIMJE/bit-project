@@ -28,16 +28,20 @@ function targetList(targetNo) {
   fetch(`/store/get?no=${no}`)
   .then(function(response) {
     return response.json() 
-  }).then(function(store) {
+  }).then(function(data) {
+  
+      store = data
       console.log(store);
-      storeTextBox(store.data)
-      mapMarker(store.data)
+      storeTextBox(store)
+      mapMarker(store)
   });
 
   fetch(`/review/get?no=${no}`)
     .then(function(response) {
       return response.json() 
-    }).then(function(reviews) {
+    }).then(function(data) {
+      
+      reviews = data
       reviewsData = reviews
       console.log(reviews);
       StoreReviewPrint(reviews)
@@ -46,7 +50,9 @@ function targetList(targetNo) {
   fetch(`/reservation/get?no=${no}`)
     .then(function(response) {
       return response.json() 
-    }).then(function(reservation) {
+    }).then(function(data) {
+
+      reservation = data
       reservationData = reservation
       console.log(reservation);
       reviewMemberinfo(reservation)
