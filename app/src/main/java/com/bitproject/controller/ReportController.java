@@ -19,16 +19,17 @@ public class ReportController {
   ReportService reportService;
 
   @PostMapping("/add")
-  public Object add(int no, String rtype, Report report, HttpSession session) {
+  public Object add(int no, String rtype, String rcontent, Report report, HttpSession session) {
+    System.out.println("호출됐니?");
 
     Member member = (Member) session.getAttribute("loginUser");
     report.setMno(member.getMno());
     report.setTargetNo(no);
     report.setType(rtype);
+    report.setContents(rcontent);
 
-    System.out.println(report);
+    reportService.add(report);
 
-    //reportService.add(report);
     return new ResultMap().setStatus(SUCCESS);
   }
 }

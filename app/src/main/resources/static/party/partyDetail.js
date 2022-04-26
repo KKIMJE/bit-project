@@ -191,13 +191,25 @@ function reportModal() {
         confirmButtonText: '제출하기',
         showLoaderOnConfirm: true,
         preConfirm: () => {
-          fetch(`/report/add?no=${no}&rtype=0`) // 회원: 0, 주점: 1, 게시글: 2 
-            .then(response => {
-              console.log("와우")
-              return response.json()
-            })
-            .then((result) => {
-                console.log("성공!")
+            var rContent = document.querySelector(".swal2-input");
+            
+            fetch(`/report/add?no=${no}&rtype=b&rcontent=${rContent.value}`, { // 회원: m, 주점: s, 게시글: b 
+                method : "POST"
+            }).then(response => {
+                return response.json()
+            }).then((result) => {
+                if (result.data == "로그인 하지 않았습니다!") {
+                alert("로그인 후 신고가 가능합니다.")
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    text: '신고가 접수되었습니다.',
+                    showCancelButton:false,
+                    confirmButtonColor:'#90d483',
+                    cancelButtonColor: '#90d483',
+                    confirmButtonText:'확인',
+                })
+            }
         })
     }
 })

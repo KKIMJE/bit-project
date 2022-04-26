@@ -9,16 +9,16 @@
 		<id column="repo_no" property="repoNo"/>
 		<result column="mno" property="mno"/>
 		<result column="target_no" property="targetNo"/>
+		<result column="contents" property="contents"/>
 		<result column="type" property="type"/>
-		<result column="date" property="contents"/>
-		<result column="contents" property="date"/>
+		<result column="date" property="date"/>
 		<result column="status" property="status"/>
   </resultMap>
 
   
   <insert id="insert" parameterType="Report">
-    insert into report(writer,title,contents,address,party_fee,meeting_date,max_member,alcohol_type,alcohol_limit) 
-    values(#{writer.mno},#{title},#{contents},#{address},#{partyFee},#{meetingDate},#{maxMember},#{alcoholType},#{alcoholLimit})
+    insert into report(mno,target_no,contents,type,date) 
+    values(#{mno},#{targetNo},#{contents},#{type},#{date})
   </insert>
   
 
