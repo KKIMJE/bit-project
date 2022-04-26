@@ -85,7 +85,7 @@
                 <div class="storeOper"></div>
                 <div class="storeDistance"></div>
               </div>
-              <div class="storeStar">⭐⭐⭐⭐⭐</div>
+              <div class="storeStar"></div>
             </div>
           </div>
           <div class="storeTextBox-1-2">
@@ -145,15 +145,16 @@
         <div class="reviewSort-title">리뷰</div>
         <div class="reviewSortChoice">
           <form method="get" action="form-action.html">
-            <label><input type="radio" name="review" value="choiceRecent" class="choiceRecent">최신순</label>
-            <label><input type="radio" name="review" value="choiceRecent" class="choiceStar">별점순</label>
-            <label><input type="radio" name="review" value="choiceRecent" class="choicePhoto">포토리뷰</label>
+            <label><input type="radio" name="review" value="1" class="choiceRecent" data-datanm="recent">최신순</label>
+            <label><input type="radio" name="review" value="2" class="choiceStar" data-datanm="stars">별점순</label>
+            <label><input type="radio" name="review" value="3" class="choicePhoto" data-datanm="photo">포토리뷰</label>
             <!-- <p><input type="submit" value="Submit"> <input type="reset" value="Reset"></p> -->
           </form>
         </div>
       </div>
 
-      <div class="xReviewBox">
+      <!-- 리뷰 콘텐츠 -->
+      <div id="review-body" class="xReviewBox">
 
         <!-- <div class="storeReviewBack">
           <div class="reviewprofile">

@@ -7,6 +7,9 @@ var qs = arr[1];
 var params = new URLSearchParams(qs);
 var no = params.get("no");
 console.log(no);
+
+var pbody = document.querySelector("#review-body")
+
 // 주점상세 모달이미지 버튼
 var next = document.querySelector('.next-store');
 var pre = document.querySelector('.pre-store');
@@ -16,31 +19,94 @@ if (no == null) {
   throw "파라미터 오류!";
 }
 
+// fetch
+function targetList(targetNo) {
 
-fetch(`/store/get?no=${no}`)
+  let reservationData;
+  let reviewsData;
+
+  fetch(`/store/get?no=${no}`)
   .then(function(response) {
     return response.json() 
   }).then(function(store) {
       console.log(store);
       storeTextBox(store.data)
       mapMarker(store.data)
+  });
+
+  fetch(`/review/get?no=${no}`)
+    .then(function(response) {
+      return response.json() 
+    }).then(function(reviews) {
+      reviewsData = reviews
+      console.log(reviews);
+      StoreReviewPrint(reviews)
+  });
+
+  fetch(`/reservation/get?no=${no}`)
+    .then(function(response) {
+      return response.json() 
+    }).then(function(reservation) {
+      reservationData = reservation
+      console.log(reservation);
+      reviewMemberinfo(reservation)
+  });
+
+}
+targetList(no) // fetch 실행
+
+
+// 리뷰 별점순 정렬
+function listSortStar(dataNm) {
+  $('#review-body').html(
+    $('#review-body a').sort(function(a, b){
+      return $(b).data(dataNm) - $(a).data(dataNm)
+    })
+  );
+}
+$(".choiceStar").click(function() {
+  var dataNm = $(this).data("datanm"); //data()의 이름은 소문자로 작성
+  listSortStar(dataNm);
 });
 
-fetch(`/review/get?no=${no}`)
-  .then(function(response) {
-    return response.json() 
-  }).then(function(reviews) {
-    console.log(reviews);
-    StoreReviewPrint(reviews)
+// 리뷰 최신순 정렬
+function listSortRecent(dataNm) {
+  $('#review-body').html(
+    $('#review-body a').sort(function(a, b){
+      return $(b).data(dataNm) - $(a).data(dataNm)
+    })
+  );
+}
+$(".choiceRecent").click(function() {
+  var dataNm = $(this).data("datanm"); //data()의 이름은 소문자로 작성
+  listSortRecent(dataNm);
 });
 
-fetch(`/reservation/get?no=${no}`)
-  .then(function(response) {
-    return response.json() 
-  }).then(function(reservation) {
-    console.log(reservation);
-    reviewMemberinfo(reservation)
+// 포토리뷰 학인해서 정렬
+function listSortPhoto(dataNm) {
+  $('#review-body').html(
+    $('#review-body a').sort(function(a, b){
+      return $(b).data(dataNm) - $(a).data(dataNm)
+    })
+  );
+}
+$(".choicePhoto").click(function() {
+  var dataNm = $(this).data("datanm"); //data()의 이름은 소문자로 작성
+  listSortPhoto(dataNm);
 });
+
+let cntSwitch = true
+$(".storeMnoCnt").click(function() {
+  while(cntSwitch) { 
+    let str = $(".storeMnoCnt").html()
+    count = str.replace(/[^0-9]/g,''); // int만 추출
+    count++
+    cntSwitch = false
+  }
+  $(".storeMnoCnt").html(`<i id="heart" class="fa-heart fa-solid"></i>${count}`)
+});
+
+
 
 // Map 생성
 var container = document.getElementById('map');
@@ -122,9 +188,9 @@ function tags (tagArr) {
   let tagStr = ""
   for (let i=0; i < tagArr.length; i++) {
     if (i == tagArr.length-1) {
-      tagStr += tagArr[i].name
+      tagStr += "#" + tagArr[i].name
     } else {
-      tagStr += tagArr[i].name + ", "
+      tagStr += "#" + tagArr[i].name + ", "
     }
   }
   return tagStr
@@ -259,7 +325,7 @@ function storeMenuPrint(storeMenuList) {
   }
   sugFoodImg.innerHTML = str
 }
-// 주점상세 이미지
+// 주점 이미지
 function storeDetailImgPrint(Imgs) {
   
   let imgBox = document.querySelector(".img-box")
@@ -363,23 +429,38 @@ function StoreReviewPrint(reviewData) {
   if (reviewData == null) {
     console.log("reviewData null")
   }
-
+  //reviewData[i].reviewImgs[0].img
+  
   for (let i=0; i < reviewData.length; i++) {
+
+    // 포토리뷰 데이터 생성
+    let reviewImgs = reviewData[i].reviewImgs
+    let returnImgCnt;
+    if (reviewImgs.length == 1) {
+      if (reviewImgs[0].img == null) {
+        returnImgCnt = 0
+      } else {
+        returnImgCnt = 1
+      }      
+    } else {
+      returnImgCnt = reviewImgs.length
+    }
+
     str += 
-    `<div class="storeReviewBack">
-        <div class="reviewprofile">
-          <div class="profile-img"></div>
-          <div class="reviewerName"></div>
-          <div class="reviewStar">${printStar(reviewData[i].score)}</div>
-        </div>
-        <div class="reviewContents">
-          <div class="reviewDate">${reviewData[i].regDate.slice(0, 10)}</div>
-          <div class="reviewText">${reviewData[i].contents}</div>
-          <div class="reviewImgBox">
-            ${reviewImgPrint(reviewData[i].reviewImgs)}
+      `<a data-stars=${reviewData[i].score} data-recent=${reviewData[i].reservationNo} data-photo=${returnImgCnt}>
+        <div class="storeReviewBack">
+          <div class="reviewprofile">
+            <div class="profile-img"></div>
+            <div class="reviewerName"></div>
+            <div class="reviewStar">${printStar(reviewData[i].score)}</div>
+          </div>
+          <div class="reviewContents">
+            <div class="reviewDate">${reviewData[i].regDate.slice(0, 10)}</div>
+            <div class="reviewText">${reviewData[i].contents}</div>
+            <div class="reviewImgBox">${reviewImgPrint(reviewData[i].reviewImgs)}</div>
           </div>
         </div>
-    </div>`
+      </a>`
   }
   xReviewBox.innerHTML = str
 }

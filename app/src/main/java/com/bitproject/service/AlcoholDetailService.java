@@ -11,13 +11,17 @@ public interface AlcoholDetailService {
 
   List<AlcoholDetail> targetList(int targetNo, int pageSize, int pageNo);
 
+  int add(AlcoholDetail alcoholDetail);
+
   AlcoholDetail get(int no);
+
+  List<AlcoholDetail> get(String filt, String value);
 
   int size();
 
   int targetSize(int targetNo);
 
-  //  int update(AlcoholDetail alcoholDetail);
+  int update(AlcoholDetail alcoholDetail);
 
-  //  int delete(AlcoholDetail alcoholDetail);
+  int delete(AlcoholDetail alcoholDetail);
 }

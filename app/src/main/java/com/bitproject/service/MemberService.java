@@ -1,5 +1,6 @@
 package com.bitproject.service;
 
+import javax.servlet.http.HttpSession;
 import com.bitproject.domain.Member;
 
 public interface MemberService {
@@ -15,6 +16,9 @@ public interface MemberService {
 
   int update(Member member);
 
-  Member emailCheck(String email);
+  int emailCheck(String email);
+
+  public void logout(HttpSession session);
 
 }
+

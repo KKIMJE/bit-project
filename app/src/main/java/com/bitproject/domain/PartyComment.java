@@ -5,9 +5,7 @@ import java.sql.Timestamp;
 public class PartyComment{
 
   int partyCommentNo;
-  int mno;
-  String nickName;
-  String mImg;
+  Member commentWriter;
   int partyNo;
   String partyCommentContents;
   Timestamp commentDate;
@@ -19,23 +17,11 @@ public class PartyComment{
   public void setPartyCommentNo(int partyCommentNo) {
     this.partyCommentNo = partyCommentNo;
   }
-  public int getmno() {
-    return mno;
+  public Member getCommentWriter() {
+    return commentWriter;
   }
-  public void setmNo(int mno) {
-    this.mno = mno;
-  }
-  public String getNickName() {
-    return nickName;
-  }
-  public void setNickName(String nickName) {
-    this.nickName = nickName;
-  }
-  public String getmImg() {
-    return mImg;
-  }
-  public void setmImg(String mImg) {
-    this.mImg = mImg;
+  public void setCommentWriter(Member commentWriter) {
+    this.commentWriter = commentWriter;
   }
   public int getPartyNo() {
     return partyNo;
@@ -61,12 +47,10 @@ public class PartyComment{
   public void setUpdateDate(Timestamp updateDate) {
     this.updateDate = updateDate;
   }
-
   @Override
   public String toString() {
-    return "PartyComment [partyCommentNo=" + partyCommentNo + ", mno=" + mno + ", nickName="
-        + nickName + ", mImg=" + mImg + ", partyNo=" + partyNo + ", partyCommentContents="
-        + partyCommentContents + ", commentDate=" + commentDate + ", updateDate=" + updateDate
-        + "]";
+    return "PartyComment [partyCommentNo=" + partyCommentNo + ", commentWriter=" + commentWriter
+        + ", partyNo=" + partyNo + ", partyCommentContents=" + partyCommentContents
+        + ", commentDate=" + commentDate + ", updateDate=" + updateDate + "]";
   }
 }

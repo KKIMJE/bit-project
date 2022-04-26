@@ -1,241 +1,311 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
-    <!-- jquery -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <!-- icons -->
-    <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap js -->
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/common.css">
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>header</title>
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+<!-- font -->
+<!-- jquery -->
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<!-- icons -->
+<script src="https://kit.fontawesome.com/22437c0385.js"
+	crossorigin="anonymous"></script>
+<!-- Bootstrap js -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/common.css">
+
+
 </head>
 
 <style>
 @charset "UTF-8";
 /* nav-bar */
 .navbar__ {
-  background-color: white;
-  z-index: 1000;
+	background-color: white;
+	z-index: 1000;
 }
+
 .navbar__ {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  align-items: center;
-  padding: 3px 12px;
-  border: 1px solid rgb(160, 160, 160);
-  border-width: 0px 0px 1px 0px;
-  border-radius: 5px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-family: NanumSquareRound;
-  background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	align-items: center;
+	padding: 3px 12px;
+	border: 1px solid rgb(160, 160, 160);
+	border-width: 0px 0px 1px 0px;
+	border-radius: 5px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	font-family: NanumSquareRound;
+	background-color: white;
 }
+
 .navbar__ a {
-  text-decoration: none;
-  color: rgb(63, 63, 63);
+	text-decoration: none;
+	color: rgb(63, 63, 63);
 }
+
 .navbar__logo {
-  font-size: 24px;
-  margin-left: 220px;
-  margin-bottom: 4px;
-  background-color: white;
+	font-size: 24px;
+	margin-left: 220px;
+	margin-bottom: 4px;
+	background-color: white;
 }
+
 .navbar__menu {
-  display: none;
-  font-weight: 700;
-  align-items: baseline;
-  list-style: none;
-  padding-left: 0;
-  padding-top: 12px;
-  font-size: 15px;
-  background-color: white;
+	display: none;
+	font-weight: 700;
+	align-items: baseline;
+	list-style: none;
+	padding-left: 0;
+	padding-top: 12px;
+	font-size: 15px;
+	background-color: white;
 }
+
 .navbar__menu li {
-  padding: 8px 12px 0px 0px;
-  background-color: white;
+	padding: 8px 12px 0px 0px;
+	background-color: white;
 }
+
 .navbar__menu menu-i {
-  font-size: 24px;
-  padding: 0px 15px;
-  background-color: white;
+	font-size: 24px;
+	padding: 0px 15px;
+	background-color: white;
 }
 /* login */
 .navbar__login {
-  display: flex;
-  font-weight: 700;
-  align-items: baseline;
-  list-style: none;
-  padding-left: 0;
-  padding-top: 1px;
-}
-.navbar__login login-i {
-  font-size: 24px;
-  padding: 0px 15px;
-}
-.navbar__login li {
-  padding: 8px 12px 0px 0px;
-}
-/* 알림 */
-.navbar__login > div > div > button > a > login-i {
-  padding-right: 0;
-  margin-right: 0;
-}
-.navbar__login > div > div > button {
-  border: #fff;
-  border-color: #fff;
-  background-color: white;
-  padding: 0;
-  margin: 0;
-}
-.btn-check:focus + .btn-secondary,
-.btn-secondary:focus {
-  color: #fff;
-  background-color: #ffffff;
-  border-color: #ffffff;
-  padding: 0;
-  margin: 0;
-}
-ul.navbar__login > div:nth-child(1) > div > button:hover,
-ul.navbar__login > div:nth-child(3) > div > button:hover {
-  border: #fff;
-  background-color: #ffffff;
-  padding: 0;
-  margin: 0;
-}
-.btn-check:focus + .btn,
-.btn:focus {
-  box-shadow: none;
-}
-login-i:hover {
-  color: rgb(63, 63, 63);
-}
-/* 검색 */
-.navbar__login > div:nth-child(3) > div > ul {
-  padding: 0;
-  margin: 0;
-  border-width: 0;
-  border-color: #ffffff;
-  width: 250px;
-}
-.navbar__login > div:nth-child(3) > div > ul > li {
-  padding-right: 0;
-}
-body > nav > ul.navbar__login > div:nth-child(3) > div > ul {
-  max-width: 70rem;
-  min-width: 20rem;
-  bottom: 0px;
-}
-#header > nav > ul.navbar__login > div:nth-child(3) > div > button {
-  color: #fff;
-  background-color: white;
-  border-color: white;
-  box-shadow: 0 0 0 0rem rgb(130 138 145 / 50%);
-}
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-.btn-check:focus+.btn-secondary, .btn-secondary:focus {
-    color: #fff;
-    background-color: #fff;
-    border-color: #fff;
-    box-shadow: 0 0 0 0rem rgb(130 138 145 / 50%);
-}
-.btn-secondary:focus {
-  color: #fff;
-  background-color: #fff;
-  border-color: #fff;
-  box-shadow: 0 0 0 0rem rgb(130 138 145 / 50%);
-}
-body > nav > ul.navbar__login > div:nth-child(1) > div > button::after {
-  display: none;
-}
-.dropdown-menu {
-    position: absolute;
-    z-index: 1000;
-    display: none;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    margin: 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: transparent !important;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 0.25rem;
+	display: flex;
+	font-weight: 700;
+	align-items: baseline;
+	list-style: none;
+	padding-left: 0;
+	padding-top: 1px;
 }
 
+.navbar__login login-i {
+	font-size: 24px;
+	padding: 0px 15px;
+}
+
+.navbar__login li {
+	padding: 8px 12px 0px 0px;
+}
+/* 알림 */
+.navbar__login>div>div>button>a>login-i {
+	padding-right: 0;
+	margin-right: 0;
+}
+
+.navbar__login>div>div>button {
+	border: #fff;
+	border-color: #fff;
+	background-color: white;
+	padding: 0;
+	margin: 0;
+}
+
+.btn-check:focus+.btn-secondary, .btn-secondary:focus {
+	color: #fff;
+	background-color: #ffffff;
+	border-color: #ffffff;
+	padding: 0;
+	margin: 0;
+}
+
+ul.navbar__login>div:nth-child(1)>div>button:hover, ul.navbar__login>div:nth-child(3)>div>button:hover
+	{
+	border: #fff;
+	background-color: #ffffff;
+	padding: 0;
+	margin: 0;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+	box-shadow: none;
+}
+
+login-i:hover {
+	color: rgb(63, 63, 63);
+}
+/* 검색 */
+.navbar__login>div:nth-child(3)>div>ul {
+	padding: 0;
+	margin: 0;
+	border-width: 0;
+	border-color: #ffffff;
+	width: 250px;
+}
+
+.navbar__login>div:nth-child(3)>div>ul>li {
+	padding-right: 0;
+}
+
+body>nav>ul.navbar__login>div:nth-child(3)>div>ul {
+	max-width: 70rem;
+	min-width: 20rem;
+	bottom: 0px;
+}
+
+#header>nav>ul.navbar__login>div:nth-child(3)>div>button {
+	color: #fff;
+	background-color: white;
+	border-color: white;
+	box-shadow: 0 0 0 0rem rgb(130 138 145/ 50%);
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0.25rem;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-check:focus+.btn-secondary, .btn-secondary:focus {
+	color: #fff;
+	background-color: #fff;
+	border-color: #fff;
+	box-shadow: 0 0 0 0rem rgb(130 138 145/ 50%);
+}
+
+.btn-secondary:focus {
+	color: #fff;
+	background-color: #fff;
+	border-color: #fff;
+	box-shadow: 0 0 0 0rem rgb(130 138 145/ 50%);
+}
+
+body>nav>ul.navbar__login>div:nth-child(1)>div>button::after {
+	display: none;
+}
+
+.dropdown-menu {
+	position: absolute;
+	z-index: 1000;
+	display: none;
+	min-width: 10rem;
+	padding: 0.5rem 0;
+	margin: 0;
+	font-size: 1rem;
+	color: #212529;
+	text-align: left;
+	list-style: none;
+	background-color: transparent !important;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, .15);
+	border-radius: 0.25rem;
+}
 </style>
 
 <nav class="navbar__">
-    <div><!-- 공간, 삭제하지 마세요 --></div>
+	<div>
+		<!-- 공간, 삭제하지 마세요 -->
+	</div>
 
-    <div class="navbar__logo">
-        <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
-    </div>
+	<div class="navbar__logo">
+		<a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+	</div>
 
-    <ul class="navbar__menu">
-        <li><a href="">로그인</a></li>
-        <li><a href="">회원가입</a></li>
-        <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
-    </ul>
+	<ul class="navbar__menu">
+		<li><a href="">로그인</a></li>
+		<li><a href="">회원가입</a></li>
+		<a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a>
+		</li>
+	</ul>
 
-    <ul class="navbar__login">
-        <!-- 알림 -->
-        <div class="btn-group"> 
-            <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                    <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
-                </button>
-            </div>
-        </div>
+	<ul class="navbar__login">
+		<!-- 알림 -->
+		<div class="btn-group">
+			<div class="btn-group">
+				<button id="login-btn" class="logout">
+					<a href="../Login/login.html"; style="margin-right:20px;">로그인</a>
+					
+				</button>
+				<button id="logout-btn" class="login">
+					<a href="../main/main.html"; style="margin-right:20px;">로그아웃</a>
+				</button>
 
-        <!-- 마이페이지 -->
-        <a href="../member/mypage.html"><login-i class="fa-solid fa-user-large"></login-i></a> 
+				<button type="button" class="btn btn-secondary dropdown-toggle"
+					data-bs-toggle="dropdown" data-bs-display="static"
+					aria-expanded="false">
+					<a href=""><login-i class="fa-solid fa-bell"></login-i></a>
+				</button>
 
-        <!-- 검색 -->
-        <div class="btn-group"> 
-            <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                    <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-lg-end">
-                  <li>
-                    <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                </li>
-                </ul>
-            </div>
-        </div> 
 
-        <!-- 지도 -->
-        <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a> 
-    </ul>
+			</div>
+		</div>
+		
+		<!-- 마이페이지 -->
+		<a href="../member/mypage.html"><login-i
+				class="fa-solid fa-user-large"></login-i></a>
+
+		<!-- 검색 -->
+		<div class="btn-group">
+			<div class="btn-group">
+				<button type="button" class="btn btn-secondary dropdown-toggle"
+					data-bs-toggle="dropdown" data-bs-display="static"
+					aria-expanded="false">
+					<a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i>
+						</login-i></a>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-lg-end">
+					<li>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control"
+								placeholder="Search Input" aria-label="Username"
+								aria-describedby="basic-addon1">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 지도 -->
+		<a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
+	</ul>
 </nav>
+
+<script>
+css(".login", "display", "none");
+
+fetch("/member/getLoginUser").then(function(response) {
+   return response.json();
+}).then(function(result) {
+   if (result.status == "success") {
+      css(".login", "display", "");
+      css(".logout", "display", "none");
+   }
+});
+
+function css(selector, name, value) {
+   var el = document.querySelectorAll(selector);
+  for (var e of el) {
+    e.style[name] = value;
+  }
+}
+
+
+document.querySelector("#logout-btn").onclick = function() {
+  fetch("/member/signout").then(function(response) {
+     location.reload();
+  });
+};
+</script>

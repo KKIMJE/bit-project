@@ -1,9 +1,15 @@
 package com.bitproject.controller;
 
+import static com.bitproject.controller.ResultMap.FAIL;
+import static com.bitproject.controller.ResultMap.SUCCESS;
+import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.bitproject.domain.AlcoholDetail;
+import com.bitproject.domain.Member;
 import com.bitproject.service.AlcoholDetailService;
 
 @RestController 
@@ -24,22 +30,37 @@ public class AlcoholDetailController {
     return alcoholDetailService.targetList(targetNo, pageSize, pageNo);
   }
 
-
-
-  //  @RequestMapping("/alcohol/add")
-  //  public Object add(AlcoholDetail alcoholDetail) {
-  //    return alcoholDetailService.insert(alcoholDetail);
-  //  }
+  @PostMapping("/alcohol/add")
+  public Object add(AlcoholDetail alcoholDetail, HttpSession session) {
+    Member member = (Member) session.getAttribute("loginUser");
+    alcoholDetail.setWriter(member);
+    int count = alcoholDetailService.add(alcoholDetail);
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("게시글 작성자가 아닙니다.");
+    }
+  }
 
 
   @RequestMapping("/alcohol/get")
   public Object get(int no) {
     AlcoholDetail alcoholDetail = alcoholDetailService.get(no);
     if (alcoholDetail == null) {
-      return "";
+      return new ResultMap().setStatus(FAIL).setData("해당 번호의 데이터가 없습니다.");
     }
+    return new ResultMap().setStatus(SUCCESS).setData(alcoholDetail);
+  }
+
+  @RequestMapping("/alcohol/getfilt")
+  public List<AlcoholDetail> get(String  filt, String value) {
+    List<AlcoholDetail> alcoholDetail = alcoholDetailService.get(filt, value);
+    //    if (member == null) {
+    //      return ;
+    //    }
     return alcoholDetail;
   }
+
 
   @RequestMapping("/alcohol/size")
   public int size() {
@@ -52,13 +73,31 @@ public class AlcoholDetailController {
   }
 
 
-  //  @RequestMapping("/alcohol/update")
-  //  public Object update(AlcoholDetail alcoholDetail) {
-  //    return alcoholDetailService.update(alcoholDetail);
-  //  }
+  @RequestMapping("/alcohol/update")
+  public Object update(AlcoholDetail alcoholDetail, HttpSession session) {
+    Member member = (Member) session.getAttribute("loginUser");
+    alcoholDetail.setWriter(member);
+    int count = alcoholDetailService.update(alcoholDetail);
 
-  //  @RequestMapping("/alcohol/delete")
-  //  public Object delete(int no) {
-  //    return alcoholDetailService.delete(no);
-  //  }
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("게시글 작성자가 아닙니다.");
+    }
+
+  }
+
+  @RequestMapping("/alcohol/delete")
+  public Object delete(int no, HttpSession session) {
+    Member member = (Member) session.getAttribute("loginUser");
+    AlcoholDetail alcoholDetail = new AlcoholDetail();
+    alcoholDetail.setWriter(member);
+    alcoholDetail.setAlcoholDetailNo(no);
+    int count = alcoholDetailService.delete(alcoholDetail);
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("게시글 작성자가 아닙니다.");
+    }
+  }
 }

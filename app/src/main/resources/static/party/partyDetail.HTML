@@ -149,77 +149,14 @@
 
             <div class="btn-common btn-common-board">
                 <button type="button" class="button-font btn-option">수정</button>
-                <button type="button" class="button-font btn-option">삭제</button>
+                <button type="button" class="button-font btn-option delete">삭제</button>
             </div>
 
+            <!-- 댓글 -->
             <div class="party-comment card">
                 <div class="card-header">댓글</div>
-                <div class="party-comment-fst">
-                    <div>
-                        <img class="profile-img people" src="img/profile_sumi.jpg">
-                    </div>
-                    <div>
-                        <div class="comment-text">
-                            <p class="people-name">젠틀맨이다</p>
-                            <div class="comment-content">오우 강남에 미인이 나타나셨다.
-                                라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-                            </div>
-                        </div>
-                        <div class="comment-footer">
-                            <p class="comment-datetime">2022-01-01 22:13:10</p>
-                            <div class="comment-option">
-                                <button type="button" class="">
-                                    <i class="fa-solid fa-triangle-exclamation"></i>
-                                    <span>&nbsp;신고</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="party-comment-fst">
-                    <div>
-                        <img class="profile-img people" src="img/profile_sumi.jpg">
-                    </div>
-                    <div>
-                        <div class="comment-text">
-                            <p class="people-name">젠틀맨이다</p>
-                            <div class="comment-content">오우 강남에 미인이 나타나셨다.
-                                라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-                            </div>
-                        </div>
-                        <div class="comment-footer">
-                            <p class="comment-datetime">2022-01-01 22:13:10</p>
-                            <div class="comment-option">
-                                <button type="button">
-                                    <i class="fa-solid fa-triangle-exclamation"></i>
-                                    <span>&nbsp;신고</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="party-comment-fst">
-                    <div>
-                        <img class="profile-img people" src="img/profile_sumi.jpg">
-                    </div>
-                    <div>
-                        <div class="comment-text">
-                            <p class="people-name">젠틀맨이다</p>
-                            <div class="comment-content">오우 강남에 미인이 나타나셨다.
-                                라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-                            </div>
-                        </div>
-                        <div class="comment-footer">
-                            <p class="comment-datetime">2022-01-01 22:13:10</p>
-                            <div class="comment-option">
-                                <button type="button" class="report-btn">
-                                    <i class="fa-solid fa-triangle-exclamation"></i>
-                                    <span>&nbsp;신고</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="comment-container">
+                </div>    
             </div>
                 <!-- 기존 것(대댓글) -->
                 <!-- <div class="party-comment-fst">
@@ -284,16 +221,16 @@
             </div>
         </div>
 
-        <form class="comment-write">
-        <div>
-            <p>
-                <span class="nickname"></span>님의 글에 댓글 남기기
-            </p>
-            <textarea name="comment" placeholder="댓글을 남겨보세요"></textarea>
-        </div>
-        <div class="btn-common btn-position">
-            <button type="submit" class="button-font btn-complete">작성완료</button>
-        </div>
+        <form class="comment-write" name="commentform">
+            <div>
+                <p>
+                    <span class="nickname"></span>님의 글에 댓글 남기기
+                </p>
+                <textarea name="partyCommentContents" placeholder="댓글을 남겨보세요"></textarea>
+            </div>
+            <div class="btn-common btn-position">
+                <button type="button" class="button-font btn-complete">작성완료</button>
+            </div>
         </form>
         </div>
     </div>

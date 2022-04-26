@@ -2,12 +2,16 @@ package com.bitproject.service.impl;
 
 
 
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.bitproject.dao.MemberDao;
 import com.bitproject.domain.Member;
 import com.bitproject.service.MemberService;
+
+
+
 
 
 
@@ -74,11 +78,20 @@ public class DefaultMemberService implements MemberService {
   }
 
   @Override
-  public Member emailCheck(String email) {
-    Member result = memberDao.emailCheck(email);
+  public int emailCheck(String email) {
+    int result = memberDao.emailCheck(email);
     return result;    
   }
 
+
+
+
+  @Override
+  public void logout(HttpSession session) {
+    // 세션을 모두 초기화시킴 (로그아웃이므로 세션에 저장된 회원정보를 없애야 한다.)
+    // invalidate()메소드를 사용하면 사용자의 id까지 바뀌어버린다.
+    session.invalidate();
+  }
 
 
 }

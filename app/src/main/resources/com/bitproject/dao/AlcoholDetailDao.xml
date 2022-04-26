@@ -19,6 +19,10 @@
     <result column="volume" property="volume"/>
     <result column="characteristic" property="characteristic"/>
     <result column="img" property="img"/>
+    
+    <association property="writer" javaType="member">
+      <id column="mno" property="mno"/>
+    </association>
 
 
 <collection property="stores" ofType="Store">
@@ -45,13 +49,13 @@
     <result column="store_no" property="storeNo"/>
     <result column="store_img" property="storeImg"/>
   </collection>
-
+<!-- 
   <collection property="alcoholSales" ofType="alcoholSales">
     <result column="store_no" property="storeNo"/>
     <result column="alcohol_detail_no" property="alcoholDetailNo"/>
     <result column="price" property="price"/>
   </collection>
-
+ -->
   </resultMap>
   
     <select id="countAll" resultType="int">
@@ -106,30 +110,30 @@
   </select>
 
   
-<!--
+
   <insert id="insert" parameterType="alcoholDetail">
     insert into alcohol_detail(
+      writer,
       alcohol_type_no,
       alcohol_name,
       degree,
       brand,
       origin,
       volume,
-      characteristic,
-      img
+      characteristic
     )
     values(
+    #{writer.mno},
     #{alcoholTypeNo},
     #{alcoholName},
     #{degree},
     #{brand},
     #{origin},
     #{volume},
-    #{characteristic},
-    #{img}
+    #{characteristic}
     )
   </insert>
--->
+
 
 	<select id="findByNo" resultMap="alcoholDetailMap" parameterType="int">
 select
@@ -148,38 +152,53 @@ select
   st.lat,
   st.lng,
   st.status,
-  simg.store_img
+  simg.store_img,
+  m.mno
 from
   alcohol_detail d
   left outer join alcohol_sales alcs on d.alcohol_detail_no=alcs.alcohol_detail_no
   left outer join store st on alcs.store_no=st.store_no
   left outer join store_img simg on alcs.store_no=simg.store_no
+  left outer join member m on d.writer=m.mno
 where
   d.alcohol_detail_no=#{no}
 
   </select>
+  
+  <select id="findByValue" resultMap="alcoholDetailMap" parameterType="String">
+      select
+      alcohol_detail_no,
+      alcohol_type_no,
+      alcohol_name,
+      degree,
+      brand,
+      origin,
+      volume,
+      characteristic,
+      img
+    from 
+      alcohol_detail 
+    where ${filt} like CONCAT('%',#{value},'%')
+</select>
 
 
-
-<!--   <update id="update" parameterType="alcoholDetail">
+  <update id="update" parameterType="alcoholDetail">
     update alcohol_detail set
+    alcohol_name=#{alcoholName},
     alcohol_type_no=#{alcoholTypeNo},
-    name=#{name},
     degree=#{degree},
     brand=#{brand},
     origin=#{origin},
     volume=#{volume},
-    characteristic=#{characteristic},
-    img=#{img}
+    characteristic=#{characteristic}
     where
-      alcohol_detail_no=#{no}
+      alcohol_detail_no=#{alcoholDetailNo} and writer=#{writer.mno}
   </update>
 
-
-  <delete id="delete" parameterType="int">
+ 
+  <delete id="delete" parameterType="alcoholDetail">
     delete from alcohol_detail
-    where alcohol_detail_no=#{no}
+    where alcohol_detail_no=#{alcoholDetailNo} and writer=#{writer.mno}
   </delete>
 
--->
 </mapper>

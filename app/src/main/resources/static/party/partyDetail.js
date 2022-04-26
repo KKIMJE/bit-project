@@ -1,6 +1,6 @@
 // import { partyList } from '../common/api/apiList.js';
 
-var pcbody = document.querySelector(".party-comment-fst")
+var pcbody = document.querySelector(".comment-container")
 
 // URL에서 쿼리스트링(query string)을 추출한다.
 var arr = location.href.split("?"); 
@@ -23,14 +23,16 @@ if (no == null) {
 
 var pTitle = document.querySelector(".party-title");
 var pNickname = document.querySelector(".leader-profile span");
-var pcNickname = document.querySelector(".nickname");
+var pNickname2 = document.querySelector(".nickname");
 var pAlcoholType = document.querySelector(".ptype");
 var pDate = document.querySelector(".pdate");
 var pAlcoholLimit = document.querySelector(".plimit");
 var pFee = document.querySelector(".pfee");
 var pMember = document.querySelector(".pmember");
+//var pCommentContent = document.querySelector(".comment-content");
+// var pcNickname = document.querySelector(".people-name");
 
-  // 서버에서 데이터 가져오기
+// 서버에서 데이터 가져오기
 fetch(`/party/get?no=${no}`)
 .then(function(response) {
     return response.json();
@@ -44,64 +46,119 @@ fetch(`/party/get?no=${no}`)
     }
     console.log(result)
     var party = result.data;
-    console.log(party.maxMember)
 
     pTitle.innerHTML = party.title;
-    pNickname.innerHTML = party.nickName;
+    pNickname.innerHTML = party.writer.nickName;
     pAlcoholType.innerHTML = party.alcoholType;
     pDate.innerHTML = party.meetingDate;
     pAlcoholLimit.innerHTML = party.alcoholLimit;
     pFee.innerHTML = `${party.partyFee}원`;
     pMember.innerHTML = `${party.maxMember}명`;
 
-    pcNickname.innerHTML = party.nickName;
+    pNickname2.innerHTML = party.writer.nickName;
 
-    console.log(pTitle.innerHTML);
+    for (var partyComment of party.partyComments) {
+            pcbody.innerHTML += 
+            `<div class="party-comment-fst">
+                <div>
+                    <img class="profile-img people" src="img/profile_sumi.jpg">
+                </div>
+                <div>
+                    <div class="comment-text">
+                        <p class="people-name">${partyComment.commentWriter.nickName}</p>
+                        <div class="comment-content">
+                            ${partyComment.partyCommentContents}
+                        </div>
+                    </div>
+                    <div class="comment-footer">
+                        <p class="comment-datetime">${partyComment.commentDate}</p>
+                        <div class="comment-option">
+                            <button type="button">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>&nbsp;신고</span>
+                            </button>
+                        </div>
+                    </div>
+            </div>`;
+    }
 });
 
 
 /*****************
-    참여요청 모달
+참여요청 모달
 *****************/
-    $(".button-join").click(function () {
-                Swal.fire({
-                    icon: 'success',
-                    text: '참여요청이 완료되었습니다.',
-                    showCancelButton:false,
-                    confirmButtonColor:'#90d483',
-                    cancelButtonColor: '#90d483',
-                    confirmButtonText:'확인',
-                }).then((result) => {
-                    if(result.isConfirmed) {
-                    // 방장에게 참여요청 보내는 코드 적기
-                }
-                })
-            });
+$(".button-join").click(function () {
+    Swal.fire({
+        icon: 'success',
+        text: '참여요청이 완료되었습니다.',
+        showCancelButton:false,
+        confirmButtonColor:'#90d483',
+        cancelButtonColor: '#90d483',
+        confirmButtonText:'확인',
+    })
+    .then((result) => {
+        if(result.isConfirmed) {
+        // 방장에게 참여요청 보내는 코드 적기
+        }
+    })
+});
 
-            
-/*    for (var partyComment of result) {
-    console.log(partyComment)
-    pcbody.innerHTML += `<div>
-    <img class="profile-img people" src="img/profile_sumi.jpg">
-</div>
-<div>
-    <div class="comment-text">
-        <p class="people-name">젠틀맨이다</p>
-        <div class="comment-content">오우 강남에 미인이 나타나셨다.
-            라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-        </div>
-    </div>
-    <div class="comment-footer">
-        <p class="comment-datetime">2022-01-01 22:13:10</p>
-        <div class="comment-option">
-            <button type="button" class="">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-                <span>&nbsp;신고</span>
-            </button>
-        </div>
-    </div>
-    `;
-}
+/************
+댓글 insert
+************/
+$(".btn-complete").click(function () {
+
+    var pComment = document.querySelector("textarea[name=partyCommentContents]");
+
+    if (pComment.value == "") {
+        alert("내용을 입력해주세요.");
+        return;
+    } 
+
+    var cf = new FormData(document.forms.namedItem("commentform"));
+    
+    fetch(`/partyComment/add?no=${no}`, {
+        method: "POST",
+        body: new URLSearchParams(cf)
+    }).then(function(response) {
+        console.log(response);
+        return response.json();
+    })
+    .then(function(result) {
+        console.log(result);
+        if (result.status == "success") {
+            pComment.value = '';
+            location.reload();
+            // 업데이트 호출해야 함.
+        } else {
+            alert("실패");
+        }
+    });
+});
+
+
+/************
+모임 delete
+************/
+$(".delete").click(function () {
+    fetch(`/party/delete?no=${no}`,{
+        method: "DELETE"
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(result) {
+    console.log(result);
+        if (result.status == "success") {
+            alert("해당 모임을 삭제하였습니다.")
+            location.href = "/party/partyList.html";
+        } else {
+            alert("모임 삭제를 실패하였습니다.");
+        }
+    });
+})
+
+
 
     /*<div>
         <img class="profile-img people" src="img/profile_sumi.jpg">

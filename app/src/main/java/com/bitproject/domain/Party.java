@@ -7,9 +7,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Party {
   int partyNo;
-  int mno;
-  String nickName;
-  String mImg;
+  Member writer;
   String title;
   String contents;
   String partyFee;
@@ -22,29 +20,18 @@ public class Party {
   String address;
   int storeNo;
   List<PartyComment> partyComments;
+
   public int getPartyNo() {
     return partyNo;
   }
   public void setPartyNo(int partyNo) {
     this.partyNo = partyNo;
   }
-  public int getMno() {
-    return mno;
+  public Member getWriter() {
+    return writer;
   }
-  public void setMno(int mno) {
-    this.mno = mno;
-  }
-  public String getNickName() {
-    return nickName;
-  }
-  public void setNickName(String nickName) {
-    this.nickName = nickName;
-  }
-  public String getmImg() {
-    return mImg;
-  }
-  public void setmImg(String mImg) {
-    this.mImg = mImg;
+  public void setWriter(Member writer) {
+    this.writer = writer;
   }
   public String getTitle() {
     return title;
@@ -118,16 +105,16 @@ public class Party {
   public void setPartyComments(List<PartyComment> partyComments) {
     this.partyComments = partyComments;
   }
-
   @Override
   public String toString() {
-    return "Party [partyNo=" + partyNo + ", mno=" + mno + ", nickName=" + nickName + ", mImg="
-        + mImg + ", title=" + title + ", contents=" + contents + ", partyFee=" + partyFee
-        + ", meetingDate=" + meetingDate + ", maxMember=" + maxMember + ", alcoholType="
-        + alcoholType + ", alcoholLimit=" + alcoholLimit + ", regDate=" + regDate + ", updateDate="
-        + updateDate + ", address=" + address + ", storeNo=" + storeNo + ", partyComments="
-        + partyComments + "]";
+    return "Party [partyNo=" + partyNo + ", writer=" + writer + ", title=" + title + ", contents="
+        + contents + ", partyFee=" + partyFee + ", meetingDate=" + meetingDate + ", maxMember="
+        + maxMember + ", alcoholType=" + alcoholType + ", alcoholLimit=" + alcoholLimit
+        + ", regDate=" + regDate + ", updateDate=" + updateDate + ", address=" + address
+        + ", storeNo=" + storeNo + ", partyComments=" + partyComments + "]";
   }
+
+
 
 
 }

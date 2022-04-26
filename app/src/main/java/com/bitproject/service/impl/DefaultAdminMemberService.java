@@ -36,59 +36,10 @@ public class DefaultAdminMemberService implements AdminMemberService {
     return adminMemberDao.countByMemberType(memberStatus);
   }
 
-
-
-  //  @Override
-  //
-  //  public int add(Member member) {
-  //
-  //    return memberDao.insert(member);
-  //
-  //  }
-  //
-  //
-  //
-  //  @Override
-  //
-  //  public Member getMemberByEmailAndPassword(String email, String password) {
-  //
-  //    return memberDao.findByEmailAndPassword(email, password);
-  //
-  //  }
-  //
-  //
-  //
-  //  @Override
-  //
-  //  public Member getMemberByEmail(String email) {
-  //
-  //    return memberDao.findByEmail(email);
-  //
-  //  }
-  //
-  //
-  //
-  //  @Override
-  //
-  //  public Member getMemberByMno(int mno) {
-  //
-  //    return memberDao.findByMno(mno);
-  //
-  //  }
-  //
-  //
-  //
-  //  @Override
-  //
-  //  @Transactional
-  //
-  //  public int update(Member member) {
-  //
-  //    return memberDao.update(member);
-  //
-  //  }
-
-
+  @Override
+  public List<Member> get(String filt, String value) {
+    return adminMemberDao.findByValue(filt, value);
+  }
 
 
 

@@ -14,6 +14,8 @@ public interface AdminMemberDao {
 
   int countByMemberType(boolean memberStatus);
 
+  List<Member> findByValue(@Param("filt") String filt, @Param("value") String value);
+
   //  int countAll();
   //
   //  List<Member> findAll();
