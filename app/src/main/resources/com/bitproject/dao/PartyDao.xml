@@ -83,7 +83,7 @@
   from party p
     inner join member m on p.writer=m.mno
     left outer join party_comment pc on p.party_no=pc.party_no
-    inner join member m2 on pc.commentWriter=m2.mno
+    left outer join member m2 on pc.commentWriter=m2.mno
   where 
     p.party_no=#{no}
   </select>
