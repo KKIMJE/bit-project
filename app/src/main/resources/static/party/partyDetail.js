@@ -159,23 +159,13 @@ $(".delete").click(function () {
 })
 
 
+/************
+모임 update
+************/
+$(".update").click(function () {
+    location.href = `/party/partyFormUpdate.html?no=${no}`
+})
 
-    /*<div>
-        <img class="profile-img people" src="img/profile_sumi.jpg">
-    </div>
-    <div>
-        <div class="comment-text">
-            <p class="people-name">젠틀맨이다</p>
-            <div class="comment-content">오우 강남에 미인이 나타나셨다.
-                라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-            </div>
-        </div>
-        <div class="comment-footer">
-            <p class="comment-datetime">2022-01-01 22:13:10</p>
-            <div class="comment-option">
-                <button type="button" class="">
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                    <span>&nbsp;신고</span>
-                </button>
-            </div>
-        </div>*/
+
+
+

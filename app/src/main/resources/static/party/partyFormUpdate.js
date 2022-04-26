@@ -1,8 +1,6 @@
 /***********************
   summernote 기본 설정
 ***********************/
-
-$(document).ready(function() {
 	$('#summernote').summernote({
     toolbar: [
         // [groupName, [list of button]]
@@ -18,11 +16,79 @@ $(document).ready(function() {
 		  height: 300,                 // 에디터 높이
 		  minHeight: null,             // 최소 높이
 		  maxHeight: null,             // 최대 높이
-		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
-		  lang: "ko-KR",					// 한글 설정
-		  placeholder: '내용을 입력해주세요'	//placeholder 설정
+		  focus: true,                 // 에디터 로딩후 포커스를 맞출지 여부
+		  lang: "ko-KR"			      	 // 한글 설정
 	});
-});
+
+
+/****************************
+  해당 모임의 정보 가져오기
+***************************/
+var arr = location.href.split("?"); 
+
+if (arr.length == 1) {
+    alert("요청 형식이 올바르지 않습니다.")
+    throw "URL 형식 오류!";
+}
+
+var qs = arr[1];
+
+// 쿼리 스트링에서 모임번호 값을 추출한다.
+var params = new URLSearchParams(qs);
+var no = params.get("no");
+
+if (no == null) {
+    alert("해당 모임이 존재하지 않습니다.");
+    throw "파라미터 오류!";
+}
+
+var pTitle = document.querySelector(".party-title");
+
+var pLocation = document.querySelector("input[name=address]");
+var pDate = document.querySelector("input[name=meetingDate]");
+var pAlcoholType = document.querySelector("input[name=alcoholType]");
+var pAlcoholLimit = document.querySelector("input[name=alcoholLimit]");
+var pFee = document.querySelector("input[name=partyFee]");
+var pMember = document.querySelector("input[name=maxMember]");
+
+var content;
+
+// 서버에서 데이터 가져오기
+fetch(`/party/get?no=${no}`)
+.then(function(response) {
+    return response.json();
+})
+.then(function(result) {
+    // 모임 게시판 상세 정보를 화면에 출력한다.
+    if (result.status == "fail") {
+        window.alert("서버 요청 오류!");
+        console.log(result.data);
+        return;
+    }
+    //console.log(result)
+    var party = result.data;
+
+    console.log(party)
+    
+    pTitle.value = party.title;
+
+    console.log(party.contents);
+    content = party.contents;
+
+    //console.log("#summernote");
+
+    pLocation.value = party.address
+    pDate.value = party.meetingDate;
+    pAlcoholType.value = party.alcoholType;
+    pAlcoholLimit.value = party.alcoholLimit;
+    pFee.value = `${party.partyFee}원`;
+    pMember.value = `${party.maxMember}명`;
+    //pContents.innerHTML = `${party.contents}`;
+    //pNickname2.innerHTML = party.writer.nickName;
+  });
+
+setTimeout(() => {$('.note-editable').text(content)},200)
+
 
 
 /*********************************
@@ -293,10 +359,10 @@ $("#p-date, #p-type, #p-limit, #p-fee, #p-member").click(function(){
 })
 
 
+
 /****************
   폼 데이터 저장
 ****************/
-
 
 //저장버튼 클릭
 $('.save').click(function() {
@@ -308,15 +374,6 @@ $('.save').click(function() {
   var pLimit = document.querySelector("input[name=alcoholLimit]");
   var pFee = document.querySelector("input[name=partyFee]");
   var pMember = document.querySelector("input[name=maxMember]");
-
-  console.log(pTitle.value)
-  console.log(pContent.value)
-  console.log(pLocation.value)
-  console.log(pDate.value)
-  console.log(pType.innerHTML)
-  console.log(pLimit.value)
-  console.log(pFee.value)
-  console.log(pMember.value)
     
   if (pTitle.value == "" || pContent.value == "" || pLocation.value == "" || pDate.value == "" || pType.value == "" || pLimit.value == "" || pFee.value == "" || pMember.value == "") {
     alert("필수 입력 항목이 비어 있습니다.");
@@ -326,7 +383,7 @@ $('.save').click(function() {
     var pb = new FormData(document.forms.namedItem("partyBoard"));
     
     
-    fetch(`/party/add`, {
+    fetch(`/party/update?no=${no}`, {
         method: "POST",
         body: new URLSearchParams(pb)
       }).then(function(response) {
