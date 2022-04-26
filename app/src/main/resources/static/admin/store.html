@@ -7,12 +7,12 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/alcohollist.css">
+  <link rel="stylesheet" href="assets/css/store.css">
   <script src="/node_modules/jquery/dist/jquery.js"></script>
-  <title>야술먹자 - 주류관리</title>
+  <title>야술먹자 - 주점관리</title>
 </head>
 
-<body id="body-pd" onload=" alcoholList(1)">
+<body id="body-pd" onload=" storeList(1)">
   <div class="l-navbar" id="navbar">
     <nav class="nav">
       <div>
@@ -21,16 +21,16 @@
           <a href="#" class="nav__logo">관리자페이지</a>
         </div>
         <div class="nav__list">
-          <a href="/admin/member.html" class="nav__link">
+          <a href="/admin/store.html" class="nav__link">
             <ion-icon name="person-outline" class="nav__icon"></ion-icon>
             <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
-            <span class="nav_name">회원관리</span>
+            <span class="nav_name">주점관리</span>
           </a>
-          <a href="/admin/alcohollist.html" class="nav__link active">
+          <a href="/admin/alcohollist.html" class="nav__link">
             <ion-icon name="wine-outline" class="nav__icon"></ion-icon>
             <span class="nav_name">주종관리</span>
           </a>
-          <a href="/admin/store.html" class="nav__link">
+          <a href="/admin/store.html" class="nav__link active">
             <ion-icon name="storefront-outline" class="nav__icon"></ion-icon>
             <span class="nav_name">주점관리</span>
           </a>
@@ -62,37 +62,42 @@
   </div>
 
 
-  <h1 class="x-admin-title" style="margin:20px 0 20px 20px;">주류관리</h1>
+  <h1 class="x-admin-title" style="margin:20px 0 20px 20px;">주점관리</h1>
   <hr>
-  <div class="alcohol-page">
-    <div class="x-alcohol-page">
-      <div class="x-alcohol-curr">
-        <h2>주류등록현황</h2>
+  <div class="store-page">
+    <div class="x-store-page">
+      <div class="x-store-curr">
+        <h2>회원현황(명)</h2>
         <table id="x-curr-table">
         </table>
       </div>
 
-      <div class="x-alcohol-search">
+      <div class="x-store-search">
           <div class="x-search-div">
             <select style="height:22px;">
-              <option value="alcohol_name">이름</option>
-              <option value="alcohol_type_no">주종</option>
+              <option value="email">이메일</option>
+              <option value="nickName">닉네임</option>
             </select>
             <input type="text">
             <button type="button" class="x-search-btn">검색</button>
-            <button onclick="location.href='alcoholadd.html'" class="alcohol-add-btn">주류추가</button>
           </div>
       </div>
-      <table id="x-alcohol-table">
+
+      <table id="x-store-table">
         <thead>
           <tr style="height:50px;">
             <th>번호</th>
-            <th>주종</th>
+            <th>이메일</th>
             <th>이름</th>
-            <th>도수(%)</th>
-            <th>브랜드</th>
-            <th>원산지</th>
-            <th>용량(병, ml)</th>
+            <th>닉네임</th>
+            <th>성별</th>
+            <th>생년월일</th>
+            <th>전화번호</th>
+            <th>소셜여부</th>
+            <th>회원타입</th>
+            <th>가입일</th>
+            <th>회원상태</th>
+            <th>제재횟수</th>
             <th>관리</th>
           </tr>
         </thead>
@@ -112,7 +117,7 @@
   <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   <!-- JS -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/alcohollist.js"></script>
+  <script src="assets/js/store.js"></script>
 
 </body>
 

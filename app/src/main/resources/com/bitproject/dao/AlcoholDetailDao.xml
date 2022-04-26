@@ -120,7 +120,8 @@
       brand,
       origin,
       volume,
-      characteristic
+      characteristic,
+      img
     )
     values(
     #{writer.mno},
@@ -130,7 +131,8 @@
     #{brand},
     #{origin},
     #{volume},
-    #{characteristic}
+    #{characteristic},
+    #{img}
     )
   </insert>
 
@@ -190,7 +192,8 @@ where
     brand=#{brand},
     origin=#{origin},
     volume=#{volume},
-    characteristic=#{characteristic}
+    characteristic=#{characteristic},
+    img=#{img}
     where
       alcohol_detail_no=#{alcoholDetailNo} and writer=#{writer.mno}
   </update>

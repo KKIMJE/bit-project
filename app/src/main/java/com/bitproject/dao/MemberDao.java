@@ -25,4 +25,3 @@ public interface MemberDao {
   int emailCheck(String email);
 
 }
-
