@@ -15,10 +15,9 @@ public class Party {
   String maxMember;
   String alcoholType;
   String alcoholLimit;
+  String address;
   Timestamp regDate;
   Timestamp updateDate;
-  String address;
-  int storeNo;
   List<PartyComment> partyComments;
 
   public int getPartyNo() {
@@ -93,12 +92,6 @@ public class Party {
   public void setAddress(String address) {
     this.address = address;
   }
-  public int getStoreNo() {
-    return storeNo;
-  }
-  public void setStoreNo(int storeNo) {
-    this.storeNo = storeNo;
-  }
   public List<PartyComment> getPartyComments() {
     return partyComments;
   }
@@ -111,7 +104,7 @@ public class Party {
         + contents + ", partyFee=" + partyFee + ", meetingDate=" + meetingDate + ", maxMember="
         + maxMember + ", alcoholType=" + alcoholType + ", alcoholLimit=" + alcoholLimit
         + ", regDate=" + regDate + ", updateDate=" + updateDate + ", address=" + address
-        + ", storeNo=" + storeNo + ", partyComments=" + partyComments + "]";
+        + ", partyComments=" + partyComments + "]";
   }
 
 
