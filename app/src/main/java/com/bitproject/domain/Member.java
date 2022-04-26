@@ -23,4 +23,7 @@ public class Member {
   int blockAccept;
   String memberStatus;
   int storeCount;
-}
+ 
+
+  }
+

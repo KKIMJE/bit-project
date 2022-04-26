@@ -85,9 +85,9 @@ table tbody td  { border-collapse: separate;
      font-weight:bold;
    }
    
-  #ig{ margin-left: 280px; 
+  #ig{ 
          width:60px; 
-         height:60px; 
+         height:80px; 
          vertical-align:middle !important;
           margin-top:-16px;}
   

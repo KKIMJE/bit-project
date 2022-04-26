@@ -30,7 +30,10 @@ public class DefaultStoreService  implements StoreService {
     Store store = storeDao.findByNo(no);
     return store;
   }
-
+  
+ 
+  
+  
   @Override
   @Transactional
   public int update(Store store) {
@@ -51,6 +54,12 @@ public class DefaultStoreService  implements StoreService {
   @Override
   public List<Store> findByStoreAlc(int no) {
     return storeDao.findByStoreAlc(no);
+  }
+  
+  @Override
+  public Store getStoreByStoreNo(int StoreNo) {
+    Store store = storeDao.findStoreBystoreNo(StoreNo);
+    return store;
   }
 
 }

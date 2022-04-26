@@ -81,10 +81,10 @@
     select 
       mno,
       name,
+      nickname,
       gender,
       birth,
       email,
-      password,
       tel,
       m_img,
       self_introduction
@@ -100,14 +100,16 @@
     update member set
     <!--m_img=#{mImg}-->
     <!--name=#{name},-->
-    nickname=#{nickname},
+    nickname=#{nickName},
     gender=#{gender},
     birth=#{birth},
    <!-- email=#{email},-->
+   <if test="password != '' ">
     password=password(#{password}),
-    tel=#{tel}
-    <!--social_accept={socialAccept},
-    self_introduction=#{selfIntroduction}-->
+   </if>
+    tel=#{tel},
+    <!--social_accept={socialAccept},-->
+    self_introduction=#{selfIntroduction}
     where 
     mno=#{mno}  <!-- and memberstatus=0 -->
   </update>
@@ -138,7 +140,7 @@
        m.mno=#{mno}  <!-- and memberstatus=0 -->
   </select>
   
-  <select id="emailCheck" parameterType="member" resultType="member">
+<select id="emailCheck" parameterType="member" resultType="int">
   select count(*)
   From member
   where email = #{email}

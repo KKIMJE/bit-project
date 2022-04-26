@@ -89,7 +89,6 @@ function toggleImg() {
         xBirth.value = member.birth;
         xEmail.value = member.email;
         xTel.value = member.tel;
-        xPassword.value=member.password;
         xSelfIntroduction.value = member.selfIntroduction;
         if( member.gender ==  true ){
           xGender.value="남자";
@@ -103,7 +102,7 @@ function toggleImg() {
 
   /* 수정 버튼 */
     document.querySelector(".submit-change-btn").onclick = function() {
-      if (xName.value == "" ||  xTel.value == "" || xPassword.value == "" ) {
+      if (xName.value == "" ||  xTel.value == ""  ) {
       window.alert("필수 입력 항목이 비어 있습니다.");
       return;
     }
