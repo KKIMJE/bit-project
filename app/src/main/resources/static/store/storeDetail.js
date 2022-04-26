@@ -95,11 +95,12 @@ $(".choicePhoto").click(function() {
   listSortPhoto(dataNm);
 });
 
+// 주점찜
 let cntSwitch = true
 $(".storeMnoCnt").click(function() {
   while(cntSwitch) { 
     let str = $(".storeMnoCnt").html()
-    count = str.replace(/[^0-9]/g,''); // int만 추출
+    count = str.replace(/[^0-9]/g,''); // int 숫자만 추출
     count++
     cntSwitch = false
   }
