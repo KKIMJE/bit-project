@@ -41,6 +41,11 @@ public class DefaultAdminMemberService implements AdminMemberService {
     return adminMemberDao.findByValue(filt, value);
   }
 
+  @Override
+  public int update(int no) {
+    return adminMemberDao.update(no);
+  }
+
 
 
 }

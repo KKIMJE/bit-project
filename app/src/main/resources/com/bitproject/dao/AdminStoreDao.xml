@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 
+  namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
+ -->
+<mapper namespace="com.bitproject.dao.AdminStoreDao">
+
+  <!-- 테이블의 컬럼과 객체 필드를 연결한다. -->
+  <resultMap type="store" id="storeMap">
+    <id column="store_no" property="storeNo"/>
+    <result column="business_registration_no" property="businessRegistrationNo"/>
+    <result column="business_registration" property="businessRegistration"/>
+    <result column="store_name" property="storeName"/>
+    <result column="address" property="address"/>
+    <result column="tel" property="tel"/>
+    <result column="hour" property="hour"/>
+    <result column="introduction" property="introduction"/>
+    <result column="evaluation_score" property="evaluationScore"/>
+    <result column="reservation_accept" property="reservationAccept"/>
+    <result column="max_member" property="maxMember"/>
+    <result column="lat" property="lat"/>
+    <result column="lng" property="lng"/>
+    <result column="place_id" property="placeId"/>
+    <result column="oper" property="oper"/>
+    <result column="status" property="status"/>
+
+  </resultMap>
+
+  <!-- 
+    id => 인터페이스의 메서드 이름과 일치해야 한다.
+   -->
+   
+  <select id="countAll" resultType="int">
+   select count(*) from store
+  </select>
+   
+   
+  <select id="findAll" resultMap="storeMap">
+    select 
+      store_no,
+      business_registration_no,
+      store_name,
+      address,
+      tel,
+      hour,
+      introduction,
+      evaluation_score,
+      reservation_accept,
+      max_member,
+      lat,
+      lng,
+      place_id,
+      oper,
+      status
+    from
+    	store
+    order by 
+      store_no desc
+      limit #{offset}, #{rowCount}
+  </select>
+  
+  <select id="findByValue" resultMap="storeMap" parameterType="String">
+    select 
+      store_no,
+      business_registration_no,
+      store_name,
+      address,
+      tel,
+      hour,
+      introduction,
+      evaluation_score,
+      reservation_accept,
+      max_member,
+      lat,
+      lng,
+      place_id,
+      oper,
+      status
+    from
+      store
+    where ${filt} like CONCAT('%',#{value},'%')
+  </select>
+
+  <delete id="delete" parameterType="int">
+    delete from store 
+    where store_no=#{storeNo}
+  </delete>
+
+</mapper>
