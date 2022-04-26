@@ -128,7 +128,7 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
     })
    
 
-        document.querySelector("#delete").onclick = function() {
+     document.querySelector("#delete").onclick = function() {
     fetch(`/store/delete?no=${no}`)
       .then(function(response) {
         return response.json();
@@ -139,11 +139,12 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
         } else {
           //window.alert("주점 삭제 실패!");
           location.href = "/ceo/storemanagement.html";
-          console.log(result.data);
+          console.log(result);
         }
       });
   };
-      
+
+
        document.querySelector("#next").onclick = function() {
         window.location.href = "/ceo/storeChange2.html";
       };
