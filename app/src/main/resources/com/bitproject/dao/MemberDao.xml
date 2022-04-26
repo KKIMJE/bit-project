@@ -33,7 +33,7 @@
     id => 인터페이스의 메서드 이름과 일치해야 한다.
    -->
 
-   <insert id="insert" parameterType="member">
+  <insert id="insert" parameterType="member">
     insert into member(email,
     password,
     name,
@@ -54,7 +54,7 @@
     #{nickName})
   </insert>
   
-    <select id="findByEmailAndPassword" resultMap="memberMap">
+  <select id="findByEmailAndPassword" resultMap="memberMap">
     select 
       mno,
       name,
@@ -66,7 +66,7 @@
       <!-- and memberstatus=0 -->
   </select>
   
-      <select id="findByEmail" resultMap="memberMap">
+  <select id="findByEmail" resultMap="memberMap">
     select 
       mno,
       name,
@@ -74,10 +74,10 @@
     from 
       member
     where
-      email=#{email}  <!-- and memberstatus=0 -->
+      email=#{email}  
   </select>
   
- <select id="findByMno" resultMap="memberMap">
+  <select id="findByMno" resultMap="memberMap">
     select 
       mno,
       name,
@@ -96,7 +96,7 @@
   
   
   
-   <update id="update" parameterType="member">
+  <update id="update" parameterType="member">
     update member set
     <!--m_img=#{mImg}-->
     <!--name=#{name},-->
@@ -112,7 +112,7 @@
     mno=#{mno}  <!-- and memberstatus=0 -->
   </update>
   
-    <select id="findByNo" resultMap="memberMap" parameterType="int">
+  <select id="findByNo" resultMap="memberMap" parameterType="int">
     select
       m.m_img,
       m.mno, 
@@ -143,6 +143,8 @@
   From member
   where email = #{email}
   </select>
+  
+ 
   
   
   <!-- 
