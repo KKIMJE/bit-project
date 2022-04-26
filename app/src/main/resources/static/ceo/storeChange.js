@@ -38,6 +38,16 @@ window.onload = function(){
   //    alert("해당번호의 가게가 없습니다!");
   //    throw "파라미터 오류!";
  // }
+ var arr = location.href.split("?");
+// console.log(arr);
+
+var qs = arr[1];
+// console.log(qs);
+
+var params = new URLSearchParams(qs);
+var no = params.get("no");
+console.log(no);
+ 
 
 //가게명 주소 주점테마 전화번호 영업시간 가게소개 사업자등록번호 , 태그(아직추가안함), 파일업로드 (추가안함)
 var xStoreNo = document.querySelector("input[name=storeNo]");
@@ -59,20 +69,20 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
     
 
   // 3) 서버에서 데이터 가져오기
-  fetch(`/store/get`)
+  fetch(`/store/get?no=${no}`)
     .then(function(response) {
       return response.json();
     })
     .then(function(result) {
        
       // 4) 상세 정보를 화면에 출력한다.
-      if (result.status == "fail") {
+    /*  if (result.status == "fail") {
         window.alert("서버 요청 오류!");
         console.log(result);
         return;
-      }
-      console.log(result.data);
-      var store = result.data;
+      }*/
+      //console.log(result.data);
+      var store = result;
       xStoreNo.value = store.storeNo;
       xStoreName.value = store.storeName;
       xAddress.value = store.address;
@@ -84,7 +94,7 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
       xReservationAccept.value = store.reservationAccept;
       xMaxMember.value = store.maxMember;
       //파일업로드추가해야함
-   
+
   /* if (store.Img != null) {
         xPhoto.src = "/store/img?filename=" + store.img;
       }*/
@@ -101,6 +111,7 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
     fetch("/store/update", {
         method: "POST",
         body: new URLSearchParams(fd)
+    
       }).then(function(response) {
         return response.json();
       })
@@ -108,18 +119,30 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
           if (result == "success") {
           location.href = "/ceo/storeChange.html";
         } else {
-          window.alert("주점 변경 실패!");
+         // window.alert("주점 변경 실패!");
+          console.log(result);
+        }
+      });
+    };
+ 
+    })
+   
+
+        document.querySelector("#delete").onclick = function() {
+    fetch(`/store/delete?no=${no}`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        if (result.status == "success") {
+          location.href = "/ceo/storemanagement.html";
+        } else {
+          //window.alert("주점 삭제 실패!");
+          location.href = "/ceo/storemanagement.html";
           console.log(result.data);
         }
       });
   };
- 
- 
-    document.querySelector("#exit").onclick = function() {
-        window.location.href = "/ceo/storemanagement.html";
-      };
-
-      
       
        document.querySelector("#next").onclick = function() {
         window.location.href = "/ceo/storeChange2.html";
@@ -141,5 +164,5 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
         }
       });
       
-  };*/
+  )};*/
   

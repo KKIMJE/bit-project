@@ -1,11 +1,8 @@
 package com.bitproject.controller;
 
-import static com.bitproject.controller.ResultMap.FAIL;
 import static com.bitproject.controller.ResultMap.SUCCESS;
 import java.util.List;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.bitproject.domain.Store;
@@ -24,7 +21,7 @@ public class StoreController {
 
   @RequestMapping("/list")
   public Object list() {     
-    return storeService.list();
+    return new ResultMap().setStatus(SUCCESS).setData(storeService.list());
   }
 
   @RequestMapping("/add")
@@ -32,16 +29,27 @@ public class StoreController {
     System.out.println("store: " + store);
     return storeService.add(store);
   }
-
-
+  
   @RequestMapping("/get")
   public Object get(int no) {
-   Store store = storeService.get(no);
+    Store store = storeService.get(no);
+    //System.out.println("StoreNo: " + no + ", Get Store: " + store);
+    if (store == null) {
+      return "";
+    }
+    return store;
+  }
+
+  /*@RequestMapping("/getStoreNo")
+  public Object getStorebyStoreNo(int storeNo) {
+    Store store = storeService.get(storeNo);
     if (store == null) {
       return new ResultMap().setStatus(FAIL).setData("해당 번호의 게시글이 없습니다.");
     }
     return new ResultMap().setStatus(SUCCESS).setData(store);
-  }
+  }*/
+
+    
   
   @RequestMapping("/getMnoCnt")
   public int getMnoCnt(int no) {
@@ -55,17 +63,10 @@ public class StoreController {
     return storeService.findByStoreAlc(no);
   }
 
-  @PostMapping("/update")
-  public Object update(Store store, HttpSession session) {
-    Store loginmember = (Store) session.getAttribute("loginUser");
-    store.setStoreNo(loginmember.getStoreNo());
-   int count = storeService.update(store);
-    
-    if(count ==1) {
-      return new ResultMap().setStatus(SUCCESS);
-    } else {
-      return new ResultMap().setStatus(FAIL).setData("유효하지 않거나 게시글 작성자가 아닙니다.");
-    }
+  @RequestMapping("/update")
+  public Object update(Store store) {
+    return storeService.update(store);
+   
   }
 
   @RequestMapping("/delete")
