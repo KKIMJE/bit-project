@@ -84,14 +84,10 @@ public class DefaultMemberService implements MemberService {
   }
 
 
-
-
   @Override
   public void logout(HttpSession session) {
     // 세션을 모두 초기화시킴 (로그아웃이므로 세션에 저장된 회원정보를 없애야 한다.)
     // invalidate()메소드를 사용하면 사용자의 id까지 바뀌어버린다.
     session.invalidate();
   }
-
-
 }

@@ -22,10 +22,15 @@ public class Member {
   float score;
   int blockAccept;
   String memberStatus;
+<<<<<<< HEAD
 
 
 
   }
 
+
+=======
+}
+>>>>>>> 41d984f76be342377d974551c9d1a7b82de379b0
 
 
