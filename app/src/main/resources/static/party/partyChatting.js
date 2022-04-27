@@ -77,17 +77,12 @@ const Chat = (function(){
             console.log(response)
             return response.json()
         }).then(function(result) {
-            console.log(result)
+            console.log("채팅 add")
         })
 
         // 통신하는 기능이 없으므로 여기서 receive
         receive(data);
     }
-
-
-
-
-
 
     // 메시지 입력박스 내용 지우기
     function clearTextarea() {
