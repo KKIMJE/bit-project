@@ -34,7 +34,8 @@
    
   <select id="findAll" resultMap="memberMap">
     select 
-      store_count
+      store_count,
+      member_status
     from 
       member
   </select>

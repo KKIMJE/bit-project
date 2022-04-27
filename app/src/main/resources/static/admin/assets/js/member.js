@@ -11,6 +11,7 @@ let totalMemberPage;
 let totalMemberCount = 0;
 let userMemberCount = 0;
 let ceoMemberCount = 0;
+let withdrawMemberCount = 0;
 
 
 // 회원 카운트
@@ -20,12 +21,18 @@ fetch("/admin/member/list")
   })
   .then(result => {
     for (let member of result) {
-      if (member.storeCount == 0) {
+      if (member.storeCount == 0 && member.memberStatus == 0) {
         userMemberCount++
-      } else(
+      }
+      if (member.storeCount > 0 && member.memberStatus == 0) {
         ceoMemberCount++
-      )
-      totalMemberCount = userMemberCount + ceoMemberCount
+      }
+      if (member.memberStatus == 1) {
+        withdrawMemberCount++
+      }
+
+        console.log(ceoMemberCount);
+      totalMemberCount = userMemberCount + ceoMemberCount + withdrawMemberCount
 
       // 회원 현황 테이블
       let currDt = `
@@ -35,6 +42,8 @@ fetch("/admin/member/list")
     <td>${userMemberCount}</td>
     <th>사장회원</th>
     <td>${ceoMemberCount}</td>
+    <th>탈퇴회원</th>
+    <td>${withdrawMemberCount}</td>
     `
       currTable.innerHTML = currDt
     }
@@ -120,7 +129,8 @@ function createList(members) {
    <td>${member.joinDate.split("T", 1)}</td>
    <td>${member.memberStatus}</td>
    <td>${member.blockAccept}</td>
-   <td><button type="button" name="button" class="x-sanction-btn" value="${member.mno}">제재</button><button type="button" name="button" class="x-delete-btn" value="${member.mno}">탈퇴</button></td>
+   <td><button type="button" name="button" class="x-sanction-btn" value="${member.mno}">제재</button>
+   <button type="button" name="button" class="x-delete-btn" value="${member.mno}">탈퇴</button></td>
  </tr>
 `
     if (member.email != "admin@admin.com") {
