@@ -24,6 +24,7 @@ public interface MemberDao {
 
   int update(Member member);
 
-  int emailCheck(String email);
+  int emailCheck(String email); 
+  
 
 }
