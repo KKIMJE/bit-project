@@ -124,7 +124,7 @@
 
 
           <div class="tel">
-            <p class="form_tel">전화번호</p>sp
+            <p class="form_tel">전화번호</p>
             <br> <input name="tel" type="tel"
               class="form_input_tel">
           </div>
@@ -156,14 +156,14 @@
           </div>
 
 
-          <div>
-            <p class="form_check">
-              예약 가능 여부 <br></p>
+          <div style="margin-top:10px;">
+            <p class="form_check">예약 가능 여부 <br></p>
             <center>
-              가능<input name="reservationAccept" id="revOn" type="radio"   class="form_input_check" value="1">
-              불가능<input name="reservationAccept" id="revOff" type="radio"  class="form_input_check" value="0"> 최대인원
-                <input name="maxMember" type="number" class="form_input_box" min="0" max="10000000">
+            가능<input name="reservationAccept"  id="revOn" type="radio"  class="form_input_check" value="1">
+            불가능<input name="reservationAccept"  id="revOff" type="radio" class="form_input_check" value="0">
+            최대인원 <input name="maxMember" id="maxMember" type="number" min="0" max="10000000" class="form_input_box" ><br>
             </center>
+            
               
                 <div style="margin-top:10px;">
             <p class="form_check"> 영업상태 </p><br>
@@ -173,15 +173,10 @@
             </center>
          
           </div>
-
-
-          <center>
-            <div class="file-upload">
-              <div>
-                <input name="file" type="file">
-              </div>
-            </div>
-          </center>
+              <br>
+           <center style="margin-left:20px;"><div class="file-upload">
+     <div><input name="file" type="file"></div>
+    </div> </center>
 
           <center>
             <div class="btn">
