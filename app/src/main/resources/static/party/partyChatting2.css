@@ -1,0 +1,34 @@
+.wrap {
+  width: 960px;
+  display: flex;
+  justify-content: center;
+}
+
+.party-information {
+  font-family: NanumSquareRound;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.party-category {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 5px;
+  width: 100px;
+  font-weight: 500;
+}
+
+.party-title span {
+}
+
+.party-title i {
+  color: rgba(5, 5, 5, 0.795);
+  font-size: 20px;
+}
+
+.party-information-detail {
+  display: flex;
+  justify-content: space-between;
+}
