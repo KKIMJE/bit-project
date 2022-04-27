@@ -78,9 +78,9 @@
       st.store_type_no,
       ss.mno
     from
-    	store s
-    	left outer join store_section_type st on s.store_no=st.store_no
-    	left outer join store_select ss on s.store_no=ss.store_no
+       store s
+       left outer join store_section_type st on s.store_no=st.store_no
+       left outer join store_select ss on s.store_no=ss.store_no
     order by 
       s.store_no desc;
   </select>
@@ -150,7 +150,7 @@
       s.store_no=#{no}
   </select>-->
   
-	<select id="findByNo" resultMap="storeMap" parameterType="int">
+   <select id="findByNo" resultMap="storeMap" parameterType="int">
     select
       s.store_no, 
       s.business_registration_no,
@@ -166,23 +166,23 @@
       s.max_member,
       s.oper,
       s.status,
-	  t.name,
-	  ass.alcohol_detail_no,
-	  ass.price,
-	  acd.alcohol_name as alc_name,
-	  sm.name as sm_name,
-	  sm.price as sm_price,
-	  si.store_img
-	from 
-	  store s
-	  left outer join store_tag st on s.store_no=st.store_no
-	  left outer join tag t on st.tag_no=t.tag_no
-	  left outer join store_menu sm on s.store_no=sm.store_no
-	  left outer join alcohol_sales ass on s.store_no=ass.store_no
-	  left outer join alcohol_detail acd on ass.alcohol_detail_no=acd.alcohol_detail_no
-	  left outer join store_img si on si.store_no=s.store_no 
-	where
-	  s.store_no=#{no}
+     t.name,
+     ass.alcohol_detail_no,
+     ass.price,
+     acd.alcohol_name as alc_name,
+     sm.name as sm_name,
+     sm.price as sm_price,
+     si.store_img
+   from 
+     store s
+     left outer join store_tag st on s.store_no=st.store_no
+     left outer join tag t on st.tag_no=t.tag_no
+     left outer join store_menu sm on s.store_no=sm.store_no
+     left outer join alcohol_sales ass on s.store_no=ass.store_no
+     left outer join alcohol_detail acd on ass.alcohol_detail_no=acd.alcohol_detail_no
+     left outer join store_img si on si.store_no=s.store_no 
+   where
+     s.store_no=#{no}
   </select>
   
   
