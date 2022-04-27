@@ -1,23 +1,3 @@
-// URL에서 쿼리스트링(query string)을 추출한다.
-var arr = location.href.split("?"); 
-
-if (arr.length == 1) {
-    alert("요청 형식이 올바르지 않습니다.")
-    throw "URL 형식 오류!";
-}
-
-var qs = arr[1];
-
-// 쿼리 스트링에서 모임번호 값을 추출한다.
-var params = new URLSearchParams(qs);
-var pno = params.get("pno");
-
-if (pno == null) {
-    alert("게시물 번호가 없습니다.");
-    throw "파라미터 오류!";
-}
-
-
 const Chat = (function(){
     
     // 여기에다가 세션으로 사용자의 닉네임을 받아서 백틱으로 집어넣으면 되겠다!
@@ -67,27 +47,13 @@ const Chat = (function(){
     function sendMessage(message) {
         // 서버에 전송하는 코드로 후에 대체
         const data = {
-            "senderName"  : "개코",
-            "message"     : message,
-            "pno"         : pno
-        }
-        fetch(`/partyBoard/add?message=${message}&pno=${pno}`, {
-            method: "POST"
-        }).then(function(response) {
-            console.log(response)
-            return response.json()
-        }).then(function(result) {
-            console.log(result)
-        })
+            "senderName"    : "개코",
+            "message"        : message
+        };
 
         // 통신하는 기능이 없으므로 여기서 receive
-        receive(data);
+        resive(data);
     }
-
-
-
-
-
 
     // 메시지 입력박스 내용 지우기
     function clearTextarea() {
@@ -95,7 +61,7 @@ const Chat = (function(){
     }
 
     // 메시지 수신  // ????이 사람 맞춤법 틀렸는디
-    function receive(data) {
+    function resive(data) {
         const LR = (data.senderName != myName)? "left" : "right";
         appendMessageTag("right", data.senderName, data.message);
     }

@@ -15,7 +15,7 @@ const pre = document.querySelector('.previous');
 
 
 $('#enter').click(function() {
-  location.href = "/party/partyChatting.html"
+  location.href = "/party/partyChatting.html?pno=1"
 })
 
 // $().ready(function() {

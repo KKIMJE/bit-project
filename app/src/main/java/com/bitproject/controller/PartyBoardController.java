@@ -3,7 +3,6 @@ package com.bitproject.controller;
 import static com.bitproject.controller.ResultMap.SUCCESS;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,20 +18,34 @@ public class PartyBoardController {
   @Autowired
   PartyBoardService partyBoardService;
 
-  @GetMapping("/list")
+  /*@GetMapping("/list")
   public Object list() {
     return partyBoardService.list();
-  }
+  }*/
 
+
+  // 우선 리턴타입 void로 바꾼거임
   @PostMapping("/add")
-  public Object add(PartyBoard partyBoard, HttpSession session) {
+  public Object add(String message, int pno, HttpSession session) {
+    System.out.println("호출되었다!");
+
+    PartyBoard partyBoard = new PartyBoard();
 
     Member member = (Member) session.getAttribute("loginUser");
-    // partyBoard.setWriter(member);
+
+    //System.out.println(member);
+
+    partyBoard.setSender(member);
+    partyBoard.setMessage(message);
+    partyBoard.setPartyNo(pno);
+
+    // System.out.println(partyBoard);
 
     partyBoardService.add(partyBoard);
-    return new ResultMap().setStatus(SUCCESS);
+    return new ResultMap().setStatus(SUCCESS).setData(partyBoard);
   }
+
+
 
   /*@GetMapping("/get")
   public Object get(int no) {

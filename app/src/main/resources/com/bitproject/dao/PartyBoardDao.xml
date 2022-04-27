@@ -6,15 +6,20 @@
 <mapper namespace="com.bitproject.dao.PartyBoardDao">
 
   <resultMap type="partyBoard" id="partyBoardMap">
-		<id column="party_no" property="partyNo"/>
-		<result column="title" property="title"/>
-    <association property="writer" javaType="member">
-      <id column="p_mno" property="mno"/>
-      <result column="p_nickname" property="nickName"/>
+		<id column="party_board_no" property="partyBoardNo"/>
+		<result column="party_no" property="partyNo"/>
+		<result column="board_reg_date" property="boardRegDate"/>
+		<result column="message" property="message"/>
+		<result column="message_time" property="messageTime"/>
+		<result column="message_status" property="messageStatus"/>
+    
+    <association property="sender" javaType="member">
+      <id column="mno" property="mno"/>
+      <result column="nickname" property="nickName"/>
     </association>    
   </resultMap>
 
-  <select id="findAll" resultMap="partyBoardMap">
+  <!--  <select id="findAll" resultMap="partyBoardMap">
   select
     p.party_no,
     p.title,
@@ -28,15 +33,15 @@
     m.mno as p_mno,
     m.nickname as p_nickname
   from 
-    party p
+    partyBoard pb
     inner join member m on (p.writer = m.mno)
   order by 
-    p.party_no desc;
-  </select>
+    p.party_board_no desc;
+  </select> -->
   
   <insert id="insert" parameterType="PartyBoard">
-    insert into party(writer,title,contents,address,party_fee,meeting_date,max_member,alcohol_type,alcohol_limit) 
-    values(#{writer.mno},#{title},#{contents},#{address},#{partyFee},#{meetingDate},#{maxMember},#{alcoholType},#{alcoholLimit})
+    insert into party_board(sender,message,party_no) 
+    values(#{sender.mno},#{message},#{partyNo})
   </insert>
   
   </mapper>

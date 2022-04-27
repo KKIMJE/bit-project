@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class PartyBoard {
   int partyBoardNo;
   int partyNo;
-  int mno;
+  Member sender;
   Timestamp boardRegDate;
   String message;
   Timestamp messageTime;
@@ -23,11 +23,11 @@ public class PartyBoard {
   public void setPartyNo(int partyNo) {
     this.partyNo = partyNo;
   }
-  public int getMno() {
-    return mno;
+  public Member getSender() {
+    return sender;
   }
-  public void setMno(int mno) {
-    this.mno = mno;
+  public void setSender(Member sender) {
+    this.sender = sender;
   }
   public Timestamp getBoardRegDate() {
     return boardRegDate;
@@ -56,9 +56,9 @@ public class PartyBoard {
 
   @Override
   public String toString() {
-    return "PartyBoard [partyBoardNo=" + partyBoardNo + ", partyNo=" + partyNo + ", mno=" + mno
-        + ", boardRegDate=" + boardRegDate + ", message=" + message + ", messageTime=" + messageTime
-        + ", messageStatus=" + messageStatus + "]";
+    return "PartyBoard [partyBoardNo=" + partyBoardNo + ", partyNo=" + partyNo + ", sender="
+        + sender + ", boardRegDate=" + boardRegDate + ", message=" + message + ", messageTime="
+        + messageTime + ", messageStatus=" + messageStatus + "]";
   }
 
 }
