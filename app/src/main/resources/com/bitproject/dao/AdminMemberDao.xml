@@ -94,6 +94,13 @@
     where 
     mno=#{no}
   </update>
+  
+    <delete id="delete" parameterType="int">
+    update  member 
+      set member_status = 1 
+    where 
+      mno=#{no}
+  </delete>
 
    
 <!--

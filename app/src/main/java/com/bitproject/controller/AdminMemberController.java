@@ -3,6 +3,7 @@ package com.bitproject.controller;
 import static com.bitproject.controller.ResultMap.FAIL;
 import static com.bitproject.controller.ResultMap.SUCCESS;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,6 +54,27 @@ public class AdminMemberController {
     //      return ;
     //    }
     return member;
+  }
+
+  @RequestMapping("/admin/member/signout")
+  public Object signout(HttpSession session) {
+    adminMemberService.logout(session);
+    session.invalidate();
+    return new ResultMap().setStatus(SUCCESS);
+  }
+
+  @RequestMapping("/admin/member/delete")
+  public Object delete(int no) {
+
+    int count = adminMemberService.delete(no);
+
+    System.out.println(count);
+
+    if(count ==1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("이미 탈퇴한 회원입니다.");
+    }
   }
 
 }

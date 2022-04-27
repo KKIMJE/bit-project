@@ -6,6 +6,7 @@ let xAlcoholBrand = document.querySelector("input[name=brand]")
 let xAlcoholOrigin = document.querySelector("input[name=origin]")
 let xAlcoholVolume = document.querySelector("input[name=volume]")
 let xAlcoholChar = document.querySelector("textarea[name=characteristic]")
+let xAlcoholFile = document.querySelector("input[name=file]")
 
 document.querySelector(".submit-add-btn").addEventListener("click", () => {
 
@@ -15,7 +16,8 @@ document.querySelector(".submit-add-btn").addEventListener("click", () => {
     xAlcoholBrand == "" ||
     xAlcoholOrigin == "" ||
     xAlcoholVolume == "" ||
-    xAlcoholChar == "") {
+    xAlcoholChar == "" ||
+  xAlcoholFile) {
     alert("필수 입력 항목이 비어있습니다.")
     return;
   }

@@ -19,21 +19,9 @@ public interface AdminMemberDao {
 
   List<Member> findByValue(@Param("filt") String filt, @Param("value") String value);
 
-  //  int countAll();
-  //
-  //  List<Member> findAll();
-  //
-  //  int insert(Member member);
-  //
-  //  Member findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
-  //
-  //  Member findByEmail(String email);
-  //
-  //  Member findByMno(int no);
-  //
   int update(int no);
 
-
+  int delete(int no);
 
 }
 

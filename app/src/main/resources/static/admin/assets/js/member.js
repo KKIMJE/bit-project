@@ -8,27 +8,27 @@ let currTable = document.querySelector("#x-curr-table")
 let pageSize = 10;
 let pageNo = 1;
 let totalMemberPage;
-let totalMemberCount=0;
-let userMemberCount=0;
-let ceoMemberCount=0;
+let totalMemberCount = 0;
+let userMemberCount = 0;
+let ceoMemberCount = 0;
 
 
 // 회원 카운트
 fetch("/admin/member/list")
-.then(response => {
-  return response.json()
-})
-.then(result => {
-  for (let member of result) {
-    if (member.storeCount == 0) {
-      userMemberCount++
-    } else (
-      ceoMemberCount++
-    )
-    totalMemberCount = userMemberCount + ceoMemberCount
+  .then(response => {
+    return response.json()
+  })
+  .then(result => {
+    for (let member of result) {
+      if (member.storeCount == 0) {
+        userMemberCount++
+      } else(
+        ceoMemberCount++
+      )
+      totalMemberCount = userMemberCount + ceoMemberCount
 
-    // 회원 현황 테이블
-    let currDt = `
+      // 회원 현황 테이블
+      let currDt = `
     <th>전체회원</th>
     <td>${totalMemberCount}</td>
     <th>일반회원</th>
@@ -36,9 +36,9 @@ fetch("/admin/member/list")
     <th>사장회원</th>
     <td>${ceoMemberCount}</td>
     `
-    currTable.innerHTML = currDt
-  }
-})
+      currTable.innerHTML = currDt
+    }
+  })
 
 
 // 페이지 버튼 생성
@@ -103,6 +103,8 @@ function createList(members) {
 
 
 
+
+
     // 멤버 테이블
     let memberTr = `
  <tr style="height:50px;">
@@ -118,16 +120,17 @@ function createList(members) {
    <td>${member.joinDate.split("T", 1)}</td>
    <td>${member.memberStatus}</td>
    <td>${member.blockAccept}</td>
-   <td><button type="button" name="button" class="x-sanction-btn" value="${member.mno}">제재</button><button type="button" name="button">탈퇴</button></td>
+   <td><button type="button" name="button" class="x-sanction-btn" value="${member.mno}">제재</button><button type="button" name="button" class="x-delete-btn" value="${member.mno}">탈퇴</button></td>
  </tr>
 `
-    tbody.innerHTML += memberTr
+    if (member.email != "admin@admin.com") {
+      tbody.innerHTML += memberTr
+    }
   }
 }
 
 // 회원 제재 버튼
 $(document).on("click", ".x-sanction-btn", (e) => {
-  console.log(e.target.value);
   if (window.confirm("정말 제재하시겠습니까?")) {
     fetch(`/admin/member/update?no=${e.target.value}`)
       .then(response => {
@@ -138,6 +141,28 @@ $(document).on("click", ".x-sanction-btn", (e) => {
         if (result.status == "success") {
           location.reload();
         } else {
+          alert(result.data);
+        }
+      })
+  } else {
+    return;
+  }
+})
+
+// 탈퇴 전환 버튼
+$(document).on("click", ".x-delete-btn", (e) => {
+  console.log(e.target.value);
+  if (window.confirm("정말 탈퇴시키시겠습니까?")) {
+    fetch(`/admin/member/delete?no=${e.target.value}`)
+      .then(response => {
+        return response.json()
+      })
+      .then(result => {
+        if (result.status == "success") {
+          alert("탈퇴 전환 완료했습니다.")
+          location.reload();
+        } else {
+          console.log("삭제실패");
           alert(result.data);
         }
       })
@@ -175,9 +200,8 @@ $(paginationUl).on("click", (e) => {
   } else {
     e.target.classList.add("page-btn-active")
   }
-console.log(e.target);
+  console.log(e.target);
 })
-
 
 
 
