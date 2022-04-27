@@ -112,6 +112,10 @@ $('.x-search-btn').on("click", () => {
       return response.json()
     })
     .then(stores => {
+      if (alcohols.length == 0) {
+        alert("검색 결과가 없습니다.")
+        location.reload()
+      }
       createList(stores);
     })
 })
@@ -123,5 +127,5 @@ $(paginationUl).on("click", (e) => {
   } else {
     e.target.classList.add("page-btn-active")
   }
-console.log(e.target);
+  console.log(e.target);
 })
