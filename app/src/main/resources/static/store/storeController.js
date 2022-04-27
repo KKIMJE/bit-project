@@ -3,20 +3,22 @@ let targetLat, targetLon, lat, lon, tagStr;
 let markerList = [];
 let targetMarkerList = [];
 let sortMarkerList = [];
+let filterMarkerList = [];
 let btnStatus = false; // map next, pre 버튼의 중복 동작 방지
 let targetBtnStatus = false;
 let sortBtnStatus = false;
+let filterBtnStatus = false;
 var dValueList = []; // 거리계산값 list (storeList.js에서 사용)
 var next = document.querySelector('.next-store');
 var pre = document.querySelector('.pre-store');
 
 
 function loadData(serverInfo){
-  console.log("loadData: " + serverInfo )
+  // console.log("loadData: " + serverInfo )
   fetch(serverInfo)
       .then(  response => response.json())
       .then(  data => {
-        console.log(data)
+          // console.log(data.data)
           allStoreDataList = data.data
           let storeNumList = numMaker(data.data.length)
           storeList(allStoreDataList) // 전체 주점 초기 세팅
@@ -36,8 +38,8 @@ function numMaker (n) {
 // storeAll list => ImgCard Insert, 주점 위치 찾기
 function storeList(xStores) {
 
-  console.log(xStores)
-
+  // console.log(xStores)
+  $('.imgContainer').empty()
   let listAll = document.querySelector(".imgContainer");
   let count = 0
   let card = true
@@ -79,8 +81,6 @@ function storeList(xStores) {
         card = true
       }
     }
-
-    
 
     let storeName = stores[i].storeName
     let stras = printStar(stores[i].evaluationScore)
@@ -298,11 +298,15 @@ function nextPreBtnSet() {
 
 // 초기 로드 세팅
 loadData("/store/list")
-nextPreBtnSet()
+// 맵 컨트롤 버튼 세팅
 btnStatus = true
 targetBtnStatus = false
 sortBtnStatus = false
+filterBtnStatus = false
 
+setTimeout(() => {
+  nextPreBtnSet()
+}, 100);
 
 // ============= Map 생성 ============= store list 생성후 적용필요
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -328,8 +332,8 @@ function mapMarker(xStore, numList) {
   }
   // 마커 생성
   for (let i = 0; i < numList.length; i ++) {
-    console.log(i)
-    console.log(xStore[numList[i]])
+    // console.log(i)
+    // console.log(xStore[numList[i]])
     let address = xStore[numList[i]].address
     let name = xStore[numList[i]].storeName
 
@@ -411,6 +415,48 @@ function sortMapMarker(xStore, numList) {
   }
   for (let j = 0; j < sortMarkerList.length; j++) {
     sortMarkerList[j].setMap(null)
+  }
+  // 마커 생성
+  for (let i = 0; i < numList.length; i ++) {
+    let address = store[numList[i]].address
+    let name = store[numList[i]].storeName
+
+    // 주소로 좌표를 검색합니다
+    geocoder.addressSearch(address, function(result, status) {
+
+        // 정상적으로 검색이 완료됐으면
+        if (status === kakao.maps.services.Status.OK) {
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+            // 커스텀 오버레이를 생성합니다
+            var customOverlay = new kakao.maps.CustomOverlay({
+                position: coords,
+                content: `<div id="mapInfo"><span>${name}</span></div>`
+            });
+
+            sortMarkerList.push(customOverlay)
+
+            // 커스텀 오버레이를 지도에 표시합니다
+            customOverlay.setMap(map);
+
+            // 마지막으로 찍은 마커로 중심을 이동한다.
+            // map.setCenter(coords);
+        } else {
+            console.log(`${name}, ${address} 주소검색 실패`)
+        }
+    });
+  }
+}
+function filterMarker(xStore, numList) {
+
+  let store = xStore
+
+  // 기존마커 삭제
+  for (let j = 0; j < markerList.length; j++) {
+    markerList[j].setMap(null)
+  }
+  for (let j = 0; j < filterMarkerList.length; j++) {
+    filterMarkerList[j].setMap(null)
   }
   // 마커 생성
   for (let i = 0; i < numList.length; i ++) {
@@ -642,5 +688,52 @@ function sortMapNextpreBtnSet(storesData, numLsit) {
     }
   });
 }
+function filterNextpreBtnSet(storesData, numList) {
+  if (filterBtnStatus == false) {
+    return
+  }
+  // let storesData = storesData
+  
+  targetMarkerList = []
 
+  let numStart = 0
+  let numEnd = 10
+  let mapCursor
+  let allStoreNum = numList
+  let limitCursor = Math.floor((allStoreNum.length) * 0.1)
+  
+  next.addEventListener("click", function(){
+    console.log("filterBtn")
+    if (limitCursor == mapCursor) {
+      console.log(limitCursor)
+      console.log("next: Over page")
+    } else {
+      numStart += 10
+      numEnd += 10
+      console.log(allStoreNum.slice(numStart, numEnd))
+      
+      let loopNum = allStoreNum.slice(numStart, numEnd)
+      filterMarker(storesData, loopNum)
+  
+      mapCursor = numEnd/10
+      console.log("Map : " + mapCursor)
+    }
+  });
+  pre.addEventListener("click", function(){
+    console.log("filterBtn")
+    if (numStart == 0) {
+      console.log("pre: Over page")
+    } else {
+      numStart -= 10
+      numEnd -= 10
+      console.log(allStoreNum.slice(numStart, numEnd))
+  
+      let loopNum = allStoreNum.slice(numStart, numEnd)
+      filterMarker(storesData, loopNum)
+  
+      mapCursor = numEnd/10
+      console.log("Map : " + mapCursor)
+    }
+  });
+}
 

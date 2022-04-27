@@ -22,8 +22,8 @@ if (no == null) {
 // fetch
 function targetList(targetNo) {
 
-  let reservationData;
-  let reviewsData;
+  var reservationData;
+  var reviewsData;
 
   fetch(`/store/get?no=${no}`)
   .then(function(response) {
@@ -514,6 +514,7 @@ function reviewMemberinfo(reservationInfo) {
     if (reservationInfo[i].member[0].nickName != null) {
       // console.log(reservationInfo[i].member[0].nickName)
       // console.log(reservationInfo[i].member[0].mimg)
+      // console.log(reservationInfo[i])
       reviewerNames[i].innerHTML = reservationInfo[i].member[0].nickName
       profileImg[i].innerHTML = `<img src="../asset/img/memberReview/${reservationInfo[i].member[0].mimg}.jpg">`
     } else {

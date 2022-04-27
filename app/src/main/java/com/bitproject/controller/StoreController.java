@@ -19,6 +19,7 @@ public class StoreController {
   //  StoreDao storeDao;
   //
 
+  //리턴값 변경시 담당자에게 요청 필수
   @RequestMapping("/list")
   public Object list() {     
     return new ResultMap().setStatus(SUCCESS).setData(storeService.list());
@@ -29,7 +30,7 @@ public class StoreController {
     System.out.println("store: " + store);
     return storeService.add(store);
   }
-  
+
   @RequestMapping("/get")
   public Object get(int no) {
     Store store = storeService.get(no);
@@ -49,8 +50,8 @@ public class StoreController {
     return new ResultMap().setStatus(SUCCESS).setData(store);
   }*/
 
-    
-  
+
+
   @RequestMapping("/getMnoCnt")
   public int getMnoCnt(int no) {
     //System.out.println("StoreNo: " + no + ", Get Store: " + store);
@@ -66,7 +67,7 @@ public class StoreController {
   @RequestMapping("/update")
   public Object update(Store store) {
     return storeService.update(store);
-   
+
   }
 
   @RequestMapping("/delete")
