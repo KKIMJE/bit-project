@@ -65,3 +65,7 @@ padding: 0 50px 0 50px;
 .pagination-ul li:hover {
   background-color: rgb(212, 212, 212);
 }
+
+.page-btn-active {
+  background-color: rgb(212, 212, 212);
+}

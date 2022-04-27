@@ -62,3 +62,7 @@ padding: 0 50px 0 50px;
 .x-page-btn {
   font-size: 15px;
 }
+
+.page-btn-active {
+  background-color: rgb(212, 212, 212);
+}

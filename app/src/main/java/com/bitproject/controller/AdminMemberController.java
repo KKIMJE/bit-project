@@ -16,8 +16,13 @@ public class AdminMemberController {
   AdminMemberService adminMemberService;
 
   @RequestMapping("/admin/member/list")
-  public Object list(int pageSize, int pageNo) {
-    return adminMemberService.list(pageSize, pageNo);
+  public Object list() {
+    return adminMemberService.list();
+  }
+
+  @RequestMapping("/admin/member/pagelist")
+  public Object pagelist(int pageSize, int pageNo) {
+    return adminMemberService.pagelist(pageSize, pageNo);
   }
 
   @RequestMapping("/admin/member/size")

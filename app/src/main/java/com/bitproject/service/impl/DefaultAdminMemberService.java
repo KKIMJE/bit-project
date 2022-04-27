@@ -22,8 +22,13 @@ public class DefaultAdminMemberService implements AdminMemberService {
   AdminMemberDao adminMemberDao;
 
   @Override
-  public List<Member> list(int pageSize, int pageNo) {
-    return adminMemberDao.findAll(pageSize, ((pageNo - 1) * pageSize));
+  public List<Member> list() {
+    return adminMemberDao.findAll();
+  }
+
+  @Override
+  public List<Member> pagelist(int pageSize, int pageNo) {
+    return adminMemberDao.pageFindAll(pageSize, ((pageNo - 1) * pageSize));
   }
 
   @Override
