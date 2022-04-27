@@ -5,19 +5,11 @@ import java.sql.Timestamp;
 public class PartyBoard {
   int partyBoardNo;
   int partyNo;
-  int mNo;
+  Member sender;
   Timestamp boardRegDate;
   String message;
   Timestamp messageTime;
   boolean messageStatus;
-
-  @Override
-  public String toString() {
-    return "PartyBoard [partyBoardNo=" + partyBoardNo + ", partyNo=" + partyNo + ", mNo=" + mNo
-        + ", boardRegDate=" + boardRegDate + ", message=" + message + ", messageTime=" + messageTime
-        + ", messageStatus=" + messageStatus + "]";
-  }
-
 
   public int getPartyBoardNo() {
     return partyBoardNo;
@@ -31,11 +23,11 @@ public class PartyBoard {
   public void setPartyNo(int partyNo) {
     this.partyNo = partyNo;
   }
-  public int getmNo() {
-    return mNo;
+  public Member getSender() {
+    return sender;
   }
-  public void setmNo(int mNo) {
-    this.mNo = mNo;
+  public void setSender(Member sender) {
+    this.sender = sender;
   }
   public Timestamp getBoardRegDate() {
     return boardRegDate;
@@ -62,8 +54,11 @@ public class PartyBoard {
     this.messageStatus = messageStatus;
   }
 
-
-
-
+  @Override
+  public String toString() {
+    return "PartyBoard [partyBoardNo=" + partyBoardNo + ", partyNo=" + partyNo + ", sender="
+        + sender + ", boardRegDate=" + boardRegDate + ", message=" + message + ", messageTime="
+        + messageTime + ", messageStatus=" + messageStatus + "]";
+  }
 
 }

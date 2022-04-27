@@ -36,6 +36,15 @@ public class DefaultMemberService implements MemberService {
   }
 
 
+  @Override
+
+  public int delete(int mno) {
+
+    return memberDao.delete(mno);
+
+  }
+
+
 
   @Override
 

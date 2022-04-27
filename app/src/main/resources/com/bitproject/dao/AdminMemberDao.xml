@@ -32,7 +32,14 @@
     id => 인터페이스의 메서드 이름과 일치해야 한다.
    -->
    
-       <select id="findAll" resultMap="memberMap">
+  <select id="findAll" resultMap="memberMap">
+    select 
+      store_count
+    from 
+      member
+  </select>
+   
+  <select id="pageFindAll" resultMap="memberMap">
     select 
       mno,
       email,
@@ -81,6 +88,20 @@
     where ${filt} like CONCAT('%',#{value},'%')
   </select>
    
+   <update id="update" parameterType="int">
+    update member set
+    block_accept=block_accept + 1
+    where 
+    mno=#{no}
+  </update>
+  
+    <delete id="delete" parameterType="int">
+    update  member 
+      set member_status = 1 
+    where 
+      mno=#{no}
+  </delete>
+
    
 <!--
    <insert id="insert" parameterType="member">
@@ -151,18 +172,8 @@
   </select>
    -->
   
-  <!-- 
-   <update id="update" parameterType="member">
-    update member set
-    nickname=#{nickname},
-    gender=#{gender},
-    birth=#{birth},
-    password=password(#{password}),
-    tel=#{tel}
-    where 
-    mno=#{mno}
-  </update>
-   -->
+  
+   
    
    <!-- 
     <select id="findByNo" resultMap="memberMap" parameterType="int">

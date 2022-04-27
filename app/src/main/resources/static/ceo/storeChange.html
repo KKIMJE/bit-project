@@ -42,7 +42,7 @@
             <p class="form_address">주소</p><br>
             <div>
               <input type="text" id="address_kakao"  name="address" class="form_input_address_detail" placeholder="주소" readonly>
-              <input type="text" class="form_input_address_detail"   placeholder="상세주소">
+              <input type="text" class="form_input_address_detail" name="addressDetail"  placeholder="상세주소">
             </div>
           </div>
           
@@ -92,21 +92,22 @@
             <!-- 사각형 -->
           </div>
 
-           <!--<div id="pop_info_1" class="pop_wrap" style="display:none;">
-        <div class="pop_inner">
-          <p class="dsc">사장님의 가게에 어울리는 태그를 골라주세요</p>
-          <button type="button" class="btn_add">등록</button>
-        </div>
-      </div>-->
-
-
            <div style="margin-top:10px;">
             <p class="form_check">예약 가능 여부 <br></p>
             <center>
-            가능<input name="reservationAccept"  id="revOn" type="radio"  class="form_input_check" checked>
-            불가능<input name="reservationAccept"  id="revOff" type="radio" class="form_input_check">
-            최대인원 <input id="maxMember" type="number" min="0" max="10000000" class="form_input_box" >
+            가능<input name="reservationAccept"  id="revOn" type="radio"  class="form_input_check" value="1">
+            불가능<input name="reservationAccept"  id="revOff" type="radio" class="form_input_check" value="0">
+            최대인원 <input name="maxMember" id="maxMember" type="number" min="0" max="10000000" class="form_input_box" ><br>
             </center>
+            
+            <div style="margin-top:10px;">
+            <p class="form_check"> 영업상태 </p><br>
+            <center style="margin-left:-50%;">
+            영업중<input name="oper"  id="operOn" type="radio"  class="form_check" value="1" >
+            종료<input name="oper"  id="operOff" type="radio" class="form_check" value="0"><br>
+            </center>
+         
+           
             <!-- 
             가능
             <input id="reservationAccept" type="checkbox"  class="form_input_check" checked>불가능
@@ -115,8 +116,8 @@
              --> 
             <!-- 사각형 -->
           </div> 
-           
-           <center><div class="file-upload">
+              <br>
+           <center style="margin-left:20px;"><div class="file-upload">
      <div><input name="file" type="file"></div>
     </div> </center>
           

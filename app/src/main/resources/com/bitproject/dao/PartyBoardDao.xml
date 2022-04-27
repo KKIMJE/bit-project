@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.PartyBoardDao">
+
+  <resultMap type="partyBoard" id="partyBoardMap">
+		<id column="party_board_no" property="partyBoardNo"/>
+		<result column="party_no" property="partyNo"/>
+		<result column="board_reg_date" property="boardRegDate"/>
+		<result column="message" property="message"/>
+		<result column="message_time" property="messageTime"/>
+		<result column="message_status" property="messageStatus"/>
+    
+    <association property="sender" javaType="member">
+      <id column="mno" property="mno"/>
+      <result column="nickname" property="nickName"/>
+    </association>    
+  </resultMap>
+
+  <!--  <select id="findAll" resultMap="partyBoardMap">
+  select
+    p.party_no,
+    p.title,
+    p.reg_date,
+    p.party_fee,
+    p.meeting_date,
+    p.max_member,
+    p.alcohol_type,
+    p.alcohol_limit,
+    p.address,
+    m.mno as p_mno,
+    m.nickname as p_nickname
+  from 
+    partyBoard pb
+    inner join member m on (p.writer = m.mno)
+  order by 
+    p.party_board_no desc;
+  </select> -->
+  
+  <insert id="insert" parameterType="PartyBoard">
+    insert into party_board(sender,message,party_no) 
+    values(#{sender.mno},#{message},#{partyNo})
+  </insert>
+  
+  </mapper>
+
+
+
+
+
+

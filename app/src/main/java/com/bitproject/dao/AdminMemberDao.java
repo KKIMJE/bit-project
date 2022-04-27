@@ -8,7 +8,10 @@ import com.bitproject.domain.Member;
 @Mapper  
 public interface AdminMemberDao {
 
-  List<Member> findAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
+  List<Member> findAll();
+
+  List<Member> pageFindAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
+
 
   int countAll();
 
@@ -16,21 +19,9 @@ public interface AdminMemberDao {
 
   List<Member> findByValue(@Param("filt") String filt, @Param("value") String value);
 
-  //  int countAll();
-  //
-  //  List<Member> findAll();
-  //
-  //  int insert(Member member);
-  //
-  //  Member findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
-  //
-  //  Member findByEmail(String email);
-  //
-  //  Member findByMno(int no);
-  //
-  //  int update(Member member);
+  int update(int no);
 
-
+  int delete(int no);
 
 }
 

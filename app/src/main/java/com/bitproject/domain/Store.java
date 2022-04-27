@@ -19,6 +19,7 @@ public class Store {
   List<Tag> tags;
   String storeName;
   String address;
+  String addressDetail;
   String tel;
   String hour;
   String introduction;
