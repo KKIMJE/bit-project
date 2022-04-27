@@ -26,7 +26,6 @@ public class PartyController {
     return partyService.list();
   }
 
-  /*@Transactional*/
   @PostMapping("/add")
   public Object add(Party party, HttpSession session) {
 
@@ -46,10 +45,20 @@ public class PartyController {
     return new ResultMap().setStatus(SUCCESS).setData(party);
   }
 
-  @DeleteMapping("/update")
-  public Object update(Party party) {
-    return partyService.update(party);
+  @PostMapping("/update")
+  public Object update(int no, Party party, HttpSession session) {
+    Member member = (Member) session.getAttribute("loginUser");
+    party.setPartyNo(no);
+    party.setWriter(member);
+    int count = partyService.update(party);
+
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("모임 방장만이 게시글을 삭제할 수 있습니다.");
+    }
   }
+
 
   @DeleteMapping("/delete")
   public Object delete(int no) {

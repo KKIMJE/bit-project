@@ -8,82 +8,74 @@ let currTable = document.querySelector("#x-curr-table")
 let pageSize = 10;
 let pageNo = 1;
 let totalMemberPage;
-let totalMemberCount;
-let userMemberCount;
-let ceoMemberCount;
+let totalMemberCount=0;
+let userMemberCount=0;
+let ceoMemberCount=0;
 
-// 전체 회원 수 및 페이지 버튼 생성
+
+// 회원 카운트
+fetch("/admin/member/list")
+.then(response => {
+  return response.json()
+})
+.then(result => {
+  for (let member of result) {
+    if (member.storeCount == 0) {
+      userMemberCount++
+    } else (
+      ceoMemberCount++
+    )
+    totalMemberCount = userMemberCount + ceoMemberCount
+
+    // 회원 현황 테이블
+    let currDt = `
+    <th>전체회원</th>
+    <td>${totalMemberCount}</td>
+    <th>일반회원</th>
+    <td>${userMemberCount}</td>
+    <th>사장회원</th>
+    <td>${ceoMemberCount}</td>
+    `
+    currTable.innerHTML = currDt
+  }
+})
+
+
+// 페이지 버튼 생성
 fetch("/admin/member/size")
   .then(response => {
-    return response.json()
+    return response.text()
   })
   .then(result => {
-    totalMemberCount = result
+    // totalMemberCount = result
     totalMemberPage = Math.ceil(result / pageSize)
-    console.log(totalMemberPage);
 
     for (let i = 1; i <= totalMemberPage; i++) {
-      console.log("aaa");
       let paginationLi = `
-    <li><span><a class="x-page-btn" onclick="memberList(${i})">${i}</a></span></li>
-    `
+      <li class="x-page-btn" onclick="memberList(${i})">${i}</li>
+      `
       paginationUl.innerHTML += paginationLi;
     }
   })
 
-// 일반 회원 수
-fetch("/admin/member/typesize?memberStatus=false")
-  .then(response => {
-    return response.json()
-  })
-  .then(result => {
-    userMemberCount = result;
-  })
 
-
-// 전체 회원 수
-fetch("/admin/member/typesize?memberStatus=true")
-  .then(response => {
-    return response.json()
-  })
-  .then(result => {
-    ceoMemberCount = result;
-
-  })
-
-
-
-// 멤버 페이지
+// 멤버 테이블 생성
 function memberList(pageNo) {
   $(tbody).empty()
 
-  fetch(`/admin/member/list?pageSize=${pageSize}&pageNo=${pageNo}`)
+  fetch(`/admin/member/pagelist?pageSize=${pageSize}&pageNo=${pageNo}`)
     .then(response => {
       return response.json()
     })
     .then(members => {
       console.log(members);
-
       createList(members);
-
-      // 회원 현황 테이블
-      let currDt = `
-            <th>전체회원</th>
-            <td>${totalMemberCount}</td>
-            <th>일반회원</th>
-            <td>${userMemberCount}</td>
-            <th>사장회원</th>
-            <td>${ceoMemberCount}</td>
-      `
-      currTable.innerHTML = currDt
-
     })
 }
 
-
+// 테이블 생성 함수
 function createList(members) {
   for (let member of members) {
-    console.log(member.storeCount);
 
     if (member.gender == false) {
       member.gender = "남자"
@@ -109,6 +101,8 @@ function createList(members) {
       member.storeCount = "사장"
     }
 
+
+
     // 멤버 테이블
     let memberTr = `
  <tr style="height:50px;">
@@ -124,14 +118,35 @@ function createList(members) {
    <td>${member.joinDate.split("T", 1)}</td>
    <td>${member.memberStatus}</td>
    <td>${member.blockAccept}</td>
-   <td><button type="button" name="button">제재</button><button type="button" name="button">탈퇴</button></td>
+   <td><button type="button" name="button" class="x-sanction-btn" value="${member.mno}">제재</button><button type="button" name="button">탈퇴</button></td>
  </tr>
 `
     tbody.innerHTML += memberTr
   }
 }
 
+// 회원 제재 버튼
+$(document).on("click", ".x-sanction-btn", (e) => {
+  console.log(e.target.value);
+  if (window.confirm("정말 제재하시겠습니까?")) {
+    fetch(`/admin/member/update?no=${e.target.value}`)
+      .then(response => {
+        return response.json()
+      })
+      .then(result => {
+        console.log(result);
+        if (result.status == "success") {
+          location.reload();
+        } else {
+          alert(result.data);
+        }
+      })
+  } else {
+    return;
+  }
+})
 
+// 검색창
 $('.x-search-btn').on("click", () => {
   let searchFilt = $('.x-search-div select').val()
   let searchValue = $('.x-search-div input').val()
@@ -149,5 +164,27 @@ $('.x-search-btn').on("click", () => {
     .then(members => {
       createList(members);
     })
-
 })
+
+
+
+$(paginationUl).on("click", (e) => {
+  $(".pagination-ul li").removeClass("page-btn-active")
+  if (e.target == e.currentTarget) {
+    return;
+  } else {
+    e.target.classList.add("page-btn-active")
+  }
+console.log(e.target);
+})
+
+
+
+
+
+
+
+
+
+
+//

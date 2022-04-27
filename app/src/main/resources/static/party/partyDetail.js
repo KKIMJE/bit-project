@@ -73,7 +73,7 @@ fetch(`/party/get?no=${no}`)
                     <div class="comment-footer">
                         <p class="comment-datetime">${partyComment.commentDate}</p>
                         <div class="comment-option">
-                            <button type="button">
+                            <button type="button" class="report2">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                 <span>&nbsp;신고</span>
                             </button>
@@ -159,23 +159,58 @@ $(".delete").click(function () {
 })
 
 
+/************
+모임 update
+************/
+$(".update").click(function () {
+    location.href = `/party/partyFormUpdate.html?no=${no}`
+})
 
-    /*<div>
-        <img class="profile-img people" src="img/profile_sumi.jpg">
-    </div>
-    <div>
-        <div class="comment-text">
-            <p class="people-name">젠틀맨이다</p>
-            <div class="comment-content">오우 강남에 미인이 나타나셨다.
-                라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-            </div>
-        </div>
-        <div class="comment-footer">
-            <p class="comment-datetime">2022-01-01 22:13:10</p>
-            <div class="comment-option">
-                <button type="button" class="">
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                    <span>&nbsp;신고</span>
-                </button>
-            </div>
-        </div>*/
+
+/************
+    신고
+************/
+
+$(".report").click(function () {
+    reportModal();
+})
+
+$( document ).on("click", ".report2", function() { // 동적 생성된 html에 이벤트 걸기
+    reportModal();
+})
+
+function reportModal() {
+    Swal.fire({
+        title: '신고하기',
+        input: 'text',
+        inputAttributes: {
+          autocapitalize: 'off'
+        },
+        inputLabel: '신고 이유를 적어주세요',
+        showCancelButton: false,
+        confirmButtonText: '제출하기',
+        showLoaderOnConfirm: true,
+        preConfirm: () => {
+            var rContent = document.querySelector(".swal2-input");
+            
+            fetch(`/report/add?no=${no}&rtype=b&rcontent=${rContent.value}`, { // 회원: m, 주점: s, 게시글: b 
+                method : "POST"
+            }).then(response => {
+                return response.json()
+            }).then((result) => {
+                if (result.data == "로그인 하지 않았습니다!") {
+                alert("로그인 후 신고가 가능합니다.")
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    text: '신고가 접수되었습니다.',
+                    showCancelButton:false,
+                    confirmButtonColor:'#90d483',
+                    cancelButtonColor: '#90d483',
+                    confirmButtonText:'확인',
+                })
+            }
+        })
+    }
+})
+}

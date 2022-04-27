@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.ReportDao">
+
+  <resultMap type="report" id="reportMap">
+		<id column="repo_no" property="repoNo"/>
+		<result column="mno" property="mno"/>
+		<result column="target_no" property="targetNo"/>
+		<result column="contents" property="contents"/>
+		<result column="type" property="type"/>
+		<result column="date" property="date"/>
+		<result column="status" property="status"/>
+  </resultMap>
+
+  
+  <insert id="insert" parameterType="Report">
+    insert into report(mno,target_no,contents,type,date) 
+    values(#{mno},#{targetNo},#{contents},#{type},#{date})
+  </insert>
+  
+
+  </mapper>
+
+
+
+
+
+

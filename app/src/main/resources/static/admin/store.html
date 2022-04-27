@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/store.css">
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <title>야술먹자 - 주점관리</title>
+</head>
+
+<body id="body-pd" onload=" storeList(1)">
+  <div class="l-navbar" id="navbar">
+    <nav class="nav">
+      <div>
+        <div class="nav__brand">
+          <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+          <a href="#" class="nav__logo">관리자페이지</a>
+        </div>
+        <div class="nav__list">
+          <a href="/admin/member.html" class="nav__link">
+            <ion-icon name="person-outline" class="nav__icon"></ion-icon>
+            <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
+            <span class="nav_name">회원관리</span>
+          </a>
+          <a href="/admin/alcohollist.html" class="nav__link">
+            <ion-icon name="wine-outline" class="nav__icon"></ion-icon>
+            <span class="nav_name">주종관리</span>
+          </a>
+          <a href="/admin/store.html" class="nav__link active">
+            <ion-icon name="storefront-outline" class="nav__icon"></ion-icon>
+            <span class="nav_name">주점관리</span>
+          </a>
+
+          <div href="#" class="nav__link collapse">
+            <ion-icon name="alert-circle-outline" class="nav__icon"></ion-icon>
+            <span class="nav_name">신고관리</span>
+
+            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+            <ul class="collapse__menu">
+              <a href="#" class="collapse__sublink">회원신고관리</a>
+              <a href="#" class="collapse__sublink">주점신고관리</a>
+              <a href="#" class="collapse__sublink">게시글신고관리</a>
+            </ul>
+          </div>
+
+          <a href="#" class="nav__link">
+            <ion-icon name="megaphone-outline" class="nav__icon"></ion-icon>
+            <span class="nav_name">공지사항관리</span>
+          </a>
+        </div>
+        <a href="#" class="nav__link">
+          <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+          <span class="nav_name">로그아웃</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+
+  <h1 class="x-admin-title" style="margin:20px 0 20px 20px;">주점관리</h1>
+  <hr>
+  <div class="store-page">
+    <div class="x-store-page">
+      <div class="x-store-curr">
+        <h2>주점등록현황</h2>
+        <table id="x-curr-table">
+        </table>
+      </div>
+
+      <div class="x-store-search">
+          <div class="x-search-div">
+            <select style="height:22px;">
+              <option value="store_name">주점명</option>
+              <option value="address">주소</option>
+            </select>
+            <input type="text">
+            <button type="button" class="x-search-btn">검색</button>
+          </div>
+      </div>
+
+      <table id="x-store-table">
+        <thead>
+          <tr style="height:50px;">
+            <th>번호</th>
+            <th>주점명</th>
+            <th>주소</th>
+            <th>전화번호</th>
+            <th>사업자등록번호</th>
+            <th>별점</th>
+            <th>예약여부</th>
+            <th>영업여부</th>
+            <th>상태</th>
+            <th>관리</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+<div class="pagination">
+  <ul class="pagination-ul">
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+  <!-- IONICONS -->
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/store.js"></script>
+
+</body>
+
+</html>

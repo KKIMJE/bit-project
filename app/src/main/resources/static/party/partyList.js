@@ -66,7 +66,6 @@ function myLoad() {
                       </div>
                       <div class="party-like">
                           <i class="fa-solid fa-heart like-click"></i>
-                          1.3k
                       </div>
                       <div class="party-member-count">
                           <i class="fa-solid fa-user"></i>
@@ -286,7 +285,6 @@ function mapLoad() {
                           </div>
                           <div class="party-like">
                               <i class="fa-solid fa-heart like-click"></i>
-                              1.3k
                           </div>
                           <div class="party-member-count">
                               <i class="fa-solid fa-user"></i>

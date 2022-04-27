@@ -23,7 +23,7 @@ fetch("/alcohol/size")
 
     for (let i = 1; i <= totalAlcoholPage; i++) {
       let paginationLi = `
-    <li><span><a class="x-page-btn" onclick="alcoholList(${i})">${i}</a></span></li>
+    <li class="x-page-btn" onclick="alcoholList(${i})">${i}</li>
     `
       paginationUl.innerHTML += paginationLi;
     }
@@ -186,5 +186,14 @@ $('.x-search-btn').on("click", () => {
     .then(alcohols => {
       createList(alcohols);
     })
+})
 
+$(paginationUl).on("click", (e) => {
+  $(".pagination-ul li").removeClass("page-btn-active")
+  if (e.target == e.currentTarget) {
+    return;
+  } else {
+    e.target.classList.add("page-btn-active")
+  }
+console.log(e.target);
 })

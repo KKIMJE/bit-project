@@ -86,5 +86,5 @@ document.querySelector(".submit-update-btn").addEventListener("click", () => {
 
 // 나가기 버튼
 $(".submit-exit-btn").on("click", () => {
-  location.href = "/admin/member.html";
+  location.href = "/admin/alcohollist.html";
 })

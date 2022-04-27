@@ -1,93 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="party.css">
+    <head>
+        <link rel="shortcut icon" href="../img/logo1.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!-- sweetalert2 CSS -->
+        <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+        <!-- font -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+        <link rel="stylesheet" href="partyChatting.css">
+
+        <title>야술먹자 우리지금만나</title>
+
+        <!-- Bootstrap -->
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- sweetalert2 -->
+        <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+        <!-- axios -->
+        <script src="../../node_modules/axios/dist/axios.js"></script>
+        <!-- jquery -->
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    </head>
+    <body>
+
     
-    <title>야술먹자 우리지금만나</title>
-</head>
-<body>
-
-    <nav class="navbar__">
-        <div><!-- 공간, 삭제하지 마세요 --></div>
-
-        <div class="navbar__logo">
-            <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+    <div class="chat_wrap">
+        <div class="header">
+            <span>모임 채팅방 제목</span>            
         </div>
-
-        <ul class="navbar__menu">
-            <li><a href="">로그인</a></li>
-            <li><a href="">회원가입</a></li>
-            <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
-        </ul>
-
-        <ul class="navbar__login">
-            <!-- 알림 -->
-            <div class="btn-group"> 
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 마이페이지 -->
-            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a> 
-
-            <!-- 검색 -->
-            <div class="btn-group"> 
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-lg-end">
-                    <li>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </li>
-                    </ul>
-                </div>
-            </div> 
-
-            <!-- 지도 -->
-            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a> 
-        </ul>
-    </nav>
-
- 
-        <div class="wrap">
-            <div class="party-information">
-                <div class="party-category">
-                    우리지금만나
-                </div>
-                <div class="party-title">
-                    외롭다... ㅠㅠ 같이 술 드실분..?<span>&nbsp&nbsp(8/8)&nbsp&nbsp&nbsp&nbsp</span><i class="fa-regular fa-pen-to-square"></i>
-                </div>
-                <div class="party-information-detail">
-                    <i class="fa-solid fa-location-dot"></i><span>&nbsp인생주막&nbsp&nbsp</span>
-                    <i class="fa-solid fa-clock"></i><span>&nbsp3월3일(목) 23:00&nbsp&nbsp</span><i class="fa-solid fa-bottle-droplet"></i><span>&nbsp소주&nbsp&nbsp</span><i class="fa-solid fa-whiskey-glass"></i><span>&nbsp3병 이상&nbsp&nbsp</span><i class="fa-solid fa-won-sign"></i><span>&nbsp30,000</span><i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
+        <div class="chat">
+            <ul>
+                <!-- 동적 생성 -->
+            </ul>
         </div>
+        <div class="input-div">
+            <textarea placeholder="메시지를 입력해주세요."></textarea>
+        </div>
+    
+        <!-- format -->
+    
+        <div class="chat format">
+            <ul>
+                <li>
+                    <div class="sender">
+                        <span></span>
+                    </div>
+                    <div class="message">
+                        <span></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
-
-
+<!-- icons -->
+<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
+<script type="module" src="partyChatting.js"></script>
 
 </body>
-
 </html>
-<!-- icons -->
-<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script> 
-<!-- Bootstrap CSS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="store.js"></script>
