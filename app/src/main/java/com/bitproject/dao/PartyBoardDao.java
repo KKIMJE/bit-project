@@ -7,9 +7,9 @@ import com.bitproject.domain.PartyBoard;
 @Mapper  
 public interface PartyBoardDao {
 
-  List<PartyBoard> findAll();
-
   int insert(PartyBoard partyBoard);
+
+  List<PartyBoard> findByNo(int no);
 }
 
 

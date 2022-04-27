@@ -13,14 +13,16 @@ public class DefaultPartyBoardService implements PartyBoardService {
   @Autowired
   PartyBoardDao partyBoardDao;
 
-  /*@Transactional*/
   @Override
   public int add(PartyBoard partyBoard) {
     return partyBoardDao.insert(partyBoard);
   }
 
   @Override
-  public List<PartyBoard> list() {
-    return partyBoardDao.findAll();
+  public List<PartyBoard> get(int no) {
+    List<PartyBoard> partyBoard = partyBoardDao.findByNo(no);
+
+    return partyBoard;
   }
+
 }

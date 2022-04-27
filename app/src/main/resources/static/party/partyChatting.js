@@ -23,6 +23,20 @@ const Chat = (function(){
     // 여기에다가 세션으로 사용자의 닉네임을 받아서 백틱으로 집어넣으면 되겠다!
     const myName = "개코";
 
+    fetch(`/partyBoard/get?pno=${pno}`, {
+        method: "GET"
+    }).then(function(response) {
+        //console.log("리스트 불러와줘")
+        console.log(response);
+        return response.json();
+    }).then(function(result) {
+        console.log(result);
+    })
+
+
+
+    
+
     // init 함수
     function init() {
         // enter 키 이벤트
@@ -65,7 +79,6 @@ const Chat = (function(){
 
     // 메시지 전송
     function sendMessage(message) {
-        // 서버에 전송하는 코드로 후에 대체
         const data = {
             "senderName"  : "개코",
             "message"     : message,
@@ -89,7 +102,7 @@ const Chat = (function(){
         $('div.input-div textarea').val('');
     }
 
-    // 메시지 수신  // ????이 사람 맞춤법 틀렸는디
+    // 메시지 수신
     function receive(data) {
         const LR = (data.senderName != myName)? "left" : "right";
         appendMessageTag("right", data.senderName, data.message);

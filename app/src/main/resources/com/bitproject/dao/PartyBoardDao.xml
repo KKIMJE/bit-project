@@ -18,26 +18,25 @@
       <result column="nickname" property="nickName"/>
     </association>    
   </resultMap>
-
-  <!--  <select id="findAll" resultMap="partyBoardMap">
+  
+    <select id="findByNo" resultMap="partyBoardMap" parameterType="int">
   select
-    p.party_no,
-    p.title,
-    p.reg_date,
-    p.party_fee,
-    p.meeting_date,
-    p.max_member,
-    p.alcohol_type,
-    p.alcohol_limit,
-    p.address,
-    m.mno as p_mno,
-    m.nickname as p_nickname
+    pb.party_board_no,
+    pb.party_no,
+    pb.message,
+    m.mno,
+    m.nickname
   from 
-    partyBoard pb
-    inner join member m on (p.writer = m.mno)
+    party_board pb
+    inner join member m on (pb.sender = m.mno)
+  where 
+    pb.party_no=#{no}
   order by 
-    p.party_board_no desc;
-  </select> -->
+    pb.party_no asc;
+  </select>
+  
+  
+  
   
   <insert id="insert" parameterType="PartyBoard">
     insert into party_board(sender,message,party_no) 

@@ -5,8 +5,7 @@ import com.bitproject.domain.PartyBoard;
 
 public interface PartyBoardService {
 
-  List<PartyBoard> list();
-
   int add(PartyBoard partyBoard);
 
+  List<PartyBoard> get(int no);
 }

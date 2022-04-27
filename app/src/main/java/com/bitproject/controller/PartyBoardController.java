@@ -3,6 +3,7 @@ package com.bitproject.controller;
 import static com.bitproject.controller.ResultMap.SUCCESS;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,13 +19,14 @@ public class PartyBoardController {
   @Autowired
   PartyBoardService partyBoardService;
 
-  /*@GetMapping("/list")
-  public Object list() {
-    return partyBoardService.list();
-  }*/
+  @GetMapping("/get")
+  public Object get(int pno) {
+    //System.out.println("제발");
+
+    return partyBoardService.get(pno);
+  }
 
 
-  // 우선 리턴타입 void로 바꾼거임
   @PostMapping("/add")
   public Object add(String message, int pno, HttpSession session) {
     System.out.println("호출되었다!");
@@ -44,15 +46,4 @@ public class PartyBoardController {
     partyBoardService.add(partyBoard);
     return new ResultMap().setStatus(SUCCESS).setData(partyBoard);
   }
-
-
-
-  /*@GetMapping("/get")
-  public Object get(int no) {
-    Party party = partyService.get(no);
-    if (party == null) {
-      return new ResultMap().setStatus(FAIL).setData("해당 모임의 게시글이 없습니다.");
-    }
-    return new ResultMap().setStatus(SUCCESS).setData(party);
-  }*/
 }
