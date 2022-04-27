@@ -198,6 +198,13 @@ body > form > div > div > div > div > span {
   
 }
 
+.form_check{
+
+  padding-l: -15px;
+
+  
+}
+
 .alcohol-content {
   padding-left:40px;  
   margin-top: 20px;

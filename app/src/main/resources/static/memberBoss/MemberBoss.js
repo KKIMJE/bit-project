@@ -29,19 +29,26 @@ $("#add_tag").click(async function () {
   })
 });
 
+//var xStoreNo = document.querySelector("input[name=storeNo]");
 var xStoreName = document.querySelector("input[name=storeName]");
+ var xAddress = document.querySelector("input[name=address]"); 
+ var xAddressDetail = document.querySelector("input[name=addressDetail]"); 
+ var xOptionDivContainer = document.querySelector("#x-option-div-container");
 var xTel = document.querySelector("input[name=tel]");
 var xHour = document.querySelector("textarea[name=hour]");
 var xIntroduction = document.querySelector("textarea[name=introduction]");
 var xBusinessRegistrationNo = document.querySelector("input[name=businessRegistrationNo]");
-var xAddressKakao = document.querySelector("input[name=AddressKakao]");
+ var xReservationAccept = document.querySelector("input[name=reservationAccept]");
+  var xMaxMember = document.querySelector("input[name=maxMember]");
+  var xOper = document.querySelector("input[name=oper]");
+//var xAddressKakao = document.querySelector("input[name=AddressKakao]");
 
 document.querySelector("form[name=login__form]").onsubmit = function() {
   if (xStoreName.value == "" ||
     xTel.value == "" ||
     xBusinessRegistrationNo == "" ||
     xIntroduction == "" ||
-    xAddressKakao == "" ||
+    xAddress == "" ||
     xHour.value == "") {
     window.alert("필수 입력 항목이 비어 있습니다.")
     return false;

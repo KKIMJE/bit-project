@@ -15,6 +15,7 @@
     <result column="business_registration" property="businessRegistration"/>
     <result column="store_name" property="storeName"/>
     <result column="address" property="address"/>
+    <result column="address_detail" property="addressDetail"/>
     <result column="tel" property="tel"/>
     <result column="hour" property="hour"/>
     <result column="introduction" property="introduction"/>
@@ -62,6 +63,7 @@
       s.business_registration,
       s.store_name,
       s.address,
+      ifnull(s.address_detail,'') address_detail,
       s.tel,
       s.hour,
       s.introduction,
@@ -89,6 +91,7 @@
       business_registration,
       store_name,
       address,
+      address_detail,
       tel,
       hour,
       introduction,
@@ -106,6 +109,7 @@
      #{businessRegistration},
      #{storeName},
      #{address},
+     #{addressDetail},
      #{tel},
      #{hour},
      #{introduction},
@@ -153,6 +157,7 @@
       s.business_registration,
       s.store_name,
       s.address,
+      s.address_detail,
       s.tel,
       s.hour,
       s.introduction,
@@ -197,6 +202,7 @@
       business_registration=#{businessRegistration},
       store_name=#{storeName},
       address=#{address},
+      address_detail=#{addressDetail},
       tel=#{tel},
       hour=#{hour},
       introduction=#{introduction},

@@ -36,8 +36,9 @@ function toggleImg() {
                     cancelButtonText:'취소'
                 }).then((result) => {
                   if(result.isConfirmed) {
+                    deleteMember();
                     //location.href = "/member/personalInfo.html";
-                   location.href="../main/main.html";
+                   //location.href="../main/main.html";
                   }else{
                      location.href = "/member/personalInfo.html";
                   }
@@ -132,20 +133,25 @@ function toggleImg() {
       });
       };
 
- /* 탈퇴하는거니까 정보 삭제
+ /* 탈퇴하는거니까 정보 삭제 */
   document.querySelector("#delete").onclick = function() {
-    fetch(`/member/delete?no=${mno}`)
+    deleteMember();
+  };
+  
+  function deleteMember()
+  {
+     fetch("/member/delete")
       .then(function(response) {
         return response.json();
       })
       .then(function(result) {
         //if (result.status == "success") {
-        if (result == 1) {
-          location.href = "/";
+        if (result.status == "success") {
+          window.alert("탈퇴 처리가 되었습니다.");
+          location.href = "../../main/main.html";
         } else {
-          window.alert("프로필 삭제 실패!");
-          console.log(result);
+          window.alert(result.data);
+          //console.log(result);
         }
       });
-
-  };*/
+  }

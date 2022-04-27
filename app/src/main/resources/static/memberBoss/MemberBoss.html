@@ -86,6 +86,7 @@
     <div class="login__box">
       <div class="content">
         <p class="form_store">가게명</p>
+        <!--  <input name="storeNo" type="hidden" class="form_input_name">-->
         <br> <input name="storeName" type="text"
           class="form_input_name">
 
@@ -96,7 +97,7 @@
             <input type="text" id="address_kakao" name="address"
               class="form_input_address_detail" placeholder="주소"
               readonly> <input type="text"
-              class="form_input_address_detail" name="address_detail"
+              class="form_input_address_detail" name="addressDetail"
               placeholder="상세주소">
           </div>
         </div>
@@ -105,24 +106,25 @@
           <h2 class="alcohol-content">주점테마</h2>
           <br>
         </div>
-
-        <div style="margin-left: 40px;">
+   
+         <div id ="x-option-div-container" style="margin-left: 40px;">
+        <div class="type-option">
           <!--<input type="checkbox" id="cb1" checked>-->
-          <select class="type-option">
-            <option>포차</option>
-            <option>펍</option>
-            <option>바</option>
-            <option>이자카야</option>
-            <option>주막</option>
-            <option>감성주점</option>
-            <option>루프탑</option>
-            <option>가라오케</option>
-            <option>기타</option>
+          <select>
+            <option value="1">포차</option>
+            <option value="2">펍</option>
+            <option value="3">바</option>
+            <option value="4">이자카야</option>
+            <option  value="5">주막</option>
+            <option value="6">감성주점</option>
+            <option  value="7">루프탑</option>
+            <option value="8">가라오케</option>
+            <option value="9">기타</option>
           </select>
 
 
           <div class="tel">
-            <p class="form_tel">전화번호</p>
+            <p class="form_tel">전화번호</p>sp
             <br> <input name="tel" type="tel"
               class="form_input_tel">
           </div>
@@ -158,11 +160,18 @@
             <p class="form_check">
               예약 가능 여부 <br></p>
             <center>
-              가능<input name="reservationAccept" type="checkbox" class="form_input_check" checked>불가능
-                <input name="reservationAccept" type="checkbox" class="form_input_check"> 최대인원
+              가능<input name="reservationAccept" id="revOn" type="radio"   class="form_input_check" value="1">
+              불가능<input name="reservationAccept" id="revOff" type="radio"  class="form_input_check" value="0"> 최대인원
                 <input name="maxMember" type="number" class="form_input_box" min="0" max="10000000">
             </center>
-              <!-- 사각형 -->
+              
+                <div style="margin-top:10px;">
+            <p class="form_check"> 영업상태 </p><br>
+            <center style="margin-left:-50%;">
+            영업중<input name="oper"  id="operOn" type="radio"  class="form_check" value="1" >
+            종료<input name="oper"  id="operOff" type="radio" class="form_check"  value="0"><br>
+            </center>
+         
           </div>
 
 
