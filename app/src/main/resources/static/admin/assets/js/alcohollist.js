@@ -22,9 +22,8 @@ fetch("/alcohol/size")
     console.log(totalAlcoholPage);
 
     for (let i = 1; i <= totalAlcoholPage; i++) {
-      console.log("aaa");
       let paginationLi = `
-    <li><span><a class="x-page-btn" onclick="alcoholList(${i})">${i}</a></span></li>
+    <li class="x-page-btn" onclick="alcoholList(${i})">${i}</li>
     `
       paginationUl.innerHTML += paginationLi;
     }
@@ -91,8 +90,6 @@ function createList(alcohols) {
       case 8:
       alcohol.alcoholTypeNo = "기타"
       break;
-      // default:
-      // alert("없는 타입의 주류 입니다.")
     }
 
     // 주류 테이블
@@ -105,14 +102,30 @@ function createList(alcohols) {
    <td>${alcohol.brand}</td>
    <td>${alcohol.origin}</td>
    <td>${alcohol.volume}</td>
-   <td><button type="button" name="button">수정</button><button type="button" name="button">삭제</button></td>
+   <td><button type="button" onclick="location.href='alcoholupdate.html?no=${alcohol.alcoholDetailNo}'">수정</button><button type="button" class="x-delete-btn" value="${alcohol.alcoholDetailNo}">삭제</button></td>
  </tr>
 `
     tbody.innerHTML += alcoholTr
   }
+  $(".x-delete-btn").on("click", (e) => {
+    console.log(e.target.value);
+
+    fetch(`/alcohol/delete?no=${e.target.value}`)
+    .then(response => {
+      return response.json()
+    })
+    .then(result => {
+      if (result.status == "success") {
+        location.href = "/admin/alcohollist.html";
+      } else {
+        window.alert("데이터 삭제 실패!");
+        console.log(result.data);
+      }
+    })
+  })
 }
 
-
+// 주류 검색
 $('.x-search-btn').on("click", () => {
   let searchFilt = $('.x-search-div select').val()
   let searchValue = $('.x-search-div input').val()
@@ -173,5 +186,14 @@ $('.x-search-btn').on("click", () => {
     .then(alcohols => {
       createList(alcohols);
     })
+})
 
+$(paginationUl).on("click", (e) => {
+  $(".pagination-ul li").removeClass("page-btn-active")
+  if (e.target == e.currentTarget) {
+    return;
+  } else {
+    e.target.classList.add("page-btn-active")
+  }
+console.log(e.target);
 })

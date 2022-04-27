@@ -15,6 +15,7 @@
     <result column="business_registration" property="businessRegistration"/>
     <result column="store_name" property="storeName"/>
     <result column="address" property="address"/>
+    <result column="address_detail" property="addressDetail"/>
     <result column="tel" property="tel"/>
     <result column="hour" property="hour"/>
     <result column="introduction" property="introduction"/>
@@ -62,6 +63,7 @@
       s.business_registration,
       s.store_name,
       s.address,
+      ifnull(s.address_detail,'') address_detail,
       s.tel,
       s.hour,
       s.introduction,
@@ -89,6 +91,7 @@
       business_registration,
       store_name,
       address,
+      address_detail,
       tel,
       hour,
       introduction,
@@ -106,6 +109,7 @@
      #{businessRegistration},
      #{storeName},
      #{address},
+     #{addressDetail},
      #{tel},
      #{hour},
      #{introduction},
@@ -119,7 +123,33 @@
      #{status}
      )
   </insert>
-
+  
+  <!--<select id="findStoreBystoreNo" resultMap="storeMap" parameterType="int">
+    select
+      s.store_no, 
+      s.business_registration_no,
+      s.business_registration,
+      s.store_name,
+      s.address,
+      s.tel,
+      s.hour,
+      s.introduction,
+      s.evaluation_score,
+      s.reservation_accept,
+      s.max_member,
+      s.lat,
+      s.lng,
+      s.place_id,
+      s.oper,
+      s.status
+    
+      from
+      store
+      
+    where 
+      s.store_no=#{no}
+  </select>-->
+  
 	<select id="findByNo" resultMap="storeMap" parameterType="int">
     select
       s.store_no, 
@@ -127,6 +157,7 @@
       s.business_registration,
       s.store_name,
       s.address,
+      s.address_detail,
       s.tel,
       s.hour,
       s.introduction,
@@ -154,6 +185,7 @@
 	  s.store_no=#{no}
   </select>
   
+  
   <!-- 스토어를 찜한 사람을 카운트한다. -->
   <select id="findByNoCountMno" resultType="int">
     select 
@@ -164,12 +196,13 @@
       store_no=#{no}
   </select>
   
-  <update id="update" parameterType="Store">
+   <update id="update" parameterType="Store">
     update store set
       business_registration_no=#{businessRegistrationNo}, 
       business_registration=#{businessRegistration},
       store_name=#{storeName},
       address=#{address},
+      address_detail=#{addressDetail},
       tel=#{tel},
       hour=#{hour},
       introduction=#{introduction},

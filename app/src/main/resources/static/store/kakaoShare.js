@@ -2,6 +2,7 @@
 Kakao.init('978692169dcc813ed6376dfc7bba8b87');
 // console.log(Kakao.isInitialized());
 
+// 카카오 공유하기
 function sendLink() {
     let storeName = document.querySelector(".storeName").innerHTML
     let storeTag = document.querySelector(".storeTag").innerHTML

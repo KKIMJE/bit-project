@@ -27,103 +27,177 @@ window.onload = function(){
             }
         }).open();
     });
-}
+    
+    get_store();
+} // end of window.onload
 
-  
-   /* 삭제 추가 */ 
-      // 1) URL에서 쿼리스트링(query string)을 추출한다.
+/* 삭제 추가 */ 
+// 1) URL에서 쿼리스트링(query string)을 추출한다.
 
-  
-  //if (storeNo == null) {
-  //    alert("해당번호의 가게가 없습니다!");
-  //    throw "파라미터 오류!";
- // }
+//if (storeNo == null) {
+//    alert("해당번호의 가게가 없습니다!");
+//    throw "파라미터 오류!";
+// }
+var arr = location.href.split("?");
+// console.log(arr);
+
+var qs = arr[1];
+// console.log(qs);
+
+var params = new URLSearchParams(qs);
+var no = params.get("no");
+console.log(no);
+ 
 
 //가게명 주소 주점테마 전화번호 영업시간 가게소개 사업자등록번호 , 태그(아직추가안함), 파일업로드 (추가안함)
 var xStoreNo = document.querySelector("input[name=storeNo]");
-  var xStoreName = document.querySelector("input[name=storeName]");
-  var xAddress = document.querySelector("input[name=address]"); 
-  var xOptionDivContainer = document.querySelector("#x-option-div-container");
-  var xTel = document.querySelector("input[name=tel]");
-  var xHour = document.querySelector("textarea[name=hour]");
-  var xIntroduction = document.querySelector("textarea[name=introduction]");
-  var xBusinessRegistrationNo = document.querySelector("input[name=businessRegistrationNo]");
-  //태그추가해야함
-  //var xReservationAccept = document.querySelector("#reservationAccept");
-  var xReservationAccept = document.querySelector("input[name=reservationAccept]");
-  var xMaxMember = document.querySelector("#maxMember");
-  //파일업로드 추가해야함
+var xStoreName = document.querySelector("input[name=storeName]");
+var xAddress = document.querySelector("input[name=address]"); 
+var xAddressDetail = document.querySelector("input[name=addressDetail]"); 
+var xOptionDivContainer = document.querySelector("#x-option-div-container");
+var xTel = document.querySelector("input[name=tel]");
+var xHour = document.querySelector("textarea[name=hour]");
+var xIntroduction = document.querySelector("textarea[name=introduction]");
+var xBusinessRegistrationNo = document.querySelector("input[name=businessRegistrationNo]");
+//태그추가해야함
+//var xReservationAccept = document.querySelector("#reservationAccept");
+var xReservationAccept = document.querySelector("input[name=reservationAccept]");
+var xMaxMember = document.querySelector("input[name=maxMember]");
+var xOper = document.querySelector("input[name=oper]");
+//파일업로드 추가해야함
 
 
   //if( storeNo ) {
     
-
+function get_store()
+{
   // 3) 서버에서 데이터 가져오기
-  fetch(`/store/get`)
+  fetch(`/store/get?no=${no}`)
     .then(function(response) {
       return response.json();
     })
     .then(function(result) {
        
       // 4) 상세 정보를 화면에 출력한다.
-      if (result.status == "fail") {
+    /*  if (result.status == "fail") {
         window.alert("서버 요청 오류!");
         console.log(result);
         return;
-      }
-      console.log(result.data);
-      var store = result.data;
+      }*/
+      //console.log(result.data);
+      console.log("store::: " + JSON.stringify(result,null,4));
+      
+      var store = result;
       xStoreNo.value = store.storeNo;
       xStoreName.value = store.storeName;
       xAddress.value = store.address;
+      xAddressDetail.value=store.addressDetail;
       xTel.value=store.tel;
       xHour.value = store.hour;
       xIntroduction.value = store.introduction;
       xBusinessRegistrationNo.value = store.businessRegistrationNo;
       //태그추가해야함 
-      xReservationAccept.value = store.reservationAccept;
-      xMaxMember.value = store.maxMember;
+      
+      if(store.reservationAccept == true)
+        //xReservationAccept.value = 1;
+        document.getElementById("revOn").checked = true;
+      else 
+        //xReservationAccept.value = 0;
+        document.getElementById("revOff").checked = true;
+      xMaxMember.value = store.maxMember * 1;
+      if(store.oper == true)
+        document.getElementById("operOn").checked = true;
+      else
+        document.getElementById("operOff").checked = true;
+      //xOper.value = store.oper;
       //파일업로드추가해야함
-   
+    });
+}
+
   /* if (store.Img != null) {
         xPhoto.src = "/store/img?filename=" + store.img;
       }*/
     
+document.querySelector("#submit-add-btn").onclick = function() {
+  if (xStoreName.value == "" || xTel.value == "" || xHour.value == "") 
+  {
+    window.alert("필수 입력 항목이 비어 있습니다.");
+    return;
+  }
 
-  document.querySelector("#change").onclick = function() {
-    if (xStoreName.value == "" ||  xTel.value == "" || xHour.value == "" ) {
-      window.alert("필수 입력 항목이 비어 있습니다.");
-      return;
-    }
+  var fd = new FormData(document.forms.namedItem("form1"));
+  // console.log(fd);
+  fetch("/store/add", {
+    method: "POST",
+    body: new URLSearchParams(fd)
 
-    var fd = new FormData(document.forms.namedItem("form1"));
-    // console.log(fd);
-    fetch("/store/update", {
-        method: "POST",
-        body: new URLSearchParams(fd)
-      }).then(function(response) {
+  }).then(function(response) {
+    return response.json();
+  })
+    .then(function(result) {
+      if (result == "success") {
+        location.href = "/ceo/storemanagement.html";
+      } else {
+        // window.alert("주점 변경 실패!");
+        console.log(result);
+      }
+    });
+}
+
+document.querySelector("#change").onclick = function() {
+  if (xStoreName.value == "" || xTel.value == "" || xHour.value == "") 
+  {
+    window.alert("필수 입력 항목이 비어 있습니다.");
+    return;
+  }
+
+  var fd = new FormData(document.forms.namedItem("form1"));
+  // console.log(fd);
+  fetch("/store/update", {
+    method: "POST",
+    body: new URLSearchParams(fd)
+
+  }).then(function(response) {
+    return response.json();
+  })
+    .then(function(result) {
+      // result 값 : 0 - 실패 0보다 큰값: 성공
+      //if (result == "success") {
+      if (result != 0) {
+        //location.href = "/ceo/storeChange.html";
+        //alert("변경 되었습니다.");
+        location.href = "/ceo/storemanagement.html";
+      } else {
+        //alert("변경이 실패 했습니다.");
+        // window.alert("주점 변경 실패!");
+        console.log(result);
+      }
+    });
+}
+ 
+//    })
+   
+
+document.querySelector("#delete").onclick = function() {
+    fetch(`/store/delete?no=${no}`)
+      .then(function(response) {
         return response.json();
       })
       .then(function(result) {
-          if (result == "success") {
-          location.href = "/ceo/storeChange.html";
+        if (result.status == "success") {
+          location.href = "/ceo/storemanagement.html";
         } else {
-          window.alert("주점 변경 실패!");
-          console.log(result.data);
+          //window.alert("주점 삭제 실패!");
+          location.href = "/ceo/storemanagement.html";
+          console.log(result);
         }
       });
-  };
- 
- 
-    document.querySelector("#exit").onclick = function() {
-        window.location.href = "/ceo/storemanagement.html";
-      };
+}
 
-      
-      
-       document.querySelector("#next").onclick = function() {
-        window.location.href = "/ceo/storeChange2.html";
-      };
+
+document.querySelector("#next").onclick = function() {
+  window.location.href = "/ceo/storeChange2.html";
+};
     
 
   /*document.querySelector("#delete").onclick = function() {
@@ -141,5 +215,5 @@ var xStoreNo = document.querySelector("input[name=storeNo]");
         }
       });
       
-  };*/
+  )};*/
   

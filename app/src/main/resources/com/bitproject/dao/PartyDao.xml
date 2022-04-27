@@ -64,6 +64,7 @@
   select
     p.party_no,
     p.title,
+    p.contents,
     p.reg_date,
     p.party_fee,
     p.meeting_date,
@@ -82,10 +83,24 @@
   from party p
     inner join member m on p.writer=m.mno
     left outer join party_comment pc on p.party_no=pc.party_no
-    inner join member m2 on pc.commentWriter=m2.mno
+    left outer join member m2 on pc.commentWriter=m2.mno
   where 
     p.party_no=#{no}
   </select>
+  
+  <update id="update" parameterType="party">
+    update party set
+      title=#{title}, 
+      contents=#{contents},
+      party_fee=#{partyFee},
+      meeting_date=#{meetingDate},
+      max_member=#{maxMember},
+      alcohol_type=#{alcoholType},
+      alcohol_limit=#{alcoholLimit},
+      address=#{address}
+    where 
+      party_no=#{partyNo} and writer=#{writer.mno}
+  </update>
   
   <delete id="delete" parameterType="party">
     delete from party 
@@ -93,16 +108,6 @@
   </delete>
   
   </mapper>
-  
-<!--
-  <update id="update" parameterType="Party">
-    update party set
-      title=#{title}, 
-      contents=#{contents}
-    where 
-      party_no=#{partyNo} and writer=#{writer.mno}
-  </update>
--->
 
 
 

@@ -1,34 +1,101 @@
-.wrap {
-  width: 960px;
-  display: flex;
-  justify-content: center;
+@charset "UTF-8";
+
+* {
+    font-family: NanumSquareRound;
+    padding: 0;
+    margin: 0;
 }
 
-.party-information {
-  font-family: NanumSquareRound;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-}
-.party-category {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 16px;
-  padding: 5px;
-  width: 100px;
-  font-weight: 500;
+html {
+    display: flex;
+    justify-content: center;
 }
 
-.party-title span {
+body {
+    width: 1000px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.chat_wrap {
+    background-color: rgba(236, 236, 237, 0.162);
+    min-height: 1024px;
+    border: 1px solid #c7c7c7;
 }
 
-.party-title i {
-  color: rgba(5, 5, 5, 0.795);
-  font-size: 20px;
+.chat_wrap .header {
+    font-size: 14px; 
+    padding: 15px 0; 
+    background: #90d483;
+    color: white; 
+    text-align: center;
+    width: 998px;  
 }
 
-.party-information-detail {
-  display: flex;
-  justify-content: space-between;
+.chat_wrap .chat {
+    padding-bottom: 80px; 
+}
+
+.chat_wrap .chat ul {
+    width: 100%; 
+    list-style: none; 
+    }
+
+.chat_wrap .chat ul li {
+    width: 100%; 
+    }
+
+.chat_wrap .chat ul li.left {
+    text-align: left; 
+    }
+
+.chat_wrap .chat ul li.right {
+    text-align: right; 
+    }
+
+.chat_wrap .chat ul li > div {
+    font-size: 13px;  
+    }
+
+.chat_wrap .chat ul li > div.sender {
+    margin: 10px 20px 0 20px; 
+    font-weight: bold; 
+    }
+
+.chat_wrap .chat ul li > div.message { 
+    display: inline-block; 
+    word-break:break-all; 
+    margin: 5px 20px; 
+    max-width: 75%; 
+    border: 1px solid #888;
+    padding: 10px; 
+    border-radius: 5px; 
+    background-color: #FCFCFC; 
+    color: #555; 
+    text-align: left; 
+}
+
+.chat_wrap .input-div { 
+    position: fixed; 
+    bottom: 0; 
+    width: 1000px;
+    background-color: #FFF; 
+    text-align: center; 
+    border: 3px solid #90d483;
+}
+
+.chat_wrap .input-div > textarea { 
+    resize: none;
+    width: 990px;
+    height: 80px; 
+    border: none; 
+    padding: 10px;
+    margin: 0;
+}
+
+.chat_wrap .input-div > textarea:focus {
+    outline: none;
+}
+
+.format { 
+    display: none; 
 }

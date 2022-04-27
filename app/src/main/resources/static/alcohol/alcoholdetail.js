@@ -99,8 +99,10 @@ fetch(`/alcohol/get?no=${no}`)
     return response.json();
 
   })
-  .then(function(alcohol) {
-    console.log(alcohol);
+  .then(function(result) {
+    console.log(result);
+    let alcohol = result.data
+
     detailImg.src = alcohol.img
     introName.innerHTML = alcohol.alcoholName
     introBrand.innerHTML = alcohol.brand

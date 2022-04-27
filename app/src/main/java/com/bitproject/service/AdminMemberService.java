@@ -5,7 +5,9 @@ import com.bitproject.domain.Member;
 
 public interface AdminMemberService {
 
-  List<Member> list(int pageSize, int pageNo);
+  List<Member> list();
+
+  List<Member> pagelist(int pageSize, int pageNo);
 
   int size();
 
@@ -20,6 +22,6 @@ public interface AdminMemberService {
   //  Member getMemberByEmail(String email);
   //
   //
-  //  int update(Member member);
+  int update(int no);
 
 }

@@ -5,18 +5,12 @@ import java.sql.Timestamp;
 public class Report {
 
   int repoNo;
-  int mNo;
-  String targetNo;
+  int mno;
+  int targetNo;
   String type;
-  String contents;
   Timestamp date;
+  String contents;
   boolean status;
-
-  @Override
-  public String toString() {
-    return "Report [repoNo=" + repoNo + ", mNo=" + mNo + ", targetNo=" + targetNo + ", type=" + type
-        + ", contents=" + contents + ", date=" + date + ", status=" + status + "]";
-  }
 
 
   public int getRepoNo() {
@@ -25,16 +19,16 @@ public class Report {
   public void setRepoNo(int repoNo) {
     this.repoNo = repoNo;
   }
-  public int getmNo() {
-    return mNo;
+  public int getMno() {
+    return mno;
   }
-  public void setmNo(int mNo) {
-    this.mNo = mNo;
+  public void setMno(int mno) {
+    this.mno = mno;
   }
-  public String getTargetNo() {
+  public int getTargetNo() {
     return targetNo;
   }
-  public void setTargetNo(String targetNo) {
+  public void setTargetNo(int targetNo) {
     this.targetNo = targetNo;
   }
   public String getType() {
@@ -49,10 +43,10 @@ public class Report {
   public void setContents(String contents) {
     this.contents = contents;
   }
-  public java.sql.Timestamp getDate() {
+  public Timestamp getDate() {
     return date;
   }
-  public void setDate(java.sql.Timestamp date) {
+  public void setDate(Timestamp date) {
     this.date = date;
   }
   public boolean isStatus() {
@@ -62,5 +56,9 @@ public class Report {
     this.status = status;
   }
 
-
+  @Override
+  public String toString() {
+    return "Report [repoNo=" + repoNo + ", mno=" + mno + ", targetNo=" + targetNo + ", type=" + type
+        + ", contents=" + contents + ", date=" + date + ", status=" + status + "]";
+  }
 }

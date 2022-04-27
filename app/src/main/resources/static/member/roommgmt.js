@@ -2,77 +2,42 @@
 const lightBtn = document.querySelector('.roomlist-category-sort');
 lightBtn.addEventListener("click",function(e){
   if (e.target == e.currentTarget) {
-    return;
+    return;c
   } else {
     e.currentTarget.querySelector('.act').classList.toggle('act');
     e.target.classList.toggle('act');
   }
 });
 
-// next, pre button
-//const next = document.querySelector('.next');
-//const pre = document.querySelector('.previous');
+//next, pre button
+const next = document.querySelector('.next');
+const pre = document.querySelector('.previous');
 
-//let storeAll = document.querySelectorAll('.roomlist-contents-card');
-//let cursor = 1;
-//const endPage = storeAll.length;
 
-// 방 리스트 초기화
-//for (let i=1; i < storeAll.length; i++) {
-  //storeAll[i].style.display = "none";
-//}
+$('#enter').click(function() {
+  location.href = "/party/partyChatting.html?pno=1"
+})
 
-//const moveAl = function (cursor) {
-  //if (storeAll[cursor].style.display == "none") {
-    //storeAll[cursor].style.display = "flex"
-  //}
-  //for (let i=cursor+1; i < endPage; i++) {
-    //storeAll[i].style.display = "none";
-  //}
-  //for (let i=cursor-1; i < cursor; i--) {
-    //if (i == -1) {
-      //break;
-    //};
-    //storeAll[i].style.display = "none";
-  //}
-//}
-
-//next.addEventListener("click", () => {
-  //if (cursor == endPage) {
-    //console.log("range out");
-  //} else if (cursor == 0) {
-    //  cursor += 1;
-      //moveAl(cursor);
-      //cursor += 1;
-      //console.log("cursor : " + `${cursor}`);
-    //} else {
-      //moveAl(cursor);
-      //cursor += 1;
-     // console.log("cursor : " + `${cursor}`);
-    //}
-//});
-
-//pre.addEventListener("click", () => {
-  //if (cursor == endPage) {
-    //cursor -= 2;
-    //if (-1 < cursor) {
-      //moveAl(cursor);
-      //console.log("cursor : " + `${cursor}`);
-    //} else {
-     // console.log("range out")
-    //}
-  //} else {
-    //if (0 < cursor) {
-      //cursor -= 1;
-      //if (cursor == 1) {
-        //storeAll[cursor].style.display = "none"
-        //storeAll[cursor-1].style.display = "flex"
-       // return;
-      //}
-      //moveAl(cursor);
-      //console.log("cursor : " + `${cursor}`);
-    //} else {
-      //console.log("range out")
-    //}
- // }
-//});
+// $().ready(function() {
+//     $("#enter").click(function () {
+//                 Swal.fire({
+//                     icon: 'warning',
+//                     text: '선택해주세요!',
+//                     showDenyButton:true,
+//                     showCancelButton:true,
+//                     confirmButtonColor:'#90d483',
+//                     denyButtonColor:'#90d483',
+//                     ButtonColor:'#90d483',
+//                     cancelButtonColor: '#90d483',
+//                     confirmButtonText:`오자네왔능가`,
+//                      denyButtonText:`치킨데이`,
+//                    cancelButtonText:`확인`
+//                 }).then((result) => {
+//                   if(result.isConfirmed) {
+//                    location.href = "/";
+//                   }else {
+//                     location.href="/ceo/mypage.html"
+//                   }
+//                 })
+//             });
+//         });

@@ -28,16 +28,20 @@ function targetList(targetNo) {
   fetch(`/store/get?no=${no}`)
   .then(function(response) {
     return response.json() 
-  }).then(function(store) {
+  }).then(function(data) {
+  
+      store = data
       console.log(store);
-      storeTextBox(store.data)
-      mapMarker(store.data)
+      storeTextBox(store)
+      mapMarker(store)
   });
 
   fetch(`/review/get?no=${no}`)
     .then(function(response) {
       return response.json() 
-    }).then(function(reviews) {
+    }).then(function(data) {
+      
+      reviews = data
       reviewsData = reviews
       console.log(reviews);
       StoreReviewPrint(reviews)
@@ -46,7 +50,9 @@ function targetList(targetNo) {
   fetch(`/reservation/get?no=${no}`)
     .then(function(response) {
       return response.json() 
-    }).then(function(reservation) {
+    }).then(function(data) {
+
+      reservation = data
       reservationData = reservation
       console.log(reservation);
       reviewMemberinfo(reservation)
@@ -54,31 +60,6 @@ function targetList(targetNo) {
 
 }
 targetList(no) // fetch 실행
-
-
-
-// 리뷰 최신순 정렬버튼
-// let choiceRecent = document.querySelector(".choiceRecent")
-// choiceRecent.addEventListener("click", function(e) {
-  
-//   // 리뷰이미지 프린트
-//   let reviewDatanum = reviewsData.length
-//   let str =""
-//   for (let i=0; i < reviewDatanum; i++) {
-//     let xReviewImgs = reviewsData[i].reviewImgs
-//     for (let i=0; i < xReviewImgs.length; i++) {
-//       if (xReviewImgs[i].img != null) {
-//         str += `<img class="review-img" src="../asset/img/storeReviewImg/
-//         ${xReviewImgs[i].img}.jpg" alt="">`
-//       } else {
-//         continue
-//       }
-//     }
-//   }
-//   // 리뷰정보 프린트
-//   reviewMemberinfo(reservationData)
-// })
-
 
 
 // 리뷰 별점순 정렬
@@ -90,7 +71,7 @@ function listSortStar(dataNm) {
   );
 }
 $(".choiceStar").click(function() {
-  var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
+  var dataNm = $(this).data("datanm"); //data()의 이름은 소문자로 작성
   listSortStar(dataNm);
 });
 
@@ -103,8 +84,33 @@ function listSortRecent(dataNm) {
   );
 }
 $(".choiceRecent").click(function() {
-  var dataNm = $(this).data("datanm"); //data() 의 이름은 소문자로 작성
+  var dataNm = $(this).data("datanm"); //data()의 이름은 소문자로 작성
   listSortRecent(dataNm);
+});
+
+// 포토리뷰 학인해서 정렬
+function listSortPhoto(dataNm) {
+  $('#review-body').html(
+    $('#review-body a').sort(function(a, b){
+      return $(b).data(dataNm) - $(a).data(dataNm)
+    })
+  );
+}
+$(".choicePhoto").click(function() {
+  var dataNm = $(this).data("datanm"); //data()의 이름은 소문자로 작성
+  listSortPhoto(dataNm);
+});
+
+// 주점찜
+let cntSwitch = true
+$(".storeMnoCnt").click(function() {
+  while(cntSwitch) { 
+    let str = $(".storeMnoCnt").html()
+    count = str.replace(/[^0-9]/g,''); // int 숫자만 추출
+    count++
+    cntSwitch = false
+  }
+  $(".storeMnoCnt").html(`<i id="heart" class="fa-heart fa-solid"></i>${count}`)
 });
 
 
@@ -430,10 +436,26 @@ function StoreReviewPrint(reviewData) {
   if (reviewData == null) {
     console.log("reviewData null")
   }
-
+  //reviewData[i].reviewImgs[0].img
+  
   for (let i=0; i < reviewData.length; i++) {
+
+    // 포토리뷰 데이터 생성
+    let reviewImgs = reviewData[i].reviewImgs
+    let returnImgCnt;
+    if (reviewImgs.length == 1) {
+      if (reviewImgs[0].img == null) {
+        returnImgCnt = 0
+      } else {
+        returnImgCnt = 1
+      }      
+    } else {
+      returnImgCnt = reviewImgs.length
+    }
+
     str += 
-      `<a data-stars=${reviewData[i].score} data-recent=${reviewData[i].reservationNo}><div class="storeReviewBack">
+      `<a data-stars=${reviewData[i].score} data-recent=${reviewData[i].reservationNo} data-photo=${returnImgCnt}>
+        <div class="storeReviewBack">
           <div class="reviewprofile">
             <div class="profile-img"></div>
             <div class="reviewerName"></div>
@@ -444,7 +466,8 @@ function StoreReviewPrint(reviewData) {
             <div class="reviewText">${reviewData[i].contents}</div>
             <div class="reviewImgBox">${reviewImgPrint(reviewData[i].reviewImgs)}</div>
           </div>
-      </div></a>`
+        </div>
+      </a>`
   }
   xReviewBox.innerHTML = str
 }
@@ -498,8 +521,3 @@ function reviewMemberinfo(reservationInfo) {
     }
   }
 }
-
-
-// location.reload();
-    // eValue = e.target.value;
-    // console.log(eValue);

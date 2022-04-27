@@ -90,7 +90,7 @@ h1 {
 
 .form1__box {
   width: 450px;
-  height: 1030px;
+  height: 1060px;
   border-radius: 10px;
   border: 1px solid;
   border-radius: 5px;
@@ -195,6 +195,13 @@ body > form > div > div > div > div > span {
   border-radius: 10px;
   padding: 8px;
   margin-top: 5px;
+  
+}
+
+.form_check{
+
+  padding-l: -15px;
+
   
 }
 

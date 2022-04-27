@@ -17,14 +17,3 @@ public interface PartyDao {
 
   int delete(int no);
 }
-
-
-
-
-
-
-
-
-
-
-

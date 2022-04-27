@@ -11,7 +11,7 @@ public interface AlcoholDetailService {
 
   List<AlcoholDetail> targetList(int targetNo, int pageSize, int pageNo);
 
-  Object add(AlcoholDetail alcoholDetail);
+  int add(AlcoholDetail alcoholDetail);
 
   AlcoholDetail get(int no);
 
@@ -21,7 +21,7 @@ public interface AlcoholDetailService {
 
   int targetSize(int targetNo);
 
-  //  int update(AlcoholDetail alcoholDetail);
+  int update(AlcoholDetail alcoholDetail);
 
-  //  int delete(AlcoholDetail alcoholDetail);
+  int delete(AlcoholDetail alcoholDetail);
 }

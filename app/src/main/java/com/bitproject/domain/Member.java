@@ -22,6 +22,11 @@ public class Member {
   float score;
   int blockAccept;
   String memberStatus;
+  int storeCount;
+
 }
+
+
+
 
 
