@@ -8,7 +8,10 @@ import com.bitproject.domain.Member;
 @Mapper  
 public interface AdminMemberDao {
 
-  List<Member> findAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
+  List<Member> findAll();
+
+  List<Member> pageFindAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
+
 
   int countAll();
 

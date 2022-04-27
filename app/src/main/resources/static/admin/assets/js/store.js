@@ -25,7 +25,7 @@ fetch("/admin/store/size")
     for (let i = 1; i <= totalStorePage; i++) {
       console.log("aaa");
       let paginationLi = `
-    <li><span><a class="x-page-btn" onclick="storeList(${i})">${i}</a></span></li>
+    <li class="x-page-btn" onclick="storeList(${i})">${i}</li>
     `
       paginationUl.innerHTML += paginationLi;
     }
@@ -114,5 +114,14 @@ $('.x-search-btn').on("click", () => {
     .then(stores => {
       createList(stores);
     })
+})
 
+$(paginationUl).on("click", (e) => {
+  $(".pagination-ul li").removeClass("page-btn-active")
+  if (e.target == e.currentTarget) {
+    return;
+  } else {
+    e.target.classList.add("page-btn-active")
+  }
+console.log(e.target);
 })
