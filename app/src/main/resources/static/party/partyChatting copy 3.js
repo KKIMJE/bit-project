@@ -18,94 +18,57 @@ if (pno == null) {
 }
 
 
-// const lala = (async () => {
-// try {
-//     return await uNickname()
-// } catch (e) {
-//     console.log(e);
-// }
-// })();
-
-// console.log(lala);
-
-
-// fetch("/member/get")
-// .then(res => res.json())
-// .then(result => callback(result))
-    
-
-// function getNickName(callback) {
-// }
-
-//     function callBackFunc(result) {
-//         console.log(result)
-//         myName = result.data.name
-//         //myName = json.name
-//         console.log(myName)
-//         return myName;
-//     }
-//     let lala = getNickName(callBackFunc);
-//     console.log("lala")
-    
-//     console.log(myName)
-
-
-
-
-// var myName;
-// function getNickName(callback) {  
-// fetch("/member/get")
-// .then(res => res.json())
-// .then(result => callback(result))
-//     }
-
-//     function callBackFunc(result) {
-//         console.log(result)
-//         myName = result.data.name
-//         //myName = json.name
-//         console.log(myName)
-//         return myName;
-//     }
-//     let lala = getNickName(callBackFunc);
-//     console.log("lala")
-    
-//     console.log(myName)
-
-
-// console.log(`31:::::::::::::${myName}`);
-        
-
 const Chat = (function(){
+    
+    fetch("/member/get").then(function (response) {
+        console.log(response);
+        return response.json();
+    }).then(function (result) {
+    return result.data.nickName;
+    })
 
-    let myName;
-
-        fetch("/member/get")
-        .then(function (response) {
-            return response.json();
+    const uNickname = () => {
+        return new Promise((resolve) => {
+            fetch("/member/get")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (result) {
+            resolve(result.data.nickName)
         })
-        .then(function (result) {
-            myName = result.data.nickName;
-        return myName
-        }).then(function(myName) {
-            console.log(myName);
-            fetch(`/partyBoard/get?pno=${pno}`, {
-                method: "GET"
-                }).then(function(response) {
-                    return response.json();
-                }).then(function(result) {
-                    console.log(result);
-                    for (let chat of result) {
-                        let listData = {
-                            "senderName"  : `${chat.sender.nickName}`,
-                            "message"     : `${chat.message}`
-                        }
-                        console.log(listData)
-                        receive(listData);
-                    }
-                })
-        })
+    })
+}
+
+let myName;
+
+(async () => {
+    try {
+        myName = await uNickname()
+        console.log(myName);
+    } catch (e) {
+        console.log(e);
+    }
+})();
 
 
+    fetch(`/partyBoard/get?pno=${pno}`, {
+        method: "GET"
+    }).then(function(response) {
+        //console.log("리스트 불러와줘")
+        console.log(response);
+        return response.json();
+    }).then(function(result) {      
+        for (let chat of result) {
+            let listData = {
+            "senderName"  : `${chat.sender.nickName}`,
+            "message"     : `${chat.message}`
+        }
+            //console.log(listData)
+            receive(listData);
+        }
+    })
+    
+    
     // init 함수
     function init() {
         // enter 키 이벤트
@@ -151,7 +114,7 @@ const Chat = (function(){
     // 메시지 전송
     function sendMessage(message) {
         const data = {
-            "senderName"  : `${myName}`,
+            "senderName"  : "개코",
             "message"     : message,
             "pno"         : pno
         }
@@ -175,9 +138,8 @@ const Chat = (function(){
 
     // 메시지 수신
     function receive(data) {
-        console.log(data)
         const LR = (data.senderName != myName)? "left" : "right";
-        appendMessageTag(LR , data.senderName, data.message);
+        appendMessageTag("right", data.senderName, data.message);
     }
 
     return {
