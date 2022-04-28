@@ -26,18 +26,20 @@ public class CommunityController {
   @RequestMapping("/community/get")
   public Object get(int no) {
     CommunityMain communityMain = communityDao.findByNo(no);
+    //    return 1;
     if (communityMain == null) {
       return "";
     }
+    communityDao.increaseViewCount(no);
     return communityMain;
   }
 
-  @RequestMapping("Community/update")
+  @RequestMapping("community/update")
   public Object update(CommunityMain communityMain){
     return communityDao.update(communityMain);
   }
 
-  @RequestMapping("Community/delete")
+  @RequestMapping("community/delete")
   public Object delete(int no) {
     return communityDao.delete(no);
   }
