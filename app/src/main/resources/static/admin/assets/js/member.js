@@ -280,22 +280,5 @@ $('.x-search-btn').on("click", () => {
 
 
 
-$(paginationUl).on("click", (e) => {
-  $(".pagination-ul li").removeClass("page-btn-active")
-  if (e.target == e.currentTarget) {
-    return;
-  } else {
-    e.target.classList.add("page-btn-active")
-  }
-  console.log(e.target);
-})
-
-
-
-
-
-
-
-
 
 //
