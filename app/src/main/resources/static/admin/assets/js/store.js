@@ -6,7 +6,7 @@ let currTable = document.querySelector("#x-curr-table")
 
 
 let pageSize = 10;
-let pageNo = 1;
+let pageCount = 10; // 페이징에 나타낼 페이지 수
 let totalStorePage = 0;
 let totalStoreCount = 0;
 let operStoreCount = 0;
@@ -16,27 +16,103 @@ let withdrawStoreCount = 0;
 
 
 
+$(document).ready(function() {
+  // 페이지 버튼 생성
+  fetch("/admin/store/size")
+    .then(response => {
+      return response.json()
+    })
+    .then(result => {
+      totalStoreCount = result
 
-// 페이지 버튼 생성
-fetch("/admin/store/size")
-  .then(response => {
-    return response.json()
-  })
-  .then(result => {
-    console.log(result);
-    let totalStorePage = Math.ceil(result / pageSize)
-    console.log(totalStorePage)
+      //   console.log(result);
+      //   let totalStorePage = Math.ceil(result / pageSize)
+      //   console.log(totalStorePage)
+      //
+      //   for (let i = 1; i <= totalStorePage; i++) {
+      //     let paginationLi = `
+      // <li class="x-page-btn" onclick="storeList(${i})">${i}</li>
+      // `
+      //     paginationUl.innerHTML += paginationLi;
+      //
+      //   }
+      paging(totalStoreCount, pageSize, pageCount, 1)
+    })
+})
 
-    for (let i = 1; i <= totalStorePage; i++) {
-      let paginationLi = `
-    <li class="x-page-btn" onclick="storeList(${i})">${i}</li>
-    `
-      paginationUl.innerHTML += paginationLi;
+function paging(totalStoreCount, pageSize, pageCount, currentPage) {
+  console.log("currentPage : " + currentPage);
+  console.log(totalStoreCount);
 
+  totalStorePage = Math.ceil(totalStoreCount / pageSize) // 총 페이지 수\
+  console.log(totalStorePage);
+
+  if (totalStorePage < pageCount) {
+    pageCount = totalStorePage;
+  }
+
+  let pageGroup = Math.ceil(currentPage / pageCount) // 페이지 그룹
+  let last = pageGroup * pageCount // 화면에 보여질 마지막 페이지 번호
+
+  if (last > totalStorePage) {
+    last = totalStorePage
+  }
+
+
+  let first = last - (pageCount - 1); //화면에 보여질 첫번째 페이지 번호
+  let next = last + 1;
+  let prev = first - 1;
+
+  if (last % pageCount != 0) {
+    first = currentPage
+    last = totalStorePage
+  }
+
+  let pageHtml = "";
+
+  if (prev > 0) {
+    pageHtml += "<li><a href='#' id='prev'> 이전 </a></li>";
+  }
+
+  console.log(first);
+  console.log(last);
+
+  //페이징 번호 표시
+  for (var i = first; i <= last; i++) {
+    if (currentPage == i) {
+      pageHtml +=
+        "<li class='on'><a href='#' id='" + i + "'>" + i + "</a></li>";
+    } else {
+      pageHtml += "<li><a href='#' id='" + i + "'>" + i + "</a></li>";
     }
-  })
+  }
 
-  fetch("/admin/store/list")
+  if (last < totalStorePage) {
+    pageHtml += "<li><a href='#' id='next'> 다음 </a></li>";
+  }
+
+  $(".pagination-ul").html(pageHtml)
+
+  //페이징 번호 클릭 이벤트
+  $(".pagination-ul li a").click(function() {
+    let $id = $(this).attr("id");
+    selectedPage = $(this).text();
+
+    if ($id == "next") selectedPage = next;
+    if ($id == "prev") selectedPage = prev;
+
+
+
+    //페이징 표시 재호출
+    paging(totalStoreCount, pageSize, pageCount, selectedPage);
+
+    storeList(selectedPage);
+
+  });
+
+}
+
+fetch("/admin/store/list")
   .then(response => {
     return response.json()
   })

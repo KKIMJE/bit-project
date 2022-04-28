@@ -6,9 +6,9 @@ let currTable = document.querySelector("#x-curr-table")
 
 
 let pageSize = 10;
-let pageNo = 1;
+let pageCount = 10; // 페이징에 나타낼 페이지 수
 let totalMemberPage;
-let totalMemberCount = 0;
+let totalMemberCount;
 let userMemberCount = 0;
 let ceoMemberCount = 0;
 let withdrawMemberCount = 0;
@@ -49,30 +49,107 @@ fetch("/admin/member/list")
     }
   })
 
-
+$(document).ready(function() {
 // 페이지 버튼 생성
 fetch("/admin/member/size")
   .then(response => {
     return response.text()
   })
   .then(result => {
-    // totalMemberCount = result
-    totalMemberPage = Math.ceil(result / pageSize)
-
-    for (let i = 1; i <= totalMemberPage; i++) {
-      let paginationLi = `
-      <li class="x-page-btn" onclick="memberList(${i})">${i}</li>
-      `
-      paginationUl.innerHTML += paginationLi;
-    }
+    totalMemberCount = result
+    // totalMemberPage = Math.ceil(result / pageSize)
+    //
+    // for (let i = 1; i <= totalMemberPage; i++) {
+    //   let paginationLi = `
+    //   <li class="x-page-btn" onclick="memberList(${i})">${i}</li>
+    //   `
+    //   paginationUl.innerHTML += paginationLi;
+    // }
+    paging(totalMemberCount, pageSize, pageCount, 1);
   })
+})
+
+function paging(totalMemberCount, pageSize, pageCount, currentPage) {
+  console.log("currentPage : " + currentPage);
+  console.log(totalMemberCount);
+
+  totalMemberPage = Math.ceil(totalMemberCount / pageSize) // 총 페이지 수\
+  console.log(totalMemberPage);
+
+  if (totalMemberPage < pageCount) {
+    pageCount = totalMemberPage;
+  }
+
+  let pageGroup = Math.ceil(currentPage / pageCount) // 페이지 그룹
+  let last = pageGroup * pageCount // 화면에 보여질 마지막 페이지 번호
+
+  if (last > totalMemberPage) {
+    last = totalMemberPage
+  }
+
+
+  let first = last - (pageCount - 1); //화면에 보여질 첫번째 페이지 번호
+  let next = last + 1;
+  let prev = first - 1;
+
+  if (last % pageCount != 0) {
+    first = currentPage
+    last = totalMemberPage
+  }
+
+  let pageHtml = "";
+
+  if (prev > 0) {
+    pageHtml += "<li><a href='#' id='prev'> 이전 </a></li>";
+  }
+
+  console.log(first);
+  console.log(last);
+
+  //페이징 번호 표시
+  for (var i = first; i <= last; i++) {
+    if (currentPage == i) {
+      pageHtml +=
+        "<li class='on'><a href='#' id='" + i + "'>" + i + "</a></li>";
+    } else {
+      pageHtml += "<li><a href='#' id='" + i + "'>" + i + "</a></li>";
+    }
+  }
+
+  if (last < totalMemberPage) {
+    pageHtml += "<li><a href='#' id='next'> 다음 </a></li>";
+  }
+
+  $(".pagination-ul").html(pageHtml)
+
+  //페이징 번호 클릭 이벤트
+  $(".pagination-ul li a").click(function() {
+    let $id = $(this).attr("id");
+    selectedPage = $(this).text();
+
+    if ($id == "next") selectedPage = next;
+    if ($id == "prev") selectedPage = prev;
+
+
+
+    //페이징 표시 재호출
+    paging(totalMemberCount, pageSize, pageCount, selectedPage);
+
+    memberList(selectedPage);
+
+  });
+
+}
+
+
+
 
 
 // 멤버 테이블 생성
-function memberList(pageNo) {
+function memberList(selectedPage) {
   $(tbody).empty()
 
-  fetch(`/admin/member/pagelist?pageSize=${pageSize}&pageNo=${pageNo}`)
+  fetch(`/admin/member/pagelist?pageSize=${pageSize}&pageNo=${selectedPage}`)
     .then(response => {
       return response.json()
     })
