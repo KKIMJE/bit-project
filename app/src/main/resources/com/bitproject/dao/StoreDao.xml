@@ -25,6 +25,7 @@
     <result column="lng" property="lng"/>
     <result column="oper" property="oper"/>
     <result column="status" property="status"/>
+    <result column="store_type_no" property="storeTypeNo"/>
     
     <collection property="alcoholSales" ofType="AlcoholSales">
       <result column="alcohol_detail_no" property="alcoholDetailNo"/>

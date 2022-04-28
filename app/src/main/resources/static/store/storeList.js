@@ -14,6 +14,7 @@ function targetList(targetNo) {
       let tStoreNumList = [] // 필터링된 주점 번호모음
 
       for (var i = 0; i < stores.length; i++) {
+        
         if (targetNo == stores[i].storeTypeNo) { // 카테고리 필터링(포차, 펍, 바...)
           tStoreNumList.push(i)
 
@@ -85,6 +86,8 @@ function targetList(targetNo) {
       console.log("해당 주점수 : " + tStoreNumList.length)
       if (itemDiv == null) {
         console.log("null")
+        alert("해당 카테고리의 주점 데이터는 준비중 입니다.")
+        location.reload()
         return
       }
       listDiv.appendChild(itemDiv)
