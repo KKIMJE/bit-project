@@ -209,7 +209,7 @@ function printOper(oper) {
   if (oper == 1) {
     status = "영업중"
   } else {
-    status = "휴일"
+    status = "종료"
   }
   return status;
 }

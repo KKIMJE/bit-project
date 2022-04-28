@@ -12,6 +12,10 @@
     <result column="title" property="boardTitle"/>
     <result column="contents" property="boardContents"/>
     <result column="reg_date" property="regDate"/>
+    <result column="view_count" property="viewCount"/>
+    
+
+    
 </resultMap>
   
   <select id="findAll" resultMap="communityMap">
@@ -45,7 +49,7 @@
     )
   </insert>
   
-  
+    -->
   <update id="update" parameterType="CommunityMain">
     update board set
       title=#{boardTitle},
@@ -53,7 +57,7 @@
     where 
      board_no=#{boardNo}
   </update>
-  -->
+
   <delete id="delete" parameterType="int">
     delete from board 
     where board_no=#{boardNo}
@@ -61,20 +65,30 @@
 
   
     <select id="findByNo" resultMap="communityMap" parameterType="int">
-  select
+select
     b.board_no,
     b.community_no,
     b.title,
     b.contents,
     b.reg_date,
-    m.name
-  from 
-    board b
-      inner join member m on b.mno=m.mno
+    b.view_count,
+    m.name,
+    b.mno
+
+
+    from board b
+    inner join member m on b.mno=m.mno
+
   where
     b.board_no=#{no}
   
   </select>
+  
+  <update id="increaseViewCount" parameterType="int">
+    update board set 
+      view_count=view_count + 1 
+    where board_no=#{boardNo}
+  </update>
   
   
 
