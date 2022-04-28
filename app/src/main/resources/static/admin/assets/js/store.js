@@ -214,16 +214,7 @@ $('.x-search-btn').on("click", () => {
       createList(stores);
     })
 })
-// 페이지 버튼 hover
-$(paginationUl).on("click", (e) => {
-  $(".pagination-ul li").removeClass("page-btn-active")
-  if (e.target == e.currentTarget) {
-    return;
-  } else {
-    e.target.classList.add("page-btn-active")
-  }
-  console.log(e.target);
-})
+
 
 // 주점 제재 버튼
 $(document).on("click", ".x-sanction-btn", (e) => {
