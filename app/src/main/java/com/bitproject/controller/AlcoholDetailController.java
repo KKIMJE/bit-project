@@ -191,6 +191,7 @@ public class AlcoholDetailController {
       Thumbnails.of(photoFile)
       .size(178, 173)
       .crop(Positions.CENTER)
+      //      .outputFormat("jpg")
       .toFile(new File("./src/main/resources/static/asset/img/alcohol/" + "178x173_" + filename));
 
       return filename;

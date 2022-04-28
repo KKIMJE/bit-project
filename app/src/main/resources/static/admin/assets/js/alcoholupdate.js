@@ -21,6 +21,7 @@ let xAlcoholBrand = document.querySelector("input[name=brand]")
 let xAlcoholOrigin = document.querySelector("input[name=origin]")
 let xAlcoholVolume = document.querySelector("input[name=volume]")
 let xAlcoholChar = document.querySelector("textarea[name=characteristic]")
+let xAlcoholFile = document.querySelector("input[name=file]")
 
 fetch(`/alcohol/get?no=${no}`)
 .then(response => {
@@ -66,13 +67,14 @@ document.querySelector(".submit-update-btn").addEventListener("click", () => {
 
   fetch("/alcohol/update", {
       method: "POST",
-      body: new URLSearchParams(fd)
+      body: fd
     })
     .then(response => {
        return response.json()
     })
     .then(result => {
       if (result.status == "success") {
+        alert("데이터 수정 성공")
         location.href = "/admin/alcohollist.html";
       } else {
         window.alert("게시글 변경 실패!");

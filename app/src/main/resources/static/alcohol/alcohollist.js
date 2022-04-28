@@ -12,6 +12,7 @@ var totalAlcoholPage = 0; // 전체 페이지 사이즈
 let totalAlcoholCount;
 var targetNo = 0;
 
+
 $(document).ready(function() {
   fetch("/alcohol/size")
     .then(response => {
@@ -120,8 +121,7 @@ function AlcoholPageSize(targetNo) {
       })
       .then(size => {
         totalAlcoholCount = size // 총 페이지 수
-        console.log(totalAlcoholCount);
-        // paging(totalAlcoholCount, pageSize, pageCount, 1, targetNo);
+
       });
   } else {
     fetch(`/alcohol/targetSize?targetNo=${targetNo}`)
@@ -130,25 +130,10 @@ function AlcoholPageSize(targetNo) {
       })
       .then(size => {
         totalAlcoholCount = size // target 총 페이지 수
-        console.log(totalAlcoholCount);
-        // paging(totalAlcoholCount, pageSize, pageCount, 1, targetNo);
       });
   }
 }
 
-
-
-// 전체 list 생성
-// function allList(selectedPage) {
-//   $('.alcohol-list-div div').empty();
-//   fetch(`/alcohol/list?pageSize=${pageSize}&pageNo=${selectedPage}`)
-//     .then(function(response) {
-//       return response.json()
-//     })
-//     .then(function(alcohols) {
-//       createdList(alcohols);
-//     })
-// }
 
 // target list 생성
 function targetList(targetNo, selectedPage) {
@@ -185,7 +170,7 @@ function createdList(alcohols) {
     div.classList.add("x-card-border")
     div.innerHTML = `
     <a class="alc-link" href="alcoholdetail.html?no=${alcohol.alcoholDetailNo}">
-    <img src="${alcohol.img}" class="card-img-top">
+    <img src="/alcohol/photo?filename=178x173_${alcohol.img}" class="card-img-top">
     <div class="card-body">
     <p class="card-text">
     <ul>
@@ -200,6 +185,8 @@ function createdList(alcohols) {
   }
   console.log("itemDiv");
 }
+
+
 
 $(document).on("click", ".category-sort-div", (e) => {
   let targetNo;
@@ -220,27 +207,27 @@ $(document).on("click", ".category-sort-div", (e) => {
 
 
 // 필터 버튼
-filterBtn.addEventListener("click", function(e) {
-  if (e.target == e.currentTarget) {
-    return;
-  } else {
-    e.currentTarget.querySelector('.filterAct').classList.toggle('filterAct');
-    e.target.classList.toggle('filterAct');
-
-    filterTargetNo = e.target.value
-
-    console.log(filterTargetNo);
-
-    if (filterTargetNo == 0) {
-      degreeSort(targetArr);
-      createdList(targetArr);
-    }
-    if (filterTargetNo == 1) {
-      alphabeticalOrderSort(targetArr);
-      createdList(targetArr);
-    }
-  }
-})
+// filterBtn.addEventListener("click", function(e) {
+//   if (e.target == e.currentTarget) {
+//     return;
+//   } else {
+//     e.currentTarget.querySelector('.filterAct').classList.toggle('filterAct');
+//     e.target.classList.toggle('filterAct');
+//
+//     filterTargetNo = e.target.value
+//
+//     console.log(filterTargetNo);
+//
+//     if (filterTargetNo == 0) {
+//       degreeSort(targetArr);
+//       createdList(targetArr);
+//     }
+//     if (filterTargetNo == 1) {
+//       alphabeticalOrderSort(targetArr);
+//       createdList(targetArr);
+//     }
+//   }
+// })
 
 
 $(paginationUl).on("click", (e) => {
