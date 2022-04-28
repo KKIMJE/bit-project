@@ -113,16 +113,7 @@ function get_store()
       //파일업로드추가해야함
     });
 }
-          var xSelectlist = xOptionDivContainer.querySelectorAll(".x-tel-div");
-      
-      for (var i = 0; i < contact.tels.length; i++) {
-        var xTelType = xTelDivList[i].querySelector("select");
-        var xTel = xTelDivList[i].querySelector("input");
         
-        xTelType.value = contact.tels[i].telTypeNo;
-        xTel.value = contact.tels[i].tel;
-      }
-    });
   /* if (store.Img != null) {
         xPhoto.src = "/store/img?filename=" + store.img;
       }*/
