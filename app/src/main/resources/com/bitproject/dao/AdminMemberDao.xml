@@ -62,11 +62,11 @@
   </select>
   
       <select id="countAll" resultType="int">
-    select count(*) from Member
+    select count(*) from member
   </select>
   
         <select id="countByMemberType" resultType="int">
-    select count(*) from Member
+    select count(*) from member
     where member_status=${memberStatus}
   </select>
   
