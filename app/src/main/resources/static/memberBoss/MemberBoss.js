@@ -59,29 +59,30 @@ var fd = new FormData(document.forms.namedItem("login__form"));
 console.log(fd)
 
 
-  fetch("/store/add", {
-    method: "POST",
-    body: new URLSearchParams(fd)
-  })
-  .then(function (response) {
-    return response.json()
-    })
-  .then(function (result) {
-    console.log(result);
-    if (result.status == "success") {
-        console.log("등록 성공")
-        // alert("성공했습니다")
-        // window.location.href = "memberBoss2.html";
-    } else {
-     // window.alert("실패!!")
-     console.log(result.data);
-    }
-    });
+
+      fetch("/store/add", {
+        method: "POST",
+        body: new URLSearchParams(fd)
+      })
+      .then(function (response) {
+        return response.json()
+        })
+      .then(function (result) {
+        console.log(result);
+        if (result.status == "success") {
+            console.log("등록 성공")
+             alert("성공했습니다")
+             window.location.href = "memberBoss2.html";
+        } else {
+         // window.alert("실패!!")
+         console.log(result.data);
+        }
+        });
 };
 
-document.querySelector("#next").onclick = function() {
+//document.querySelector("#next").onclick = function() {
   // window.location.href = "memberBoss2.html";
-};
+//};
 
 document.querySelector("#exit").onclick = function() {
   // window.location.href = "../ceo/storemanagement.html";

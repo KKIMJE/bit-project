@@ -27,9 +27,10 @@ public class StoreController {
   @RequestMapping("/add")
   public Object add(Store store) {
     System.out.println("store: " + store);
-    return storeService.add(store);
+    storeService.add(store);
+    return new ResultMap().setStatus(SUCCESS);
   }
-  
+
   @RequestMapping("/get")
   public Object get(int no) {
     Store store = storeService.get(no);
@@ -49,8 +50,8 @@ public class StoreController {
     return new ResultMap().setStatus(SUCCESS).setData(store);
   }*/
 
-    
-  
+
+
   @RequestMapping("/getMnoCnt")
   public int getMnoCnt(int no) {
     //System.out.println("StoreNo: " + no + ", Get Store: " + store);
@@ -66,7 +67,7 @@ public class StoreController {
   @RequestMapping("/update")
   public Object update(Store store) {
     return storeService.update(store);
-   
+
   }
 
   @RequestMapping("/delete")
