@@ -41,7 +41,7 @@ function paging(totalAlcoholCount, pageSize, pageCount, currentPage) {
   console.log("currentPage : " + currentPage);
   console.log(totalAlcoholCount);
 
-  totalAlcoholPage = Math.ceil(totalAlcoholCount / pageSize) // 총 페이지 수\
+  totalAlcoholPage = Math.ceil(totalAlcoholCount / pageSize) // 총 페이지 수
   console.log(totalAlcoholPage);
 
   if (totalAlcoholPage < pageCount) {
