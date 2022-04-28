@@ -13,4 +13,8 @@ public interface StoreTagDao {
 
   int delete(int no);
 
+  StoreTag findByNo(int no);
+
+  int update(StoreTag storeTag);
+
 }

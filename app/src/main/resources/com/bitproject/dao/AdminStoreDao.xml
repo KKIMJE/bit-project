@@ -26,6 +26,7 @@
     <result column="place_id" property="placeId"/>
     <result column="oper" property="oper"/>
     <result column="status" property="status"/>
+    <result column="block_count" property="blockCount"/>
 
   </resultMap>
 
@@ -36,9 +37,16 @@
   <select id="countAll" resultType="int">
    select count(*) from store
   </select>
+  
+    <select id="findAll" resultMap="storeMap">
+    select 
+      status
+    from 
+      store
+  </select>
    
    
-  <select id="findAll" resultMap="storeMap">
+  <select id="pageFindAll" resultMap="storeMap">
     select 
       store_no,
       business_registration_no,
@@ -54,7 +62,8 @@
       lng,
       place_id,
       oper,
-      status
+      status,
+      block_count
     from
     	store
     order by 
@@ -83,10 +92,19 @@
       store
     where ${filt} like CONCAT('%',#{value},'%')
   </select>
+  
+     <update id="update" parameterType="int">
+    update store set
+    block_count=block_count + 1
+    where 
+    store_no=#{no}
+  </update>
 
-  <delete id="delete" parameterType="int">
-    delete from store 
-    where store_no=#{storeNo}
+    <delete id="delete" parameterType="int">
+    update  store 
+      set status = 0
+    where 
+      store_no=#{no}
   </delete>
 
 </mapper>

@@ -31,4 +31,5 @@ public class Store {
   String placeId;
   boolean oper;
   boolean status;
+  int blockCount;
 }

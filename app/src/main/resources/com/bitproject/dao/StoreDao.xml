@@ -57,7 +57,7 @@
     id => 인터페이스의 메서드 이름과 일치해야 한다.
    -->
   <select id="findAll" resultMap="storeMap">
-    select 
+    select
       s.store_no,
       s.business_registration_no,
       s.business_registration,
@@ -76,11 +76,15 @@
       s.oper,
       s.status,
       st.store_type_no,
-      ss.mno
+      ss.mno,
+      t.tag_no,
+      t.name
     from
-       store s
-       left outer join store_section_type st on s.store_no=st.store_no
-       left outer join store_select ss on s.store_no=ss.store_no
+      store s
+      left outer join store_section_type st on s.store_no=st.store_no
+      left outer join store_select ss on s.store_no=ss.store_no
+      left outer join store_tag stt on s.store_no=stt.store_no
+	  left outer join tag t on stt.tag_no=t.tag_no
     order by 
       s.store_no desc;
   </select>

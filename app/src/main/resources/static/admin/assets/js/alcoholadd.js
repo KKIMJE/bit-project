@@ -15,9 +15,7 @@ document.querySelector(".submit-add-btn").addEventListener("click", () => {
     xAlcoholDegree == "" ||
     xAlcoholBrand == "" ||
     xAlcoholOrigin == "" ||
-    xAlcoholVolume == "" ||
-    xAlcoholChar == "" ||
-  xAlcoholFile) {
+    xAlcoholVolume == "") {
     alert("필수 입력 항목이 비어있습니다.")
     return;
   }
@@ -35,6 +33,7 @@ document.querySelector(".submit-add-btn").addEventListener("click", () => {
     .then(result => {
       console.log(result);
       if (result.status == "success") {
+        alert("주류 등록이 완료되었습니다.")
         location.href = "/admin/alcohollist.html"
       } else {
         alert(result.data);

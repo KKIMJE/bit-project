@@ -7,18 +7,31 @@
 <mapper namespace="com.bitproject.dao.StoreTagDao">
 
   <resultMap type="storetag" id="storetagMap">
+  
     <id column="tag_no" property="tagNo"/>
-    <result column="store_no" property="storeNo"/>
+    
+    <collection property="tags" ofType="tag">
+      <result column="tag_no" property="tagNo"/>
+      <result column="tag_name" property="name"/>
+      <result column="store_no" property="storeNo"/>
+    </collection>
+    
   </resultMap>
+  
 
   <select id="findAll" resultMap="storetagMap">
     select 
-      tag_no,
-      store_no
-    from 
-      store_tag
+      s.store_no,
+      st.tag_no,
+      t.name tag_name
+    from
+      store s
+	  left outer join store_tag st on s.store_no=st.store_no
+	  left outer join tag t on st.tag_no=t.tag_no
+	where
+	  s.store_no
     order by 
-      store_no desc
+      s.store_no desc;
   </select>
 
   <insert id="insert" parameterType="int">

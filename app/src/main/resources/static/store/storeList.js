@@ -6,7 +6,7 @@ function targetList(targetNo) {
     })
     .then(function(data) {
 
-      stores = data.data
+      let stores = data.data
 
       let listAll = document.querySelector(".imgContainer");
       let count = 0
@@ -114,6 +114,7 @@ lightBtn.addEventListener("click",function(e){
       btnStatus = false
       targetBtnStatus = true
       sortBtnStatus = false
+      filterBtnStatus = false
     }
   }
   nextPreBtnSet() // 버튼 다시 세팅
@@ -251,6 +252,7 @@ $(".xDistance").click(function() {
   distanceSortList()
   btnStatus = false
   targetBtnStatus = false
+  filterBtnStatus = false
   sortBtnStatus = true
   
 })
