@@ -75,7 +75,7 @@
         <div class="content">
           <p class="form_email">이메일</p><br>
           <input name="email" id="email" type="email" class="form_input_mail" required onkeyup= "emailCheck()"><br>
-          <span id = "emailCheck" style="margin-left:40px"></span>
+          <span id = "emailCheck" style="margin-left:40px; font-size: 12px"></span>
 
         <div class="password">
             <p class="form_password">비밀번호</p><br>
@@ -189,7 +189,6 @@
             success : function (result) {
                 if(result == 1) { // 1이 존재한다고 하는 이메일
                     $('#emailCheck').css("color","red")
-                    $('#emailCheck').css("font-size", "10")
                     $('#emailCheck').html("이미 가입된 이메일입니다")
                 } else {
                     $('#emailCheck').css("color","blue")
