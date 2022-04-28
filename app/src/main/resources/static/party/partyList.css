@@ -261,6 +261,13 @@ div:nth-child(3) > span > i {
 
 .party-like i {
   color: rgba(204, 9, 9, 0.883);
+  position: absolute;
+  right: 129px;
+  bottom: 6px;
+}
+
+.like-click {
+  display: none;
 }
 
 .party-member-count i {

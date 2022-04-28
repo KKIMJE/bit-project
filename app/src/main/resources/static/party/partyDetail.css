@@ -156,9 +156,13 @@ div.third-column > span:nth-child(2) > i {
   font-weight: 600;
 }
 
-.party-board-content {
+
+.pcontent {
+  width: 900px;
+  min-height: 200px;
   padding: 20px 10px 5px 20px;
   font-size: 18px;
+  word-break:break-all;
 }
 
 .party-board-option {
@@ -167,29 +171,6 @@ div.third-column > span:nth-child(2) > i {
   position: absolute;
   top: 270px;
   right: 10px;
-}
-
-.party-like {
-  position: relative;
-  display: flex;
-}
-
-.like-click {
-  color: rgba(204, 9, 9, 0.883);
-  font-size: larger;
-  position: absolute;
-  right: 35px;
-  bottom: 1px;
-}
-
-div.party-board-content > div > div.party-like > i.fa-regular.fa-heart.like-click {
-  /* display: none; */
-  cursor: pointer;
-}
-
-div.party-board-content > div > div > i.fa-solid.fa-heart.like-click {
-  display: none;
-  cursor: pointer;
 }
 
 div.party-board-option span {
@@ -351,4 +332,15 @@ div.party-board-option button i {
   position: absolute;
   right: -550px;
   top: 3px;
+}
+
+div.party-like > button:nth-child {
+  color: rgba(204, 9, 9, 0.883);
+  position: absolute;
+  right: 129px;
+  bottom: 6px;
+}
+
+.like-click {
+  display: none;
 }

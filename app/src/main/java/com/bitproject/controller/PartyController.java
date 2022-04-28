@@ -55,13 +55,22 @@ public class PartyController {
     if (count == 1) {
       return new ResultMap().setStatus(SUCCESS);
     } else {
-      return new ResultMap().setStatus(FAIL).setData("모임 방장만이 게시글을 삭제할 수 있습니다.");
+      return new ResultMap().setStatus(FAIL).setData("모임 방장만이 게시글을 변경할 수 있습니다.");
     }
   }
 
 
   @DeleteMapping("/delete")
   public Object delete(int no) {
-    return partyService.delete(no);
+
+    int count = partyService.delete(no);
+
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("모임 방장만이 게시글을 삭제할 수 있습니다.");
+    }
+
+
   }
 }

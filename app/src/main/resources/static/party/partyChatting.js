@@ -143,8 +143,11 @@ const Chat = (function(){
 
         $('div.chat:not(.format) ul').append(chatLi);  // 필터셀렉터 - : 콜론을 포함하는 셀렉터
 
+        console.log(($('div.chat').prop('scrollHeight')))
         // 스크롤바 아래 고정
-        $('div.chat').scrollTop($('div.chat').prop('scrollHeight')); // $('').scrollTop() : 선택한 요소의 스크롤바 수직 위치를 가져온다. // $(ele).prop('scrollHeight') : scroll되어 나타나는 부분까지 높이를 반환합니다. // .prop() 메서드는 JavaScript 요소의 속성 값을 설정하거나 반환합니다. // scrollHeight : 요소에 들어있는 컨텐츠의 전체 높이
+        //$('div.chat').scrollTop($('div.chat').prop('scrollHeight')); // $('').scrollTop() : 선택한 요소의 스크롤바 수직 위치를 가져온다. // $(ele).prop('scrollHeight') : scroll되어 나타나는 부분까지 높이를 반환합니다. // .prop() 메서드는 JavaScript 요소의 속성 값을 설정하거나 반환합니다. // scrollHeight : 요소에 들어있는 컨텐츠의 전체 높이
+        //$(document.body).scrollTop(2000);
+        window.scrollTo(0,$('div.chat').prop('scrollHeight'));
     }
 
 
@@ -189,3 +192,7 @@ const Chat = (function(){
 $(function(){ // html 문서가 로딩되면 chat의 init 함수를 호출하라
     Chat.init();
 });
+
+// window.setInterval(function() {
+//     location.reload();
+// }, 10000);
