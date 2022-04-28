@@ -24,18 +24,6 @@ $(document).ready(function() {
     })
     .then(result => {
       totalStoreCount = result
-
-      //   console.log(result);
-      //   let totalStorePage = Math.ceil(result / pageSize)
-      //   console.log(totalStorePage)
-      //
-      //   for (let i = 1; i <= totalStorePage; i++) {
-      //     let paginationLi = `
-      // <li class="x-page-btn" onclick="storeList(${i})">${i}</li>
-      // `
-      //     paginationUl.innerHTML += paginationLi;
-      //
-      //   }
       paging(totalStoreCount, pageSize, pageCount, 1)
     })
 })

@@ -7,7 +7,7 @@ let currTable = document.querySelector("#x-curr-table")
 
 let pageSize = 10; // 한 페이지에 나타낼 데이터 수
 let pageCount = 10; // 페이징에 나타낼 페이지 수
-var totalAlcoholPage;   // 총 페이지 수
+var totalAlcoholPage; // 총 페이지 수
 let totalAlcoholCount; // 총 주류 수
 
 
@@ -19,20 +19,11 @@ $(document).ready(function() {
 
   // 전체 주류 수 및 페이지 버튼 생성
   fetch("/alcohol/size")
-  .then(response => {
-    return response.json()
-  })
-  .then(result => {
-    totalAlcoholCount = result
-    // totalAlcoholPage = Math.ceil(result / pageSize) // 총 페이지 수
-    // console.log(totalAlcoholPage);
-
-    // for (let i = 1; i <= totalAlcoholPage; i++) {
-      //   let paginationLi = `
-      // <li class="x-page-btn" onclick="alcoholList(${i})">${i}</li>
-      // `
-      //   paginationUl.innerHTML += paginationLi;
-      // }
+    .then(response => {
+      return response.json()
+    })
+    .then(result => {
+      totalAlcoholCount = result
       paging(totalAlcoholCount, pageSize, pageCount, 1);
     })
 })
