@@ -113,7 +113,7 @@ function get_store()
       //파일업로드추가해야함
     });
 }
-
+        
   /* if (store.Img != null) {
         xPhoto.src = "/store/img?filename=" + store.img;
       }*/
