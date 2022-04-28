@@ -23,7 +23,7 @@ function toggleImg() {
     document.getElementById("ig").src = "../img/logo.png";
   }
 
-  /*모달창*/
+  
   $().ready(function() {
     $("#delete").click(function () {
                 Swal.fire({
@@ -38,13 +38,14 @@ function toggleImg() {
                   if(result.isConfirmed) {
                     deleteMember();
                     //location.href = "/member/personalInfo.html";
-                   //location.href="../main/main.html";
+                    window.alert("탈퇴 처리가 되었습니다.");
+                   location.href="../main/main.html";
                   }else{
                      location.href = "/member/personalInfo.html";
                   }
                 })
             });
-  }); // end of ready
+  }); // end of ready */
 
 
   /* 삭제 추가 */
@@ -147,8 +148,9 @@ function toggleImg() {
       .then(function(result) {
         //if (result.status == "success") {
         if (result.status == "success") {
-          window.alert("탈퇴 처리가 되었습니다.");
-          location.href = "../../main/main.html";
+          console.log(result.data);
+          //window.alert("탈퇴 처리가 되었습니다.");
+         // location.href = "../../main/main.html";
         } else {
           window.alert(result.data);
           //console.log(result);
