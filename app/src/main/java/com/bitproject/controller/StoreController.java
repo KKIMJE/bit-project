@@ -28,7 +28,8 @@ public class StoreController {
   @RequestMapping("/add")
   public Object add(Store store) {
     System.out.println("store: " + store);
-    return storeService.add(store);
+    storeService.add(store);
+    return new ResultMap().setStatus(SUCCESS);
   }
 
   @RequestMapping("/get")

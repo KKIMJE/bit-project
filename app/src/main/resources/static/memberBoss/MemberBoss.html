@@ -97,7 +97,7 @@
             <input type="text" id="address_kakao" name="address"
               class="form_input_address_detail" placeholder="주소"
               readonly> <input type="text"
-              class="form_input_address_detail" name="addressDetail"
+              class="form_input_address_detail" name="address_detail"
               placeholder="상세주소">
           </div>
         </div>
@@ -146,7 +146,7 @@
           <div class="number">
             <p class="form_number">사업자등록번호</p>
             <br> <input id="businessRegistrationNo"
-              class="form_input_number">
+              name="businessRegistrationNo" class="form_input_number">
           </div>
 
           <div class="tag">
@@ -161,7 +161,7 @@
             <center>
             가능<input name="reservationAccept"  id="revOn" type="radio"  class="form_input_check" value="1">
             불가능<input name="reservationAccept"  id="revOff" type="radio" class="form_input_check" value="0">
-            최대인원 <input name="maxMember" id="maxMember" type="number" min="0" max="10000000" class="form_input_box" ><br>
+            최대인원 <input name="maxMember" id="maxMember1" type="number" min="0" max="10000000" class="form_input_box" ><br>
             </center>
             
               
@@ -180,7 +180,7 @@
 
           <center>
             <div class="btn">
-              <button id="next" class="submit-next-btn">다음</button>
+              <button type="button" id="next" class="submit-next-btn">다음</button>
               <button type="button" id="exit" class="submit-exit-btn">나가기</button>
             </div>
           </center>
