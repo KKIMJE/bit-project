@@ -8,8 +8,8 @@ let categoryTargetNo;
 let filterTargetNo;
 let pageSize = 10;
 let pageCount = 10; // 페이징에 나타낼 페이지 수
-var totalAlcoholPage = 0; // 전체 페이지 사이즈
-let totalAlcoholCount;
+var totalAlcoholPage; // 전체 페이지 사이즈
+var totalAlcoholCount;
 var targetNo = 0;
 
 
@@ -121,6 +121,8 @@ function AlcoholPageSize(targetNo) {
       })
       .then(size => {
         totalAlcoholCount = size // 총 페이지 수
+        paging(totalAlcoholCount, pageSize, pageCount, 1, targetNo)
+        targetList(targetNo,1)
 
       });
   } else {
@@ -130,6 +132,8 @@ function AlcoholPageSize(targetNo) {
       })
       .then(size => {
         totalAlcoholCount = size // target 총 페이지 수
+        paging(totalAlcoholCount, pageSize, pageCount, 1, targetNo)
+        targetList(targetNo,1)
       });
   }
 }
@@ -188,19 +192,19 @@ function createdList(alcohols) {
 
 
 
-$(document).on("click", ".category-sort-div", (e) => {
-  let targetNo;
-  targetNo = e.target.value;
+lightBtn.addEventListener("click", function(e) {
+  let currTargetNo;
+  currTargetNo = e.target.value;
+
+  console.log(totalAlcoholCount);
 
   if (e.target == e.currentTarget) {
     return;
   } else {
     e.currentTarget.querySelector('.act').classList.toggle('act');
     e.target.classList.toggle('act');
-
-    targetList(targetNo, 1)
-    AlcoholPageSize(targetNo)
-    paging(totalAlcoholCount, pageSize, pageCount, 1, targetNo);
+    console.log(currTargetNo);
+    AlcoholPageSize(currTargetNo)
   }
 
 })
@@ -228,14 +232,3 @@ $(document).on("click", ".category-sort-div", (e) => {
 //     }
 //   }
 // })
-
-
-$(paginationUl).on("click", (e) => {
-  $(".pagination-ul li").removeClass("page-btn-active")
-  if (e.target == e.currentTarget) {
-    return;
-  } else {
-    e.target.classList.add("page-btn-active")
-  }
-  console.log(e.target);
-})
