@@ -16,27 +16,38 @@
 .title {
   position: relative;
   left: -20px;
-  width: 200px;
+  width: 400px;
   font-size: 20px;
   font-weight: 500;
 }
 
 .detail-date {
   position: relative;
-  width: 100px;
-  left: 500px;
-  top: -20px;
+  width: 300px;
+  left: 290px;
+  top: 9px;
   font-size: 13px;
   font-weight: 400;
+}
+
+.viewCount-desc {
+  position: relative;
+  width: 50px;
+  left: 107px;
+  top: 9px;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: right;
 }
 
 .detail-viewCount {
   position: relative;
   width: 100px;
-  left: 400px;
+  left: 112px;
   top: 10px;
   font-size: 13px;
   font-weight: 400;
+  text-align: left;
 }
 
 button {
@@ -51,6 +62,11 @@ button {
   height: 300px;
 }
 
+.like-count {
+  position: relative;
+  text-align: left;
+  left: -15px;
+}
 
 
 .profile-img {
@@ -159,15 +175,16 @@ div.third-column > span:nth-child(2) > i {
 
 .community-board-option {
   display: flex;
-  justify-content: flex-end;
-  position: absolute;
-  top: 270px;
-  right: 10px;
+  /* justify-content: flex-end; */
+  position: relative;
+  top: 170px;
+  left: 750px;
 }
 
 .community-like {
   position: relative;
   display: flex;
+  left: 10px;
 }
 
 .like-click {
@@ -226,6 +243,8 @@ div.community-board-option button i {
 .btn-option {
   margin-left: 10px;
 }
+
+
 
 .community-comment {
   box-sizing: border-box;

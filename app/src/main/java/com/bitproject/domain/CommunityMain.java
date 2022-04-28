@@ -1,5 +1,6 @@
 package com.bitproject.domain;
 
+import java.util.List;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -17,7 +18,6 @@ public class CommunityMain{
   int boardLike;
   int boardCommentCount;
   String name;
-
-
-
+  int viewCount;
+  List<CommunityComment> communityComments;
 }

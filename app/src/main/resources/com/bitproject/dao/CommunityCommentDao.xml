@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.CommunityCommentDao">
+
+<resultMap type="communityComment" id="communityCommentMap">
+    <id column="board_comment_no" property="communityCommentNo"/>
+    <result column="board_no" property="boardNo"/>
+    <result column="mno" property="commentWriter"/>
+    <result column="comment_contents" property="communityCommentContents"/>
+    <result column="comment_date" property="commentDate"/>
+    <result column="update_date" property="updateDate"/>
+    
+</resultMap>
+  
+   
+  <select id="findAll" resultMap="communityCommentMap">
+  select
+    bc.board_comment_no,
+    bc.mno,
+    bc.board_no,
+    bc.comment_contents,
+    bc.comment_date,
+    bc.update_date,
+    m.name
+  from 
+    board_comment bc
+      inner join member m on bc.mno=m.mno
+  order by 
+    bc.board_comment_no desc
+  </select>
+  
+   
+  
+  
+    <insert id="insert" parameterType="CommunityComment">
+    insert into board_comment(
+    board_no,
+    comment_contents,
+    mno
+    ) 
+    values(
+    #{boardNo},
+    #{communityCommentContents},
+    #{commentWriter}
+    )
+  </insert>
+  
+    <!--  
+  <update id="update" parameterType="CommunityMain">
+    update board set
+      title=#{boardTitle},
+      contents=#{boardContents}
+    where 
+     board_no=#{boardNo}
+  </update>
+  
+   -->
+
+  <delete id="delete" parameterType="int">
+    delete from board_comment 
+    where board_comment_no=#{no}
+  </delete>
+
+
+  
+    <select id="findByNo" resultMap="communityCommentMap" parameterType="int">
+  select
+    bc.board_comment_no,
+    bc.mno,
+    bc.board_no,
+    bc.comment_contents,
+    bc.comment_date,
+    bc.update_date,
+    m.name
+  from 
+    board_comment bc
+      inner join member m on bc.mno=m.mno
+  where
+    bc.board_comment_no=#{no}
+  </select>
+  
+  
+      <select id="findByBoardNo" resultMap="communityCommentMap" parameterType="int">
+  select
+    bc.board_comment_no,
+    bc.mno,
+    bc.board_no,
+    bc.comment_contents,
+    bc.comment_date,
+    bc.update_date,
+    m.name
+  from 
+    board_comment bc
+      inner join member m on bc.mno=m.mno
+  where
+    bc.board_no=#{no}
+  </select>
+  
+  
+
+</mapper>
+
+
+
+
+
+
