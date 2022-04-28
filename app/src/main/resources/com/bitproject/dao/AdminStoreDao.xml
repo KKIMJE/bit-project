@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-<!-- 
+
+<!--
   namespace => 인터페이스의 패키지 및 이름과 일치해야 한다.
  -->
 <mapper namespace="com.bitproject.dao.AdminStoreDao">
@@ -30,24 +30,24 @@
 
   </resultMap>
 
-  <!-- 
+  <!--
     id => 인터페이스의 메서드 이름과 일치해야 한다.
    -->
-   
+
   <select id="countAll" resultType="int">
    select count(*) from store
   </select>
-  
+
     <select id="findAll" resultMap="storeMap">
-    select 
+    select
       status
-    from 
+    from
       store
   </select>
-   
-   
+
+
   <select id="pageFindAll" resultMap="storeMap">
-    select 
+    select
       store_no,
       business_registration_no,
       store_name,
@@ -60,19 +60,18 @@
       max_member,
       lat,
       lng,
-      place_id,
       oper,
       status,
       block_count
     from
     	store
-    order by 
+    order by
       store_no desc
       limit #{offset}, #{rowCount}
   </select>
-  
+
   <select id="findByValue" resultMap="storeMap" parameterType="String">
-    select 
+    select
       store_no,
       business_registration_no,
       store_name,
@@ -92,18 +91,18 @@
       store
     where ${filt} like CONCAT('%',#{value},'%')
   </select>
-  
+
      <update id="update" parameterType="int">
     update store set
     block_count=block_count + 1
-    where 
+    where
     store_no=#{no}
   </update>
 
     <delete id="delete" parameterType="int">
-    update  store 
+    update  store
       set status = 0
-    where 
+    where
       store_no=#{no}
   </delete>
 

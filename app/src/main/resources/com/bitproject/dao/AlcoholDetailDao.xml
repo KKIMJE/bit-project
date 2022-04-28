@@ -19,7 +19,7 @@
     <result column="volume" property="volume"/>
     <result column="characteristic" property="characteristic"/>
     <result column="img" property="img"/>
-    
+
     <association property="writer" javaType="member">
       <id column="mno" property="mno"/>
     </association>
@@ -49,7 +49,7 @@
     <result column="store_no" property="storeNo"/>
     <result column="store_img" property="storeImg"/>
   </collection>
-<!-- 
+<!--
   <collection property="alcoholSales" ofType="alcoholSales">
     <result column="store_no" property="storeNo"/>
     <result column="alcohol_detail_no" property="alcoholDetailNo"/>
@@ -57,13 +57,13 @@
   </collection>
  -->
   </resultMap>
-  
+
     <select id="countAll" resultType="int">
-    select count(*) from alcohol_Detail
+    select count(*) from alcohol_detail
   </select>
-  
+
   <select id="countByTarget" resultType="int" parameterType="int">
-    select count(*) from alcohol_Detail
+    select count(*) from alcohol_detail
     where alcohol_type_no=#{targetNo}
   </select>
 
@@ -88,7 +88,7 @@
       alcohol_type_no asc
       limit #{offset}, #{rowCount}
   </select>
-  
+
   <!-- targetList -->
 <select id="findByTarget" resultMap="alcoholDetailMap">
     select
@@ -109,7 +109,7 @@
       limit #{offset}, #{rowCount}
   </select>
 
-  
+
 
   <insert id="insert" parameterType="alcoholDetail">
     insert into alcohol_detail(
@@ -166,7 +166,7 @@ where
   d.alcohol_detail_no=#{no}
 
   </select>
-  
+
   <select id="findByValue" resultMap="alcoholDetailMap" parameterType="String">
       select
       alcohol_detail_no,
@@ -178,8 +178,8 @@ where
       volume,
       characteristic,
       img
-    from 
-      alcohol_detail 
+    from
+      alcohol_detail
     where ${filt} like CONCAT('%',#{value},'%')
 </select>
 
@@ -198,7 +198,7 @@ where
       alcohol_detail_no=#{alcoholDetailNo} and writer=#{writer.mno}
   </update>
 
- 
+
   <delete id="delete" parameterType="alcoholDetail">
     delete from alcohol_detail
     where alcohol_detail_no=#{alcoholDetailNo} and writer=#{writer.mno}
