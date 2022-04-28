@@ -84,7 +84,6 @@
       max_member,
       lat,
       lng,
-      place_id,
       oper,
       status
     from

@@ -12,7 +12,6 @@
   <resultMap type="store" id="storeMap">
     <id column="store_no" property="storeNo"/>
     <result column="business_registration_no" property="businessRegistrationNo"/>
-    <result column="business_registration" property="businessRegistration"/>
     <result column="store_name" property="storeName"/>
     <result column="address" property="address"/>
     <result column="address_detail" property="addressDetail"/>
@@ -24,7 +23,6 @@
     <result column="max_member" property="maxMember"/>
     <result column="lat" property="lat"/>
     <result column="lng" property="lng"/>
-    <result column="place_id" property="placeId"/>
     <result column="oper" property="oper"/>
     <result column="status" property="status"/>
     
@@ -60,7 +58,6 @@
     select
       s.store_no,
       s.business_registration_no,
-      s.business_registration,
       s.store_name,
       s.address,
       ifnull(s.address_detail,'') address_detail,
@@ -72,7 +69,6 @@
       s.max_member,
       s.lat,
       s.lng,
-      s.place_id,
       s.oper,
       s.status,
       st.store_type_no,
@@ -92,7 +88,6 @@
   <insert id="insert" parameterType="Store" >
     insert into store(
       business_registration_no,
-      business_registration,
       store_name,
       address,
       address_detail,
@@ -104,7 +99,6 @@
       max_member,
       lat,
       lng,
-      place_id,
       oper,
       status
       )
