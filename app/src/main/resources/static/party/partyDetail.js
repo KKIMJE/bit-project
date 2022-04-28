@@ -29,8 +29,8 @@ var pDate = document.querySelector(".pdate");
 var pAlcoholLimit = document.querySelector(".plimit");
 var pFee = document.querySelector(".pfee");
 var pMember = document.querySelector(".pmember");
-//var pCommentContent = document.querySelector(".comment-content");
-// var pcNickname = document.querySelector(".people-name");
+var pLocation = document.querySelector(".plocation");
+var pContent = document.querySelector(".pcontent");
 
 // 서버에서 데이터 가져오기
 fetch(`/party/get?no=${no}`)
@@ -54,6 +54,8 @@ fetch(`/party/get?no=${no}`)
     pAlcoholLimit.innerHTML = party.alcoholLimit;
     pFee.innerHTML = `${party.partyFee}원`;
     pMember.innerHTML = `${party.maxMember}명`;
+    pLocation.innerHTML = `${party.address}`;
+    pContent.innerHTML = `${party.contents}`;
 
     pNickname2.innerHTML = party.writer.nickName;
 
@@ -214,3 +216,15 @@ function reportModal() {
     }
 })
 }
+
+
+/*************
+    찜하기
+*************/
+$('.party-like.button').click(function likeParty() {
+
+alert("우아아아아아아악")
+
+//$(".order").removeClass("bold");
+//$targetObj.addClass("bold");
+})

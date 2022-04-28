@@ -250,7 +250,7 @@ $(".pbtn").on('click', function(e){
     //------인원-------
     case 6 :
     strT = "원하시는 최대 인원을 선택해주세요";
-    strB = '<select name="maxMember">'
+    strB = '<select class="maxMember">'
     + '<option value="1">1</option>'
     + '<option value="2">2</option>'
     + '<option value="3">3</option>'
@@ -271,8 +271,8 @@ $(".pbtn").on('click', function(e){
     설정된 인원 넘기기
     ******************/
     $('.modal-footer button').click(function() {
-      let member = $('select[name=maxMember] option:selected').text();
-      $('.modal-footer span').data('amember', `${member}`);
+      let member = $('select option:selected').text();
+      //$('.modal-footer span').data('amember', `${member}`);
       $('#ps-member input').val(`${member}`);
     });
       break;

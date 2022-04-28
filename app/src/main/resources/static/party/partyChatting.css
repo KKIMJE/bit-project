@@ -9,6 +9,7 @@
 html {
     display: flex;
     justify-content: center;
+    background-color: #9bb156;
 }
 
 body {
@@ -16,8 +17,9 @@ body {
     margin-left: 20%;
     margin-right: 20%;
 }
+
 .chat_wrap {
-    background-color: rgba(236, 236, 237, 0.162);
+    background-color: #fbfbfb;
     min-height: 1024px;
     border: 1px solid #c7c7c7;
 }
@@ -25,7 +27,7 @@ body {
 .chat_wrap .header {
     font-size: 14px; 
     padding: 15px 0; 
-    background: #90d483;
+    background: #278221;
     color: white; 
     text-align: center;
     width: 998px;  
@@ -50,6 +52,14 @@ body {
 
 .chat_wrap .chat ul li.right {
     text-align: right; 
+    }
+
+.chat_wrap .chat ul li.left .message{
+    background-color: #90D483
+    }
+
+.chat_wrap .chat ul li.right .message {
+    background-color: #ffc100;
     }
 
 .chat_wrap .chat ul li > div {
@@ -80,7 +90,7 @@ body {
     width: 1000px;
     background-color: #FFF; 
     text-align: center; 
-    border: 3px solid #90d483;
+    border: 3px solid #90D483;
 }
 
 .chat_wrap .input-div > textarea { 

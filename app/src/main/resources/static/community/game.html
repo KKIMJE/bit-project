@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="game.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <title>야술먹자 커뮤니티</title>
 </head>
@@ -61,52 +63,74 @@
         </ul>
     </nav>
 
-
-    <div class="top_Containner">
-        <input class="serch_box" type="text" placeholder="키워드를 입력해주세요" name="" value="">
-        <button class="serch_btn">검색</button>
-    </div>
-
-
-
-
    <!-- 필터 -->
-       <div class="category">
-           <button type="button" class="category-font">전체</button>
-           <button type="button" class="category-font">술집추천</button>
-           <button type="button" class="category-font">분실/실종센터</button>
-           <button type="button" class="category-font">일상</button>
-           <button type="button" class="category-font">사건사고</button>
-           <button type="button" class="category-font act">술게임</button>
-           <button type="button" class="category-font">기타</button>
-       </div>
+   <div class="category">
+       <button type="button" class="category-font" value="1">전체</button>
+       <button type="button" class="category-font" value="2">술집추천</button>
+       <button type="button" class="category-font" value="3">분실/실종센터</button>
+       <button type="button" class="category-font" value="4">일상</button>
+       <button type="button" class="category-font" value="5">사건사고</button>
+       <button type="button" class="category-font act" value="6">술게임</button>
+       <button type="button" class="category-font" value="7">기타</button>
+   </div>
 
 
      <div class="card">
-       <div class="card-body-1">
-           <img class="game_img" src="img/백종원게임.png">
-       </div>
-       <div class="card-body-2">
-           <img class="game_img" src="img/백종원게임.png">
-       </div>
-       <div class="card-body-3">
-           <img class="game_img" src="img/백종원게임.png">
-       </div>
-       <div class="card-body-4">
-           <img class="game_img" src="img/백종원게임.png">
-       </div>
-       <div class="card-body-5">
-           <img class="game_img" src="img/백종원게임.png">
-       </div>
-       <div class="card-body-6">
-           <img class="game_img" src="img/백종원게임.png">
-       </div>
+       <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div type="button" class="swiper-slide btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"><img class="game_img" src="img/백종원게임.png"></div>
+        <div type="button" class="swiper-slide btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop3"><img class="game_img" src="img/백종원게임.png"></div>
+        <div class="swiper-slide"><img class="game_img" src="img/백종원게임.png"></div>
+        <div class="swiper-slide"><img class="game_img" src="img/백종원게임.png"></div>
+        <div class="swiper-slide"><img class="game_img" src="img/백종원게임.png"></div>
+        <div class="swiper-slide"><img class="game_img" src="img/백종원게임.png"></div>
+        <div class="swiper-slide"><img class="game_img" src="img/백종원게임.png"></div>
+        <div class="swiper-slide"><img class="game_img" src="img/백종원게임.png"></div>
+        <div class="swiper-slide"><img class="game_img" src="img/백종원게임.png"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
      </div>
 
-     <button class="btn-left" type="button"><i class="fa-solid fa-angle-left"></i></button>
-     <button class="btn-right" type="button"><i class="fa-solid fa-angle-right"></i></button>
+     <!-- Button trigger modal -->
+     <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       Launch demo modal
+     </button> -->
 
+     <!-- Modal -->
+     <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal__background">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="staticBackdropLabel">술게임</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="modal_img" src="img/백종원게임.png">
+                </div>
 
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered">
+         <div class="modal__background">
+           <div class="modal-content">
+               <div class="modal-header">
+                 <h2 class="modal-title" id="staticBackdropLabel">술게임</h2>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                   <img class="modal_img" src="img/백종원게임.png">
+               </div>
+
+           </div>
+       </div>
+     </div>
+   </div>
     <!-- <footer__>
         <div class="footer-contents">
             <div class="footer-contents-1">전화번호  :  1566-8877</div>
@@ -130,9 +154,8 @@
     </html>
     <!-- icons -->
     <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
-    <!-- kakaoMap -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=978692169dcc813ed6376dfc7bba8b87"></script>
-    <script src="storeMap.js"></script>
+    <!-- swiper js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Bootstrap CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="store.js"></script>
+    <script src="game.js"></script>

@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!-- sweetalert2 CSS -->
+        <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
         <!-- font -->
         <link
             rel="stylesheet"
@@ -19,8 +21,8 @@
 
         <!-- Bootstrap js -->
         <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- axios -->
-        <script src="../../node_modules/axios/dist/axios.js"></script>
+        <!-- sweetalert2 -->
+        <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
         <!-- jquery -->
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 
@@ -40,128 +42,106 @@
       <div class="community-board">
         <div class="leader-profile">
             <img class="profile-img leader" src="img/profile_suzy.jpg" alt="방장 프로필">
-            <span>수지곤쥬♡</span>
+            <span class="profile-name1"></span>
         </div>
         <div class="community-board-group">
             <div class="community-board-detail">
-                      <div class="title">지금 미인포차에서 싸움</div>
-                      <div class="detail-date">지금 시간</div><br>
-                      <div class="detail-viewCount">지금 조회수</div>
+                      <div class="title"></div>
+                      <div class="detail-date"></div>
+                      <div class="viewCount-desc">조회수 :</div>
+                      <div class="detail-viewCount"></div>
             </div>
             <div class="community-board-content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-                molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-                officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-                molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-                officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-                molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-                officiis assumenda officia quibusdam deleniti eos cupiditate dolore
-                doloribuscupiditate dolore doloribus
-                <div class="community-board-option">
-                    <div class="community-like">
-                        <i class="fa-regular fa-heart like-click"></i>
-                        <i class="fa-solid fa-heart like-click"></i>
-                        <div>
-                            <span>222</span></div>
-                    </div>
-                    <div>
-                        <button type="button">
-                            <i class="fa-solid fa-share"></i>
-                            <span>&nbsp;공유</span>
-                        </button>
-                    </div>
-                    <div>
-                        <button type="button">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                            <span>&nbsp;신고</span>
-                        </button>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
 
     <div class="btn-common btn-common-board">
-        <button type="button" class="button-font btn-option">수정</button>
-        <button type="button" class="button-font btn-option">삭제</button>
+        <button type="button" class="button-font btn-option" id="button-update">수정</button>
+        <button type="button" class="button-font btn-option" id="button-delete">삭제</button>
     </div>
 
-    <div class="community-comment">
-        <div class="community-comment-fst">
-            <div>
-                <img class="profile-img people" src="img/profile_sumi.jpg">
-            </div>
-            <div>
-                <div class="comment-text">
-                    <p class="people-name">젠틀맨이다</p>
-                    <div class="comment-content">오우 강남에 미인이 나타나셨다.
-                        라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-                    </div>
-                </div>
-                <div class="comment-footer">
-                    <p class="comment-datetime">2022-01-01 22:13:10</p>
-                    <div class="comment-option">
-                        <button type="button">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                            <span>&nbsp;신고</span>
-                        </button>
-                        <button type="button">
-                            <i class="fa-solid fa-pencil"></i>
-                            <span>&nbsp;답글쓰기</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="community-comment-snd">
-            <div>
-                <img class="profile-img people" src="img/profile_bobby.jpg">
-            </div>
-            <div>
-                <div class="comment-text">
-                    <p class="people-name">BOBBY</p>
-                    <div class="comment-content-snd">
-                        ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
-                        masissuyo~>ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
-                        masissuyo~>ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
-                        masissuyo~>ganjanggejang masissuyo~
-                    </div>
-                </div>
-                <div class="comment-footer">
-                    <p class="comment-datetime">2022-01-01 22:13:10</p>
-                    <div class="comment-option">
-                        <button type="button">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                            <span>&nbsp;신고</span></button>
-                        <button type="button">
-                            <i class="fa-solid fa-pencil"></i>
-                            <span>&nbsp;답글쓰기</span></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <!-- 댓글 -->
+  <div class="community-comment card">
+      <div class="card-header">댓글</div>
+      <div class="comment-container"></div>
+  </div>
+      <!-- 기존 것(대댓글) -->
+      <!-- <div class="party-comment-fst">
+          <div>
+              <img class="profile-img people" src="img/profile_sumi.jpg">
+          </div>
+          <div>
+              <div class="comment-text">
+                  <p class="people-name">젠틀맨이다</p>
+                  <div class="comment-content">오우 강남에 미인이 나타나셨다.
+                      라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+                  </div>
+              </div>
+              <div class="comment-footer">
+                  <p class="comment-datetime">2022-01-01 22:13:10</p>
+                  <div class="comment-option">
+                      <button type="button">
+                          <i class="fa-solid fa-triangle-exclamation"></i>
+                          <span>&nbsp;신고</span>
+                      </button>
+                      <button type="button">
+                          <i class="fa-solid fa-pencil"></i>
+                          <span>&nbsp;답글쓰기</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div> -->
 
-    <div class="comment-pages">
-        <button type="button">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
-    </div>
+      <!--<div class="party-comment-snd">
+          <div>
+              <img class="profile-img people" src="img/profile_bobby.jpg">
+          </div>
+          <div>
+              <div class="comment-text">
+                  <p class="people-name">BOBBY</p>
+                  <div class="comment-content-snd">
+                      ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
+                      masissuyo~>ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
+                      masissuyo~>ganjanggejang masissuyo~>ganjanggejang masissuyo~>ganjanggejang
+                      masissuyo~>ganjanggejang masissuyo~
+                  </div>
+              </div>
+              <div class="comment-footer">
+                  <p class="comment-datetime">2022-01-01 22:13:10</p>
+                  <div class="comment-option">
+                      <button type="button">
+                          <i class="fa-solid fa-triangle-exclamation"></i>
+                          <span>&nbsp;신고</span></button>
+                      <button type="button">
+                          <i class="fa-solid fa-pencil"></i>
+                          <span>&nbsp;답글쓰기</span></button>
+                  </div>
+              </div>
+          </div>
+      </div>-->
+
+  <div class="comment-pages">
+      <button type="button">1</button>
+      <button type="button">2</button>
+      <button type="button">3</button>
+  </div>
 </div>
 
-<form class="comment-write">
-<div>
-    <p>
-        <span>수지곤쥬♡</span>님의 글에 댓글 남기기
-    </p>
-    <textarea name="comment" placeholder="댓글을 남겨보세요"></textarea>
-</div>
-<div class="btn-common btn-position">
-    <input type="submit" class="button-font btn-complete" value="작성완료"></input>
-</div>
+<form class="comment-write" name="commentform">
+  <div>
+      <p>
+          <span class="profile-name2"></span>님의 글에 댓글 남기기
+      </p>
+      <textarea name="partyCommentContents" placeholder="댓글을 남겨보세요"></textarea>
+  </div>
+  <div class="btn-common btn-position">
+      <button type="button" class="button-font btn-complete">작성완료</button>
+  </div>
 </form>
+</div>
 </div>
 
 <div id="footer"></div>

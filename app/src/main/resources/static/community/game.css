@@ -1,14 +1,19 @@
 @charset "UTF-8";
 
+.swiper-slide:hover, .btn:hover, .btn-primary:hover {
+  background-color: #ffffff;
+  border-style: solid;
+  border-color: white;
+}
 
 .category {
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: baseline;
   width: 1017px;
   height: 63px;
-  left: 130px;
-  top: 260px;
+  left: 90px;
+  top: 100px;
 }
 
 .category-font{
@@ -33,53 +38,22 @@
   border-radius: 16px;
 }
 
-.top_Containner {
-  display: flex;
-}
-
-
-.serch_box {
-  text-align: left;
-  position: absolute;
-  width: 185px;
-  height: 25px;
-  left: 1159px;
-  top: 190px;
-  border-radius: 7px;
-  border-width: 1px;
-  font-size: 12px;
-}
-
-.serch_btn {
-  position: absolute;
-  width: 55px;
-  height: 25px;
-  left: 1349px;
-  top: 190px;
-  background-color: #29c05e;
-  color: white;
-  border-style: solid;
-  border-color: white;
-  border-radius: 16px;
-}
-
-
-.writing__ {
-  display: flex;
-  position: absolute;
-  width: 85px;
-  height: 25px;
-  left: 1319px;
-  top: 330px;
-}
-
 .card {
   display: flex;
   border : none;
   width: 1257px;
-  height: 263px;
-  left: 10px;
-  top: 330px;
+  /* left: 70px; */
+  top: 80px;
+
+  position: relative;
+  width: 90%;
+  height: 90%;
+  background: white;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: auto;
+  padding: 0;
 }
 
 .card-body-1 {
@@ -93,78 +67,86 @@
   top: 10px;
 }
 
-.card-body-2 {
-  display: flex;
-  height: 463px;
-  border-radius: 10px;
-  margin-top: 10px;
-  position: absolute;
-  width: 310px;
-  left: 435px;
-  top: 10px;
-}
+/* swiper css */
 
-.card-body-3 {
-  display: flex;
-  height: 463px;
-  border-radius: 10px;
-  margin-top: 10px;
-  position: absolute;
-  width: 310px;
-  left: 835px;
-  top: 10px;
-}
-
-.card-body-4 {
-  display: flex;
-  height: 463px;
-  border-radius: 10px;
-  margin-top: 10px;
-  position: absolute;
-  width: 310px;
-  left: 35px;
-  top: 510px;
-}
-
-.card-body-5 {
-  display: flex;
-  height: 463px;
-  border-radius: 10px;
-  margin-top: 10px;
-  position: absolute;
-  width: 310px;
-  left: 435px;
-  top: 510px;
-}
-
-.card-body-6 {
-  display: flex;
-  height: 463px;
-  border-radius: 10px;
-  margin-top: 10px;
-  position: absolute;
-  width: 310px;
-  left: 835px;
-  top: 510px;
-}
-
-.btn-left {
-  color: #29c05e;
-  font-size: 50px;
-  position: absolute;
-  top: 810px;
-  border: 0;
-  outline: 0;
+.swiper {
+  width: 100%;
+  height: 100%;
   background-color: white;
 }
 
-.btn-right {
-  color: #29c05e;
-  font-size: 50px;
-  position: absolute;
-  top: 810px;
-  left: 1350px;
-  border: 0;
-  outline: 0;
+.swiper .mySwiper {
   background-color: white;
+}
+
+.swiper-wrapper {
+  background-color: white;
+}
+
+.swiper-slide {
+
+  text-align: center;
+  font-size: 18px;
+  background-color: white;
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  position: relative;
+  top: -50px;
+  width: 100%;
+  height: 80%;
+  /* object-fit: cover; */
+  background-color: white;
+}
+
+.swiper-pagination {
+  position: relative;
+  top: 620px;
+}
+
+/* bootstrap Modal*/
+
+.btn {
+  border-color: white;
+}
+
+
+
+.modal-content {
+  border-radius: 20px;
+  width: 550px;
+  height: 550px;
+}
+
+.modal-title {
+  position: relative;
+  left: 240px;
+  font-weight: 700;
+  font-size: 20px;
+  /* color: #29c05e; */
+}
+
+.modal_img {
+  border-radius: 20px;
+  position: relative;
+  top: -14px;
+  left: -12px;
+  width: 105%;
+  height: 72%;
 }

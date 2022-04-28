@@ -85,7 +85,7 @@
     from
       alcohol_detail
     order by
-      alcohol_type_no asc
+      alcohol_detail_no desc
       limit #{offset}, #{rowCount}
   </select>
 
@@ -105,7 +105,7 @@
       alcohol_detail
     where alcohol_type_no=#{targetNo}
     order by
-      alcohol_type_no asc
+      alcohol_detail_no desc
       limit #{offset}, #{rowCount}
   </select>
 

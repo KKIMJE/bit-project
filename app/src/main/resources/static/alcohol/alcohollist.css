@@ -127,7 +127,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 1280px;
-  height: 500px;
+  height: 679px;
 }
 
 /* .alc-link {
@@ -172,24 +172,22 @@ body {
   margin-top: 200px;
 }
 
-.page-btn-act {
-  display: none;
-}
-
 .alchol-degree-value {
   margin-top: 10px;
   font-weight: lighter;
   font-size: 15px;
 }
 
-.rounded-lg {
-  border-radius: 10px;
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
 }
 
 .pagination-ul {
   text-align: center;
   display: inline-block;
-  margin-top: 250px;
 }
 
 .pagination-ul li {

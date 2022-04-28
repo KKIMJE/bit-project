@@ -52,13 +52,13 @@ function storeList(xStores) {
       listDiv.classList.add("storeContents-imgCard")
       listAll.appendChild(listDiv)
 
+      var itemDiv = document.createElement("div")
+          itemDiv.classList.add("store-contents-1")
+          listDiv.appendChild(itemDiv)
+
       var itemDiv2 = document.createElement("div")
       itemDiv2.classList.add("store-contents-2")
       listDiv.appendChild(itemDiv2)
-
-      var itemDiv = document.createElement("div")
-      itemDiv.classList.add("store-contents-1")
-      listDiv.appendChild(itemDiv)
 
     } else if (count % 10 == 0) {
       var listDiv = document.createElement("div")
@@ -209,7 +209,7 @@ function printOper(oper) {
   if (oper == 1) {
     status = "영업중"
   } else {
-    status = "휴일"
+    status = "종료"
   }
   return status;
 }

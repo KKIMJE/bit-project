@@ -103,7 +103,6 @@ fetch(`/alcohol/get?no=${no}`)
     console.log(result);
     let alcohol = result.data
 
-    detailImg.src = alcohol.img
     introName.innerHTML = alcohol.alcoholName
     introBrand.innerHTML = alcohol.brand
     introOrigin.innerHTML = alcohol.origin
@@ -111,6 +110,11 @@ fetch(`/alcohol/get?no=${no}`)
     introDegree.innerHTML = alcohol.degree
     introChar.innerHTML = alcohol.characteristic
     storeList.innerHTML = alcohol.alcoholName
+
+    if (alcohol.img != null) {
+
+      detailImg.src = "/alcohol/photo?filename=" + alcohol.img
+    }
 
     if (alcohol.stores.length == 0) {
       let tmpDiv = `

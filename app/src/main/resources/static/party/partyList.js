@@ -65,7 +65,8 @@ function myLoad() {
                           <div class="meeting-distance" data-address="${party.address}">🚧계산중🚧</div>
                       </div>
                       <div class="party-like">
-                          <i class="fa-solid fa-heart like-click"></i>
+                        <button type="button"><i class="fa-regular fa-heart"></i></button>
+                        <button type="button" class="like-click"><i class="fa-solid fa-heart"></i></button>
                       </div>
                       <div class="party-member-count">
                           <i class="fa-solid fa-user"></i>
@@ -284,7 +285,8 @@ function mapLoad() {
                               <div class="meeting-distance" data-address="${party.address}">🚧계산중🚧</div>
                           </div>
                           <div class="party-like">
-                              <i class="fa-solid fa-heart like-click"></i>
+                            <button type="button"><i class="fa-regular fa-heart"></i></button>
+                            <button type="button" class="like-click"><i class="fa-solid fa-heart like-click"></i></button>
                           </div>
                           <div class="party-member-count">
                               <i class="fa-solid fa-user"></i>

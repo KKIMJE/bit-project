@@ -97,45 +97,29 @@
                                 <span class="pmember"></span>
                             </span>
                             <span>
-                                <i class="fa-solid fa-store"></i>서초동
+                                <i class="fa-solid fa-store"></i>
+                                <span class="plocation"></span>
                             </span>
                         </div>
                     </div>
+                    <div class="pcontent">
+                    </div>
                     <div class="party-board-content">
-                        <div>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-                            molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-                            officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-                            molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-                            officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus
-                            molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias
-                            officiis assumenda officia quibusdam deleniti eos cupiditate dolore
-                            doloribuscupiditate dolore doloribus
-                            asdfasdf
-                            asdfasdfasdfasd
-                            asdfasdfasdfasdasd
-                            dfdsfa<br>
-                            ewaf
-                            asdfasdfae
-                            dfasfe<br>
-                            <br>
-                            <br>
-                            adfadsf
-                        </div>
                         <div class="party-board-option">
                             <div class="party-like">
-                                <i class="fa-regular fa-heart like-click"></i>
-                                <i class="fa-solid fa-heart like-click"></i>
-                                <div>
-                                    <span>222</span></div>
+                                <button type="button">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <i class="fa-solid fa-heart like-click"></i>
+                                </button>
+                                <span>찜</span>
                             </div>
                             <div>
-                                <button type="button">
-                                    <i class="fa-solid fa-share"></i>
-                                    <span>&nbsp;공유</span>
-                                </button>
+                                <a id="kakao-link-btn" href="javascript:sendLink()">
+                                    <div class="party-share">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                        <span>&nbsp;&nbsp;공유</span>
+                                    </div>
+                                </a>
                             </div>
                             <div>
                                 <button type="button" class="report">
@@ -159,34 +143,7 @@
                 <div class="comment-container">
                 </div>    
             </div>
-                <!-- 기존 것(대댓글) -->
-                <!-- <div class="party-comment-fst">
-                    <div>
-                        <img class="profile-img people" src="img/profile_sumi.jpg">
-                    </div>
-                    <div>
-                        <div class="comment-text">
-                            <p class="people-name">젠틀맨이다</p>
-                            <div class="comment-content">오우 강남에 미인이 나타나셨다.
-                                라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-                            </div>
-                        </div>
-                        <div class="comment-footer">
-                            <p class="comment-datetime">2022-01-01 22:13:10</p>
-                            <div class="comment-option">
-                                <button type="button">
-                                    <i class="fa-solid fa-triangle-exclamation"></i>
-                                    <span>&nbsp;신고</span>
-                                </button>
-                                <button type="button">
-                                    <i class="fa-solid fa-pencil"></i>
-                                    <span>&nbsp;답글쓰기</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
+                <!-- 대댓글 -->
                 <!--<div class="party-comment-snd">
                     <div>
                         <img class="profile-img people" src="img/profile_bobby.jpg">
@@ -241,6 +198,9 @@
 <!-- icons -->
 <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
 <script type="module" src="partyDetail.js"></script>
+<!--kakao share-->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="partyShare.js"></script>
 
 </body>
 </html>
