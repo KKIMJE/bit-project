@@ -12,28 +12,15 @@ public interface AdminStoreDao {
 
   int countAll();
 
-  List<Store> findAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
+  List<Store> findAll();
+
+  List<Store> pageFindAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
 
   List<Store> findByValue(@Param("filt") String filt, @Param("value") String value);
 
-  //  int countByMemberType(boolean memberStatus);
+  int update(int no);
 
-  //  List<Member> findByValue(@Param("filt") String filt, @Param("value") String value);
-
-  //  int countAll();
-  //
-  //  List<Member> findAll();
-  //
-  //  int insert(Member member);
-  //
-  //  Member findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
-  //
-  //  Member findByEmail(String email);
-  //
-  //  Member findByMno(int no);
-  //
-  //  int update(Member member);
-
+  int delete(int no);
 
 
 }

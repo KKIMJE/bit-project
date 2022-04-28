@@ -98,7 +98,7 @@ footer__store {
 }
 
 /* 필터 메뉴 */
-#checkBtn {
+#xCheckBtn {
   all: unset;
   color: #EEEFF1;
   font-size: 14px;
@@ -110,6 +110,10 @@ footer__store {
   margin-top: 2px;
   margin-bottom: 2px;
   cursor: pointer;
+}
+
+.dropdown-xItem {
+  cursor: default !important;
 }
 
 .dropdown-toggle::after {

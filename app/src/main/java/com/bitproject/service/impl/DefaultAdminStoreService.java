@@ -29,21 +29,30 @@ public class DefaultAdminStoreService implements AdminStoreService {
   }
 
 
-
   @Override
-  public List<Store> list(int pageSize, int pageNo) {
-    return adminStoreDao.findAll(pageSize, pageNo);
-
+  public List<Store> list() {
+    return adminStoreDao.findAll();
   }
 
-
+  @Override
+  public List<Store> pagelist(int pageSize, int pageNo) {
+    return adminStoreDao.pageFindAll(pageSize, ((pageNo - 1) * pageSize));
+  }
 
   @Override
   public List<Store> get(String filt, String value) {
     return adminStoreDao.findByValue(filt, value);
   }
 
+  @Override
+  public int update(int no) {
+    return adminStoreDao.update(no);
+  }
 
+  @Override
+  public int delete(int no) {
+    return adminStoreDao.delete(no);
+  }
 
 
 }

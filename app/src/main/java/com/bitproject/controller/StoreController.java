@@ -19,6 +19,7 @@ public class StoreController {
   //  StoreDao storeDao;
   //
 
+  //리턴값 변경시 담당자에게 요청 필수
   @RequestMapping("/list")
   public Object list() {     
     return new ResultMap().setStatus(SUCCESS).setData(storeService.list());
