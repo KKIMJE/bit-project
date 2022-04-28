@@ -43,7 +43,7 @@ function alcoholList(pageNo) {
       return response.json()
     })
     .then(alcohols => {
-        createList(alcohols);
+      createList(alcohols);
 
       // 회원 현황 테이블
       let currDt = `
@@ -58,38 +58,38 @@ function alcoholList(pageNo) {
 
 function createList(alcohols) {
   for (let alcohol of alcohols) {
-    switch(alcohol.alcoholTypeNo) {
+    switch (alcohol.alcoholTypeNo) {
       case 1:
-      alcohol.alcoholTypeNo = "소주"
-      break;
+        alcohol.alcoholTypeNo = "소주"
+        break;
 
       case 2:
-      alcohol.alcoholTypeNo = "맥주"
-      break;
+        alcohol.alcoholTypeNo = "맥주"
+        break;
 
       case 3:
-      alcohol.alcoholTypeNo = "와인"
-      break;
+        alcohol.alcoholTypeNo = "와인"
+        break;
 
       case 4:
-      alcohol.alcoholTypeNo = "막걸리"
-      break;
+        alcohol.alcoholTypeNo = "막걸리"
+        break;
 
       case 5:
-      alcohol.alcoholTypeNo = "양주"
-      break;
+        alcohol.alcoholTypeNo = "양주"
+        break;
 
       case 6:
-      alcohol.alcoholTypeNo = "사케"
-      break;
+        alcohol.alcoholTypeNo = "사케"
+        break;
 
       case 7:
-      alcohol.alcoholTypeNo = "전통주"
-      break;
+        alcohol.alcoholTypeNo = "전통주"
+        break;
 
       case 8:
-      alcohol.alcoholTypeNo = "기타"
-      break;
+        alcohol.alcoholTypeNo = "기타"
+        break;
     }
 
     // 주류 테이블
@@ -109,19 +109,22 @@ function createList(alcohols) {
   }
   $(".x-delete-btn").on("click", (e) => {
     console.log(e.target.value);
-
-    fetch(`/alcohol/delete?no=${e.target.value}`)
-    .then(response => {
-      return response.json()
-    })
-    .then(result => {
-      if (result.status == "success") {
-        location.href = "/admin/alcohollist.html";
-      } else {
-        window.alert("데이터 삭제 실패!");
-        console.log(result.data);
-      }
-    })
+    if (window.confirm("정말 제재하시겠습니까?")) {
+      fetch(`/alcohol/delete?no=${e.target.value}`)
+        .then(response => {
+          return response.json()
+        })
+        .then(result => {
+          if (result.status == "success") {
+            location.href = "/admin/alcohollist.html";
+          } else {
+            window.alert("데이터 삭제 실패!");
+            console.log(result.data);
+          }
+        })
+    } else {
+      return;
+    }
   })
 }
 
@@ -137,40 +140,40 @@ $('.x-search-btn').on("click", () => {
     return
   }
 
-  switch(searchValue) {
+  switch (searchValue) {
     case "소주":
-    searchValue = "1"
-    break;
+      searchValue = "1"
+      break;
 
     case "맥주":
-    searchValue = "2"
-    break;
+      searchValue = "2"
+      break;
 
     case "와인":
-    searchValue = "3"
-    break;
+      searchValue = "3"
+      break;
 
     case "막걸리":
-    searchValue = "4"
-    break;
+      searchValue = "4"
+      break;
 
     case "양주":
-    searchValue = "5"
-    break;
+      searchValue = "5"
+      break;
 
     case "사케":
-    searchValue = "6"
-    break;
+      searchValue = "6"
+      break;
 
     case "전통주":
-    searchValue = "7"
-    break;
+      searchValue = "7"
+      break;
 
     case "기타":
-    searchValue = "8"
-    break;
-    // default:
-    // alert("없는 타입의 주류 입니다.")
+      searchValue = "8"
+      break;
+      // default:
+      // alert("없는 타입의 주류 입니다.")
   }
 
   console.log(searchFilt);
@@ -184,7 +187,12 @@ $('.x-search-btn').on("click", () => {
       return response.json()
     })
     .then(alcohols => {
+      if (alcohols.length == 0) {
+        alert("검색 결과가 없습니다.")
+        location.reload()
+      }
       createList(alcohols);
+
     })
 })
 
@@ -195,5 +203,5 @@ $(paginationUl).on("click", (e) => {
   } else {
     e.target.classList.add("page-btn-active")
   }
-console.log(e.target);
+  console.log(e.target);
 })

@@ -1,6 +1,7 @@
 package com.bitproject.service;
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import com.bitproject.domain.Member;
 
 public interface AdminMemberService {
@@ -15,13 +16,10 @@ public interface AdminMemberService {
 
   List<Member> get(String filt, String value);
 
-  //  int add(Member member);
-  //
-  //  Member getMemberByEmailAndPassword(String email, String password);
-  //
-  //  Member getMemberByEmail(String email);
-  //
-  //
+  int delete(int no);
+
   int update(int no);
+
+  public void logout(HttpSession session);
 
 }

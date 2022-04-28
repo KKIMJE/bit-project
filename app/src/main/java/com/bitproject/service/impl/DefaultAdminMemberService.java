@@ -3,6 +3,7 @@ package com.bitproject.service.impl;
 
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.bitproject.dao.AdminMemberDao;
@@ -49,6 +50,19 @@ public class DefaultAdminMemberService implements AdminMemberService {
   @Override
   public int update(int no) {
     return adminMemberDao.update(no);
+  }
+
+  @Override
+  public void logout(HttpSession session) {
+    // 세션을 모두 초기화시킴 (로그아웃이므로 세션에 저장된 회원정보를 없애야 한다.)
+    // invalidate()메소드를 사용하면 사용자의 id까지 바뀌어버린다.
+    session.invalidate();
+  }
+
+  @Override
+  public int delete(int no) {
+    return adminMemberDao.delete(no);
+
   }
 
 

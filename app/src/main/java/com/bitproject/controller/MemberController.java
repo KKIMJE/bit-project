@@ -52,7 +52,10 @@ public class MemberController {
     if (loginUser == null) {
       return new ResultMap().setStatus(FAIL);
     }
-
+    // 탈퇴 회원일 경우 남아있는 세션 무효화
+    if (loginUser.getMemberStatus() == "1"){
+      session.invalidate();
+    }
     // 로그인이 성공하면, 
     // 다른 요청을 처리할 때 로그인 회원의 정보를 사용할 있도록 세션에 보관한다.
     session.setAttribute("loginUser", loginUser);
@@ -95,6 +98,22 @@ public class MemberController {
     return new ResultMap().setStatus(SUCCESS);
   }
 
+  @RequestMapping("/member/delete")
+  public Object delete(HttpSession session) {
+    Member loginmember =(Member)session.getAttribute("loginUser");
+    if( loginmember == null ) {
+      return new ResultMap().setStatus(FAIL).setData("로그인 상태가 아닙니다.");
+    }
+    // member.setMno(loginmember.getMno());
+    int count = memberService.delete(loginmember.getMno());
+
+    if(count ==1) {
+      session.invalidate();
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("유효하지 않는 사용자 입니다.");
+    }
+  }
 
   @RequestMapping("/member/update")
   public Object update(Member member,HttpSession session) {
@@ -105,7 +124,7 @@ public class MemberController {
     if(count ==1) {
       return new ResultMap().setStatus(SUCCESS);
     } else {
-      return new ResultMap().setStatus(FAIL).setData("유효하지 않거나 게시글 작성자가 아닙니다.");
+      return new ResultMap().setStatus(FAIL).setData("유효하지 않는 사용자 입니다.");
     }
   }
 

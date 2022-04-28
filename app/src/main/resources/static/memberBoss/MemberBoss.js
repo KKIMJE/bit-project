@@ -29,47 +29,61 @@ $("#add_tag").click(async function () {
   })
 });
 
+//var xStoreNo = document.querySelector("input[name=storeNo]");
 var xStoreName = document.querySelector("input[name=storeName]");
+var xAddress = document.querySelector("input[name=address]");
+var xAddressDetail = document.querySelector("input[name=addressDetail]"); 
+var xOptionDivContainer = document.querySelector("#x-option-div-container");
 var xTel = document.querySelector("input[name=tel]");
-var xHour = document.querySelector("textarea[name=hour]");
-var xIntroduction = document.querySelector("textarea[name=introduction]");
+var xHour = document.querySelector("#hr");
+var xIntroduction = document.querySelector("#intro");
 var xBusinessRegistrationNo = document.querySelector("input[name=businessRegistrationNo]");
-var xAddressKakao = document.querySelector("input[name=AddressKakao]");
+var xReservationAccept = document.querySelector("input[name=reservationAccept]");
+var xMaxMember = document.querySelector("input[name=maxMember]");
+var xOper = document.querySelector("input[name=oper]");
+//var xAddressKakao = document.querySelector("input[name=AddressKakao]");
 
-document.querySelector("form[name=login__form]").onsubmit = function() {
+document.querySelector("#next").onclick = function() {
   if (xStoreName.value == "" ||
     xTel.value == "" ||
     xBusinessRegistrationNo == "" ||
     xIntroduction == "" ||
-    xAddressKakao == "" ||
+    xAddress == "" ||
     xHour.value == "") {
     window.alert("필수 입력 항목이 비어 있습니다.")
-    return false;
+    return;
   }
 
-  var fd = new FormData(document.forms.namedItem("login__form"))
+var fd = new FormData(document.forms.namedItem("login__form"));
 
-  fetch("/store/add", {
-    method: "POST",
-    body: new URLSearchParams(fd)
-  })
-  .then(function (response) {
-    return response.json()
-    })
-  .then(function (result) {
-    if (result.status == "success") {
-        alert("성공했습니다")
-    } else {
-       window.alert("실패!!")
-    }
-    });
-  return false;
+console.log(fd)
+
+
+
+      fetch("/store/add", {
+        method: "POST",
+        body: new URLSearchParams(fd)
+      })
+      .then(function (response) {
+        return response.json()
+        })
+      .then(function (result) {
+        console.log(result);
+        if (result.status == "success") {
+            console.log("등록 성공")
+             alert("성공했습니다")
+             window.location.href = "memberBoss2.html";
+        } else {
+         // window.alert("실패!!")
+         console.log(result.data);
+        }
+        });
 };
 
-document.querySelector("#next").onclick = function() {
-  window.location.href = "memberBoss2.html";
-};
+//document.querySelector("#next").onclick = function() {
+  // window.location.href = "memberBoss2.html";
+//};
 
 document.querySelector("#exit").onclick = function() {
-  window.location.href = "../ceo/storemanagement.html";
+  // window.location.href = "../ceo/storemanagement.html";
 };
