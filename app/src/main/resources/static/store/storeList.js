@@ -249,10 +249,9 @@ function distanceSortList() {
 };
 $(".xDistance").click(function() {
   
-  location.reload()
   // 거리순으로 sort한 후에 List 정렬
   sortJSON(dValueList, "dValue", "asc") // 거리값 정렬
-  // console.log(dValueList)
+  console.log(dValueList)
   distanceSortList()
   btnStatus = false
   targetBtnStatus = false
