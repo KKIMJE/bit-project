@@ -20,6 +20,7 @@
     <association property="writer" javaType="member">
       <id column="p_mno" property="mno"/>
       <result column="p_nickname" property="nickName"/>
+      <result column="p_img" property="mImg"/>
     </association>
   
     <collection property="partyComments" ofType="partyComment">
@@ -30,6 +31,7 @@
       <association property="commentWriter" javaType="member">
        <id column="pcw_mno" property="mno"/>
        <result column="pcw_nickname" property="nickName"/>
+       <result column="pcw_img" property="mImg"/>
       </association>
     </collection>
     
@@ -47,7 +49,8 @@
     p.alcohol_limit,
     p.address,
     m.mno as p_mno,
-    m.nickname as p_nickname
+    m.nickname as p_nickname,
+    m.m_img as p_img
   from 
     party p
     inner join member m on (p.writer = m.mno)
@@ -74,6 +77,7 @@
     p.address,
     m.mno as p_mno,
     m.nickname as p_nickname,
+    m.m_img as p_img,
     pc.party_comment_no,
     pc.party_comment_contents,
     pc.comment_date,

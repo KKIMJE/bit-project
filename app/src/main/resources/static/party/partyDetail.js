@@ -47,6 +47,10 @@ fetch(`/party/get?no=${no}`)
     console.log(result)
     var party = result.data;
 
+    console.log(party.writer.mimg)
+
+    $('.profile-img').attr("src",`/asset/img/member/${party.writer.mimg}`);
+
     pTitle.innerHTML = party.title;
     pNickname.innerHTML = party.writer.nickName;
     pAlcoholType.innerHTML = party.alcoholType;
@@ -56,14 +60,14 @@ fetch(`/party/get?no=${no}`)
     pMember.innerHTML = `${party.maxMember}명`;
     pLocation.innerHTML = `${party.address}`;
     pContent.innerHTML = `${party.contents}`;
-
     pNickname2.innerHTML = party.writer.nickName;
 
     for (var partyComment of party.partyComments) {
+
             pcbody.innerHTML += 
             `<div class="party-comment-fst">
                 <div>
-                    <img class="profile-img people" src="img/profile_sumi.jpg">
+                    <img class="profile-img people" src="/asset/img/member/${partyComment.commentWriter.mimg}">
                 </div>
                 <div>
                     <div class="comment-text">

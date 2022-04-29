@@ -168,9 +168,16 @@ $(".pbtn").on('click', function(e){
     설정된 일정 넘기기
     *******************/
     $('.modal-footer button').click(function() {
-    meetingDate = $('#meetingDate').val();
-    $('.modal-footer span').data('date', `${meetingDate}`);
-    $('#ps-date input').val(`${meetingDate}`);
+      meetingDate = $('#meetingDate').val();
+      if (meetingDate.indexOf('T' != -1)) {
+        let smeetingDate =  meetingDate.replace('T', '  ')
+        console.log(smeetingDate)
+        $('.modal-footer span').data('date', `${smeetingDate}`);
+        $('#ps-date input').val(`${smeetingDate}`);
+      } else {
+        $('.modal-footer span').data('date', `${meetingDate}`);
+        $('#ps-date input').val(`${meetingDate}`);
+      }
     })
 
     break;
