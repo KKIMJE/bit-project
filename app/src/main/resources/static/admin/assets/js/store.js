@@ -196,6 +196,9 @@ $('.x-search-btn').on("click", () => {
   let searchFilt = $('.x-search-div select').val()
   let searchValue = $('.x-search-div input').val()
 
+  console.log(searchFilt);
+  console.log(searchValue);
+
   if (searchValue == "") {
     alert("검색어를 입력하세요")
     return;
@@ -207,7 +210,7 @@ $('.x-search-btn').on("click", () => {
       return response.json()
     })
     .then(stores => {
-      if (alcohols.length == 0) {
+      if (stores.length == 0) {
         alert("검색 결과가 없습니다.")
         location.reload()
       }
