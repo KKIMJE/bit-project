@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="login.css">
 
+<!-- jquery -->
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
     <title>야술먹자 로그인</title>
 </head>
 <body>
@@ -84,10 +87,15 @@
           <p class="links">SNS계정으로 간편하게 로그인하세요</p>
           <div class="login__sns__contents">
             <!-- SNS로그인 후작업 필요 -->
+            <div class="fb-wrap">
+                <fb:login-button
+                    scope="public_profile,email"
+                    onlogin="checkLoginState();">
+                </fb:login-button>
+              <!--<img class="fb-btn-img" src="/asset/img/facebook_login_btn.png" alt="페이스북 로그인 버튼">-->
+            </div>
             <div>
-              <fb:login-button
-                  scope="public_profile,email"
-                  onlogin="checkLoginState();"></fb:login-button>
+              <button type="button" class="signup-btn">회원가입</button>
             </div>
             <!-- <button>
             <div class="fb-login-button"
@@ -101,9 +109,6 @@
 
           <!--kakao login
             <button class="submit-btn-sns">kakao</button>-->
-          
-          
-          
           
           </div>
         </div>
@@ -206,6 +211,15 @@
               }
           });
       }
+
+      $('.signup-btn').click(function () {
+        location.href = "../signup/signup.html"
+      })
+
+      // $('.fb-wrap img').click(function () {
+      //   fbclickE();
+      // })
+
       </script>
 
       <script src="/node_modules/js-cookie/dist/js.cookie.js"></script>
