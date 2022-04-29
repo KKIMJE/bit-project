@@ -11,10 +11,10 @@ function filterList(choiceList) {
 
         let store = data.data
         // 태그번호가 같은 스토어번호를 넣어줌
-        // console.log(data.data[20].tags) // tags 리스트
+        console.log(data.data[20].tags) // 주점이 선택한 tags 리스트
         
         for (let i=0; i < store.length; i++) {
-            let storeTags = store[i].tags
+            let storeTags = store[i].tags // 주점의 태그 목록들
 
             let storeTagChoiceList = []
             for (let j=0; j < storeTags.length; j++) {
@@ -24,10 +24,18 @@ function filterList(choiceList) {
 
             if (storeTagChoiceList.length != 0) {
                 
-                if ( JSON.stringify(storeTagChoiceList) === JSON.stringify(filterNoList) ) {
+                if ( JSON.stringify(storeTagChoiceList) === JSON.stringify(filterNoList) ) { // 필터링
+                    // 전체선택목록이 같은것 ex) [1,2,3] === [1,2,3]
+
+                    var xTargetNoList = []
                     
-                    var xTargetNo = store[i].storeNo
-                    console.log(xTargetNo)
+                    xTargetNoList.push(store[i].storeNo) // 같은것이 여러개 일 수 있음, 맵마커와 카드출력 목록
+                    
+                    console.log(xTargetNoList + " => 선택된 주점 출력")
+                    if (xTargetNoList.length == 0) {
+                        alert("선택한 태그를 모두 만족하는 주점이 없습니다.")
+                        location.reload()
+                    }
 
                     $('.imgContainer').empty()
                     fetch("/store/list")
@@ -42,37 +50,34 @@ function filterList(choiceList) {
                         let listAll = document.querySelector(".imgContainer");
                         let count = 0
                         let card = true
-                        let tStoreNumList = [] // 필터링된 주점 번호모음, 맵마커 만들때 필요
                         
-                        for (var i = 0; i < filterStores.length; i++) {
-                            if (xTargetNo == filterStores[i].storeNo) { // 태그 필터링
-                                tStoreNumList.push(i)
+                        for (var e = 0; e < xTargetNoList.length; e++) {
                     
                                 if (count == 0) {
                                     var listDiv = document.createElement("div")
-                                    listDiv.classList.add("storeContents-imgCard")
-                                    listAll.appendChild(listDiv)
-                            
-                                    var itemDiv2 = document.createElement("div")
-                                    itemDiv2.classList.add("store-contents-2")
-                                    listDiv.appendChild(itemDiv2)
+                                        listDiv.classList.add("storeContents-imgCard")
+                                        listAll.appendChild(listDiv)
                             
                                     var itemDiv = document.createElement("div")
-                                    itemDiv.classList.add("store-contents-1")
-                                    listDiv.appendChild(itemDiv)
+                                        itemDiv.classList.add("store-contents-1")
+                                        listDiv.appendChild(itemDiv)
+
+                                    var itemDiv2 = document.createElement("div")
+                                        itemDiv2.classList.add("store-contents-2")
+                                        listDiv.appendChild(itemDiv2)
                             
                                 } else if (count % 10 == 0) {
                                     var listDiv = document.createElement("div")
-                                    listDiv.classList.add("storeContents-imgCard")
-                                    listAll.appendChild(listDiv)
+                                        listDiv.classList.add("storeContents-imgCard")
+                                        listAll.appendChild(listDiv)
                             
                                     var itemDiv = document.createElement("div")
-                                    itemDiv.classList.add("store-contents-1")
-                                    listDiv.appendChild(itemDiv)
+                                        itemDiv.classList.add("store-contents-1")
+                                        listDiv.appendChild(itemDiv)
                             
                                     var itemDiv2 = document.createElement("div")
-                                    itemDiv2.classList.add("store-contents-2")
-                                    listDiv.appendChild(itemDiv2)
+                                        itemDiv2.classList.add("store-contents-2")
+                                        listDiv.appendChild(itemDiv2)
                                 }
                             
                                 if (count % 5 == 0) {
@@ -83,23 +88,23 @@ function filterList(choiceList) {
                                     }
                                 }
                         
-                                let storeName = filterStores[i].storeName
-                                let stras = printStar(filterStores[i].evaluationScore)
-                                let storeOper = printOper(filterStores[i].oper)
-                                let heart = printheart(filterStores[i].mno, filterStores[i].storeNo)
+                                let storeName = filterStores[e].storeName
+                                let stras = printStar(filterStores[e].evaluationScore)
+                                let storeOper = printOper(filterStores[e].oper)
+                                let heart = printheart(filterStores[e].mno, filterStores[e].storeNo)
                                 // stono 거리값과의 비교를 위한 stono
-                                tagStr = `<div class="img-xbox" data-stono="${i}"> 
+                                tagStr = `<div class="img-xbox" data-stono="${e}"> 
                                     <div class="xImg box">
                                     ${heart}
-                                    <a class="store-link" href="storeDetail.html?no=${filterStores[i].storeNo}">
-                                        <img src="../asset/img/store/storelist${i}.jpg" class="xImg-ori">
+                                    <a class="store-link" href="storeDetail.html?no=${filterStores[e].storeNo}">
+                                        <img src="../asset/img/store/storelist${e}.jpg" class="xImg-ori">
                                     </a>
                                     </div>
                                     <div class="xImg-contents">
                                     <div class="xImg-content">
                                         <div class="xImg-content-t">${storeName}</div>
                                         <div class="xImg-star">${stras}</div>
-                                        <div class="xImg-d" data-address="${filterStores[i].address}">🚧계산중🚧</div>
+                                        <div class="xImg-d" data-address="${filterStores[e].address}">🚧계산중🚧</div>
                                     </div>
                                     <div class="storeOpen">${storeOper}</div>
                                     </div>
@@ -111,17 +116,17 @@ function filterList(choiceList) {
                                     itemDiv.innerHTML += tagStr
                                 }
                                 count++
-                            }
+                            
                         }
-                        console.log("해당 주점수 : " + tStoreNumList.length)
+                        console.log("해당 주점수 : " + xTargetNoList.length)
                         if (itemDiv == null) {
                             console.log("null")
                             return
                         }
                         listDiv.appendChild(itemDiv)
                         listDiv.appendChild(itemDiv2)
-                        filterMarker(filterStores, tStoreNumList.slice(0, 10)) // 초기 맵세팅
-                        filterNextpreBtnSet(filterStores, tStoreNumList) // next pre btn 세팅
+                        filterMarker(filterStores, xTargetNoList.slice(0, 10)) // 초기 맵세팅
+                        filterNextpreBtnSet(filterStores, xTargetNoList) // next pre btn 세팅
                         computeDistance() // 거리계산 공유함수
                     })
                 }
@@ -142,7 +147,7 @@ $('#xCheckBtn').click(function(){
     sortBtnStatus = false
     filterBtnStatus = true
 
-    // 전체 체크목록 확인
+    // 드랍메뉴 전체 체크목록 확인
     $("input[name='cTag']:checked").each(function(idx){
         filterNoList.push( parseInt($(this).val()) )
         filterNoList.sort()

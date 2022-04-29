@@ -23,13 +23,13 @@ function targetList(targetNo) {
             listDiv.classList.add("storeContents-imgCard")
             listAll.appendChild(listDiv)
       
-            var itemDiv2 = document.createElement("div")
-            itemDiv2.classList.add("store-contents-2")
-            listDiv.appendChild(itemDiv2)
-      
             var itemDiv = document.createElement("div")
-            itemDiv.classList.add("store-contents-1")
-            listDiv.appendChild(itemDiv)
+                itemDiv.classList.add("store-contents-1")
+                listDiv.appendChild(itemDiv)
+
+            var itemDiv2 = document.createElement("div")
+                itemDiv2.classList.add("store-contents-2")
+                listDiv.appendChild(itemDiv2)
       
           } else if (count % 10 == 0) {
             var listDiv = document.createElement("div")
@@ -249,6 +249,7 @@ function distanceSortList() {
 };
 $(".xDistance").click(function() {
   
+  location.reload()
   // 거리순으로 sort한 후에 List 정렬
   sortJSON(dValueList, "dValue", "asc") // 거리값 정렬
   // console.log(dValueList)

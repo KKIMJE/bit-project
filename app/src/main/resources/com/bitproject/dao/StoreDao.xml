@@ -153,7 +153,6 @@
     select
       s.store_no, 
       s.business_registration_no,
-      s.business_registration,
       s.store_name,
       s.address,
       s.address_detail,

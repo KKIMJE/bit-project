@@ -29,7 +29,7 @@ function targetList(targetNo) {
   .then(function(response) {
     return response.json() 
   }).then(function(data) {
-  
+
       store = data
       console.log(store);
       storeTextBox(store)
@@ -41,10 +41,10 @@ function targetList(targetNo) {
       return response.json() 
     }).then(function(data) {
       
-      reviews = data
-      reviewsData = reviews
-      console.log(reviews);
-      StoreReviewPrint(reviews)
+      console.log("reviews : ")
+      console.log(data)
+      reviewsData = data // 함수내 전역변수 활용
+      StoreReviewPrint(data)
   });
 
   fetch(`/reservation/get?no=${no}`)
@@ -52,10 +52,10 @@ function targetList(targetNo) {
       return response.json() 
     }).then(function(data) {
 
-      reservation = data
-      reservationData = reservation
-      console.log(reservation);
-      reviewMemberinfo(reservation)
+      console.log("reservation : ")
+      console.log(data)
+      reservationData = data // 함수내 전역변수 활용
+      reviewMemberinfo(data)
   });
 
 }
@@ -165,11 +165,7 @@ function storeTextBox (store) {
   let storeStar = document.querySelector(".storeStar")
   let storeTag = document.querySelector(".storeTag")
 
-  storeDetailImgPrint(store.storeImg) // 주점 이미지
-  ModalImgPrint(store.storeImg) // 주점 모달 이미지
-  storeAlcPrint(store.alcoholSales) // 추천주류
-  storeMenuPrint(store.storeMenu) // 추천메뉴
-  storeCountMno(store.storeNo) // 주점찜
+  
   storeName.innerHTML = store.storeName // 주점이름
   storeAddress.innerHTML += store.address // 주점주소
   storeTel.innerHTML += store.tel // 주점주소
@@ -178,6 +174,11 @@ function storeTextBox (store) {
   storeTag.innerHTML += tags(store.tags) // 태그
   storeStar.innerHTML = printStar(store.evaluationScore) // 별점
   storeOper.innerHTML = printOper(store.oper) + " / " +  "&nbsp;" // 영업여부, 거리
+  storeDetailImgPrint(store.storeImg) // 주점 이미지
+  ModalImgPrint(store.storeImg) // 주점 모달 이미지
+  storeAlcPrint(store.alcoholSales) // 추천주류
+  storeMenuPrint(store.storeMenu) // 추천메뉴
+  storeCountMno(store.storeNo) // 주점찜
   computeDistance(store.address) // 거리계산
 }
 // 영업여부
@@ -322,7 +323,7 @@ function storeMenuPrint(storeMenuList) {
   for (let i=0; i < 5; i++) { // 최대 출력 5개
     str += `
       <div class="sugAlcImg-card">
-        <img class="xAlc-img" src="../asset/img/storeMenu/storeMenu${i+1}.jpg" alt="">
+        <img class="xAlc-img" src="../asset/img/storeMenu/storeMenu101-${i+1}.jpg" alt="">
         <p class="xAlc-name">${storeMenuList[i].storeMenuName}</p>
         <p class="xAlc-price">${storeMenuList[i].storeMenuPrice}원</p>
       </div>`
@@ -516,7 +517,7 @@ function reviewMemberinfo(reservationInfo) {
       // console.log(reservationInfo[i].member[0].mimg)
       // console.log(reservationInfo[i])
       reviewerNames[i].innerHTML = reservationInfo[i].member[0].nickName
-      profileImg[i].innerHTML = `<img src="../asset/img/memberReview/${reservationInfo[i].member[0].mimg}.jpg">`
+      profileImg[i].innerHTML = `<img src="../asset/img/member/${reservationInfo[i].member[0].mimg}">`
     } else {
       continue
     }

@@ -57,8 +57,8 @@ function storeList(xStores) {
           listDiv.appendChild(itemDiv)
 
       var itemDiv2 = document.createElement("div")
-      itemDiv2.classList.add("store-contents-2")
-      listDiv.appendChild(itemDiv2)
+          itemDiv2.classList.add("store-contents-2")
+          listDiv.appendChild(itemDiv2)
 
     } else if (count % 10 == 0) {
       var listDiv = document.createElement("div")
