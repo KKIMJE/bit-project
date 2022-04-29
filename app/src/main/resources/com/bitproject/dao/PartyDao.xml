@@ -59,8 +59,28 @@
   </select>
   
   <insert id="insert" parameterType="Party">
-    insert into party(writer,title,contents,address,party_fee,meeting_date,max_member,alcohol_type,alcohol_limit) 
-    values(#{writer.mno},#{title},#{contents},#{address},#{partyFee},#{meetingDate},#{maxMember},#{alcoholType},#{alcoholLimit})
+    insert into party(
+    writer,
+    title,
+    contents,
+    address,
+    party_fee,
+    meeting_date,
+    max_member,
+    alcohol_type,
+    alcohol_limit
+    ) 
+    values(
+    #{writer.mno},
+    #{title},
+    #{contents},
+    #{address},
+    #{partyFee},
+    #{meetingDate},
+    #{maxMember},
+    #{alcoholType},
+    #{alcoholLimit}
+    )
   </insert>
   
   <select id="findByNo" resultMap="partyMap2" parameterType="int">

@@ -334,11 +334,11 @@ div.party-board-option button i {
   top: 3px;
 }
 
-div.party-like > button:nth-child {
+div.party-like > button i {
   color: rgba(204, 9, 9, 0.883);
   position: absolute;
-  right: 129px;
-  bottom: 6px;
+  right: 156px;
+  bottom: 2px;
 }
 
 .like-click {

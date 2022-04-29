@@ -257,7 +257,7 @@ $(".pbtn").on('click', function(e){
     //------인원-------
     case 6 :
     strT = "원하시는 최대 인원을 선택해주세요";
-    strB = '<select class="maxMember">'
+    strB = '<select>'
     + '<option value="1">1</option>'
     + '<option value="2">2</option>'
     + '<option value="3">3</option>'
@@ -325,10 +325,10 @@ $('.save').click(function() {
   console.log(pFee.value)
   console.log(pMember.value)
     
-  if (pTitle.value == "" || pContent.value == "" || pLocation.value == "" || pDate.value == "" || pType.value == "" || pLimit.value == "" || pFee.value == "" || pMember.value == "") {
-    alert("필수 입력 항목이 비어 있습니다.");
-    return;
-  } 
+  // if (pTitle.value == "" || pContent.value == "" || pLocation.value == "" || pDate.value == "" || pType.value == "" || pLimit.value == "" || pFee.value == "" || pMember.value == "") {
+  //   alert("필수 입력 항목이 비어 있습니다.");
+  //   return;
+  // } 
 
     var pb = new FormData(document.forms.namedItem("partyBoard"));
     

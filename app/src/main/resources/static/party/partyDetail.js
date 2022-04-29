@@ -225,10 +225,15 @@ function reportModal() {
 /*************
     찜하기
 *************/
-$('.party-like.button').click(function likeParty() {
-
-alert("우아아아아아아악")
-
-//$(".order").removeClass("bold");
-//$targetObj.addClass("bold");
+$('.party-like button').click(function () {
+    if ($(".party-like > button > span:nth-child(1)").hasClass("like-click")) {
+        $(".party-like > button > span:nth-child(1)").removeClass("like-click");
+        $(".party-like > button > span:nth-child(2)").addClass("like-click");
+    } else if ($(".party-like > button > span:nth-child(2)").hasClass("like-click")) {
+        $(".party-like > button > span:nth-child(2)").removeClass("like-click");
+        $(".party-like > button > span:nth-child(1)").addClass("like-click");
+    }
 })
+
+// $(this).toggleClass('on'); if ($(this).hasClass("on")) { $(this).parent().addclass('active') } else if (!$(this).hasClass("on")) { $(this).parent().removeclass('active') }
+
