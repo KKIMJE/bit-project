@@ -192,8 +192,7 @@ where
     brand=#{brand},
     origin=#{origin},
     volume=#{volume},
-    characteristic=#{characteristic},
-    img=#{img}
+    characteristic=#{characteristic}
     where
       alcohol_detail_no=#{alcoholDetailNo} and writer=#{writer.mno}
   </update>

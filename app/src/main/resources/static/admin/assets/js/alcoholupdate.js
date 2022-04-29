@@ -21,7 +21,7 @@ let xAlcoholBrand = document.querySelector("input[name=brand]")
 let xAlcoholOrigin = document.querySelector("input[name=origin]")
 let xAlcoholVolume = document.querySelector("input[name=volume]")
 let xAlcoholChar = document.querySelector("textarea[name=characteristic]")
-let xAlcoholFile = document.querySelector("input[name=file]")
+// let xAlcoholFile = document.querySelector("input[name=file]")
 
 fetch(`/alcohol/get?no=${no}`)
 .then(response => {

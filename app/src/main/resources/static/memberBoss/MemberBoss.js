@@ -32,7 +32,7 @@ $("#add_tag").click(async function () {
 //var xStoreNo = document.querySelector("input[name=storeNo]");
 var xStoreName = document.querySelector("input[name=storeName]");
 var xAddress = document.querySelector("input[name=address]");
-var xAddressDetail = document.querySelector("input[name=addressDetail]"); 
+var xAddressDetail = document.querySelector("input[name=addressDetail]");
 var xOptionDivContainer = document.querySelector("#x-option-div-container");
 var xTel = document.querySelector("input[name=tel]");
 var xHour = document.querySelector("#hr");
@@ -72,7 +72,7 @@ console.log(fd)
         if (result.status == "success") {
             console.log("등록 성공")
              alert("성공했습니다")
-             window.location.href = "memberBoss2.html";
+             // window.location.href = "memberBoss2.html";
         } else {
          // window.alert("실패!!")
          console.log(result.data);

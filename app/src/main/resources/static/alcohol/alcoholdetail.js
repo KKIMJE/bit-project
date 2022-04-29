@@ -74,7 +74,7 @@ function showMarkers(alcohol) {
             <div class="body">
                 <div class="desc">
                     <div class="marker-store-status">${alcohol.stores[i].status}</div>
-                    <div class="marker-store-score">⭐⭐⭐⭐⭐</div>
+                    <div class="marker-store-score">${printStar(alcohol.stores[i].evaluationScore)}</div>
                 </div>
            </div>
         </div>
@@ -91,6 +91,26 @@ function showMarkers(alcohol) {
     markerArr.push(marker);
     // overlayArr.push(overlay);
   } // end for
+}
+
+// 별점
+function printStar(score) {
+  // console.log("score: " + score)
+  let star = "⭐⭐⭐⭐⭐";
+  if (1 == score || score == 1.5) {
+    star = "⭐"
+  } else if(2 == score || score == 2.5) {
+    star = "⭐⭐"
+  } else if(3 == score || score == 3.5) {
+    star = "⭐⭐⭐"
+  } else if(4 == score || score == 4.5) {
+    star = "⭐⭐⭐⭐"
+  } else if(5 == score) {
+    star = "⭐⭐⭐⭐⭐"
+  } else {
+    star = "😥"
+  }
+  return star;
 }
 
 
@@ -130,15 +150,16 @@ fetch(`/alcohol/get?no=${no}`)
       } else {
         alcohol.stores[i].status = "영업종료"
       }
+      console.log(alcohol.storeImgs[i].storeImg);
 
       let storeItemDiv = `
       <div class="store-item-div">
         <a href="/store/storeDetail.html?no=${alcohol.stores[i].storeNo}">
-          <img class="store-img" src="${alcohol.storeImgs[i].storeImg}">
+          <img class="store-img" src="../asset/img/store/storelist${i}.jpg"">
           <div class="item-div">
             <span class="store-name">${alcohol.stores[i].storeName}</span>
           </div>
-          <span class="store-score">${alcohol.stores[i].evaluationScore}</span>
+          <span class="store-score">${printStar(alcohol.stores[i].evaluationScore)}</span>
           <span class="store-status">${alcohol.stores[i].status}</span>
         </a>
       </div>
