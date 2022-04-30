@@ -223,7 +223,7 @@ function distanceSortList() {
             <div class="xImg-content">
               <div class="xImg-content-t">${storeName}</div>
               <div class="xImg-star">${stras}</div>
-              <div class="xImg-d" data-address="${stores[sortNo].address}"><span>🚗</span> ${sortDis}</div>
+              <div class="xImg-d" data-address="${stores[sortNo].address}"><span>🚗</span>${sortDis}<span>🚗</span></div>
             </div>
             <div class="storeOpen">${storeOper}</div>
           </div>

@@ -107,7 +107,7 @@ function filterList(choiceList) {
                     <div class="xImg-content-t">${storeName}</div>
                     <div class="xImg-star">${stras}</div>
                     <div class="xImg-d" data-address="${store[lastNum].address}">🚧계산중🚧</div>
-                    <div class="storeTag">#${tagName}</div>
+                    <div class="storeTag"><span class="highlight">#${tagName}</span></div>
                 </div>
                 <div class="storeOpen">${storeOper}</div>
                 </div>
