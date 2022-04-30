@@ -15,8 +15,12 @@ const pre = document.querySelector('.previous');
 
 
 $('#enter').click(function() {
-  location.href = "/party/partyChatting.html?pno=58"
+  location.href = "/party/chat.html?roomNum=1&username=개코"
 })
+
+// $('#enter').click(function() {
+//   location.href = "/party/partyChatting.html?pno=58"
+// })
 
 // $().ready(function() {
 //     $("#enter").click(function () {

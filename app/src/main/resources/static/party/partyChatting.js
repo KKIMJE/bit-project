@@ -18,63 +18,6 @@ if (pno == null) {
 }
 
 
-// const lala = (async () => {
-// try {
-//     return await uNickname()
-// } catch (e) {
-//     console.log(e);
-// }
-// })();
-
-// console.log(lala);
-
-
-// fetch("/member/get")
-// .then(res => res.json())
-// .then(result => callback(result))
-    
-
-// function getNickName(callback) {
-// }
-
-//     function callBackFunc(result) {
-//         console.log(result)
-//         myName = result.data.name
-//         //myName = json.name
-//         console.log(myName)
-//         return myName;
-//     }
-//     let lala = getNickName(callBackFunc);
-//     console.log("lala")
-    
-//     console.log(myName)
-
-
-
-
-// var myName;
-// function getNickName(callback) {  
-// fetch("/member/get")
-// .then(res => res.json())
-// .then(result => callback(result))
-//     }
-
-//     function callBackFunc(result) {
-//         console.log(result)
-//         myName = result.data.name
-//         //myName = json.name
-//         console.log(myName)
-//         return myName;
-//     }
-//     let lala = getNickName(callBackFunc);
-//     console.log("lala")
-    
-//     console.log(myName)
-
-
-// console.log(`31:::::::::::::${myName}`);
-        
-
 const Chat = (function(){
 
     let myName;
