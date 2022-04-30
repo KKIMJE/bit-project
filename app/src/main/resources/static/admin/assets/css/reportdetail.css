@@ -1,0 +1,41 @@
+textarea {
+  resize: none;
+  font: NanumSquareRound;
+  font-size: 15px;
+  width: 700px;
+  height: 400px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px rgb(91, 91, 91) solid;
+  padding: 15px;
+}
+
+button {
+  margin: 10px 0 0 10px;
+  width: 75px;
+  height: 28px;
+}
+
+h2 {
+  margin: 10px 0;
+  font-weight: normal;
+}
+
+.user-repdetail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.repdetail-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#repdetail-table {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 700px;
+  background-color: rgb(212, 212, 212);
+}

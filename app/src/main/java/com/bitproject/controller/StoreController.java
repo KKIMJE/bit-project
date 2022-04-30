@@ -3,6 +3,7 @@ package com.bitproject.controller;
 import static com.bitproject.controller.ResultMap.SUCCESS;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -122,13 +123,12 @@ public class StoreController {
 
 
   private Object saveFile(MultipartFile[] file) throws Exception {
-
+    ArrayList<String> list = new ArrayList<>();
     if (file != null) {
       for (MultipartFile part : file) {
         if (part.getSize() == 0) {
           continue;
         }
-
         String filename = UUID.randomUUID().toString();
 
         // 파일명의 확장자를 알아낸다.
@@ -140,12 +140,12 @@ public class StoreController {
         // 파일을 지정된 폴더에 저장한다.
         File photoFile = new File("./src/main/resources/static/asset/img/store/" + filename); // App 클래스를 실행하는 프로젝트 폴더
         part.transferTo(photoFile.getCanonicalFile()); // 프로젝트 폴더의 전체 경로를 전달한다.
-
+        list.add(filename);
       }
     } else {
       return "error";
     }
-    return "ok";
+    return list;
   }
 
 

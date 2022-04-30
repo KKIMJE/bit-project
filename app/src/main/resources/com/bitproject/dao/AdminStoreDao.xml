@@ -91,7 +91,7 @@
     where ${filt} like CONCAT('%',#{value},'%')
   </select>
 
-     <update id="update" parameterType="int">
+  <update id="update" parameterType="int">
     update store set
     block_count=block_count + 1
     where
