@@ -15,36 +15,44 @@
     <result column="update_date" property="updateDate"/>
     <result column="view_count" property="viewCount"/>
   </resultMap>
+  
+  <select id="countAll" resultType="int">
+    select count(*) from notice
+  </select>
 
   <select id="findAll" resultMap="noticeMap">
     select 
       notice_no,
-      member_type,
       title,
       contents,
-      view_count,
       reg_date,
-      update_date,
       view_count
     from 
       notice 
     order by 
       notice_no desc
+    limit #{offset}, #{rowCount}
   </select>
 
   <insert id="insert" parameterType="Notice">
-    insert into notice(member_type,title,contents,view_count) 
-    values(#{memberType},#{title},#{contents},#{viewCount})
+    insert into notice(
+    title,
+    contents,
+    view_count
+    ) 
+    values(
+    #{title},
+    #{contents},
+    #{viewCount})
   </insert>
 
 
 	<select id="findByNo" resultMap="noticeMap" parameterType="int">
-    select 
-      member_type,
+    select
+      notice_no,
       title,
       contents,
-      view_count,
-      reg_date
+      reg_date,
       view_count
     from 
       notice
@@ -52,13 +60,6 @@
       notice_no=#{no}
   </select>
 
-  <update id="update" parameterType="Notice">
-    update notice set
-      title=#{title}, 
-      contents=#{contents}
-    where 
-      notice_no=#{noticeNo}
-  </update>
 
   <delete id="delete" parameterType="int">
     delete from notice 

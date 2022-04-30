@@ -8,10 +8,10 @@ let detailBtn = document.querySelector(".x-detail-btn")
 
 let pageSize = 10;
 let pageCount = 10; // 페이징에 나타낼 페이지 수
-let totalUserPage = 0;
-let totalUserCount = 0;
-let totalUserReportCount = 0;
-let userReportCount = 0;
+let totalBoardPage = 0;
+let totalBoardCount = 0;
+let totalboardReportCount = 0;
+let boardReportCount = 0;
 let reportHandlingCount = 0;
 
 
@@ -20,33 +20,33 @@ let reportHandlingCount = 0;
 
 $(document).ready(function() {
   // 페이지 버튼 생성
-  fetch("/report/typeSize?type=m")
+  fetch("/report/typeSize?type=b")
     .then(response => {
       return response.json()
     })
     .then(result => {
-      totalUserCount = result
-      paging(totalUserCount, pageSize, pageCount, 1)
+      totalBoardCount = result
+      paging(totalBoardCount, pageSize, pageCount, 1)
       reportList(1)
     })
 })
 
-function paging(totalUserCount, pageSize, pageCount, currentPage) {
+function paging(totalBoardCount, pageSize, pageCount, currentPage) {
   console.log("currentPage : " + currentPage);
-  console.log(totalUserCount);
+  console.log(totalBoardCount);
 
-  totalUserPage = Math.ceil(totalUserCount / pageSize) // 총 페이지 수\
-  console.log(totalUserPage);
+  totalBoardPage = Math.ceil(totalBoardCount / pageSize) // 총 페이지 수\
+  console.log(totalBoardPage);
 
-  if (totalUserPage < pageCount) {
-    pageCount = totalUserPage;
+  if (totalBoardPage < pageCount) {
+    pageCount = totalBoardPage;
   }
 
   let pageGroup = Math.ceil(currentPage / pageCount) // 페이지 그룹
   let last = pageGroup * pageCount // 화면에 보여질 마지막 페이지 번호
 
-  if (last > totalUserPage) {
-    last = totalUserPage
+  if (last > totalBoardPage) {
+    last = totalBoardPage
   }
 
 
@@ -56,7 +56,7 @@ function paging(totalUserCount, pageSize, pageCount, currentPage) {
 
   if (last % pageCount != 0) {
     first = currentPage
-    last = totalUserPage
+    last = totalBoardPage
   }
 
   let pageHtml = "";
@@ -78,7 +78,7 @@ function paging(totalUserCount, pageSize, pageCount, currentPage) {
     }
   }
 
-  if (last < totalUserPage) {
+  if (last < totalBoardPage) {
     pageHtml += "<li><a href='#' id='next'> 다음 </a></li>";
   }
 
@@ -95,7 +95,7 @@ function paging(totalUserCount, pageSize, pageCount, currentPage) {
 
 
     //페이징 표시 재호출
-    paging(totalUserCount, pageSize, pageCount, selectedPage);
+    paging(totalBoardCount, pageSize, pageCount, selectedPage);
 
     storeList(selectedPage);
 
@@ -103,28 +103,28 @@ function paging(totalUserCount, pageSize, pageCount, currentPage) {
 
 }
 
-fetch("/report/list?type=m")
+fetch("/report/list?type=b")
   .then(response => {
     return response.json()
   })
   .then(result => {
     for (report of result) {
       if (report.status == 0) {
-        userReportCount++;
+        boardReportCount++;
       }
       if (report.status == 1) {
         reportHandlingCount++;
       }
 
-      totalUserReportCount = userReportCount + reportHandlingCount
+      totalboardReportCount = boardReportCount + reportHandlingCount
 
 
       // 주점 현황 테이블
       let currDt = `
             <th>신고접수수</th>
-            <td>${totalUserReportCount}</td>
+            <td>${totalboardReportCount}</td>
             <th>신고접수수</th>
-            <td>${userReportCount}</td>
+            <td>${boardReportCount}</td>
             <th>신고처리수</th>
             <td>${reportHandlingCount}</td>
 
@@ -138,7 +138,7 @@ fetch("/report/list?type=m")
 function reportList(pageNo) {
   $(tbody).empty()
 
-  fetch(`/report/typeList?type=m&pageSize=${pageSize}&pageNo=${pageNo}`)
+  fetch(`/report/typeList?type=b&pageSize=${pageSize}&pageNo=${pageNo}`)
     .then(response => {
       return response.json()
     })
@@ -177,5 +177,5 @@ function createList(reports) {
 
 $(document).on("click", ".x-detail-btn", (e) => {
   console.log(e.target.value);
-  location.href = `userreportdetail.html?no=${e.target.value}`
+  location.href = `boardreportdetail.html?no=${e.target.value}`
 })

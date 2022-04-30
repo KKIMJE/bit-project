@@ -30,7 +30,7 @@ fetch(`/report/get?no=${no}`)
     <table id="repdetail-table">
     <tr>
     <td>신고자회원번호: ${report.mno}</td>
-    <td style="text-align:left;">회원신고번호: ${report.repoNo}</td>
+    <td style="text-align:left;">게시글신고번호: ${report.repoNo}</td>
     </tr>
     <tr>
     <td>피신고자회원번호: ${report.targetNo}</td>
@@ -62,7 +62,7 @@ fetch(`/report/get?no=${no}`)
           console.log(result);
           if (result.status == "success") {
             alert("제재에 성공하였습니다.")
-            location.href="userreport.html"
+            location.href="boardreport.html"
           } else {
             alert(result.data);
           }

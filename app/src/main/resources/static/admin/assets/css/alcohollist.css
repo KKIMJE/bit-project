@@ -33,6 +33,7 @@
   text-align: center;
   border-collapse: collapse;
   width: 85vw;
+  border-bottom: 1px rgb(212, 212, 212) solid;
 }
 
 #x-alcohol-table thead {
