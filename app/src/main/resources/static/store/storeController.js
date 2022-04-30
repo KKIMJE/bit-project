@@ -1,13 +1,13 @@
 let allStoreDataList;
 let targetLat, targetLon, lat, lon, tagStr;
-let markerList = [];
-let targetMarkerList = [];
-let sortMarkerList = [];
-let filterMarkerList = [];
-let btnStatus = false; // map next, pre 버튼의 중복 동작 방지
-let targetBtnStatus = false;
-let sortBtnStatus = false;
-let filterBtnStatus = false;
+var markerList = [];
+var targetMarkerList = [];
+var sortMarkerList = [];
+var filterMarkerList = [];
+var btnStatus = false; // map next, pre 버튼의 중복 동작 방지
+var targetBtnStatus = false;
+var sortBtnStatus = false;
+var filterBtnStatus = false;
 var dValueList = []; // 거리계산값 list (storeList.js에서 사용)
 var next = document.querySelector('.next-store');
 var pre = document.querySelector('.pre-store');
@@ -275,6 +275,9 @@ function nextPreBtnSet() {
       }
     }
     next.addEventListener("click", () => {
+
+      console.log("card next")
+
       if (cursor+1 == endPage) {
         console.log("next: Over page")
       } else {
@@ -284,6 +287,9 @@ function nextPreBtnSet() {
       }
     });
     pre.addEventListener("click", () => {
+
+      console.log("card pre")
+
       if (cursor == 0) {
         console.log("pre: Over page")
       } else {
@@ -306,7 +312,7 @@ filterBtnStatus = false
 
 setTimeout(() => {
   nextPreBtnSet()
-}, 100);
+}, 150);
 
 // ============= Map 생성 ============= store list 생성후 적용필요
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -416,6 +422,14 @@ function sortMapMarker(xStore, numList) {
   for (let j = 0; j < sortMarkerList.length; j++) {
     sortMarkerList[j].setMap(null)
   }
+  for (let j = 0; j < targetMarkerList.length; j++) {
+    targetMarkerList[j].setMap(null)
+  }
+  for (let j = 0; j < filterMarkerList.length; j++) {
+    filterMarkerList[j].setMap(null)
+  }
+
+
   // 마커 생성
   for (let i = 0; i < numList.length; i ++) {
     let address = store[numList[i]].address
@@ -455,9 +469,17 @@ function filterMarker(xStore, numList) {
   for (let j = 0; j < markerList.length; j++) {
     markerList[j].setMap(null)
   }
+  for (let j = 0; j < sortMarkerList.length; j++) {
+    sortMarkerList[j].setMap(null)
+  }
+  for (let j = 0; j < targetMarkerList.length; j++) {
+    targetMarkerList[j].setMap(null)
+  }
   for (let j = 0; j < filterMarkerList.length; j++) {
     filterMarkerList[j].setMap(null)
   }
+
+
   // 마커 생성
   for (let i = 0; i < numList.length; i ++) {
     let address = store[numList[i]].address
@@ -557,6 +579,9 @@ function mapNextpreBtnSet(xStoresData, numList) {
   let limitCursor = Math.floor((allStoreNum.length) * 0.1)
   
   next.addEventListener("click", function(){
+
+    if (limitCursor <= 1) { return }
+
     if (btnStatus == false) {
       return
     }
@@ -577,6 +602,9 @@ function mapNextpreBtnSet(xStoresData, numList) {
     }
   });
   pre.addEventListener("click", function(){
+
+    if (limitCursor <= 1) { return }
+
     if (btnStatus == false) {
       return
     }
@@ -601,15 +629,32 @@ function targetMapNextpreBtnSet(storesData, numLsit) {
     return
   }
   markerList = []
+  sortMarkerList = []
+  targetMarkerList = []
 
   let targetNumStart = 0
   let targetNumEnd = 10
   let mapCursor
   let allStoreNum = numLsit
   let limitCursor = Math.floor((allStoreNum.length) * 0.1)
+
+  console.log("limitCursor" + limitCursor)
+
+  // 페이지가 1개 이하면 다음 이전 버튼을 사라지게 한다.
+  if (limitCursor <= 1) {
+    $('.next-store').hide();
+    $('.pre-store').hide();
+  } else {
+    $('.next-store').show();
+    $('.pre-store').show();
+  }
   
   next.addEventListener("click", function(){
     console.log("targetBtn")
+    sortMarkerList = []
+
+    if (limitCursor <= 1) { return }
+
     if (limitCursor == mapCursor) {
       console.log(limitCursor)
       console.log("next: Over page")
@@ -627,6 +672,10 @@ function targetMapNextpreBtnSet(storesData, numLsit) {
   });
   pre.addEventListener("click", function(){
     console.log("targetBtn")
+    sortMarkerList = []
+
+    if (limitCursor <= 1) { return }
+
     if (targetNumStart == 0) {
       console.log("pre: Over page")
     } else {
@@ -647,15 +696,29 @@ function sortMapNextpreBtnSet(storesData, numLsit) {
     return
   }
   markerList = []
+  targetMarkerList = []
 
   let targetNumStart = 0
   let targetNumEnd = 10
   let mapCursor
   let allStoreNum = numLsit
   let limitCursor = Math.floor((allStoreNum.length) * 0.1)
+
+  // 페이지가 1개 이하면 다음 이전 버튼을 사라지게 한다.
+  if (limitCursor <= 1) {
+    $('.next-store').hide();
+    $('.pre-store').hide();
+  } else {
+    $('.next-store').show();
+    $('.pre-store').show();
+  }
   
   next.addEventListener("click", function(){
     console.log("sortBtn")
+    targetMarkerList = []
+
+    if (limitCursor <= 1) { return }
+
     if (limitCursor == mapCursor) {
       console.log(limitCursor)
       console.log("next: Over page")
@@ -673,6 +736,10 @@ function sortMapNextpreBtnSet(storesData, numLsit) {
   });
   pre.addEventListener("click", function(){
     console.log("sortBtn")
+    targetMarkerList = []
+
+    if (limitCursor <= 1) { return }
+
     if (targetNumStart == 0) {
       console.log("pre: Over page")
     } else {
@@ -692,8 +759,9 @@ function filterNextpreBtnSet(storesData, numList) {
   if (filterBtnStatus == false) {
     return
   }
-  // let storesData = storesData
   
+  markerList = []
+  sortMarkerList = []
   targetMarkerList = []
 
   let numStart = 0
@@ -701,9 +769,21 @@ function filterNextpreBtnSet(storesData, numList) {
   let mapCursor
   let allStoreNum = numList
   let limitCursor = Math.floor((allStoreNum.length) * 0.1)
+
+  // 페이지가 1개 이하면 다음 이전 버튼을 사라지게 한다.
+  if (limitCursor <= 1) {
+    $('.next-store').hide();
+    $('.pre-store').hide();
+  } else {
+    $('.next-store').show();
+    $('.pre-store').show();
+  }
   
   next.addEventListener("click", function(){
     console.log("filterBtn")
+
+    if (limitCursor <= 1) { return }
+
     if (limitCursor == mapCursor) {
       console.log(limitCursor)
       console.log("next: Over page")
@@ -721,6 +801,9 @@ function filterNextpreBtnSet(storesData, numList) {
   });
   pre.addEventListener("click", function(){
     console.log("filterBtn")
+
+    if (limitCursor <= 1) { return }
+
     if (numStart == 0) {
       console.log("pre: Over page")
     } else {

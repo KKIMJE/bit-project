@@ -275,6 +275,18 @@ i.fa-solid.fa-heart.b {
   cursor: pointer;
 }
 
+/* 거리버튼 누를시 자동차 */
+.xImg-d > span {
+  font-size: 25px;
+}
+
+/* 상단필터 버튼 */
+.btn-group-sm>.btn, .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: .875rem;
+  border-radius: 1.2000000000000002rem !important;
+}
+
 /* storeMap */
 #map {
   margin-top: 50px;

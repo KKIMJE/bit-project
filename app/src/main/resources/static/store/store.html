@@ -15,11 +15,19 @@
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+          $('#header').load('../header/header.html');
+          $('#footer').load('../footer/footer_1.html');
+        });
+    </script>
+
     <title>야술먹자 주점리스트</title>
 </head>
 <body>
-    <nav class="navbar__">
-        <div><!-- 공간, 삭제하지 마세요 --></div>
+    <div id="header"></div>
+    <!-- <nav class="navbar__">
+        <div></div>
 
         <div class="navbar__logo">
             <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
@@ -32,7 +40,7 @@
         </ul>
 
         <ul class="navbar__login">
-            <!-- 알림 -->
+            
             <div class="btn-group">
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
@@ -41,10 +49,10 @@
                 </div>
             </div>
 
-            <!-- 마이페이지 -->
+            
             <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
 
-<!-- 검색 -->
+
     <div class="btn-group">
         <div class="btn-group">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
@@ -58,10 +66,10 @@
         </div>
     </div>
 
-            <!-- 지도 -->
+          
             <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
         </ul>
-    </nav>
+    </nav> -->
 
     <div class="store-container">
 
@@ -83,12 +91,12 @@
                 <div class="store-filter">
                     <button type="button" class="btn btn-outline-secondary store-filter-font btn-sm xDistance">거리순</i></button>
                     <button type="button" class="btn btn-outline-secondary store-filter-font btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        필터  <i class="fa-solid fa-filter"></i>
+                        필터<!--<i class="fa-solid fa-filter"></i> -->
                     </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <div class="drop-button-c">
-                                <div id="drop-button-title">카테고리</div>
+                                <div id="drop-button-title">주류</div>
                                 <div>l</div>
                                 <div class="dropdown-xItem-all">
                                     <button class="dropdown-xItem" type="button">소주</button>
@@ -375,7 +383,7 @@
 
     </div>
 
-    <footer__store>
+    <!-- <footer__store>
         <div class="footer-contents">
             <div class="footer-contents-1">전화번호  :  1566-8877</div>
             <div class="footer-content">
@@ -392,7 +400,8 @@
                 <div>고객센터</div>
             </div>
         </div>
-    </footer__store>
+    </footer__store> -->
+    <div id="footer"></div>
 </body>
 
 </html>
