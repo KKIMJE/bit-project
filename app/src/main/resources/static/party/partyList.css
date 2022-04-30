@@ -149,6 +149,8 @@ button {
 }
 
 .profile-img {
+  height: 10px;
+  width: 10px;
   border-radius: 70%;
   overflow: hidden;
   object-fit: cover;
