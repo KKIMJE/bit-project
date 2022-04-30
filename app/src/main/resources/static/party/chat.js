@@ -97,21 +97,28 @@ function initYourMessage(data) {
 async function addMessage() {
 	let msgInput = document.querySelector("#chat-outgoing-msg");
 
-	let chat = {
-		sender: username,
-		roomNum: roomNum,
-		msg: msgInput.value
-	};
+	if (msgInput.value != "") {
 
-	fetch("/chat", {
-		method: "post", //http post 메서드 (새로운 데이터를 write)
-		body: JSON.stringify(chat), // JS -> JSON(이렇게 바꿔야 body로 전송할 수 있다.)
-		headers: {
-			"Content-Type": "application/json; charset=utf-8"
-		}
-	});
+		let chat = {
+			sender: username,
+			roomNum: roomNum,
+			msg: msgInput.value
+		};
+	
+		fetch("/chat", {
+			method: "post", //http post 메서드 (새로운 데이터를 write)
+			body: JSON.stringify(chat), // JS -> JSON(이렇게 바꿔야 body로 전송할 수 있다.)
+			headers: {
+				"Content-Type": "application/json; charset=utf-8"
+			}
+		});
+	
+		msgInput.value = "";
 
-	msgInput.value = "";
+	} else {
+		alert("메시지를 입력해주세요");
+	}
+
 }
 
 // 버튼 클릭시 메시지 전송
