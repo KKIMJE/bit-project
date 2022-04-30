@@ -34,6 +34,7 @@ padding: 0 50px 0 50px;
   text-align: center;
   border-collapse: collapse;
   width: 85vw;
+  border-bottom: 1px rgb(212, 212, 212) solid;
 }
 
 #x-report-table thead {
@@ -48,10 +49,6 @@ padding: 0 50px 0 50px;
   display: flex;
   justify-content:center;
   margin-top: 20px;
-}
-
-.page-btn-active {
-  background-color: rgb(212, 212, 212);
 }
 
 .pagination-ul {
@@ -78,8 +75,4 @@ padding: 0 50px 0 50px;
 
 .pagination-ul li.on a {
   color: #fff;
-}
-
-.handling-done {
-  display: none; 
 }

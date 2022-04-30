@@ -129,39 +129,23 @@ public class AlcoholDetailController {
   public ResponseEntity<Resource> photo(String filename) {
 
     try {
-      // 다운로드할 파일의 입력 스트림 자원을 준비한다.
-      File downloadFile = new File("./src/main/resources/static/asset/img/alcohol/" + filename); // 다운로드 상대 경로 준비
-      FileInputStream fileIn = new FileInputStream(downloadFile.getCanonicalPath()); // 다운로드 파일의 실제 경로를 지정하여 입력 스트림 준비
-      InputStreamResource resource = new InputStreamResource(fileIn); // 입력 스트림을 입력 자원으로 포장
+      File downloadFile = new File("./src/main/resources/static/asset/img/alcohol/" + filename);
+      FileInputStream fileIn = new FileInputStream(downloadFile.getCanonicalPath()); 
+      InputStreamResource resource = new InputStreamResource(fileIn); 
 
-      // HTTP 응답 헤더를 준비한다.
       HttpHeaders header = new HttpHeaders();
       header.add("Cache-Control", "no-cache, no-store, must-revalidate");
       header.add("Pragma", "no-cache");
       header.add("Expires", "0");
 
-      // 다운로드 파일명을 지정하고 싶다면 다음의 응답 헤더를 추가하라!
-      // => 다운로드 파일을 지정하지 않으면 요청 URL이 파일명으로 사용된다.
       header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename);
 
 
-
-      //      // HTTP 응답 생성기를 사용하여 다운로드 파일의 응답 데이터를 준비한다.
-      //      BodyBuilder http응답생성기 = ResponseEntity.ok(); // 요청 처리에 성공했다는 응답 생성기를 준비한다.
-      //      http응답생성기.headers(header); // HTTP 응답 헤더를 설정한다.
-      //      http응답생성기.contentLength(downloadFile.length()); // 응답 콘텐트의 파일 크기를 설정한다.
-      //      http응답생성기.contentType(MediaType.APPLICATION_OCTET_STREAM); // 응답 데이터의 MIME 타입을 설정한다.
-      //      
-      //      // 응답 데이터를 포장한다.
-      //      ResponseEntity<Resource> 응답데이터 = http응답생성기.body(resource);
-      //      
-      //      return 응답데이터; // 포장한 응답 데이터를 클라이언트로 리턴한다.
-
-      return ResponseEntity.ok() // HTTP 응답 프로토콜에 따라 응답을 수행할 생성기를 준비한다.
-          .headers(header) // 응답 헤더를 설정한다.
-          .contentLength(downloadFile.length()) // 응답할 파일의 크기를 설정한다.
-          .contentType(MediaType.APPLICATION_OCTET_STREAM) // 응답 콘텐트의 MIME 타입을 설정한다.
-          .body(resource); // 응답 콘텐트를 생성한 후 리턴한다.
+      return ResponseEntity.ok()
+          .headers(header)
+          .contentLength(downloadFile.length())
+          .contentType(MediaType.APPLICATION_OCTET_STREAM) 
+          .body(resource);
 
     } catch (Exception e) {
 
@@ -172,25 +156,20 @@ public class AlcoholDetailController {
 
   private String saveFile(MultipartFile file) throws Exception {
     if (file != null && file.getSize() > 0) { 
-      // 파일을 저장할 때 사용할 파일명을 준비한다.
       String filename = UUID.randomUUID().toString();
       System.out.println(filename);
 
-      // 파일명의 확장자를 알아낸다.
       int dotIndex = file.getOriginalFilename().lastIndexOf(".");
       if (dotIndex != -1) {
         filename += file.getOriginalFilename().substring(dotIndex);
       }
 
-      // 파일을 지정된 폴더에 저장한다.
-      File photoFile = new File("./src/main/resources/static/asset/img/alcohol/" + filename); // App 클래스를 실행하는 프로젝트 폴더
-      file.transferTo(photoFile.getCanonicalFile()); // 프로젝트 폴더의 전체 경로를 전달한다.
+      File photoFile = new File("./src/main/resources/static/asset/img/alcohol/" + filename); 
+      file.transferTo(photoFile.getCanonicalFile()); 
 
-      // 썸네일 이미지 파일 생성
       Thumbnails.of(photoFile)
       .size(178, 173)
       .crop(Positions.CENTER)
-      //      .outputFormat("jpg")
       .toFile(new File("./src/main/resources/static/asset/img/alcohol/" + "178x173_" + filename));
 
       return filename;

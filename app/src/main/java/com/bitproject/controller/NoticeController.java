@@ -1,45 +1,56 @@
 package com.bitproject.controller;
 
+import static com.bitproject.controller.ResultMap.FAIL;
+import static com.bitproject.controller.ResultMap.SUCCESS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.bitproject.dao.NoticeDao;
 import com.bitproject.domain.Notice;
+import com.bitproject.service.NoticeService;
 
 @RestController 
 public class NoticeController {
 
   @Autowired
-  NoticeDao noticeDao;
+  NoticeService noticeService;
+
+  @RequestMapping("/notice/size")
+  public int size() {
+    return noticeService.size();
+  }
 
   @RequestMapping("/notice/list")
-  public Object list() {
-    return noticeDao.findAll();
+  public Object list(int pageSize, int pageNo) {
+    return noticeService.list(pageSize, pageNo);
   }
 
   @RequestMapping("/notice/add")
   public Object add(Notice notice) {
-    return noticeDao.insert(notice);
+    int count = noticeService.add(notice);
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("게시글 작성자가 아닙니다.");
+    }
   }
 
 
   @RequestMapping("/notice/get")
   public Object get(int no) {
-    Notice notice = noticeDao.findByNo(no);
+    Notice notice = noticeService.get(no);
     if (notice == null) {
-      return "";
+      return new ResultMap().setStatus(FAIL).setData("해당 번호의 데이터가 없습니다.");
     }
-    noticeDao.increaseViewCount(no);
-    return notice;
-  }
-
-  @RequestMapping("/notice/update")
-  public Object update(Notice notice) {
-    return noticeDao.update(notice);
+    return new ResultMap().setStatus(SUCCESS).setData(notice);
   }
 
   @RequestMapping("/notice/delete")
   public Object delete(int no) {
-    return noticeDao.delete(no);
+    int count = noticeService.delete(no);
+    if (count == 1) {
+      return new ResultMap().setStatus(SUCCESS);
+    } else {
+      return new ResultMap().setStatus(FAIL).setData("게시글 작성자가 아닙니다.");
+    }
   }
 }
