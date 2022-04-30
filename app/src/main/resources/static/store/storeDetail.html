@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- icons -->
   <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
@@ -23,6 +24,10 @@
         $('#footer').load('../footer/footer_1.html');
       });
   </script>
+  
+  <!-- sweetalert2 -->
+  <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 
   <title>야술먹자 주점 상세정보</title>
 </head>
@@ -93,7 +98,7 @@
             <a id="kakao-link-btn" href="javascript:sendLink()">
               <div class="storeShare"><i class="fa-solid fa-share-nodes"></i>공유하기</div>
             </a>
-            <div><i class="fa-solid fa-shield-halved"></i>신고하기</div>
+            <div><i class="fa-solid fa-shield-halved"></i><button type="button" class="report">신고하기</button></div>
           </div>
         </div>
   

@@ -47,7 +47,8 @@ function targetList(targetNo) {
       StoreReviewPrint(data)
   });
 
-  fetch(`/reservation/get?no=${no}`)
+  setTimeout(() => {
+    fetch(`/reservation/get?no=${no}`)
     .then(function(response) {
       return response.json() 
     }).then(function(data) {
@@ -56,8 +57,9 @@ function targetList(targetNo) {
       console.log(data)
       reservationData = data // 함수내 전역변수 활용
       reviewMemberinfo(data)
-  });
-
+    });
+  }, 200);
+  
 }
 targetList(no) // fetch 실행
 
@@ -522,4 +524,51 @@ function reviewMemberinfo(reservationInfo) {
       continue
     }
   }
+}
+
+
+// // ES6 Modules or TypeScript
+// import Swal from 'sweetalert2'
+
+// // CommonJS
+// const Swal = require('sweetalert2')
+
+
+$(".report").click(function () {
+  reportModal();
+})
+function reportModal() {
+  Swal.fire({
+      title: '신고하기',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      inputLabel: '신고 이유를 적어주세요',
+      showCancelButton: false,
+      confirmButtonText: '제출하기',
+      showLoaderOnConfirm: true,
+      preConfirm: () => {
+          var rContent = document.querySelector(".swal2-input");
+          
+          fetch(`/report/add?no=${no}&rtype=b&rcontent=${rContent.value}`, { // 회원: m, 주점: s, 게시글: b 
+              method : "POST"
+          }).then(response => {
+              return response.json()
+          }).then((result) => {
+              if (result.data == "로그인 하지 않았습니다!") {
+              alert("로그인 후 신고가 가능합니다.")
+          } else {
+              Swal.fire({
+                  icon: 'success',
+                  text: '신고가 접수되었습니다.',
+                  showCancelButton:false,
+                  confirmButtonColor:'#90d483',
+                  cancelButtonColor: '#90d483',
+                  confirmButtonText:'확인',
+              })
+          }
+      })
+  }
+})
 }
