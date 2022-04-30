@@ -30,8 +30,7 @@ public class AlcoholDetailController {
   AlcoholDetailService alcoholDetailService;
 
   @RequestMapping("/alcohol/list")
-  public Object list(int pageSize, int pageNo) throws Exception {
-    System.out.println(new File(".").getCanonicalPath());
+  public Object list(int pageSize, int pageNo) {
     return alcoholDetailService.list(pageSize, pageNo);
   }
 

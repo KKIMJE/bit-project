@@ -7,12 +7,14 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/member.css">
+  <link rel="stylesheet" href="assets/css/reportdetail.css">
   <script src="/node_modules/jquery/dist/jquery.js"></script>
-  <title>야술먹자 - 회원관리</title>
+  <title>야술먹자 - 회원신고관리</title>
 </head>
 
-<body id="body-pd" onload=" memberList(1)">
+
+
+<body id="body-pd">
   <div class="l-navbar" id="navbar">
     <nav class="nav">
       <div>
@@ -21,7 +23,7 @@
           <a href="#" class="nav__logo">관리자페이지</a>
         </div>
         <div class="nav__list">
-          <a href="/admin/member.html" class="nav__link active">
+          <a href="/admin/member.html" class="nav__link">
             <ion-icon name="person-outline" class="nav__icon"></ion-icon>
             <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
             <span class="nav_name">회원관리</span>
@@ -35,7 +37,7 @@
             <span class="nav_name">주점관리</span>
           </a>
 
-          <div href="#" class="nav__link collapse">
+          <div href="#" class="nav__link collapse active">
             <ion-icon name="alert-circle-outline" class="nav__icon"></ion-icon>
             <span class="nav_name">신고관리</span>
 
@@ -62,70 +64,28 @@
   </div>
 
 
-  <h1 class="x-admin-title" style="margin:20px 0 20px 20px;">회원관리</h1>
+  <h1 class="x-admin-title" style="margin:20px 0 20px 20px;">회원신고관리</h1>
   <hr>
-  <div class="member-page">
-    <div class="x-member-page">
-      <div class="x-member-curr">
-        <h2>회원현황(명)</h2>
-        <table id="x-curr-table">
-        </table>
-      </div>
-
-      <div class="x-member-search">
-          <div class="x-search-div">
-            <select style="height:22px;">
-              <option value="email">이메일</option>
-              <option value="nickName">닉네임</option>
-            </select>
-            <input type="text">
-            <button type="button" class="x-search-btn">검색</button>
-          </div>
-      </div>
-
-      <table id="x-member-table">
-        <thead>
-          <tr style="height:50px;">
-            <th>번호</th>
-            <th>이메일</th>
-            <th>이름</th>
-            <th>닉네임</th>
-            <th>성별</th>
-            <th>생년월일</th>
-            <th>전화번호</th>
-            <th>소셜여부</th>
-            <th>회원타입</th>
-            <th>가입일</th>
-            <th>회원상태</th>
-            <th>제재횟수</th>
-            <th>관리</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-
-<div class="pagination">
-  <ul class="pagination-ul">
-  </ul>
-</div>
 
 
-    </div>
-  </div>
+  <!-- 신고 관리 상세 -->
+  <div class="user-repdetail-container"></div>
+
+
+
   <!-- IONICONS -->
   <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   <!-- JS -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/member.js"></script>
+  <script src="assets/js/userreportdetail.js"></script>
 
   <script>
-  document.querySelector(".logout-btn").onclick = function() {
-    fetch("/admin/member/signout")
-    .then(function(response) {
-      alert("로그아웃 되었습니다.")
-    });
-  };
+    document.querySelector(".logout-btn").onclick = function() {
+      fetch("/admin/member/signout")
+        .then(function(response) {
+          alert("로그아웃 되었습니다.")
+        });
+    };
   </script>
 
 </body>
