@@ -113,11 +113,13 @@ lightBtn.addEventListener("click",function(e){
     if (targetNo == 0) {
       location.reload()
     } else {
+
       targetList(targetNo)
       btnStatus = false
       targetBtnStatus = true
       sortBtnStatus = false
       filterBtnStatus = false
+      
     }
   }
   nextPreBtnSet() // 버튼 다시 세팅
@@ -154,7 +156,7 @@ function distanceSortList() {
       let count = 0
       let card = true
       
-      console.log(dValueList)// 거리계산 값 배열
+      // console.log(dValueList)// 거리계산 값 배열
       let dValueNumList = [] // 순수 숫자배열
 
       for (var i = 0; i < dValueList.length; i++) {
@@ -221,7 +223,7 @@ function distanceSortList() {
             <div class="xImg-content">
               <div class="xImg-content-t">${storeName}</div>
               <div class="xImg-star">${stras}</div>
-              <div class="xImg-d" data-address="${stores[sortNo].address}">${sortDis}</div>
+              <div class="xImg-d" data-address="${stores[sortNo].address}"><span>🚗</span> ${sortDis}</div>
             </div>
             <div class="storeOpen">${storeOper}</div>
           </div>
