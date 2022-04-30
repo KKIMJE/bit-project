@@ -14,7 +14,12 @@ const next = document.querySelector('.next');
 const pre = document.querySelector('.previous');
 
 
+// $('#enter').click(function() {
+//   location.href = "/party/chat.html"
+// })
+
 $('#enter').click(function() {
+  // 룸번호 여기서 받고 USER는 SESSION으로 받기
   location.href = "/party/chat.html?roomNum=1&username=개코"
 })
 
