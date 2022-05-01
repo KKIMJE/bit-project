@@ -87,13 +87,77 @@
           <p class="links">SNS계정으로 간편하게 로그인하세요</p>
           <div class="login__sns__contents">
             <!-- SNS로그인 후작업 필요 -->
-            <div class="fb-wrap">
+
+            <div class="fb-wrap abs">
+              <img src="facebookLoginBtn.png" alt="" class="fb-btn-img">
+            </div>
+
+            <!-- <div class="fbBtn"> </div>-->
+            <!-- <fb:login-button
+                  scope="public_profile,email"
+                  onlogin="checkLoginState();">
+            </fb:login-button> -->
+
+            <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v13.0&appId=4839382229512944&autoLogAppEvents=1" 
+            nonce="zc3MGvwu"></script>
+            
+            <div class="fb-login-button" 
+            data-width="" data-size="large" 
+            data-button-type="login_with" data-layout="default" 
+            data-auto-logout-link="false" data-use-continue-as="false" 
+            scope="public_profile,email" onlogin="checkLoginState();"></div>
+            <!-- <FrameLayout
+                android:layout_below="@+id/no_network_bar"
+                android:id="@+id/FrameLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/login_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone" />
+
+                <Button class="faceBookBtnImg" type="button"
+                    android:id="@+id/fb"
+                    android:onClick="onClickFacebookButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    scope="public_profile,email" 
+                    onlogin="checkLoginState()" />
+                <img src="facebookLoginBtn.png" alt="페이스북 로그인 버튼">
+                    
+            </FrameLayout> -->
+
+
+            <!-- <div id="facebook-login"> 라임조
+              <img src="kakaolink_btn_medium.png" alt=""> -->
+
+              <!-- <com.facebook.login.widget.LoginButton 
+                android:id="@+id/login_button" 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_gravity="center_horizontal" 
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
+
+              <img src="../asset/img/facebook_login_btn.png" alt="페이스북 로그인 버튼">
+            </div> -->
+
+
+
+            <!-- <div class="fb-wrap">
                 <fb:login-button
                     scope="public_profile,email"
                     onlogin="checkLoginState();">
                 </fb:login-button>
-              <!--<img class="fb-btn-img" src="/asset/img/facebook_login_btn.png" alt="페이스북 로그인 버튼">-->
-            </div>
+              <!--<img class="fb-btn-img" src="/asset/img/facebook_login_btn.png" alt="페이스북 로그인 버튼">
+            </div> -->
+
             <div>
               <button type="button" class="signup-btn">회원가입</button>
             </div>
@@ -125,7 +189,7 @@
        //console.log(xEmail.value); 
        //console.log(xPassword.value);
       if ( xEmail.value == "" ||
-              xPassword.value == "") {
+          xPassword.value == "") {
           window.alert("필수 입력 항목이 비어 있습니다.");
           return false;
         }
@@ -160,10 +224,7 @@
 
       window.fbAsyncInit = function() {
         FB.init({
-
-          appId      : '1006586256626161 ', // 개발자가 등록한 앱 ID
-
-
+          appId      : '4839382229512944', // 개발자가 등록한 앱 ID
           cookie     : true,
           xfbml      : true,
           version    : 'v13.0'
@@ -216,46 +277,45 @@
         location.href = "../signup/signup.html"
       })
 
-      // $('.fb-wrap img').click(function () {
-      //   fbclickE();
-      // })
+      $('.fb-wrap img').click(function() {
+        // fbclickE();
+        // checkLoginState()
+      })
 
-      </script>
+    </script>
 
-      <script src="/node_modules/js-cookie/dist/js.cookie.js"></script>
-      <script>
-        //userEmail 쿠키가 있다면 값을 꺼내서 이메일 입력 상자에 넣는다.
-        var userEmail = Cookies.get('userEmail');
-        if (userEmail != undefined) {
-            xEmail.value = userEmail;
-        }
-      </script>
-
-
+    <script src="/node_modules/js-cookie/dist/js.cookie.js"></script>
+    <script>
+      //userEmail 쿠키가 있다면 값을 꺼내서 이메일 입력 상자에 넣는다.
+      var userEmail = Cookies.get('userEmail');
+      if (userEmail != undefined) {
+          xEmail.value = userEmail;
+      }
+    </script>
 
 
-    <footer__>
-        <div class="footer-contents">
-          <div class="footer-contents-1">전화번호 : 1566-8877</div>
-          <div class="footer-content">
-            <div>
-              <a class="footer-logo" href="../main/main.html">
-                <img src="../img/logo.png" alt=""></a>
-            </div>
-            <div>
-              @ Copyright Yasulmukja All Rights Reserved<br> Designed
-              by Tissue94
-            </div>
+
+
+  <footer__>
+      <div class="footer-contents">
+        <div class="footer-contents-1">전화번호 : 1566-8877</div>
+        <div class="footer-content">
+          <div>
+            <a class="footer-logo" href="../main/main.html">
+              <img src="../img/logo.png" alt=""></a>
           </div>
-          <div class="footer-content-3">
-            <div class="footer-content-info">공지사항</div>
-            <div>고객센터</div>
+          <div>
+            @ Copyright Yasulmukja All Rights Reserved<br> Designed
+            by Tissue94
           </div>
         </div>
+        <div class="footer-content-3">
+          <div class="footer-content-info">공지사항</div>
+          <div>고객센터</div>
+        </div>
+      </div>
 
-      </footer__>
-
-
+  </footer__>
 </body>
 </html>
 <!-- icons -->

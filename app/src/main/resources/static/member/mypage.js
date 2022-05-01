@@ -19,9 +19,10 @@ $().ready(function() {
 
  //var xMno = document.querySelector("input[name=mno]");
   // 이미지 추가해야함
-  var xNickname = document.querySelector("#nickname");
-  var xEmail = document.querySelector("#email");
-  
+  var xNickname = document.querySelector(".my-nickname");
+  var xEmail = document.querySelector(".my-email");
+  let xMemberPhoto = document.querySelector(".my-profile")
+
  fetch("/member/getLoginUser")
       .then(function(response) {
         return response.json();
@@ -35,10 +36,10 @@ $().ready(function() {
         }
         console.log(result.data);
         var member = result.data;
-       // xMno.value = member.mno;
-        // 이미지 추가해야함
-        xNickname.value = member.nickName;
-        xEmail.value = member.email;
+        xNickname.innerHTML = member.nickName;
+        xEmail.innerHTML = member.email;
+        $(xMemberPhoto).attr("src", `/member/photo?filename=150x150_${member.mimg}`);
+
           });
 
         // sns계정추가해야함

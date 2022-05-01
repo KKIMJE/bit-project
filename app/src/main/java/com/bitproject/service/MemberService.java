@@ -15,7 +15,9 @@ public interface MemberService {
   Member getMemberByMno(int mno);
 
   int update(Member member);
-  
+
+  int updatePhoto(Member member);
+
   int delete(int mno);
 
   int emailCheck(String email);

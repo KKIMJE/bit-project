@@ -99,4 +99,10 @@ public class DefaultMemberService implements MemberService {
     // invalidate()메소드를 사용하면 사용자의 id까지 바뀌어버린다.
     session.invalidate();
   }
+
+
+  @Override
+  public int updatePhoto(Member member) {
+    return memberDao.updatePhoto(member);
+  }
 }
