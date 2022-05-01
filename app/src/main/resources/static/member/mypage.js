@@ -1,5 +1,5 @@
-$().ready(function() {
-    $("#ceo-account-btn").click(function () {
+
+    $(document).on("click", "#ceo-account-btn", () => {
                 Swal.fire({
                     icon: 'success',
                     text: '주점을 등록하면 사장님 계정이 생성됩니다.',
@@ -14,7 +14,7 @@ $().ready(function() {
                   }
                 })
             });
-        });
+
 
 
 
