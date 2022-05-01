@@ -119,6 +119,7 @@ html {
     color: #FFFFFF;
     border-radius: 10px;
     text-align: center;
+    cursor: pointer;
 }
 .relative2 {
     position: relative;

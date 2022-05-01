@@ -99,12 +99,15 @@ $(".button-join").click(function () {
         text: '참여요청이 완료되었습니다.',
         showCancelButton:false,
         confirmButtonColor:'#90d483',
-        cancelButtonColor: '#90d483',
         confirmButtonText:'확인',
     })
     .then((result) => {
         if(result.isConfirmed) {
         // 방장에게 참여요청 보내는 코드 적기
+
+
+
+        
         }
     })
 });
@@ -190,7 +193,7 @@ function reportModal() {
         title: '신고하기',
         input: 'text',
         inputAttributes: {
-          autocapitalize: 'off'
+            autocapitalize: 'off'
         },
         inputLabel: '신고 이유를 적어주세요',
         showCancelButton: false,

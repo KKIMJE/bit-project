@@ -2,21 +2,21 @@ package com.bitproject.domain;
 
 public class PartyParticipant{
 
-  int partyNo;
-  int mno;
+  Party preParty;
+  Member participant;
   String participantStatus;
 
-  public int getPartyNo() {
-    return partyNo;
+  public Party getPreParty() {
+    return preParty;
   }
-  public void setPartyNo(int partyNo) {
-    this.partyNo = partyNo;
+  public void setPreParty(Party preParty) {
+    this.preParty = preParty;
   }
-  public int getMno() {
-    return mno;
+  public Member getParticipant() {
+    return participant;
   }
-  public void setMno(int mno) {
-    this.mno = mno;
+  public void setParticipant(Member participant) {
+    this.participant = participant;
   }
   public String getParticipantStatus() {
     return participantStatus;
@@ -24,10 +24,10 @@ public class PartyParticipant{
   public void setParticipantStatus(String participantStatus) {
     this.participantStatus = participantStatus;
   }
-
   @Override
   public String toString() {
-    return "PartyParticipant [partyNo=" + partyNo + ", mno=" + mno + ", participantStatus="
-        + participantStatus + "]";
+    return "PartyParticipant [preParty=" + preParty + ", participant=" + participant
+        + ", participantStatus=" + participantStatus + "]";
   }
+
 }

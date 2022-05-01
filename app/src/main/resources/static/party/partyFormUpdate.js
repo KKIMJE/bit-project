@@ -87,7 +87,7 @@ fetch(`/party/get?no=${no}`)
     //pNickname2.innerHTML = party.writer.nickName;
   });
 
-setTimeout(() => {$('.note-editable').text(content)},200)
+setTimeout(() => {$('.note-editable').html(content)},200) // text를 html로 바꿨음
 
 
 

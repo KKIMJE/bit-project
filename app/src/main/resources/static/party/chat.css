@@ -2,6 +2,10 @@
   font-family: NanumSquareRound;
 }
 
+button {
+  all: unset;
+}
+
 html {
   display: flex;
   justify-content: center;
@@ -19,6 +23,11 @@ body{
     border: 1px solid #c4c4c4;
   }
 
+.modal-open {
+  overflow-y:scroll !important;
+  padding-right:0 !important;
+}
+
 .user{
     border-bottom: 1px solid #716d6d;
     padding: 10px;
@@ -33,7 +42,7 @@ body{
 }
 
 .profile_name {
-  display: flex;
+    display: flex;
     max-width: 1100px;
     text-align: center;
     color: #ffffff;
@@ -57,10 +66,35 @@ body{
 }
 
 .mlist {
-  all: unset;
   cursor: pointer;
-  outline: none;
   color: #ffffff;
+}
+
+.mlist:focus {
+  outline: none;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.profile-img {
+  height: 30px;
+  border-radius: 70%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+
+#exampleModal > div {
+  max-width: 620px !important;
+}
+
+.nickname {
+  display: flex;
+  width: 170px;
 }
 
 
@@ -179,4 +213,8 @@ color: #212529;
 .msg_history {
   height: 516px;
   overflow-y: auto;
+}
+
+.reporti, .outi {
+  color: #4a4f5a;
 }
