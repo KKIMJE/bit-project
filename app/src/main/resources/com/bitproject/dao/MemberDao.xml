@@ -82,7 +82,8 @@
       mno,
       name,
       nickname,
-      email
+      email,
+      m_img
     from 
       member
     where

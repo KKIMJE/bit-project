@@ -97,7 +97,9 @@ fetch("/member/get")
     console.log(member.mimg);
 
     $(xMemberPhoto).attr("src", `/member/photo?filename=150x150_${member.mimg}`);
-
+    if (member.mimg == null) {
+      $(xMemberPhoto).attr("src", "/member/photo?filename=150x150_default_general_member.png");
+    }
 
 
     if (member.gender == true) {

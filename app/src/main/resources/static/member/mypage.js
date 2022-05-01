@@ -40,7 +40,11 @@ $().ready(function() {
         var member = result.data;
         xNickname.innerHTML = member.nickName;
         xEmail.innerHTML = member.email;
+        console.log(member.mimg);
         $(xMemberPhoto).attr("src", `/member/photo?filename=150x150_${member.mimg}`);
+        if (member.mimg == null) {
+          $(xMemberPhoto).attr("src", "/member/photo?filename=150x150_default_general_member.png");
+        }
 
         let addCeo = `<button type="button" id="ceo-account-btn">사장님 계정 추가하기</button>`
         let ceoPage = `<button type="button" class="ceo-page-btn" onclick="location.href='/ceo/mypage.html'">사장님 페이지 이동</button>`
