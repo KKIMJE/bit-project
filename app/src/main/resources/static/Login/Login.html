@@ -214,10 +214,10 @@
         .then(function(result) {
           console.log(result);
           if (result.status == "success") {
-            if (result.data.email == "admin@admin.com") {
-              location.href = "../admin/member.html"
-            }
             location.href = "../main/main.html"
+            if (result.data.email == "admin@admin.com") {
+            location.href = "../admin/member.html"
+            }
             //location.href = "../member/personalInfo.html?mno=" + result.data.mno ;
           } else {
             window.alert("아이디 또는 비밀번호를 잘못 입력했습니다.")
