@@ -44,11 +44,13 @@
   <insert id="insert" parameterType="PartyParticipant">
     insert into party_participant(
     pre_party,
-    pre_participants
+    pre_participants,
+    participant_status
     ) 
     values(
     #{preParty.partyNo},
-    #{preParticipants.mno}
+    #{preParticipants.mno},
+    #{participantStatus}
     )
   </insert>
 

@@ -17,11 +17,13 @@ $().ready(function() {
         });
 
 
+
  //var xMno = document.querySelector("input[name=mno]");
   // 이미지 추가해야함
   var xNickname = document.querySelector(".my-nickname");
   var xEmail = document.querySelector(".my-email");
   let xMemberPhoto = document.querySelector(".my-profile")
+  let ceoBtnDiv = document.querySelector(".ceo-btn-div")
 
  fetch("/member/getLoginUser")
       .then(function(response) {
@@ -40,6 +42,18 @@ $().ready(function() {
         xEmail.innerHTML = member.email;
         $(xMemberPhoto).attr("src", `/member/photo?filename=150x150_${member.mimg}`);
 
+        let addCeo = `<button type="button" id="ceo-account-btn">사장님 계정 추가하기</button>`
+        let ceoPage = `<button type="button" class="ceo-page-btn" onclick="location.href='/ceo/mypage.html'">사장님 페이지 이동</button>`
+
+
+        if (member.storeCount == 0) {
+          ceoBtnDiv.innerHTML = addCeo
+        } else {
+          ceoBtnDiv.innerHTML = ceoPage
+        }
           });
+
+
+
 
         // sns계정추가해야함

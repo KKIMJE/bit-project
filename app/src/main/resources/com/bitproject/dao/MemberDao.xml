@@ -25,7 +25,7 @@
     <result column="block_date" property="blockDate"/>
     <result column="block_accept" property="blockAccept"/>
     <result column="member_status" property="memberStatus"/>
-    <result column="member_count" property="storeCount"/>
+    <result column="store_count" property="storeCount"/>
     
   </resultMap>
 
@@ -67,7 +67,8 @@
       name,
       nickname,
       email,
-      m_img
+      m_img,
+      store_count
     from 
       member
     where
