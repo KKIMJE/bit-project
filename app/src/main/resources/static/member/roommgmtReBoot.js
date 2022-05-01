@@ -21,7 +21,7 @@ lightBtn.addEventListener("click",function(e){
 
 
 
-var plbody = document.querySelector(".imgCardAll") // 모임리스트
+// var plbody = document.querySelector(".imgCardAll") // 모임리스트
 
 // /****************
 //     리스트 출력
@@ -56,9 +56,9 @@ var plbody = document.querySelector(".imgCardAll") // 모임리스트
 //             <div class="roomDelete roomBtn">삭제</div>
 //         </div>
 //     </div>
-// </div>`
-    
-    
+// </div>`;
+//   }
+// })
     
     
     
