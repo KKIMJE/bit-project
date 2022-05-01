@@ -107,7 +107,7 @@ body > div > div > div.mypage-settings > div > a > span:nth-child(2) {
   bottom: -17px;
 }
 
-#ceo-account-btn {
+#ceo-account-btn, .ceo-page-btn {
   border: 1px solid #000000;
   border-radius: 10px;
   background-color: white;
@@ -132,11 +132,11 @@ footer__ {
   font-weight: 700;
 }
 
-body > div.swal2-container.swal2-center.swal2-backdrop-show > 
+body > div.swal2-container.swal2-center.swal2-backdrop-show >
 div > div.swal2-actions > button.swal2-confirm.swal2-styled:focus{
 	outline:0;
 }
-body > div.swal2-container.swal2-center.swal2-backdrop-show > 
+body > div.swal2-container.swal2-center.swal2-backdrop-show >
 div > div.swal2-actions > button.swal2-confirm.swal2-styled{
   outline:0;
 }
