@@ -1,119 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Bootstrap CSS -->
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-  crossorigin="anonymous">
-<link rel="stylesheet" type="text/css"
-  href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
   <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="login.css">
 
-<!-- jquery -->
-<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- jquery -->
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 
-    <title>야술먹자 로그인</title>
+  <title>야술먹자 로그인</title>
 </head>
+
 <body>
   <nav class="navbar__">
-        <div><!-- 공간, 삭제하지 마세요 --></div>
+    <div>
+      <!-- 공간, 삭제하지 마세요 -->
+    </div>
 
-        <div class="navbar__logo">
-            <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+    <div class="navbar__logo">
+      <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
+    </div>
+
+    <ul class="navbar__menu">
+      <li><a href="">로그인</a></li>
+      <li><a href="">회원가입</a></li>
+      <a href="">
+        <menu-i class="fa-solid fa-map-location-dot"></menu-i>
+      </a></li>
+    </ul>
+
+    <ul class="navbar__login">
+      <!-- 알림 -->
+      <div class="btn-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            <a href="">
+              <login-i class="fa-solid fa-bell"></login-i>
+            </a>
+          </button>
         </div>
+      </div>
 
-        <ul class="navbar__menu">
-            <li><a href="">로그인</a></li>
-            <li><a href="">회원가입</a></li>
-            <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a></li>
-        </ul>
+      <!-- 마이페이지 -->
+      <a href="">
+        <login-i class="fa-solid fa-user-large"></login-i>
+      </a>
 
-        <ul class="navbar__login">
-            <!-- 알림 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
-                    </button>
-                </div>
-            </div>
+      <!-- 검색 -->
+      <div class="btn-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            <a href="">
+              <login-i class="fa-solid fa-magnifying-glass"></login-i>
+              </login-i>
+            </a>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-            <!-- 마이페이지 -->
-            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
+      <!-- 지도 -->
+      <a href="">
+        <login-i class="fa-solid fa-map-location-dot"></login-i>
+      </a>
+    </ul>
+  </nav>
 
-            <!-- 검색 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></login-i></a>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-lg-end">
-                      <li>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- 지도 -->
-            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
-        </ul>
-    </nav>
+  <form name="login__form">
+    <div class="login__box">
+      <div class="content">
+        <p class="form_email">이메일</p><br>
+        <input name="email" type="email" class="form_input_email">
+        <p class="form_password">비밀번호</p><br>
+        <input name="password" type="password" class="form_input_password">
+        <div class="login__box__contents">
+          <a href="password.html" class="form_find">비밀번호 찾기</a>
+          <div class="form_email_save"><input name="saveEmail" type="checkbox"><span>이메일 저장</span></div>
+        </div>
+        <button class="submit-btn">로그인</button>
+        <p class="links">SNS계정으로 간편하게 로그인하세요</p>
+        <div class="login__sns__contents">
+          <!-- SNS로그인 후작업 필요 -->
 
-    
-    <form name="login__form">
-      <div class="login__box">
-        <div class="content">
-          <p class="form_email">이메일</p><br>
-          <input name="email" type="email" class="form_input_email">
-          <p class="form_password">비밀번호</p><br>
-          <input name="password" type="password" class="form_input_password">
-          <div class="login__box__contents">
-            <a href="password.html" class="form_find">비밀번호 찾기</a>
-            <div class="form_email_save"><input name="saveEmail" type="checkbox"><span>이메일 저장</span></div>
+          <div class="fb-wrap abs">
+            <img src="facebookLoginBtn.png" alt="" class="fb-btn-img">
           </div>
-          <button class="submit-btn">로그인</button>
-          <p class="links">SNS계정으로 간편하게 로그인하세요</p>
-          <div class="login__sns__contents">
-            <!-- SNS로그인 후작업 필요 -->
 
-            <div class="fb-wrap abs">
-              <img src="facebookLoginBtn.png" alt="" class="fb-btn-img">
-            </div>
-
-            <!-- <div class="fbBtn"> </div>-->
-            <!-- <fb:login-button
+          <!-- <div class="fbBtn"> </div>-->
+          <!-- <fb:login-button
                   scope="public_profile,email"
                   onlogin="checkLoginState();">
             </fb:login-button> -->
 
-            <script async defer crossorigin="anonymous" 
-            src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v13.0&appId=4839382229512944&autoLogAppEvents=1" 
-            nonce="zc3MGvwu"></script>
-            
-            <div class="fb-login-button" 
-            data-width="" data-size="large" 
-            data-button-type="login_with" data-layout="default" 
-            data-auto-logout-link="false" data-use-continue-as="false" 
-            scope="public_profile,email" onlogin="checkLoginState();"></div>
-            <!-- <FrameLayout
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v13.0&appId=4839382229512944&autoLogAppEvents=1" nonce="zc3MGvwu"></script>
+
+          <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();"></div>
+          <!-- <FrameLayout
                 android:layout_below="@+id/no_network_bar"
                 android:id="@+id/FrameLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                
+
 
                 <com.facebook.login.widget.LoginButton
                     android:id="@+id/login_button"
@@ -127,21 +131,21 @@
                     android:onClick="onClickFacebookButton"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    scope="public_profile,email" 
+                    scope="public_profile,email"
                     onlogin="checkLoginState()" />
                 <img src="facebookLoginBtn.png" alt="페이스북 로그인 버튼">
-                    
+
             </FrameLayout> -->
 
 
-            <!-- <div id="facebook-login"> 라임조
+          <!-- <div id="facebook-login"> 라임조
               <img src="kakaolink_btn_medium.png" alt=""> -->
 
-              <!-- <com.facebook.login.widget.LoginButton 
-                android:id="@+id/login_button" 
+          <!-- <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" 
-                android:layout_gravity="center_horizontal" 
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp" />
 
@@ -150,7 +154,7 @@
 
 
 
-            <!-- <div class="fb-wrap">
+          <!-- <div class="fb-wrap">
                 <fb:login-button
                     scope="public_profile,email"
                     onlogin="checkLoginState();">
@@ -158,10 +162,10 @@
               <!--<img class="fb-btn-img" src="/asset/img/facebook_login_btn.png" alt="페이스북 로그인 버튼">
             </div> -->
 
-            <div>
-              <button type="button" class="signup-btn">회원가입</button>
-            </div>
-            <!-- <button>
+          <div>
+            <button type="button" class="signup-btn">회원가입</button>
+          </div>
+          <!-- <button>
             <div class="fb-login-button"
             data-size="large"
             data-button-type="login_with"
@@ -173,162 +177,158 @@
 
           <!--kakao login
             <button class="submit-btn-sns">kakao</button>-->
-          
-          </div>
+
         </div>
       </div>
-    </form>
+    </div>
+  </form>
 
 
 
-    <script type="text/javascript">
-      var xEmail = document.querySelector("input[name=email]");
-      var xPassword = document.querySelector("input[name=password]");
+  <script type="text/javascript">
+    var xEmail = document.querySelector("input[name=email]");
+    var xPassword = document.querySelector("input[name=password]");
 
-      document.querySelector("form[name=login__form]").onsubmit = function() {
-       //console.log(xEmail.value); 
-       //console.log(xPassword.value);
-      if ( xEmail.value == "" ||
-          xPassword.value == "") {
-          window.alert("필수 입력 항목이 비어 있습니다.");
-          return false;
-        }
+    document.querySelector("form[name=login__form]").onsubmit = function() {
+      //console.log(xEmail.value);
+      //console.log(xPassword.value);
+      if (xEmail.value == "" ||
+        xPassword.value == "") {
+        window.alert("필수 입력 항목이 비어 있습니다.");
+        return false;
+      }
 
-        var fd = new FormData(document.forms.namedItem("login__form"));
-         for(let key of fd.values()) {
-             console.log(key);
-         }
-        fetch("/member/signin", {
-            method: "POST",
-            body: new URLSearchParams(fd)
-          })
-          .then(function(response) {
-            console.log(fd);
-            console.log(response);
-            return response.json();
-          })
-          .then(function(result) {
-            console.log(result);
+      var fd = new FormData(document.forms.namedItem("login__form"));
+      for (let key of fd.values()) {
+        console.log(key);
+      }
+      fetch("/member/signin", {
+          method: "POST",
+          body: new URLSearchParams(fd)
+        })
+        .then(function(response) {
+          console.log(fd);
+          console.log(response);
+          return response.json();
+        })
+        .then(function(result) {
+          console.log(result);
+          if (result.status == "success") {
             if (result.data.email == "admin@admin.com") {
               location.href = "../admin/member.html"
             }
-            else if (result.status == "success") {
-                location.href = "../main/main.html"
-                //location.href = "../member/personalInfo.html?mno=" + result.data.mno ;
+            location.href = "../main/main.html"
+            //location.href = "../member/personalInfo.html?mno=" + result.data.mno ;
+          } else {
+            window.alert("로그인 실패!")
+            location.reload()
+          }
+        });
+      return false;
+    };
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '4839382229512944', // 개발자가 등록한 앱 ID
+        cookie: true,
+        xfbml: true,
+        version: 'v13.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function checkLoginState() {
+      console.log("checkLoginState() 호출됨");
+      FB.getLoginStatus(function(response) {
+        console.log(response);
+        console.log(response.authResponse.accessToken);
+        if (response.status === 'connected') { // 로그인이 정상적으로 되었을 때,
+
+          var params = new URLSearchParams();
+          params.append("accessToken", response.authResponse.accessToken);
+
+          fetch("/member/facebookLogin", {
+            method: "POST",
+            body: params
+          }).then(function(response) {
+            console.log(response);
+            return response.json();
+          }).then(function(result) {
+            console.log(result);
+            if (result.status == "success") {
+              console.log(result.data)
+              location.href = "../main/main.html";
             } else {
-                window.alert("로그인 실패!")
+              window.alert("페이스북 로그인 실패!");
+              console.log(result.data);
             }
           });
-        return false;
-      };
 
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '4839382229512944', // 개발자가 등록한 앱 ID
-          cookie     : true,
-          xfbml      : true,
-          version    : 'v13.0'
-        });
-        FB.AppEvents.logPageView();
-      };
+        } else { // 로그인이 되지 않았을 때,
+          console.log("로그인 되지 않았음");
+        }
+      });
+    }
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+    $('.signup-btn').click(function() {
+      location.href = "../signup/signup.html"
+    })
 
-      function checkLoginState() {
-        console.log("checkLoginState() 호출됨");
-          FB.getLoginStatus(function(response) {
-            console.log(response);
-            console.log(response.authResponse.accessToken);
-              if (response.status === 'connected') { // 로그인이 정상적으로 되었을 때,
+    $('.fb-wrap img').click(function() {
+      // fbclickE();
+      // checkLoginState()
+    })
+  </script>
 
-                  var params = new URLSearchParams();
-                params.append("accessToken", response.authResponse.accessToken);
-
-                fetch("/member/facebookLogin", {
-                    method: "POST",
-                    body: params
-                  }).then(function(response) {
-                    console.log(response);
-                      return response.json();
-                  }).then(function(result) {
-                    console.log(result);
-                      if (result.status == "success") {
-                          console.log(result.data)
-                          location.href = "../main/main.html";
-                      } else {
-                          window.alert("페이스북 로그인 실패!");
-                          console.log(result.data);
-                      }
-                  });
-
-              } else { // 로그인이 되지 않았을 때,
-                  console.log("로그인 되지 않았음");
-              }
-          });
-      }
-
-      $('.signup-btn').click(function () {
-        location.href = "../signup/signup.html"
-      })
-
-      $('.fb-wrap img').click(function() {
-        // fbclickE();
-        // checkLoginState()
-      })
-
-    </script>
-
-    <script src="/node_modules/js-cookie/dist/js.cookie.js"></script>
-    <script>
-      //userEmail 쿠키가 있다면 값을 꺼내서 이메일 입력 상자에 넣는다.
-      var userEmail = Cookies.get('userEmail');
-      if (userEmail != undefined) {
-          xEmail.value = userEmail;
-      }
-    </script>
+  <script src="/node_modules/js-cookie/dist/js.cookie.js"></script>
+  <script>
+    //userEmail 쿠키가 있다면 값을 꺼내서 이메일 입력 상자에 넣는다.
+    var userEmail = Cookies.get('userEmail');
+    if (userEmail != undefined) {
+      xEmail.value = userEmail;
+    }
+  </script>
 
 
 
 
   <footer__>
-      <div class="footer-contents">
-        <div class="footer-contents-1">전화번호 : 1566-8877</div>
-        <div class="footer-content">
-          <div>
-            <a class="footer-logo" href="../main/main.html">
-              <img src="../img/logo.png" alt=""></a>
-          </div>
-          <div>
-            @ Copyright Yasulmukja All Rights Reserved<br> Designed
-            by Tissue94
-          </div>
+    <div class="footer-contents">
+      <div class="footer-contents-1">전화번호 : 1566-8877</div>
+      <div class="footer-content">
+        <div>
+          <a class="footer-logo" href="../main/main.html">
+            <img src="../img/logo.png" alt=""></a>
         </div>
-        <div class="footer-content-3">
-          <div class="footer-content-info">공지사항</div>
-          <div>고객센터</div>
+        <div>
+          @ Copyright Yasulmukja All Rights Reserved<br> Designed
+          by Tissue94
         </div>
       </div>
+      <div class="footer-content-3">
+        <div class="footer-content-info">공지사항</div>
+        <div>고객센터</div>
+      </div>
+    </div>
 
   </footer__>
 </body>
+
 </html>
 <!-- icons -->
-<script src="https://kit.fontawesome.com/22437c0385.js"
-  crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
 
 <!-- Bootstrap CSS -->
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-  crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 
-<script async defer crossorigin="anonymous"
-src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v13.0&appId=1035699987303606&autoLogAppEvents=1"
-nonce="HPolkPqu"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v13.0&appId=1035699987303606&autoLogAppEvents=1" nonce="HPolkPqu"></script>
