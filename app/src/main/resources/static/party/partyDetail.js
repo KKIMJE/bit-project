@@ -77,7 +77,7 @@ fetch(`/party/get?no=${no}`)
                         </div>
                     </div>
                     <div class="comment-footer">
-                        <p class="comment-datetime">${partyComment.commentDate}</p>
+                        <p class="comment-datetime">` + new Date(`${partyComment.commentDate}`).toLocaleString() + `</p>
                         <div class="comment-option">
                             <button type="button" class="report2">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
@@ -88,7 +88,6 @@ fetch(`/party/get?no=${no}`)
             </div>`;
     }
 });
-
 
 /*****************
 참여요청 모달
@@ -104,41 +103,59 @@ $(".button-join").click(function () {
     .then((result) => {
         if(result.isConfirmed) {
 
-            fetch(`/party/get?no=${no}`)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(result) {
-                //console.log(result)
-                console.log(result.data);
-                alert("룰루")
+//             fetch(`/party/get?no=${no}`)
+//             .then(function(response) {
+//                 return response.json();
+//             })
+//             .then(function(result) {
+//                 console.log(result)
 
-            // console.log(pTitle.innerText);
+//                 var party = result.data
+//                 var writer = result.data.writer.mno
 
-            // var pNickname = document.querySelector(".leader-profile span");
-            // var pNickname2 = document.querySelector(".nickname");
-            // var pAlcoholType = document.querySelector(".ptype");
-            // var pDate = document.querySelector(".pdate");
-            // var pAlcoholLimit = document.querySelector(".plimit");
-            // var pFee = document.querySelector(".pfee");
-            // var pMember = document.querySelector(".pmember");
-            // var pLocation = document.querySelector(".plocation");
-            // var pContent = document.querySelector(".pcontent");
+//                 console.log(party)
+//                 //console.log(writer)
 
-        // fetch(`/partyParticipant/add?no=${no}&title=${pTitle.innerText}&${}&${}&${}`, {
-        //     method: "POST"
-        // }).then(function(response) {
-        //     // console.log(response)
-        //     return response.json()
-        // }).then(function(result) {
-        //     console.log(result)
-        //     alert("라라라")
-        // })
+//                 const pd = {
+//                     "address" : `${party.address}`,
+//                     "alcoholLimit" : `${party.alcoholLimit}`,
+//                     "alcoholType" : `${party.alcoholType}`,
+//                     "maxMember" : `${party.maxMember}`,
+//                     "meetingDate" : `${party.meetingDate}`,
+//                     "partyFee" : `${party.partyFee}`,
+//                     "partyNo" : `${party.partyNo}`,
+//                     "title" : `${party.title}`
+//                 }
+
+//                 fetch(`/partyParticipant/add?mno=${writer}`, {
+//                     method: "POST",
+//                     body: new URLSearchParams(pd)
+//                 }).then(function(response) {
+//                     // console.log(response)
+//                     return response.json()
+//                 }).then(function(result) {
+//                     console.log(result)
+//                     alert("라라라")
+//                 })
+
+//                 alert("룰루")
 
 
-        })
-    }
-})
+//             // var pNickname = document.querySelector(".leader-profile span");
+//             // var pNickname2 = document.querySelector(".nickname");
+//             // var pAlcoholType = document.querySelector(".ptype");
+//             // var pDate = document.querySelector(".pdate");
+//             // var pAlcoholLimit = document.querySelector(".plimit");
+//             // var pFee = document.querySelector(".pfee");
+//             // var pMember = document.querySelector(".pmember");
+//             // var pLocation = document.querySelector(".plocation");
+//             // var pContent = document.querySelector(".pcontent");
+
+
+
+    }})
+//     }
+    //})
 });
 
 /************

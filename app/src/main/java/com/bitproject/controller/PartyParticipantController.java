@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.bitproject.domain.Member;
+import com.bitproject.domain.Party;
 import com.bitproject.domain.PartyParticipant;
 import com.bitproject.service.PartyParticipantService;
 
@@ -24,14 +25,17 @@ public class PartyParticipantController {
   //  }
 
   @PostMapping("/add")
-  public Object add(int no, HttpSession session) {
+  public Object add(int no, Party party, HttpSession session) { // Member leader, 
+
+    System.out.println(party);
 
     PartyParticipant partyParticipant = new PartyParticipant();
 
     Member member = (Member) session.getAttribute("loginUser");
 
     partyParticipant.setPreParticipants(member);
-    //partyParticipant.setPreParty(no);
+    partyParticipant.setPreParty(party);
+    partyParticipant.setParticipantStatus('0');
 
     partyParticipantService.add(partyParticipant);
 
