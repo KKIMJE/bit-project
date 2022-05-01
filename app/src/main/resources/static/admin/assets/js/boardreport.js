@@ -97,7 +97,7 @@ function paging(totalBoardCount, pageSize, pageCount, currentPage) {
     //페이징 표시 재호출
     paging(totalBoardCount, pageSize, pageCount, selectedPage);
 
-    storeList(selectedPage);
+    reportList(selectedPage);
 
   });
 
