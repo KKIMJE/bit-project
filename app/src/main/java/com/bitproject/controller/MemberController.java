@@ -2,20 +2,31 @@ package com.bitproject.controller;
 
 import static com.bitproject.controller.ResultMap.FAIL;
 import static com.bitproject.controller.ResultMap.SUCCESS;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.Map;
+import java.util.UUID;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.bitproject.domain.Member;
 import com.bitproject.service.MemberService;
+import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.geometry.Positions;
 
 @RestController 
 @RequestMapping("/member/*")
@@ -83,7 +94,7 @@ public class MemberController {
     if (member != null) {
       return new ResultMap()
           .setStatus(SUCCESS)
-          .setData(member);
+          .setData(member); 
     } else {
       return new ResultMap()
           .setStatus(FAIL)
@@ -116,7 +127,7 @@ public class MemberController {
   }
 
   @RequestMapping("/member/update")
-  public Object update(Member member,HttpSession session) {
+  public Object update(Member member, HttpSession session) {
     Member loginmember =(Member)session.getAttribute("loginUser");
     member.setMno(loginmember.getMno());
     int count = memberService.update(member);
@@ -126,7 +137,27 @@ public class MemberController {
     } else {
       return new ResultMap().setStatus(FAIL).setData("유효하지 않는 사용자 입니다.");
     }
+  } 
+
+  @RequestMapping("/member/updatePhoto")
+  public Object update(Member member, MultipartFile file, HttpSession session) {
+    Member loginmember =(Member)session.getAttribute("loginUser");
+    member.setMno(loginmember.getMno());
+    try {
+      member.setMImg(saveFile(file));
+      System.out.println(member.getMImg());
+      int count = memberService.updatePhoto(member);
+      if(count ==1) {
+        return new ResultMap().setStatus(SUCCESS);
+      } else {
+        return new ResultMap().setStatus(FAIL).setData("유효하지 않는 사용자 입니다.");
+      }
+    } catch (Exception e) {
+      return new ResultMap().setStatus(FAIL).setData(e.getMessage());
+    }
   }
+
+
 
   @ResponseBody
   //@PostMapping("/emailCheck")
@@ -144,7 +175,7 @@ public class MemberController {
     System.out.println("@@@@"+member);
     if(member == null) {
       map.setStatus(FAIL);
-      map.setData(null);
+      //      map.setData(null);
     } else {
       map.setStatus(SUCCESS);
       map.setData(member);
@@ -192,6 +223,60 @@ public class MemberController {
 
       session.setAttribute("loginUser", memberService.getMemberByEmail(email));
       return new ResultMap().setStatus(SUCCESS).setData("새 회원 로그인");
+    }
+  }
+
+  @RequestMapping("/member/photo")
+  public ResponseEntity<Resource> photo(String filename) {
+
+    try {
+      File downloadFile = new File("./src/main/resources/static/asset/img/member/" + filename);
+      FileInputStream fileIn = new FileInputStream(downloadFile.getCanonicalPath()); 
+      InputStreamResource resource = new InputStreamResource(fileIn); 
+
+      HttpHeaders header = new HttpHeaders();
+      header.add("Cache-Control", "no-cache, no-store, must-revalidate");
+      header.add("Pragma", "no-cache");
+      header.add("Expires", "0");
+
+      header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename);
+
+
+      return ResponseEntity.ok()
+          .headers(header)
+          .contentLength(downloadFile.length())
+          .contentType(MediaType.APPLICATION_OCTET_STREAM) 
+          .body(resource);
+
+    } catch (Exception e) {
+
+      return null;
+    }
+  }
+
+
+  private String saveFile(MultipartFile file) throws Exception {
+    if (file != null && file.getSize() > 0) { 
+      String filename = UUID.randomUUID().toString();
+      System.out.println(filename);
+
+      int dotIndex = file.getOriginalFilename().lastIndexOf(".");
+      if (dotIndex != -1) {
+        filename += file.getOriginalFilename().substring(dotIndex);
+      }
+
+      File photoFile = new File("./src/main/resources/static/asset/img/member/" + filename); 
+      file.transferTo(photoFile.getCanonicalFile()); 
+
+      Thumbnails.of(photoFile)
+      .size(150, 150)
+      .crop(Positions.CENTER)
+      .toFile(new File("./src/main/resources/static/asset/img/member/" + "150x150_" + filename));
+
+      return filename;
+
+    } else {
+      return null;
     }
   }
 }

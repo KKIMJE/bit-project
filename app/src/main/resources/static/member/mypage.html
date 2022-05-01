@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <link rel="shortcut icon" href="../img/logo1.ico">
@@ -20,9 +20,9 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <link rel="stylesheet" href="../css/common.css">
         <link rel="stylesheet" href="mypage.css">
-        
+
          <title>야술먹자 마이페이지</title>
-              
+
          <script>
             $(document).ready(function () {
                 $('#header').load('../header/header.html');
@@ -31,22 +31,22 @@
         </script>
         </head>
     <body>
-    
+
          <div id="header"></div>
-      
+
 <div class="mypage-main" style="margin-top:100px;">
 <h1 style="font-size: 30px; font-weight: 500;">마이페이지</h1>
 <div>
     <div class="mypage__box">
         <div class="profile">
-            <img class="my-profile" src="./img/profile-photo(1).jpg">
+            <img class="my-profile" src="/asset/img/member/default_general_member.png">
             <div class="profile-detail">
-                <p class="my-nickname" id="nickname">김흥국님</p>
-                <p class="my-email" id="email">test@test.com</p>
+                <p class="my-nickname" id="nickname"></p>
+                <p class="my-email" id="email"></p>
             </div>
         </div>
     </div>
-    
+
     <div class="mypage-settings">
         <div class="mypage-setting">
             <a href="personalInfo.html">
@@ -56,7 +56,7 @@
         </div>
         <div class="mypage-setting">
             <a href="#">
-                <span onClick="location.href='selectlist.html'">찜 목록 수정</span>
+                <span onClick="location.href='selectlist.html'">내 찜 관리</span>
                 <span class="setting-btn" onClick="location.href='selectlist.html'">></span>
             </a>
         </div>
@@ -94,6 +94,6 @@
 
 <!-- icons -->
 <script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
-<script src="mypage.js"></script> 
+<script src="mypage.js"></script>
 </body>
 </html>

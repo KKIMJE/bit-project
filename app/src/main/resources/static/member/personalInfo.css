@@ -1,92 +1,181 @@
-
-  * {font-family: NanumSquareRound;}
-  
-  h1 {
-  margin-top: 120px;
-  margin-left: 5%;
-  left:100px;
-
+* {
+  font-family: NanumSquareRound;
 }
 
-  div.left {
-    /* padding: 0 100px 0 0; */
-    width: 50%;
-    float: left;
-    box-sizing: border-box;
-    border-right: 1px solid #000;
-  }
+h1 {
+  margin-top: 120px;
+  margin-left: 5%;
+  left: 100px;
+}
 
-  div.right {
-    padding: 0 20px;
-    width: 50%;
-    float: right;
-    box-sizing: border-box;
-  }
-  
-  .x-info-div-container{
-    padding-left: 5%;
-  }
-  
-  .btn{
-  margin-left:100px;
-  }
- 
+div.left {
+  /* padding: 0 100px 0 0; */
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  border-right: 1px solid #000;
+}
+
+div.right {
+  padding: 0 20px;
+  width: 50%;
+  float: right;
+  box-sizing: border-box;
+}
+
+.x-info-div-container {
+  padding-left: 5%;
+}
+
+.btn {
+  margin-left: 100px;
+}
+
 .submit-change-btn {
   all: unset;
   color: #EEEFF1;
   font-size: 15px;
   font-weight: 500;
   background-color: #29c05e;
-  border:1px solid #29c05e;
+  border: 1px solid #29c05e;
   border-radius: 10px;
   padding: 8px;
   width: 60px;
-  height:20px;
+  height: 20px;
 }
 
- .submit-delete-btn {
-     all: unset;
- color:#d0d0d0;
+.submit-delete-btn {
+  all: unset;
+  color: #d0d0d0;
   font-size: 15px;
   font-weight: 500;
-  background-color:#FFFFFF;
+  background-color: #FFFFFF;
   border-radius: 10px;
-border:1px solid black;
+  border: 1px solid black;
   margin-left: 14px;
   padding: 8px;
   width: 60px;
-  height:20px;
-   }
-   
-  
-  
-  
-  #x-complete-form {font-size:15px;}
-  
-  #ig{margin-top: 0px; width:100px; height:100px; }
-  
-   #img{margin-top:-15px; width:50px; height:50px; }
-  
-  #x-self-intro{resize:none; margin-top:30px; border-radius:10px; background-color: #E2E2E2; width:600px; height:100px; font-weight: 400; font-size: 20px;line-height: 19px;}
+  height: 20px;
+}
 
-   #x-connect-btn {margin-top:-5px;background-color:#FFFFFF; border-radius:10px; margin-left:10px;}
-   
-   #x-name {margin-top:5px; border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
-   
-   #x-nickname { border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
-   
-   #x-sex {border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
-   
-   #x-birth{border: 0px; border-bottom: 1px solid  #000000;outline: none; width:600px; position: absolute;}
-   
-   #x-e-address{border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
-   
-   #x-pwd{border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px; position: absolute;}
-   
-   #x-phonenumber{border: 0px; border-bottom: 1px solid  #000000; outline: none; width:600px;position: absolute;}
-   
-   #count { float: right ; }
-   
-  
+#x-complete-form {
+  font-size: 15px;
+}
 
+#ig {
+  margin-top: 0px;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
 
+#img {
+  margin-top: -15px;
+  width: 50px;
+  height: 50px;
+}
+
+#x-self-intro {
+  resize: none;
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: #E2E2E2;
+  width: 600px;
+  height: 100px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+}
+
+#x-connect-btn {
+  margin-top: -5px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+#x-name {
+  margin-top: 5px;
+  border: 0px;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  width: 600px;
+  position: absolute;
+}
+
+#x-nickname {
+  border: 0px;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  width: 600px;
+  position: absolute;
+}
+
+#x-sex {
+  border: 0px;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  width: 600px;
+  position: absolute;
+}
+
+#x-birth {
+  border: 0px;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  width: 600px;
+  position: absolute;
+}
+
+#x-e-address {
+  border: 0px;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  width: 600px;
+  position: absolute;
+}
+
+#x-pwd {
+  border: 0px;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  width: 600px;
+  position: absolute;
+}
+
+#x-phonenumber {
+  border: 0px;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  width: 600px;
+  position: absolute;
+}
+
+#count {
+  float: right;
+}
+
+.filebox label, .photo-btn {
+  display: inline-block;
+  padding: .5em .75em;
+  color: white;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #29c05e;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+}
+
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

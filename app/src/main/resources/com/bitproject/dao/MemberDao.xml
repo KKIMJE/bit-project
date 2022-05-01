@@ -65,7 +65,9 @@
     select 
       mno,
       name,
-      email
+      nickname,
+      email,
+      m_img
     from 
       member
     where
@@ -78,6 +80,7 @@
     select 
       mno,
       name,
+      nickname,
       email
     from 
       member
@@ -123,6 +126,14 @@
     where 
     mno=#{mno}  <!-- and memberstatus=0 -->
      and member_status=0 
+  </update>
+  
+  <update id="updatePhoto" parameterType="member">
+  update member set
+    m_img=#{mImg}
+  where 
+    mno=#{mno}
+  and member_status=0 
   </update>
   
     <select id="findByNo" resultMap="memberMap" parameterType="int">

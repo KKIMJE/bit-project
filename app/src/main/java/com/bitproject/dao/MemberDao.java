@@ -13,7 +13,7 @@ public interface MemberDao {
   List<Member> findAll();
 
   int insert(Member member);
-  
+
   int delete(int mno);
 
   Member findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
@@ -24,7 +24,9 @@ public interface MemberDao {
 
   int update(Member member);
 
+  int updatePhoto(Member member);
+
   int emailCheck(String email); 
-  
+
 
 }
