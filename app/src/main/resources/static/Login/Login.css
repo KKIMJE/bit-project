@@ -8,6 +8,30 @@ a {
   text-decoration: none;
 }
 
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background-color: white;
+}
+
+/* #facebook-login {
+  padding: 0;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
+  margin: 1rem;
+}
+
+#facebook-login img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
 body {
   background-color:rgba(250, 250, 250, 1);
   justify-content: center;
@@ -178,6 +202,15 @@ footer__ {
   width: 100px;
   margin-left: 18px;
   position: relative;
+  z-index: 1;
+}
+
+.abs {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
 }
 
 .signup-btn {
@@ -188,17 +221,22 @@ footer__ {
   font-weight: 600;
   background-color: #90d483;
   margin-bottom: 10px;
-  padding: 10px 105px;
+  padding: 10px 72px;
   border-radius: 3px;
   width: auto;
-  margin-left: 20px;
-  margin-top: 40px;
+  margin-left: 53px;
+  margin-top: 18px;
 }
 
-.fb-btn-img {
-  position: absolute;
-  left: 0px;
+
+.fb-btn-img { 
+  /* left: 0px; */
   width: 287px;
   cursor: pointer;
+  display: none;
 }
 
+.fbBtn {
+  display: none;
+  /* margin-left: 20px; */
+}
