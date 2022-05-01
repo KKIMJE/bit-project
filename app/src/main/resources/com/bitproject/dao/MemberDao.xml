@@ -101,7 +101,8 @@
       email,
       tel,
       m_img,
-      self_introduction
+      self_introduction,
+      store_count
     from 
       member
     where
