@@ -136,7 +136,7 @@ document.querySelector(".submit-change-btn").onclick = function() {
     })
     .then(function(result) {
       if (result.status == "success") {
-        // console.log(result.status);
+        console.log(result.status);
         location.href = "/member/personalInfo.html";
       } else {
         window.alert(" 변경 실패!");
@@ -167,7 +167,6 @@ $(".photo-btn").on("click", (e) => {
   .then(result => {
     if (result.status == "success") {
       alert("이미지 등록 완료되었습니다.")
-      location.reload()
     }
   })
 })

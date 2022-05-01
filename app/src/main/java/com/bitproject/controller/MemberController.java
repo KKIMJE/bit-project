@@ -90,7 +90,10 @@ public class MemberController {
 
   @RequestMapping("/member/getLoginUser")
   public Object getLoginUser(HttpSession session) {
-    Object member = session.getAttribute("loginUser");
+    Member loginmember = (Member) session.getAttribute("loginUser");
+    int mno = loginmember.getMno();
+    Member member = memberService.getMemberByMno(mno);
+
     if (member != null) {
       return new ResultMap()
           .setStatus(SUCCESS)
