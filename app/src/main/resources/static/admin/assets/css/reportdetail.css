@@ -37,5 +37,10 @@ h2 {
   margin-top: 50px;
   margin-bottom: 20px;
   width: 700px;
-  background-color: rgb(212, 212, 212);
+  border-collapse: collapse;
+}
+
+#repdetail-table tr {
+  border-collapse: collapse;
+  border-bottom: 1px solid rgba(91, 91, 91, 0.19);
 }
