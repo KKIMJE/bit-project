@@ -167,6 +167,7 @@ $(".photo-btn").on("click", (e) => {
   .then(result => {
     if (result.status == "success") {
       alert("이미지 등록 완료되었습니다.")
+      location.reload()
     }
   })
 })

@@ -237,7 +237,7 @@ body>nav>ul.navbar__login>div:nth-child(1)>div>button::after {
 			<div class="btn-group">
 				<button id="login-btn" class="logout">
 					<a href="../Login/login.html"; style="margin-right:20px;">로그인</a>
-					
+
 				</button>
 				<button id="logout-btn" class="login">
 					<a href="../main/main.html"; style="margin-right:20px;">로그아웃</a>
@@ -252,7 +252,7 @@ body>nav>ul.navbar__login>div:nth-child(1)>div>button::after {
 
 			</div>
 		</div>
-		
+
 		<!-- 마이페이지 -->
 		<a href="../member/mypage.html"><login-i
 				class="fa-solid fa-user-large"></login-i></a>
@@ -305,7 +305,8 @@ function css(selector, name, value) {
 
 document.querySelector("#logout-btn").onclick = function() {
   fetch("/member/signout").then(function(response) {
-     location.reload();
+		alert("로그아웃 되었습니다.")
+     location.href="/main/main.html"
   });
 };
 </script>

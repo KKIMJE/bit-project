@@ -61,7 +61,7 @@ function allList() {
       return response.json()
     })
     .then(function(boards) {
-
+      console.log(boards);
       for (var i = lenderingCountAll; i < lenderingCountAll + 3; i++) {
         if (i === boards.length ) {
           alert("게시물이" + (boards.length - lenderingCountAll) + "개 남았습니다.")
