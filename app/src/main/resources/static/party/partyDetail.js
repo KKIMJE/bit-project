@@ -44,10 +44,10 @@ fetch(`/party/get?no=${no}`)
         console.log(result.data);
         return;
     }
-    console.log(result)
+    //console.log(result)
     var party = result.data;
 
-    console.log(party.writer.mimg)
+    //console.log(party.writer.mimg)
 
     $('.profile-img').attr("src",`/asset/img/member/${party.writer.mimg}`);
 
@@ -103,13 +103,42 @@ $(".button-join").click(function () {
     })
     .then((result) => {
         if(result.isConfirmed) {
-        // 방장에게 참여요청 보내는 코드 적기
+
+            fetch(`/party/get?no=${no}`)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(result) {
+                //console.log(result)
+                console.log(result.data);
+                alert("룰루")
+
+            // console.log(pTitle.innerText);
+
+            // var pNickname = document.querySelector(".leader-profile span");
+            // var pNickname2 = document.querySelector(".nickname");
+            // var pAlcoholType = document.querySelector(".ptype");
+            // var pDate = document.querySelector(".pdate");
+            // var pAlcoholLimit = document.querySelector(".plimit");
+            // var pFee = document.querySelector(".pfee");
+            // var pMember = document.querySelector(".pmember");
+            // var pLocation = document.querySelector(".plocation");
+            // var pContent = document.querySelector(".pcontent");
+
+        // fetch(`/partyParticipant/add?no=${no}&title=${pTitle.innerText}&${}&${}&${}`, {
+        //     method: "POST"
+        // }).then(function(response) {
+        //     // console.log(response)
+        //     return response.json()
+        // }).then(function(result) {
+        //     console.log(result)
+        //     alert("라라라")
+        // })
 
 
-
-        
-        }
-    })
+        })
+    }
+})
 });
 
 /************
@@ -239,4 +268,3 @@ $('.party-like button').click(function () {
 })
 
 // $(this).toggleClass('on'); if ($(this).hasClass("on")) { $(this).parent().addclass('active') } else if (!$(this).hasClass("on")) { $(this).parent().removeclass('active') }
-

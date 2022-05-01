@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitproject.dao.PartyParticipantDao">
+
+  <resultMap type="partyParticipant" id="partyParticipantMap">
+    <result column="participant_status" property="participantStatus"/>
+    <association property="preParty" javaType="party">
+		   <id column="party_no" property="partyNo"/>
+		   <result column="title" property="title"/>
+		   <result column="party_fee" property="partyFee"/>
+		   <result column="meeting_date" property="meetingDate"/>
+		   <result column="max_member" property="maxMember"/>
+		   <result column="alcohol_type" property="alcoholType"/>
+		   <result column="alcohol_limit" property="alcoholLimit"/>
+		   <result column="address" property="address"/>
+		   <association property="writer" javaType="member">
+		     <id column="mno" property="mno"/>
+		     <result column="nickname" property="nickName"/>
+		     <result column="img" property="mImg"/>
+		   </association>
+		</association>
+    <collection property="preParticipants" ofType="member">
+      <id column="mno" property="mno"/>
+      <result column="nickname" property="nickName"/>
+      <result column="img" property="mImg"/>
+    </collection>
+  </resultMap>
+  
+    <!--<result column="participant_status" property="participantStatus"/>
+    <association property="preParticipant" javaType="member">
+      <id column="mno" property="mno"/>
+      <result column="nickname" property="nickName"/>
+      <result column="img" property="mImg"/>
+    </association>
+    <association property="preParty" javaType="party">
+      <id column="party_no" property="partyNo"/>
+      <result column="pre_participant" property="member"/>
+      <result column="title" property="title"/>
+    </association> -->
+  
+  <insert id="insert" parameterType="PartyParticipant">
+    insert into party_participant(
+    pre_party,
+    pre_participants
+    ) 
+    values(
+    #{preParty.partyNo},
+    #{preParticipants.mno}
+    )
+  </insert>
+
+  <!--<select id="findAll" resultMap="partyParticipantMap">
+  select
+    p.party_no,
+    p.title,
+    p.reg_date,
+    p.party_fee,
+    p.meeting_date,
+    p.max_member,
+    p.alcohol_type,
+    p.alcohol_limit,
+    p.address,
+    m.mno as p_mno,
+    m.nickname as p_nickname,
+    m.m_img as p_img
+  from 
+    party_participant p
+    inner join member m on (p.writer = m.mno)
+  order by 
+    p.party_no desc;
+  </select>
+  
+  
+  <select id="findByNo" resultMap="partyParticipantMap" parameterType="int">
+  select
+    p.party_no,
+    p.title,
+    p.contents,
+    p.reg_date,
+    p.party_fee,
+    p.meeting_date,
+    p.max_member,
+    p.alcohol_type,
+    p.alcohol_limit,
+    p.address,
+    m.mno as p_mno,
+    m.nickname as p_nickname,
+    m.m_img as p_img,
+    pc.party_comment_no,
+    pc.party_comment_contents,
+    pc.comment_date,
+    m2.mno as pcw_mno,
+    m2.nickname as pcw_nickname,
+    m2.m_img as pcw_img
+  from party_participant p
+    inner join member m on p.writer=m.mno
+    left outer join party_comment pc on p.party_no=pc.party_no
+    left outer join member m2 on pc.commentWriter=m2.mno
+  where 
+    p.party_no=#{no}
+  </select>
+  
+  <update id="update" parameterType="partyParticipant">
+    update party set
+      title=#{title}, 
+      contents=#{contents},
+      party_fee=#{partyFee},
+      meeting_date=#{meetingDate},
+      max_member=#{maxMember},
+      alcohol_type=#{alcoholType},
+      alcohol_limit=#{alcoholLimit},
+      address=#{address}
+    where 
+      party_no=#{partyNo} and writer=#{writer.mno}
+  </update>
+  
+  <delete id="delete" parameterType="partyParticipant">
+    delete from party_participant 
+    where party_no=#{partyNo}
+  </delete> -->
+  
+  </mapper>

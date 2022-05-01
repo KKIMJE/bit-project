@@ -1,10 +1,13 @@
 package com.bitproject.domain;
 
+import lombok.experimental.Accessors;
+
 public class PartyParticipant{
 
+  @Accessors(chain = true)
   Party preParty;
-  Member participant;
-  String participantStatus;
+  Member preParticipants;
+  char participantStatus;
 
   public Party getPreParty() {
     return preParty;
@@ -12,22 +15,22 @@ public class PartyParticipant{
   public void setPreParty(Party preParty) {
     this.preParty = preParty;
   }
-  public Member getParticipant() {
-    return participant;
+  public Member getPreParticipants() {
+    return preParticipants;
   }
-  public void setParticipant(Member participant) {
-    this.participant = participant;
+  public void setPreParticipants(Member preParticipants) {
+    this.preParticipants = preParticipants;
   }
-  public String getParticipantStatus() {
+  public char getParticipantStatus() {
     return participantStatus;
   }
-  public void setParticipantStatus(String participantStatus) {
-    this.participantStatus = participantStatus;
-  }
-  @Override
-  public String toString() {
-    return "PartyParticipant [preParty=" + preParty + ", participant=" + participant
-        + ", participantStatus=" + participantStatus + "]";
+  public void setParticipantStatus(char c) {
+    this.participantStatus = c;
   }
 
+  @Override
+  public String toString() {
+    return "PartyParticipant [preParty=" + preParty + ", preParticipants=" + preParticipants
+        + ", participantStatus=" + participantStatus + "]";
+  }
 }
