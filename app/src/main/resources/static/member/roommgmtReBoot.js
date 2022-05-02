@@ -1,23 +1,23 @@
 /********************
     카테고리별 정렬
 ********************/
-const lightBtn = document.querySelector('.room-category-sort')
-lightBtn.addEventListener("click",function(e){
-  if (e.target == e.currentTarget) {
-    return;
-  } else {
-    e.currentTarget.querySelector('.act').classList.toggle('act')
-    e.target.classList.toggle('act')
-
-    let targetNo = e.target.value
-
-    if (targetNo == 0) {
-        console.log("전체")
-    } else {
-        console.log("나머지")
-    }
-  }
-});
+// const lightBtn = document.querySelector('.room-category-sort')
+// lightBtn.addEventListener("click",function(e){
+//   if (e.target == e.currentTarget) {
+//     return;
+//   } else {
+//     e.currentTarget.querySelector('.act').classList.toggle('act')
+//     e.target.classList.toggle('act')
+//
+//     let targetNo = e.target.value
+//
+//     if (targetNo == 0) {
+//         console.log("전체")
+//     } else {
+//         console.log("나머지")
+//     }
+//   }
+// });
 
 
 
@@ -30,16 +30,16 @@ lightBtn.addEventListener("click",function(e){
 // .then(function(response) {
 //     return response.json();
 // })
-// .then(function(result) {      
+// .then(function(result) {
 //     for (var party of result) {
 //     plbody.innerHTML += `<div class="imgContainer">
 //     <div class="rooomCon">
-//         <div class="roomTitle">제목 : 
+//         <div class="roomTitle">제목 :
 //             <span>외롭다 같이 술먹을 사람??</span>
 //         </div>
 //         <div class="roomContent">
-//             <div class="roomOption">  
-//                 <div class="roomDate">일정 : </div>  
+//             <div class="roomOption">
+//                 <div class="roomDate">일정 : </div>
 //                 <div class="roomLocation fontSpase">위치 : </div>
 //                 <div class="roomAlc">술종류 : </div>
 //                 <div class="roomLimit fontSpase">주량 : </div>
@@ -59,16 +59,16 @@ lightBtn.addEventListener("click",function(e){
 // </div>`;
 //   }
 // })
-    
-    
-    
-    
-    
-//     `<a href="partyDetail.html?no=${party.partyNo}" class="party-list" data-creatdt="${party.partyNo}"> 
+
+
+
+
+
+//     `<a href="partyDetail.html?no=${party.partyNo}" class="party-list" data-creatdt="${party.partyNo}">
 //                         <div class="party-body-top">
 //                             <div class="party-title">${party.title}</div>
 //                             <div class="party-regdate">` + timeCheck(`${party.regDate}`) + `</div>
-//                         </div> 
+//                         </div>
 //                         <div class="party-body-content">
 //                             <div class="leader-profile">
 //                                 <img class="profile-img leader" src="/asset/img/member/${party.writer.mimg}" alt="방장 프로필">
