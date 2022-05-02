@@ -84,7 +84,7 @@ function myLoad() {
                           </div>
                           <div class="party-body-content">
                               <div class="leader-profile">
-                                  <img class="profile-img leader" src="/asset/img/member/${party.writer.mimg}" alt="방장 프로필">
+                                  <img class="profile-img leader" src="/member/photo?filename=150x150_${party.writer.mimg}" alt="방장 프로필">
                                   <span>${party.writer.nickName}</span>
                               </div>
                               <div class="party-detail">
