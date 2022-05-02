@@ -4,63 +4,67 @@ var xtitle = document.querySelector(".write-title")
 var xcontent = document.querySelector("#summernote")
 
 
-
-document.querySelector(".save").addEventListener("click", function()
-{
-
-	console.log(xcate.value);
-	console.log(xtitle.value);
-	console.log(xcontent.value);
-
-fetch('/member/getLoginUser')
-.then(function(response){
-	return response.json()
-})
-.then(function(result){
-
-	console.log(result.data.mno);
-	var xmno = result.data.mno;
-
-	function sortCategory(category) {
-
-		var a = "술집추천"
-		var b = "분실/실종센터"
-		var c = "일상"
-		var d = "사건사고"
-		// var e = "술게임"
-		var f = "기타"
-
-		if (category === a) {
-			return 1
-		} else if (category === b) {
-			return 2
-		} else if (category === c) {
-			return 3
-		} else if (category === d) {
-			return 4
-		} else if (category === f){
-			return 5
-		}
-	}
-
-	var categoryNo = xcate.value;
-
-
-	fetch(`/communityForm/add?mNo=${xmno}&communityNo=` + sortCategory(categoryNo) + `&boardTitle=${xtitle.value}&boardContents=${xcontent.value}`)
-	.then(function (response){
-		return response.text()
-	})
-	.then(function(text) {
-		// uploadSummernoteImageFile()
-		console.log(text);
-	  location.href = "main.html"
-	});
-
+// 발표용 저장 버튼
+document.querySelector(".save").addEventListener("click", function(){
+	location.href='mainReBoot7.html'
 })
 
 
 
-})
+
+// document.querySelector(".save").addEventListener("click", function()
+// {
+
+// 	console.log(xcate.value);
+// 	console.log(xtitle.value);
+// 	console.log(xcontent.value);
+
+// 	fetch('/member/getLoginUser')
+// 	.then(function(response){
+// 	return response.json()
+// 	})
+// 	.then(function(result){
+
+// 	console.log(result.data.mno);
+// 	var xmno = result.data.mno;
+
+// 	function sortCategory(category) {
+
+// 		var a = "술집추천"
+// 		var b = "분실/실종센터"
+// 		var c = "일상"
+// 		var d = "사건사고"
+// 		// var e = "술게임"
+// 		var f = "기타"
+
+// 		if (category === a) {
+// 			return 1
+// 		} else if (category === b) {
+// 			return 2
+// 		} else if (category === c) {
+// 			return 3
+// 		} else if (category === d) {
+// 			return 4
+// 		} else if (category === f){
+// 			return 5
+// 		}
+// 	}
+
+// 	var categoryNo = xcate.value;
+
+
+// 	fetch(`/communityForm/add?mNo=${xmno}&communityNo=` + sortCategory(categoryNo) + `&boardTitle=${xtitle.value}&boardContents=${xcontent.value}`)
+// 	.then(function (response){
+// 		return response.text()
+// 	})
+// 	.then(function(text) {
+// 		// uploadSummernoteImageFile()
+// 		console.log(text);
+// 		location.href = "main.html"
+// 	});
+
+// 	})
+// 	})
 
 document.querySelector(".quit").addEventListener("click", function() {
 location.href = "main.html"

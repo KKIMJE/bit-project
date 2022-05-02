@@ -15,56 +15,20 @@
     <script src="../asset/summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
     <link rel="stylesheet" href="../asset/summernote-0.8.18-dist/summernote-lite.css">
 
+    <script>
+        $(document).ready(function () {
+          $('#header').load('../header/header.html');
+          $('#footer').load('../footer/footer_1.html');
+        });
+    </script>
+
+    
+
     <title>야술먹자 커뮤니티</title>
 </head>
 <body>
 
-    <nav class="navbar__">
-        <div><!-- 공간, 삭제하지 마세요 --></div>
-
-        <div class="navbar__logo">
-            <a href="../main/main.html"><img src="../img/logo.png" alt=""></a>
-        </div>
-
-        <ul class="navbar__menu">
-            <li><a href="">로그인</a></li>
-            <li><a href="">회원가입</a></li>
-            <a href=""><menu-i class="fa-solid fa-map-location-dot"></menu-i></a>
-        </ul>
-
-        <ul class="navbar__login">
-            <!-- 알림 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-bell"></login-i></a>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 마이페이지 -->
-            <a href=""><login-i class="fa-solid fa-user-large"></login-i></a>
-
-            <!-- 검색 -->
-            <div class="btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <a href=""><login-i class="fa-solid fa-magnifying-glass"></login-i></a>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-lg-end">
-                      <li>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search Input" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 지도 -->
-            <a href=""><login-i class="fa-solid fa-map-location-dot"></login-i></a>
-        </ul>
-    </nav>
+    <div id="header"></div>
 
       <select class="board-category">
         <option>게시판을 선택해주세요</option>
@@ -75,7 +39,7 @@
         <option>기타</option>
       </select>
 
-      <div class="save" type="button" ><span style="margin-left:19px; margin-top:3px;">저장</span></div>
+      <div class="save" type="button"><span style="margin-left:19px; margin-top:3px;">저장</span></div>
       <div class="quit" type="button"><span style="margin-left:10px; margin-top:3px;">나가기</span></div>
 
       <input class="write-title" type="text" name="title" value=""placeholder="제목을 입력해주세요">
@@ -108,6 +72,7 @@
         </div>
 
     </footer__> -->
+    <!-- <div id="footer"></div> -->
 
     </html>
     <!-- icons -->
