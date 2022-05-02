@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="../img/logo1.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css"> <!-- font -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="mainReBoot.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+          $('#header').load('../header/header.html');
+          $('#footer').load('../footer/footer_1.html');
+        });
+    </script>
+
+    <title>야술먹자 커뮤니티</title>
+</head>
+<body>
+    <div id="header"></div>
+   
+    <div class="store-container">
+
+        <div class="room-contents">
+            <div class="room-category">
+                <div class="room-category-sort">
+                    <button id="xAllBtn" type="button" class="room-category-font act"
+                    onclick="location.href='mainReBoot0.html'" value="0">🌈전체</button>
+                    <button type="button" class="room-category-font" 
+                    onclick="location.href='mainReBoot1.html'" value="1">술집추천</button>
+                    <button type="button" class="room-category-font" 
+                    onclick="location.href='mainReBoot2.html'"value="2">분실/실종센터</button>
+                    <button type="button" class="room-category-font" 
+                    onclick="location.href='mainReBoot3.html'"value="3">일상</button>
+                    <button type="button" class="room-category-font" 
+                    onclick="location.href='mainReBoot4.html'"value="4">사건사고</button>
+                    <button type="button" class="room-category-font" 
+                    onclick="location.href='gameRe.html'"value="5">술게임</button>
+                    <button type="button" class="room-category-font" 
+                    onclick="location.href='mainReBoot6.html'"value="6">기타</button>
+
+                    <button type="button" class="room-category-font write" 
+                    onclick="location.href='mainReBoot6.html'"value="7">
+                        <a href="/community/form.html"><i class="fa-solid fa-pen" style= "right : 50px;" ></i>&nbsp;글쓰기</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="imgCardAll">
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>분실실종 센터</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                제 친구를 찾습니다...신논현역 흰색 옷 검정 반바지
+                            </span>
+                            <div class="roomMember fontSpase">
+                                
+                                제 친구를 찾아주세여....
+                                10분 전에 잠깐 한눈 판 사이에 신논현역 뒷골목에서 사라졌네요ㅠㅠ
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/image 32.png" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">12분전</div>
+                        <div class="userNickName">개코가석자다</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>22
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>12
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>우리 지금 만나</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                외롭다... ㅠㅠ 같이 술 드실분..?
+                            </span>
+                            <div class="roomMember fontSpase">
+                                오늘 밤 11시에 신논현역 인생주막에서 술 드실분 있나요..?
+                                주량 최소 3병 이상만 댓글 달아 주세요♡
+                                27살 여자입니다~
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/profile_suzy.jpg" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">20분전</div>
+                        <div class="userNickName">수지</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>486
+                    </div>
+                    <div class="person">
+                        7 / 8
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>일상</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                취한드아...퓨
+                            </span>
+                            <div class="roomMember fontSpase">
+                                면접에서 떨어졌다고 문자 받았다.. ㅁ누아히ㅜㄴ아ㅣㄹ다ㅣㅡ
+                                후 오늘만 5번째 문자 받았는데....
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/image 60.png" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">32분전</div>
+                        <div class="userNickName">개똥벌레</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>3
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>0
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>사건 사고</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                지금 미인포차에서 싸움났는데...
+                            </span>
+                            <div class="roomMember fontSpase">
+                                살인사건 날 것 같은데.... 형들 괜히 오지마
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/image 63.png" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">40분전</div>
+                        <div class="userNickName">완타치</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>48
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>12
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>분실실종 센터</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                이번에 새로 산 시계입니다...
+                            </span>
+                            <div class="roomMember fontSpase">
+                                술취해서 모르고 놓고 갔는데 보신분 연락부탁드립니다...
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/cc.jpg" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">30분전</div>
+                        <div class="userNickName">살려줘</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>1
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>1
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>분실실종 센터</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                우리 초코 보신분?? ㅠ
+                            </span>
+                            <div class="roomMember fontSpase">
+                                혹시라도 싶어 여기에 글올려요 ..
+                                사진 보시고 보신분은 연락주세요...
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/choco.jpg" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">40분전</div>
+                        <div class="userNickName">초코송이</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>3
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>0
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>분실실종 센터</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                핸드폰 주우신분 연락부탁드립니다.
+                            </span>
+                            <div class="roomMember fontSpase">
+                                핸드폰 잃어버렸어요 ㅠㅠ
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/handphone.png" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">45분전</div>
+                        <div class="userNickName">바사삭</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>4
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>1
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>일상</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                꾸준히 운동을 하고 있습니다. 100일차
+                            </span>
+                            <div class="roomMember fontSpase">
+                                같이 운동하실분 연락주세요~
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/꼬마.jpg" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">12분전</div>
+                        <div class="userNickName">간달프</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>22
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>1
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>일상</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                오늘 편의점에서 띠부띠부실 발견!
+                            </span>
+                            <div class="roomMember fontSpase">
+                                약 편의점 10곳 정도를 해메다 발견한 띠부띠부실
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/imges.jpg" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">20분전</div>
+                        <div class="userNickName">너로정했따</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>20
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>0
+                    </div>
+                </div>
+            </div>
+
+            <div class="imgContainer">
+                <div class="roomCon">
+                    <div class="roomTitle"> 
+                        <span>일상</span>
+                    </div>
+                    <div class="roomContent">
+                        <div class="roomOption relative3">  
+                            <!-- <div class="roomDate">일정 : 2022/04/23</div> -->
+                            <span class="roomLocation fontSpase subTitle">
+                                짜파게티 먹을때는 어떤 김치가 좋을까요?
+                            </span>
+                            <div class="roomMember fontSpase">
+                                파김치, 배추김치, 깍두기?
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="relative">
+                    <img src="img/자파게티.jpg" class="roomProfile">
+                    <div class="record">
+                        <div class="commentTime">40분전</div>
+                        <div class="userNickName">김치</div>
+                    </div>
+                </div>
+                <div class="relative4">
+                    <div class="heartBox">
+                        <i id="heart" class="fa-heart fa-solid"></i>48
+                    </div>
+                    <div class="person">
+                        <i class="fa-regular fa-comment"></i>12
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <div id="footer"></div>
+</body>
+
+</html>
+<!-- icons -->
+<script src="https://kit.fontawesome.com/22437c0385.js" crossorigin="anonymous"></script>
+<!-- Bootstrap CSS -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+<!-- JavaScript -->
+<script src="mainReBoot.js"></script>
