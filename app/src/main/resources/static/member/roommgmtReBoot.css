@@ -72,6 +72,7 @@ html {
 }
 .roomContent {
     display: flex;
+
 }
 .roomTitle {
     border-bottom: 1px solid rgba(103, 103, 103, 1);
@@ -102,7 +103,7 @@ html {
 }
 
 .relative {
-    position: relative;
+    /* position: relative; */
     left: 151px;
     top: -8px;
 }
@@ -129,6 +130,3 @@ html {
 .fontSpase {
     margin: 5px 0px;
 }
-
-
-
