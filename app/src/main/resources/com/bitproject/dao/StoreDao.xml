@@ -95,29 +95,21 @@
       tel,
       hour,
       introduction,
-      evaluation_score,
       reservation_accept,
       max_member,
-      lat,
-      lng,
       oper,
       status
       )
       values(
      #{businessRegistrationNo},
-     #{businessRegistration},
      #{storeName},
      #{address},
      #{addressDetail},
      #{tel},
      #{hour},
      #{introduction},
-     #{evaluationScore},
      #{reservationAccept},
      #{maxMember},
-     #{lat},
-     #{lng},
-     #{placeId},
      #{oper},
      #{status}
      )

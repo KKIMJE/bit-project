@@ -62,7 +62,7 @@ console.log(fd)
 
       fetch("/store/add", {
         method: "POST",
-        body: new URLSearchParams(fd)
+        body: fd
       })
       .then(function (response) {
         return response.json()

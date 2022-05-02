@@ -24,7 +24,7 @@
 /****************************
   해당 모임의 정보 가져오기
 ***************************/
-var arr = location.href.split("?"); 
+var arr = location.href.split("?");
 
 if (arr.length == 1) {
     alert("요청 형식이 올바르지 않습니다.")
@@ -69,7 +69,7 @@ fetch(`/party/get?no=${no}`)
     var party = result.data;
 
     console.log(party)
-    
+
     pTitle.value = party.title;
 
     console.log(party.contents);
@@ -374,15 +374,15 @@ $('.save').click(function() {
   var pLimit = document.querySelector("input[name=alcoholLimit]");
   var pFee = document.querySelector("input[name=partyFee]");
   var pMember = document.querySelector("input[name=maxMember]");
-    
+
   if (pTitle.value == "" || pContent.value == "" || pLocation.value == "" || pDate.value == "" || pType.value == "" || pLimit.value == "" || pFee.value == "" || pMember.value == "") {
     alert("필수 입력 항목이 비어 있습니다.");
     return;
-  } 
+  }
 
     var pb = new FormData(document.forms.namedItem("partyBoard"));
-    
-    
+
+
     fetch(`/party/update?no=${no}`, {
         method: "POST",
         body: new URLSearchParams(pb)
