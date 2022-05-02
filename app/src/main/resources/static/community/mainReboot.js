@@ -12,7 +12,11 @@ lightBtn.addEventListener("click",function(e){
     let targetNo = e.target.value
 
     if (targetNo == 0) {
-        console.log("전체")
+    
+    }
+    else if (targetNo == 1 || targetNo == 6 || targetNo == 5) {
+      alert("해당 게시물은 준비중 입니다.")
+      location.reload()
     } else {
         console.log("나머지")
     }
