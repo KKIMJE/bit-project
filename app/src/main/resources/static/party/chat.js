@@ -20,7 +20,7 @@ if (roomNum == null) {
 
 //--------------------------여기에 채팅방 제목 넣기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //document.querySelector("#username").innerHTML = username;
-document.querySelector("#username").innerHTML = "임시 채팅방 제목";
+document.querySelector("#username").innerHTML = "질러!!!!(형식은 소주지만 맥주도 환영)";
 
 
 
@@ -31,7 +31,7 @@ eventSource.onmessage = (event) => {
 	if (data.sender === username) { // 로그인한 유저가 보낸 메시지(내가 보낸 것)
 		console.log(data.sender)
 
-		// 파란박스(오른쪽) // 나
+		// 파란박스(오른쪽) // 나 
 		initMyMessage(data);
 	} else {
 		// 회색박스(왼쪽) // 다른 사람들
