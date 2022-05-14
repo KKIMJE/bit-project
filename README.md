@@ -47,8 +47,8 @@
 ### 주류 상세
 
 - 제조사, 소재지, 용량 등 등록된 주류의 상세정보와 그 주류를 판매하는 주점의 리스트가 나오고 그 주점의 위치 정보를 지도를 통해 확인할 수 있습니다.  
-  <img src="/app/주점상세.jpg" width="60%" height="60%">  
-  <img src="/app/주점지도.jpg" width="60%" height="60%">
+  <img src="/app/주점상세.jpg" width="80%" height="80%">  
+  <img src="/app/주점지도.jpg" width="80%" height="80%">
 
 ### 주점 리스트
 
@@ -82,15 +82,15 @@
   - Kakao share api를 사용하여 지인과 함께 모임에 참여할 수 있습니다.
   - 유해한 모임 혹은 댓글의 경우 신고할 수 있습니다. 
   - 모임에 댓글을 남길 수 있습니다. 
-<img src="/app/모임상세.jpg" width="60%" height="60%">   
-<img src="/app/모임글쓰기.jpg" width="60%" height="60%">
+<img src="/app/모임상세.jpg" width="90%" height="90%">   
+<img src="/app/모임글쓰기.jpg" width="80%" height="80%">
 
 
 ### 모임 채팅
 - 모임 참여가 수락되면 해당 모임의 채팅방에 참여할 수 있습니다.
 - MongoDB와 SSE를 사용하여 실시간 채팅이 가능합니다.
 - 채팅 참여자의 프로필을 확인할 수 있으며 회원 신고가 가능합니다.
-  <img src="/app/채팅.jpg" width="60%" height="60%">
+  <img src="/app/채팅.jpg" width="80%" height="80%">
   
   
 ### 관리자 페이지
@@ -109,5 +109,5 @@
 - 게시글 신고관리
   - 등록된 신고접수현황(전체, 처리완료)을 확인할 수 있고, 접수된 신고의 내용을 확인한 후 게시글을 제재하거나 삭제할 수 있습니다.
 
-<img src="/app/관리자리스트.jpg" width="60%" height="60%">
-<img src="/app/관리자등록.jpg" width="60%" height="60%">
+<img src="/app/관리자리스트.jpg" width="100%" height="100%">
+<img src="/app/관리자등록.jpg" width="90%" height="90%">
