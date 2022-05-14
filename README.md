@@ -10,13 +10,15 @@
 
 ## 바로가기
 
-- :notebook: [개요](https://github.com/KKIMJE/project-yasulmukja#-view)
+- :notebook: [개요](https://github.com/KKIMJE/project-yasulmukja#-overview)
 
 - :computer: [주요기능 및 화면](https://github.com/hayeon17kim/hackathon-project#-view)
 
 - 💡 [느낀점](https://github.com/hayeon17kim/hackathon-project#-%EB%8A%90%EB%82%80%EC%A0%90)
 
 - 🌈[노션 링크](https://deadpan-fireplace-ddb.notion.site/Debugger-5574baffadcb4b0ba47de81f5470267a)
+
+## OverView
 
 
 ## Use Case Diagram
