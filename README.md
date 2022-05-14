@@ -10,7 +10,7 @@
 
 ## 바로가기
 
-- :notebook: [개요](https://github.com/KKIMJE/project-yasulmukja#-overview)
+- :notebook: [개요](https://github.com/KKIMJE/project-yasulmukja#-overView)
 
 - :computer: [주요기능 및 화면](https://github.com/hayeon17kim/hackathon-project#-view)
 
