@@ -12,7 +12,7 @@
 
 - :notebook: [개요](#overview)
 
-- :computer: [주요기능 및 화면](#view)
+- :computer: [주요기능 및 화면](#:computer:-view)
 
 - 💡 [느낀점](#-%EB%8A%90%EB%82%80%EC%A0%90)
 
