@@ -62,7 +62,8 @@
 
 ### 주점 상세
 - 주점리스트에서 주점을 선택하면 상세정보와 그 주점이 판매하는 주류정보, 안주정보, 해당 주점의 리뷰를 확인 할 수 있고 공유하기 버튼으로 카카오톡 공유가 가능합니다.
-<img src="/app/주점상세1.jpg" width="60%" height="60%"> 
+<img src="/app/주점상세1.jpg" width="60%" height="60%">
+<img src="/app/주점상세지도.jpg" width="60%" height="60%"> 
 
 
 ### 모임 리스트
@@ -71,13 +72,13 @@
 - 커맨드 입력을 통해 메시지의 전송 받은시간,내용 등을 출력합니다.
 
 <img src="/app/우리지금만나리스트.jpg" width="60%" height="60%"> 
-
+<img src="/app/모임지도.jpg" width="60%" height="60%"> 
 
 
 ### 모임 상세
 
 <img src="/app/모임상세.jpg" width="60%" height="60%"> 
-
+<img src="/app/모임글쓰기.jpg" width="60%" height="60%"> 
 
 
 
