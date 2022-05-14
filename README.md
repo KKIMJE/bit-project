@@ -76,6 +76,7 @@
 
 ### 모임 상세
 
+<img src="/app/모임상세.jpg" width="60%" height="60%"> 
 
 
 
