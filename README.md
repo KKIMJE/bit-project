@@ -3,14 +3,14 @@
 ![image](https://user-images.githubusercontent.com/50407047/96961838-74681300-1540-11eb-9c85-bf8dceee3bfb.png)
 
 
-전국 주류 및 주점 검색부터 술모임까지 한 번에!   
+전국 주류 및 주점 검색부터 술모임까지 한 번에!  
 애주가들을 위한 상세한 주류 정보 및 판매 주점 정보 제공서비스,
 술모임서비스, 채팅서비스등을 제공하는 서비스입니다.
 
 
 ## 바로가기
 
-- 📐 [유스케이스 다이어그램](https://github.com/hayeon17kim/hackathon-project#-view)
+- :notebook: [개요](https://github.com/hayeon17kim/hackathon-project#-view)
 
 - :computer: [주요기능 및 화면](https://github.com/hayeon17kim/hackathon-project#-view)
 
