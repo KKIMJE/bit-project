@@ -1,19 +1,27 @@
 # 🍻 야술먹자
 
-![image](https://user-images.githubusercontent.com/50407047/96961838-74681300-1540-11eb-9c85-bf8dceee3bfb.png)
+<img src="/app/메인10.jpg" width="60%" height="60%">
 
+<<<<<<< HEAD
 전국 주류 및 주점 검색부터 술모임까지 한 번에!
 
 노션 링크 : https://www.notion.so/Debugger-5574baffadcb4b0ba47de81f5470267a
+=======
+
+전국 주류 및 주점 검색부터 술모임까지 한 번에!  
+애주가들을 위한 상세한 주류 정보 및 판매 주점 정보 제공서비스,
+술모임서비스, 채팅서비스등을 제공하는 서비스입니다.
+>>>>>>> c751c4d65c694f545ef814ff5cf3aa1641b0c01e
 
 ## 바로가기
 
-- 📐 [유스케이스 다이어그램](https://github.com/hayeon17kim/hackathon-project#-view)
+- 📗 [개요](#-overview)
 
-- :computer: [주요기능 및 화면](https://github.com/hayeon17kim/hackathon-project#-view)
+- 💻 [주요기능 및 화면](#-view)
 
-- 💡 [느낀점](https://github.com/hayeon17kim/hackathon-project#-%EB%8A%90%EB%82%80%EC%A0%90)
+- 🌈 [노션 링크](https://deadpan-fireplace-ddb.notion.site/Debugger-5574baffadcb4b0ba47de81f5470267a)  
 
+<<<<<<< HEAD
 ## Use Case Diagram
 
 ![image](https://user-images.githubusercontent.com/50407047/96969210-17268e80-154d-11eb-860c-95b911c995cf.png)
@@ -38,23 +46,101 @@
 
 - 일주일 간 완료한 Todo 항목의 비율을 계산해 그래프로 출력합니다.
 - 일주일 간 많이 한 항목에 해당하는 아스키 아트를 출력합니다.
+=======
 
-![image](https://user-images.githubusercontent.com/68311187/96958320-03bcf880-1538-11eb-9351-867d8ba16b25.png)
 
-![image](https://user-images.githubusercontent.com/68311187/96958360-23ecb780-1538-11eb-9fcf-2e55c64ba12c.png)
+## 📗 OverView
+-   개발 기간 : 2개월
+    -   분석 및 설계 : 2022/02/23 ~ 2022/03/20
+    -   구현 : 2022/03/21 ~ 2022/05/01
+-   총 개발 인원 : 6명
+-   개발 스택
+	-   Laguage : Java
+	-   Back-end : Spring Boot / MyBatis / Apache Tomcat
+	-   Front-end : HTML / BootStrap / CSS  / JavaScript / jQuery / Ajax
+	-   Database : MariaDB / MongoDB
+	-   Build tool : Gradle
+	-   VCS tool : GitHub
+	-   IDE : Eclipse
+	-   Editor : Atom, VS Code
+	-  etc. tool : DBeaver, eXERD, Figma
+	- Open API : Kakao, Summernote 
 
+
+>>>>>>> c751c4d65c694f545ef814ff5cf3aa1641b0c01e
+
+## 💻 View
+### 메인
+-   주요 기능인 주종, 주점, 커뮤니티, 우리지금만나로 이동할 수 있습니다.  
+<img src="/app/메인10.jpg" width="55%" height="55%">    
+  
+  
+### 주류 리스트
+-   등록된 주류를 전체 및 카테고리별로 분류하여 페이징처리 후 주류 리스트 페이지에 출력합니다. 
+<img src="/app/주점리스트.jpg" width="60%" height="60%">  
+             
+
+### 주류 상세
+-   제조사, 소재지, 용량 등 등록된 주류의 상세정보와 그 주류를 판매하는 주점의
+ 리스트가 나오고 그 주점의 위치 정보를 지도를 통해 확인할 수 있습니다.
+<img src="/app/주점상세.jpg" width="60%" height="60%">  
+<img src="/app/리뷰.jpg" width="60%" height="60%">  
+
+<<<<<<< HEAD
 ### 메시지 출력 화면
 
+=======
+
+### 주점 리스트
+- 카테고리별로 주점들을 확인할 수 있고 주점의 위치 정보가 지도에 표시되며 사용자와 주점간의 거리를 확인할 수 있습니다.
+<img src="/app/주점리스트수정.jpg" width="60%" height="60%">
+
+
+### 주점 상세
+- 주점리스트에서 주점을 선택하면 상세정보와 그 주점이 판매하는 주류정보, 안주정보, 해당 주점의 리뷰를 확인 할 수 있고 공유하기 버튼으로 카카오톡 공유가 가능합니다.
+<img src="/app/주점상세1.jpg" width="60%" height="60%">
+<img src="/app/리뷰.jpg" width="60%" height="60%">
+
+
+### 모임 리스트
+- 
+
+<img src="/app/우리지금만나리스트.jpg" width="60%" height="60%"> 
+<img src="/app/모임지도.jpg" width="60%" height="60%"> 
+
+
+### 모임 상세
+
+<img src="/app/모임상세.jpg" width="60%" height="60%"> 
+<img src="/app/모임글쓰기.jpg" width="60%" height="60%"> 
+
+
+
+### 모임 채팅
+>>>>>>> c751c4d65c694f545ef814ff5cf3aa1641b0c01e
 - 아이디를 정하여 해당 아이디를 가진 사용자에게 메시지를 보낼 수 있습니다.
-- 발신자와 제목을 아스키 아트와 함께 출력합니다.
-- 커맨드 입력을 통해 메시지의 전송 받은시간,내용 등을 출력합니다.
+<img src="/app/채팅.jpg" width="60%" height="60%">
 
-![image](https://user-images.githubusercontent.com/68311187/96948918-aa49cf00-1521-11eb-8e15-cf5eaab6f65b.png)
+### 관리자 페이지
+- 회원/주점관리
+	- 등록된 회원/주점현황을 확인할 수 있고, 검색(이름 등)을 통해 회원/주점 검색이 가능합니다.
+	- 신고내역을 확인 후 특정 회원/주점에게 제재를 가할 수 있고, 강제탈퇴/삭제를 시킬 수 있습니다.
+	- 탈퇴 및 삭제가 된 회원/주점은 데이터베이스에 정보는 남아있지만, 로그인은 할 수 없습니다.
 
-![image](https://user-images.githubusercontent.com/68311187/96949020-ec731080-1521-11eb-9c29-083391de54a4.png)
+- 주류관리
+	- 등록된 주류현황을 확인할 수 있고, 주류정보를 등록할 수 있습니다.
+	- 주류의 정보를 수정, 삭제도 가능하고, 검색(주류명, 주종)을 통해 주류 검색이 가능합니다.
 
+<<<<<<< HEAD
 ## 💡 느낀점
 
 - 짧은 시간 이내에 원하는 기능을 모두 구현하려다 보니 메서드명과 변수명에 일관성을 지키지 못하였다. 팀 프로젝트이니만큼 서로의 코드를 이해하기 위해서는 직관적인 메서드명과 변수명을 사용하는 것이 중요하다는 것을 느꼈다.
 - 첫 프로젝트 때는 원하는 기능이 있어도 처음부터 '이건 안 될 것 같아'라고 시도를 꺼려했다. 그것이 아쉬움으로 남아 이번에는 안 될 것 같은 기능들도 일단 정리를 하고 단계를 나눠 하나하나 구현해보려고 노력해보니 훨씬 많은 것을 얻을 수 있었다. 앞으로의 프로젝트도 이러한 자세로 임해야겠다고 생각했다.
 - 프로젝트에 적당한 수준의 문서화는 필요하다. 프로젝트 초반에 원하는 앱의 모습만을 생각했을 때는 막막함이 앞섰다. 그러나 유저 시나리오를 짜고 클래스 구조를 짜면서 유스케이스 단위로 구현해야 할 앱을 대하니 훨씬 빠르게 작업할 수 있었다. 뿐만 아니라 팀원과 소통할 때도 이 문서를 가지고 소통하니 원활하게 할 수 있었다.
+=======
+- 게시글 신고관리
+	- 등록된 신고접수현황(전체, 처리완료)을 확인할 수 있고, 접수된 신고의 내용을 확인한 후 게시글을 제재하거나 삭제할 수 있습니다.
+	
+<img src="/app/관리자리스트.jpg" width="60%" height="60%">
+<img src="/app/관리자등록.jpg" width="60%" height="60%"> 
+>>>>>>> c751c4d65c694f545ef814ff5cf3aa1641b0c01e
