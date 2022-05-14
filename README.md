@@ -1,3 +1,7 @@
+![title](/app/메인.png){: width="100" height="100"}
+
+
+
 # 프로젝트명
 > 간략한 프로젝트 소개 문구를 작성합니다.
 
@@ -5,9 +9,9 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-한 두 문단으로 프로젝트 소개 글을 작성합니![555602999](https://user-images.githubusercontent.com/53399043/168408669-be37125f-9143-48ef-b0bc-83871c09a9e7.jpg)
+한 두 문단으로 프로젝트 소개 글을 작성합니
 다.
-![555602999](https://user-images.githubusercontent.com/53399043/168408674-bf808479-70a8-4ecc-9129-c0dda2b484b4.jpg)
+
 
 ![](../header.png)
 
