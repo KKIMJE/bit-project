@@ -1,9 +1,9 @@
 // URL에서 쿼리스트링(query string)을 추출한다.
-var arr = location.href.split("?"); 
+var arr = location.href.split("?");
 
 if (arr.length == 1) {
-    alert("해당 모임이 존재하지 않습니다.")
-    throw "URL 형식 오류!";
+	alert("해당 모임이 존재하지 않습니다.")
+	throw "URL 형식 오류!";
 }
 
 var qs = arr[1];
@@ -14,8 +14,8 @@ var roomNum = params.get("roomNum");
 var username = params.get("username");
 
 if (roomNum == null) {
-    alert("해당 모임이 존재하지 않습니다.");
-    throw "파라미터 오류!";
+	alert("해당 모임이 존재하지 않습니다.");
+	throw "파라미터 오류!";
 }
 
 //--------------------------여기에 채팅방 제목 넣기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -26,12 +26,12 @@ document.querySelector("#username").innerHTML = "질러!!!!(형식은 소주지�
 
 // SSE 연결하기
 const eventSource = new EventSource(`/chat/roomNum/${roomNum}`);
-eventSource.onmessage = (event) => { 
+eventSource.onmessage = (event) => {
 	const data = JSON.parse(event.data); // 파싱해서 js object로 변형했다.
 	if (data.sender === username) { // 로그인한 유저가 보낸 메시지(내가 보낸 것)
 		console.log(data.sender)
 
-		// 파란박스(오른쪽) // 나 
+		// 파란박스(오른쪽) // 나   
 		initMyMessage(data);
 	} else {
 		// 회색박스(왼쪽) // 다른 사람들
@@ -104,7 +104,7 @@ async function addMessage() {
 			roomNum: roomNum,
 			msg: msgInput.value
 		};
-	
+
 		fetch("/chat", {
 			method: "post", //http post 메서드 (새로운 데이터를 write)
 			body: JSON.stringify(chat), // JS -> JSON(이렇게 바꿔야 body로 전송할 수 있다.)
@@ -112,7 +112,7 @@ async function addMessage() {
 				"Content-Type": "application/json; charset=utf-8"
 			}
 		});
-	
+
 		msgInput.value = "";
 
 	} else {
@@ -137,42 +137,42 @@ document.querySelector("#chat-outgoing-msg").addEventListener("keydown", (e) => 
 
 
 //------------------------ 동적 생성된 html에 이벤트 걸기------------
-$( document ).on("click", ".report", function() {
+$(document).on("click", ".report", function () {
 	reportModal();
 })
 
 function reportModal() {
-    Swal.fire({
-        title: '신고하기',
-        input: 'text',
-        inputAttributes: {
-            autocapitalize: 'off'
-        },
-        inputLabel: '신고 이유를 적어주세요',
-        showCancelButton: false,
-        confirmButtonText: '제출하기',
-        showLoaderOnConfirm: true,
-        preConfirm: () => {
-            var rContent = document.querySelector(".swal2-input");
-            
-            fetch(`/report/add?no=${no}&rtype=m&rcontent=${rContent.value}`, { // 회원: m, 주점: s, 게시글: b 
-                method : "POST"
-            }).then(response => {
-                return response.json()
-            }).then((result) => {
-                if (result.data == "로그인 하지 않았습니다!") {
-                alert("로그인 후 신고가 가능합니다.")
-            } else {
-                Swal.fire({
-                    icon: 'success',
-                    text: '신고가 접수되었습니다.',
-                    showCancelButton:false,
-                    confirmButtonColor:'#90d483',
-                    cancelButtonColor: '#90d483',
-                    confirmButtonText:'확인',
-                })
-            }
-        })
-    }
-})
+	Swal.fire({
+		title: '신고하기',
+		input: 'text',
+		inputAttributes: {
+			autocapitalize: 'off'
+		},
+		inputLabel: '신고 이유를 적어주세요',
+		showCancelButton: false,
+		confirmButtonText: '제출하기',
+		showLoaderOnConfirm: true,
+		preConfirm: () => {
+			var rContent = document.querySelector(".swal2-input");
+
+			fetch(`/report/add?no=${no}&rtype=m&rcontent=${rContent.value}`, { // 회원: m, 주점: s, 게시글: b 
+				method: "POST"
+			}).then(response => {
+				return response.json()
+			}).then((result) => {
+				if (result.data == "로그인 하지 않았습니다!") {
+					alert("로그인 후 신고가 가능합니다.")
+				} else {
+					Swal.fire({
+						icon: 'success',
+						text: '신고가 접수되었습니다.',
+						showCancelButton: false,
+						confirmButtonColor: '#90d483',
+						cancelButtonColor: '#90d483',
+						confirmButtonText: '확인',
+					})
+				}
+			})
+		}
+	})
 }
