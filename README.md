@@ -12,7 +12,7 @@
 
 - :notebook: [개요](#overview)
 
-- :computer: [주요기능 및 화면](#:computer:-view)
+- :computer: [주요기능 및 화면](#-view)
 
 - 💡 [느낀점](#-%EB%8A%90%EB%82%80%EC%A0%90)
 
@@ -30,7 +30,7 @@ asdfsdafdsf
 ## Use Case Diagram
 ![image](https://user-images.githubusercontent.com/50407047/96969210-17268e80-154d-11eb-860c-95b911c995cf.png)
 
-## :computer: View
+## 💻 View
 ### 메인 화면
 
 ![image](https://user-images.githubusercontent.com/68311187/96958390-4088ef80-1538-11eb-8ba2-35d5d809320f.png)
