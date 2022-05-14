@@ -1,7 +1,5 @@
 package com.bitproject.controller;
 
-import static com.bitproject.controller.ResultMap.FAIL;
-import static com.bitproject.controller.ResultMap.SUCCESS;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.List;
