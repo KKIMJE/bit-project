@@ -1,5 +1,3 @@
-# react-study
-
 # 🍻 야술먹자
 
 <img src="/app/메인10.jpg" width="60%" height="60%">
