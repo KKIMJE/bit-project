@@ -1,6 +1,6 @@
 # 🍻 야술먹자 
 
-![image](https://user-images.githubusercontent.com/50407047/96961838-74681300-1540-11eb-9c85-bf8dceee3bfb.png)
+![image](https://github.com/KKIMJE/project-yasulmukja/blob/main/app/%EB%A9%94%EC%9D%B810.jpg)
 
 
 전국 주류 및 주점 검색부터 술모임까지 한 번에!  
@@ -10,25 +10,33 @@
 
 ## 바로가기
 
-- :notebook: [개요](#overview)
+- 📗 [개요](#-overview)
 
-- :computer: [주요기능 및 화면](#-view)
+- 💻 [주요기능 및 화면](#-view)
 
 - 💡 [느낀점](#-%EB%8A%90%EB%82%80%EC%A0%90)
 
-- 🌈[노션 링크](https://deadpan-fireplace-ddb.notion.site/Debugger-5574baffadcb4b0ba47de81f5470267a)
+- 🌈 [노션 링크](https://deadpan-fireplace-ddb.notion.site/Debugger-5574baffadcb4b0ba47de81f5470267a)  
 
 
 
-## OverView
-asdfsdafdasf
-sadfasdfsdaf
-adfsasdfdsaf
-asdfsdafdsf
+## 📗 OverView
+-   개발 기간 : 2개월
+    -   분석 및 설계 : 2022/02/23 ~ 2022/03/20
+    -   구현 : 2022/03/21 ~ 2022/05/01
+-   총 개발 인원 : 6명
+-   개발 스택
+	-   Laguage : Java
+	-   Back-end : Spring Boot / MyBatis / Apache Tomcat
+	-   Front-end : HTML / BootStrap / CSS  / JavaScript / jQuery / Ajax
+	-   Database : MariaDB / MongoDB
+	-   Build tool : Gradle
+	-   VCS tool : GitHub
+	-   IDE : Eclipse
+	-   Editor : Atom, VS Code
+	-  etc. tool : DBeaver, eXERD, Figma  
 
 
-## Use Case Diagram
-![image](https://user-images.githubusercontent.com/50407047/96969210-17268e80-154d-11eb-860c-95b911c995cf.png)
 
 ## 💻 View
 ### 메인 화면
