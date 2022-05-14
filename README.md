@@ -1,6 +1,6 @@
 # 🍻 야술먹자 
 
-![image](https://github.com/KKIMJE/project-yasulmukja/blob/main/app/%EB%A9%94%EC%9D%B810.jpg)
+<img src="/app/메인10.jpg" width="80%" height="80%">
 
 
 전국 주류 및 주점 검색부터 술모임까지 한 번에!  
