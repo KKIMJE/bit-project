@@ -82,7 +82,7 @@
   - Kakao share api를 사용하여 지인과 함께 모임에 참여할 수 있습니다.
   - 유해한 모임 혹은 댓글의 경우 신고할 수 있습니다. 
   - 모임에 댓글을 남길 수 있습니다. 
-<img src="/app/모임상세.jpg" width="95%" height="95%">   
+<img src="/app/모임상세.jpg" width="100%" height="100%">   
 <img src="/app/모임글쓰기.jpg" width="70%" height="70%">
 
 
