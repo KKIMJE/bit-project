@@ -28,9 +28,9 @@
   - Build tool : Gradle
   - VCS tool : GitHub
   - IDE : Eclipse
-  - Editor : Atom, VS Code
-  - etc. tool : DBeaver, eXERD, Figma
-  - Open API : Kakao, Summernote
+  - Editor : Atom / VS Code
+  - etc. tool : DBeaver / eXERD / Figma
+  - Open API : Kakao / Summernote
 
 ## 💻 View
 
